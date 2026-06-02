@@ -201,11 +201,11 @@ Pin assignment **STM32F427VGT6** yang telah diperbaiki untuk v1.3B:
 | Injection Output 5 | PD9 |
 | Injection Output 6 | PE8 |
 | MAP Sensor | PA0 |
-| TPS | PA6 |
+| TPS | PA3 |
 | IAT Sensor | PA5 |
 | CLT Sensor | PA4 |
 | O2 Sensor | PA1 |
-| Battery/Voltage Reff | PA7 |
+| Battery/Voltage Reff | PA6 |
 | Analog Spare Input 1 | PB0 |
 | Analog Spare Input 2 | PB1 |
 | **Analog Spare Input 3** | **PA2** |
