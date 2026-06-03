@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3c/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Mazduino Mini 6CH (v1.3C) - Mazduino Documentation</title>
+    <title>v1.3C - Mazduino Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Mazduino Mini 6CH (v1.3C)";
+        var mkdocs_page_name = "v1.3C";
         var mkdocs_page_input_path = "mazduino-mini-6ch-v1.3c.md";
         var mkdocs_page_url = "/mazduino-mini-6ch-v1.3c/";
       </script>
@@ -68,12 +68,158 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Mini 6 Channel</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">v1.3C</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-channel-6ch">Konfigurasi Channel 6CH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-channel-6x">Ignition Channel (6x)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#injection-channel-6x">Injection Channel (6x)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-jumper">⚙️ Konfigurasi Jumper</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#zona-konfigurasi-atas-kanan">🔌 Zona Konfigurasi Atas (Kanan)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#jp11-tachometer-pullup">JP11 - Tachometer Pullup</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ignition-vdrive-1-4-jumper">Ignition VDrive 1-4 Jumper</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ignition-vdrive-5-6-jumper-baru-di-v13c">Ignition VDrive 5-6 Jumper (Baru di v1.3C)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#knockpc13-input-selection">Knock/PC13 Input Selection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zona-konfigurasi-tengah">🎛️ Zona Konfigurasi Tengah</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#jp5-jp4-sensor-pullup-configuration">JP5 &amp; JP4 - Sensor Pullup Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#jp3-jp2-sensor-type-selection">JP3 &amp; JP2 - Sensor Type Selection</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zona-konfigurasi-kiri">🌐 Zona Konfigurasi Kiri</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#jp6-stepper-motor-enable">JP6 - Stepper Motor Enable</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tips-konfigurasi-jumper">💡 Tips Konfigurasi Jumper</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pengaturan-optimal">⚡ Pengaturan Optimal:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#best-practices">🔧 Best Practices:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#perhatian-khusus">⚠️ Perhatian Khusus:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring-dan-instalasi">Wiring dan Instalasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-mapping-konektor">Pin Mapping Konektor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#layout-konektor">Layout Konektor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pin-assignment-v13c">Pin Assignment (v1.3C)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-mapping-mcu-v13c">Pin Mapping MCU (v1.3C)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fitur-khusus-v13c">Fitur Khusus v1.3C</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#konfigurasi-channel-fleksibel">Konfigurasi Channel Fleksibel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#knock-input-dioptimalkan-di-v13c">Knock Input (Dioptimalkan di v1.3C)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#electronic-throttle-body-etb">Electronic Throttle Body (ETB)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ignition-vdrive-terpisah-baru-di-v13c">Ignition VDrive Terpisah (Baru di v1.3C)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dukungan-vr-conditioner">Dukungan VR Conditioner</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#kontrol-stepper-motor">Kontrol Stepper Motor</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#panduan-instalasi">Panduan Instalasi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#catatan-wiring-v13c">Catatan Wiring v1.3C</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#perbedaan-dari-v13b">Perbedaan dari v1.3B</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#hardware-changes">Hardware Changes:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#functional-improvements">Functional Improvements:</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#informasi-hardware">Informasi Hardware</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-tuning">Software Tuning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#download-software">Download Software</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#konfigurasi-khusus-v13c">Konfigurasi Khusus v1.3C</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-support">Firmware Support</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring-diagram">Wiring Diagram</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#wiring-sensor">Wiring Sensor</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#injector-wiring">Injector Wiring</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-wiring">Ignition Wiring</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dukungan-dan-sumber-daya">Dukungan dan Sumber Daya</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dokumentasi">Dokumentasi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#informasi-tambahan">Informasi Tambahan</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#catatan-penting-v13c">Catatan Penting v1.3C</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#perbedaan-utama-dari-v13b">Perbedaan Utama dari v1.3B</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#migrasi-dari-v13b">Migrasi dari v1.3B</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#electronic-throttle-body-etb_1">Electronic Throttle Body (ETB)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#knock-detection-v13c">Knock Detection (v1.3C)</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
                   </li>
@@ -130,7 +276,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Mazduino Mini 6CH (v1.3C)</li>
+          <li class="breadcrumb-item">Mini 6 Channel</li>
+      <li class="breadcrumb-item active">v1.3C</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -1026,6 +1173,10 @@
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-mini-6ch-v1.3b/" class="btn btn-neutral float-left" title="v1.3B"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-mini-6ch-v1.4/" class="btn btn-neutral float-right" title="v1.4">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -1047,6 +1198,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../mazduino-mini-6ch-v1.3b/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-mini-6ch-v1.4/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
