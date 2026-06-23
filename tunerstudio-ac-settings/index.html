@@ -170,19 +170,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="pengaturan-air-conditioning-ac-tunerstudio">Pengaturan Air Conditioning (A/C) - TunerStudio</h1>
-<h2 id="pengantar">Pengantar</h2>
+                <h1 id="pengaturan-air-conditioning-ac-tunerstudio">Pengaturan Air Conditioning (A/C) - TunerStudio<a class="headerlink" href="#pengaturan-air-conditioning-ac-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian A/C Settings memungkinkan konfigurasi kontrol air conditioning dalam ECU, mencakup fitur seperti compressor delay, kompensasi idle, dan kontrol berbasis tekanan untuk mengoptimalkan performa dan mengelola beban mesin. Untuk unit Plug and Play, pengaturan A/C mungkin sudah dikonfigurasi dalam basemap, meskipun penyesuaian masih dapat dilakukan untuk memenuhi kebutuhan spesifik. Unit Kit/DIY mungkin memerlukan konfigurasi lengkap pengaturan ini berdasarkan setup kendaraan.</p>
 <p><img alt="Air Conditioner Overview" src="../img/manual/ac-overview.png" /></p>
-<h2 id="pengaturan-utama-ac">Pengaturan Utama A/C</h2>
-<h3 id="input-controls">Input Controls</h3>
+<h2 id="pengaturan-utama-ac">Pengaturan Utama A/C<a class="headerlink" href="#pengaturan-utama-ac" title="Permanent link">&para;</a></h2>
+<h3 id="input-controls">Input Controls<a class="headerlink" href="#input-controls" title="Permanent link">&para;</a></h3>
 <p><strong>A/C Switch</strong>: Memilih sumber input untuk mengaktifkan sistem A/C. Mengatur ini ke NONE akan menonaktifkan kontrol ECU atas switch A/C, selama tidak dikontrol oleh metode lain, seperti Lua.</p>
 <p><strong>A/C Switch Mode</strong>: Menentukan mode input switch A/C, tergantung pada instalasi dan fungsionalitas yang diinginkan.</p>
-<h3 id="output-controls">Output Controls</h3>
+<h3 id="output-controls">Output Controls<a class="headerlink" href="#output-controls" title="Permanent link">&para;</a></h3>
 <p><strong>A/C Relay</strong>: Mengkonfigurasi pin output yang ditugaskan untuk mengontrol relay A/C. Misalnya, memilih PC7 memungkinkan kontrol A/C melalui pin spesifik tersebut.</p>
 <p><strong>A/C Relay Mode</strong>: Mendefinisikan mode output relay A/C. Ini dapat dibiarkan sebagai default untuk sebagian besar aplikasi atau disesuaikan jika diperlukan.</p>
-<h2 id="pengaturan-timing-dan-proteksi">Pengaturan Timing dan Proteksi</h2>
-<h3 id="compressor-delay">Compressor Delay</h3>
+<h2 id="pengaturan-timing-dan-proteksi">Pengaturan Timing dan Proteksi<a class="headerlink" href="#pengaturan-timing-dan-proteksi" title="Permanent link">&para;</a></h2>
+<h3 id="compressor-delay">Compressor Delay<a class="headerlink" href="#compressor-delay" title="Permanent link">&para;</a></h3>
 <p><strong>A/C Compressor Delay (sec)</strong>: Mengatur penundaan sebelum kompresor A/C aktif, mencegah peningkatan beban mendadak pada mesin ketika A/C dinyalakan.</p>
 <ul>
 <li>
@@ -192,7 +192,7 @@
 <p><strong>Aplikasi</strong>: Mengurangi shock load pada mesin</p>
 </li>
 </ul>
-<h3 id="batas-operasi-maximum">Batas Operasi Maximum</h3>
+<h3 id="batas-operasi-maximum">Batas Operasi Maximum<a class="headerlink" href="#batas-operasi-maximum" title="Permanent link">&para;</a></h3>
 <p><strong>Max RPM (RPM)</strong>: Mengatur RPM mesin maksimum yang diizinkan untuk operasi A/C. Jika RPM melebihi batas ini, A/C akan dinonaktifkan untuk melindungi mesin.</p>
 <ul>
 <li>
@@ -220,8 +220,8 @@
 <p><strong>Aplikasi</strong>: Full throttle performance priority</p>
 </li>
 </ul>
-<h2 id="kompensasi-idle">Kompensasi Idle</h2>
-<h3 id="idle-speed-compensation">Idle Speed Compensation</h3>
+<h2 id="kompensasi-idle">Kompensasi Idle<a class="headerlink" href="#kompensasi-idle" title="Permanent link">&para;</a></h2>
+<h3 id="idle-speed-compensation">Idle Speed Compensation<a class="headerlink" href="#idle-speed-compensation" title="Permanent link">&para;</a></h3>
 <p><strong>A/C Idle Adder (%)</strong>: Mengatur persentase peningkatan kecepatan idle untuk mengkompensasi beban yang disebabkan oleh kompresor A/C.</p>
 <ul>
 <li>
@@ -240,7 +240,7 @@
 <p><strong>Aplikasi</strong>: Mencegah engine stalling saat A/C aktif</p>
 </li>
 </ul>
-<h3 id="rpm-protection">RPM Protection</h3>
+<h3 id="rpm-protection">RPM Protection<a class="headerlink" href="#rpm-protection" title="Permanent link">&para;</a></h3>
 <p><strong>RPM Low Threshold (RPM)</strong>: Ambang batas RPM minimum di bawah mana A/C secara otomatis dinonaktifkan untuk mencegah mesin mati.</p>
 <ul>
 <li>
@@ -250,8 +250,8 @@
 <p><strong>Safety</strong>: Mencegah engine stalling</p>
 </li>
 </ul>
-<h2 id="kontrol-tekanan-sistem">Kontrol Tekanan Sistem</h2>
-<h3 id="pressure-limits">Pressure Limits</h3>
+<h2 id="kontrol-tekanan-sistem">Kontrol Tekanan Sistem<a class="headerlink" href="#kontrol-tekanan-sistem" title="Permanent link">&para;</a></h2>
+<h3 id="pressure-limits">Pressure Limits<a class="headerlink" href="#pressure-limits" title="Permanent link">&para;</a></h3>
 <p><strong>Pressure Low Disable (kPa)</strong>: Mengatur batas tekanan rendah; jika tekanan turun di bawah level ini, A/C akan dinonaktifkan untuk melindungi kompresor.</p>
 <ul>
 <li>
@@ -270,7 +270,7 @@
 <p><strong>Tujuan</strong>: Perlindungan sistem dari tekanan berlebih</p>
 </li>
 </ul>
-<h3 id="hysteresis-control">Hysteresis Control</h3>
+<h3 id="hysteresis-control">Hysteresis Control<a class="headerlink" href="#hysteresis-control" title="Permanent link">&para;</a></h3>
 <p><strong>A/C Pressure Enable Hysteresis (kPa)</strong>: Menyediakan rentang buffer di sekitar batas tekanan untuk mencegah cycling cepat sistem A/C.</p>
 <ul>
 <li>
@@ -280,7 +280,7 @@
 <p><strong>Fungsi</strong>: Mencegah on/off yang terlalu sering</p>
 </li>
 </ul>
-<h2 id="indikator-status-ac">Indikator Status A/C</h2>
+<h2 id="indikator-status-ac">Indikator Status A/C<a class="headerlink" href="#indikator-status-ac" title="Permanent link">&para;</a></h2>
 <p>Kotak putih di sisi kanan jendela mewakili berbagai pemeriksaan dan status yang terkait dengan sistem A/C. Indikator ini berubah merah untuk menunjukkan kondisi aktif, seperti:</p>
 <ul>
 <li>
@@ -303,20 +303,20 @@
 </li>
 </ul>
 <p>Umpan balik visual ini membantu pengguna dengan cepat menilai apakah semua kondisi terpenuhi untuk operasi A/C.</p>
-<h2 id="rekomendasi-konfigurasi">Rekomendasi Konfigurasi</h2>
-<h3 id="untuk-unit-plug-and-play">Untuk Unit Plug and Play</h3>
+<h2 id="rekomendasi-konfigurasi">Rekomendasi Konfigurasi<a class="headerlink" href="#rekomendasi-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="untuk-unit-plug-and-play">Untuk Unit Plug and Play<a class="headerlink" href="#untuk-unit-plug-and-play" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Pengaturan biasanya sudah dioptimalkan dalam basemap</li>
 <li>Fokus pada penyesuaian suhu dan tekanan sesuai sistem kendaraan</li>
 <li>Verifikasi idle compensation sesuai dengan karakteristik mesin</li>
 </ul>
-<h3 id="untuk-unit-kitdiy">Untuk Unit Kit/DIY</h3>
+<h3 id="untuk-unit-kitdiy">Untuk Unit Kit/DIY<a class="headerlink" href="#untuk-unit-kitdiy" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Konfigurasi lengkap diperlukan sesuai spesifikasi kendaraan</li>
 <li>Konsultasi manual kendaraan untuk nilai tekanan yang tepat</li>
 <li>Test semua fungsi proteksi sebelum penggunaan normal</li>
 </ul>
-<h3 id="best-practices">Best Practices</h3>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Start Conservative</strong>: Mulai dengan nilai yang aman dan sesuaikan bertahap</li>
 <li><strong>Monitor Temperature</strong>: Selalu monitor suhu coolant saat A/C beroperasi</li>

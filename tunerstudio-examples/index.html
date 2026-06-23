@@ -255,13 +255,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="examples-map-switching-tunerstudio">Examples &amp; Map Switching TunerStudio</h1>
-<h2 id="pengantar">Pengantar</h2>
+                <h1 id="examples-map-switching-tunerstudio">Examples &amp; Map Switching TunerStudio<a class="headerlink" href="#examples-map-switching-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian ini menyediakan contoh praktis implementasi fitur TunerStudio Mazduino, dengan fokus khusus pada Map Switching yang memungkinkan pergantian tune secara real-time untuk kondisi operasi yang berbeda.</p>
-<h2 id="map-switching">Map Switching</h2>
+<h2 id="map-switching">Map Switching<a class="headerlink" href="#map-switching" title="Permanent link">&para;</a></h2>
 <p><img alt="Map Switching Overview" src="images/map-switching-overview.png" /></p>
 <p>Map Switching adalah fitur powerful yang memungkinkan ECU untuk beralih antara konfigurasi tune yang berbeda berdasarkan input eksternal seperti switch, sensor, atau kondisi operasi tertentu.</p>
-<h3 id="konsep-dasar-map-switching">Konsep Dasar Map Switching</h3>
+<h3 id="konsep-dasar-map-switching">Konsep Dasar Map Switching<a class="headerlink" href="#konsep-dasar-map-switching" title="Permanent link">&para;</a></h3>
 <p>Map Switching bekerja dengan cara "blending" atau mencampur table utama (base table) dengan table tambahan (blend table) berdasarkan parameter tertentu. Hasil akhir adalah interpolasi antara kedua table sesuai dengan kondisi yang diinginkan.</p>
 <p><strong>Keuntungan Map Switching</strong>:</p>
 <ul>
@@ -270,8 +270,8 @@
 <li>Penyesuaian untuk kondisi cuaca atau ketinggian</li>
 <li>Tuning progressive untuk performa bertahap</li>
 </ul>
-<h2 id="implementasi-map-switching">Implementasi Map Switching</h2>
-<h3 id="1-wiring-switch">1. Wiring Switch</h3>
+<h2 id="implementasi-map-switching">Implementasi Map Switching<a class="headerlink" href="#implementasi-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="1-wiring-switch">1. Wiring Switch<a class="headerlink" href="#1-wiring-switch" title="Permanent link">&para;</a></h3>
 <p><img alt="Switch Wiring" src="images/switch-wiring.png" /></p>
 <p>Untuk mengaktifkan map switching, Anda perlu menghubungkan switch fisik antara pin +5V ECU dan pin analog input yang tersedia (misalnya salah satu Aux Linear Sensor).</p>
 <p><strong>Konfigurasi Wiring</strong>:</p>
@@ -294,17 +294,17 @@
 <li>Tambahkan pull-down resistor (10kΩ) dari analog input ke ground</li>
 <li>Test kontinuitas dan isolasi dengan multimeter</li>
 </ol>
-<h3 id="2-konfigurasi-blend-table">2. Konfigurasi Blend Table</h3>
+<h3 id="2-konfigurasi-blend-table">2. Konfigurasi Blend Table<a class="headerlink" href="#2-konfigurasi-blend-table" title="Permanent link">&para;</a></h3>
 <p><img alt="Blend Table Configuration" src="images/blend-table-config.png" /></p>
 <p>Setelah wiring selesai, konfigurasikan blend table yang diinginkan di TunerStudio:</p>
-<h4 id="memilih-blend-table">Memilih Blend Table</h4>
+<h4 id="memilih-blend-table">Memilih Blend Table<a class="headerlink" href="#memilih-blend-table" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>VE Blend Table</strong>: Untuk modifikasi fuel mapping</li>
 <li><strong>Ignition Blend Table</strong>: Untuk adjustment timing</li>
 <li><strong>Boost Blend Table</strong>: Untuk kontrol turbo yang berbeda</li>
 <li><strong>Lambda Target Blend</strong>: Untuk AFR target yang berbeda</li>
 </ol>
-<h4 id="pengaturan-blend-parameter-source">Pengaturan Blend Parameter Source</h4>
+<h4 id="pengaturan-blend-parameter-source">Pengaturan Blend Parameter Source<a class="headerlink" href="#pengaturan-blend-parameter-source" title="Permanent link">&para;</a></h4>
 <p><strong>Blend Parameter</strong> diatur ke analog input (misalnya <strong>Aux Linear 1</strong>) dimana switch dihubungkan. Input ini menentukan seberapa banyak blend table yang dicampur ke base table.</p>
 <ul>
 <li>
@@ -314,7 +314,7 @@
 <p><strong>Switch ON (5V)</strong>: Parameter value maksimum (misalnya 1.0), ECU menggunakan <strong>100% dari blend table</strong></p>
 </li>
 </ul>
-<h3 id="3-cara-kerja-bias-table">3. Cara Kerja Bias Table</h3>
+<h3 id="3-cara-kerja-bias-table">3. Cara Kerja Bias Table<a class="headerlink" href="#3-cara-kerja-bias-table" title="Permanent link">&para;</a></h3>
 <p><img alt="Bias Table Function" src="images/bias-table-function.png" /></p>
 <p><strong>Bias Table</strong> mendefinisikan persentase blend table yang akan diterapkan:</p>
 <ul>
@@ -337,8 +337,8 @@
 <p>Dalam VE blend ini, ketika switch tidak diaktifkan, table diabaikan. Setelah switch diaktifkan, table ini secara langsung menambah ke base VE table, artinya jika switch diaktifkan dan kita berada di 4000RPM dengan 80% load, kita akan menambahkan 10% VE ke kalkulasi fueling utama.</p>
 </li>
 </ul>
-<h2 id="contoh-aplikasi-map-switching">Contoh Aplikasi Map Switching</h2>
-<h3 id="1-street-vs-track-mode">1. Street vs Track Mode</h3>
+<h2 id="contoh-aplikasi-map-switching">Contoh Aplikasi Map Switching<a class="headerlink" href="#contoh-aplikasi-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="1-street-vs-track-mode">1. Street vs Track Mode<a class="headerlink" href="#1-street-vs-track-mode" title="Permanent link">&para;</a></h3>
 <p><img alt="Street vs Track Mode" src="images/street-track-mode.png" /></p>
 <p><strong>Setup</strong>:</p>
 <ul>
@@ -364,7 +364,7 @@ Ignition Blend: +3° advance untuk race fuel
 <p>Switch ON: Track mode dengan fueling enriched dan timing advanced</p>
 </li>
 </ul>
-<h3 id="2-fuel-quality-switching">2. Fuel Quality Switching</h3>
+<h3 id="2-fuel-quality-switching">2. Fuel Quality Switching<a class="headerlink" href="#2-fuel-quality-switching" title="Permanent link">&para;</a></h3>
 <p><img alt="Fuel Quality Switching" src="images/fuel-quality-switch.png" /></p>
 <p><strong>Setup</strong>:</p>
 <ul>
@@ -381,7 +381,7 @@ Ignition Blend: +4-6° timing advance untuk high octane
 Lambda Target Blend: Leaner targets untuk better power
 Boost Blend: +0.2 bar additional boost untuk race fuel
 </code></pre>
-<h3 id="3-progressive-tuning">3. Progressive Tuning</h3>
+<h3 id="3-progressive-tuning">3. Progressive Tuning<a class="headerlink" href="#3-progressive-tuning" title="Permanent link">&para;</a></h3>
 <p><img alt="Progressive Tuning" src="images/progressive-tuning.png" /></p>
 <p>Gunakan analog input variable (potensiometer) alih-alih switch on/off untuk progressive blending:</p>
 <p><strong>Setup Potensiometer</strong>:</p>
@@ -402,8 +402,8 @@ Boost Blend: +0.2 bar additional boost untuk race fuel
 <li>Testing berbagai setting tanpa reflash ECU</li>
 <li>Gradual transition antara tune yang berbeda</li>
 </ul>
-<h2 id="advanced-map-switching-techniques">Advanced Map Switching Techniques</h2>
-<h3 id="1-multi-parameter-switching">1. Multi-Parameter Switching</h3>
+<h2 id="advanced-map-switching-techniques">Advanced Map Switching Techniques<a class="headerlink" href="#advanced-map-switching-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="1-multi-parameter-switching">1. Multi-Parameter Switching<a class="headerlink" href="#1-multi-parameter-switching" title="Permanent link">&para;</a></h3>
 <p><img alt="Multi-Parameter Switching" src="images/multi-parameter-switching.png" /></p>
 <p>Gunakan multiple inputs untuk switching yang lebih kompleks:</p>
 <p><strong>Contoh Setup</strong>:</p>
@@ -417,7 +417,7 @@ Aux Linear 3: Load condition (street/highway/track)
 <li>Multiple blend tables untuk kombinasi kondisi</li>
 <li>Advanced blending logic menggunakan multiple parameters</li>
 </ul>
-<h3 id="2-automatic-switching">2. Automatic Switching</h3>
+<h3 id="2-automatic-switching">2. Automatic Switching<a class="headerlink" href="#2-automatic-switching" title="Permanent link">&para;</a></h3>
 <p><img alt="Automatic Switching" src="images/auto-switching.png" /></p>
 <p>Implementasi switching otomatis berdasarkan kondisi operasi:</p>
 <p><strong>Trigger Conditions</strong>:</p>
@@ -445,7 +445,7 @@ Bias Table:
 
 - RPM &gt; 6000: 100% blend (performance tune)
 </code></pre>
-<h3 id="3-safety-switching">3. Safety Switching</h3>
+<h3 id="3-safety-switching">3. Safety Switching<a class="headerlink" href="#3-safety-switching" title="Permanent link">&para;</a></h3>
 <p><img alt="Safety Switching" src="images/safety-switching.png" /></p>
 <p>Implementasi safety features dengan map switching:</p>
 <p><strong>Limp Mode</strong>:</p>
@@ -460,8 +460,8 @@ Action: Switch to Speed Density backup tune
 Limitations: Max 3000 RPM, conservative timing
 Duration: Until error cleared and ECU reset
 </code></pre>
-<h2 id="troubleshooting-map-switching">Troubleshooting Map Switching</h2>
-<h3 id="common-issues">Common Issues</h3>
+<h2 id="troubleshooting-map-switching">Troubleshooting Map Switching<a class="headerlink" href="#troubleshooting-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Switch Not Responding</strong>:</li>
 <li>Verify wiring continuity dan voltage levels</li>
@@ -484,67 +484,67 @@ Duration: Until error cleared and ECU reset
 <li>Check bias table configuration</li>
 <li>Ensure parameter source assignment correct</li>
 </ol>
-<h3 id="diagnostic-steps">Diagnostic Steps</h3>
+<h3 id="diagnostic-steps">Diagnostic Steps<a class="headerlink" href="#diagnostic-steps" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Monitor Raw Input</strong>: Gunakan TunerStudio untuk monitor raw voltage dari switching input</li>
 <li><strong>Test Tables</strong>: Verify base dan blend table values masuk akal</li>
 <li><strong>Log Data</strong>: Record switching events dan resulting behavior</li>
 <li><strong>Incremental Testing</strong>: Test switching dengan engine off terlebih dahulu</li>
 </ol>
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="design-guidelines">Design Guidelines</h3>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="design-guidelines">Design Guidelines<a class="headerlink" href="#design-guidelines" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Start Simple</strong>: Mulai dengan simple on/off switching sebelum advanced blending</li>
 <li><strong>Safety First</strong>: Selalu include safety limits di blend tables</li>
 <li><strong>Documentation</strong>: Document semua switching logic dan table purposes</li>
 <li><strong>Testing</strong>: Comprehensive testing di controlled environment</li>
 </ol>
-<h3 id="tuning-recommendations">Tuning Recommendations</h3>
+<h3 id="tuning-recommendations">Tuning Recommendations<a class="headerlink" href="#tuning-recommendations" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Conservative Base</strong>: Base map harus safe untuk semua kondisi</li>
 <li><strong>Gradual Changes</strong>: Blend table harus smooth transitions</li>
 <li><strong>Limit Extremes</strong>: Avoid extreme values di blend tables</li>
 <li><strong>Monitor Results</strong>: Always monitor AFR dan timing saat switching</li>
 </ol>
-<h3 id="maintenance">Maintenance</h3>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Regular Inspection</strong>: Periksa switch mechanical condition</li>
 <li><strong>Electrical Check</strong>: Monitor input signal stability</li>
 <li><strong>Table Review</strong>: Periodic review table accuracy</li>
 <li><strong>Update Documentation</strong>: Keep switching logic documented</li>
 </ol>
-<h2 id="integration-dengan-fitur-lain">Integration dengan Fitur Lain</h2>
-<h3 id="launch-control-integration">Launch Control Integration</h3>
+<h2 id="integration-dengan-fitur-lain">Integration dengan Fitur Lain<a class="headerlink" href="#integration-dengan-fitur-lain" title="Permanent link">&para;</a></h2>
+<h3 id="launch-control-integration">Launch Control Integration<a class="headerlink" href="#launch-control-integration" title="Permanent link">&para;</a></h3>
 <p>Map switching dapat diintegrasikan dengan launch control:</p>
 <pre><code>Launch Active: Switch to launch timing map
 Normal Operation: Return to selected tune map
 </code></pre>
-<h3 id="traction-control-integration">Traction Control Integration</h3>
+<h3 id="traction-control-integration">Traction Control Integration<a class="headerlink" href="#traction-control-integration" title="Permanent link">&para;</a></h3>
 <p>Different maps untuk kondisi traction:</p>
 <pre><code>Good Traction: Full performance map
 Slip Detected: Reduced torque map dengan timing retard
 </code></pre>
-<h3 id="boost-control-integration">Boost Control Integration</h3>
+<h3 id="boost-control-integration">Boost Control Integration<a class="headerlink" href="#boost-control-integration" title="Permanent link">&para;</a></h3>
 <p>Coordinate map switching dengan boost control:</p>
 <pre><code>Base Map: Conservative boost targets
 Blend Map: Increased boost dengan supporting fuel/timing
 </code></pre>
-<h2 id="warranty-considerations">Warranty Considerations</h2>
-<h3 id="approved-uses">Approved Uses</h3>
+<h2 id="warranty-considerations">Warranty Considerations<a class="headerlink" href="#warranty-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="approved-uses">Approved Uses<a class="headerlink" href="#approved-uses" title="Permanent link">&para;</a></h3>
 <p>Map switching untuk approved applications tidak void warranty:</p>
 <ul>
 <li>Different fuel grades switching</li>
 <li>Weather condition adaptation</li>
 <li>Conservative vs performance modes</li>
 </ul>
-<h3 id="restricted-uses">Restricted Uses</h3>
+<h3 id="restricted-uses">Restricted Uses<a class="headerlink" href="#restricted-uses" title="Permanent link">&para;</a></h3>
 <p>Certain extreme applications dapat void warranty:</p>
 <ul>
 <li>Nitrous oxide switching (requires approval)</li>
 <li>Extreme boost level switching</li>
 <li>Racing-only applications tanpa safety limits</li>
 </ul>
-<h2 id="kesimpulan">Kesimpulan</h2>
+<h2 id="kesimpulan">Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permanent link">&para;</a></h2>
 <p>Map switching adalah tool powerful yang memberikan fleksibilitas tremendous untuk adaptasi tune terhadap berbagai kondisi operasi. Dengan implementasi yang tepat, fitur ini dapat significantly improve drivability, performance, dan safety dari engine management system.</p>
 <p>Key points untuk successful map switching:</p>
 <ul>

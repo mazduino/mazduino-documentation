@@ -180,14 +180,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="can-sensor-input">CAN Sensor Input</h1>
+                <h1 id="can-sensor-input">CAN Sensor Input<a class="headerlink" href="#can-sensor-input" title="Permanent link">&para;</a></h1>
 <p>CAN Sensor Input memungkinkan ECU membaca nilai sensor dari perangkat di bus CAN dan menggunakannya seolah sensor tersebut terpasang langsung ke ECU.</p>
 <p>Cocok untuk menghubungkan modul sensor eksternal, perangkat CAN, atau dashboard yang mengirim balik data sensor.</p>
 <hr />
-<h2 id="cara-kerja">Cara Kerja</h2>
+<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
 <p>Perangkat eksternal mengirim frame CAN. ECU menangkap frame tersebut dan langsung menerapkan nilainya ke sensor internal yang dipilih (MAP, TPS, CLT, IAT, RPM, dll.).</p>
 <hr />
-<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</h2>
+<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio<a class="headerlink" href="#konfigurasi-di-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>Buka: <strong>CAN Bus → CAN Input → CAN Sensor Input</strong></p>
 <p>Tersedia <strong>8 slot</strong> konfigurasi. Untuk setiap slot:</p>
 <table>
@@ -232,7 +232,7 @@
     Nilai yang diterima diproses menggunakan kalibrasi sensor yang sudah ada.
     Pastikan satuan data yang dikirim sesuai dengan kurva sensor yang dikonfigurasi.</p>
 <hr />
-<h2 id="contoh-sensor-map-via-can">Contoh: Sensor MAP via CAN</h2>
+<h2 id="contoh-sensor-map-via-can">Contoh: Sensor MAP via CAN<a class="headerlink" href="#contoh-sensor-map-via-can" title="Permanent link">&para;</a></h2>
 <p>Modul sensor mengirim tekanan dalam kPa × 10 sebagai 16-bit little-endian di CAN ID <code>0x300</code>, byte 0–1:</p>
 <pre><code>CAN ID       = 0x300
 Byte Offset  = 0

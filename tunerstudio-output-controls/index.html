@@ -170,15 +170,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="pengaturan-output-controls-tunerstudio">Pengaturan Output Controls - TunerStudio</h1>
-<h2 id="pengantar">Pengantar</h2>
+                <h1 id="pengaturan-output-controls-tunerstudio">Pengaturan Output Controls - TunerStudio<a class="headerlink" href="#pengaturan-output-controls-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Di jendela pengaturan Outputs, Anda akan menemukan opsi untuk mengkonfigurasi berbagai kontrol output untuk ECU. Untuk unit Plug and Play, sebagian besar pengaturan ini ditangani oleh basemap yang disertakan, sehingga hanya penyesuaian spesifik (seperti suhu, timing, dan adder) yang biasanya perlu dimodifikasi. Untuk unit Kit/DIY, yang tidak dilengkapi dengan basemap yang sudah dikonfigurasi, setiap pengaturan harus ditinjau dengan hati-hati dan dikonfigurasi untuk memastikan kompatibilitas dengan kendaraan.</p>
 <p><img alt="Output Overview" src="../img/manual/output-overview.png" /></p>
-<h2 id="ringkasan-kontrol-output">Ringkasan Kontrol Output</h2>
+<h2 id="ringkasan-kontrol-output">Ringkasan Kontrol Output<a class="headerlink" href="#ringkasan-kontrol-output" title="Permanent link">&para;</a></h2>
 <p><strong>Main Relay Output</strong>: Menentukan kontrol relay utama, termasuk channel output dan mode. Relay ini umumnya digunakan untuk memberikan daya pada komponen kunci seperti sistem bahan bakar dan pengapian.</p>
 <p><strong>Fuel Pump</strong>: Mengkonfigurasi kontrol pompa bahan bakar, dengan opsi untuk channel output, mode, dan durasi priming (dalam detik). Ini mengontrol berapa lama pompa bahan bakar melakukan priming selama startup.</p>
 <p><strong>Tachometer Output</strong>: Mengelola sinyal tachometer dengan opsi untuk mode pulsa dan durasi. Pengaturan ini biasanya disesuaikan pada basemap Plug and Play untuk kompatibilitas dengan dashboard mobil, tetapi harus dikonfigurasi untuk unit Kit/DIY.</p>
-<h2 id="main-relay-output">Main Relay Output</h2>
+<h2 id="main-relay-output">Main Relay Output<a class="headerlink" href="#main-relay-output" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Fungsi</strong>: Mengontrol relay utama untuk sistem bahan bakar dan pengapian</p>
@@ -193,7 +193,7 @@
 <p><strong>Aplikasi</strong>: Umumnya digunakan untuk mengaktifkan sistem utama ECU</p>
 </li>
 </ul>
-<h2 id="fuel-pump-pompa-bahan-bakar">Fuel Pump (Pompa Bahan Bakar)</h2>
+<h2 id="fuel-pump-pompa-bahan-bakar">Fuel Pump (Pompa Bahan Bakar)<a class="headerlink" href="#fuel-pump-pompa-bahan-bakar" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Output Channel</strong>: Tentukan channel output untuk kontrol pompa bahan bakar</p>
@@ -207,7 +207,7 @@
 <li><strong>Rekomendasi</strong>: 2-5 detik untuk mesin standar</li>
 <li><strong>Penyesuaian</strong>: Sesuaikan berdasarkan volume sistem bahan bakar</li>
 </ul>
-<h2 id="tachometer-output">Tachometer Output</h2>
+<h2 id="tachometer-output">Tachometer Output<a class="headerlink" href="#tachometer-output" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Pulse Mode</strong>: Konfigurasi mode sinyal untuk dashboard</p>
@@ -222,9 +222,9 @@
 <p><strong>Custom Setup</strong>: Perlu konfigurasi manual untuk unit kit</p>
 </li>
 </ul>
-<h2 id="pengaturan-fan-cooling">Pengaturan Fan Cooling</h2>
+<h2 id="pengaturan-fan-cooling">Pengaturan Fan Cooling<a class="headerlink" href="#pengaturan-fan-cooling" title="Permanent link">&para;</a></h2>
 <p>Fan 1 dan Fan 2, ECU Mazduino mendukung kontrol dual fan dengan pengaturan independen:</p>
-<h3 id="temperature-control">Temperature Control</h3>
+<h3 id="temperature-control">Temperature Control<a class="headerlink" href="#temperature-control" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>On Temperature (°C)</strong>: Suhu aktivasi fan</li>
 <li><strong>Fan 1</strong>: Biasanya 85-90°C</li>
@@ -236,7 +236,7 @@
 </li>
 <li><strong>Setting</strong>: 3-5°C lebih rendah dari suhu aktivasi untuk mencegah cycling</li>
 </ul>
-<h3 id="kondisi-operasi">Kondisi Operasi</h3>
+<h3 id="kondisi-operasi">Kondisi Operasi<a class="headerlink" href="#kondisi-operasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Enable with AC</strong>: Fan aktif saat AC menyala</li>
 <li>
@@ -253,7 +253,7 @@
 </li>
 <li><strong>Setting</strong>: 60-80 km/h (airflow alami cukup)</li>
 </ul>
-<h3 id="idle-adder">Idle Adder</h3>
+<h3 id="idle-adder">Idle Adder<a class="headerlink" href="#idle-adder" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Fungsi</strong>: Menambah duty cycle fan saat idle</p>
@@ -265,7 +265,7 @@
 <p><strong>Aplikasi</strong>: Membantu cooling saat idle atau traffic jam</p>
 </li>
 </ul>
-<h2 id="starter-control-output">Starter Control Output</h2>
+<h2 id="starter-control-output">Starter Control Output<a class="headerlink" href="#starter-control-output" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Output Selection</strong>: Pilih pin output spesifik untuk kontrol relay starter</p>
@@ -277,8 +277,8 @@
 <p><strong>Safety</strong>: Memungkinkan ECU mengelola starter engagement</p>
 </li>
 </ul>
-<h2 id="safety-features">Safety Features</h2>
-<h3 id="require-foot-on-brake-to-crank">Require Foot on Brake to Crank</h3>
+<h2 id="safety-features">Safety Features<a class="headerlink" href="#safety-features" title="Permanent link">&para;</a></h2>
+<h3 id="require-foot-on-brake-to-crank">Require Foot on Brake to Crank<a class="headerlink" href="#require-foot-on-brake-to-crank" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Fungsi</strong>: Memerlukan pedal rem ditekan untuk starter</p>
@@ -290,7 +290,7 @@
 <p><strong>Aplikasi</strong>: Umumnya untuk transmisi otomatis</p>
 </li>
 </ul>
-<h3 id="startstop-button-input">Start/Stop Button Input</h3>
+<h3 id="startstop-button-input">Start/Stop Button Input<a class="headerlink" href="#startstop-button-input" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Input Channel</strong>: Tentukan channel input untuk tombol start/stop</p>
@@ -302,8 +302,8 @@
 <p><strong>Integration</strong>: Untuk sistem keyless atau push-button start</p>
 </li>
 </ul>
-<h2 id="starter-protection">Starter Protection</h2>
-<h3 id="start-cranking-maximum-time">Start Cranking Maximum Time</h3>
+<h2 id="starter-protection">Starter Protection<a class="headerlink" href="#starter-protection" title="Permanent link">&para;</a></h2>
+<h3 id="start-cranking-maximum-time">Start Cranking Maximum Time<a class="headerlink" href="#start-cranking-maximum-time" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Durasi</strong>: Batas maksimum waktu cranking (biasanya 10-15 detik)</p>
@@ -315,7 +315,7 @@
 <p><strong>Safety</strong>: Mencegah kerusakan starter dan battery drain</p>
 </li>
 </ul>
-<h3 id="suppress-on-startup">Suppress on Startup</h3>
+<h3 id="suppress-on-startup">Suppress on Startup<a class="headerlink" href="#suppress-on-startup" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Delay (ms)</strong>: Penundaan untuk menghindari sinyal starter palsu</p>
@@ -327,7 +327,7 @@
 <p><strong>Function</strong>: Mencegah false starter signals saat inisialisasi</p>
 </li>
 </ul>
-<h3 id="starter-disable">Starter Disable</h3>
+<h3 id="starter-disable">Starter Disable<a class="headerlink" href="#starter-disable" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Output Channel</strong>: Konfigurasi channel output untuk menonaktifkan starter</p>
@@ -339,7 +339,7 @@
 <p><strong>Safety</strong>: Mencegah starter aktif saat mesin sudah hidup</p>
 </li>
 </ul>
-<h2 id="konfigurasi-speedometer">Konfigurasi Speedometer</h2>
+<h2 id="konfigurasi-speedometer">Konfigurasi Speedometer<a class="headerlink" href="#konfigurasi-speedometer" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Output Mode</strong>: Customize mode sinyal output speedometer</p>
@@ -354,7 +354,7 @@
 <p><strong>Compatibility</strong>: Pastikan kompatibilitas dengan sistem dashboard existing</p>
 </li>
 </ul>
-<h2 id="check-engine-output">Check Engine Output</h2>
+<h2 id="check-engine-output">Check Engine Output<a class="headerlink" href="#check-engine-output" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>Output Configuration</strong>: Konfigurasi output channel untuk lampu check engine</p>

@@ -180,14 +180,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="can-virtual-input-digital">CAN Virtual Input (Digital)</h1>
+                <h1 id="can-virtual-input-digital">CAN Virtual Input (Digital)<a class="headerlink" href="#can-virtual-input-digital" title="Permanent link">&para;</a></h1>
 <p>CAN Virtual Input memungkinkan satu bit dalam frame CAN digunakan sebagai <strong>pin digital (saklar)</strong> di ECU — seperti saklar fisik yang terhubung ke konektor ECU.</p>
 <p>Berguna untuk menerima sinyal on/off dari perangkat CAN, misalnya: tombol pada setir, sinyal dari gearbox controller, atau konfirmasi dari modul eksternal.</p>
 <hr />
-<h2 id="cara-kerja">Cara Kerja</h2>
+<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
 <p>ECU membaca bit tertentu dari frame CAN yang diterima dan memperlakukannya sebagai pin digital. Tersedia <strong>8 pin virtual</strong> (<code>CAN_INPUT_0</code> s/d <code>CAN_INPUT_7</code>) yang dapat digunakan di mana pun input digital diperlukan — clutch switch, launch enable, AC request, dll.</p>
 <hr />
-<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</h2>
+<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio<a class="headerlink" href="#konfigurasi-di-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>Buka: <strong>CAN Bus → CAN Input → CAN Virtual Input</strong></p>
 <p>Tersedia <strong>8 slot</strong>. Untuk setiap slot:</p>
 <table>
@@ -218,7 +218,7 @@
 </table>
 <p>Setelah dikonfigurasi, pin <code>CAN_INPUT_0</code> s/d <code>CAN_INPUT_7</code> akan muncul di dropdown pilihan pin untuk input digital (clutch, launch, AC, dll.).</p>
 <hr />
-<h2 id="contoh-tombol-launch-control-via-can">Contoh: Tombol Launch Control via CAN</h2>
+<h2 id="contoh-tombol-launch-control-via-can">Contoh: Tombol Launch Control via CAN<a class="headerlink" href="#contoh-tombol-launch-control-via-can" title="Permanent link">&para;</a></h2>
 <p>Tombol launch pada setir mengirim byte status di CAN ID <code>0x101</code>, byte 0, bit 3:</p>
 <pre><code>CAN ID       = 0x101
 Byte Offset  = 0

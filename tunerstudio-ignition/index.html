@@ -321,12 +321,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="ignition-system-configuration-tunerstudio">Ignition System Configuration - TunerStudio</h1>
+                <h1 id="ignition-system-configuration-tunerstudio">Ignition System Configuration - TunerStudio<a class="headerlink" href="#ignition-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Konfigurasi komprehensif untuk sistem ignition ECU Mazduino. Menu <strong>Ignition</strong> menyediakan kontrol detail atas berbagai aspek ignition system untuk performance, efficiency, dan safety requirements.</p>
 <p><img alt="Ignition Menu" src="#" title="Ignition Menu Overview" /></p>
-<h2 id="ignition-menu-overview">Ignition Menu Overview</h2>
+<h2 id="ignition-menu-overview">Ignition Menu Overview<a class="headerlink" href="#ignition-menu-overview" title="Permanent link">&para;</a></h2>
 <p>Menu <strong>Ignition</strong> menawarkan multiple opsi konfigurasi untuk tuning berbagai pengaturan terkait ignition dalam ECU. Sistem ignition yang dikonfigurasi dengan benar essential untuk performance engine yang optimal.</p>
-<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:</h3>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Ignition Settings</strong>: Primary configuration settings untuk ignition, termasuk tipe ignition system dan timing control</p>
@@ -359,11 +359,11 @@
 <p><strong>Max Knock Retard</strong>: Maximum degree timing retardation untuk knock response</p>
 </li>
 </ol>
-<h2 id="ignition-settings">Ignition Settings</h2>
+<h2 id="ignition-settings">Ignition Settings<a class="headerlink" href="#ignition-settings" title="Permanent link">&para;</a></h2>
 <p><img alt="Ignition Settings" src="#" title="Ignition Settings" /></p>
-<h3 id="ignition-mode-configuration">Ignition Mode Configuration</h3>
+<h3 id="ignition-mode-configuration">Ignition Mode Configuration<a class="headerlink" href="#ignition-mode-configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Mode</strong> dropdown untuk memilih tipe konfigurasi ignition system:</p>
-<h4 id="single-coil">Single Coil</h4>
+<h4 id="single-coil">Single Coil<a class="headerlink" href="#single-coil" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Aplikasi</strong>: Distributor-based systems</p>
@@ -375,7 +375,7 @@
 <p><strong>Kabel</strong>: One coil output ke distributor</p>
 </li>
 </ul>
-<h4 id="individual-coils">Individual Coils</h4>
+<h4 id="individual-coils">Individual Coils<a class="headerlink" href="#individual-coils" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Aplikasi</strong>: Coil-on-plug atau coil-near-plug setups</p>
@@ -387,7 +387,7 @@
 <p><strong>Karakteristik</strong>: One coil per cylinder untuk precise timing</p>
 </li>
 </ul>
-<h4 id="wasted-spark">Wasted Spark</h4>
+<h4 id="wasted-spark">Wasted Spark<a class="headerlink" href="#wasted-spark" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Aplikasi</strong>: Paired cylinders fire together</p>
@@ -399,7 +399,7 @@
 <p><strong>Keuntungan</strong>: Simpler ignition system setup</p>
 </li>
 </ul>
-<h4 id="two-distributors">Two Distributors</h4>
+<h4 id="two-distributors">Two Distributors<a class="headerlink" href="#two-distributors" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Aplikasi</strong>: Pair distributors, umum pada certain BMW, Toyota engines</p>
@@ -408,34 +408,34 @@
 <p><strong>Karakteristik</strong>: Dual distributor configuration</p>
 </li>
 </ul>
-<h3 id="timing-parameters">Timing Parameters</h3>
-<h4 id="maximumminimum-limits">Maximum/Minimum Limits</h4>
+<h3 id="timing-parameters">Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permanent link">&para;</a></h3>
+<h4 id="maximumminimum-limits">Maximum/Minimum Limits<a class="headerlink" href="#maximumminimum-limits" title="Permanent link">&para;</a></h4>
 <p><strong>Maximum Timing Advance (deg BTDC)</strong>: Membatasi maximum timing advance untuk safe ignition settings</p>
 <p><strong>Minimum Timing Advance (deg BTDC)</strong>: Mencegah timing retard terlalu jauh, melindungi engine</p>
-<h4 id="validation-and-override">Validation and Override</h4>
+<h4 id="validation-and-override">Validation and Override<a class="headerlink" href="#validation-and-override" title="Permanent link">&para;</a></h4>
 <p><strong>Use Fixed Timing While Validating</strong>: Menggunakan fixed timing untuk validasi dengan timing gun</p>
 <p><strong>Override Ignition Table Load Axis</strong>: Override load axis ignition table dengan custom axis</p>
-<h3 id="timing-mode">Timing Mode</h3>
+<h3 id="timing-mode">Timing Mode<a class="headerlink" href="#timing-mode" title="Permanent link">&para;</a></h3>
 <p><strong>Dynamic</strong>: Menggunakan ignition timing map untuk menentukan timing secara dinamis selama engine operation</p>
 <p><strong>Static</strong>: Fix timing ke specified value untuk verifikasi static timing dengan timing light</p>
-<h3 id="ignition-outputs">Ignition Outputs</h3>
-<h4 id="wiring-configuration">Wiring Configuration</h4>
+<h3 id="ignition-outputs">Ignition Outputs<a class="headerlink" href="#ignition-outputs" title="Permanent link">&para;</a></h3>
+<h4 id="wiring-configuration">Wiring Configuration<a class="headerlink" href="#wiring-configuration" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Wire each output</strong> ke cylinder number secara langsung</li>
 <li><strong>Firmware (rusEFI)</strong> mengelola firing order secara internal</li>
 <li><strong>Ignition Output Mode</strong>: Customization bagaimana outputs berperilaku</li>
 </ul>
-<h4 id="important-notes">Important Notes</h4>
+<h4 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Timing Validation</strong>: Gunakan timing gun dengan static timing mode untuk verify alignment</li>
 <li><strong>Sequential Ignition</strong>: Ensure sequential mode untuk <strong>Individual Coils</strong> configuration</li>
 <li><strong>Wasted Spark Mode</strong>: Verify coil pairing dan firing order correct</li>
 </ol>
-<h2 id="ignition-timing-table">Ignition Timing Table</h2>
+<h2 id="ignition-timing-table">Ignition Timing Table<a class="headerlink" href="#ignition-timing-table" title="Permanent link">&para;</a></h2>
 <p><img alt="Ignition Table" src="#" title="Ignition Timing Table" /></p>
 <p>Ignition Table mengkonfigurasi spark timing berdasarkan RPM (horizontal axis) dan engine load (vertical axis). Essential untuk fine-tuning engine performance, efficiency, dan safety.</p>
-<h3 id="example-analysis-high-compression-turbocharged-engine">Example Analysis - High-Compression Turbocharged Engine</h3>
-<h4 id="high-compression-and-turbocharged-timing">High Compression and Turbocharged Timing</h4>
+<h3 id="example-analysis-high-compression-turbocharged-engine">Example Analysis - High-Compression Turbocharged Engine<a class="headerlink" href="#example-analysis-high-compression-turbocharged-engine" title="Permanent link">&para;</a></h3>
+<h4 id="high-compression-and-turbocharged-timing">High Compression and Turbocharged Timing<a class="headerlink" href="#high-compression-and-turbocharged-timing" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Boosted regions</strong>: Ignition timing conservative (lower values) untuk avoid pre-ignition</p>
@@ -447,7 +447,7 @@
 <p><strong>Safety</strong>: Critical untuk turbocharged engines</p>
 </li>
 </ul>
-<h4 id="deceleration-burble">Deceleration Burble</h4>
+<h4 id="deceleration-burble">Deceleration Burble<a class="headerlink" href="#deceleration-burble" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Lower load values</strong>: Negative atau very low timing values</p>
@@ -459,7 +459,7 @@
 <p><strong>Application</strong>: Aesthetic atau performance sound tuning</p>
 </li>
 </ul>
-<h4 id="mid-range-efficiency">Mid-Range Efficiency</h4>
+<h4 id="mid-range-efficiency">Mid-Range Efficiency<a class="headerlink" href="#mid-range-efficiency" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Mid-load/mid-RPM</strong>: 75 kPa, 2500 RPM regions</p>
@@ -471,7 +471,7 @@
 <p><strong>Optimization</strong>: Fuel efficiency dan smooth power delivery</p>
 </li>
 </ul>
-<h4 id="high-rpms">High RPMs</h4>
+<h4 id="high-rpms">High RPMs<a class="headerlink" href="#high-rpms" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Higher RPMs/moderate loads</strong>: Timing slightly advanced</p>
@@ -483,8 +483,8 @@
 <p><strong>Balance</strong>: Maintain performance tanpa knocking</p>
 </li>
 </ul>
-<h3 id="tuning-guidelines">Tuning Guidelines</h3>
-<h4 id="turbocharged-engines">Turbocharged Engines</h4>
+<h3 id="tuning-guidelines">Tuning Guidelines<a class="headerlink" href="#tuning-guidelines" title="Permanent link">&para;</a></h3>
+<h4 id="turbocharged-engines">Turbocharged Engines<a class="headerlink" href="#turbocharged-engines" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Monitor carefully</strong>: Timing dalam high-boost areas untuk safety</p>
@@ -496,7 +496,7 @@
 <p><strong>Conservative approach</strong>: Start dengan lower timing values</p>
 </li>
 </ul>
-<h4 id="deceleration-effects">Deceleration Effects</h4>
+<h4 id="deceleration-effects">Deceleration Effects<a class="headerlink" href="#deceleration-effects" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Burble effect</strong>: Hanya gunakan di regions dengan fuel cut-off active</p>
@@ -505,7 +505,7 @@
 <p><strong>Prevent fuel waste</strong>: Avoid excessive fuel consumption</p>
 </li>
 </ul>
-<h4 id="engine-specific-considerations">Engine-Specific Considerations</h4>
+<h4 id="engine-specific-considerations">Engine-Specific Considerations<a class="headerlink" href="#engine-specific-considerations" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Timing values</strong>: Heavily dependent pada engine design, fuel type, compression ratio</p>
@@ -514,11 +514,11 @@
 <p><strong>Guidelines only</strong>: Table ini reference, mungkin tidak applicable untuk all setups</p>
 </li>
 </ul>
-<h2 id="dwell-configuration">Dwell Configuration</h2>
+<h2 id="dwell-configuration">Dwell Configuration<a class="headerlink" href="#dwell-configuration" title="Permanent link">&para;</a></h2>
 <p><img alt="Dwell Settings" src="#" title="Dwell Settings" /></p>
 <p>Dwell Settings menyediakan kontrol critical atas ignition coil charge time, yang mempengaruhi spark energy dan ignition system performance.</p>
-<h3 id="dwell-time-base-top-graph">Dwell Time Base (Top Graph)</h3>
-<h4 id="purpose-dan-function">Purpose dan Function</h4>
+<h3 id="dwell-time-base-top-graph">Dwell Time Base (Top Graph)<a class="headerlink" href="#dwell-time-base-top-graph" title="Permanent link">&para;</a></h3>
+<h4 id="purpose-dan-function">Purpose dan Function<a class="headerlink" href="#purpose-dan-function" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Adjusts</strong>: Base dwell time (ms) relative terhadap engine RPM</p>
@@ -530,7 +530,7 @@
 <p><strong>Higher RPMs</strong>: Decreased dwell time (2.60 ms pada 7000 RPM) untuk shorter cycle times</p>
 </li>
 </ul>
-<h4 id="tuning-considerations">Tuning Considerations</h4>
+<h4 id="tuning-considerations">Tuning Considerations<a class="headerlink" href="#tuning-considerations" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Excessive high dwell</strong>: Dapat menyebabkan coil saturation dan heat damage</p>
@@ -539,8 +539,8 @@
 <p><strong>Too low dwell</strong>: Dapat mengakibatkan weak sparks atau misfires</p>
 </li>
 </ul>
-<h3 id="dwell-voltage-correction-bottom-graph">Dwell Voltage Correction (Bottom Graph)</h3>
-<h4 id="voltage-compensation">Voltage Compensation</h4>
+<h3 id="dwell-voltage-correction-bottom-graph">Dwell Voltage Correction (Bottom Graph)<a class="headerlink" href="#dwell-voltage-correction-bottom-graph" title="Permanent link">&para;</a></h3>
+<h4 id="voltage-compensation">Voltage Compensation<a class="headerlink" href="#voltage-compensation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Lower battery voltages</strong>: Increased dwell time (multiplier &gt; 1.0) untuk compensate reduced charging efficiency</p>
@@ -552,7 +552,7 @@
 <p><strong>Example</strong>: 8.0V = 1.40 multiplier, 16.0V = 0.80 multiplier</p>
 </li>
 </ul>
-<h4 id="implementation-notes">Implementation Notes</h4>
+<h4 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Voltage table</strong>: Essential untuk engines dengan weak electrical systems</p>
@@ -561,8 +561,8 @@
 <p><strong>Compensation vital</strong>: Untuk vehicles running additional electrical loads</p>
 </li>
 </ul>
-<h3 id="general-guidelines">General Guidelines</h3>
-<h4 id="rpm-table-values">RPM Table Values</h4>
+<h3 id="general-guidelines">General Guidelines<a class="headerlink" href="#general-guidelines" title="Permanent link">&para;</a></h3>
+<h4 id="rpm-table-values">RPM Table Values<a class="headerlink" href="#rpm-table-values" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Start values</strong>: 2.0-4.0 ms pada idle</p>
@@ -574,7 +574,7 @@
 <p><strong>Manufacturer specs</strong>: Always refer untuk avoid coil damage</p>
 </li>
 </ul>
-<h4 id="battery-voltage-considerations">Battery Voltage Considerations</h4>
+<h4 id="battery-voltage-considerations">Battery Voltage Considerations<a class="headerlink" href="#battery-voltage-considerations" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Compensation critical</strong>: Untuk reliable ignition performance</p>
@@ -583,9 +583,9 @@
 <p><strong>System monitoring</strong>: Track voltage levels selama operation</p>
 </li>
 </ul>
-<h2 id="advanced-ignition-features">Advanced Ignition Features</h2>
-<h3 id="multispark-configuration">Multispark Configuration</h3>
-<h4 id="purpose-dan-benefits">Purpose dan Benefits</h4>
+<h2 id="advanced-ignition-features">Advanced Ignition Features<a class="headerlink" href="#advanced-ignition-features" title="Permanent link">&para;</a></h2>
+<h3 id="multispark-configuration">Multispark Configuration<a class="headerlink" href="#multispark-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="purpose-dan-benefits">Purpose dan Benefits<a class="headerlink" href="#purpose-dan-benefits" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Lower RPMs</strong>: Multiple sparks per cycle</p>
@@ -597,7 +597,7 @@
 <p><strong>Performance applications</strong>: Enhanced ignition reliability</p>
 </li>
 </ul>
-<h4 id="configuration-parameters">Configuration Parameters</h4>
+<h4 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>RPM threshold</strong>: Below which multispark activates</p>
@@ -609,8 +609,8 @@
 <p><strong>Spark spacing</strong>: Time between individual sparks</p>
 </li>
 </ul>
-<h3 id="knock-control-system">Knock Control System</h3>
-<h4 id="knock-detection">Knock Detection</h4>
+<h3 id="knock-control-system">Knock Control System<a class="headerlink" href="#knock-control-system" title="Permanent link">&para;</a></h3>
+<h4 id="knock-detection">Knock Detection<a class="headerlink" href="#knock-detection" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Sensitivity adjustment</strong>: Configure knock sensor responsiveness</p>
@@ -622,7 +622,7 @@
 <p><strong>Threshold setting</strong>: Determine knock detection levels</p>
 </li>
 </ul>
-<h4 id="knock-response">Knock Response</h4>
+<h4 id="knock-response">Knock Response<a class="headerlink" href="#knock-response" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Timing retard</strong>: Automatic timing reduction saat knock detected</p>
@@ -634,8 +634,8 @@
 <p><strong>Protection limits</strong>: Maximum retard values untuk engine protection</p>
 </li>
 </ul>
-<h3 id="cylinder-individual-trims">Cylinder Individual Trims</h3>
-<h4 id="purpose">Purpose</h4>
+<h3 id="cylinder-individual-trims">Cylinder Individual Trims<a class="headerlink" href="#cylinder-individual-trims" title="Permanent link">&para;</a></h3>
+<h4 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Individual adjustment</strong>: Fine-tune setiap cylinder independently</p>
@@ -647,7 +647,7 @@
 <p><strong>Performance optimization</strong>: Maximize power output per cylinder</p>
 </li>
 </ul>
-<h4 id="implementation">Implementation</h4>
+<h4 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Trim values</strong>: Degrees of advance/retard per cylinder</p>
@@ -659,9 +659,9 @@
 <p><strong>Balancing</strong>: Achieve consistent power delivery</p>
 </li>
 </ul>
-<h2 id="troubleshooting-ignition-issues">Troubleshooting Ignition Issues</h2>
-<h3 id="common-problems">Common Problems</h3>
-<h4 id="poor-ignition-performance">Poor Ignition Performance</h4>
+<h2 id="troubleshooting-ignition-issues">Troubleshooting Ignition Issues<a class="headerlink" href="#troubleshooting-ignition-issues" title="Permanent link">&para;</a></h2>
+<h3 id="common-problems">Common Problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
+<h4 id="poor-ignition-performance">Poor Ignition Performance<a class="headerlink" href="#poor-ignition-performance" title="Permanent link">&para;</a></h4>
 <p><strong>Symptoms</strong>: Misfires, rough idle, poor acceleration
 <strong>Solutions</strong>:</p>
 <ul>
@@ -669,7 +669,7 @@
 <li>Verify timing table values reasonable</li>
 <li>Ensure proper ignition mode selection</li>
 </ul>
-<h4 id="knock-detection-issues">Knock Detection Issues</h4>
+<h4 id="knock-detection-issues">Knock Detection Issues<a class="headerlink" href="#knock-detection-issues" title="Permanent link">&para;</a></h4>
 <p><strong>Symptoms</strong>: False knock detection atau inability untuk detect real knock
 <strong>Solutions</strong>:</p>
 <ul>
@@ -677,7 +677,7 @@
 <li>Review timing table untuk excessive advance</li>
 <li>Check knock sensor mounting dan wiring</li>
 </ul>
-<h4 id="coil-overheating">Coil Overheating</h4>
+<h4 id="coil-overheating">Coil Overheating<a class="headerlink" href="#coil-overheating" title="Permanent link">&para;</a></h4>
 <p><strong>Symptoms</strong>: Coil failure, reduced spark energy
 <strong>Solutions</strong>:</p>
 <ul>
@@ -685,15 +685,15 @@
 <li>Check voltage compensation table</li>
 <li>Verify coil specifications match settings</li>
 </ul>
-<h3 id="diagnostic-procedures">Diagnostic Procedures</h3>
+<h3 id="diagnostic-procedures">Diagnostic Procedures<a class="headerlink" href="#diagnostic-procedures" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Timing light verification</strong>: Check actual vs commanded timing</li>
 <li><strong>Dwell monitoring</strong>: Measure actual dwell time vs settings  </li>
 <li><strong>Knock logging</strong>: Monitor knock events dan responses</li>
 <li><strong>Coil temperature</strong>: Check untuk overheating conditions</li>
 </ol>
-<h2 id="rekomendasi-berdasarkan-application">Rekomendasi Berdasarkan Application</h2>
-<h3 id="streetdaily-driving">Street/Daily Driving</h3>
+<h2 id="rekomendasi-berdasarkan-application">Rekomendasi Berdasarkan Application<a class="headerlink" href="#rekomendasi-berdasarkan-application" title="Permanent link">&para;</a></h2>
+<h3 id="streetdaily-driving">Street/Daily Driving<a class="headerlink" href="#streetdaily-driving" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Conservative timing</strong>: Prioritize reliability over maximum power</p>
@@ -705,7 +705,7 @@
 <p><strong>Smooth operation</strong>: Focus pada idle stability dan drivability</p>
 </li>
 </ul>
-<h3 id="performanceracing">Performance/Racing</h3>
+<h3 id="performanceracing">Performance/Racing<a class="headerlink" href="#performanceracing" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Aggressive timing</strong>: Extract maximum power dengan careful monitoring</p>
@@ -717,7 +717,7 @@
 <p><strong>Component quality</strong>: High-performance ignition components required</p>
 </li>
 </ul>
-<h3 id="forced-induction">Forced Induction</h3>
+<h3 id="forced-induction">Forced Induction<a class="headerlink" href="#forced-induction" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Conservative boost timing</strong>: Prevent detonation di high boost conditions</p>

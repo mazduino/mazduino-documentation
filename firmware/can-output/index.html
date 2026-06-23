@@ -189,18 +189,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="can-output">CAN Output</h1>
+                <h1 id="can-output">CAN Output<a class="headerlink" href="#can-output" title="Permanent link">&para;</a></h1>
 <p>CAN Output memungkinkan ECU mengirimkan data engine ke bus CAN secara otomatis — untuk dashboard, datalogger, atau perangkat lain yang terhubung.</p>
 <hr />
-<h2 id="jenis-can-output">Jenis CAN Output</h2>
-<h3 id="periodic-berkala">Periodic (Berkala)</h3>
+<h2 id="jenis-can-output">Jenis CAN Output<a class="headerlink" href="#jenis-can-output" title="Permanent link">&para;</a></h2>
+<h3 id="periodic-berkala">Periodic (Berkala)<a class="headerlink" href="#periodic-berkala" title="Permanent link">&para;</a></h3>
 <p>Frame CAN dikirim secara otomatis pada interval waktu yang ditentukan.
 Cocok untuk dashboard yang membutuhkan update data terus-menerus.</p>
-<h3 id="triggered-berdasarkan-trigger">Triggered (Berdasarkan Trigger)</h3>
+<h3 id="triggered-berdasarkan-trigger">Triggered (Berdasarkan Trigger)<a class="headerlink" href="#triggered-berdasarkan-trigger" title="Permanent link">&para;</a></h3>
 <p>Frame CAN dikirim hanya ketika ada perubahan edge (rising/falling) pada pin digital tertentu.
 Cocok untuk sinyal event atau konfirmasi aksi.</p>
 <hr />
-<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</h2>
+<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio<a class="headerlink" href="#konfigurasi-di-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>Buka: <strong>CAN Bus → CAN Output</strong></p>
 <p>Tersedia <strong>8 slot output</strong>. Untuk setiap slot:</p>
 <table>
@@ -229,7 +229,7 @@ Cocok untuk sinyal event atau konfirmasi aksi.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="isi-payload-per-byte">Isi Payload (per Byte)</h3>
+<h3 id="isi-payload-per-byte">Isi Payload (per Byte)<a class="headerlink" href="#isi-payload-per-byte" title="Permanent link">&para;</a></h3>
 <p>Setiap frame CAN berisi 8 byte. Untuk setiap byte dapat dipilih:</p>
 <table>
 <thead>
@@ -265,7 +265,7 @@ Cocok untuk sinyal event atau konfirmasi aksi.</p>
     Pilih channel yang dibutuhkan oleh dashboard atau perangkat penerima.
     Sesuaikan Scale agar satuan data cocok dengan yang diharapkan perangkat tersebut.</p>
 <hr />
-<h2 id="contoh-kirim-rpm-dan-clt-ke-dashboard">Contoh: Kirim RPM dan CLT ke Dashboard</h2>
+<h2 id="contoh-kirim-rpm-dan-clt-ke-dashboard">Contoh: Kirim RPM dan CLT ke Dashboard<a class="headerlink" href="#contoh-kirim-rpm-dan-clt-ke-dashboard" title="Permanent link">&para;</a></h2>
 <p>Frame CAN ID <code>0x600</code>, dikirim setiap 50 ms:</p>
 <pre><code>CAN ID  = 0x600
 Period  = 50 ms

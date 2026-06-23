@@ -223,12 +223,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="base-engine-settings-tunerstudio">Base Engine Settings - TunerStudio</h1>
+                <h1 id="base-engine-settings-tunerstudio">Base Engine Settings - TunerStudio<a class="headerlink" href="#base-engine-settings-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Konfigurasi dasar mesin untuk ECU Mazduino menggunakan TunerStudio. Pengaturan ini mencakup parameter fundamental engine yang crucial untuk operasi ECU yang tepat.</p>
-<h2 id="menu-base-engine-overview">Menu Base Engine Overview</h2>
+<h2 id="menu-base-engine-overview">Menu Base Engine Overview<a class="headerlink" href="#menu-base-engine-overview" title="Permanent link">&para;</a></h2>
 <p>Menu <strong>Base Engine</strong> dalam TunerStudio berisi pengaturan esensial yang berkaitan dengan konfigurasi fundamental engine. Untuk unit <strong>Plug and Play</strong>, sebagian besar pengaturan ini sudah dikonfigurasi dalam basemap yang disertakan, tetapi penyesuaian masih dapat dilakukan sesuai kebutuhan spesifik. Untuk unit <strong>Metal-series Wire In</strong>, semua pengaturan ini perlu dikonfigurasi dengan hati-hati.</p>
 <p><img alt="Base Engine Menu" src="#" title="Base Engine Menu" /></p>
-<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:</h3>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Base Engine</strong>: Konfigurasi engine dasar seperti displacement, firing order, dan parameter crucial lainnya untuk operasi ECU yang tepat</p>
@@ -258,8 +258,8 @@
 <p><strong>Status LEDs</strong>: Memungkinkan konfigurasi status LED pada ECU (jika applicable)</p>
 </li>
 </ol>
-<h2 id="base-engine-settings-window">Base Engine Settings Window</h2>
-<h3 id="layout-selection">Layout Selection</h3>
+<h2 id="base-engine-settings-window">Base Engine Settings Window<a class="headerlink" href="#base-engine-settings-window" title="Permanent link">&para;</a></h2>
+<h3 id="layout-selection">Layout Selection<a class="headerlink" href="#layout-selection" title="Permanent link">&para;</a></h3>
 <p><strong>Layout</strong> dropdown memungkinkan Anda memilih kompleksitas tampilan pengaturan:</p>
 <ul>
 <li>
@@ -270,8 +270,8 @@
 </li>
 </ul>
 <p><img alt="Base Engine Settings" src="#" title="Base Engine Settings Window" /></p>
-<h3 id="engine-configuration">Engine Configuration</h3>
-<h4 id="basic-engine-parameters">Basic Engine Parameters</h4>
+<h3 id="engine-configuration">Engine Configuration<a class="headerlink" href="#engine-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="basic-engine-parameters">Basic Engine Parameters<a class="headerlink" href="#basic-engine-parameters" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Number of Cylinders</strong>: Atur jumlah silinder engine Anda (misalnya 4, 6, 8)</li>
 <li>Pengaturan ini mempengaruhi kalkulasi timing dan fuel delivery</li>
@@ -292,7 +292,7 @@
 <li>Setiap silinder terhubung ke output number yang sesuai (Silinder 1 ke Output 1, dll.)</li>
 <li>Memastikan sinkronisasi yang tepat antara ECU dan engine</li>
 </ol>
-<h4 id="engine-metadata">Engine Metadata</h4>
+<h4 id="engine-metadata">Engine Metadata<a class="headerlink" href="#engine-metadata" title="Permanent link">&para;</a></h4>
 <p>Field-field ini digunakan terutama oleh rusEFI Online dan memberikan konteks tambahan:</p>
 <ol>
 <li><strong>Engine Make</strong>: Masukkan manufacturer atau brand engine (contoh: Toyota)</li>
@@ -300,9 +300,9 @@
 <li><strong>Vehicle Name</strong>: Nama custom untuk kendaraan (contoh: "ProjectCar")</li>
 <li><strong>Forced Induction</strong>: Toggle opsi ini jika engine memiliki forced induction (turbo/supercharger)</li>
 </ol>
-<h3 id="fuel-strategy">Fuel Strategy</h3>
+<h3 id="fuel-strategy">Fuel Strategy<a class="headerlink" href="#fuel-strategy" title="Permanent link">&para;</a></h3>
 <p>Menentukan metode yang digunakan untuk menghitung fuel delivery. Opsi yang tersedia:</p>
-<h4 id="1-speed-density">1. Speed Density</h4>
+<h4 id="1-speed-density">1. Speed Density<a class="headerlink" href="#1-speed-density" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Prinsip</strong>: Menggunakan intake manifold pressure (MAP) dan intake air temperature (IAT) untuk menghitung air density dan fuel requirements</p>
@@ -314,7 +314,7 @@
 <p><strong>Keuntungan</strong>: Reliable dan well-tested untuk sebagian besar aplikasi</p>
 </li>
 </ul>
-<h4 id="2-maf-air-charge">2. MAF Air Charge</h4>
+<h4 id="2-maf-air-charge">2. MAF Air Charge<a class="headerlink" href="#2-maf-air-charge" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Prinsip</strong>: Bergantung pada Mass Air Flow (MAF) sensor untuk mengukur jumlah udara yang masuk engine secara langsung</p>
@@ -326,7 +326,7 @@
 <p><strong>Keuntungan</strong>: Direct measurement dari airflow</p>
 </li>
 </ul>
-<h4 id="3-alpha-n">3. Alpha-N</h4>
+<h4 id="3-alpha-n">3. Alpha-N<a class="headerlink" href="#3-alpha-n" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Prinsip</strong>: Menggunakan throttle position sebagai load input utama untuk kalkulasi fuel</p>
@@ -338,7 +338,7 @@
 <p><strong>Keuntungan</strong>: Cocok untuk ITB setups dan modified intake systems</p>
 </li>
 </ul>
-<h4 id="4-lua">4. Lua</h4>
+<h4 id="4-lua">4. Lua<a class="headerlink" href="#4-lua" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Prinsip</strong>: Memungkinkan kalkulasi fuel custom menggunakan Lua scripting</p>
@@ -350,8 +350,8 @@
 <p><strong>Keuntungan</strong>: Fleksibilitas maksimum untuk custom applications</p>
 </li>
 </ul>
-<h2 id="rekomendasi-berdasarkan-tipe-unit">Rekomendasi Berdasarkan Tipe Unit</h2>
-<h3 id="plug-and-play-units">Plug and Play Units</h3>
+<h2 id="rekomendasi-berdasarkan-tipe-unit">Rekomendasi Berdasarkan Tipe Unit<a class="headerlink" href="#rekomendasi-berdasarkan-tipe-unit" title="Permanent link">&para;</a></h2>
+<h3 id="plug-and-play-units">Plug and Play Units<a class="headerlink" href="#plug-and-play-units" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Sebagian besar pengaturan sudah dikonfigurasi optimal dalam basemap</li>
 <li>Fokus pada penyesuaian engine-specific parameters:</li>
@@ -359,29 +359,29 @@
 <li>Firing order jika custom</li>
 <li>Fuel strategy jika menggunakan setup khusus</li>
 </ul>
-<h3 id="metal-series-wire-in-units">Metal-series Wire In Units</h3>
+<h3 id="metal-series-wire-in-units">Metal-series Wire In Units<a class="headerlink" href="#metal-series-wire-in-units" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Semua pengaturan perlu dikonfigurasi dari awal</li>
 <li>Mulai dengan basic engine parameters</li>
 <li>Verifikasi fuel strategy sesuai dengan sensor setup</li>
 <li>Test dan validasi semua pengaturan sebelum first start</li>
 </ul>
-<h2 id="tips-konfigurasi">Tips Konfigurasi</h2>
-<h3 id="best-practices">Best Practices</h3>
+<h2 id="tips-konfigurasi">Tips Konfigurasi<a class="headerlink" href="#tips-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Double-check engine specifications</strong> sebelum input parameters</li>
 <li><strong>Start conservative</strong> dengan pengaturan dasar</li>
 <li><strong>Verify wiring</strong> sesuai dengan firing order yang dipilih</li>
 <li><strong>Test incrementally</strong> setiap perubahan configuration</li>
 </ol>
-<h3 id="common-mistakes">Common Mistakes</h3>
+<h3 id="common-mistakes">Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Salah firing order</strong> - dapat menyebabkan rough idle atau misfire</li>
 <li><strong>Displacement tidak akurat</strong> - mempengaruhi fuel calculations</li>
 <li><strong>Fuel strategy tidak sesuai</strong> dengan sensor setup yang ada</li>
 <li><strong>Forced induction setting</strong> yang salah untuk NA engines</li>
 </ol>
-<h3 id="troubleshooting">Troubleshooting</h3>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Engine tidak start</strong>: Periksa firing order dan trigger settings</p>

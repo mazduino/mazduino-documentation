@@ -215,12 +215,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="mazduino-core">Mazduino Core</h1>
-<h2 id="gambaran-umum">Gambaran Umum</h2>
+                <h1 id="mazduino-core">Mazduino Core<a class="headerlink" href="#mazduino-core" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan <strong>STM32F427</strong> sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan <strong>dual ETB</strong>, <strong>dual CAN bus</strong>, kombinasi input <strong>Hall + VR</strong>, serta output aktuator yang lebih banyak untuk mesin modern.</p>
 <p>Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referensi hardware pada dokumen MAZDUINO CORE.</p>
 <p><img alt="Foto produk Mazduino Core" src="../img/core/mazduino-core.jpeg" /></p>
-<h2 id="fitur-utama">Fitur Utama</h2>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>MCU <strong>STM32F427</strong> ARM Cortex-M4</li>
 <li>Built-in <strong>5V sensor supply</strong> dengan proteksi internal</li>
@@ -244,17 +244,17 @@
 <li>Komunikasi USB, Serial, dan CAN</li>
 <li>Dukungan firmware <strong>rusEFI based</strong> saja (official atau custom firmware dengan MCU F4)</li>
 </ul>
-<h2 id="konfigurasi-hardware-dan-jumper">Konfigurasi Hardware dan Jumper</h2>
+<h2 id="konfigurasi-hardware-dan-jumper">Konfigurasi Hardware dan Jumper<a class="headerlink" href="#konfigurasi-hardware-dan-jumper" title="Permanent link">&para;</a></h2>
 <p>Mazduino Core memiliki beberapa pin yang dapat dialihkan fungsinya melalui jumper solder. Konsep ini memberi fleksibilitas agar satu board bisa dipakai untuk berbagai konfigurasi mesin.</p>
-<h3 id="posisi-jumper-solder-jp3-jp4-dan-jp5">Posisi Jumper Solder JP3, JP4, dan JP5</h3>
+<h3 id="posisi-jumper-solder-jp3-jp4-dan-jp5">Posisi Jumper Solder JP3, JP4, dan JP5<a class="headerlink" href="#posisi-jumper-solder-jp3-jp4-dan-jp5" title="Permanent link">&para;</a></h3>
 <p><img alt="Posisi jumper solder JP3 JP4 JP5" src="../img/core/Picture1.png" /></p>
 <p>Posisi pin <strong>JP3</strong>, <strong>JP4</strong>, dan <strong>JP5</strong> berada di bagian bawah board dengan model solder jumper.</p>
 <p>Dibagian belakang board ada jumper yang bisa disesuaikan kebutuhan atau permintaan diawal pesanan. ingin digunakan untuk mobil dengan 6 silinder atau hanya 4 silinder. Atau butuh ekstra analog input atau high side output (12v switching).</p>
 <p>Solder Jumper 2 pin ke tengah untuk meneruskan ke konektor ECU pada JP3, JP4 dan JP5.</p>
-<h3 id="pin-header-jumper-tanpa-solder">Pin Header Jumper Tanpa Solder</h3>
+<h3 id="pin-header-jumper-tanpa-solder">Pin Header Jumper Tanpa Solder<a class="headerlink" href="#pin-header-jumper-tanpa-solder" title="Permanent link">&para;</a></h3>
 <p><img alt="Pin header jumper tanpa solder" src="../img/core/Picture2.png" /></p>
 <p>Pin header jumper tanpa solder sesuai permintaan saat awal pesanan atau dapat dipindahkan sendiri sesuai kebutuhan. konektor ECU akan mengeluarkan CANL atau VR2-, Digital 4 atau VR1-, CANH atau VR2+, Digital 3 atau VR1+.</p>
-<h3 id="pin-header-tambahan-prototype">Pin Header Tambahan (Prototype)</h3>
+<h3 id="pin-header-tambahan-prototype">Pin Header Tambahan (Prototype)<a class="headerlink" href="#pin-header-tambahan-prototype" title="Permanent link">&para;</a></h3>
 <p>Untuk kebutuhan prototype, tersedia 4 buah pin header 6 pin yang bisa menggunakan konektor <strong>JST XH 2.54</strong>.</p>
 <table>
 <thead>
@@ -282,12 +282,12 @@
 </tr>
 </tbody>
 </table>
-<h3 id="jumper-ignition-volt-drive-12v-5v">Jumper Ignition Volt Drive (12V / 5V)</h3>
+<h3 id="jumper-ignition-volt-drive-12v-5v">Jumper Ignition Volt Drive (12V / 5V)<a class="headerlink" href="#jumper-ignition-volt-drive-12v-5v" title="Permanent link">&para;</a></h3>
 <p>Jumper <strong>Ignition Volt Drive</strong> digunakan untuk memilih level tegangan trigger sinyal coil, yaitu <strong>12V</strong> atau <strong>5V</strong>.</p>
 <p>Harap berhati-hati dan pastikan tegangan sinyal coil sesuai. Jika level tegangan tidak sesuai, coil dapat rusak dan tidak dapat digunakan lagi.</p>
-<h3 id="catatan-etb-dan-idle-stepper">Catatan ETB dan Idle Stepper</h3>
+<h3 id="catatan-etb-dan-idle-stepper">Catatan ETB dan Idle Stepper<a class="headerlink" href="#catatan-etb-dan-idle-stepper" title="Permanent link">&para;</a></h3>
 <p>Karena terdapat dual IC untuk kontrol <strong>ETB1</strong> dan <strong>ETB2</strong>, jalur driver tersebut juga dapat dimanfaatkan untuk kontrol <strong>Idle Stepper</strong> sesuai konfigurasi firmware dan wiring.</p>
-<h3 id="opsi-jumper-penting">Opsi Jumper Penting</h3>
+<h3 id="opsi-jumper-penting">Opsi Jumper Penting<a class="headerlink" href="#opsi-jumper-penting" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>JP3 (Pin 4)</strong>: pilih <strong>AVS2 (Analog Volt 5)</strong> atau <strong>Ignition 6</strong></p>
@@ -311,21 +311,21 @@
 <p><strong>IN34</strong>: pilih <strong>CANL1</strong> atau <strong>VR2-</strong></p>
 </li>
 </ul>
-<h3 id="catatan-konfigurasi">Catatan Konfigurasi</h3>
+<h3 id="catatan-konfigurasi">Catatan Konfigurasi<a class="headerlink" href="#catatan-konfigurasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Untuk setup <strong>6 ignition penuh</strong>, aktifkan mode ignition pada Pin 4 dan Pin 20.</li>
 <li>Untuk setup yang butuh analog ekstra, aktifkan mode analog di Pin 4/5/20.</li>
 <li>Untuk sensor trigger VR, pindahkan jalur Digital 3/4 atau CANH/CANL ke VR sesuai kebutuhan.</li>
 <li>Selalu matikan sumber daya ECU sebelum mengubah konfigurasi jumper.</li>
 </ul>
-<h2 id="wiring-dan-instalasi">Wiring dan Instalasi</h2>
+<h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Core 48-pin Connector" src="../img/mazduino-48p-connector.jpeg" /></p>
-<h3 id="layout-konektor-48-pin">Layout Konektor 48-pin</h3>
+<h3 id="layout-konektor-48-pin">Layout Konektor 48-pin<a class="headerlink" href="#layout-konektor-48-pin" title="Permanent link">&para;</a></h3>
 <pre><code> 1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16
 17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32
 33  34  35  36  37  38  39  40  41  42  43  44  45  46  47  48
 </code></pre>
-<h3 id="pin-assignment-konektor-ecu-48-pin">Pin Assignment Konektor ECU 48-pin</h3>
+<h3 id="pin-assignment-konektor-ecu-48-pin">Pin Assignment Konektor ECU 48-pin<a class="headerlink" href="#pin-assignment-konektor-ecu-48-pin" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -577,7 +577,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ringkasan-jumlah-io">Ringkasan Jumlah I/O</h2>
+<h2 id="ringkasan-jumlah-io">Ringkasan Jumlah I/O<a class="headerlink" href="#ringkasan-jumlah-io" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -634,7 +634,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="mapping-fungsional-firmware">Mapping Fungsional Firmware</h2>
+<h2 id="mapping-fungsional-firmware">Mapping Fungsional Firmware<a class="headerlink" href="#mapping-fungsional-firmware" title="Permanent link">&para;</a></h2>
 <p>Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan dengan kebutuhan mesin dan strategi tuning.</p>
 <table>
 <thead>
@@ -682,7 +682,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="informasi-mcu">Informasi MCU</h2>
+<h2 id="informasi-mcu">Informasi MCU<a class="headerlink" href="#informasi-mcu" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
 <p><strong>MCU</strong>: STM32F427</p>
@@ -693,7 +693,7 @@
 <li>Gunakan file konfigurasi firmware yang memang ditujukan untuk <strong>Mazduino Core</strong> agar semua pin berfungsi sesuai desain board.</li>
 <li>Firmware untuk board ini hanya untuk <strong>rusEFI based</strong> (baik official maupun custom firmware dengan MCU F4).</li>
 </ul>
-<h2 id="panduan-instalasi-singkat">Panduan Instalasi Singkat</h2>
+<h2 id="panduan-instalasi-singkat">Panduan Instalasi Singkat<a class="headerlink" href="#panduan-instalasi-singkat" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Pastikan semua ground utama (pin 17/18/39/40) terhubung baik.</li>
 <li>Hubungkan pin 1 ke suplai 12V ECU yang stabil.</li>
@@ -703,7 +703,7 @@
 <li>Jika menggunakan ETB ganda, verifikasi wiring ETB1 dan ETB2 serta kalibrasi TPS/PPS.</li>
 <li>Lakukan pengecekan output dengan test mode di TunerStudio/rusEFI sebelum start engine.</li>
 </ol>
-<h2 id="catatan-penting">Catatan Penting</h2>
+<h2 id="catatan-penting">Catatan Penting<a class="headerlink" href="#catatan-penting" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Output ignition ditujukan untuk <strong>smart coil</strong>. Untuk dumb coil wajib menggunakan driver/IGBT eksternal.</li>
 <li>Jalur output low current dipakai untuk relay atau beban ringan, bukan beban motor langsung.</li>
@@ -712,18 +712,21 @@
 <li>Semua perubahan jumper harus dilakukan saat ECU <strong>tanpa daya</strong>.</li>
 <li>Untuk pemanfaatan <strong>CAN2</strong>, ikuti skema hardware dan konfigurasi firmware yang sesuai revisi board.</li>
 </ul>
-<h2 id="software-tuning">Software Tuning</h2>
+<h2 id="software-tuning">Software Tuning<a class="headerlink" href="#software-tuning" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Download TunerStudio: <a href="https://www.tunerstudio.com/index.php/downloads">https://www.tunerstudio.com/index.php/downloads</a></p>
+<p>Download TunerStudio: [TunerStudio Downloads][tunerstudio-dl]</p>
 </li>
 <li>
-<p>Referensi firmware rusEFI: <a href="https://wiki.rusefi.com">https://wiki.rusefi.com</a></p>
+<p>Referensi firmware rusEFI: [wiki.rusefi.com][rusefi-wiki]</p>
 </li>
 <li>
-<p>Informasi produk: <a href="https://www.mazduino.com">https://www.mazduino.com</a></p>
+<p>Informasi produk: [www.mazduino.com][mazduino-site]</p>
 </li>
 </ul>
+<p>[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
+[rusefi-wiki]: https://wiki.rusefi.com {:target="_blank"}
+[mazduino-site]: https://www.mazduino.com {:target="_blank"}</p>
               
             </div>
           </div><footer>

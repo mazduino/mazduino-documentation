@@ -235,11 +235,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="konfigurasi-can-bus-tunerstudio">Konfigurasi CAN Bus TunerStudio</h1>
-<h2 id="pengantar">Pengantar</h2>
+                <h1 id="konfigurasi-can-bus-tunerstudio">Konfigurasi CAN Bus TunerStudio<a class="headerlink" href="#konfigurasi-can-bus-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Sistem CAN Bus pada Mazduino memungkinkan komunikasi dengan berbagai perangkat eksternal seperti dashboard, sensor, dan kontroler tambahan. Menu CAN Bus menyediakan konfigurasi lengkap untuk komunikasi data engine management.</p>
 <p><img alt="CAN Bus Menu" src="images/canbus-menu.png" /></p>
-<h2 id="menu-can-bus-overview">Menu CAN Bus Overview</h2>
+<h2 id="menu-can-bus-overview">Menu CAN Bus Overview<a class="headerlink" href="#menu-can-bus-overview" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>CAN Bus Settings</strong> - Mengkonfigurasi baud rate jaringan CAN, ID, dan prioritas pesan untuk komunikasi dengan perangkat eksternal</li>
 <li><strong>CAN Vehicle Speed Sensor</strong> - Mengatur data kecepatan kendaraan yang diterima melalui sensor kecepatan berbasis CAN</li>
@@ -247,9 +247,9 @@
 <li><strong>CAN EGT Sensors</strong> - Menetapkan dan menskala sensor suhu gas buang (EGT) berbasis CAN</li>
 <li><strong>CAN MS IO-Box Settings</strong> - Mengkonfigurasi IO box eksternal untuk memperluas input dan output melalui jaringan CAN</li>
 </ul>
-<h2 id="pengaturan-komunikasi-can-bus">Pengaturan Komunikasi CAN Bus</h2>
+<h2 id="pengaturan-komunikasi-can-bus">Pengaturan Komunikasi CAN Bus<a class="headerlink" href="#pengaturan-komunikasi-can-bus" title="Permanent link">&para;</a></h2>
 <p><img alt="CAN Bus Communication Settings" src="images/canbus-communication.png" /></p>
-<h3 id="konfigurasi-utama">Konfigurasi Utama</h3>
+<h3 id="konfigurasi-utama">Konfigurasi Utama<a class="headerlink" href="#konfigurasi-utama" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>CAN Dash Type</strong> - Pilih tipe dashboard yang terhubung via CAN. Opsi termasuk None, dashboard custom, atau dashboard predefined seperti yang digunakan dalam motorsports, memungkinkan kompatibilitas dengan display eksternal.</p>
@@ -282,7 +282,7 @@
 <p><strong>rusEFI CAN Data Period (ms)</strong> - Menentukan frekuensi broadcasting data rusEFI. Misalnya, pengaturan 50 ms menghasilkan transmisi data setiap 50 milidetik.</p>
 </li>
 </ol>
-<h3 id="pengaturan-primary-can">Pengaturan Primary CAN</h3>
+<h3 id="pengaturan-primary-can">Pengaturan Primary CAN<a class="headerlink" href="#pengaturan-primary-can" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Primary CAN Verbose</strong> - Mengkonfigurasi level pesan debugging untuk Primary CAN bus. Berguna untuk mendiagnosis masalah komunikasi.</p>
@@ -294,7 +294,7 @@
 <p><strong>Primary CAN Allow OpenBLT</strong> - Mengaktifkan kompatibilitas dengan bootloader OpenBLT, memungkinkan update firmware melalui Primary CAN bus.</p>
 </li>
 </ol>
-<h3 id="pengaturan-secondary-can">Pengaturan Secondary CAN</h3>
+<h3 id="pengaturan-secondary-can">Pengaturan Secondary CAN<a class="headerlink" href="#pengaturan-secondary-can" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Secondary CAN Verbose</strong> - Sama dengan Primary CAN Verbose tetapi berlaku untuk Secondary CAN bus.</p>
@@ -306,9 +306,9 @@
 <p><strong>Secondary CAN Allow OpenBLT</strong> - Memungkinkan update firmware melalui Secondary CAN bus menggunakan OpenBLT, berguna untuk setup dengan multiple networks.</p>
 </li>
 </ol>
-<h2 id="can-o2-sensor-configuration">CAN O2 Sensor Configuration</h2>
+<h2 id="can-o2-sensor-configuration">CAN O2 Sensor Configuration<a class="headerlink" href="#can-o2-sensor-configuration" title="Permanent link">&para;</a></h2>
 <p><img alt="CAN O2 Sensor" src="images/can-o2-sensor.png" /></p>
-<h3 id="konfigurasi-can-wideband">Konfigurasi CAN Wideband</h3>
+<h3 id="konfigurasi-can-wideband">Konfigurasi CAN Wideband<a class="headerlink" href="#konfigurasi-can-wideband" title="Permanent link">&para;</a></h3>
 <p><strong>Enable CAN Wideband</strong>:</p>
 <ul>
 <li>Bekerja dengan <strong>unit wideband AEM</strong> atau <strong>Mazduino</strong> yang dihubungkan melalui CAN</li>
@@ -322,15 +322,15 @@
 <li>Indikator hijau menandakan operasi yang tepat (mis. Heating Allowed, Communication OK)</li>
 <li>Indikator merah menyoroti masalah seperti kegagalan heating atau sensor underheating/overheating</li>
 </ul>
-<h3 id="keuntungan-can-wideband">Keuntungan CAN Wideband</h3>
+<h3 id="keuntungan-can-wideband">Keuntungan CAN Wideband<a class="headerlink" href="#keuntungan-can-wideband" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Komunikasi Digital</strong>: Menghilangkan noise analog dan memberikan akurasi tinggi</li>
 <li><strong>Multiple Sensors</strong>: Mendukung beberapa sensor wideband dalam satu bus CAN</li>
 <li><strong>Diagnostics</strong>: Informasi status real-time untuk troubleshooting</li>
 <li><strong>Kalibrasi Otomatis</strong>: Sensor CAN umumnya sudah dikalibrasi dari pabrik</li>
 </ol>
-<h2 id="can-vehicle-speed-sensor">CAN Vehicle Speed Sensor</h2>
-<h3 id="konfigurasi-can-vss">Konfigurasi CAN VSS</h3>
+<h2 id="can-vehicle-speed-sensor">CAN Vehicle Speed Sensor<a class="headerlink" href="#can-vehicle-speed-sensor" title="Permanent link">&para;</a></h2>
+<h3 id="konfigurasi-can-vss">Konfigurasi CAN VSS<a class="headerlink" href="#konfigurasi-can-vss" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Enable CAN VSS</strong>: Mengaktifkan penggunaan CAN-based Vehicle Speed Sensor (VSS) alih-alih input speed sensor langsung.</p>
@@ -347,7 +347,7 @@
 <p><strong>CAN VSS Scaling (ratio)</strong>: Menyesuaikan faktor skala untuk data CAN VSS agar sesuai dengan kecepatan aktual.</p>
 </li>
 </ol>
-<h3 id="keuntungan-can-vss">Keuntungan CAN VSS</h3>
+<h3 id="keuntungan-can-vss">Keuntungan CAN VSS<a class="headerlink" href="#keuntungan-can-vss" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Akurasi Tinggi</strong>: Data digital memberikan akurasi lebih baik daripada sensor analog</p>
@@ -359,9 +359,9 @@
 <p><strong>Reduced Wiring</strong>: Mengurangi kebutuhan wiring tambahan untuk sensor kecepatan</p>
 </li>
 </ul>
-<h2 id="can-egt-sensors">CAN EGT Sensors</h2>
+<h2 id="can-egt-sensors">CAN EGT Sensors<a class="headerlink" href="#can-egt-sensors" title="Permanent link">&para;</a></h2>
 <p><img alt="CAN EGT Sensors" src="images/can-egt-sensors.png" /></p>
-<h3 id="konfigurasi-egt">Konfigurasi EGT</h3>
+<h3 id="konfigurasi-egt">Konfigurasi EGT<a class="headerlink" href="#konfigurasi-egt" title="Permanent link">&para;</a></h3>
 <p>Sensor EGT (Exhaust Gas Temperature) berbasis CAN memungkinkan monitoring suhu gas buang untuk multiple silinder tanpa kompleksitas wiring analog.</p>
 <ol>
 <li><strong>EGT Sensor Assignment</strong>:</li>
@@ -385,7 +385,7 @@
 <li>Sample rate configuration</li>
 <li>Error detection dan fallback values</li>
 </ol>
-<h3 id="aplikasi-egt-monitoring">Aplikasi EGT Monitoring</h3>
+<h3 id="aplikasi-egt-monitoring">Aplikasi EGT Monitoring<a class="headerlink" href="#aplikasi-egt-monitoring" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Tuning Optimization</strong>: Monitoring suhu untuk tuning yang aman</p>
@@ -400,8 +400,8 @@
 <p><strong>Turbo Protection</strong>: Monitoring suhu untuk proteksi turbocharger</p>
 </li>
 </ul>
-<h2 id="can-io-box-configuration">CAN IO Box Configuration</h2>
-<h3 id="ms-io-box-settings">MS IO-Box Settings</h3>
+<h2 id="can-io-box-configuration">CAN IO Box Configuration<a class="headerlink" href="#can-io-box-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="ms-io-box-settings">MS IO-Box Settings<a class="headerlink" href="#ms-io-box-settings" title="Permanent link">&para;</a></h3>
 <p>CAN IO Box memungkinkan ekspansi input/output melalui jaringan CAN, ideal untuk aplikasi yang membutuhkan banyak I/O.</p>
 <ol>
 <li><strong>Box Assignment</strong>:</li>
@@ -425,7 +425,7 @@
 <li>Digital output current limits</li>
 <li>Fault detection dan protection</li>
 </ol>
-<h3 id="keuntungan-io-box">Keuntungan IO Box</h3>
+<h3 id="keuntungan-io-box">Keuntungan IO Box<a class="headerlink" href="#keuntungan-io-box" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Ekspansi I/O</strong>: Menambah kemampuan input/output tanpa ECU yang lebih besar</p>
@@ -440,8 +440,8 @@
 <p><strong>Cost Effective</strong>: Lebih ekonomis daripada upgrade ke ECU yang lebih besar</p>
 </li>
 </ul>
-<h2 id="troubleshooting-can-bus">Troubleshooting CAN Bus</h2>
-<h3 id="common-issues">Common Issues</h3>
+<h2 id="troubleshooting-can-bus">Troubleshooting CAN Bus<a class="headerlink" href="#troubleshooting-can-bus" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Communication Timeout</strong>:</li>
 <li>Periksa wiring CAN High/Low</li>
@@ -464,7 +464,7 @@
 <li>Verifikasi ground connections</li>
 <li>Cek interferensi elektromagnetik</li>
 </ol>
-<h3 id="diagnostic-tools">Diagnostic Tools</h3>
+<h3 id="diagnostic-tools">Diagnostic Tools<a class="headerlink" href="#diagnostic-tools" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>CAN Bus Monitor</strong>: Real-time monitoring pesan CAN</p>
@@ -479,15 +479,15 @@
 <p><strong>Message Logging</strong>: Recording untuk analisis offline</p>
 </li>
 </ul>
-<h2 id="best-practices">Best Practices</h2>
-<h3 id="wiring-guidelines">Wiring Guidelines</h3>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="wiring-guidelines">Wiring Guidelines<a class="headerlink" href="#wiring-guidelines" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Twisted Pair Cable</strong>: Gunakan kabel twisted pair untuk CAN High/Low</li>
 <li><strong>Proper Termination</strong>: 120Ω resistor di kedua ujung bus</li>
 <li><strong>Star Topology</strong>: Hindari topologi star, gunakan linear bus</li>
 <li><strong>Cable Length</strong>: Maksimum panjang tergantung baud rate</li>
 </ol>
-<h3 id="network-design">Network Design</h3>
+<h3 id="network-design">Network Design<a class="headerlink" href="#network-design" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Baud Rate Selection</strong>: Pilih rate yang sesuai dengan aplikasi</li>
 <li><strong>Message Priority</strong>: Set prioritas berdasarkan kritikalitas data</li>

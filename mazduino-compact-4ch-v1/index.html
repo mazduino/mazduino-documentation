@@ -205,11 +205,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="ecu-mazduino-compact-v1">ECU Mazduino Compact (v1)</h1>
-<h2 id="gambaran-umum">Gambaran Umum</h2>
+                <h1 id="ecu-mazduino-compact-v1">ECU Mazduino Compact (v1)<a class="headerlink" href="#ecu-mazduino-compact-v1" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>ECU Mazduino Compact v1 adalah Engine Control Unit standalone 4-channel yang dirancang untuk aplikasi manajemen mesin yang serbaguna. Dibuat khusus untuk firmware rusEFI dan Speeduino, memberikan engine control komprehensif dalam paket kompak yang cocok untuk operasi 4-silinder sequential penuh atau 8-silinder paired.</p>
 <p><img alt="Mazduino Compact 4ch" src="../img/mazduino-compact-4ch.jpg" /></p>
-<h2 id="fitur-utama">Fitur Utama</h2>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Input trigger utama untuk sensor CKP hall atau optical saja</li>
 <li>Input trigger kedua untuk sensor CMP hall atau optical saja</li>
@@ -226,15 +226,15 @@
 <li>Konektor 30-pin dengan konfigurasi Microfit 2x12 dan 2x3</li>
 <li>Kartu SD untuk data logging</li>
 </ul>
-<h2 id="wiring-dan-instalasi">Wiring dan Instalasi</h2>
-<h3 id="pin-mapping-konektor">Pin Mapping Konektor</h3>
+<h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
+<h3 id="pin-mapping-konektor">Pin Mapping Konektor<a class="headerlink" href="#pin-mapping-konektor" title="Permanent link">&para;</a></h3>
 <p>ECU Mazduino Compact menggunakan konektor 30-pin dengan pin assignment sebagai berikut:</p>
 <p><img alt="Mazduino Compact 30-pin Connector" src="../img/compact-30p-connector.jpg" /></p>
-<h4 id="layout-konektor">Layout Konektor</h4>
+<h4 id="layout-konektor">Layout Konektor<a class="headerlink" href="#layout-konektor" title="Permanent link">&para;</a></h4>
 <pre><code> 1   2   3       7   8   9  10  11  12  13  14  15  16  17  18
  4   5   6      19  20  21  22  23  24  25  26  27  28  29  30
 </code></pre>
-<h4 id="pin-assignment">Pin Assignment</h4>
+<h4 id="pin-assignment">Pin Assignment<a class="headerlink" href="#pin-assignment" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -396,7 +396,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="pin-mapping-mcu">Pin Mapping MCU</h3>
+<h3 id="pin-mapping-mcu">Pin Mapping MCU<a class="headerlink" href="#pin-mapping-mcu" title="Permanent link">&para;</a></h3>
 <p>Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment STM32F407VGT6:</p>
 <table>
 <thead>
@@ -552,7 +552,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="solder-jumper">Solder Jumper</h3>
+<h3 id="solder-jumper">Solder Jumper<a class="headerlink" href="#solder-jumper" title="Permanent link">&para;</a></h3>
 <p>PCB termasuk solder jumper di bagian belakang untuk konfigurasi:</p>
 <ul>
 <li>
@@ -565,7 +565,7 @@
 <p><strong>Pemilihan tegangan pengapian</strong>: Pilih tegangan yang sesuai untuk koil pengapian</p>
 </li>
 </ul>
-<h3 id="langkah-instalasi">Langkah Instalasi</h3>
+<h3 id="langkah-instalasi">Langkah Instalasi<a class="headerlink" href="#langkah-instalasi" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Pemasangan</strong>: Amankan ECU di lokasi yang sesuai</li>
 <li><strong>Koneksi Daya</strong>: Hubungkan daya utama (pin 7) dan ground (pin 5, 19, 20)</li>
@@ -573,7 +573,7 @@
 <li><strong>Wiring Aktuator</strong>: Hubungkan injektor dan koil pengapian ke pin masing-masing</li>
 <li><strong>Verifikasi</strong>: Periksa semua koneksi sebelum power-up</li>
 </ol>
-<h3 id="catatan-wiring">Catatan Wiring</h3>
+<h3 id="catatan-wiring">Catatan Wiring<a class="headerlink" href="#catatan-wiring" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Ground Sensor</strong>: Gunakan pin 19 dan 20 untuk koneksi ground sensor</p>
@@ -588,18 +588,19 @@
 <p><strong>Kompatibilitas Wiring</strong>: Wiring kompatibel dengan standar Speeduino</p>
 </li>
 <li>
-<p><strong>Referensi</strong>: Informasi wiring tambahan tersedia di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
+<p><strong>Referensi</strong>: Informasi wiring tambahan tersedia di [Speeduino Wiki][speeduino-wiring]</p>
 </li>
 </ul>
-<h2 id="dukungan-dan-sumber-daya">Dukungan dan Sumber Daya</h2>
-<h3 id="dokumentasi">Dokumentasi</h3>
+<p>[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}</p>
+<h2 id="dukungan-dan-sumber-daya">Dukungan dan Sumber Daya<a class="headerlink" href="#dukungan-dan-sumber-daya" title="Permanent link">&para;</a></h2>
+<h3 id="dokumentasi">Dokumentasi<a class="headerlink" href="#dokumentasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Panduan instalasi - Petunjuk setup lengkap</li>
 <li>Diagram wiring - Pin assignment konektor detail (lihat di atas)</li>
 <li>Panduan tuning - Konfigurasi dan optimisasi mesin</li>
 <li>Pemecahan masalah - Masalah umum dan solusi</li>
 </ul>
-<h3 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</h3>
+<h3 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi<a class="headerlink" href="#file-firmware-konfigurasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="../downloads/">Halaman Download</a> - Dapatkan firmware terbaru dan file konfigurasi TunerStudio</li>
 <li>Firmware rusEFI dan Speeduino tersedia</li>

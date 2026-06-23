@@ -241,9 +241,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="manual-tuning-tunerstudio-untuk-ecu-mazduino">Manual Tuning TunerStudio untuk ECU Mazduino</h1>
+                <h1 id="manual-tuning-tunerstudio-untuk-ecu-mazduino">Manual Tuning TunerStudio untuk ECU Mazduino<a class="headerlink" href="#manual-tuning-tunerstudio-untuk-ecu-mazduino" title="Permanent link">&para;</a></h1>
 <p>Manual ini berlaku untuk semua ECU Mazduino (Compact dan Mini 6CH) yang menggunakan firmware rusEFI dengan TunerStudio sebagai software tuning. Panduan ini mencakup kebutuhan sistem, instalasi hardware, wiring, dan navigasi ke semua halaman konfigurasi TunerStudio.</p>
-<h2 id="kebutuhan-sistem">Kebutuhan Sistem</h2>
+<h2 id="kebutuhan-sistem">Kebutuhan Sistem<a class="headerlink" href="#kebutuhan-sistem" title="Permanent link">&para;</a></h2>
 <p>Untuk menggunakan TunerStudio dengan Mazduino, pastikan perangkat Anda memenuhi persyaratan minimum berikut:</p>
 <ul>
 <li>
@@ -256,8 +256,8 @@
 <p><strong>Koneksi</strong>: Port USB untuk komunikasi langsung dengan Mazduino</p>
 </li>
 </ul>
-<h2 id="wiring-dan-instalasi">Wiring dan Instalasi</h2>
-<h3 id="mengapa-output-untuk-beban-berat-membutuhkan-relay">Mengapa Output untuk Beban Berat Membutuhkan Relay</h3>
+<h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
+<h3 id="mengapa-output-untuk-beban-berat-membutuhkan-relay">Mengapa Output untuk Beban Berat Membutuhkan Relay<a class="headerlink" href="#mengapa-output-untuk-beban-berat-membutuhkan-relay" title="Permanent link">&para;</a></h3>
 <p>ECU, termasuk Mazduino, menyediakan <strong>output tingkat logika arus rendah</strong> untuk mengontrol perangkat seperti fan, fuel pump, atau solenoid. Output ini tidak dirancang untuk menangani arus tinggi yang dibutuhkan oleh perangkat tersebut. Menggunakan relay memungkinkan ECU untuk mengontrol perangkat bertenaga tinggi dengan aman:</p>
 <ol>
 <li><strong>Mengisolasi Arus Tinggi dari ECU</strong>:</li>
@@ -276,8 +276,8 @@
 </li>
 <li>Relay melindungi wiring dan komponen elektrik dengan bertindak sebagai switch, mengurangi risiko hubung singkat atau panas berlebih</li>
 </ol>
-<h3 id="rekomendasi-untuk-wiring-crimping-vs-soldering">Rekomendasi untuk Wiring: Crimping vs. Soldering</h3>
-<h4 id="crimping-kabel">Crimping Kabel</h4>
+<h3 id="rekomendasi-untuk-wiring-crimping-vs-soldering">Rekomendasi untuk Wiring: Crimping vs. Soldering<a class="headerlink" href="#rekomendasi-untuk-wiring-crimping-vs-soldering" title="Permanent link">&para;</a></h3>
+<h4 id="crimping-kabel">Crimping Kabel<a class="headerlink" href="#crimping-kabel" title="Permanent link">&para;</a></h4>
 <p>Crimping lebih disukai untuk wiring otomotif karena lebih cepat, tahan lama, dan tahan getaran jika dilakukan dengan benar:</p>
 <ol>
 <li><strong>Alat yang Dibutuhkan</strong>:</li>
@@ -298,7 +298,7 @@
 </li>
 <li>Gunakan heat shrink tubing di atas sambungan untuk melindungi dari kelembaban dan korosi</li>
 </ol>
-<h4 id="soldering-kabel">Soldering Kabel</h4>
+<h4 id="soldering-kabel">Soldering Kabel<a class="headerlink" href="#soldering-kabel" title="Permanent link">&para;</a></h4>
 <p>Soldering memberikan konektivitas elektrik yang sangat baik tetapi kurang tahan getaran:</p>
 <ol>
 <li><strong>Alat yang Dibutuhkan</strong>:</li>
@@ -318,8 +318,8 @@
 </li>
 <li>Tutupi sambungan yang di-solder dengan heat shrink atau electrical tape untuk perlindungan</li>
 </ol>
-<h3 id="tips-instalasi-ecu-aftermarket-umum">Tips Instalasi ECU Aftermarket Umum</h3>
-<h4 id="persiapan">Persiapan</h4>
+<h3 id="tips-instalasi-ecu-aftermarket-umum">Tips Instalasi ECU Aftermarket Umum<a class="headerlink" href="#tips-instalasi-ecu-aftermarket-umum" title="Permanent link">&para;</a></h3>
+<h4 id="persiapan">Persiapan<a class="headerlink" href="#persiapan" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Merencanakan Wiring</strong>:</li>
 <li>Gunakan diagram wiring yang spesifik untuk ECU dan kendaraan Anda</li>
@@ -331,7 +331,7 @@
 </li>
 <li>Verifikasi kesehatan dan kompatibilitas sensor (misalnya TPS, MAP, IAT) sebelum menghubungkannya ke ECU</li>
 </ol>
-<h4 id="power-dan-grounding">Power dan Grounding</h4>
+<h4 id="power-dan-grounding">Power dan Grounding<a class="headerlink" href="#power-dan-grounding" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Suplai Daya Khusus</strong>:</li>
 <li>Hubungkan ECU ke sumber daya +12V yang bersih dan menggunakan fuse</li>
@@ -344,9 +344,9 @@
 <li>Pastikan semua ground (ECU, sensor, dan mesin) terhubung ke <strong>titik ground bersama</strong></li>
 <li>Gunakan kabel ground yang tebal dan berkualitas tinggi untuk meminimalkan voltage drop</li>
 </ol>
-<h3 id="pentingnya-grounding-yang-tepat-dalam-sistem-ecu">Pentingnya Grounding yang Tepat dalam Sistem ECU</h3>
+<h3 id="pentingnya-grounding-yang-tepat-dalam-sistem-ecu">Pentingnya Grounding yang Tepat dalam Sistem ECU<a class="headerlink" href="#pentingnya-grounding-yang-tepat-dalam-sistem-ecu" title="Permanent link">&para;</a></h3>
 <p>Grounding adalah aspek kritis dari sistem elektrik apapun, terutama dalam aplikasi otomotif. Untuk ECU seperti Mazduino, grounding yang tepat memastikan operasi yang stabil, pembacaan sensor yang akurat, dan mencegah kerusakan pada komponen sensitif.</p>
-<h4 id="mengapa-grounding-yang-tepat-sangat-penting">Mengapa Grounding yang Tepat Sangat Penting</h4>
+<h4 id="mengapa-grounding-yang-tepat-sangat-penting">Mengapa Grounding yang Tepat Sangat Penting<a class="headerlink" href="#mengapa-grounding-yang-tepat-sangat-penting" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Melengkapi Rangkaian</strong>:</li>
 <li>Ground adalah jalur kembali untuk arus listrik, melengkapi rangkaian untuk semua perangkat</li>
@@ -370,7 +370,7 @@
 </li>
 <li>Grounding yang tepat membantu membuang kelebihan arus dengan aman, melindungi ECU dan perangkat yang terhubung dari kerusakan</li>
 </ol>
-<h4 id="mengapa-power-ground-dan-sensor-ground-terpisah">Mengapa Power Ground dan Sensor Ground Terpisah</h4>
+<h4 id="mengapa-power-ground-dan-sensor-ground-terpisah">Mengapa Power Ground dan Sensor Ground Terpisah<a class="headerlink" href="#mengapa-power-ground-dan-sensor-ground-terpisah" title="Permanent link">&para;</a></h4>
 <p>ECU memiliki <strong>power ground</strong> dan <strong>sensor ground</strong> yang khusus karena rangkaian ini melayani tujuan yang berbeda dan memiliki persyaratan yang unik:</p>
 <p><strong>1. Power Ground</strong>
 - <strong>Tujuan</strong>: Menangani arus balik dari perangkat bertenaga tinggi seperti injector, ignition coil, fuel pump, dan relay</p>
@@ -392,7 +392,7 @@
 <p><strong>Dampak Koneksi yang Salah</strong>: Jika sensor ground tidak diisolasi, noise arus tinggi dari perangkat power dapat menyebabkan pembacaan sensor yang tidak menentu atau bahkan salah interpretasi ECU</p>
 </li>
 </ul>
-<h3 id="best-practice-untuk-grounding-dalam-sistem-otomotif">Best Practice untuk Grounding dalam Sistem Otomotif</h3>
+<h3 id="best-practice-untuk-grounding-dalam-sistem-otomotif">Best Practice untuk Grounding dalam Sistem Otomotif<a class="headerlink" href="#best-practice-untuk-grounding-dalam-sistem-otomotif" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Gunakan Titik Ground Bersama</strong>:</li>
 <li>Hubungkan semua power ground ECU ke satu titik ground yang bersih (misalnya terminal negatif aki)</li>
@@ -428,11 +428,11 @@
 <li>Pastikan semua koneksi wiring mengikuti spesifikasi yang direkomendasikan untuk performa dan keselamatan terbaik</li>
 <li>Gunakan hanya konektor berkualitas tinggi dan isolasi yang tepat untuk semua sambungan</li>
 </ul>
-<h2 id="pengantar-tunerstudio">Pengantar TunerStudio</h2>
+<h2 id="pengantar-tunerstudio">Pengantar TunerStudio<a class="headerlink" href="#pengantar-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>TunerStudio adalah software tuning yang digunakan untuk mengkonfigurasi dan memonitor ECU Mazduino. Software ini memungkinkan Anda untuk mengatur parameter mesin, melihat data sensor real-time, dan melakukan tuning untuk performa optimal.</p>
 <p>Dokumentasi ini telah dibagi menjadi bagian-bagian terpisah untuk memudahkan navigasi dan pemahaman. Setiap menu konfigurasi memiliki panduan lengkap dengan contoh praktis dan rekomendasi untuk unit Plug &amp; Play maupun Kit/DIY.</p>
-<h2 id="daftar-menu-konfigurasi">Daftar Menu Konfigurasi</h2>
-<h3 id="instalasi-tunerstudio"><a href="../tunerstudio-instalasi/">Instalasi TunerStudio</a></h3>
+<h2 id="daftar-menu-konfigurasi">Daftar Menu Konfigurasi<a class="headerlink" href="#daftar-menu-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="instalasi-tunerstudio"><a href="../tunerstudio-instalasi/">Instalasi TunerStudio</a><a class="headerlink" href="#instalasi-tunerstudio" title="Permanent link">&para;</a></h3>
 <p>Panduan lengkap instalasi TunerStudio untuk ECU Mazduino, meliputi:</p>
 <ul>
 <li>Download dan instalasi step-by-step</li>
@@ -440,7 +440,7 @@
 <li>Troubleshooting masalah instalasi</li>
 <li>Setup driver dan koneksi USB</li>
 </ul>
-<h3 id="konfigurasi-project-tunerstudio"><a href="../tunerstudio-konfigurasi/">Konfigurasi Project TunerStudio</a></h3>
+<h3 id="konfigurasi-project-tunerstudio"><a href="../tunerstudio-konfigurasi/">Konfigurasi Project TunerStudio</a><a class="headerlink" href="#konfigurasi-project-tunerstudio" title="Permanent link">&para;</a></h3>
 <p>Setup project baru dan konfigurasi ECU connection, mencakup:</p>
 <ul>
 <li>Membuat project baru dari awal</li>
@@ -448,7 +448,7 @@
 <li>Konfigurasi communication settings</li>
 <li>Verifikasi koneksi dan troubleshooting</li>
 </ul>
-<h3 id="interface-dan-menu-tunerstudio"><a href="../tunerstudio-interface/">Interface dan Menu TunerStudio</a></h3>
+<h3 id="interface-dan-menu-tunerstudio"><a href="../tunerstudio-interface/">Interface dan Menu TunerStudio</a><a class="headerlink" href="#interface-dan-menu-tunerstudio" title="Permanent link">&para;</a></h3>
 <p>Panduan navigasi dan penggunaan interface TunerStudio, meliputi:</p>
 <ul>
 <li>Overview interface dan dashboard</li>
@@ -456,7 +456,7 @@
 <li>Options menu (pengaturan interface)</li>
 <li>Data logging, communications, dan tools menu</li>
 </ul>
-<h3 id="base-engine-settings"><a href="../tunerstudio-base-engine/">Base Engine Settings</a></h3>
+<h3 id="base-engine-settings"><a href="../tunerstudio-base-engine/">Base Engine Settings</a><a class="headerlink" href="#base-engine-settings" title="Permanent link">&para;</a></h3>
 <p>Konfigurasi dasar engine untuk operasi ECU yang tepat, mencakup:</p>
 <ul>
 <li>Engine configuration (cylinders, displacement, firing order)</li>
@@ -464,7 +464,7 @@
 <li>Engine metadata dan forced induction settings</li>
 <li>Layout selection dan best practices</li>
 </ul>
-<h3 id="limits-and-protection"><a href="../tunerstudio-limits-protection/">Limits and Protection</a></h3>
+<h3 id="limits-and-protection"><a href="../tunerstudio-limits-protection/">Limits and Protection</a><a class="headerlink" href="#limits-and-protection" title="Permanent link">&para;</a></h3>
 <p>Sistem proteksi untuk melindungi engine dari kerusakan, meliputi:</p>
 <ul>
 <li>Limits and Fallbacks (RPM, boost, injector duty cycle)</li>
@@ -472,7 +472,7 @@
 <li>Lambda Protection (AFR monitoring)</li>
 <li>Soft RPM limits dan electronic throttle limiting</li>
 </ul>
-<h3 id="fuel-system-configuration"><a href="../tunerstudio-fuel-system/">Fuel System Configuration</a></h3>
+<h3 id="fuel-system-configuration"><a href="../tunerstudio-fuel-system/">Fuel System Configuration</a><a class="headerlink" href="#fuel-system-configuration" title="Permanent link">&para;</a></h3>
 <p>Konfigurasi komprehensif sistem bahan bakar, mencakup:</p>
 <ul>
 <li>Injection configuration dan hardware settings</li>
@@ -480,7 +480,7 @@
 <li>Target AFR table dan closed loop correction</li>
 <li>Acceleration enrichment dan fuel cutoff (DFCO)</li>
 </ul>
-<h3 id="ignition-system-configuration"><a href="../tunerstudio-ignition/">Ignition System Configuration</a></h3>
+<h3 id="ignition-system-configuration"><a href="../tunerstudio-ignition/">Ignition System Configuration</a><a class="headerlink" href="#ignition-system-configuration" title="Permanent link">&para;</a></h3>
 <p>Setup sistem ignition untuk performance optimal, meliputi:</p>
 <ul>
 <li>Ignition mode selection (single coil, individual coils, wasted spark)</li>
@@ -488,7 +488,7 @@
 <li>CLT/IAT timing corrections</li>
 <li>Multispark, knock control, dan cylinder trims</li>
 </ul>
-<h3 id="sensor-configuration"><a href="../tunerstudio-sensors/">Sensor Configuration</a></h3>
+<h3 id="sensor-configuration"><a href="../tunerstudio-sensors/">Sensor Configuration</a><a class="headerlink" href="#sensor-configuration" title="Permanent link">&para;</a></h3>
 <p>Konfigurasi lengkap semua jenis sensor untuk monitoring dan kontrol engine, mencakup:</p>
 <ul>
 <li>Setup sensor analog dan digital</li>
@@ -496,7 +496,7 @@
 <li>Konfigurasi O2 sensor dan wideband controller</li>
 <li>VR sensor threshold dan speed sensor setup</li>
 </ul>
-<h3 id="can-bus-configuration"><a href="../tunerstudio-canbus/">CAN Bus Configuration</a></h3>
+<h3 id="can-bus-configuration"><a href="../tunerstudio-canbus/">CAN Bus Configuration</a><a class="headerlink" href="#can-bus-configuration" title="Permanent link">&para;</a></h3>
 <p>Setup komunikasi CAN Bus untuk integrasi dengan perangkat eksternal, meliputi:</p>
 <ul>
 <li>Konfigurasi CAN Bus communication settings</li>
@@ -504,7 +504,7 @@
 <li>CAN vehicle speed sensor configuration</li>
 <li>Integration dengan dashboard dan IO box</li>
 </ul>
-<h3 id="controller-diagnostics"><a href="../tunerstudio-controller/">Controller &amp; Diagnostics</a></h3>
+<h3 id="controller-diagnostics"><a href="../tunerstudio-controller/">Controller &amp; Diagnostics</a><a class="headerlink" href="#controller-diagnostics" title="Permanent link">&para;</a></h3>
 <p>Tool diagnostik dan testing untuk troubleshooting sistem, mencakup:</p>
 <ul>
 <li>Bench testing injector dan ignition outputs</li>
@@ -512,7 +512,7 @@
 <li>Traction control tables dan tuning</li>
 <li>SD Card logging dan rusEFI console</li>
 </ul>
-<h3 id="troubleshooting"><a href="../tunerstudio-troubleshooting/">Troubleshooting</a></h3>
+<h3 id="troubleshooting"><a href="../tunerstudio-troubleshooting/">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
 <p>Panduan komprehensif untuk mengatasi masalah sistem Mazduino, meliputi:</p>
 <ul>
 <li>Diagnosis masalah umum (no RPM signal, sensor errors)</li>
@@ -520,7 +520,7 @@
 <li>Error codes dan prosedur reset</li>
 <li>Best practices untuk maintenance preventif</li>
 </ul>
-<h3 id="examples-map-switching"><a href="../tunerstudio-examples/">Examples &amp; Map Switching</a></h3>
+<h3 id="examples-map-switching"><a href="../tunerstudio-examples/">Examples &amp; Map Switching</a><a class="headerlink" href="#examples-map-switching" title="Permanent link">&para;</a></h3>
 <p>Contoh implementasi praktis dan fitur advanced, mencakup:</p>
 <ul>
 <li>Setup map switching untuk kondisi operasi berbeda</li>
@@ -528,7 +528,7 @@
 <li>Integration dengan launch control dan traction control</li>
 <li>Safety considerations dan best practices</li>
 </ul>
-<h3 id="pengaturan-output-controls"><a href="../tunerstudio-output-controls/">Pengaturan Output Controls</a></h3>
+<h3 id="pengaturan-output-controls"><a href="../tunerstudio-output-controls/">Pengaturan Output Controls</a><a class="headerlink" href="#pengaturan-output-controls" title="Permanent link">&para;</a></h3>
 <p>Konfigurasi komprehensif untuk semua kontrol output ECU, meliputi:</p>
 <ul>
 <li>Main Relay dan Fuel Pump Control</li>
@@ -537,7 +537,7 @@
 <li>Starter Control dan Safety Features</li>
 <li>Check Engine Light Configuration</li>
 </ul>
-<h3 id="pengaturan-air-conditioning"><a href="../tunerstudio-ac-settings/">Pengaturan Air Conditioning</a></h3>
+<h3 id="pengaturan-air-conditioning"><a href="../tunerstudio-ac-settings/">Pengaturan Air Conditioning</a><a class="headerlink" href="#pengaturan-air-conditioning" title="Permanent link">&para;</a></h3>
 <p>Kontrol sistem A/C yang terintegrasi dengan ECU, mencakup:</p>
 <ul>
 <li>Input dan Output Controls A/C</li>

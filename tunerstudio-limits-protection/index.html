@@ -263,34 +263,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="limits-and-protection-tunerstudio">Limits and Protection - TunerStudio</h1>
+                <h1 id="limits-and-protection-tunerstudio">Limits and Protection - TunerStudio<a class="headerlink" href="#limits-and-protection-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Sistem proteksi dan pembatasan untuk melindungi engine dari kondisi yang dapat menyebabkan kerusakan. Menu <strong>Limits and Protection</strong> berisi pengaturan essential untuk menjaga engine dalam parameter operasi yang aman.</p>
 <p><img alt="Limits and Protection Menu" src="#" title="Limits and Protection Menu" /></p>
-<h2 id="overview-limits-and-protection">Overview Limits and Protection</h2>
+<h2 id="overview-limits-and-protection">Overview Limits and Protection<a class="headerlink" href="#overview-limits-and-protection" title="Permanent link">&para;</a></h2>
 <p>Submenu <strong>Limits and Protection</strong> di bawah <strong>Base Engine</strong> mencakup pengaturan essential untuk melindungi engine dengan menetapkan batas operasional. Bagian ini crucial untuk melindungi engine dari kondisi yang dapat menyebabkan kerusakan.</p>
-<h3 id="opsi-yang-tersedia">Opsi yang Tersedia:</h3>
-<h4 id="1-limits-and-fallbacks">1. Limits and Fallbacks</h4>
+<h3 id="opsi-yang-tersedia">Opsi yang Tersedia:<a class="headerlink" href="#opsi-yang-tersedia" title="Permanent link">&para;</a></h3>
+<h4 id="1-limits-and-fallbacks">1. Limits and Fallbacks<a class="headerlink" href="#1-limits-and-fallbacks" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Memungkinkan pengguna menentukan batas operasional maksimum untuk berbagai parameter engine</li>
 <li>Saat batas tercapai, strategi fallback (seperti mengurangi power atau memicu safe mode) diaktivasi</li>
 <li><strong>Contoh</strong>: Setting RPM limit untuk memastikan engine tidak melebihi threshold tertentu</li>
 </ul>
-<h4 id="2-oil-pressure-protection">2. Oil Pressure Protection</h4>
+<h4 id="2-oil-pressure-protection">2. Oil Pressure Protection<a class="headerlink" href="#2-oil-pressure-protection" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Monitors oil pressure levels untuk melindungi engine dari insufficient lubrication</li>
 <li>Jika oil pressure turun di bawah level yang aman, fitur ini dapat mengaktivasi warning atau shutdown engine</li>
 <li><strong>Catatan</strong>: Pastikan oil pressure sensor dikalibrasi dengan benar dalam TunerStudio</li>
 </ul>
-<h4 id="3-lambda-protection">3. Lambda Protection</h4>
+<h4 id="3-lambda-protection">3. Lambda Protection<a class="headerlink" href="#3-lambda-protection" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Monitors air-fuel ratios (AFR) untuk memastikan engine beroperasi dalam parameter pembakaran yang aman</li>
 <li>Jika AFR menyimpang dari range yang aman, dapat memicu corrective actions</li>
 <li><strong>Tip</strong>: Lambda protection essential untuk turbocharged atau high-performance engines</li>
 </ul>
-<h2 id="limits-and-fallbacks-configuration">Limits and Fallbacks Configuration</h2>
+<h2 id="limits-and-fallbacks-configuration">Limits and Fallbacks Configuration<a class="headerlink" href="#limits-and-fallbacks-configuration" title="Permanent link">&para;</a></h2>
 <p><img alt="Limits and Fallbacks" src="#" title="Limits and Fallbacks Configuration" /></p>
-<h3 id="main-options">Main Options</h3>
-<h4 id="rpm-limiting-methods">RPM Limiting Methods</h4>
+<h3 id="main-options">Main Options<a class="headerlink" href="#main-options" title="Permanent link">&para;</a></h3>
+<h4 id="rpm-limiting-methods">RPM Limiting Methods<a class="headerlink" href="#rpm-limiting-methods" title="Permanent link">&para;</a></h4>
 <ol>
 <li><strong>Cut fuel on RPM limit</strong>:</li>
 <li>Memotong suplai fuel saat RPM limit tercapai</li>
@@ -313,8 +313,8 @@
 <li>Menggunakan control panel di sebelah kanan</li>
 <li>Memungkinkan pengaturan RPM limit berbeda berdasarkan temperature engine</li>
 </ol>
-<h3 id="rpm-limits-configuration">RPM Limits Configuration</h3>
-<h4 id="basic-rpm-settings">Basic RPM Settings</h4>
+<h3 id="rpm-limits-configuration">RPM Limits Configuration<a class="headerlink" href="#rpm-limits-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="basic-rpm-settings">Basic RPM Settings<a class="headerlink" href="#basic-rpm-settings" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>RPM hard limit (RPM)</strong>: RPM maksimum sebelum cut actions (fuel atau spark) dipicu</p>
@@ -323,7 +323,7 @@
 <p><strong>RPM limit hysteresis (RPM)</strong>: Buffer di bawah RPM hard limit untuk menghindari rapid cycling</p>
 </li>
 </ul>
-<h4 id="boost-cut-limits">Boost Cut Limits</h4>
+<h4 id="boost-cut-limits">Boost Cut Limits<a class="headerlink" href="#boost-cut-limits" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Boost cut pressure (kPa absolute)</strong>: Tekanan boost maksimum absolut yang diizinkan</p>
@@ -332,14 +332,14 @@
 <p><strong>Boost cut pressure hysteresis (kPa absolute)</strong>: Range tekanan di bawah cut limit untuk kontrol yang lebih smooth</p>
 </li>
 </ul>
-<h3 id="injector-duty-cycle-limiter">Injector Duty Cycle Limiter</h3>
-<h4 id="immediate-protection">Immediate Protection</h4>
+<h3 id="injector-duty-cycle-limiter">Injector Duty Cycle Limiter<a class="headerlink" href="#injector-duty-cycle-limiter" title="Permanent link">&para;</a></h3>
+<h4 id="immediate-protection">Immediate Protection<a class="headerlink" href="#immediate-protection" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Instantaneous injector duty cycle limit (%)</strong>: </li>
 <li>Limit immediate pada injector duty cycle</li>
 <li>Jika threshold tercapai, sistem langsung cut injectors</li>
 </ul>
-<h4 id="sustained-protection">Sustained Protection</h4>
+<h4 id="sustained-protection">Sustained Protection<a class="headerlink" href="#sustained-protection" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Sustained injector duty cycle limit (%)</strong>: Limit untuk operasi berkelanjutan</p>
@@ -351,8 +351,8 @@
 <p>Memungkinkan high fuel demands sementara sambil melindungi injectors dari prolonged stress</p>
 </li>
 </ul>
-<h3 id="soft-rpm-limit-options">Soft RPM Limit Options</h3>
-<h4 id="gradual-engagement">Gradual Engagement</h4>
+<h3 id="soft-rpm-limit-options">Soft RPM Limit Options<a class="headerlink" href="#soft-rpm-limit-options" title="Permanent link">&para;</a></h3>
+<h4 id="gradual-engagement">Gradual Engagement<a class="headerlink" href="#gradual-engagement" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Window size (RPM)</strong>: Range RPM untuk gradual engagement</p>
@@ -365,8 +365,8 @@
 </li>
 </ul>
 <p>Opsi-opsi ini memungkinkan membuat "soft" limiter yang gradually engage, bukan abruptly cutting fuel atau spark.</p>
-<h3 id="electronic-throttle-limiting">Electronic Throttle Limiting</h3>
-<h4 id="throttle-based-limiting">Throttle-Based Limiting</h4>
+<h3 id="electronic-throttle-limiting">Electronic Throttle Limiting<a class="headerlink" href="#electronic-throttle-limiting" title="Permanent link">&para;</a></h3>
+<h4 id="throttle-based-limiting">Throttle-Based Limiting<a class="headerlink" href="#throttle-based-limiting" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Soft limiter start RPM</strong>: RPM mulai throttle closing</p>
@@ -376,26 +376,26 @@
 </li>
 </ul>
 <p>Secara bertahap menutup throttle saat RPM mendekati limit, memberikan smooth limiter response.</p>
-<h2 id="oil-pressure-protection">Oil Pressure Protection</h2>
+<h2 id="oil-pressure-protection">Oil Pressure Protection<a class="headerlink" href="#oil-pressure-protection" title="Permanent link">&para;</a></h2>
 <p><img alt="Oil Pressure Protection" src="#" title="Oil Pressure Protection" /></p>
-<h3 id="configuration-options">Configuration Options</h3>
+<h3 id="configuration-options">Configuration Options<a class="headerlink" href="#configuration-options" title="Permanent link">&para;</a></h3>
 <p><strong>Minimum oil pressure after start (kPa)</strong>:</p>
 <ul>
 <li>Field untuk memasukkan nilai minimum oil pressure dalam kilopascals</li>
 <li>Jika oil pressure turun di bawah threshold ini selama operasi, sistem akan mengaktivasi protective measure</li>
 <li>Essential untuk engine longevity, terutama high-performance atau heavily modified engines</li>
 </ul>
-<h3 id="implementation-notes">Implementation Notes</h3>
+<h3 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Pastikan oil pressure sensor terkalibrasi dengan benar</li>
 <li>Test threshold values pada kondisi operasi normal</li>
 <li>Consider engine warm-up characteristics saat setting values</li>
 </ul>
-<h2 id="lambda-protection">Lambda Protection</h2>
+<h2 id="lambda-protection">Lambda Protection<a class="headerlink" href="#lambda-protection" title="Permanent link">&para;</a></h2>
 <p><img alt="Lambda Protection" src="#" title="Lambda Protection" /></p>
-<h3 id="enabledisable-settings">Enable/Disable Settings</h3>
+<h3 id="enabledisable-settings">Enable/Disable Settings<a class="headerlink" href="#enabledisable-settings" title="Permanent link">&para;</a></h3>
 <p><strong>Enable lambda protection</strong>: Toggle untuk mengaktifkan/menonaktifkan Lambda Protection</p>
-<h3 id="activation-conditions">Activation Conditions</h3>
+<h3 id="activation-conditions">Activation Conditions<a class="headerlink" href="#activation-conditions" title="Permanent link">&para;</a></h3>
 <p>Lambda protection hanya aktif saat semua kondisi berikut terpenuhi:</p>
 <ol>
 <li><strong>Check above load (%)</strong>: Load engine melebihi percentage threshold ini</li>
@@ -403,14 +403,14 @@
 <li><strong>and above RPM</strong>: RPM di atas threshold yang ditentukan</li>
 <li><strong>and after delay (s)</strong>: Delay time sebelum Lambda Protection engage</li>
 </ol>
-<h3 id="cut-fuel-conditions">Cut Fuel Conditions</h3>
+<h3 id="cut-fuel-conditions">Cut Fuel Conditions<a class="headerlink" href="#cut-fuel-conditions" title="Permanent link">&para;</a></h3>
 <p><strong>Cut Fuel Until</strong> section menentukan kondisi di mana fuel akan dipotong:</p>
 <ol>
 <li><strong>Load less than (%)</strong>: Fuel dipotong hingga engine load turun di bawah percentage ini</li>
 <li><strong>and TPS less than (%)</strong>: Fuel cut berlanjut hingga TPS di bawah percentage ini</li>
 <li><strong>and RPM less than (RPM)</strong>: Fuel cut aktif hingga RPM turun di bawah threshold ini</li>
 </ol>
-<h3 id="lambda-difference-table">Lambda Difference Table</h3>
+<h3 id="lambda-difference-table">Lambda Difference Table<a class="headerlink" href="#lambda-difference-table" title="Permanent link">&para;</a></h3>
 <p><strong>Lambda Difference Table</strong> (sisi kanan window) memungkinkan setting maksimum allowable deviation dalam Lambda values:</p>
 <ul>
 <li>
@@ -424,8 +424,8 @@
 </li>
 </ul>
 <p>Table ini membantu menentukan Lambda deviation limits di bawah berbagai engine loads dan RPMs.</p>
-<h2 id="rekomendasi-setting">Rekomendasi Setting</h2>
-<h3 id="conservative-settings-recommended-untuk-pemula">Conservative Settings (Recommended untuk pemula)</h3>
+<h2 id="rekomendasi-setting">Rekomendasi Setting<a class="headerlink" href="#rekomendasi-setting" title="Permanent link">&para;</a></h2>
+<h3 id="conservative-settings-recommended-untuk-pemula">Conservative Settings (Recommended untuk pemula)<a class="headerlink" href="#conservative-settings-recommended-untuk-pemula" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>RPM limit</strong>: 500-1000 RPM di bawah engine redline</p>
@@ -437,7 +437,7 @@
 <p><strong>Lambda protection</strong>: Aktif di atas 70% load dan 3000 RPM</p>
 </li>
 </ul>
-<h3 id="performance-settings">Performance Settings</h3>
+<h3 id="performance-settings">Performance Settings<a class="headerlink" href="#performance-settings" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Soft RPM limit</strong>: Window size 200-500 RPM untuk smooth engagement</p>
@@ -449,20 +449,20 @@
 <p><strong>Boost cut</strong>: 50-100 kPa di bawah maximum safe boost</p>
 </li>
 </ul>
-<h3 id="troubleshooting-protection-issues">Troubleshooting Protection Issues</h3>
-<h4 id="rpm-limiter-tidak-aktif">RPM Limiter Tidak Aktif</h4>
+<h3 id="troubleshooting-protection-issues">Troubleshooting Protection Issues<a class="headerlink" href="#troubleshooting-protection-issues" title="Permanent link">&para;</a></h3>
+<h4 id="rpm-limiter-tidak-aktif">RPM Limiter Tidak Aktif<a class="headerlink" href="#rpm-limiter-tidak-aktif" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Verifikasi RPM sensor signal quality</li>
 <li>Check trigger settings dan sync</li>
 <li>Pastikan limit values realistic</li>
 </ul>
-<h4 id="oil-pressure-false-alarms">Oil Pressure False Alarms</h4>
+<h4 id="oil-pressure-false-alarms">Oil Pressure False Alarms<a class="headerlink" href="#oil-pressure-false-alarms" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Kalibrasi ulang oil pressure sensor</li>
 <li>Check wiring dan ground connections</li>
 <li>Adjust minimum pressure sesuai engine characteristics</li>
 </ul>
-<h4 id="lambda-protection-terlalu-sensitive">Lambda Protection Terlalu Sensitive</h4>
+<h4 id="lambda-protection-terlalu-sensitive">Lambda Protection Terlalu Sensitive<a class="headerlink" href="#lambda-protection-terlalu-sensitive" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Increase load/RPM thresholds</li>
 <li>Expand Lambda difference table tolerances  </li>

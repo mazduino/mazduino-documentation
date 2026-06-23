@@ -225,8 +225,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="mazduino-lite-v02">Mazduino LITE v0.2</h1>
-<h2 id="pengantar">Pengantar</h2>
+                <h1 id="mazduino-lite-v02">Mazduino LITE v0.2<a class="headerlink" href="#mazduino-lite-v02" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluarga ECU Mazduino LITE. Versi ini dirancang untuk aplikasi engine 4-silinder dengan 4 channel injector dan 2 channel ignition, dengan perbaikan signifikan pada IGBT footprint dan penambahan sensor barometer internal.</p>
 <p><img alt="Mazduino LITE ECU" src="../img/lite/mazduino-lite-with-case.jpeg" /></p>
 <p><strong>Keunggulan v0.2</strong>: </p>
@@ -235,8 +235,8 @@
 <li>Sensor barometer internal (optional)</li>
 <li>Jalur PCB yang diperbaiki</li>
 </ul>
-<h2 id="fitur-utama">Fitur Utama</h2>
-<h3 id="sistem-input">Sistem Input</h3>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
+<h3 id="sistem-input">Sistem Input<a class="headerlink" href="#sistem-input" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Trigger Input</strong>: CKP dan CMP untuk Hall/Optical sensors</p>
@@ -257,7 +257,7 @@
 <p><strong>Barometer Internal</strong>: <strong>Tersedia pada v0.2 (optional, tidak terpasang default kecuali diminta)</strong></p>
 </li>
 </ul>
-<h3 id="sistem-output">Sistem Output</h3>
+<h3 id="sistem-output">Sistem Output<a class="headerlink" href="#sistem-output" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>Injection</strong>: 4x high-current drivers untuk sequential atau batch mode</p>
@@ -275,7 +275,7 @@
 <p><strong>Idle Control</strong>: 2x PWM outputs untuk ISC valve</p>
 </li>
 </ul>
-<h3 id="komunikasi">Komunikasi</h3>
+<h3 id="komunikasi">Komunikasi<a class="headerlink" href="#komunikasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>USB Type-C</strong>: Modern connector untuk tuning dan programming</p>
@@ -287,7 +287,7 @@
 <p><strong>Serial</strong>: RX/TX pins untuk additional communication</p>
 </li>
 </ul>
-<h3 id="penyimpanan-dan-timing">Penyimpanan dan Timing</h3>
+<h3 id="penyimpanan-dan-timing">Penyimpanan dan Timing<a class="headerlink" href="#penyimpanan-dan-timing" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>SD Card</strong>: Micro SD untuk onboard data logging (max 32GB)</p>
@@ -299,15 +299,15 @@
 <p><strong>Processor</strong>: ARM Cortex-M4 STM32F4 series</p>
 </li>
 </ul>
-<h2 id="sistem-konektor">Sistem Konektor</h2>
-<h3 id="konektor-utama-33-pin">Konektor Utama 33-Pin</h3>
+<h2 id="sistem-konektor">Sistem Konektor<a class="headerlink" href="#sistem-konektor" title="Permanent link">&para;</a></h2>
+<h3 id="konektor-utama-33-pin">Konektor Utama 33-Pin<a class="headerlink" href="#konektor-utama-33-pin" title="Permanent link">&para;</a></h3>
 <p><img alt="Connector Layout" src="../img/lite/mazduino-lite-connector-layout.jpeg" /></p>
-<h4 id="layout-konektor">Layout Konektor</h4>
+<h4 id="layout-konektor">Layout Konektor<a class="headerlink" href="#layout-konektor" title="Permanent link">&para;</a></h4>
 <pre><code>11  10   9   8   7   6   5   4   3   2   1
 22  21  20  19  18  17  16  15  14  13  12
 33  32  31  30  29  28  27  26  25  24  23
 </code></pre>
-<h4 id="pin-assignment-v02">Pin Assignment v0.2</h4>
+<h4 id="pin-assignment-v02">Pin Assignment v0.2<a class="headerlink" href="#pin-assignment-v02" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -485,7 +485,7 @@
 </tbody>
 </table>
 <p><strong>Perbedaan Penting v0.2</strong>: Pin 7 dan 9 <strong>ditukar</strong> - Pin 7 adalah <strong>Ground Coil</strong>, Pin 9 adalah <strong>Ignition 2</strong></p>
-<h3 id="can-bus-konektor-4-pin">CAN Bus Konektor (4-Pin)</h3>
+<h3 id="can-bus-konektor-4-pin">CAN Bus Konektor (4-Pin)<a class="headerlink" href="#can-bus-konektor-4-pin" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -512,7 +512,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="pin-mapping-mcu">Pin Mapping MCU</h2>
+<h2 id="pin-mapping-mcu">Pin Mapping MCU<a class="headerlink" href="#pin-mapping-mcu" title="Permanent link">&para;</a></h2>
 <p>Untuk pengguna lanjutan dan pengembangan firmware:</p>
 <table>
 <thead>
@@ -689,10 +689,10 @@
 <p><strong>BARO SDA</strong>: PB11 (shared dengan RXD3)</p>
 </li>
 </ul>
-<h2 id="konfigurasi-hardware">Konfigurasi Hardware</h2>
-<h3 id="pengaturan-jumper-kritis">Pengaturan Jumper Kritis</h3>
+<h2 id="konfigurasi-hardware">Konfigurasi Hardware<a class="headerlink" href="#konfigurasi-hardware" title="Permanent link">&para;</a></h2>
+<h3 id="pengaturan-jumper-kritis">Pengaturan Jumper Kritis<a class="headerlink" href="#pengaturan-jumper-kritis" title="Permanent link">&para;</a></h3>
 <p><strong>PENTING</strong>: Konfigurasi jumper harus benar sebelum power-up!</p>
-<h4 id="top-side-board">Top Side Board</h4>
+<h4 id="top-side-board">Top Side Board<a class="headerlink" href="#top-side-board" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Coil Voltage</strong>: 12V/5V selection (default berdasarkan coil type)</p>
@@ -704,7 +704,7 @@
 <p><strong>VR Conditioner</strong>: 8-pin connector untuk VR module</p>
 </li>
 </ul>
-<h4 id="bottom-side-board">Bottom Side Board</h4>
+<h4 id="bottom-side-board">Bottom Side Board<a class="headerlink" href="#bottom-side-board" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Tacho Signal</strong>: 5V/12V output selection (default 12V)</p>
@@ -725,7 +725,7 @@
 <p><strong>CAN Power</strong>: 12V/5V pada CAN connector</p>
 </li>
 </ul>
-<h3 id="perbaikan-pada-v02">Perbaikan pada v0.2</h3>
+<h3 id="perbaikan-pada-v02">Perbaikan pada v0.2<a class="headerlink" href="#perbaikan-pada-v02" title="Permanent link">&para;</a></h3>
 <p><strong>Perbaikan Utama:</strong></p>
 <ul>
 <li>
@@ -741,7 +741,7 @@
 <p><strong>Pin Assignment</strong>: Optimasi pin assignment untuk konektor 33-pin</p>
 </li>
 </ul>
-<h3 id="sensor-barometer-internal-optional">Sensor Barometer Internal (Optional)</h3>
+<h3 id="sensor-barometer-internal-optional">Sensor Barometer Internal (Optional)<a class="headerlink" href="#sensor-barometer-internal-optional" title="Permanent link">&para;</a></h3>
 <p><strong>Fitur Baru v0.2</strong>: Sensor barometer internal tersedia sebagai opsi</p>
 <p><strong>Spesifikasi:</strong></p>
 <ul>
@@ -763,7 +763,7 @@
 </ul>
 <p><strong>Cara Pemesanan:</strong>
 Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian LITE v0.2</p>
-<h3 id="rekomendasi-penggunaan-v02">Rekomendasi Penggunaan v0.2</h3>
+<h3 id="rekomendasi-penggunaan-v02">Rekomendasi Penggunaan v0.2<a class="headerlink" href="#rekomendasi-penggunaan-v02" title="Permanent link">&para;</a></h3>
 <p><strong>Ideal untuk:</strong></p>
 <ul>
 <li><strong>Semua aplikasi</strong> engine management</li>
@@ -779,7 +779,7 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 <li>Optional barometer internal</li>
 <li>Reliability yang lebih baik</li>
 </ul>
-<h3 id="peringatan-keselamatan">Peringatan Keselamatan</h3>
+<h3 id="peringatan-keselamatan">Peringatan Keselamatan<a class="headerlink" href="#peringatan-keselamatan" title="Permanent link">&para;</a></h3>
 <p><strong>PERINGATAN</strong>:</p>
 <ul>
 <li><strong>Jangan hubungkan sinyal 12V langsung ke ECU input</strong></li>
@@ -799,7 +799,7 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 <p><strong>Periksa kembali koneksi saat upgrade dari v0.1</strong></p>
 </li>
 </ul>
-<h2 id="perbandingan-dengan-v01">Perbandingan dengan v0.1</h2>
+<h2 id="perbandingan-dengan-v01">Perbandingan dengan v0.1<a class="headerlink" href="#perbandingan-dengan-v01" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>

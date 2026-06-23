@@ -267,12 +267,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="fuel-system-configuration-tunerstudio">Fuel System Configuration - TunerStudio</h1>
+                <h1 id="fuel-system-configuration-tunerstudio">Fuel System Configuration - TunerStudio<a class="headerlink" href="#fuel-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Konfigurasi komprehensif untuk sistem bahan bakar ECU Mazduino. Menu <strong>Fuel</strong> berisi berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel.</p>
 <p><img alt="Fuel Menu" src="#" title="Fuel Menu Overview" /></p>
-<h2 id="fuel-menu-overview">Fuel Menu Overview</h2>
+<h2 id="fuel-menu-overview">Fuel Menu Overview<a class="headerlink" href="#fuel-menu-overview" title="Permanent link">&para;</a></h2>
 <p>Menu <strong>Fuel</strong> menyediakan akses ke berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel. Untuk unit <strong>Plug and Play</strong>, banyak pengaturan ini sudah dikonfigurasi dalam basemap yang disertakan, tetapi penyesuaian masih dapat dilakukan. Untuk unit <strong>Metal-series Wire In</strong>, kalibrasi penuh diperlukan berdasarkan setup kendaraan.</p>
-<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:</h3>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p><strong>Injection Configuration</strong>: Setup parameter injection dasar seperti injection timing dan fuel injector configuration</p>
@@ -326,10 +326,10 @@
 <p><strong>Acceleration Enrichment</strong>: Tambahan fuel saat throttle dibuka dengan cepat</p>
 </li>
 </ol>
-<h2 id="injection-configuration">Injection Configuration</h2>
+<h2 id="injection-configuration">Injection Configuration<a class="headerlink" href="#injection-configuration" title="Permanent link">&para;</a></h2>
 <p><img alt="Injection Configuration" src="#" title="Injection Configuration" /></p>
-<h3 id="injection-settings">Injection Settings</h3>
-<h4 id="basic-injection-parameters">Basic Injection Parameters</h4>
+<h3 id="injection-settings">Injection Settings<a class="headerlink" href="#injection-settings" title="Permanent link">&para;</a></h3>
+<h4 id="basic-injection-parameters">Basic Injection Parameters<a class="headerlink" href="#basic-injection-parameters" title="Permanent link">&para;</a></h4>
 <p><strong>Enabled</strong>: Set ke <code>true</code> untuk mengaktifkan fuel injection</p>
 <p><strong>Mode</strong>: Opsi meliputi:</p>
 <ul>
@@ -347,8 +347,8 @@
 <p><strong>Override VE Table Load Axis</strong>: Memungkinkan mengubah default load axis yang digunakan untuk VE table (biasanya MAP)</p>
 <p><strong>Override AFR Table Load Axis</strong>: Override default load axis untuk target AFR table</p>
 <p><strong>Injection Phase Control Mode</strong>: Menentukan kapan fuel disuntikkan relatif terhadap intake valve opening</p>
-<h3 id="injector-settings">Injector Settings</h3>
-<h4 id="flow-and-characterization">Flow and Characterization</h4>
+<h3 id="injector-settings">Injector Settings<a class="headerlink" href="#injector-settings" title="Permanent link">&para;</a></h3>
+<h4 id="flow-and-characterization">Flow and Characterization<a class="headerlink" href="#flow-and-characterization" title="Permanent link">&para;</a></h4>
 <p><strong>Injector Flow</strong>: Specifies flow rate injector, biasanya dalam cc/min atau lbs/hr</p>
 <p><strong>Injector Flow Units</strong>: Pilih antara <strong>Volumetric Flow</strong> (cc/min) atau unit lainnya</p>
 <p><strong>Injector Flow Compensation Mode</strong>:</p>
@@ -364,16 +364,16 @@
 </li>
 </ul>
 <p><strong>Fuel Rail Pressure Sensor</strong>: Hanya digunakan saat "Sensed Rail Pressure" dipilih</p>
-<h3 id="fuel-characteristics">Fuel Characteristics</h3>
+<h3 id="fuel-characteristics">Fuel Characteristics<a class="headerlink" href="#fuel-characteristics" title="Permanent link">&para;</a></h3>
 <p><strong>Stoichiometric Ratio</strong>: Menentukan stoichiometric air-fuel ratio (AFR) untuk tipe fuel yang digunakan</p>
 <p><strong>E100 Stoichiometric Ratio</strong>: Menentukan stoichiometric AFR untuk E100 (pure ethanol) untuk ethanol blends</p>
-<h3 id="injector-dead-time">Injector Dead Time</h3>
+<h3 id="injector-dead-time">Injector Dead Time<a class="headerlink" href="#injector-dead-time" title="Permanent link">&para;</a></h3>
 <p>Menampilkan graph yang menunjukkan injector dead time (dalam milliseconds) sebagai fungsi battery voltage. Dead time menurun saat voltage naik, memastikan kontrol injector yang presisi di bawah kondisi elektrik yang bervariasi.</p>
-<h2 id="ve-volumetric-efficiency-table">VE (Volumetric Efficiency) Table</h2>
+<h2 id="ve-volumetric-efficiency-table">VE (Volumetric Efficiency) Table<a class="headerlink" href="#ve-volumetric-efficiency-table" title="Permanent link">&para;</a></h2>
 <p><img alt="VE Table" src="#" title="VE Table" /></p>
 <p>VE Table menampilkan nilai volumetric efficiency engine sebagai fungsi <strong>load (kPa)</strong> dan <strong>RPM</strong>. Values ini menentukan seberapa banyak fuel yang dibutuhkan berdasarkan karakteristik airflow engine pada operating points yang berbeda.</p>
-<h3 id="typical-ve-values">Typical VE Values</h3>
-<h4 id="idle-conditions">Idle Conditions</h4>
+<h3 id="typical-ve-values">Typical VE Values<a class="headerlink" href="#typical-ve-values" title="Permanent link">&para;</a></h3>
+<h4 id="idle-conditions">Idle Conditions<a class="headerlink" href="#idle-conditions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Load</strong>: 30-50 kPa, <strong>RPM</strong>: 500-1000</p>
@@ -385,7 +385,7 @@
 <p>Merepresentasikan airflow yang relatif rendah saat engine running pada low RPM dan tanpa load</p>
 </li>
 </ul>
-<h4 id="high-load-conditions">High Load Conditions</h4>
+<h4 id="high-load-conditions">High Load Conditions<a class="headerlink" href="#high-load-conditions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Load</strong>: 100-250 kPa, <strong>RPM</strong>: 4000-7000</p>
@@ -397,24 +397,24 @@
 <p>Engines dengan forced induction dapat memiliki values melebihi 100%</p>
 </li>
 </ul>
-<h4 id="troubleshooting-ve-values">Troubleshooting VE Values</h4>
+<h4 id="troubleshooting-ve-values">Troubleshooting VE Values<a class="headerlink" href="#troubleshooting-ve-values" title="Permanent link">&para;</a></h4>
 <p>Jika VE values signifikan berbeda dari ranges ini, mungkin mengindikasikan <strong>injectors belum correctly modeled</strong>:</p>
 <ul>
 <li>Incorrect injector flow rates</li>
 <li>Dead time settings salah</li>
 <li>Kesalahan kalibrasi lainnya</li>
 </ul>
-<h2 id="target-afr-table">Target AFR Table</h2>
+<h2 id="target-afr-table">Target AFR Table<a class="headerlink" href="#target-afr-table" title="Permanent link">&para;</a></h2>
 <p><img alt="Target AFR" src="#" title="Target AFR Table" /></p>
 <p>Target AFR Table mengatur air-fuel mixture yang diinginkan untuk berbagai kondisi <strong>RPM</strong> dan <strong>load (kPa)</strong>. Values dalam table ini mempengaruhi seberapa rich atau lean mixture akan di berbagai operating conditions.</p>
-<h3 id="example-breakdown-turbocharged-engine">Example Breakdown - Turbocharged Engine</h3>
+<h3 id="example-breakdown-turbocharged-engine">Example Breakdown - Turbocharged Engine<a class="headerlink" href="#example-breakdown-turbocharged-engine" title="Permanent link">&para;</a></h3>
 <p>Table contoh ini di-setup untuk turbocharged, cammed engine:</p>
-<h4 id="idle-afr-140-afr">Idle AFR (14.0 AFR)</h4>
+<h4 id="idle-afr-140-afr">Idle AFR (14.0 AFR)<a class="headerlink" href="#idle-afr-140-afr" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Target untuk idle AFR yang lebih smooth, praktek umum untuk cammed engines</li>
 <li>Memberikan idle yang lebih stabil</li>
 </ul>
-<h4 id="boost-conditions-150-250-kpa">Boost Conditions (150-250 kPa)</h4>
+<h4 id="boost-conditions-150-250-kpa">Boost Conditions (150-250 kPa)<a class="headerlink" href="#boost-conditions-150-250-kpa" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p>AFR targets lebih rich: 10.7-11.0 AFR</p>
@@ -425,21 +425,21 @@
 <li>Menjaga combustion temperatures aman</li>
 <li>Memastikan reliable performance di bawah high load</li>
 </ul>
-<h4 id="mid-range-conditions">Mid-Range Conditions</h4>
+<h4 id="mid-range-conditions">Mid-Range Conditions<a class="headerlink" href="#mid-range-conditions" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Balance antara performance dan efficiency</li>
 <li>Typical values: 12.5-13.5 AFR untuk partial load</li>
 </ul>
-<h2 id="closed-loop-fuel-correction">Closed Loop Fuel Correction</h2>
+<h2 id="closed-loop-fuel-correction">Closed Loop Fuel Correction<a class="headerlink" href="#closed-loop-fuel-correction" title="Permanent link">&para;</a></h2>
 <p><img alt="Closed Loop Correction" src="#" title="Closed Loop Correction" /></p>
-<h3 id="basic-settings">Basic Settings</h3>
+<h3 id="basic-settings">Basic Settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h3>
 <p><strong>Enabled</strong>: Mengaktifkan closed-loop correction system</p>
 <p><strong>Startup delay</strong>: Delay (dalam seconds) setelah startup sebelum koreksi dimulai</p>
 <p><strong>Minimum CLT for correction</strong>: Coolant temperature minimum untuk mulai corrections</p>
 <p><strong>Minimum/Maximum AFR for correction</strong>: Range AFR di mana corrections akan diaplikasikan</p>
 <p><strong>Adjustment deadband</strong>: Threshold di mana tidak ada corrections yang dibuat untuk menghindari fluktuasi minor</p>
 <p><strong>Ignore error magnitude</strong>: Mengontrol berapa AFR error yang diabaikan sebelum corrections diterapkan</p>
-<h3 id="region-configuration">Region Configuration</h3>
+<h3 id="region-configuration">Region Configuration<a class="headerlink" href="#region-configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Region Configuration</strong> memungkinkan kustomisasi RPM dan load thresholds:</p>
 <ul>
 <li>
@@ -452,7 +452,7 @@
 <p><strong>Power region load</strong>: Load limit untuk high load conditions</p>
 </li>
 </ul>
-<h3 id="region-specific-parameters">Region-Specific Parameters</h3>
+<h3 id="region-specific-parameters">Region-Specific Parameters<a class="headerlink" href="#region-specific-parameters" title="Permanent link">&para;</a></h3>
 <p>Setiap region (Main, Idle, Power, Overrun) memiliki <strong>time constants</strong> dan <strong>maximum add/remove percentages</strong>:</p>
 <ul>
 <li>
@@ -462,46 +462,46 @@
 <p><strong>Max add/remove</strong>: Membatasi maximum fuel adjustment</p>
 </li>
 </ul>
-<h2 id="coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)</h2>
+<h2 id="coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)<a class="headerlink" href="#coasting-fuel-cutoff-dfco" title="Permanent link">&para;</a></h2>
 <p><img alt="Fuel Cutoff Settings" src="#" title="Fuel Cutoff Settings" /></p>
-<h3 id="enabledisable-settings">Enable/Disable Settings</h3>
+<h3 id="enabledisable-settings">Enable/Disable Settings<a class="headerlink" href="#enabledisable-settings" title="Permanent link">&para;</a></h3>
 <p><strong>Enable Coasting Fuel Cutoff</strong>: Mengaktifkan fuel cutoff selama coasting</p>
 <p><strong>No cut below CLT(C)</strong>: Coolant temperature minimum di bawah mana fuel cutoff tidak terjadi</p>
-<h3 id="activation-thresholds">Activation Thresholds</h3>
+<h3 id="activation-thresholds">Activation Thresholds<a class="headerlink" href="#activation-thresholds" title="Permanent link">&para;</a></h3>
 <p><strong>RPM cut fuel above</strong>: RPM threshold di atas mana fuel cutoff akan engage selama deceleration</p>
 <p><strong>RPM restore fuel below</strong>: RPM di mana fuel di-restore setelah cutoff</p>
 <p><strong>Vehicle speed cut above/restore below</strong>: Speed thresholds untuk mengaktifkan/menonaktifkan fuel cutoff</p>
 <p><strong>Cut fuel below TPS(%)</strong>: Throttle position threshold untuk aktivasi fuel cutoff</p>
 <p><strong>Cut fuel below MAP(kPa)</strong>: Manifold pressure threshold untuk aktivasi fuel cutoff</p>
-<h3 id="advanced-settings">Advanced Settings</h3>
+<h3 id="advanced-settings">Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permanent link">&para;</a></h3>
 <p><strong>Fuel cut delay</strong>: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi</p>
 <p><strong>Inhibit closed loop fuel after cut</strong>: Temporarily disable closed-loop fuel correction setelah fuel di-restore</p>
-<h2 id="acceleration-enrichment">Acceleration Enrichment</h2>
+<h2 id="acceleration-enrichment">Acceleration Enrichment<a class="headerlink" href="#acceleration-enrichment" title="Permanent link">&para;</a></h2>
 <p><img alt="Acceleration Enrichment" src="#" title="Acceleration Enrichment" /></p>
-<h3 id="tps-based-enrichment">TPS-Based Enrichment</h3>
+<h3 id="tps-based-enrichment">TPS-Based Enrichment<a class="headerlink" href="#tps-based-enrichment" title="Permanent link">&para;</a></h3>
 <p><strong>Length (sec)</strong>: Durasi enrichment pulse saat throttle movement terdeteksi</p>
 <p><strong>Accel Threshold (roc)</strong>: Rate of change threshold untuk trigger acceleration enrichment</p>
 <p><strong>Decel Threshold (roc)</strong>: ROC threshold untuk trigger deceleration enrichment</p>
-<h3 id="accelerator-pump-model">Accelerator Pump Model</h3>
+<h3 id="accelerator-pump-model">Accelerator Pump Model<a class="headerlink" href="#accelerator-pump-model" title="Permanent link">&para;</a></h3>
 <p><strong>Fraction Period (cycles)</strong> dan <strong>Fraction Divisor (coef)</strong>: Mengontrol bagaimana enrichment dikirimkan selama rapid throttle changes</p>
-<h3 id="wall-wetting-compensation">Wall Wetting Compensation</h3>
+<h3 id="wall-wetting-compensation">Wall Wetting Compensation<a class="headerlink" href="#wall-wetting-compensation" title="Permanent link">&para;</a></h3>
 <p><strong>Wall fueling model type</strong>: Model untuk calculating wall wetting fuel adjustments</p>
 <p><strong>Evaporation time constant / tau</strong>: Time constant untuk fuel evaporation dari intake walls</p>
 <p><strong>Added to wall coef / beta</strong>: Proporsi fuel yang menempel ke intake walls</p>
-<h2 id="rekomendasi-tuning">Rekomendasi Tuning</h2>
-<h3 id="plug-and-play-units">Plug and Play Units</h3>
+<h2 id="rekomendasi-tuning">Rekomendasi Tuning<a class="headerlink" href="#rekomendasi-tuning" title="Permanent link">&para;</a></h2>
+<h3 id="plug-and-play-units">Plug and Play Units<a class="headerlink" href="#plug-and-play-units" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Sebagian besar settings sudah optimal dalam basemap</li>
 <li>Focus pada adjustment engine-specific parameters</li>
 <li>Monitor AFR dan performance untuk fine-tuning</li>
 </ul>
-<h3 id="metal-series-wire-in-units">Metal-series Wire In Units</h3>
+<h3 id="metal-series-wire-in-units">Metal-series Wire In Units<a class="headerlink" href="#metal-series-wire-in-units" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Semua parameters perlu dikonfigurasi dari awal</li>
 <li>Start dengan conservative values</li>
 <li>Incremental tuning dengan data logging</li>
 </ul>
-<h3 id="best-practices">Best Practices</h3>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Start conservative</strong> dengan fuel delivery</li>
 <li><strong>Monitor AFR constantly</strong> selama tuning</li>
