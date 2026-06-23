@@ -168,6 +168,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -209,32 +238,66 @@
 <h2 id="fitur-utama">Fitur Utama</h2>
 <h3 id="sistem-input">Sistem Input</h3>
 <ul>
-<li><strong>Trigger Input</strong>: CKP dan CMP untuk Hall/Optical sensors</li>
-<li><strong>VR Support</strong>: Variable Reluctance sensors dengan konditioner module</li>
-<li><strong>Analog Inputs</strong>: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare</li>
-<li><strong>Digital Inputs</strong>: 5x pullup untuk AC Switch, VSS, Clutch, dan launch control</li>
-<li><strong>Sensor Power</strong>: 5V regulated dengan internal fuse protection</li>
-<li><strong>Barometer Internal</strong>: <strong>Tersedia pada v0.2 (optional, tidak terpasang default kecuali diminta)</strong></li>
+<li>
+<p><strong>Trigger Input</strong>: CKP dan CMP untuk Hall/Optical sensors</p>
+</li>
+<li>
+<p><strong>VR Support</strong>: Variable Reluctance sensors dengan konditioner module</p>
+</li>
+<li>
+<p><strong>Analog Inputs</strong>: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare</p>
+</li>
+<li>
+<p><strong>Digital Inputs</strong>: 5x pullup untuk AC Switch, VSS, Clutch, dan launch control</p>
+</li>
+<li>
+<p><strong>Sensor Power</strong>: 5V regulated dengan internal fuse protection</p>
+</li>
+<li>
+<p><strong>Barometer Internal</strong>: <strong>Tersedia pada v0.2 (optional, tidak terpasang default kecuali diminta)</strong></p>
+</li>
 </ul>
 <h3 id="sistem-output">Sistem Output</h3>
 <ul>
-<li><strong>Injection</strong>: 4x high-current drivers untuk sequential atau batch mode</li>
-<li><strong>Ignition</strong>: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support</li>
-<li><strong>v0.2</strong>: IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan</li>
-<li><strong>Control</strong>: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer</li>
-<li><strong>Idle Control</strong>: 2x PWM outputs untuk ISC valve</li>
+<li>
+<p><strong>Injection</strong>: 4x high-current drivers untuk sequential atau batch mode</p>
+</li>
+<li>
+<p><strong>Ignition</strong>: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support</p>
+</li>
+<li>
+<p><strong>v0.2</strong>: IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan</p>
+</li>
+<li>
+<p><strong>Control</strong>: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer</p>
+</li>
+<li>
+<p><strong>Idle Control</strong>: 2x PWM outputs untuk ISC valve</p>
+</li>
 </ul>
 <h3 id="komunikasi">Komunikasi</h3>
 <ul>
-<li><strong>USB Type-C</strong>: Modern connector untuk tuning dan programming</li>
-<li><strong>CAN Bus</strong>: 4-pin connector dengan power selection (5V/12V)</li>
-<li><strong>Serial</strong>: RX/TX pins untuk additional communication</li>
+<li>
+<p><strong>USB Type-C</strong>: Modern connector untuk tuning dan programming</p>
+</li>
+<li>
+<p><strong>CAN Bus</strong>: 4-pin connector dengan power selection (5V/12V)</p>
+</li>
+<li>
+<p><strong>Serial</strong>: RX/TX pins untuk additional communication</p>
+</li>
 </ul>
 <h3 id="penyimpanan-dan-timing">Penyimpanan dan Timing</h3>
 <ul>
-<li><strong>SD Card</strong>: Micro SD untuk onboard data logging (max 32GB)</li>
-<li><strong>RTC</strong>: Battery-backed real-time clock</li>
-<li><strong>Processor</strong>: ARM Cortex-M4 STM32F4 series</li>
+<li>
+<p><strong>SD Card</strong>: Micro SD untuk onboard data logging (max 32GB)</p>
+</li>
+<li>
+<p><strong>RTC</strong>: Battery-backed real-time clock</p>
+</li>
+<li>
+<p><strong>Processor</strong>: ARM Cortex-M4 STM32F4 series</p>
+</li>
 </ul>
 <h2 id="sistem-konektor">Sistem Konektor</h2>
 <h3 id="konektor-utama-33-pin">Konektor Utama 33-Pin</h3>
@@ -619,44 +682,84 @@
 </table>
 <p><strong>Tambahan v0.2</strong>: Pin mapping untuk <strong>Barometric Pressure Sensor</strong></p>
 <ul>
-<li><strong>BARO SCL</strong>: PB10 (shared dengan TXD3)</li>
-<li><strong>BARO SDA</strong>: PB11 (shared dengan RXD3)</li>
+<li>
+<p><strong>BARO SCL</strong>: PB10 (shared dengan TXD3)</p>
+</li>
+<li>
+<p><strong>BARO SDA</strong>: PB11 (shared dengan RXD3)</p>
+</li>
 </ul>
 <h2 id="konfigurasi-hardware">Konfigurasi Hardware</h2>
 <h3 id="pengaturan-jumper-kritis">Pengaturan Jumper Kritis</h3>
 <p><strong>PENTING</strong>: Konfigurasi jumper harus benar sebelum power-up!</p>
 <h4 id="top-side-board">Top Side Board</h4>
 <ul>
-<li><strong>Coil Voltage</strong>: 12V/5V selection (default berdasarkan coil type)</li>
-<li><strong>CAN Terminator</strong>: Enable/disable resistor terminator</li>
-<li><strong>VR Conditioner</strong>: 8-pin connector untuk VR module</li>
+<li>
+<p><strong>Coil Voltage</strong>: 12V/5V selection (default berdasarkan coil type)</p>
+</li>
+<li>
+<p><strong>CAN Terminator</strong>: Enable/disable resistor terminator</p>
+</li>
+<li>
+<p><strong>VR Conditioner</strong>: 8-pin connector untuk VR module</p>
+</li>
 </ul>
 <h4 id="bottom-side-board">Bottom Side Board</h4>
 <ul>
-<li><strong>Tacho Signal</strong>: 5V/12V output selection (default 12V)</li>
-<li><strong>IGN1/IGN2 Mode</strong>: Smart Coil/IGBT selection (JP3/JP4)</li>
-<li><strong>v0.2</strong>: IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</li>
-<li><strong>VR1/Hall, VR2/Hall</strong>: Input type selection</li>
-<li><strong>Digital Pullup</strong>: Enable internal pullup resistors</li>
-<li><strong>CAN Power</strong>: 12V/5V pada CAN connector</li>
+<li>
+<p><strong>Tacho Signal</strong>: 5V/12V output selection (default 12V)</p>
+</li>
+<li>
+<p><strong>IGN1/IGN2 Mode</strong>: Smart Coil/IGBT selection (JP3/JP4)</p>
+</li>
+<li>
+<p><strong>v0.2</strong>: IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</p>
+</li>
+<li>
+<p><strong>VR1/Hall, VR2/Hall</strong>: Input type selection</p>
+</li>
+<li>
+<p><strong>Digital Pullup</strong>: Enable internal pullup resistors</p>
+</li>
+<li>
+<p><strong>CAN Power</strong>: 12V/5V pada CAN connector</p>
+</li>
 </ul>
 <h3 id="perbaikan-pada-v02">Perbaikan pada v0.2</h3>
 <p><strong>Perbaikan Utama:</strong></p>
 <ul>
-<li><strong>Jalur PCB</strong>: Perbaikan routing dan koreksi jalur untuk kemudahan jumper</li>
-<li><strong>IGBT Compatibility</strong>: Footprint yang lebih umum dan mudah ditemukan</li>
-<li><strong>Barometer Support</strong>: Mounting untuk sensor barometer internal (optional)</li>
-<li><strong>Pin Assignment</strong>: Optimasi pin assignment untuk konektor 33-pin</li>
+<li>
+<p><strong>Jalur PCB</strong>: Perbaikan routing dan koreksi jalur untuk kemudahan jumper</p>
+</li>
+<li>
+<p><strong>IGBT Compatibility</strong>: Footprint yang lebih umum dan mudah ditemukan</p>
+</li>
+<li>
+<p><strong>Barometer Support</strong>: Mounting untuk sensor barometer internal (optional)</p>
+</li>
+<li>
+<p><strong>Pin Assignment</strong>: Optimasi pin assignment untuk konektor 33-pin</p>
+</li>
 </ul>
 <h3 id="sensor-barometer-internal-optional">Sensor Barometer Internal (Optional)</h3>
 <p><strong>Fitur Baru v0.2</strong>: Sensor barometer internal tersedia sebagai opsi</p>
 <p><strong>Spesifikasi:</strong></p>
 <ul>
-<li><strong>Sensor Type</strong>: Barometric Pressure Sensor</li>
-<li><strong>Interface</strong>: I2C</li>
-<li><strong>Pin MCU</strong>: BARO SCL (PB10), BARO SDA (PB11)</li>
-<li><strong>Ketersediaan</strong>: Optional - tidak terpasang default, dapat diminta saat pembelian</li>
-<li><strong>Fungsi</strong>: Koreksi altitude dan referensi tekanan atmosfer</li>
+<li>
+<p><strong>Sensor Type</strong>: Barometric Pressure Sensor</p>
+</li>
+<li>
+<p><strong>Interface</strong>: I2C</p>
+</li>
+<li>
+<p><strong>Pin MCU</strong>: BARO SCL (PB10), BARO SDA (PB11)</p>
+</li>
+<li>
+<p><strong>Ketersediaan</strong>: Optional - tidak terpasang default, dapat diminta saat pembelian</p>
+</li>
+<li>
+<p><strong>Fungsi</strong>: Koreksi altitude dan referensi tekanan atmosfer</p>
+</li>
 </ul>
 <p><strong>Cara Pemesanan:</strong>
 Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian LITE v0.2</p>
@@ -686,9 +789,15 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 </ul>
 <p><strong>CATATAN PINOUT v0.2</strong>:</p>
 <ul>
-<li><strong>Pin 7</strong>: Ground Coil (berbeda dengan v0.1)</li>
-<li><strong>Pin 9</strong>: Ignition 2 (berbeda dengan v0.1)</li>
-<li><strong>Periksa kembali koneksi saat upgrade dari v0.1</strong></li>
+<li>
+<p><strong>Pin 7</strong>: Ground Coil (berbeda dengan v0.1)</p>
+</li>
+<li>
+<p><strong>Pin 9</strong>: Ignition 2 (berbeda dengan v0.1)</p>
+</li>
+<li>
+<p><strong>Periksa kembali koneksi saat upgrade dari v0.1</strong></p>
+</li>
 </ul>
 <h2 id="perbandingan-dengan-v01">Perbandingan dengan v0.1</h2>
 <table>

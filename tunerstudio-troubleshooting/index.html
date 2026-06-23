@@ -163,12 +163,39 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#navigasi">Navigasi</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
@@ -204,22 +231,30 @@
 <h2 id="masalah-umum-dan-solusi">Masalah Umum dan Solusi</h2>
 <h3 id="1-tidak-ada-sinyal-rpm">1. Tidak Ada Sinyal RPM</h3>
 <p><img alt="No RPM Signal" src="images/no-rpm-signal.png" /></p>
-<p><strong>Gejala</strong>: 
-- Engine tidak start
-- RPM gauge tetap di nol selama cranking
-- Tidak ada indikasi aktivitas ignition</p>
-<p><strong>Penyebab Potensial</strong>:
-- Sensor crankshaft atau camshaft tidak terpasang dengan benar
-- Wiring yang rusak atau terputus ke sensor
-- Tipe sensor atau konfigurasi salah di software
-- Gap sensor tidak sesuai spesifikasi</p>
-<p><strong>Solusi</strong>:
-1. <strong>Verifikasi Instalasi Sensor</strong>:
-   - Pastikan instalasi sensor crank dan cam yang tepat
-   - Periksa alignment dan gap yang benar (biasanya 0.5-1.5mm untuk sensor Hall)
-   - Verifikasi mounting yang kuat tanpa getaran</p>
+<p><strong>Gejala</strong>: </p>
+<ul>
+<li>Engine tidak start</li>
+<li>RPM gauge tetap di nol selama cranking</li>
+<li>Tidak ada indikasi aktivitas ignition</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Sensor crankshaft atau camshaft tidak terpasang dengan benar</li>
+<li>Wiring yang rusak atau terputus ke sensor</li>
+<li>Tipe sensor atau konfigurasi salah di software</li>
+<li>Gap sensor tidak sesuai spesifikasi</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Periksa Wiring</strong>:</li>
+<li><strong>Verifikasi Instalasi Sensor</strong>:</li>
+<li>Pastikan instalasi sensor crank dan cam yang tepat</li>
+<li>Periksa alignment dan gap yang benar (biasanya 0.5-1.5mm untuk sensor Hall)</li>
+<li>
+<p>Verifikasi mounting yang kuat tanpa getaran</p>
+</li>
+<li>
+<p><strong>Periksa Wiring</strong>:</p>
+</li>
 <li>Inspeksi wiring untuk kerusakan atau koneksi yang longgar</li>
 <li>Pastikan semua koneksi aman dan bersih</li>
 <li>
@@ -242,22 +277,30 @@
 </ol>
 <h3 id="2-pembacaan-wideband-o2-sensor-tidak-benar">2. Pembacaan Wideband O2 Sensor Tidak Benar</h3>
 <p><img alt="Wideband O2 Issues" src="images/wideband-o2-issues.png" /></p>
-<p><strong>Gejala</strong>:
-- Pembacaan AFR tidak akurat atau tidak ditampilkan
-- Nilai AFR tidak masuk akal (terlalu rich atau lean)
-- Pembacaan AFR tidak stabil</p>
-<p><strong>Penyebab Potensial</strong>:
-- Scaling sensor salah dikonfigurasi di software
-- Wiring atau grounding yang rusak untuk sensor wideband
-- Konfigurasi sinyal CAN atau analog salah
-- Sensor wideband tidak ter-heat dengan benar</p>
-<p><strong>Solusi</strong>:
-1. <strong>Verifikasi Konfigurasi Sensor</strong>:
-   - Periksa tipe sensor dan input scaling di software Mazduino
-   - Pastikan setting sesuai dengan spesifikasi (AEM, PLX, atau Custom)
-   - Verifikasi kalibrasi voltage-to-AFR</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Pembacaan AFR tidak akurat atau tidak ditampilkan</li>
+<li>Nilai AFR tidak masuk akal (terlalu rich atau lean)</li>
+<li>Pembacaan AFR tidak stabil</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Scaling sensor salah dikonfigurasi di software</li>
+<li>Wiring atau grounding yang rusak untuk sensor wideband</li>
+<li>Konfigurasi sinyal CAN atau analog salah</li>
+<li>Sensor wideband tidak ter-heat dengan benar</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Inspeksi Koneksi</strong>:</li>
+<li><strong>Verifikasi Konfigurasi Sensor</strong>:</li>
+<li>Periksa tipe sensor dan input scaling di software Mazduino</li>
+<li>Pastikan setting sesuai dengan spesifikasi (AEM, PLX, atau Custom)</li>
+<li>
+<p>Verifikasi kalibrasi voltage-to-AFR</p>
+</li>
+<li>
+<p><strong>Inspeksi Koneksi</strong>:</p>
+</li>
 <li>Periksa power dan ground connection ke wideband controller</li>
 <li>Pastikan wiring tidak terpapar panas berlebihan</li>
 <li>
@@ -280,23 +323,31 @@
 </ol>
 <h3 id="3-engine-misfire-atau-berjalan-kasar">3. Engine Misfire atau Berjalan Kasar</h3>
 <p><img alt="Engine Misfire" src="images/engine-misfire.png" /></p>
-<p><strong>Gejala</strong>:
-- Idle kasar
-- Hesitasi selama akselerasi
-- Misfire di bawah load
-- RPM tidak stabil</p>
-<p><strong>Penyebab Potensial</strong>:
-- Setting ignition atau fuel timing salah
-- Busi rusak atau gap tidak sesuai
-- Kegagalan injector atau coil driver
-- Masalah kompresi mekanis</p>
-<p><strong>Solusi</strong>:
-1. <strong>Verifikasi Timing</strong>:
-   - Gunakan timing light untuk memverifikasi ignition timing selaras dengan base timing yang dikonfigurasi
-   - Periksa fuel timing dan injector sequence
-   - Verifikasi trigger timing dan offset</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Idle kasar</li>
+<li>Hesitasi selama akselerasi</li>
+<li>Misfire di bawah load</li>
+<li>RPM tidak stabil</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Setting ignition atau fuel timing salah</li>
+<li>Busi rusak atau gap tidak sesuai</li>
+<li>Kegagalan injector atau coil driver</li>
+<li>Masalah kompresi mekanis</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Inspeksi Komponen</strong>:</li>
+<li><strong>Verifikasi Timing</strong>:</li>
+<li>Gunakan timing light untuk memverifikasi ignition timing selaras dengan base timing yang dikonfigurasi</li>
+<li>Periksa fuel timing dan injector sequence</li>
+<li>
+<p>Verifikasi trigger timing dan offset</p>
+</li>
+<li>
+<p><strong>Inspeksi Komponen</strong>:</p>
+</li>
 <li>Periksa dan ganti busi jika aus atau gap salah</li>
 <li>Test resistansi coil ignition</li>
 <li>
@@ -319,23 +370,31 @@
 </ol>
 <h3 id="4-sensor-voltage-keluar-dari-range">4. Sensor Voltage Keluar dari Range</h3>
 <p><img alt="Sensor Voltage Out of Range" src="images/sensor-voltage-range.png" /></p>
-<p><strong>Gejala</strong>:
-- Warning error sensor dalam diagnostics
-- Pembacaan sensor yang tidak menentu atau tidak ada
-- Error code terkait sensor
-- Pembacaan sensor yang tidak masuk akal</p>
-<p><strong>Penyebab Potensial</strong>:
-- Wiring sensor rusak atau grounding buruk
-- Ketidaksesuaian kalibrasi antara sensor dan ECU
-- Sensor rusak atau tidak berfungsi
-- Supply voltage tidak stabil</p>
-<p><strong>Solusi</strong>:
-1. <strong>Periksa Wiring Sensor</strong>:
-   - Test kontinuitas wiring untuk semua koneksi sensor
-   - Verifikasi grounding yang proper dan bersih
-   - Periksa resistensi wiring dalam spesifikasi</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Warning error sensor dalam diagnostics</li>
+<li>Pembacaan sensor yang tidak menentu atau tidak ada</li>
+<li>Error code terkait sensor</li>
+<li>Pembacaan sensor yang tidak masuk akal</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Wiring sensor rusak atau grounding buruk</li>
+<li>Ketidaksesuaian kalibrasi antara sensor dan ECU</li>
+<li>Sensor rusak atau tidak berfungsi</li>
+<li>Supply voltage tidak stabil</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Verifikasi Supply Voltage</strong>:</li>
+<li><strong>Periksa Wiring Sensor</strong>:</li>
+<li>Test kontinuitas wiring untuk semua koneksi sensor</li>
+<li>Verifikasi grounding yang proper dan bersih</li>
+<li>
+<p>Periksa resistensi wiring dalam spesifikasi</p>
+</li>
+<li>
+<p><strong>Verifikasi Supply Voltage</strong>:</p>
+</li>
 <li>Periksa 5V reference voltage stabil</li>
 <li>Test supply voltage pada sensor</li>
 <li>
@@ -358,23 +417,31 @@
 </ol>
 <h3 id="5-fuel-pressure-atau-oil-pressure-alert">5. Fuel Pressure atau Oil Pressure Alert</h3>
 <p><img alt="Pressure Alerts" src="images/pressure-alerts.png" /></p>
-<p><strong>Gejala</strong>:
-- Warning tekanan rendah
-- Engine shutdown di bawah load
-- Pressure gauge menunjukkan nilai abnormal
-- Alarm tekanan aktif</p>
-<p><strong>Penyebab Potensial</strong>:
-- Kegagalan mekanis dalam sistem fuel atau oil delivery
-- Threshold pressure sensor salah dikonfigurasi
-- Sensor pressure yang rusak
-- Kebocoran dalam sistem</p>
-<p><strong>Solusi</strong>:
-1. <strong>Inspeksi Sistem Mekanis</strong>:
-   - Periksa fuel pump, filter, dan oil pump untuk masalah mekanis
-   - Verifikasi tidak ada kebocoran dalam sistem
-   - Test mechanical pressure dengan gauge terpisah</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Warning tekanan rendah</li>
+<li>Engine shutdown di bawah load</li>
+<li>Pressure gauge menunjukkan nilai abnormal</li>
+<li>Alarm tekanan aktif</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Kegagalan mekanis dalam sistem fuel atau oil delivery</li>
+<li>Threshold pressure sensor salah dikonfigurasi</li>
+<li>Sensor pressure yang rusak</li>
+<li>Kebocoran dalam sistem</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Sesuaikan Threshold</strong>:</li>
+<li><strong>Inspeksi Sistem Mekanis</strong>:</li>
+<li>Periksa fuel pump, filter, dan oil pump untuk masalah mekanis</li>
+<li>Verifikasi tidak ada kebocoran dalam sistem</li>
+<li>
+<p>Test mechanical pressure dengan gauge terpisah</p>
+</li>
+<li>
+<p><strong>Sesuaikan Threshold</strong>:</p>
+</li>
 <li>Adjust pressure threshold di software Mazduino sesuai spesifikasi sistem</li>
 <li>Verifikasi setting sesuai dengan karakteristik sistem</li>
 <li>
@@ -397,23 +464,31 @@
 </ol>
 <h3 id="6-throttle-calibration-error">6. Throttle Calibration Error</h3>
 <p><img alt="Throttle Calibration Error" src="images/throttle-calibration.png" /></p>
-<p><strong>Gejala</strong>:
-- ETB (Electronic Throttle Body) gagal kalibrasi
-- Response throttle tidak normal
-- Error TPS atau PPS
-- Engine tidak mau start dengan ETB error</p>
-<p><strong>Penyebab Potensial</strong>:
-- Kalibrasi TPS dan PPS salah atau tidak lengkap
-- Sensor posisi throttle atau pedal rusak
-- Masalah wiring atau power supply
-- Mechanical binding pada throttle body</p>
-<p><strong>Solusi</strong>:
-1. <strong>Lakukan Kalibrasi Ulang</strong>:
-   - Ikuti prosedur kalibrasi TPS dan PPS seperti yang diuraikan dalam bagian setup
-   - Pastikan throttle body bebas bergerak secara mekanis
-   - Verifikasi tidak ada binding atau hambatan</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>ETB (Electronic Throttle Body) gagal kalibrasi</li>
+<li>Response throttle tidak normal</li>
+<li>Error TPS atau PPS</li>
+<li>Engine tidak mau start dengan ETB error</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Kalibrasi TPS dan PPS salah atau tidak lengkap</li>
+<li>Sensor posisi throttle atau pedal rusak</li>
+<li>Masalah wiring atau power supply</li>
+<li>Mechanical binding pada throttle body</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Verifikasi Sensor</strong>:</li>
+<li><strong>Lakukan Kalibrasi Ulang</strong>:</li>
+<li>Ikuti prosedur kalibrasi TPS dan PPS seperti yang diuraikan dalam bagian setup</li>
+<li>Pastikan throttle body bebas bergerak secara mekanis</li>
+<li>
+<p>Verifikasi tidak ada binding atau hambatan</p>
+</li>
+<li>
+<p><strong>Verifikasi Sensor</strong>:</p>
+</li>
 <li>Test sensor dengan multimeter untuk output yang konsisten</li>
 <li>Periksa redundant sensor functionality</li>
 <li>
@@ -438,27 +513,41 @@
 <h3 id="1-raw-sensor-voltage-signals">1. Raw Sensor Voltage Signals</h3>
 <p><img alt="Raw Sensor Signals" src="images/raw-sensor-signals.png" /></p>
 <p>Gunakan menu diagnostics software Mazduino untuk monitor sinyal voltase real-time dari sensor. Pembacaan ini membantu memvalidasi fungsionalitas sensor dan mendeteksi masalah wiring atau konfigurasi.</p>
-<p><strong>Cara Menggunakan</strong>:
-- Buka menu Diagnostics &gt; Sensor Readings
-- Monitor voltage readings untuk setiap sensor
-- Bandingkan dengan spesifikasi sensor
-- Identifikasi sensor yang memberikan reading abnormal</p>
+<p><strong>Cara Menggunakan</strong>:</p>
+<ul>
+<li>Buka menu Diagnostics &gt; Sensor Readings</li>
+<li>Monitor voltage readings untuk setiap sensor</li>
+<li>Bandingkan dengan spesifikasi sensor</li>
+<li>Identifikasi sensor yang memberikan reading abnormal</li>
+</ul>
 <h3 id="2-built-in-hardware-leds">2. Built-In Hardware LEDs</h3>
 <p><img alt="Hardware LEDs" src="images/hardware-leds.png" /></p>
 <p>Unit Mazduino tertentu dilengkapi LED onboard yang memberikan feedback visual untuk sistem kritikal seperti power, komunikasi, dan aktivasi output, membantu troubleshooting cepat.</p>
-<p><strong>LED Indicators</strong>:
-- <strong>Power LED</strong>: Menunjukkan ECU mendapat power yang tepat
-- <strong>Communication LED</strong>: Mengindikasikan komunikasi dengan TunerStudio
-- <strong>Error LED</strong>: Menunjukkan adanya error sistem
-- <strong>Activity LED</strong>: Mengindikasikan aktivitas processor</p>
+<p><strong>LED Indicators</strong>:</p>
+<ul>
+<li>
+<p><strong>Power LED</strong>: Menunjukkan ECU mendapat power yang tepat</p>
+</li>
+<li>
+<p><strong>Communication LED</strong>: Mengindikasikan komunikasi dengan TunerStudio</p>
+</li>
+<li>
+<p><strong>Error LED</strong>: Menunjukkan adanya error sistem</p>
+</li>
+<li>
+<p><strong>Activity LED</strong>: Mengindikasikan aktivitas processor</p>
+</li>
+</ul>
 <h3 id="3-remote-assistance">3. Remote Assistance</h3>
 <p><img alt="Remote Assistance" src="images/remote-assistance.png" /></p>
 <p>Jika usaha troubleshooting tidak berhasil, Mazduino mendukung remote assistance melalui tool seperti <strong>AnyDesk</strong>. Ini memungkinkan teknisi profesional untuk mendiagnosis dan mengatasi masalah kompleks secara remote.</p>
-<p><strong>Prosedur Remote Assistance</strong>:
-1. Install AnyDesk pada komputer yang terhubung ke Mazduino
-2. Hubungi support Mazduino untuk appointment
-3. Share AnyDesk ID dengan teknisi
-4. Izinkan akses remote untuk diagnosis dan perbaikan</p>
+<p><strong>Prosedur Remote Assistance</strong>:</p>
+<ol>
+<li>Install AnyDesk pada komputer yang terhubung ke Mazduino</li>
+<li>Hubungi support Mazduino untuk appointment</li>
+<li>Share AnyDesk ID dengan teknisi</li>
+<li>Izinkan akses remote untuk diagnosis dan perbaikan</li>
+</ol>
 <h2 id="error-codes-dan-diagnosis">Error Codes dan Diagnosis</h2>
 <h3 id="common-error-codes">Common Error Codes</h3>
 <table>
@@ -566,14 +655,6 @@
 <li><strong>Professional Help</strong>: Jangan ragu untuk mencari bantuan profesional untuk masalah kompleks</li>
 </ol>
 <p>Panduan ini memastikan pendekatan metodis untuk troubleshooting sistem Mazduino, menggunakan tool diagnostics yang tersedia untuk performa yang reliable.</p>
-<h2 id="navigasi">Navigasi</h2>
-<ul>
-<li><a href="../tunerstudio-controller/">← Kembali ke Controller &amp; Diagnostics</a></li>
-<li><a href="../tunerstudio-examples/">Lanjut ke Examples &amp; Map Switching →</a></li>
-<li><a href="../tunerstudio-manual/">Kembali ke Manual Utama</a></li>
-</ul>
-<hr />
-<p><em>Dokumentasi troubleshooting ini menyediakan solusi komprehensif untuk masalah umum sistem Mazduino. Pendekatan sistematis dan penggunaan tool diagnostics yang tepat akan memastikan resolusi masalah yang efektif.</em></p>
               
             </div>
           </div><footer>

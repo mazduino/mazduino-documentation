@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/math-channels/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Math Channels - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Math Channels";
+        var mkdocs_page_input_path = "firmware/math-channels.md";
+        var mkdocs_page_url = "/firmware/math-channels/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino LITE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-lite-v0.1/">v0.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-lite-v0.2/">v0.2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Compact 4 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-compact-4ch-v1/">v1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-compact-4ch-v2.1/">v2.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-compact-4ch-v2.2/">v2.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-compact-4ch-v2.3/">v2.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-compact-4ch-v2.5/">v2.5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mini 6 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3/">v1.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-mini-6ch-v1.4/">v1.4</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-core-rev0/">rev0</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Math Channels</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cara-kerja">Cara Kerja</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#operator-yang-didukung">Operator yang Didukung</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh">Contoh</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Firmware</li>
+      <li class="breadcrumb-item active">Math Channels</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="math-channels">Math Channels</h1>
+<p>Math Channels memungkinkan pembuatan <strong>channel nilai kustom</strong> berdasarkan perhitungan dari channel-channel yang sudah ada di ECU.</p>
+<p>Berguna untuk menampilkan nilai turunan di gauge, melakukan logging nilai yang dihitung, atau menggunakan nilai hasil perhitungan sebagai input kondisi lain.</p>
+<hr />
+<h2 id="cara-kerja">Cara Kerja</h2>
+<p>Setiap Math Channel menerima ekspresi matematika yang mengombinasikan channel ECU yang tersedia. Hasilnya tersedia sebagai channel baru di gauge, datalog, dan kondisi output.</p>
+<hr />
+<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</h2>
+<p>Buka: <strong>Sensors → Math Channels</strong> (atau <strong>Advanced → Math Channels</strong>)</p>
+<p>Untuk setiap channel:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Nama channel yang akan muncul di gauge/log</td>
+</tr>
+<tr>
+<td><strong>Expression</strong></td>
+<td>Ekspresi matematika menggunakan nama channel ECU</td>
+</tr>
+<tr>
+<td><strong>Unit</strong></td>
+<td>Satuan nilai hasil (opsional, untuk tampilan)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operator-yang-didukung">Operator yang Didukung</h3>
+<table>
+<thead>
+<tr>
+<th>Simbol</th>
+<th>Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code> <code>-</code> <code>*</code> <code>/</code></td>
+<td>Operasi dasar</td>
+</tr>
+<tr>
+<td><code>(</code> <code>)</code></td>
+<td>Pengelompokan</td>
+</tr>
+<tr>
+<td><code>min(a,b)</code></td>
+<td>Nilai minimum</td>
+</tr>
+<tr>
+<td><code>max(a,b)</code></td>
+<td>Nilai maksimum</td>
+</tr>
+<tr>
+<td><code>if(cond, a, b)</code></td>
+<td>Nilai bersyarat</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contoh">Contoh</h2>
+<p><strong>Efisiensi volumetrik (VE) sederhana:</strong></p>
+<pre><code>expression: (map / baro) * 100
+unit: %
+</code></pre>
+<p><strong>Beban mesin dari MAP dan RPM:</strong></p>
+<pre><code>expression: map * (rpm / 1000)
+</code></pre>
+<p><strong>Suhu rata-rata CLT dan IAT:</strong></p>
+<pre><code>expression: (clt + iat) / 2
+unit: °C
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../can-output/" class="btn btn-neutral float-left" title="CAN Output"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../user-tables/" class="btn btn-neutral float-right" title="User Tables">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../can-output/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../user-tables/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

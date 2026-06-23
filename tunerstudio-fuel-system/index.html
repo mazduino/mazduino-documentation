@@ -210,6 +210,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -302,10 +331,18 @@
 <h3 id="injection-settings">Injection Settings</h3>
 <h4 id="basic-injection-parameters">Basic Injection Parameters</h4>
 <p><strong>Enabled</strong>: Set ke <code>true</code> untuk mengaktifkan fuel injection</p>
-<p><strong>Mode</strong>: Opsi meliputi:
-- <strong>Sequential</strong>: Individual injector timing - setiap injector fire sesuai firing order
-- <strong>Batch</strong>: Semua injectors fire bersamaan
-- <strong>Batch Injection with Individual Wiring</strong>: Injectors diwiring terpisah tapi beroperasi dalam batch mode</p>
+<p><strong>Mode</strong>: Opsi meliputi:</p>
+<ul>
+<li>
+<p><strong>Sequential</strong>: Individual injector timing - setiap injector fire sesuai firing order</p>
+</li>
+<li>
+<p><strong>Batch</strong>: Semua injectors fire bersamaan</p>
+</li>
+<li>
+<p><strong>Batch Injection with Individual Wiring</strong>: Injectors diwiring terpisah tapi beroperasi dalam batch mode</p>
+</li>
+</ul>
 <p><strong>Alpha-N Uses IAT Density Correction</strong>: Saat set ke <code>true</code>, mengaktifkan koreksi berbasis intake air temperature untuk strategi tuning Alpha-N</p>
 <p><strong>Override VE Table Load Axis</strong>: Memungkinkan mengubah default load axis yang digunakan untuk VE table (biasanya MAP)</p>
 <p><strong>Override AFR Table Load Axis</strong>: Override default load axis untuk target AFR table</p>
@@ -314,10 +351,18 @@
 <h4 id="flow-and-characterization">Flow and Characterization</h4>
 <p><strong>Injector Flow</strong>: Specifies flow rate injector, biasanya dalam cc/min atau lbs/hr</p>
 <p><strong>Injector Flow Units</strong>: Pilih antara <strong>Volumetric Flow</strong> (cc/min) atau unit lainnya</p>
-<p><strong>Injector Flow Compensation Mode</strong>:
-- <strong>None</strong>: Untuk setup dengan MAP-referenced fuel pressure regulator
-- <strong>Fixed Rail Pressure</strong>: Untuk sistem dengan atmosphere-referenced fuel pressure regulator
-- <strong>Sensed Rail Pressure</strong>: Untuk sistem dengan fuel pressure sensor</p>
+<p><strong>Injector Flow Compensation Mode</strong>:</p>
+<ul>
+<li>
+<p><strong>None</strong>: Untuk setup dengan MAP-referenced fuel pressure regulator</p>
+</li>
+<li>
+<p><strong>Fixed Rail Pressure</strong>: Untuk sistem dengan atmosphere-referenced fuel pressure regulator</p>
+</li>
+<li>
+<p><strong>Sensed Rail Pressure</strong>: Untuk sistem dengan fuel pressure sensor</p>
+</li>
+</ul>
 <p><strong>Fuel Rail Pressure Sensor</strong>: Hanya digunakan saat "Sensed Rail Pressure" dipilih</p>
 <h3 id="fuel-characteristics">Fuel Characteristics</h3>
 <p><strong>Stoichiometric Ratio</strong>: Menentukan stoichiometric air-fuel ratio (AFR) untuk tipe fuel yang digunakan</p>
@@ -330,21 +375,35 @@
 <h3 id="typical-ve-values">Typical VE Values</h3>
 <h4 id="idle-conditions">Idle Conditions</h4>
 <ul>
-<li><strong>Load</strong>: 30-50 kPa, <strong>RPM</strong>: 500-1000</li>
-<li><strong>VE Values</strong>: 30-40%</li>
-<li>Merepresentasikan airflow yang relatif rendah saat engine running pada low RPM dan tanpa load</li>
+<li>
+<p><strong>Load</strong>: 30-50 kPa, <strong>RPM</strong>: 500-1000</p>
+</li>
+<li>
+<p><strong>VE Values</strong>: 30-40%</p>
+</li>
+<li>
+<p>Merepresentasikan airflow yang relatif rendah saat engine running pada low RPM dan tanpa load</p>
+</li>
 </ul>
 <h4 id="high-load-conditions">High Load Conditions</h4>
 <ul>
-<li><strong>Load</strong>: 100-250 kPa, <strong>RPM</strong>: 4000-7000</li>
-<li><strong>VE Values</strong>: 80-100% atau lebih</li>
-<li>Engines dengan forced induction dapat memiliki values melebihi 100%</li>
+<li>
+<p><strong>Load</strong>: 100-250 kPa, <strong>RPM</strong>: 4000-7000</p>
+</li>
+<li>
+<p><strong>VE Values</strong>: 80-100% atau lebih</p>
+</li>
+<li>
+<p>Engines dengan forced induction dapat memiliki values melebihi 100%</p>
+</li>
 </ul>
 <h4 id="troubleshooting-ve-values">Troubleshooting VE Values</h4>
-<p>Jika VE values signifikan berbeda dari ranges ini, mungkin mengindikasikan <strong>injectors belum correctly modeled</strong>:
-- Incorrect injector flow rates
-- Dead time settings salah
-- Kesalahan kalibrasi lainnya</p>
+<p>Jika VE values signifikan berbeda dari ranges ini, mungkin mengindikasikan <strong>injectors belum correctly modeled</strong>:</p>
+<ul>
+<li>Incorrect injector flow rates</li>
+<li>Dead time settings salah</li>
+<li>Kesalahan kalibrasi lainnya</li>
+</ul>
 <h2 id="target-afr-table">Target AFR Table</h2>
 <p><img alt="Target AFR" src="#" title="Target AFR Table" /></p>
 <p>Target AFR Table mengatur air-fuel mixture yang diinginkan untuk berbagai kondisi <strong>RPM</strong> dan <strong>load (kPa)</strong>. Values dalam table ini mempengaruhi seberapa rich atau lean mixture akan di berbagai operating conditions.</p>
@@ -357,8 +416,12 @@
 </ul>
 <h4 id="boost-conditions-150-250-kpa">Boost Conditions (150-250 kPa)</h4>
 <ul>
-<li>AFR targets lebih rich: 10.7-11.0 AFR</li>
-<li>Mengurangi risiko detonation </li>
+<li>
+<p>AFR targets lebih rich: 10.7-11.0 AFR</p>
+</li>
+<li>
+<p>Mengurangi risiko detonation </p>
+</li>
 <li>Menjaga combustion temperatures aman</li>
 <li>Memastikan reliable performance di bawah high load</li>
 </ul>
@@ -379,15 +442,25 @@
 <h3 id="region-configuration">Region Configuration</h3>
 <p><strong>Region Configuration</strong> memungkinkan kustomisasi RPM dan load thresholds:</p>
 <ul>
-<li><strong>Idle region RPM</strong>: RPM yang dianggap sebagai idle threshold</li>
-<li><strong>Overrun region load</strong>: Load limit untuk membedakan deceleration</li>
-<li><strong>Power region load</strong>: Load limit untuk high load conditions</li>
+<li>
+<p><strong>Idle region RPM</strong>: RPM yang dianggap sebagai idle threshold</p>
+</li>
+<li>
+<p><strong>Overrun region load</strong>: Load limit untuk membedakan deceleration</p>
+</li>
+<li>
+<p><strong>Power region load</strong>: Load limit untuk high load conditions</p>
+</li>
 </ul>
 <h3 id="region-specific-parameters">Region-Specific Parameters</h3>
 <p>Setiap region (Main, Idle, Power, Overrun) memiliki <strong>time constants</strong> dan <strong>maximum add/remove percentages</strong>:</p>
 <ul>
-<li><strong>Time constant</strong>: Mengontrol responsiveness corrections</li>
-<li><strong>Max add/remove</strong>: Membatasi maximum fuel adjustment</li>
+<li>
+<p><strong>Time constant</strong>: Mengontrol responsiveness corrections</p>
+</li>
+<li>
+<p><strong>Max add/remove</strong>: Membatasi maximum fuel adjustment</p>
+</li>
 </ul>
 <h2 id="coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)</h2>
 <p><img alt="Fuel Cutoff Settings" src="#" title="Fuel Cutoff Settings" /></p>

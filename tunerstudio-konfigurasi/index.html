@@ -162,6 +162,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -195,8 +224,8 @@
 <h2 id="membuat-project-baru">Membuat Project Baru</h2>
 <h3 id="langkah-13-membuat-project-baru-dalam-tunerstudio">Langkah 13: Membuat Project Baru dalam TunerStudio</h3>
 <p>Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau melanjutkan pekerjaan dengan project. Berikut penjelasan masing-masing opsi:</p>
-<p><em>Referensi Gambar</em>: Pada screenshot, opsi-opsi ini ditampilkan pada welcome screen, memungkinkan Anda memilih metode yang paling sesuai untuk membuka atau membuat project di TunerStudio.</p>
 <p><img alt="TunerStudio Welcome Screen" src="#" title="TunerStudio Welcome Screen" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot, opsi-opsi ini ditampilkan pada welcome screen, memungkinkan Anda memilih metode yang paling sesuai untuk membuka atau membuat project di TunerStudio.</p>
 <ol>
 <li><strong>Create New Project</strong>:</li>
 <li>Opsi ini memungkinkan Anda memulai project baru dari awal</li>
@@ -248,8 +277,8 @@
 <p><strong>Klik Next</strong>: Setelah project diberi nama dan firmware terdeteksi, klik <strong>Next</strong> untuk melanjutkan konfigurasi project baru</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, Anda dapat melihat jendela konfigurasi project tempat Anda memasukkan nama project dan mendeteksi firmware.</p>
 <p><img alt="Project Configuration" src="#" title="Project Configuration" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, Anda dapat melihat jendela konfigurasi project tempat Anda memasukkan nama project dan mendeteksi firmware.</p>
 <h2 id="deteksi-dan-koneksi-ecu">Deteksi dan Koneksi ECU</h2>
 <h3 id="langkah-15-deteksi-dan-pilih-ecu">Langkah 15: Deteksi dan Pilih ECU</h3>
 <ol>
@@ -265,8 +294,8 @@
 <li>Setelah Mazduino Anda muncul di kotak dialog, klik untuk highlight</li>
 <li>Kemudian, klik <strong>Accept</strong> untuk mengonfirmasi pilihan dan melanjutkan dengan setup project</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, jendela deteksi ditampilkan sedang memindai device. Setelah Mazduino Anda terdaftar, pilih dan klik <strong>Accept</strong>.</p>
 <p><img alt="Device Detection" src="#" title="Device Detection" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, jendela deteksi ditampilkan sedang memindai device. Setelah Mazduino Anda terdaftar, pilih dan klik <strong>Accept</strong>.</p>
 <h3 id="langkah-16-konfirmasi-detail-project-dan-melanjutkan">Langkah 16: Konfirmasi Detail Project dan Melanjutkan</h3>
 <ol>
 <li>
@@ -279,8 +308,8 @@
 <p><strong>Klik Next</strong>: Setelah semuanya dikonfirmasi, klik <strong>Next</strong> untuk melanjutkan dengan proses setup</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Layar konfigurasi project sekarang menampilkan semua informasi relevan tentang Mazduino Anda. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <p><img alt="Project Configuration Complete" src="#" title="Project Configuration Complete" /></p>
+<p><em>Referensi Gambar</em>: Layar konfigurasi project sekarang menampilkan semua informasi relevan tentang Mazduino Anda. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <h2 id="konfigurasi-display-dan-komunikasi">Konfigurasi Display dan Komunikasi</h2>
 <h3 id="langkah-17-pilih-lambda-display">Langkah 17: Pilih Lambda Display</h3>
 <ol>
@@ -298,8 +327,8 @@
 <p><strong>Klik Next</strong>: Setelah memilih opsi tampilan yang diinginkan, klik <strong>Next</strong> untuk melanjutkan</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi AFR (Default) dipilih. Sebagian besar pengguna lebih memilih pengaturan ini.</p>
 <p><img alt="Lambda Display Configuration" src="#" title="Lambda Display Configuration" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi AFR (Default) dipilih. Sebagian besar pengguna lebih memilih pengaturan ini.</p>
 <h3 id="langkah-18-konfigurasi-communication-settings">Langkah 18: Konfigurasi Communication Settings</h3>
 <ol>
 <li>
@@ -330,8 +359,8 @@
 <p><strong>Testing the Connection (Opsional)</strong>: Jika Anda ingin mengonfirmasi koneksi, klik <strong>Test Port</strong>. Opsi ini memverifikasi koneksi sebelum melanjutkan</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, pengaturan COM Port ditampilkan, dengan opsi untuk memilih port yang benar jika diperlukan. Setelah port diatur, klik <strong>Next</strong>.</p>
 <p><img alt="Communication Settings" src="#" title="Communication Settings" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, pengaturan COM Port ditampilkan, dengan opsi untuk memilih port yang benar jika diperlukan. Setelah port diatur, klik <strong>Next</strong>.</p>
 <h2 id="menyelesaikan-setup">Menyelesaikan Setup</h2>
 <h3 id="langkah-19-pilih-dashboard-dan-selesaikan-setup">Langkah 19: Pilih Dashboard dan Selesaikan Setup</h3>
 <ol>
@@ -349,8 +378,8 @@
 <p><strong>Klik Finish</strong>: Setelah default dashboard dipilih, klik <strong>Finish</strong> untuk menyelesaikan setup project dan meluncurkan TunerStudio dengan konfigurasi baru Anda</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi Default dashboard dipilih. Klik <strong>Finish</strong> untuk mulai menggunakan TunerStudio.</p>
 <p><img alt="Dashboard Selection" src="#" title="Dashboard Selection" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi Default dashboard dipilih. Klik <strong>Finish</strong> untuk mulai menggunakan TunerStudio.</p>
 <h3 id="langkah-20-verifikasi-koneksi-dan-status-dashboard">Langkah 20: Verifikasi Koneksi dan Status Dashboard</h3>
 <ol>
 <li><strong>Dashboard Display</strong>:</li>
@@ -369,23 +398,29 @@
 </li>
 <li>Ketika terhubung, tombol indikator bawah akan menampilkan berbagai status dalam warna yang berbeda (misalnya "Fuel pump on," "Fan on," "Brake down"). Indikator ini memberikan feedback real-time tentang status sistem dan masalah potensial</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot pertama, dashboard menampilkan sebagai "Not Connected." Pada screenshot kedua, gauge aktif, dan indikator menampilkan berbagai status sistem.</p>
-<p><img alt="Dashboard Not Connected" src="#" title="Dashboard Not Connected" />
+<p><img alt="Dashboard Not Connected" src="#" title="Dashboard Not Connected" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot pertama, dashboard menampilkan sebagai "Not Connected." Pada screenshot kedua, gauge aktif, dan indikator menampilkan berbagai status sistem.
 <img alt="Dashboard Connected" src="#" title="Dashboard Connected" /></p>
 <h2 id="troubleshooting-koneksi">Troubleshooting Koneksi</h2>
 <h3 id="masalah-umum-dan-solusi">Masalah Umum dan Solusi</h3>
 <h4 id="1-ecu-tidak-terdeteksi">1. ECU Tidak Terdeteksi</h4>
-<p><strong>Gejala</strong>: 
-- Gauge menampilkan "Not Connected"
-- COM port tidak muncul dalam daftar
-- Error message saat detect firmware</p>
-<p><strong>Solusi</strong>:
-1. <strong>Periksa Koneksi Fisik</strong>:
-   - Pastikan kabel USB terpasang dengan benar
-   - Coba kabel USB yang berbeda
-   - Periksa port USB komputer</p>
+<p><strong>Gejala</strong>: </p>
+<ul>
+<li>Gauge menampilkan "Not Connected"</li>
+<li>COM port tidak muncul dalam daftar</li>
+<li>Error message saat detect firmware</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Periksa Driver</strong>:</li>
+<li><strong>Periksa Koneksi Fisik</strong>:</li>
+<li>Pastikan kabel USB terpasang dengan benar</li>
+<li>Coba kabel USB yang berbeda</li>
+<li>
+<p>Periksa port USB komputer</p>
+</li>
+<li>
+<p><strong>Periksa Driver</strong>:</p>
+</li>
 <li>Buka Device Manager Windows</li>
 <li>Cari "Ports (COM &amp; LPT)"</li>
 <li>
@@ -399,16 +434,22 @@
 <li>Nyalakan kembali dan coba deteksi</li>
 </ol>
 <h4 id="2-koneksi-terputus-putus">2. Koneksi Terputus-putus</h4>
-<p><strong>Gejala</strong>:
-- Gauge kadang menampilkan data, kadang "Not Connected"
-- Data freeze atau tidak update
-- Error message intermittent</p>
-<p><strong>Solusi</strong>:
-1. <strong>Periksa Data Rate</strong>:
-   - Masuk ke Communications → Data Rate
-   - Coba turunkan data rate jika terlalu tinggi</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Gauge kadang menampilkan data, kadang "Not Connected"</li>
+<li>Data freeze atau tidak update</li>
+<li>Error message intermittent</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Periksa Ground Connection</strong>:</li>
+<li><strong>Periksa Data Rate</strong>:</li>
+<li>Masuk ke Communications → Data Rate</li>
+<li>
+<p>Coba turunkan data rate jika terlalu tinggi</p>
+</li>
+<li>
+<p><strong>Periksa Ground Connection</strong>:</p>
+</li>
 <li>Pastikan ground ECU terhubung dengan baik</li>
 <li>
 <p>Periksa ground komputer/laptop</p>
@@ -420,16 +461,22 @@
 <li>Gunakan kabel USB berpelindung jika perlu</li>
 </ol>
 <h4 id="3-firmware-tidak-kompatibel">3. Firmware Tidak Kompatibel</h4>
-<p><strong>Gejala</strong>:
-- TunerStudio mendeteksi ECU tapi tidak bisa komunikasi
-- Error message tentang firmware version
-- Fitur tidak berfungsi dengan benar</p>
-<p><strong>Solusi</strong>:
-1. <strong>Update Firmware</strong>:
-   - Download firmware terbaru dari <a href="../downloads/">Download Page</a>
-   - Flash firmware sesuai petunjuk</p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>TunerStudio mendeteksi ECU tapi tidak bisa komunikasi</li>
+<li>Error message tentang firmware version</li>
+<li>Fitur tidak berfungsi dengan benar</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
 <ol>
-<li><strong>Update TunerStudio</strong>:</li>
+<li><strong>Update Firmware</strong>:</li>
+<li>Download firmware terbaru dari <a href="../downloads/">Download Page</a></li>
+<li>
+<p>Flash firmware sesuai petunjuk</p>
+</li>
+<li>
+<p><strong>Update TunerStudio</strong>:</p>
+</li>
 <li>Download versi TunerStudio terbaru</li>
 <li>
 <p>Install ulang jika perlu</p>

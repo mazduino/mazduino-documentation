@@ -114,6 +114,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -154,52 +183,124 @@
 <p><strong>A/C Relay Mode</strong>: Mendefinisikan mode output relay A/C. Ini dapat dibiarkan sebagai default untuk sebagian besar aplikasi atau disesuaikan jika diperlukan.</p>
 <h2 id="pengaturan-timing-dan-proteksi">Pengaturan Timing dan Proteksi</h2>
 <h3 id="compressor-delay">Compressor Delay</h3>
-<p><strong>A/C Compressor Delay (sec)</strong>: Mengatur penundaan sebelum kompresor A/C aktif, mencegah peningkatan beban mendadak pada mesin ketika A/C dinyalakan.
-- <strong>Rekomendasi</strong>: 1-3 detik untuk startup yang smooth
-- <strong>Aplikasi</strong>: Mengurangi shock load pada mesin</p>
+<p><strong>A/C Compressor Delay (sec)</strong>: Mengatur penundaan sebelum kompresor A/C aktif, mencegah peningkatan beban mendadak pada mesin ketika A/C dinyalakan.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 1-3 detik untuk startup yang smooth</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Mengurangi shock load pada mesin</p>
+</li>
+</ul>
 <h3 id="batas-operasi-maximum">Batas Operasi Maximum</h3>
-<p><strong>Max RPM (RPM)</strong>: Mengatur RPM mesin maksimum yang diizinkan untuk operasi A/C. Jika RPM melebihi batas ini, A/C akan dinonaktifkan untuk melindungi mesin.
-- <strong>Rekomendasi</strong>: 6000-6500 RPM untuk mesin standar
-- <strong>Tujuan</strong>: Melindungi mesin pada RPM tinggi</p>
-<p><strong>Max CLT (deg C)</strong>: Mengkonfigurasi suhu coolant maksimum untuk operasi A/C. Jika terlampaui, A/C akan otomatis mati untuk mencegah overheating.
-- <strong>Rekomendasi</strong>: 100-105°C untuk mesin standar
-- <strong>Tujuan</strong>: Mencegah overheating mesin</p>
-<p><strong>Max TPS (%)</strong>: Mendefinisikan posisi throttle maksimum untuk operasi A/C. Jika throttle melebihi persentase ini, A/C akan mati untuk memprioritaskan performa mesin.
-- <strong>Rekomendasi</strong>: 80-90% untuk performa optimal
-- <strong>Aplikasi</strong>: Full throttle performance priority</p>
+<p><strong>Max RPM (RPM)</strong>: Mengatur RPM mesin maksimum yang diizinkan untuk operasi A/C. Jika RPM melebihi batas ini, A/C akan dinonaktifkan untuk melindungi mesin.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 6000-6500 RPM untuk mesin standar</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Melindungi mesin pada RPM tinggi</p>
+</li>
+</ul>
+<p><strong>Max CLT (deg C)</strong>: Mengkonfigurasi suhu coolant maksimum untuk operasi A/C. Jika terlampaui, A/C akan otomatis mati untuk mencegah overheating.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 100-105°C untuk mesin standar</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Mencegah overheating mesin</p>
+</li>
+</ul>
+<p><strong>Max TPS (%)</strong>: Mendefinisikan posisi throttle maksimum untuk operasi A/C. Jika throttle melebihi persentase ini, A/C akan mati untuk memprioritaskan performa mesin.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 80-90% untuk performa optimal</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Full throttle performance priority</p>
+</li>
+</ul>
 <h2 id="kompensasi-idle">Kompensasi Idle</h2>
 <h3 id="idle-speed-compensation">Idle Speed Compensation</h3>
-<p><strong>A/C Idle Adder (%)</strong>: Mengatur persentase peningkatan kecepatan idle untuk mengkompensasi beban yang disebabkan oleh kompresor A/C.
-- <strong>Rekomendasi</strong>: 10-15% untuk sebagian besar mesin
-- <strong>Penyesuaian</strong>: Sesuaikan berdasarkan beban kompresor</p>
-<p><strong>A/C Idle RPM</strong>: Menentukan target idle RPM ketika A/C aktif, menyesuaikan kecepatan idle mesin untuk memperhitungkan beban kompresor.
-- <strong>Rekomendasi</strong>: +100-200 RPM dari idle normal
-- <strong>Aplikasi</strong>: Mencegah engine stalling saat A/C aktif</p>
+<p><strong>A/C Idle Adder (%)</strong>: Mengatur persentase peningkatan kecepatan idle untuk mengkompensasi beban yang disebabkan oleh kompresor A/C.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 10-15% untuk sebagian besar mesin</p>
+</li>
+<li>
+<p><strong>Penyesuaian</strong>: Sesuaikan berdasarkan beban kompresor</p>
+</li>
+</ul>
+<p><strong>A/C Idle RPM</strong>: Menentukan target idle RPM ketika A/C aktif, menyesuaikan kecepatan idle mesin untuk memperhitungkan beban kompresor.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: +100-200 RPM dari idle normal</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Mencegah engine stalling saat A/C aktif</p>
+</li>
+</ul>
 <h3 id="rpm-protection">RPM Protection</h3>
-<p><strong>RPM Low Threshold (RPM)</strong>: Ambang batas RPM minimum di bawah mana A/C secara otomatis dinonaktifkan untuk mencegah mesin mati.
-- <strong>Rekomendasi</strong>: 400-500 RPM di bawah idle normal
-- <strong>Safety</strong>: Mencegah engine stalling</p>
+<p><strong>RPM Low Threshold (RPM)</strong>: Ambang batas RPM minimum di bawah mana A/C secara otomatis dinonaktifkan untuk mencegah mesin mati.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 400-500 RPM di bawah idle normal</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah engine stalling</p>
+</li>
+</ul>
 <h2 id="kontrol-tekanan-sistem">Kontrol Tekanan Sistem</h2>
 <h3 id="pressure-limits">Pressure Limits</h3>
-<p><strong>Pressure Low Disable (kPa)</strong>: Mengatur batas tekanan rendah; jika tekanan turun di bawah level ini, A/C akan dinonaktifkan untuk melindungi kompresor.
-- <strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem A/C kendaraan
-- <strong>Tujuan</strong>: Perlindungan kompresor dari kerusakan</p>
-<p><strong>Pressure High Disable (kPa)</strong>: Mengkonfigurasi batas tekanan tinggi; jika tekanan melebihi level ini, A/C akan dinonaktifkan untuk perlindungan sistem.
-- <strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem A/C kendaraan<br />
-- <strong>Tujuan</strong>: Perlindungan sistem dari tekanan berlebih</p>
+<p><strong>Pressure Low Disable (kPa)</strong>: Mengatur batas tekanan rendah; jika tekanan turun di bawah level ini, A/C akan dinonaktifkan untuk melindungi kompresor.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem A/C kendaraan</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Perlindungan kompresor dari kerusakan</p>
+</li>
+</ul>
+<p><strong>Pressure High Disable (kPa)</strong>: Mengkonfigurasi batas tekanan tinggi; jika tekanan melebihi level ini, A/C akan dinonaktifkan untuk perlindungan sistem.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem A/C kendaraan  </p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Perlindungan sistem dari tekanan berlebih</p>
+</li>
+</ul>
 <h3 id="hysteresis-control">Hysteresis Control</h3>
-<p><strong>A/C Pressure Enable Hysteresis (kPa)</strong>: Menyediakan rentang buffer di sekitar batas tekanan untuk mencegah cycling cepat sistem A/C.
-- <strong>Rekomendasi</strong>: 50-100 kPa untuk operasi yang stabil
-- <strong>Fungsi</strong>: Mencegah on/off yang terlalu sering</p>
+<p><strong>A/C Pressure Enable Hysteresis (kPa)</strong>: Menyediakan rentang buffer di sekitar batas tekanan untuk mencegah cycling cepat sistem A/C.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 50-100 kPa untuk operasi yang stabil</p>
+</li>
+<li>
+<p><strong>Fungsi</strong>: Mencegah on/off yang terlalu sering</p>
+</li>
+</ul>
 <h2 id="indikator-status-ac">Indikator Status A/C</h2>
 <p>Kotak putih di sisi kanan jendela mewakili berbagai pemeriksaan dan status yang terkait dengan sistem A/C. Indikator ini berubah merah untuk menunjukkan kondisi aktif, seperti:</p>
 <ul>
-<li><strong>A/C Button</strong>: Tombol A/C ditekan/aktif</li>
-<li><strong>Pressure OK</strong>: Tekanan dalam batas yang dapat diterima</li>
-<li><strong>RPM OK</strong>: RPM dalam rentang operasi A/C</li>
-<li><strong>CLT OK</strong>: Suhu coolant dalam batas normal</li>
-<li><strong>TPS OK</strong>: Throttle position dalam batas A/C</li>
-<li><strong>System Ready</strong>: Semua kondisi terpenuhi untuk operasi A/C</li>
+<li>
+<p><strong>A/C Button</strong>: Tombol A/C ditekan/aktif</p>
+</li>
+<li>
+<p><strong>Pressure OK</strong>: Tekanan dalam batas yang dapat diterima</p>
+</li>
+<li>
+<p><strong>RPM OK</strong>: RPM dalam rentang operasi A/C</p>
+</li>
+<li>
+<p><strong>CLT OK</strong>: Suhu coolant dalam batas normal</p>
+</li>
+<li>
+<p><strong>TPS OK</strong>: Throttle position dalam batas A/C</p>
+</li>
+<li>
+<p><strong>System Ready</strong>: Semua kondisi terpenuhi untuk operasi A/C</p>
+</li>
 </ul>
 <p>Umpan balik visual ini membantu pengguna dengan cepat menilai apakah semua kondisi terpenuhi untuk operasi A/C.</p>
 <h2 id="rekomendasi-konfigurasi">Rekomendasi Konfigurasi</h2>
@@ -222,8 +323,6 @@
 <li><strong>Test All Limits</strong>: Verifikasi semua batas proteksi berfungsi dengan baik</li>
 <li><strong>Document Changes</strong>: Catat semua perubahan untuk referensi masa depan</li>
 </ol>
-<hr />
-<p><strong><a href="../tunerstudio-manual/">← Kembali ke Manual TunerStudio</a></strong></p>
               
             </div>
           </div><footer>

@@ -146,6 +146,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -179,10 +208,18 @@
 <p>ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-channel dengan fokus pada peningkatan fleksibilitas output dan kestabilan pembacaan sinyal. Versi ini tetap ditujukan untuk firmware rusEFI dan Speeduino, cocok untuk konfigurasi 4-silinder sequential penuh atau 8-silinder paired.</p>
 <p><strong>Pembaruan v2.5:</strong></p>
 <ul>
-<li><strong>Pembaruan Pin Mapping MCU pada High Side</strong>: High side kini menjadi dua kanal independen dengan mapping <strong>HS1 = PD15</strong> dan <strong>HS2 = PD14</strong></li>
-<li><strong>Optimasi Hall Input</strong>: Perbaikan jalur dan conditioning input hall (CKP/CMP) untuk sinyal trigger lebih stabil pada rpm rendah maupun tinggi</li>
-<li><strong>Optimasi Analog Input</strong>: Penyempurnaan filtering analog untuk meningkatkan akurasi pembacaan sensor dan ketahanan terhadap noise</li>
-<li><strong>PCB Optimization</strong>: Penyempurnaan routing dan konfigurasi jumper untuk fleksibilitas instalasi</li>
+<li>
+<p><strong>Pembaruan Pin Mapping MCU pada High Side</strong>: High side kini menjadi dua kanal independen dengan mapping <strong>HS1 = PD15</strong> dan <strong>HS2 = PD14</strong></p>
+</li>
+<li>
+<p><strong>Optimasi Hall Input</strong>: Perbaikan jalur dan conditioning input hall (CKP/CMP) untuk sinyal trigger lebih stabil pada rpm rendah maupun tinggi</p>
+</li>
+<li>
+<p><strong>Optimasi Analog Input</strong>: Penyempurnaan filtering analog untuk meningkatkan akurasi pembacaan sensor dan ketahanan terhadap noise</p>
+</li>
+<li>
+<p><strong>PCB Optimization</strong>: Penyempurnaan routing dan konfigurasi jumper untuk fleksibilitas instalasi</p>
+</li>
 </ul>
 <p><img alt="Mazduino Compact 4ch v2.5" src="../img/mazduino-compact-4ch-v2.3.jpeg" /></p>
 <h2 id="fitur-utama">Fitur Utama</h2>
@@ -194,8 +231,12 @@
 <li>Input knock sensor khusus dengan conditioning yang kompatibel firmware official</li>
 <li>Catu daya 5V untuk sensor dengan perlindungan fuse internal</li>
 <li>3 input digital pullup untuk AC Switch, VSS, dan Clutch</li>
-<li>6x driver low-side arus tinggi 3A: 4 injektor + Idle 1 + Idle 2</li>
-<li>5x driver low-side arus rendah untuk main relay, fuel pump, AC compressor, fan, dan tacho</li>
+<li>
+<p>6x driver low-side arus tinggi 3A: 4 injektor + Idle 1 + Idle 2</p>
+</li>
+<li>
+<p>5x driver low-side arus rendah untuk main relay, fuel pump, AC compressor, fan, dan tacho</p>
+</li>
 <li>4x output 12V atau 5V untuk sinyal koil pengapian</li>
 <li><strong>2x High Side Switching</strong> untuk kontrol alternator, VVT, atau 12V switching tambahan</li>
 <li>Prosesor 168 MHz ARM Cortex-M4</li>
@@ -205,21 +246,35 @@
 </ul>
 <h3 id="pembaruan-high-side-v25">Pembaruan High Side (v2.5)</h3>
 <ul>
-<li><strong>HS1 (utama)</strong> menggunakan pin MCU <strong>PD15</strong></li>
-<li><strong>HS2 (tambahan)</strong> menggunakan pin MCU <strong>PD14</strong></li>
-<li>Pada konektor, terdapat opsi <strong>GND / HS2 (Jumper)</strong> untuk menyesuaikan mode pemakaian</li>
+<li>
+<p><strong>HS1 (utama)</strong> menggunakan pin MCU <strong>PD15</strong></p>
+</li>
+<li>
+<p><strong>HS2 (tambahan)</strong> menggunakan pin MCU <strong>PD14</strong></p>
+</li>
+<li>
+<p>Pada konektor, terdapat opsi <strong>GND / HS2 (Jumper)</strong> untuk menyesuaikan mode pemakaian</p>
+</li>
 <li>Memungkinkan kontrol beban 12V lebih fleksibel untuk kebutuhan setup lanjutan</li>
 </ul>
 <h3 id="optimasi-hall-input-v25">Optimasi Hall Input (v2.5)</h3>
 <ul>
-<li>Alokasi pin hall tetap: <strong>CKP = PD3</strong> dan <strong>CMP = PD4</strong></li>
-<li>Peningkatan dilakukan pada sisi jalur/rangkaian input (tanpa perubahan pin mapping)</li>
+<li>
+<p>Alokasi pin hall tetap: <strong>CKP = PD3</strong> dan <strong>CMP = PD4</strong></p>
+</li>
+<li>
+<p>Peningkatan dilakukan pada sisi jalur/rangkaian input (tanpa perubahan pin mapping)</p>
+</li>
 <li>Tujuan optimasi: memperbaiki stabilitas trigger dan mengurangi gangguan noise</li>
 </ul>
 <h3 id="optimasi-analog-input-v25">Optimasi Analog Input (v2.5)</h3>
 <ul>
-<li>Alokasi pin analog tetap: MAP, TPS, IAT, CLT, O2, dan spare analog tidak berubah</li>
-<li>Perbaikan berada pada filtering dan kualitas conditioning sinyal analog</li>
+<li>
+<p>Alokasi pin analog tetap: MAP, TPS, IAT, CLT, O2, dan spare analog tidak berubah</p>
+</li>
+<li>
+<p>Perbaikan berada pada filtering dan kualitas conditioning sinyal analog</p>
+</li>
 <li>Tujuan optimasi: pembacaan sensor lebih konsisten dan akurat</li>
 </ul>
 <h2 id="wiring-dan-instalasi">Wiring dan Instalasi</h2>
@@ -567,12 +622,12 @@
 <tr>
 <td><strong>High Side Output 1 (HS1)</strong></td>
 <td><strong>PD15</strong></td>
-<td><strong>🔄 Pin high side diperbarui</strong></td>
+<td><strong>Pin high side diperbarui</strong></td>
 </tr>
 <tr>
 <td><strong>High Side Output 2 (HS2)</strong></td>
 <td><strong>PD14</strong></td>
-<td><strong>🆕 Kanal high side baru</strong></td>
+<td><strong>Kanal high side baru</strong></td>
 </tr>
 <tr>
 <td>TXD1</td>

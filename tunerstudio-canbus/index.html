@@ -169,8 +169,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#navigasi">Navigasi</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
@@ -179,6 +177,35 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
@@ -282,15 +309,19 @@
 <h2 id="can-o2-sensor-configuration">CAN O2 Sensor Configuration</h2>
 <p><img alt="CAN O2 Sensor" src="images/can-o2-sensor.png" /></p>
 <h3 id="konfigurasi-can-wideband">Konfigurasi CAN Wideband</h3>
-<p><strong>Enable CAN Wideband</strong>:
-- Bekerja dengan <strong>unit wideband AEM</strong> atau <strong>Mazduino</strong> yang dihubungkan melalui CAN
-- Pilih <strong>channel CAN bus</strong> tempat wideband terhubung
-- Jika channel tertukar, aktifkan <strong>Swap Channels 1 and 2</strong>
-- Opsi <strong>Force O2 sensor heating</strong> dapat mengesampingkan kontrol heating otomatis, meskipun biasanya diatur ke "No"</p>
-<p><strong>CAN Indicators</strong>:
-- Menampilkan status operasional sistem wideband
-- Indikator hijau menandakan operasi yang tepat (mis. Heating Allowed, Communication OK)
-- Indikator merah menyoroti masalah seperti kegagalan heating atau sensor underheating/overheating</p>
+<p><strong>Enable CAN Wideband</strong>:</p>
+<ul>
+<li>Bekerja dengan <strong>unit wideband AEM</strong> atau <strong>Mazduino</strong> yang dihubungkan melalui CAN</li>
+<li>Pilih <strong>channel CAN bus</strong> tempat wideband terhubung</li>
+<li>Jika channel tertukar, aktifkan <strong>Swap Channels 1 and 2</strong></li>
+<li>Opsi <strong>Force O2 sensor heating</strong> dapat mengesampingkan kontrol heating otomatis, meskipun biasanya diatur ke "No"</li>
+</ul>
+<p><strong>CAN Indicators</strong>:</p>
+<ul>
+<li>Menampilkan status operasional sistem wideband</li>
+<li>Indikator hijau menandakan operasi yang tepat (mis. Heating Allowed, Communication OK)</li>
+<li>Indikator merah menyoroti masalah seperti kegagalan heating atau sensor underheating/overheating</li>
+</ul>
 <h3 id="keuntungan-can-wideband">Keuntungan CAN Wideband</h3>
 <ol>
 <li><strong>Komunikasi Digital</strong>: Menghilangkan noise analog dan memberikan akurasi tinggi</li>
@@ -318,9 +349,15 @@
 </ol>
 <h3 id="keuntungan-can-vss">Keuntungan CAN VSS</h3>
 <ul>
-<li><strong>Akurasi Tinggi</strong>: Data digital memberikan akurasi lebih baik daripada sensor analog</li>
-<li><strong>Integrasi Mudah</strong>: Menggunakan data yang sudah tersedia dari ECU OEM</li>
-<li><strong>Reduced Wiring</strong>: Mengurangi kebutuhan wiring tambahan untuk sensor kecepatan</li>
+<li>
+<p><strong>Akurasi Tinggi</strong>: Data digital memberikan akurasi lebih baik daripada sensor analog</p>
+</li>
+<li>
+<p><strong>Integrasi Mudah</strong>: Menggunakan data yang sudah tersedia dari ECU OEM</p>
+</li>
+<li>
+<p><strong>Reduced Wiring</strong>: Mengurangi kebutuhan wiring tambahan untuk sensor kecepatan</p>
+</li>
 </ul>
 <h2 id="can-egt-sensors">CAN EGT Sensors</h2>
 <p><img alt="CAN EGT Sensors" src="images/can-egt-sensors.png" /></p>
@@ -350,10 +387,18 @@
 </ol>
 <h3 id="aplikasi-egt-monitoring">Aplikasi EGT Monitoring</h3>
 <ul>
-<li><strong>Tuning Optimization</strong>: Monitoring suhu untuk tuning yang aman</li>
-<li><strong>Engine Protection</strong>: Deteksi kondisi lean atau overheating</li>
-<li><strong>Performance Analysis</strong>: Analisis distribusi suhu antar silinder</li>
-<li><strong>Turbo Protection</strong>: Monitoring suhu untuk proteksi turbocharger</li>
+<li>
+<p><strong>Tuning Optimization</strong>: Monitoring suhu untuk tuning yang aman</p>
+</li>
+<li>
+<p><strong>Engine Protection</strong>: Deteksi kondisi lean atau overheating</p>
+</li>
+<li>
+<p><strong>Performance Analysis</strong>: Analisis distribusi suhu antar silinder</p>
+</li>
+<li>
+<p><strong>Turbo Protection</strong>: Monitoring suhu untuk proteksi turbocharger</p>
+</li>
 </ul>
 <h2 id="can-io-box-configuration">CAN IO Box Configuration</h2>
 <h3 id="ms-io-box-settings">MS IO-Box Settings</h3>
@@ -382,10 +427,18 @@
 </ol>
 <h3 id="keuntungan-io-box">Keuntungan IO Box</h3>
 <ul>
-<li><strong>Ekspansi I/O</strong>: Menambah kemampuan input/output tanpa ECU yang lebih besar</li>
-<li><strong>Distributed Control</strong>: IO dapat ditempatkan dekat dengan sensor/aktuator</li>
-<li><strong>Modular Design</strong>: Mudah untuk menambah atau mengurangi I/O sesuai kebutuhan</li>
-<li><strong>Cost Effective</strong>: Lebih ekonomis daripada upgrade ke ECU yang lebih besar</li>
+<li>
+<p><strong>Ekspansi I/O</strong>: Menambah kemampuan input/output tanpa ECU yang lebih besar</p>
+</li>
+<li>
+<p><strong>Distributed Control</strong>: IO dapat ditempatkan dekat dengan sensor/aktuator</p>
+</li>
+<li>
+<p><strong>Modular Design</strong>: Mudah untuk menambah atau mengurangi I/O sesuai kebutuhan</p>
+</li>
+<li>
+<p><strong>Cost Effective</strong>: Lebih ekonomis daripada upgrade ke ECU yang lebih besar</p>
+</li>
 </ul>
 <h2 id="troubleshooting-can-bus">Troubleshooting CAN Bus</h2>
 <h3 id="common-issues">Common Issues</h3>
@@ -413,10 +466,18 @@
 </ol>
 <h3 id="diagnostic-tools">Diagnostic Tools</h3>
 <ul>
-<li><strong>CAN Bus Monitor</strong>: Real-time monitoring pesan CAN</li>
-<li><strong>Error Counters</strong>: Tracking error transmit/receive</li>
-<li><strong>Bus Load Analysis</strong>: Monitoring utilisasi bandwidth CAN</li>
-<li><strong>Message Logging</strong>: Recording untuk analisis offline</li>
+<li>
+<p><strong>CAN Bus Monitor</strong>: Real-time monitoring pesan CAN</p>
+</li>
+<li>
+<p><strong>Error Counters</strong>: Tracking error transmit/receive</p>
+</li>
+<li>
+<p><strong>Bus Load Analysis</strong>: Monitoring utilisasi bandwidth CAN</p>
+</li>
+<li>
+<p><strong>Message Logging</strong>: Recording untuk analisis offline</p>
+</li>
 </ul>
 <h2 id="best-practices">Best Practices</h2>
 <h3 id="wiring-guidelines">Wiring Guidelines</h3>
@@ -433,14 +494,6 @@
 <li><strong>Redundancy</strong>: Pertimbangkan backup communication untuk sistem critical</li>
 <li><strong>Error Handling</strong>: Implement proper error detection dan recovery</li>
 </ol>
-<h2 id="navigasi">Navigasi</h2>
-<ul>
-<li><a href="../tunerstudio-sensors/">← Kembali ke Sensor Configuration</a></li>
-<li><a href="../tunerstudio-controller/">Lanjut ke Controller &amp; Diagnostics →</a></li>
-<li><a href="../tunerstudio-manual/">Kembali ke Manual Utama</a></li>
-</ul>
-<hr />
-<p><em>Dokumentasi ini mencakup konfigurasi lengkap CAN Bus untuk TunerStudio Mazduino. Implementasi CAN Bus yang tepat memungkinkan sistem engine management yang lebih canggih dengan kemampuan komunikasi dan monitoring yang luas.</em></p>
               
             </div>
           </div><footer>

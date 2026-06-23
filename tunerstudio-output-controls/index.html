@@ -114,6 +114,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -151,25 +180,47 @@
 <p><strong>Tachometer Output</strong>: Mengelola sinyal tachometer dengan opsi untuk mode pulsa dan durasi. Pengaturan ini biasanya disesuaikan pada basemap Plug and Play untuk kompatibilitas dengan dashboard mobil, tetapi harus dikonfigurasi untuk unit Kit/DIY.</p>
 <h2 id="main-relay-output">Main Relay Output</h2>
 <ul>
-<li><strong>Fungsi</strong>: Mengontrol relay utama untuk sistem bahan bakar dan pengapian</li>
-<li><strong>Channel</strong>: Pilih output channel yang sesuai untuk relay utama</li>
-<li><strong>Mode</strong>: Konfigurasi mode operasi relay</li>
-<li><strong>Aplikasi</strong>: Umumnya digunakan untuk mengaktifkan sistem utama ECU</li>
+<li>
+<p><strong>Fungsi</strong>: Mengontrol relay utama untuk sistem bahan bakar dan pengapian</p>
+</li>
+<li>
+<p><strong>Channel</strong>: Pilih output channel yang sesuai untuk relay utama</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Konfigurasi mode operasi relay</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Umumnya digunakan untuk mengaktifkan sistem utama ECU</p>
+</li>
 </ul>
 <h2 id="fuel-pump-pompa-bahan-bakar">Fuel Pump (Pompa Bahan Bakar)</h2>
 <ul>
-<li><strong>Output Channel</strong>: Tentukan channel output untuk kontrol pompa bahan bakar</li>
-<li><strong>Mode</strong>: Pilih mode operasi (Normal/Inverted)</li>
-<li><strong>Priming Duration</strong>: Durasi priming dalam detik saat startup</li>
+<li>
+<p><strong>Output Channel</strong>: Tentukan channel output untuk kontrol pompa bahan bakar</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Pilih mode operasi (Normal/Inverted)</p>
+</li>
+<li>
+<p><strong>Priming Duration</strong>: Durasi priming dalam detik saat startup</p>
+</li>
 <li><strong>Rekomendasi</strong>: 2-5 detik untuk mesin standar</li>
 <li><strong>Penyesuaian</strong>: Sesuaikan berdasarkan volume sistem bahan bakar</li>
 </ul>
 <h2 id="tachometer-output">Tachometer Output</h2>
 <ul>
-<li><strong>Pulse Mode</strong>: Konfigurasi mode sinyal untuk dashboard</li>
-<li><strong>Duration</strong>: Durasi pulsa tachometer</li>
-<li><strong>Compatibility</strong>: Biasanya sudah dikonfigurasi pada basemap Plug and Play</li>
-<li><strong>Custom Setup</strong>: Perlu konfigurasi manual untuk unit kit</li>
+<li>
+<p><strong>Pulse Mode</strong>: Konfigurasi mode sinyal untuk dashboard</p>
+</li>
+<li>
+<p><strong>Duration</strong>: Durasi pulsa tachometer</p>
+</li>
+<li>
+<p><strong>Compatibility</strong>: Biasanya sudah dikonfigurasi pada basemap Plug and Play</p>
+</li>
+<li>
+<p><strong>Custom Setup</strong>: Perlu konfigurasi manual untuk unit kit</p>
+</li>
 </ul>
 <h2 id="pengaturan-fan-cooling">Pengaturan Fan Cooling</h2>
 <p>Fan 1 dan Fan 2, ECU Mazduino mendukung kontrol dual fan dengan pengaturan independen:</p>
@@ -177,79 +228,147 @@
 <ul>
 <li><strong>On Temperature (°C)</strong>: Suhu aktivasi fan</li>
 <li><strong>Fan 1</strong>: Biasanya 85-90°C</li>
-<li><strong>Fan 2</strong>: Biasanya 92-98°C (untuk fan kedua/high speed)</li>
-<li><strong>Off Temperature (°C)</strong>: Suhu deaktivasi fan</li>
+<li>
+<p><strong>Fan 2</strong>: Biasanya 92-98°C (untuk fan kedua/high speed)</p>
+</li>
+<li>
+<p><strong>Off Temperature (°C)</strong>: Suhu deaktivasi fan</p>
+</li>
 <li><strong>Setting</strong>: 3-5°C lebih rendah dari suhu aktivasi untuk mencegah cycling</li>
 </ul>
 <h3 id="kondisi-operasi">Kondisi Operasi</h3>
 <ul>
 <li><strong>Enable with AC</strong>: Fan aktif saat AC menyala</li>
-<li><strong>Rekomendasi</strong>: Aktifkan untuk menjaga suhu saat AC beroperasi</li>
-<li><strong>Disable When Engine Stopped</strong>: Nonaktifkan fan saat mesin mati</li>
-<li><strong>Safety</strong>: Mencegah battery drain</li>
-<li><strong>Disable Above Vehicle Speed</strong>: Nonaktifkan fan di atas kecepatan tertentu</li>
+<li>
+<p><strong>Rekomendasi</strong>: Aktifkan untuk menjaga suhu saat AC beroperasi</p>
+</li>
+<li>
+<p><strong>Disable When Engine Stopped</strong>: Nonaktifkan fan saat mesin mati</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah battery drain</p>
+</li>
+<li>
+<p><strong>Disable Above Vehicle Speed</strong>: Nonaktifkan fan di atas kecepatan tertentu</p>
+</li>
 <li><strong>Setting</strong>: 60-80 km/h (airflow alami cukup)</li>
 </ul>
 <h3 id="idle-adder">Idle Adder</h3>
 <ul>
-<li><strong>Fungsi</strong>: Menambah duty cycle fan saat idle</li>
-<li><strong>Percentage (%)</strong>: 10-20% untuk bantuan cooling di RPM rendah</li>
-<li><strong>Aplikasi</strong>: Membantu cooling saat idle atau traffic jam</li>
+<li>
+<p><strong>Fungsi</strong>: Menambah duty cycle fan saat idle</p>
+</li>
+<li>
+<p><strong>Percentage (%)</strong>: 10-20% untuk bantuan cooling di RPM rendah</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Membantu cooling saat idle atau traffic jam</p>
+</li>
 </ul>
 <h2 id="starter-control-output">Starter Control Output</h2>
 <ul>
-<li><strong>Output Selection</strong>: Pilih pin output spesifik untuk kontrol relay starter</li>
-<li><strong>NONE Setting</strong>: Menonaktifkan kontrol starter ECU (operasi independen)</li>
-<li><strong>Safety</strong>: Memungkinkan ECU mengelola starter engagement</li>
+<li>
+<p><strong>Output Selection</strong>: Pilih pin output spesifik untuk kontrol relay starter</p>
+</li>
+<li>
+<p><strong>NONE Setting</strong>: Menonaktifkan kontrol starter ECU (operasi independen)</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Memungkinkan ECU mengelola starter engagement</p>
+</li>
 </ul>
 <h2 id="safety-features">Safety Features</h2>
 <h3 id="require-foot-on-brake-to-crank">Require Foot on Brake to Crank</h3>
 <ul>
-<li><strong>Fungsi</strong>: Memerlukan pedal rem ditekan untuk starter</li>
-<li><strong>Safety</strong>: Mencegah starter aktif tanpa rem</li>
-<li><strong>Aplikasi</strong>: Umumnya untuk transmisi otomatis</li>
+<li>
+<p><strong>Fungsi</strong>: Memerlukan pedal rem ditekan untuk starter</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah starter aktif tanpa rem</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Umumnya untuk transmisi otomatis</p>
+</li>
 </ul>
 <h3 id="startstop-button-input">Start/Stop Button Input</h3>
 <ul>
-<li><strong>Input Channel</strong>: Tentukan channel input untuk tombol start/stop</li>
-<li><strong>Mode</strong>: Default atau custom sesuai kebutuhan</li>
-<li><strong>Integration</strong>: Untuk sistem keyless atau push-button start</li>
+<li>
+<p><strong>Input Channel</strong>: Tentukan channel input untuk tombol start/stop</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Default atau custom sesuai kebutuhan</p>
+</li>
+<li>
+<p><strong>Integration</strong>: Untuk sistem keyless atau push-button start</p>
+</li>
 </ul>
 <h2 id="starter-protection">Starter Protection</h2>
 <h3 id="start-cranking-maximum-time">Start Cranking Maximum Time</h3>
 <ul>
-<li><strong>Durasi</strong>: Batas maksimum waktu cranking (biasanya 10-15 detik)</li>
-<li><strong>Protection</strong>: Melindungi starter dari overuse</li>
-<li><strong>Safety</strong>: Mencegah kerusakan starter dan battery drain</li>
+<li>
+<p><strong>Durasi</strong>: Batas maksimum waktu cranking (biasanya 10-15 detik)</p>
+</li>
+<li>
+<p><strong>Protection</strong>: Melindungi starter dari overuse</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah kerusakan starter dan battery drain</p>
+</li>
 </ul>
 <h3 id="suppress-on-startup">Suppress on Startup</h3>
 <ul>
-<li><strong>Delay (ms)</strong>: Penundaan untuk menghindari sinyal starter palsu</li>
-<li><strong>Setting</strong>: 500-1000ms untuk sistem stabil</li>
-<li><strong>Function</strong>: Mencegah false starter signals saat inisialisasi</li>
+<li>
+<p><strong>Delay (ms)</strong>: Penundaan untuk menghindari sinyal starter palsu</p>
+</li>
+<li>
+<p><strong>Setting</strong>: 500-1000ms untuk sistem stabil</p>
+</li>
+<li>
+<p><strong>Function</strong>: Mencegah false starter signals saat inisialisasi</p>
+</li>
 </ul>
 <h3 id="starter-disable">Starter Disable</h3>
 <ul>
-<li><strong>Output Channel</strong>: Konfigurasi channel output untuk menonaktifkan starter</li>
-<li><strong>Conditions</strong>: Kondisi spesifik untuk disable starter (RPM tinggi, dll)</li>
-<li><strong>Safety</strong>: Mencegah starter aktif saat mesin sudah hidup</li>
+<li>
+<p><strong>Output Channel</strong>: Konfigurasi channel output untuk menonaktifkan starter</p>
+</li>
+<li>
+<p><strong>Conditions</strong>: Kondisi spesifik untuk disable starter (RPM tinggi, dll)</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah starter aktif saat mesin sudah hidup</p>
+</li>
 </ul>
 <h2 id="konfigurasi-speedometer">Konfigurasi Speedometer</h2>
 <ul>
-<li><strong>Output Mode</strong>: Customize mode sinyal output speedometer</li>
-<li><strong>Pulses per Kilometer</strong>: Sesuaikan dengan spesifikasi dashboard</li>
-<li><strong>Calibration</strong>: Kalibrasi sesuai dengan gear ratio dan ukuran ban</li>
-<li><strong>Compatibility</strong>: Pastikan kompatibilitas dengan sistem dashboard existing</li>
+<li>
+<p><strong>Output Mode</strong>: Customize mode sinyal output speedometer</p>
+</li>
+<li>
+<p><strong>Pulses per Kilometer</strong>: Sesuaikan dengan spesifikasi dashboard</p>
+</li>
+<li>
+<p><strong>Calibration</strong>: Kalibrasi sesuai dengan gear ratio dan ukuran ban</p>
+</li>
+<li>
+<p><strong>Compatibility</strong>: Pastikan kompatibilitas dengan sistem dashboard existing</p>
+</li>
 </ul>
 <h2 id="check-engine-output">Check Engine Output</h2>
 <ul>
-<li><strong>Output Configuration</strong>: Konfigurasi output channel untuk lampu check engine</li>
-<li><strong>Warning Period</strong>: Durasi periode warning dalam detik</li>
-<li><strong>Trigger Conditions</strong>: Kondisi yang memicu check engine light</li>
-<li><strong>Diagnostic</strong>: Integrasi dengan sistem diagnostik ECU</li>
+<li>
+<p><strong>Output Configuration</strong>: Konfigurasi output channel untuk lampu check engine</p>
+</li>
+<li>
+<p><strong>Warning Period</strong>: Durasi periode warning dalam detik</p>
+</li>
+<li>
+<p><strong>Trigger Conditions</strong>: Kondisi yang memicu check engine light</p>
+</li>
+<li>
+<p><strong>Diagnostic</strong>: Integrasi dengan sistem diagnostik ECU</p>
+</li>
 </ul>
-<hr />
-<p><strong><a href="../tunerstudio-manual/">← Kembali ke Manual TunerStudio</a></strong></p>
               
             </div>
           </div><footer>

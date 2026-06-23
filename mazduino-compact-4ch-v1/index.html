@@ -148,6 +148,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -524,10 +553,18 @@
 </tbody>
 </table>
 <h3 id="solder-jumper">Solder Jumper</h3>
-<p>PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
-- <strong>Pin 3</strong>: CANH atau Input Analog Cadangan 1
-- <strong>Pin 6</strong>: CANL atau Kontrol Relay Utama
-- <strong>Pemilihan tegangan pengapian</strong>: Pilih tegangan yang sesuai untuk koil pengapian</p>
+<p>PCB termasuk solder jumper di bagian belakang untuk konfigurasi:</p>
+<ul>
+<li>
+<p><strong>Pin 3</strong>: CANH atau Input Analog Cadangan 1</p>
+</li>
+<li>
+<p><strong>Pin 6</strong>: CANL atau Kontrol Relay Utama</p>
+</li>
+<li>
+<p><strong>Pemilihan tegangan pengapian</strong>: Pilih tegangan yang sesuai untuk koil pengapian</p>
+</li>
+</ul>
 <h3 id="langkah-instalasi">Langkah Instalasi</h3>
 <ol>
 <li><strong>Pemasangan</strong>: Amankan ECU di lokasi yang sesuai</li>
@@ -538,11 +575,21 @@
 </ol>
 <h3 id="catatan-wiring">Catatan Wiring</h3>
 <ul>
-<li><strong>Ground Sensor</strong>: Gunakan pin 19 dan 20 untuk koneksi ground sensor</li>
-<li><strong>Referensi 5V</strong>: Pin 8 menyediakan referensi 5V untuk sensor</li>
-<li><strong>Konfigurasi CAN</strong>: Gunakan solder jumper untuk memilih fungsi CAN atau relay (pin 3 &amp; 6)</li>
-<li><strong>Kompatibilitas Wiring</strong>: Wiring kompatibel dengan standar Speeduino</li>
-<li><strong>Referensi</strong>: Informasi wiring tambahan tersedia di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
+<li>
+<p><strong>Ground Sensor</strong>: Gunakan pin 19 dan 20 untuk koneksi ground sensor</p>
+</li>
+<li>
+<p><strong>Referensi 5V</strong>: Pin 8 menyediakan referensi 5V untuk sensor</p>
+</li>
+<li>
+<p><strong>Konfigurasi CAN</strong>: Gunakan solder jumper untuk memilih fungsi CAN atau relay (pin 3 &amp; 6)</p>
+</li>
+<li>
+<p><strong>Kompatibilitas Wiring</strong>: Wiring kompatibel dengan standar Speeduino</p>
+</li>
+<li>
+<p><strong>Referensi</strong>: Informasi wiring tambahan tersedia di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
+</li>
 </ul>
 <h2 id="dukungan-dan-sumber-daya">Dukungan dan Sumber Daya</h2>
 <h3 id="dokumentasi">Dokumentasi</h3>

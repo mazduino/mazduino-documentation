@@ -166,6 +166,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -233,8 +262,12 @@
 <h3 id="layout-selection">Layout Selection</h3>
 <p><strong>Layout</strong> dropdown memungkinkan Anda memilih kompleksitas tampilan pengaturan:</p>
 <ul>
-<li><strong>Tuning Layout</strong>: Direkomendasikan untuk sebagian besar pengguna, terutama yang menggunakan Mazduino Plug and Play. Layout ini menyembunyikan beberapa tombol yang jarang digunakan, menciptakan interface yang lebih bersih</li>
-<li><strong>Full Layout</strong>: Menampilkan semua opsi untuk konfigurasi lengkap. Manual ini menggunakan Full layout untuk memastikan kejelasan</li>
+<li>
+<p><strong>Tuning Layout</strong>: Direkomendasikan untuk sebagian besar pengguna, terutama yang menggunakan Mazduino Plug and Play. Layout ini menyembunyikan beberapa tombol yang jarang digunakan, menciptakan interface yang lebih bersih</p>
+</li>
+<li>
+<p><strong>Full Layout</strong>: Menampilkan semua opsi untuk konfigurasi lengkap. Manual ini menggunakan Full layout untuk memastikan kejelasan</p>
+</li>
 </ul>
 <p><img alt="Base Engine Settings" src="#" title="Base Engine Settings Window" /></p>
 <h3 id="engine-configuration">Engine Configuration</h3>
@@ -271,27 +304,51 @@
 <p>Menentukan metode yang digunakan untuk menghitung fuel delivery. Opsi yang tersedia:</p>
 <h4 id="1-speed-density">1. Speed Density</h4>
 <ul>
-<li><strong>Prinsip</strong>: Menggunakan intake manifold pressure (MAP) dan intake air temperature (IAT) untuk menghitung air density dan fuel requirements</li>
-<li><strong>Aplikasi</strong>: Strategi umum, terutama untuk naturally aspirated atau turbocharged engines</li>
-<li><strong>Keuntungan</strong>: Reliable dan well-tested untuk sebagian besar aplikasi</li>
+<li>
+<p><strong>Prinsip</strong>: Menggunakan intake manifold pressure (MAP) dan intake air temperature (IAT) untuk menghitung air density dan fuel requirements</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Strategi umum, terutama untuk naturally aspirated atau turbocharged engines</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Reliable dan well-tested untuk sebagian besar aplikasi</p>
+</li>
 </ul>
 <h4 id="2-maf-air-charge">2. MAF Air Charge</h4>
 <ul>
-<li><strong>Prinsip</strong>: Bergantung pada Mass Air Flow (MAF) sensor untuk mengukur jumlah udara yang masuk engine secara langsung</li>
-<li><strong>Aplikasi</strong>: Efektif untuk engine yang dilengkapi dengan MAF sensor</li>
-<li><strong>Keuntungan</strong>: Direct measurement dari airflow</li>
+<li>
+<p><strong>Prinsip</strong>: Bergantung pada Mass Air Flow (MAF) sensor untuk mengukur jumlah udara yang masuk engine secara langsung</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Efektif untuk engine yang dilengkapi dengan MAF sensor</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Direct measurement dari airflow</p>
+</li>
 </ul>
 <h4 id="3-alpha-n">3. Alpha-N</h4>
 <ul>
-<li><strong>Prinsip</strong>: Menggunakan throttle position sebagai load input utama untuk kalkulasi fuel</li>
-<li><strong>Aplikasi</strong>: Digunakan pada engine dengan individual throttle bodies atau yang tidak memiliki MAP signal yang reliable</li>
-<li><strong>Keuntungan</strong>: Cocok untuk ITB setups dan modified intake systems</li>
+<li>
+<p><strong>Prinsip</strong>: Menggunakan throttle position sebagai load input utama untuk kalkulasi fuel</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Digunakan pada engine dengan individual throttle bodies atau yang tidak memiliki MAP signal yang reliable</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Cocok untuk ITB setups dan modified intake systems</p>
+</li>
 </ul>
 <h4 id="4-lua">4. Lua</h4>
 <ul>
-<li><strong>Prinsip</strong>: Memungkinkan kalkulasi fuel custom menggunakan Lua scripting</li>
-<li><strong>Aplikasi</strong>: Aplikasi tuning yang highly specific di mana strategi lain tidak applicable</li>
-<li><strong>Keuntungan</strong>: Fleksibilitas maksimum untuk custom applications</li>
+<li>
+<p><strong>Prinsip</strong>: Memungkinkan kalkulasi fuel custom menggunakan Lua scripting</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Aplikasi tuning yang highly specific di mana strategi lain tidak applicable</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Fleksibilitas maksimum untuk custom applications</p>
+</li>
 </ul>
 <h2 id="rekomendasi-berdasarkan-tipe-unit">Rekomendasi Berdasarkan Tipe Unit</h2>
 <h3 id="plug-and-play-units">Plug and Play Units</h3>
@@ -326,10 +383,18 @@
 </ol>
 <h3 id="troubleshooting">Troubleshooting</h3>
 <ul>
-<li><strong>Engine tidak start</strong>: Periksa firing order dan trigger settings</li>
-<li><strong>Rough idle</strong>: Verifikasi number of cylinders dan displacement</li>
-<li><strong>Poor fuel economy</strong>: Review fuel strategy selection</li>
-<li><strong>Inconsistent performance</strong>: Check engine metadata untuk akurasi</li>
+<li>
+<p><strong>Engine tidak start</strong>: Periksa firing order dan trigger settings</p>
+</li>
+<li>
+<p><strong>Rough idle</strong>: Verifikasi number of cylinders dan displacement</p>
+</li>
+<li>
+<p><strong>Poor fuel economy</strong>: Review fuel strategy selection</p>
+</li>
+<li>
+<p><strong>Inconsistent performance</strong>: Check engine metadata untuk akurasi</p>
+</li>
 </ul>
 <hr />
 <p><strong>Selanjutnya</strong>: <a href="../tunerstudio-limits-protection/">Limits and Protection</a></p>

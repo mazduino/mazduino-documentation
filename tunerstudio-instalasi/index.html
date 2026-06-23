@@ -152,6 +152,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -185,10 +214,18 @@
 <h2 id="persyaratan-sistem">Persyaratan Sistem</h2>
 <p>Sebelum menginstal TunerStudio, pastikan sistem Anda memenuhi persyaratan berikut:</p>
 <ul>
-<li><strong>Sistem Operasi</strong>: Windows 10 atau yang lebih baru, macOS, atau Linux</li>
-<li><strong>Hardware</strong>: Minimum RAM 4GB, processor 2GHz, dan storage tersedia 500MB</li>
-<li><strong>Koneksi</strong>: Port USB untuk komunikasi langsung dengan Mazduino</li>
-<li><strong>Driver</strong>: Windows 10 ke atas umumnya sudah memiliki driver yang diperlukan</li>
+<li>
+<p><strong>Sistem Operasi</strong>: Windows 10 atau yang lebih baru, macOS, atau Linux</p>
+</li>
+<li>
+<p><strong>Hardware</strong>: Minimum RAM 4GB, processor 2GHz, dan storage tersedia 500MB</p>
+</li>
+<li>
+<p><strong>Koneksi</strong>: Port USB untuk komunikasi langsung dengan Mazduino</p>
+</li>
+<li>
+<p><strong>Driver</strong>: Windows 10 ke atas umumnya sudah memiliki driver yang diperlukan</p>
+</li>
 </ul>
 <h2 id="langkah-1-mengakses-website-mazduino">Langkah 1: Mengakses Website Mazduino</h2>
 <ol>
@@ -196,30 +233,30 @@
 <li><strong>Navigasi ke Menu</strong>: Klik ikon menu hamburger (tiga garis horizontal) yang terletak di bagian kanan atas halaman</li>
 <li><strong>Masuk ke Bagian Downloads</strong>: Dari menu, pilih <strong>Downloads</strong> untuk mengakses software dan sumber daya yang tersedia untuk Mazduino</li>
 </ol>
+<p><img alt="Mazduino Homepage" src="../img/manual/docs-overview.png" title="Mazduino Homepage" /></p>
 <p><em>Referensi Gambar</em>: Gambar di atas menunjukkan homepage website Mazduino. Ikuti langkah-langkah yang dijelaskan untuk menemukan bagian Downloads.</p>
-<p><img alt="Mazduino Homepage" src="#" title="Mazduino Homepage" /></p>
 <h2 id="langkah-2-memilih-opsi-downloads">Langkah 2: Memilih Opsi Downloads</h2>
 <ol>
 <li><strong>Buka Menu</strong>: Setelah mengklik ikon menu hamburger, akan muncul daftar opsi</li>
 <li><strong>Pilih Downloads</strong>: Dari menu, klik <strong>Downloads</strong> untuk melanjutkan ke halaman di mana Anda dapat mengunduh TunerStudio dan sumber daya lainnya untuk Mazduino</li>
 </ol>
+<p><img alt="Menu Downloads" src="../img/manual/downloads-overview.png" title="Menu Downloads" /></p>
 <p><em>Referensi Gambar</em>: Pada screenshot di atas, Anda dapat melihat opsi Downloads yang di-highlight dalam menu.</p>
-<p><img alt="Menu Downloads" src="#" title="Menu Downloads" /></p>
 <h2 id="langkah-3-download-tunerstudio">Langkah 3: Download TunerStudio</h2>
 <ol>
 <li><strong>Cari Link TunerStudio</strong>: Di halaman <strong>Downloads</strong>, gulir ke bagian yang berlabel <strong>Software Requirements</strong></li>
 <li><strong>Klik pada TunerStudio Tuning Software</strong>: Temukan link <strong>TunerStudio MS</strong> dan klik untuk mengunduh versi terbaru software</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, link download TunerStudio di-highlight di bawah bagian "Software Requirements". Klik link ini untuk memulai download.</p>
 <p><img alt="TunerStudio Download Link" src="#" title="TunerStudio Download Link" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, link download TunerStudio di-highlight di bawah bagian "Software Requirements". Klik link ini untuk memulai download.</p>
 <h2 id="langkah-4-download-versi-terbaru-tunerstudio">Langkah 4: Download Versi Terbaru TunerStudio</h2>
 <ol>
 <li><strong>Redirect ke Halaman Download TunerStudio</strong>: Setelah memilih TunerStudio dari website Mazduino, Anda akan diarahkan ke halaman download resmi TunerStudio di situs EFI Analytics</li>
 <li><strong>Cari Versi Terbaru</strong>: Cari link <strong>TunerStudio MS version X.X.XX (Approximately XX MB)</strong>. Link ini menyediakan versi terbaru, dengan nomor versi yang tepat dan ukuran file yang ditampilkan</li>
 <li><strong>Klik untuk Download</strong>: Klik link <strong>download</strong> di sebelah versi TunerStudio MS terbaru untuk memulai download</li>
 </ol>
+<p><img alt="TunerStudio Download Page" src="../img/manual/ts-downloaf-page-overview.png" title="TunerStudio Download Page" /></p>
 <p><em>Referensi Gambar</em>: Pada screenshot di atas, versi TunerStudio saat ini terdaftar di bagian atas, dengan link "download" di sebelah kanan. Klik link ini untuk mendapatkan versi terbaru untuk Mazduino Anda.</p>
-<p><img alt="TunerStudio Download Page" src="#" title="TunerStudio Download Page" /></p>
 <h2 id="langkah-5-pilih-open-untuk-memulai-instalasi">Langkah 5: Pilih "Open" untuk Memulai Instalasi</h2>
 <ol>
 <li><strong>Opsi Download</strong>: Setelah Anda mengklik link <strong>download</strong> untuk TunerStudio, mungkin akan muncul pop-up yang menanyakan apakah Anda ingin <strong>Open</strong> atau <strong>Save</strong> file</li>
@@ -231,8 +268,8 @@
 <p><strong>Pilihan yang Direkomendasikan</strong>: Klik <strong>Open</strong> untuk melanjutkan langsung ke proses instalasi setelah download selesai. Opsi ini ideal jika Anda siap untuk menginstal TunerStudio segera</p>
 </li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi <strong>Open</strong> di-highlight. Pilih ini untuk memulai instalasi langsung setelah download.</p>
 <p><img alt="Download Options" src="#" title="Download Options" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi <strong>Open</strong> di-highlight. Pilih ini untuk memulai instalasi langsung setelah download.</p>
 <h2 id="langkah-6-menerima-user-account-control-uac-prompt">Langkah 6: Menerima User Account Control (UAC) Prompt</h2>
 <ol>
 <li><strong>Notifikasi User Account Control</strong>: Setelah download selesai, Windows mungkin menampilkan prompt User Account Control (UAC) yang meminta izin untuk melanjutkan instalasi</li>
@@ -245,8 +282,8 @@
 <li><strong>Pilih "I accept the agreement"</strong>: Untuk melanjutkan instalasi, klik opsi <strong>I accept the agreement</strong></li>
 <li><strong>Klik Next</strong>: Setelah Anda menerima perjanjian, klik <strong>Next</strong> untuk melanjutkan setup</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, pilih opsi <strong>I accept the agreement</strong> untuk mengaktifkan tombol Next.</p>
 <p><img alt="License Agreement" src="#" title="License Agreement" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, pilih opsi <strong>I accept the agreement</strong> untuk mengaktifkan tombol Next.</p>
 <h2 id="langkah-8-pilih-installation-path">Langkah 8: Pilih Installation Path</h2>
 <ol>
 <li><strong>Pilih Destination Location</strong>: Setup akan meminta Anda untuk memilih folder tempat TunerStudio akan diinstal. Secara default, diatur ke <code>C:\Program Files (x86)\EFIAnalytics\TunerStudioMS</code></li>
@@ -255,8 +292,8 @@
 <li>Untuk memilih lokasi yang berbeda, klik <strong>Browse</strong>, pilih folder yang diinginkan, kemudian klik <strong>Next</strong></li>
 </ol>
 <p><em>Catatan</em>: Disarankan untuk menggunakan path default kecuali Anda memiliki alasan khusus untuk mengubahnya.</p>
-<p><em>Referensi Gambar</em>: Screenshot di atas menunjukkan path instalasi default. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <p><img alt="Installation Path" src="#" title="Installation Path" /></p>
+<p><em>Referensi Gambar</em>: Screenshot di atas menunjukkan path instalasi default. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <h2 id="langkah-9-pilih-start-menu-folder">Langkah 9: Pilih Start Menu Folder</h2>
 <ol>
 <li><strong>Pemilihan Start Menu Folder</strong>: Setup akan meminta Anda untuk memilih folder Start Menu tempat shortcut TunerStudio akan ditempatkan. Secara default, diatur ke <strong>EFI Analytics</strong></li>
@@ -264,8 +301,8 @@
 <li>Untuk melanjutkan dengan folder default, cukup klik <strong>Next</strong></li>
 <li>Jika Anda lebih suka membuat shortcut di folder yang berbeda, klik <strong>Browse</strong>, pilih lokasi yang diinginkan, kemudian klik <strong>Next</strong></li>
 </ol>
-<p><em>Referensi Gambar</em>: Screenshot di atas menunjukkan folder Start Menu default. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <p><img alt="Start Menu Folder" src="#" title="Start Menu Folder" /></p>
+<p><em>Referensi Gambar</em>: Screenshot di atas menunjukkan folder Start Menu default. Klik <strong>Next</strong> untuk melanjutkan.</p>
 <h2 id="langkah-10-pilih-additional-tasks">Langkah 10: Pilih Additional Tasks</h2>
 <ol>
 <li><strong>Shortcut Tambahan</strong>: Setup akan menanyakan apakah Anda ingin membuat shortcut desktop untuk TunerStudio</li>
@@ -274,15 +311,15 @@
 <li>Jika Anda tidak memerlukan shortcut desktop, biarkan kotak tidak dicentang</li>
 <li><strong>Klik Next</strong>: Setelah Anda membuat pilihan, klik <strong>Next</strong> untuk melanjutkan instalasi</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, Anda dapat melihat opsi untuk membuat desktop shortcut. Pilih opsi ini jika Anda ingin akses cepat ke TunerStudio dari desktop.</p>
 <p><img alt="Additional Tasks" src="#" title="Additional Tasks" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, Anda dapat melihat opsi untuk membuat desktop shortcut. Pilih opsi ini jika Anda ingin akses cepat ke TunerStudio dari desktop.</p>
 <h2 id="langkah-11-memulai-instalasi">Langkah 11: Memulai Instalasi</h2>
 <ol>
 <li><strong>Review Settings</strong>: Setup akan menampilkan ringkasan pengaturan instalasi yang Anda pilih, termasuk lokasi tujuan dan folder Start Menu</li>
 <li><strong>Klik Install</strong>: Jika semua pengaturan benar, klik <strong>Install</strong> untuk memulai proses instalasi. Jika Anda perlu mengubah pengaturan, klik <strong>Back</strong> untuk kembali ke langkah sebelumnya</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, tombol <strong>Install</strong> di-highlight. Klik tombol ini untuk melanjutkan instalasi TunerStudio.</p>
 <p><img alt="Ready to Install" src="#" title="Ready to Install" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, tombol <strong>Install</strong> di-highlight. Klik tombol ini untuk melanjutkan instalasi TunerStudio.</p>
 <h2 id="langkah-12-menyelesaikan-instalasi-dan-meluncurkan-tunerstudio">Langkah 12: Menyelesaikan Instalasi dan Meluncurkan TunerStudio</h2>
 <ol>
 <li><strong>Selesaikan Instalasi</strong>: Setelah setup selesai, Anda akan melihat layar konfirmasi bahwa instalasi telah selesai</li>
@@ -291,30 +328,35 @@
 <li>Jika Anda tidak ingin meluncurkan TunerStudio segera, hapus centang pada kotak</li>
 <li><strong>Klik Finish</strong>: Klik <strong>Finish</strong> untuk keluar dari setup dan menyelesaikan proses instalasi</li>
 </ol>
-<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi untuk meluncurkan TunerStudio dicentang. Klik <strong>Finish</strong> untuk menutup setup dan mulai menggunakan TunerStudio.</p>
 <p><img alt="Installation Complete" src="#" title="Installation Complete" /></p>
+<p><em>Referensi Gambar</em>: Pada screenshot di atas, opsi untuk meluncurkan TunerStudio dicentang. Klik <strong>Finish</strong> untuk menutup setup dan mulai menggunakan TunerStudio.</p>
 <h2 id="mengatasi-masalah-instalasi">Mengatasi Masalah Instalasi</h2>
 <h3 id="masalah-driver-com-port">Masalah Driver COM Port</h3>
 <p><strong>Gejala</strong>: TunerStudio tidak dapat mendeteksi ECU Mazduino atau COM port tidak muncul</p>
-<p><strong>Solusi</strong>:
-1. <strong>Windows 10 ke atas</strong>: Umumnya sudah memiliki driver yang diperlukan secara pre-installed
-2. <strong>Windows versi lama</strong>: Mungkin perlu menginstal <strong>STMicroelectronics Virtual COM Port (VCP) drivers</strong>
-3. <strong>Download driver</strong>: Dari website STMicroelectronics resmi
-4. <strong>Restart komputer</strong>: Setelah instalasi driver</p>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Windows 10 ke atas</strong>: Umumnya sudah memiliki driver yang diperlukan secara pre-installed</li>
+<li><strong>Windows versi lama</strong>: Mungkin perlu menginstal <strong>STMicroelectronics Virtual COM Port (VCP) drivers</strong></li>
+<li><strong>Download driver</strong>: Dari website STMicroelectronics resmi</li>
+<li><strong>Restart komputer</strong>: Setelah instalasi driver</li>
+</ol>
 <h3 id="masalah-uac-permission">Masalah UAC Permission</h3>
 <p><strong>Gejala</strong>: Instalasi gagal karena masalah permission</p>
-<p><strong>Solusi</strong>:
-1. <strong>Klik kanan</strong> pada installer TunerStudio
-2. <strong>Pilih "Run as administrator"</strong>
-3. <strong>Ikuti langkah instalasi</strong> seperti biasa</p>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Klik kanan</strong> pada installer TunerStudio</li>
+<li><strong>Pilih "Run as administrator"</strong></li>
+<li><strong>Ikuti langkah instalasi</strong> seperti biasa</li>
+</ol>
 <h3 id="masalah-antivirus">Masalah Antivirus</h3>
 <p><strong>Gejala</strong>: Antivirus memblokir instalasi TunerStudio</p>
-<p><strong>Solusi</strong>:
-1. <strong>Sementara disable antivirus</strong> selama instalasi
-2. <strong>Tambahkan TunerStudio</strong> ke whitelist antivirus
-3. <strong>Enable antivirus kembali</strong> setelah instalasi selesai</p>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Sementara disable antivirus</strong> selama instalasi</li>
+<li><strong>Tambahkan TunerStudio</strong> ke whitelist antivirus</li>
+<li><strong>Enable antivirus kembali</strong> setelah instalasi selesai</li>
+</ol>
 <hr />
-<p><strong>Selanjutnya</strong>: <a href="../tunerstudio-konfigurasi/">Konfigurasi Project TunerStudio</a></p>
 <!-- Image References -->
               
             </div>

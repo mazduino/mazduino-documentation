@@ -158,6 +158,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -200,11 +229,15 @@
 <li><strong>6x output ignition</strong> (untuk smart coil, 5V/12V sesuai konfigurasi)</li>
 <li><strong>10x output low side 3A</strong> untuk injektor, idle PWM, boost, VVT, dan aktuator beban menengah</li>
 <li><strong>5x output low side low current</strong> untuk relay (main relay, fuel pump, fan, AC, tach)</li>
-<li><strong>2x output high side 1.3A</strong> untuk beban 12V switching<ul>
+<li>
+<p><strong>2x output high side 1.3A</strong> untuk beban 12V switching</p>
+<ul>
 <li>Contoh penggunaan: <strong>alternator control</strong>, solenoid 12V, dan aktuator switching lain sesuai batas arus.</li>
 </ul>
 </li>
-<li><strong>2x CAN bus</strong> (tergantung konfigurasi jalur/jumper)</li>
+<li>
+<p><strong>2x CAN bus</strong> (tergantung konfigurasi jalur/jumper)</p>
+</li>
 <li><strong>2x input VR</strong> untuk CKP/CMP tipe variable reluctor</li>
 <li><strong>2x ETB output</strong> (ETB1 dan ETB2)</li>
 <li><strong>Dual IC ETB (ETB1 dan ETB2)</strong> dapat juga digunakan untuk kontrol <strong>Idle Stepper</strong></li>
@@ -256,13 +289,27 @@
 <p>Karena terdapat dual IC untuk kontrol <strong>ETB1</strong> dan <strong>ETB2</strong>, jalur driver tersebut juga dapat dimanfaatkan untuk kontrol <strong>Idle Stepper</strong> sesuai konfigurasi firmware dan wiring.</p>
 <h3 id="opsi-jumper-penting">Opsi Jumper Penting</h3>
 <ul>
-<li><strong>JP3 (Pin 4)</strong>: pilih <strong>AVS2 (Analog Volt 5)</strong> atau <strong>Ignition 6</strong></li>
-<li><strong>JP4 (Pin 20)</strong>: pilih <strong>ATS2 (Analog Temp 4)</strong> atau <strong>Ignition 5</strong></li>
-<li><strong>JP5 (Pin 5)</strong>: pilih <strong>AVS3 (Analog Volt 6)</strong> atau <strong>High Side 2</strong></li>
-<li><strong>IN22</strong>: pilih <strong>Digital 3</strong> atau <strong>VR1+</strong></li>
-<li><strong>IN38</strong>: pilih <strong>Digital 4</strong> atau <strong>VR1-</strong></li>
-<li><strong>IN33</strong>: pilih <strong>CANH1</strong> atau <strong>VR2+</strong></li>
-<li><strong>IN34</strong>: pilih <strong>CANL1</strong> atau <strong>VR2-</strong></li>
+<li>
+<p><strong>JP3 (Pin 4)</strong>: pilih <strong>AVS2 (Analog Volt 5)</strong> atau <strong>Ignition 6</strong></p>
+</li>
+<li>
+<p><strong>JP4 (Pin 20)</strong>: pilih <strong>ATS2 (Analog Temp 4)</strong> atau <strong>Ignition 5</strong></p>
+</li>
+<li>
+<p><strong>JP5 (Pin 5)</strong>: pilih <strong>AVS3 (Analog Volt 6)</strong> atau <strong>High Side 2</strong></p>
+</li>
+<li>
+<p><strong>IN22</strong>: pilih <strong>Digital 3</strong> atau <strong>VR1+</strong></p>
+</li>
+<li>
+<p><strong>IN38</strong>: pilih <strong>Digital 4</strong> atau <strong>VR1-</strong></p>
+</li>
+<li>
+<p><strong>IN33</strong>: pilih <strong>CANH1</strong> atau <strong>VR2+</strong></p>
+</li>
+<li>
+<p><strong>IN34</strong>: pilih <strong>CANL1</strong> atau <strong>VR2-</strong></p>
+</li>
 </ul>
 <h3 id="catatan-konfigurasi">Catatan Konfigurasi</h3>
 <ul>
@@ -637,8 +684,12 @@
 </table>
 <h2 id="informasi-mcu">Informasi MCU</h2>
 <ul>
-<li><strong>MCU</strong>: STM32F427</li>
-<li>ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.</li>
+<li>
+<p><strong>MCU</strong>: STM32F427</p>
+</li>
+<li>
+<p>ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.</p>
+</li>
 <li>Gunakan file konfigurasi firmware yang memang ditujukan untuk <strong>Mazduino Core</strong> agar semua pin berfungsi sesuai desain board.</li>
 <li>Firmware untuk board ini hanya untuk <strong>rusEFI based</strong> (baik official maupun custom firmware dengan MCU F4).</li>
 </ul>
@@ -663,9 +714,15 @@
 </ul>
 <h2 id="software-tuning">Software Tuning</h2>
 <ul>
-<li>Download TunerStudio: <a href="https://www.tunerstudio.com/index.php/downloads">https://www.tunerstudio.com/index.php/downloads</a></li>
-<li>Referensi firmware rusEFI: <a href="https://wiki.rusefi.com">https://wiki.rusefi.com</a></li>
-<li>Informasi produk: <a href="https://www.mazduino.com">https://www.mazduino.com</a></li>
+<li>
+<p>Download TunerStudio: <a href="https://www.tunerstudio.com/index.php/downloads">https://www.tunerstudio.com/index.php/downloads</a></p>
+</li>
+<li>
+<p>Referensi firmware rusEFI: <a href="https://wiki.rusefi.com">https://wiki.rusefi.com</a></p>
+</li>
+<li>
+<p>Informasi produk: <a href="https://www.mazduino.com">https://www.mazduino.com</a></p>
+</li>
 </ul>
               
             </div>

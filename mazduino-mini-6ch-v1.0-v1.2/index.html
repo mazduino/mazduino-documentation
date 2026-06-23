@@ -172,6 +172,35 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
+              </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
                 </li>
@@ -683,19 +712,35 @@
 <h3 id="fitur-khusus">Fitur Khusus</h3>
 <h4 id="dukungan-vr-conditioner">Dukungan VR Conditioner</h4>
 <ul>
-<li><strong>VR-1 &amp; VR-2</strong>: Pin input untuk modul VR conditioner (DIP 8)</li>
-<li><strong>VR1+ &amp; VR2+</strong>: Input sensor VR positif</li>
+<li>
+<p><strong>VR-1 &amp; VR-2</strong>: Pin input untuk modul VR conditioner (DIP 8)</p>
+</li>
+<li>
+<p><strong>VR1+ &amp; VR2+</strong>: Input sensor VR positif</p>
+</li>
 </ul>
 <h4 id="kontrol-stepper-motor">Kontrol Stepper Motor</h4>
 <ul>
-<li><strong>Stepper A1/A2</strong>: Output fase A untuk stepper motor (DRV8825)</li>
-<li><strong>Stepper B1/B2</strong>: Output fase B untuk stepper motor</li>
-<li><strong>Direction/Enable/Step</strong>: Sinyal kontrol untuk driver stepper</li>
+<li>
+<p><strong>Stepper A1/A2</strong>: Output fase A untuk stepper motor (DRV8825)</p>
+</li>
+<li>
+<p><strong>Stepper B1/B2</strong>: Output fase B untuk stepper motor</p>
+</li>
+<li>
+<p><strong>Direction/Enable/Step</strong>: Sinyal kontrol untuk driver stepper</p>
+</li>
 </ul>
 <h4 id="konfigurasi-injector-fleksibel">Konfigurasi Injector Fleksibel</h4>
-<p>Untuk mesin 4-silinder:
-- <strong>Injector 5 &amp; 6</strong>: Dapat digunakan sebagai output arus tinggi cadangan
-- <strong>Aplikasi</strong>: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.</p>
+<p>Untuk mesin 4-silinder:</p>
+<ul>
+<li>
+<p><strong>Injector 5 &amp; 6</strong>: Dapat digunakan sebagai output arus tinggi cadangan</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.</p>
+</li>
+</ul>
 <h3 id="panduan-instalasi">Panduan Instalasi</h3>
 <ol>
 <li><strong>Pemasangan</strong>: Pasang ECU di lokasi yang tepat dengan pendinginan yang memadai</li>
@@ -707,21 +752,43 @@
 </ol>
 <h3 id="catatan-wiring">Catatan Wiring</h3>
 <ul>
-<li><strong>Multiple Ground</strong>: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal</li>
-<li><strong>Referensi 5V</strong>: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya</li>
-<li><strong>Sensor O2</strong>: Pin 43 menerima sinyal 1-5V dari output analog kontroler wideband</li>
-<li><strong>Sensor VR</strong>: Dapat menggunakan input digital atau input modul VR conditioner</li>
-<li><strong>Konektor Yamaha</strong>: Konektor 48-pin grade otomotif profesional</li>
-<li><strong>Kompatibilitas Wiring</strong>: Kompatibel dengan standar wiring Speeduino</li>
-<li><strong>Referensi</strong>: Informasi wiring sensor tambahan di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
+<li>
+<p><strong>Multiple Ground</strong>: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal</p>
+</li>
+<li>
+<p><strong>Referensi 5V</strong>: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya</p>
+</li>
+<li>
+<p><strong>Sensor O2</strong>: Pin 43 menerima sinyal 1-5V dari output analog kontroler wideband</p>
+</li>
+<li>
+<p><strong>Sensor VR</strong>: Dapat menggunakan input digital atau input modul VR conditioner</p>
+</li>
+<li>
+<p><strong>Konektor Yamaha</strong>: Konektor 48-pin grade otomotif profesional</p>
+</li>
+<li>
+<p><strong>Kompatibilitas Wiring</strong>: Kompatibel dengan standar wiring Speeduino</p>
+</li>
+<li>
+<p><strong>Referensi</strong>: Informasi wiring sensor tambahan di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
+</li>
 </ul>
 <h2 id="dukungan-dan-sumber-daya">Dukungan dan Sumber Daya</h2>
 <h3 id="dokumentasi">Dokumentasi</h3>
 <ul>
-<li><strong>Datasheet STM32F407VGT6</strong>: Informasi lengkap tentang MCU</li>
-<li><strong>Manual Referensi</strong>: Dokumentasi pin mapping dan konfigurasi khusus</li>
-<li><strong>Wiring Diagram</strong>: Diagram lengkap untuk instalasi</li>
-<li><strong>TunerStudio Configuration</strong>: File konfigurasi siap pakai untuk Speeduino</li>
+<li>
+<p><strong>Datasheet STM32F407VGT6</strong>: Informasi lengkap tentang MCU</p>
+</li>
+<li>
+<p><strong>Manual Referensi</strong>: Dokumentasi pin mapping dan konfigurasi khusus</p>
+</li>
+<li>
+<p><strong>Wiring Diagram</strong>: Diagram lengkap untuk instalasi</p>
+</li>
+<li>
+<p><strong>TunerStudio Configuration</strong>: File konfigurasi siap pakai untuk Speeduino</p>
+</li>
 </ul>
 <h3 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</h3>
 <ul>
@@ -733,25 +800,49 @@
 <h2 id="dukungan-modul">Dukungan Modul</h2>
 <h3 id="modul-vr-conditioner">Modul VR-Conditioner</h3>
 <ul>
-<li><strong>Package DIP 8</strong>: Instalasi dan penggantian yang mudah</li>
-<li><strong>Dukungan Sensor VR</strong>: Mengkonversi sinyal VR ke digital (pin 9, 10)</li>
-<li><strong>Signal Conditioning</strong>: Sinyal trigger yang bersih dan andal</li>
-<li><strong>Kompatibilitas</strong>: Bekerja dengan berbagai jenis sensor VR</li>
+<li>
+<p><strong>Package DIP 8</strong>: Instalasi dan penggantian yang mudah</p>
+</li>
+<li>
+<p><strong>Dukungan Sensor VR</strong>: Mengkonversi sinyal VR ke digital (pin 9, 10)</p>
+</li>
+<li>
+<p><strong>Signal Conditioning</strong>: Sinyal trigger yang bersih dan andal</p>
+</li>
+<li>
+<p><strong>Kompatibilitas</strong>: Bekerja dengan berbagai jenis sensor VR</p>
+</li>
 </ul>
 <h3 id="modul-stepper-motor">Modul Stepper Motor</h3>
 <ul>
-<li><strong>Driver DRV8825</strong>: Kontrol stepper berperforma tinggi</li>
-<li><strong>Idle Air Control</strong>: Manajemen kecepatan idle yang presisi (pin 11-14)</li>
-<li><strong>Integrasi Mudah</strong>: Desain modul plug-and-play</li>
-<li><strong>Operasi Andal</strong>: Komponen grade otomotif</li>
+<li>
+<p><strong>Driver DRV8825</strong>: Kontrol stepper berperforma tinggi</p>
+</li>
+<li>
+<p><strong>Idle Air Control</strong>: Manajemen kecepatan idle yang presisi (pin 11-14)</p>
+</li>
+<li>
+<p><strong>Integrasi Mudah</strong>: Desain modul plug-and-play</p>
+</li>
+<li>
+<p><strong>Operasi Andal</strong>: Komponen grade otomotif</p>
+</li>
 </ul>
 <h2 id="catatan-penting">Catatan Penting</h2>
 <h3 id="persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</h3>
 <ul>
-<li><strong>Smart Coils</strong>: Koneksi langsung didukung</li>
-<li><strong>Dump Coils</strong>: IGBT eksternal diperlukan untuk operasi yang tepat</li>
-<li><strong>Pemilihan Coil</strong>: Pilih jenis coil yang sesuai untuk aplikasi Anda</li>
-<li><strong>Keamanan</strong>: Driver eksternal yang tepat penting untuk sistem dump coil</li>
+<li>
+<p><strong>Smart Coils</strong>: Koneksi langsung didukung</p>
+</li>
+<li>
+<p><strong>Dump Coils</strong>: IGBT eksternal diperlukan untuk operasi yang tepat</p>
+</li>
+<li>
+<p><strong>Pemilihan Coil</strong>: Pilih jenis coil yang sesuai untuk aplikasi Anda</p>
+</li>
+<li>
+<p><strong>Keamanan</strong>: Driver eksternal yang tepat penting untuk sistem dump coil</p>
+</li>
 </ul>
 <h3 id="file-firmware-konfigurasi_1">File Firmware &amp; Konfigurasi</h3>
 <ul>

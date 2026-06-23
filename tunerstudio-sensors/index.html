@@ -243,8 +243,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#navigasi">Navigasi</a>
-    </li>
     </ul>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
@@ -255,6 +253,35 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
+                </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
@@ -347,23 +374,41 @@
 <h3 id="opsi-input-sensor">Opsi Input Sensor</h3>
 <h4 id="1-clutch-down">1. Clutch Down</h4>
 <ul>
-<li><strong>Signal</strong>: Menetapkan pin dan jenis input untuk mendeteksi ketika kopling ditekan penuh</li>
-<li><strong>Mode</strong>: Opsi termasuk <strong>Pull-up</strong> atau <strong>Pull-down</strong> untuk mengkonfigurasi polaritas sinyal  </li>
-<li><strong>Signal Polarity</strong>: Dapat diatur ke <strong>Normal</strong> atau <strong>Inverted</strong>, tergantung cara kerja sensor</li>
+<li>
+<p><strong>Signal</strong>: Menetapkan pin dan jenis input untuk mendeteksi ketika kopling ditekan penuh</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Opsi termasuk <strong>Pull-up</strong> atau <strong>Pull-down</strong> untuk mengkonfigurasi polaritas sinyal  </p>
+</li>
+<li>
+<p><strong>Signal Polarity</strong>: Dapat diatur ke <strong>Normal</strong> atau <strong>Inverted</strong>, tergantung cara kerja sensor</p>
+</li>
 </ul>
 <h4 id="2-clutch-up">2. Clutch Up</h4>
 <ul>
-<li><strong>Signal</strong>: Mengkonfigurasi pin untuk mendeteksi ketika kopling dilepas penuh</li>
-<li><strong>Mode</strong>: Mirip dengan clutch down, dapat diatur ke <strong>Pull-up</strong> atau <strong>Pull-down</strong></li>
-<li><strong>Signal Polarity</strong>: Pilih antara <strong>Normal</strong> dan <strong>Inverted</strong></li>
+<li>
+<p><strong>Signal</strong>: Mengkonfigurasi pin untuk mendeteksi ketika kopling dilepas penuh</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Mirip dengan clutch down, dapat diatur ke <strong>Pull-up</strong> atau <strong>Pull-down</strong></p>
+</li>
+<li>
+<p><strong>Signal Polarity</strong>: Pilih antara <strong>Normal</strong> dan <strong>Inverted</strong></p>
+</li>
 </ul>
 <h4 id="3-throttle-up-switch">3. Throttle Up Switch</h4>
 <p>Menetapkan sinyal untuk aktuasi throttle ketika input sekunder diperlukan.</p>
 <h4 id="4-brake-pedal">4. Brake Pedal</h4>
 <ul>
-<li><strong>Signal</strong>: Mendeteksi aktivasi pedal rem</li>
-<li><strong>Mode</strong>: Mengkonfigurasi polaritas sinyal untuk input rem (mis. Pull-up atau Pull-down)</li>
-<li><strong>Signal Polarity</strong>: Opsi termasuk <strong>Normal</strong> atau <strong>Inverted</strong></li>
+<li>
+<p><strong>Signal</strong>: Mendeteksi aktivasi pedal rem</p>
+</li>
+<li>
+<p><strong>Mode</strong>: Mengkonfigurasi polaritas sinyal untuk input rem (mis. Pull-up atau Pull-down)</p>
+</li>
+<li>
+<p><strong>Signal Polarity</strong>: Opsi termasuk <strong>Normal</strong> atau <strong>Inverted</strong></p>
+</li>
 </ul>
 <h4 id="5-flex-fuel-sensor">5. Flex Fuel Sensor</h4>
 <ul>
@@ -381,9 +426,15 @@
 <p>Mengkalibrasi sensor untuk monitoring tekanan output dari turbocharger atau supercharger.</p>
 <h3 id="catatan-penggunaan">Catatan Penggunaan</h3>
 <ul>
-<li><strong>Signal Polarity (Normal/Inverted)</strong>: Saat mengkonfigurasi input dengan opsi <strong>Normal/Inverted</strong>, pastikan pengaturan sesuai dengan perilaku sensor yang diharapkan. Misalnya, sinyal inverted membalik logika input untuk mencocokkan wiring perangkat keras.</li>
-<li><strong>Flex Fuel dan Turbo Sensors</strong>: Ini opsional tetapi direkomendasikan untuk setup yang memerlukan manajemen ethanol atau turbocharger yang presisi.</li>
-<li>Kalibrasi yang tepat sangat penting untuk sensor seperti <strong>turbo speed</strong> dan <strong>pressure sensors</strong> untuk memastikan akurasi dan menghindari masalah performa.</li>
+<li>
+<p><strong>Signal Polarity (Normal/Inverted)</strong>: Saat mengkonfigurasi input dengan opsi <strong>Normal/Inverted</strong>, pastikan pengaturan sesuai dengan perilaku sensor yang diharapkan. Misalnya, sinyal inverted membalik logika input untuk mencocokkan wiring perangkat keras.</p>
+</li>
+<li>
+<p><strong>Flex Fuel dan Turbo Sensors</strong>: Ini opsional tetapi direkomendasikan untuk setup yang memerlukan manajemen ethanol atau turbocharger yang presisi.</p>
+</li>
+<li>
+<p>Kalibrasi yang tepat sangat penting untuk sensor seperti <strong>turbo speed</strong> dan <strong>pressure sensors</strong> untuk memastikan akurasi dan menghindari masalah performa.</p>
+</li>
 </ul>
 <h2 id="konfigurasi-tps-dan-accelerator-pedal">Konfigurasi TPS dan Accelerator Pedal</h2>
 <p><img alt="TPS and Accelerator Pedal Setup" src="images/tps-accelerator-setup.png" /></p>
@@ -421,9 +472,15 @@
 </ul>
 <h3 id="catatan-penting">Catatan Penting</h3>
 <ul>
-<li><strong>Persyaratan Kalibrasi</strong>: Kalibrasi TPS dan PPS harus diselesaikan dengan sukses agar ECU berfungsi dengan baik dengan ETB</li>
-<li><strong>Penanganan Error</strong>: Jika kalibrasi gagal atau pengaturan salah, ECU akan menampilkan error dan mencegah mesin berjalan sampai masalah diselesaikan dan error dibersihkan</li>
-<li>Pengaturan ini <strong>hanya diperlukan untuk setup ETB</strong>. Untuk setup throttle drive-by-cable tradisional, konfigurasi ini tidak berlaku</li>
+<li>
+<p><strong>Persyaratan Kalibrasi</strong>: Kalibrasi TPS dan PPS harus diselesaikan dengan sukses agar ECU berfungsi dengan baik dengan ETB</p>
+</li>
+<li>
+<p><strong>Penanganan Error</strong>: Jika kalibrasi gagal atau pengaturan salah, ECU akan menampilkan error dan mencegah mesin berjalan sampai masalah diselesaikan dan error dibersihkan</p>
+</li>
+<li>
+<p>Pengaturan ini <strong>hanya diperlukan untuk setup ETB</strong>. Untuk setup throttle drive-by-cable tradisional, konfigurasi ini tidak berlaku</p>
+</li>
 </ul>
 <h2 id="konfigurasi-sensor-o2">Konfigurasi Sensor O2</h2>
 <p><img alt="O2 Sensor Configuration" src="images/o2-sensor-config.png" /></p>
@@ -463,11 +520,21 @@
 <li>
 <p><strong>BP SX</strong>: Skala predefined untuk sensor wideband BP SX</p>
 </li>
-<li><strong>Innovate</strong>: Skala predefined untuk kontroler wideband Innovate</li>
-<li><strong>14Point7</strong>: Skala predefined untuk sensor wideband 14Point7</li>
-<li><strong>PLX</strong>: Skala predefined untuk kontroler wideband PLX</li>
-<li><strong>Narrow Band</strong>: Untuk sensor O2 narrowband tradisional. Terbatas pada perilaku switching stoichiometric</li>
-<li><strong>AEM</strong>: Skala predefined untuk kontroler wideband AEM</li>
+<li>
+<p><strong>Innovate</strong>: Skala predefined untuk kontroler wideband Innovate</p>
+</li>
+<li>
+<p><strong>14Point7</strong>: Skala predefined untuk sensor wideband 14Point7</p>
+</li>
+<li>
+<p><strong>PLX</strong>: Skala predefined untuk kontroler wideband PLX</p>
+</li>
+<li>
+<p><strong>Narrow Band</strong>: Untuk sensor O2 narrowband tradisional. Terbatas pada perilaku switching stoichiometric</p>
+</li>
+<li>
+<p><strong>AEM</strong>: Skala predefined untuk kontroler wideband AEM</p>
+</li>
 </ul>
 <h3 id="pengaturan-opsi-yang-benar">Pengaturan Opsi yang Benar</h3>
 <ul>
@@ -499,9 +566,15 @@
 </ul>
 <h3 id="catatan-penting_1">Catatan Penting</h3>
 <ul>
-<li><strong>Wire-in Only</strong>: Fitur ini eksklusif untuk ECU wire-in dan tidak tersedia di unit plug-and-play</li>
-<li><strong>Kalibrasi</strong>: Kalibrasi threshold yang tepat sangat penting untuk mencegah deteksi sinyal palsu atau pulse yang terlewat, terutama pada RPM tinggi</li>
-<li><strong>Penyesuaian</strong>: Pastikan output voltase sensor VR selaras dengan threshold yang diatur dalam tabel untuk operasi yang akurat. Gunakan scope jika diperlukan untuk mengamati waveform VR dan memverifikasi pengaturan</li>
+<li>
+<p><strong>Wire-in Only</strong>: Fitur ini eksklusif untuk ECU wire-in dan tidak tersedia di unit plug-and-play</p>
+</li>
+<li>
+<p><strong>Kalibrasi</strong>: Kalibrasi threshold yang tepat sangat penting untuk mencegah deteksi sinyal palsu atau pulse yang terlewat, terutama pada RPM tinggi</p>
+</li>
+<li>
+<p><strong>Penyesuaian</strong>: Pastikan output voltase sensor VR selaras dengan threshold yang diatur dalam tabel untuk operasi yang akurat. Gunakan scope jika diperlukan untuk mengamati waveform VR dan memverifikasi pengaturan</p>
+</li>
 </ul>
 <p>Mengkonfigurasi threshold VR dengan benar memastikan operasi optimal sistem ignition dan timing, terutama dalam setup high-performance atau custom dimana sensor VR umumnya digunakan.</p>
 <h2 id="konfigurasi-speed-sensor">Konfigurasi Speed Sensor</h2>
@@ -554,9 +627,15 @@
 </ol>
 <h3 id="catatan-kunci">Catatan Kunci</h3>
 <ul>
-<li><strong>Akurasi</strong>: Konfigurasi yang tepat dari semua parameter sangat penting untuk deteksi kecepatan dan gear yang akurat</li>
-<li><strong>Kalibrasi</strong>: Pastikan ukuran ban dan rasio gear diukur atau diverifikasi untuk menghindari error dalam kalkulasi kecepatan dan gear</li>
-<li><strong>CAN VSS</strong>: Saat menggunakan CAN untuk kecepatan kendaraan, pastikan jaringan dikonfigurasi dan operasional untuk menghindari fallback ke pembacaan kecepatan yang salah</li>
+<li>
+<p><strong>Akurasi</strong>: Konfigurasi yang tepat dari semua parameter sangat penting untuk deteksi kecepatan dan gear yang akurat</p>
+</li>
+<li>
+<p><strong>Kalibrasi</strong>: Pastikan ukuran ban dan rasio gear diukur atau diverifikasi untuk menghindari error dalam kalkulasi kecepatan dan gear</p>
+</li>
+<li>
+<p><strong>CAN VSS</strong>: Saat menggunakan CAN untuk kecepatan kendaraan, pastikan jaringan dikonfigurasi dan operasional untuk menghindari fallback ke pembacaan kecepatan yang salah</p>
+</li>
 </ul>
 <h2 id="konfigurasi-sensor-fuel-pressure">Konfigurasi Sensor Fuel Pressure</h2>
 <p><img alt="Fuel Pressure Sensor Configuration" src="images/fuel-pressure-sensor.png" /></p>
@@ -602,19 +681,19 @@
 </ol>
 <h3 id="catatan-penting_2">Catatan Penting</h3>
 <ul>
-<li><strong>Kalibrasi</strong>: Konfigurasi yang tepat dari voltase rendah dan tinggi dengan tekanan yang sesuai memastikan pembacaan sensor yang akurat</li>
-<li><strong>Raw Voltage Readout</strong>: Gauge di sebelah kanan menampilkan sinyal voltase raw real-time dari sensor yang terhubung</li>
-<li><strong>Sensor Type</strong>: Pastikan tipe sensor yang benar (Absolute atau Gauge) dipilih untuk menghindari misinterpretasi data</li>
-<li><strong>High Pressure</strong>: Bagian <em>High Pressure</em> <strong>hanya berlaku untuk sistem GDI</strong>. Sistem port-injected tradisional tidak menggunakan fitur ini</li>
+<li>
+<p><strong>Kalibrasi</strong>: Konfigurasi yang tepat dari voltase rendah dan tinggi dengan tekanan yang sesuai memastikan pembacaan sensor yang akurat</p>
+</li>
+<li>
+<p><strong>Raw Voltage Readout</strong>: Gauge di sebelah kanan menampilkan sinyal voltase raw real-time dari sensor yang terhubung</p>
+</li>
+<li>
+<p><strong>Sensor Type</strong>: Pastikan tipe sensor yang benar (Absolute atau Gauge) dipilih untuk menghindari misinterpretasi data</p>
+</li>
+<li>
+<p><strong>High Pressure</strong>: Bagian <em>High Pressure</em> <strong>hanya berlaku untuk sistem GDI</strong>. Sistem port-injected tradisional tidak menggunakan fitur ini</p>
+</li>
 </ul>
-<h2 id="navigasi">Navigasi</h2>
-<ul>
-<li><a href="../tunerstudio-ignition/">← Kembali ke Ignition System</a></li>
-<li><a href="../tunerstudio-canbus/">Lanjut ke CAN Bus Configuration →</a></li>
-<li><a href="../tunerstudio-manual/">Kembali ke Manual Utama</a></li>
-</ul>
-<hr />
-<p><em>Dokumentasi ini mencakup konfigurasi lengkap sensor untuk TunerStudio Mazduino. Pastikan untuk mengkalibrasi setiap sensor dengan benar sesuai spesifikasi manufaktur untuk menghindari pembacaan yang tidak akurat atau masalah performa.</em></p>
               
             </div>
           </div><footer>
