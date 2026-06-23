@@ -393,7 +393,7 @@ Pin assignment **STM32F427VGT6** yang telah dioptimalkan untuk v1.3C:
 
 - **Channel Spare**: Pin 15-16 (Injector 5-6) dan Pin 24-25 (Ignition 5-6) tersedia untuk penggunaan alternatif pada mesin 4-silinder
 
-- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
+- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
 
 ## Informasi Hardware
 
@@ -436,12 +436,15 @@ Terdapat solder jumper di bagian belakang PCB:
 ## Software Tuning
 
 ### Download Software
-Download software TunerStudio: [https://www.tunerstudio.com/index.php/downloads](https://www.tunerstudio.com/index.php/downloads)
+Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 ![TunerStudio](img/manual/tunerstudio-download.png)
 
 ### Konfigurasi Khusus v1.3C
 - **TPS Pin**: Pastikan konfigurasi TPS menggunakan **PA6** (bukan PA3 seperti v1.3B)
+
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
 
 - **Battery/VRef Pin**: Pastikan konfigurasi Battery/Voltage Reference menggunakan **PA7**
 

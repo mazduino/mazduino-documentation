@@ -195,7 +195,9 @@ PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
 
 - **Kompatibilitas Wiring**: Kompatibel dengan standar Speeduino dengan pin mapping yang diperbarui
 
-- **Referensi**: Informasi wiring tambahan tersedia di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
+- **Referensi**: Informasi wiring tambahan tersedia di [Speeduino Wiki][speeduino-wiring]
+
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
 
 ## Perbandingan v1 vs v2.1
 

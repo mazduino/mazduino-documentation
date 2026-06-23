@@ -16,7 +16,9 @@ Sebelum menginstal TunerStudio, pastikan sistem Anda memenuhi persyaratan beriku
 
 ## Langkah 1: Mengakses Website Mazduino
 
-1. **Buka Website Mazduino**: Buka browser web dan kunjungi [wiki.mazduino.com](https://wiki.mazduino.com)
+1. **Buka Website Mazduino**: Buka browser web dan kunjungi [wiki.mazduino.com][wiki-mazduino]
+
+[wiki-mazduino]: https://wiki.mazduino.com {:target="_blank"}
 2. **Navigasi ke Menu**: Klik ikon menu hamburger (tiga garis horizontal) yang terletak di bagian kanan atas halaman
 3. **Masuk ke Bagian Downloads**: Dari menu, pilih **Downloads** untuk mengakses software dan sumber daya yang tersedia untuk Mazduino
 

@@ -347,7 +347,7 @@ Untuk mesin 4-silinder:
 
 - **AC Switch Logic**: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung
 
-- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
+- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
 
 ## Informasi Hardware
 
@@ -388,7 +388,7 @@ Selain itu terdapat solder jumper di bagian belakang seperti Tach Pullup, Igniti
 ## Software Tuning
 
 ### Download Software
-Download software TunerStudio: [https://www.tunerstudio.com/index.php/downloads](https://www.tunerstudio.com/index.php/downloads)
+Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 ![TunerStudio](img/manual/tunerstudio-download.png)
 
@@ -435,3 +435,6 @@ Download software TunerStudio: [https://www.tunerstudio.com/index.php/downloads]
 - Satu input knock di konektor ECU (pin 8, MCU PC0); filter yang diperbaiki dibanding v1.3
 
 **[Download firmware dan file konfigurasi](downloads.md)**
+
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}

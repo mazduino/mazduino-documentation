@@ -7,29 +7,29 @@ Kami sangat menghargai kontribusi mereka terhadap komunitas engine management.
 
 ## rusEFI
 
-Firmware Mazduino berbasis **[rusEFI](https://rusefi.com/)** — proyek firmware engine management open source yang komprehensif dan aktif dikembangkan oleh komunitas global.
+Firmware Mazduino berbasis **[rusEFI][rusefi]** — proyek firmware engine management open source yang komprehensif dan aktif dikembangkan oleh komunitas global.
 
 Mazduino menggunakan rusEFI sebagai firmware utama, dengan fork khusus yang disesuaikan untuk hardware dan kebutuhan pengguna Mazduino.
 
-- Dokumentasi rusEFI: [wiki.rusefi.com](https://wiki.rusefi.com/)
+- Dokumentasi rusEFI: [wiki.rusefi.com][rusefi-wiki]
 
-- Kode sumber: [github.com/rusefi/rusefi](https://github.com/rusefi/rusefi)
+- Kode sumber: [github.com/rusefi/rusefi][rusefi-gh]
 
 ---
 
 ## FOME
 
-**[FOME (Firmware Open-source Mazda Engine)](https://wiki.fome.tech/)** adalah fork rusEFI yang berfokus pada kesederhanaan, stabilitas, dan kemudahan konfigurasi.
+**[FOME (Firmware Open-source Mazda Engine)][fome]** adalah fork rusEFI yang berfokus pada kesederhanaan, stabilitas, dan kemudahan konfigurasi.
 
 Pendekatan arsitektur dan beberapa konsep implementasi dari FOME memberikan inspirasi dalam pengembangan firmware Mazduino.
 
-- Dokumentasi FOME: [wiki.fome.tech](https://wiki.fome.tech/)
+- Dokumentasi FOME: [wiki.fome.tech][fome-wiki]
 
 ---
 
 ## Zgrywus
 
-**[Zgrywus](https://wiki.zgrywus.com/)** adalah proyek ECU open source berbasis rusEFI dengan implementasi fitur CAN yang sangat matang.
+**[Zgrywus][zgrywus]** adalah proyek ECU open source berbasis rusEFI dengan implementasi fitur CAN yang sangat matang.
 
 Fitur-fitur berikut pada firmware Mazduino terinspirasi dan dikembangkan berdasarkan implementasi dari Zgrywus:
 
@@ -40,7 +40,15 @@ Fitur-fitur berikut pada firmware Mazduino terinspirasi dan dikembangkan berdasa
 
 Dokumentasi lengkap fitur-fitur ini tersedia di bagian **[Firmware](../firmware/)** pada wiki ini.
 
-- Dokumentasi Zgrywus: [wiki.zgrywus.com](https://wiki.zgrywus.com/)
+- Dokumentasi Zgrywus: [wiki.zgrywus.com][zgrywus-wiki]
+
+[rusefi]: https://rusefi.com/ {:target="_blank"}
+[rusefi-wiki]: https://wiki.rusefi.com/ {:target="_blank"}
+[rusefi-gh]: https://github.com/rusefi/rusefi {:target="_blank"}
+[fome]: https://wiki.fome.tech/ {:target="_blank"}
+[fome-wiki]: https://wiki.fome.tech/ {:target="_blank"}
+[zgrywus]: https://wiki.zgrywus.com/ {:target="_blank"}
+[zgrywus-wiki]: https://wiki.zgrywus.com/ {:target="_blank"}
 
 ---
 

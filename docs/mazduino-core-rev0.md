@@ -214,9 +214,13 @@ Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan d
 
 ## Software Tuning
 
-- Download TunerStudio: [https://www.tunerstudio.com/index.php/downloads](https://www.tunerstudio.com/index.php/downloads)
+- Download TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
-- Referensi firmware rusEFI: [https://wiki.rusefi.com](https://wiki.rusefi.com)
+- Referensi firmware rusEFI: [wiki.rusefi.com][rusefi-wiki]
 
-- Informasi produk: [https://www.mazduino.com](https://www.mazduino.com)
+- Informasi produk: [www.mazduino.com][mazduino-site]
+
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
+[rusefi-wiki]: https://wiki.rusefi.com {:target="_blank"}
+[mazduino-site]: https://www.mazduino.com {:target="_blank"}
 

@@ -12,7 +12,7 @@ Mazduino menggunakan **rusEFI** sebagai firmware utama — firmware manajemen me
 - Tuning real-time via TunerStudio
 - Data logging, CAN Bus, dan diagnostik
 
-Firmware Mazduino tersedia di [github.com/mazduino/mazduino-fw](https://github.com/mazduino/mazduino-fw) — fork rusEFI dengan pin mapping pre-configured untuk semua board Mazduino.
+Firmware Mazduino tersedia di [github.com/mazduino/mazduino-fw][mazduino-fw] — fork rusEFI dengan pin mapping pre-configured untuk semua board Mazduino.
 
 ### Speeduino
 
@@ -20,4 +20,7 @@ Beberapa model Mazduino (Compact dan Mini 6CH v1.3+) juga mendukung Speeduino de
 
 ## Open Source
 
-Mazduino sepenuhnya open source — schematic, PCB layout, BOM, dan firmware tersedia publik. Detail PCB tersedia di [Mazduino Wiki](https://github.com/mazduino/mazduino-hw/wiki).
+Mazduino sepenuhnya open source — schematic, PCB layout, BOM, dan firmware tersedia publik. Detail PCB tersedia di [Mazduino Wiki][mazduino-hw].
+
+[mazduino-fw]: https://github.com/mazduino/mazduino-fw {:target="_blank"}
+[mazduino-hw]: https://github.com/mazduino/mazduino-hw/wiki {:target="_blank"}

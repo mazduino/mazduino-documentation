@@ -49,3 +49,7 @@ nav:
   - Tentang: about.md
 theme:
   name: readthedocs
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true

@@ -89,7 +89,7 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 ## Memulai
 
 1. **Pilih Model** - Pilih ECU yang sesuai dengan kebutuhan mesin dan aplikasi Anda
-2. **Install Firmware** - Download dan flash firmware dari [github.com/mazduino/mazduino-fw](https://github.com/mazduino/mazduino-fw)
+2. **Install Firmware** - Download dan flash firmware dari [github.com/mazduino/mazduino-fw][mazduino-fw]
 3. **Konfigurasi TunerStudio** - Load file .ini yang sesuai dan atur parameter mesin
 4. **Mulai Tuning** - Gunakan base map sebagai titik awal dan sesuaikan untuk aplikasi spesifik Anda
 
@@ -124,7 +124,10 @@ Untuk dukungan teknis, pertanyaan, atau kontribusi, silakan kunjungi forum komun
 
 Untuk informasi detail mengenai PCB design, schematic, dan Bill of Materials (BOM) untuk semua versi ECU Mazduino, silakan kunjungi:
 
-**[Mazduino Wiki](https://github.com/mazduino/mazduino-hw/wiki)**
+**[Mazduino Wiki][mazduino-hw]**
+
+[mazduino-fw]: https://github.com/mazduino/mazduino-fw {:target="_blank"}
+[mazduino-hw]: https://github.com/mazduino/mazduino-hw/wiki {:target="_blank"}
 
 Wiki ini berisi:
 

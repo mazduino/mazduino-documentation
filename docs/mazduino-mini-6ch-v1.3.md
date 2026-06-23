@@ -335,7 +335,9 @@ Untuk mesin 4-silinder:
 
 - **Kompatibilitas Wiring**: Kompatibel dengan standar wiring Speeduino
 
-- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
+- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
+
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
 
 ## Catatan Penting
 
