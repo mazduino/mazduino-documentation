@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/can-analog-input/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/fuel-consumption/" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>CAN Analog Input - Mazduino Documentation</title>
+    <title>Konsumsi Bahan Bakar - Mazduino Documentation</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "CAN Analog Input";
-        var mkdocs_page_input_path = "firmware/can-analog-input.md";
-        var mkdocs_page_url = "/firmware/can-analog-input/";
+        var mkdocs_page_name = "Konsumsi Bahan Bakar";
+        var mkdocs_page_input_path = "firmware/fuel-consumption.md";
+        var mkdocs_page_url = "/firmware/fuel-consumption/";
       </script>
     
     <!--[if lt IE 9]>
@@ -118,19 +118,11 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" >CAN Input</a>
-    <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">CAN Analog Input</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#cara-kerja">Cara Kerja</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#contoh-sensor-tekanan-bahan-bakar-via-can">Contoh: Sensor Tekanan Bahan Bakar via CAN</a>
-    </li>
-    </ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
                 </li>
@@ -146,7 +138,19 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Konsumsi Bahan Bakar</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#output-yang-tersedia">Output yang Tersedia</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#nilai-fuel-density">Nilai Fuel Density</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cara-kerja">Cara Kerja</a>
+    </li>
+    </ul>
                   </li>
               </ul>
               <ul>
@@ -168,8 +172,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Custom Firmware</li>
-          <li class="breadcrumb-item">CAN Input</li>
-      <li class="breadcrumb-item active">CAN Analog Input</li>
+      <li class="breadcrumb-item active">Konsumsi Bahan Bakar</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -178,16 +181,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="can-analog-input">CAN Analog Input<a class="headerlink" href="#can-analog-input" title="Permanent link">&para;</a></h1>
-<p>CAN Analog Input memungkinkan nilai numerik dari frame CAN digunakan sebagai <strong>channel ADC virtual</strong> — sama seperti sinyal tegangan dari sensor fisik.</p>
-<p>Berguna untuk membaca nilai dari perangkat CAN (misalnya sensor tekanan, sensor posisi) dan menghubungkannya ke konfigurasi sensor ECU tanpa kabel tambahan.</p>
+                <h1 id="konsumsi-bahan-bakar">Konsumsi Bahan Bakar<a class="headerlink" href="#konsumsi-bahan-bakar" title="Permanent link">&para;</a></h1>
+<p>Fitur ini menghitung konsumsi bahan bakar secara real-time berdasarkan data injeksi dan kecepatan kendaraan.</p>
 <hr />
-<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
-<p>Nilai dari frame CAN dikonversi menjadi tegangan virtual (0–5V), kemudian diproses oleh ECU menggunakan kalibrasi sensor yang sudah dikonfigurasi.</p>
+<h2 id="output-yang-tersedia">Output yang Tersedia<a class="headerlink" href="#output-yang-tersedia" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Satuan</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fuelConsumptionL100km</code></td>
+<td>L/100km</td>
+<td>Rata-rata konsumsi selama perjalanan</td>
+</tr>
+<tr>
+<td><code>fuelConsumptionLitersPerHour</code></td>
+<td>L/jam</td>
+<td>Flow rate instan berdasarkan injeksi saat ini</td>
+</tr>
+</tbody>
+</table>
+<p>Kedua channel tersedia di TunerStudio sebagai gauge dan datalog channel.</p>
 <hr />
 <h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio<a class="headerlink" href="#konfigurasi-di-tunerstudio" title="Permanent link">&para;</a></h2>
-<p>Buka: <strong>CAN Bus → CAN Input → CAN Analog Input</strong></p>
-<p>Tersedia <strong>8 channel</strong> (<code>EFI_ADC_48</code> s/d <code>EFI_ADC_55</code>). Untuk setiap channel:</p>
+<p>Buka: <strong>Controller → Fuel Consumption</strong></p>
 <table>
 <thead>
 <tr>
@@ -197,57 +219,70 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>CAN ID</strong></td>
-<td>ID frame CAN dari perangkat sumber. Kosongkan untuk nonaktif.</td>
+<td><strong>Enable Fuel Consumption</strong></td>
+<td>Aktifkan perhitungan konsumsi bahan bakar</td>
 </tr>
 <tr>
-<td><strong>Byte Offset</strong></td>
-<td>Posisi byte dalam payload CAN (0–7)</td>
-</tr>
-<tr>
-<td><strong>Data Type</strong></td>
-<td>8-bit atau 16-bit</td>
-</tr>
-<tr>
-<td><strong>Byte Order</strong></td>
-<td>Big Endian atau Little Endian</td>
-</tr>
-<tr>
-<td><strong>Scale</strong></td>
-<td>Pengali untuk mendapatkan nilai tegangan (Volt)</td>
-</tr>
-<tr>
-<td><strong>Offset</strong></td>
-<td>Nilai tambahan setelah pengalian</td>
-</tr>
-<tr>
-<td><strong>Target Channel</strong></td>
-<td>Channel ADC virtual tujuan (<code>EFI_ADC_48</code> s/d <code>EFI_ADC_55</code>)</td>
+<td><strong>Fuel Density</strong></td>
+<td>Densitas bahan bakar dalam g/L</td>
 </tr>
 </tbody>
 </table>
-<p>Setelah slot dikonfigurasi, pilih channel tersebut di pengaturan sensor yang diinginkan (misalnya: MAP sensor → pilih <code>EFI_ADC_48</code>).</p>
-<p>!!! tip
-    Hasil konversi adalah tegangan (Volt). Sesuaikan Scale dan Offset agar nilai mentah CAN
-    menghasilkan tegangan yang sesuai dengan kurva sensor yang dikonfigurasi.</p>
+<h3 id="nilai-fuel-density">Nilai Fuel Density<a class="headerlink" href="#nilai-fuel-density" title="Permanent link">&para;</a></h3>
+<p>ECU Mazduino hanya mendukung mesin <strong>bensin (gasoline)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>RON</th>
+<th>Densitas (g/L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>90</td>
+<td>745</td>
+</tr>
+<tr>
+<td>92</td>
+<td>750</td>
+</tr>
+<tr>
+<td>95</td>
+<td>755</td>
+</tr>
+<tr>
+<td>98</td>
+<td>760</td>
+</tr>
+<tr>
+<td>100+</td>
+<td>765</td>
+</tr>
+</tbody>
+</table>
+<p>Gunakan <strong>750 g/L</strong> sebagai default. Untuk data lebih lengkap, lihat referensi:</p>
+<ul>
+<li><a href="https://www.engineeringtoolbox.com/fuels-densities-specific-volumes-d_166.html">Engineering Toolbox — Fuels Density</a></li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Disclaimer</strong>: Nilai di atas adalah estimasi dari data internet, <strong>belum
+diuji di lapangan</strong>. Jika memiliki data densitas pasti dari pengukuran atau
+spesifikasi resmi, sesuaikan di TunerStudio: <strong>Controller → Fuel Consumption</strong>.</p>
+</blockquote>
 <hr />
-<h2 id="contoh-sensor-tekanan-bahan-bakar-via-can">Contoh: Sensor Tekanan Bahan Bakar via CAN<a class="headerlink" href="#contoh-sensor-tekanan-bahan-bakar-via-can" title="Permanent link">&para;</a></h2>
-<p>Sensor mengirim tekanan bar × 100 sebagai 16-bit di CAN ID <code>0x420</code>, byte 2–3:</p>
-<pre><code>CAN ID       = 0x420
-Byte Offset  = 2
-Data Type    = 16-bit
-Byte Order   = Little Endian
-Scale        = 0.00005   (10000 counts = 5V)
-Offset       = 0
-Target       = EFI_ADC_48
-</code></pre>
-<p>Lalu di konfigurasi sensor tekanan bahan bakar, pilih <code>EFI_ADC_48</code> sebagai input.</p>
+<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
+<p>ECU menghitung jumlah bahan bakar yang diinjeksikan per siklus berdasarkan pulsewidth injektor dan flow rate injektor yang sudah dikonfigurasi. Hasil injeksi (dalam gram) dikonversi ke volume menggunakan nilai <strong>Fuel Density</strong>.</p>
+<ul>
+<li><strong>L/100km</strong> dihitung dari total volume terinjeksi dibagi jarak tempuh yang dihitung dari sinyal VSS (Vehicle Speed Sensor).</li>
+<li><strong>L/jam</strong> dihitung dari flow rate injeksi saat ini dikonversi ke volume per jam.</li>
+</ul>
+<p>Perhitungan L/100km membutuhkan VSS yang terkonfigurasi dan berjalan dengan benar.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../can-sensor-input/" class="btn btn-neutral float-left" title="CAN Sensor Input"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../can-virtual-input/" class="btn btn-neutral float-right" title="CAN Virtual Input (Digital)">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../fuel-spark-cut/" class="btn btn-neutral float-left" title="Spark Cut & Fuel Cut"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../about/" class="btn btn-neutral float-right" title="Tentang">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -270,10 +305,10 @@ Target       = EFI_ADC_48
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../can-sensor-input/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../fuel-spark-cut/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../can-virtual-input/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../../about/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

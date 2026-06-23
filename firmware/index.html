@@ -114,17 +114,25 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#can-input">CAN Input</a>
+    <li class="toctree-l2"><a class="reference internal" href="#penambahan-dari-official-rusefi">Penambahan dari Official rusEFI</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#can-output">CAN Output</a>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-tambahan">Fitur Tambahan</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#can-input">CAN Input</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#komputasi-tabel">Komputasi &amp; Tabel</a>
+    <li class="toctree-l3"><a class="reference internal" href="#can-output">CAN Output</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#output-logika">Output Logika</a>
+    <li class="toctree-l3"><a class="reference internal" href="#komputasi-tabel">Komputasi &amp; Tabel</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#output-logika">Output Logika</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar">Konsumsi Bahan Bakar</a>
+    </li>
+        </ul>
     </li>
     </ul>
                   </li>
@@ -148,10 +156,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
@@ -171,7 +177,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Firmware</li>
+          <li class="breadcrumb-item">Custom Firmware</li>
       <li class="breadcrumb-item active">Overview</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -181,10 +187,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="fitur-firmware-mazduino">Fitur Firmware Mazduino<a class="headerlink" href="#fitur-firmware-mazduino" title="Permanent link">&para;</a></h1>
-<p>Mazduino menggunakan firmware berbasis rusEFI dengan tambahan fitur khusus. Halaman-halaman berikut menjelaskan cara menggunakan fitur-fitur tersebut melalui TunerStudio.</p>
+                <h1 id="custom-firmware-mazduino">Custom Firmware Mazduino<a class="headerlink" href="#custom-firmware-mazduino" title="Permanent link">&para;</a></h1>
+<p>Firmware Mazduino adalah fork dari <strong>rusEFI</strong> yang dikembangkan khusus untuk hardware Mazduino. Meskipun berbasis rusEFI, ada sejumlah perbedaan dan tambahan fitur yang tidak ada di firmware rusEFI resmi.</p>
 <hr />
-<h2 id="can-input">CAN Input<a class="headerlink" href="#can-input" title="Permanent link">&para;</a></h2>
+<h2 id="penambahan-dari-official-rusefi">Penambahan dari Official rusEFI<a class="headerlink" href="#penambahan-dari-official-rusefi" title="Permanent link">&para;</a></h2>
+<p>Berikut fitur yang ditambahkan pada custom firmware Mazduino:</p>
+<ul>
+<li><strong>Pin mapping pre-configured</strong> — tidak perlu konfigurasi pin manual, langsung sesuai hardware setiap board</li>
+<li><strong>File .ini TunerStudio disertakan</strong> — sudah tersedia dalam setiap release, tidak perlu generate sendiri</li>
+<li><strong><a href="#can-input">CAN Virtual Input</a></strong> — bit dalam frame CAN digunakan sebagai digital pin</li>
+<li><strong><a href="#can-input">CAN Analog Input</a></strong> — nilai dalam frame CAN digunakan sebagai ADC virtual</li>
+<li><strong><a href="#can-input">CAN Sensor Input</a></strong> — override sensor internal (MAP, TPS, CLT, RPM, dll.) langsung via CAN</li>
+<li><strong><a href="#can-output">CAN Output</a></strong> — kirim data engine ke bus CAN untuk dashboard atau datalogger eksternal</li>
+<li><strong><a href="#komputasi-tabel">Math Channels</a></strong> — kalkulasi channel kustom dari kombinasi channel yang ada</li>
+<li><strong><a href="#komputasi-tabel">User Tables</a></strong> — tabel lookup yang dapat dikonfigurasi bebas</li>
+<li><strong><a href="#output-logika">Logic Outputs</a></strong> — output digital yang aktif berdasarkan kondisi yang dapat dikonfigurasi</li>
+<li><strong><a href="#konsumsi-bahan-bakar">Konsumsi Bahan Bakar</a></strong> — perhitungan L/100km dan L/jam</li>
+</ul>
+<p>Download firmware ada di <strong><a href="../downloads/">halaman Downloads</a></strong>.</p>
+<hr />
+<h2 id="fitur-tambahan">Fitur Tambahan<a class="headerlink" href="#fitur-tambahan" title="Permanent link">&para;</a></h2>
+<h3 id="can-input">CAN Input<a class="headerlink" href="#can-input" title="Permanent link">&para;</a></h3>
 <p>ECU dapat menerima data dari bus CAN dan menggunakannya sebagai input sensor atau pin digital:</p>
 <table>
 <thead>
@@ -208,7 +231,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="can-output">CAN Output<a class="headerlink" href="#can-output" title="Permanent link">&para;</a></h2>
+<h3 id="can-output">CAN Output<a class="headerlink" href="#can-output" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -223,7 +246,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="komputasi-tabel">Komputasi &amp; Tabel<a class="headerlink" href="#komputasi-tabel" title="Permanent link">&para;</a></h2>
+<h3 id="komputasi-tabel">Komputasi &amp; Tabel<a class="headerlink" href="#komputasi-tabel" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -242,7 +265,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="output-logika">Output Logika<a class="headerlink" href="#output-logika" title="Permanent link">&para;</a></h2>
+<h3 id="output-logika">Output Logika<a class="headerlink" href="#output-logika" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -254,6 +277,21 @@
 <tr>
 <td><a href="logic-outputs/">Logic Outputs</a></td>
 <td>Output digital yang aktif berdasarkan kondisi yang dapat dikonfigurasi</td>
+</tr>
+</tbody>
+</table>
+<h3 id="konsumsi-bahan-bakar">Konsumsi Bahan Bakar<a class="headerlink" href="#konsumsi-bahan-bakar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fitur</th>
+<th>Kegunaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="fuel-consumption/">Konsumsi Bahan Bakar</a></td>
+<td>Perhitungan konsumsi real-time dalam L/100km dan L/jam berdasarkan data injeksi dan VSS</td>
 </tr>
 </tbody>
 </table>

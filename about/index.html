@@ -114,7 +114,7 @@
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
                   </li>
               </ul>
-              <p class="caption"><span class="caption-text">Firmware</span></p>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
                   </li>
@@ -138,10 +138,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../acknowledgments/">Ucapan Terima Kasih</a>
-                </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
               </ul>
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Tentang</a>
@@ -155,6 +153,18 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#open-source">Open Source</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#referensi-inspirasi">Referensi &amp; Inspirasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#rusefi">rusEFI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fome">FOME</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zgrywus">Zgrywus</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#komunitas">Komunitas</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -197,11 +207,37 @@
 <p>Beberapa model Mazduino (Compact dan Mini 6CH v1.3+) juga mendukung Speeduino dengan firmware khusus. <strong>Tidak kompatibel</strong> dengan official Speeduino karena perbedaan pin mapping.</p>
 <h2 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h2>
 <p>Mazduino sepenuhnya open source — schematic, PCB layout, BOM, dan firmware tersedia publik. Detail PCB tersedia di <a href="https://github.com/mazduino/mazduino/wiki">Mazduino Wiki</a>.</p>
+<hr />
+<h2 id="referensi-inspirasi">Referensi &amp; Inspirasi<a class="headerlink" href="#referensi-inspirasi" title="Permanent link">&para;</a></h2>
+<p>Firmware Mazduino dibangun di atas fondasi proyek-proyek open source berikut.</p>
+<h3 id="rusefi">rusEFI<a class="headerlink" href="#rusefi" title="Permanent link">&para;</a></h3>
+<p>Firmware Mazduino berbasis <strong><a href="https://rusefi.com/">rusEFI</a></strong> — proyek firmware engine management open source yang komprehensif dan aktif dikembangkan oleh komunitas global.</p>
+<ul>
+<li>Dokumentasi: <a href="https://wiki.rusefi.com/">wiki.rusefi.com</a></li>
+<li>Kode sumber: <a href="https://github.com/rusefi/rusefi">github.com/rusefi/rusefi</a></li>
+</ul>
+<h3 id="fome">FOME<a class="headerlink" href="#fome" title="Permanent link">&para;</a></h3>
+<p><strong><a href="https://wiki.fome.tech/">FOME</a></strong> adalah fork rusEFI yang berfokus pada kesederhanaan, stabilitas, dan kemudahan konfigurasi. Pendekatan arsitektur dan beberapa konsep implementasi dari FOME memberikan inspirasi dalam pengembangan firmware Mazduino.</p>
+<ul>
+<li>Dokumentasi: <a href="https://wiki.fome.tech/">wiki.fome.tech</a></li>
+</ul>
+<h3 id="zgrywus">Zgrywus<a class="headerlink" href="#zgrywus" title="Permanent link">&para;</a></h3>
+<p><strong><a href="https://wiki.zgrywus.com/">Zgrywus</a></strong> adalah proyek ECU open source berbasis rusEFI dengan implementasi fitur CAN yang sangat matang. Fitur-fitur CAN pada firmware Mazduino terinspirasi dan dikembangkan berdasarkan implementasi dari Zgrywus:</p>
+<ul>
+<li>
+<p>CAN Virtual Input, CAN Analog Input, CAN Sensor Input, CAN Output</p>
+</li>
+<li>
+<p>Dokumentasi: <a href="https://wiki.zgrywus.com/">wiki.zgrywus.com</a></p>
+</li>
+</ul>
+<h3 id="komunitas">Komunitas<a class="headerlink" href="#komunitas" title="Permanent link">&para;</a></h3>
+<p>Terima kasih kepada seluruh kontributor, tester, dan pengguna yang telah membantu pengembangan proyek ini. Mazduino berkomitmen untuk tetap open source dan berkontribusi kembali kepada komunitas.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../acknowledgments/" class="btn btn-neutral float-left" title="Ucapan Terima Kasih"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../firmware/fuel-consumption/" class="btn btn-neutral float-left" title="Konsumsi Bahan Bakar"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -224,7 +260,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../acknowledgments/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../firmware/fuel-consumption/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
   </span>
