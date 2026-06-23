@@ -7,9 +7,13 @@ ECU Mazduino Compact v2.3 adalah versi terbaru dari Engine Control Unit standalo
 **Pembaruan v2.3:**
 
 - **Perbaikan Pin Mapping MCU**: Pin mapping MCU yang dioptimalkan untuk performa lebih baik
+
 - **Fix Knock Sensor**: Perbaikan knock sensor agar tidak konflik dengan TPS
+
 - **RTC Battery Support**: Penambahan dukungan baterai RTC untuk real-time data logging menggunakan SD Card (opsional)
+
 - **PCB Optimization**: Optimasi jalur pada PCB untuk performa dan reliabilitas yang lebih baik
+
 - **Enhanced Compatibility**: Kompatibilitas yang ditingkatkan dengan berbagai sensor dan aktuator
 
 ![Mazduino Compact 4ch v2.3](img/mazduino-compact-4ch-v2.3.jpeg)
@@ -21,9 +25,11 @@ ECU Mazduino Compact v2.3 adalah versi terbaru dari Engine Control Unit standalo
 - Input trigger kedua untuk sensor CMP hall atau optical saja  
 - 6 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 1 cadangan
 - **Knock Sensor Input**: Input khusus untuk sensor knock dengan IC conditioning yang diperbaiki
+
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
 - 3 input digital pullup untuk AC Switch, VSS, Clutch (AC atau VSS dapat digunakan untuk tombol Launch Control jika tidak diperlukan)
 - **6x driver low-side arus tinggi 3A**: 4 injektor + Idle 1 + Idle 2 untuk high-impedance injector, idle PWM, boost control, VVT
+
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - 4x output 12V atau 5V untuk sinyal koil pengapian
 - **1x High Side Switching** untuk kontrol alternator/VVT/12V switching
@@ -32,22 +38,33 @@ ECU Mazduino Compact v2.3 adalah versi terbaru dari Engine Control Unit standalo
 - Komunikasi data via USB Type-C
 - Komunikasi Serial RX/TX
 - **Konektor Yamaha 33-pin**: Konektor otomotif grade profesional dengan pin assignment yang optimal
+
 - **SD Card dengan RTC**: Data logging real-time dengan dukungan baterai RTC (opsional)
 
 ### Perbaikan Knock Sensor (v2.3)
 - **Pin MCU**: PA3 (dipindahkan dari PA6 untuk menghindari konflik dengan TPS)
+
 - **Official Firmware Support**: PA3 dapat menggunakan firmware official rusEFI
+
 - **Backward Compatibility**: PA6 tetap dapat digunakan dengan custom firmware
+
 - **IC Conditioning**: Sirkuit kondisioning yang diperbaiki untuk sensitivitas optimal
+
 - **Noise Immunity**: Peningkatan ketahanan terhadap noise elektrik
+
 - **Firmware Flexibility**: Pilihan antara official firmware (PA3) atau custom firmware (PA6)
 
 ### RTC Battery Support (v2.3)
 - **Real-time Clock**: Dukungan RTC untuk timestamp akurat pada data logging
+
 - **Battery Backup**: Slot baterai koin untuk menjaga waktu saat ECU mati
+
 - **Masalah yang Dipecahkan**: Sebelumnya data logging menunjukkan waktu 00:00:00
+
 - **Solusi**: Baterai koin mempertahankan waktu real-time secara permanen
+
 - **SD Card Logging**: Enhanced logging dengan timestamp yang akurat dan persisten
+
 - **Data Integrity**: Memastikan integritas data dengan waktu yang selalu tersimpan
 
 ## Wiring dan Instalasi
@@ -149,7 +166,6 @@ Pin mapping MCU yang diperbarui untuk STM32F407VGT6 di v2.3:
 | SPI3 CLK | PC10 | - |
 | SPI3 MISO | PC11 | - |
 | SPI3 MOSI | PC12 | - |
-
 
 ## Spesifikasi Teknis
 

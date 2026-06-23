@@ -149,16 +149,21 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Dukungan VR Conditioner
 - **VR-1 & VR-2**: Pin input untuk modul VR conditioner (DIP 8)
+
 - **VR1+ & VR2+**: Input sensor VR positif
 
 #### Kontrol Stepper Motor
 - **Stepper A1/A2**: Output fase A untuk stepper motor (DRV8825)
+
 - **Stepper B1/B2**: Output fase B untuk stepper motor
+
 - **Direction/Enable/Step**: Sinyal kontrol untuk driver stepper
 
 #### Konfigurasi Injector Fleksibel
 Untuk mesin 4-silinder:
+
 - **Injector 5 & 6**: Dapat digunakan sebagai output arus tinggi cadangan
+
 - **Aplikasi**: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.
 
 ### Panduan Instalasi
@@ -171,19 +176,28 @@ Untuk mesin 4-silinder:
 
 ### Catatan Wiring
 - **Multiple Ground**: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal
+
 - **Referensi 5V**: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya
+
 - **Sensor O2**: Pin 43 menerima sinyal 1-5V dari output analog kontroler wideband
+
 - **Sensor VR**: Dapat menggunakan input digital atau input modul VR conditioner
+
 - **Konektor Yamaha**: Konektor 48-pin grade otomotif profesional
+
 - **Kompatibilitas Wiring**: Kompatibel dengan standar wiring Speeduino
+
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
 
 ## Dukungan dan Sumber Daya
 
 ### Dokumentasi
 - **Datasheet STM32F407VGT6**: Informasi lengkap tentang MCU
+
 - **Manual Referensi**: Dokumentasi pin mapping dan konfigurasi khusus
+
 - **Wiring Diagram**: Diagram lengkap untuk instalasi
+
 - **TunerStudio Configuration**: File konfigurasi siap pakai untuk Speeduino
 
 ### File Firmware & Konfigurasi
@@ -196,22 +210,31 @@ Untuk mesin 4-silinder:
 
 ### Modul VR-Conditioner
 - **Package DIP 8**: Instalasi dan penggantian yang mudah
+
 - **Dukungan Sensor VR**: Mengkonversi sinyal VR ke digital (pin 9, 10)
+
 - **Signal Conditioning**: Sinyal trigger yang bersih dan andal
+
 - **Kompatibilitas**: Bekerja dengan berbagai jenis sensor VR
 
 ### Modul Stepper Motor
 - **Driver DRV8825**: Kontrol stepper berperforma tinggi
+
 - **Idle Air Control**: Manajemen kecepatan idle yang presisi (pin 11-14)
+
 - **Integrasi Mudah**: Desain modul plug-and-play
+
 - **Operasi Andal**: Komponen grade otomotif
 
 ## Catatan Penting
 
 ### Persyaratan Sistem Pengapian
 - **Smart Coils**: Koneksi langsung didukung
+
 - **Dump Coils**: IGBT eksternal diperlukan untuk operasi yang tepat
+
 - **Pemilihan Coil**: Pilih jenis coil yang sesuai untuk aplikasi Anda
+
 - **Keamanan**: Driver eksternal yang tepat penting untuk sistem dump coil
 
 ### File Firmware & Konfigurasi

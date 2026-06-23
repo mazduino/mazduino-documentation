@@ -131,17 +131,23 @@ Fitur **Fancy Board** tersedia di ECU wire-in untuk konfigurasi I/O yang fleksib
 
 #### Timing Drop Strategy
 - **Low Speed**: Pengurangan timing yang lebih agresif untuk kontrol slip yang efektif
+
 - **High Speed**: Pengurangan timing yang lebih moderat untuk stabilitas
+
 - **Progressive Control**: Pengurangan bertahap sesuai tingkat slip
 
 #### Throttle Control Strategy
 - **Immediate Response**: Pengurangan throttle cepat untuk kontrol slip instan
+
 - **Smooth Operation**: Transisi throttle yang halus untuk comfort pengemudi
+
 - **Load Dependent**: Pengurangan yang disesuaikan dengan kondisi beban
 
 #### Ignition Skip Strategy
 - **Severe Slip**: Skip ignition untuk pengurangan power dramatis
+
 - **Mild Slip**: Skip minimal untuk kontrol halus
+
 - **Pattern Control**: Skip pattern yang dioptimasi untuk efektivitas
 
 ### Tuning Guidelines
@@ -169,9 +175,13 @@ SD Card Logger menyediakan kemampuan logging data onboard untuk analisis perform
 #### Parameter Logging
 
 - **Engine Parameters**: RPM, Load, TPS, MAP, IAT, CLT
+
 - **Fuel System**: Injector duty cycle, fuel pressure, AFR
+
 - **Ignition System**: Timing advance, dwell time, knock events
+
 - **Sensor Data**: Semua input sensor yang dikonfigurasi
+
 - **Calculated Values**: VE, timing corrections, lambda targets
 
 #### File Management
@@ -184,8 +194,11 @@ SD Card Logger menyediakan kemampuan logging data onboard untuk analisis perform
 ### Keuntungan SD Logging
 
 - **Standalone Operation**: Logging tanpa koneksi laptop
+
 - **High Resolution**: Sample rate tinggi untuk data detail
+
 - **Large Capacity**: Kemampuan storage besar untuk session panjang
+
 - **Portable**: Data dapat dianalisis di berbagai platform
 
 ## rusEFI Console
@@ -255,13 +268,3 @@ rusEFI Console menyediakan interface command-line untuk debugging dan konfiguras
 2. **Port Conflicts**: Periksa port yang digunakan aplikasi lain
 3. **Cable Quality**: Gunakan kabel USB berkualitas baik
 4. **EMI Interference**: Hindari interferensi elektromagnetik
-
-## Navigasi
-
-- [← Kembali ke CAN Bus Configuration](tunerstudio-canbus.md)
-- [Lanjut ke Troubleshooting →](tunerstudio-troubleshooting.md)
-- [Kembali ke Manual Utama](tunerstudio-manual.md)
-
----
-
-*Dokumentasi ini mencakup tool controller dan diagnostics lengkap untuk TunerStudio Mazduino. Penggunaan yang tepat dari tool ini akan memastikan setup, testing, dan troubleshooting yang efektif untuk sistem engine management.*

@@ -8,7 +8,6 @@ Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referen
 
 ![Foto produk Mazduino Core](img/core/mazduino-core.jpeg)
 
-
 ## Fitur Utama
 
 - MCU **STM32F427** ARM Cortex-M4
@@ -20,6 +19,7 @@ Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referen
 - **5x output low side low current** untuk relay (main relay, fuel pump, fan, AC, tach)
 - **2x output high side 1.3A** untuk beban 12V switching
 	- Contoh penggunaan: **alternator control**, solenoid 12V, dan aktuator switching lain sesuai batas arus.
+
 - **2x CAN bus** (tergantung konfigurasi jalur/jumper)
 - **2x input VR** untuk CKP/CMP tipe variable reluctor
 - **2x ETB output** (ETB1 dan ETB2)
@@ -71,11 +71,17 @@ Karena terdapat dual IC untuk kontrol **ETB1** dan **ETB2**, jalur driver terseb
 ### Opsi Jumper Penting
 
 - **JP3 (Pin 4)**: pilih **AVS2 (Analog Volt 5)** atau **Ignition 6**
+
 - **JP4 (Pin 20)**: pilih **ATS2 (Analog Temp 4)** atau **Ignition 5**
+
 - **JP5 (Pin 5)**: pilih **AVS3 (Analog Volt 6)** atau **High Side 2**
+
 - **IN22**: pilih **Digital 3** atau **VR1+**
+
 - **IN38**: pilih **Digital 4** atau **VR1-**
+
 - **IN33**: pilih **CANH1** atau **VR2+**
+
 - **IN34**: pilih **CANL1** atau **VR2-**
 
 ### Catatan Konfigurasi
@@ -182,6 +188,7 @@ Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan d
 ## Informasi MCU
 
 - **MCU**: STM32F427
+
 - ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.
 - Gunakan file konfigurasi firmware yang memang ditujukan untuk **Mazduino Core** agar semua pin berfungsi sesuai desain board.
 - Firmware untuk board ini hanya untuk **rusEFI based** (baik official maupun custom firmware dengan MCU F4).
@@ -208,6 +215,8 @@ Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan d
 ## Software Tuning
 
 - Download TunerStudio: [https://www.tunerstudio.com/index.php/downloads](https://www.tunerstudio.com/index.php/downloads)
+
 - Referensi firmware rusEFI: [https://wiki.rusefi.com](https://wiki.rusefi.com)
+
 - Informasi produk: [https://www.mazduino.com](https://www.mazduino.com)
 

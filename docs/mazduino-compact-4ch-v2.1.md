@@ -7,7 +7,9 @@ ECU Mazduino Compact v2.1 adalah Engine Control Unit standalone 4-channel yang d
 **Fitur Baru v2.1:**
 
 - **Konektor Yamaha 33-pin**: Upgrade dari Microfit ke konektor otomotif grade profesional
+
 - **Knock Sensor Input**: IC khusus untuk membaca sensor knock dan deteksi ketukan mesin
+
 - **6 MOSFET High Current**: Penambahan 1 MOSFET arus tinggi (dari 5 menjadi 6) untuk kontrol Idle 2/Boost/VVT
 
 ![Mazduino Compact 4ch](img/mazduino-compact-4ch-v2.1.jpeg)
@@ -17,9 +19,11 @@ ECU Mazduino Compact v2.1 adalah Engine Control Unit standalone 4-channel yang d
 - Input trigger kedua untuk sensor CMP hall atau optical saja
 - 6 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 1 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - **Knock Sensor Input (v2.1)**: Input khusus untuk sensor knock dengan IC conditioning
+
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
 - 3 input digital pullup untuk AC Switch, VSS, Clutch (AC atau VSS dapat digunakan untuk tombol Launch Control jika tidak diperlukan)
 - **6x driver low-side arus tinggi 3A (v2.1)**: 4 injektor + Idle 1 + Idle 2 untuk high-impedance injector, idle PWM, boost control, VVT
+
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - 4x output 12V atau 5V untuk sinyal koil pengapian
 - Prosesor 168 MHz ARM Cortex-M4
@@ -27,6 +31,7 @@ ECU Mazduino Compact v2.1 adalah Engine Control Unit standalone 4-channel yang d
 - Komunikasi data via USB Type-C
 - Komunikasi Serial RX/TX
 - **Konektor Yamaha 33-pin (v2.1)**: Konektor otomotif grade profesional dengan pin assignment yang optimal
+
 - Kartu SD untuk data logging
 
 ## Wiring dan Instalasi
@@ -131,26 +136,38 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Konektor Yamaha 33-pin (Baru di v2.1)
 - **Upgrade Konektor**: Dari Microfit 30-pin ke Yamaha 33-pin otomotif grade
+
 - **Keandalan Tinggi**: Konektor tahan cuaca dan vibration resistant
+
 - **Pin Layout Optimal**: Pin assignment yang lebih terorganisir untuk instalasi yang mudah
+
 - **Ground yang Lebih Baik**: Multiple ground pins (11, 20, 21, 22) untuk integritas sinyal
 
 #### Knock Sensor Support (Baru di v2.1)
 - **Pin 30**: Input khusus untuk sensor knock
+
 - **IC Conditioning**: Sirkuit khusus untuk memproses sinyal knock sensor
+
 - **MCU Pin PA6**: Pin khusus untuk input knock sensor
+
 - **Aplikasi**: Deteksi ketukan mesin untuk perlindungan dan optimasi timing
 
 #### Enhanced High Current Outputs (v2.1)
 - **6 MOSFET High Current**: Upgrade dari 5 menjadi 6 MOSFET arus tinggi 3A
+
 - **Dual Idle Control**: Idle 1 dan Idle 2 untuk kontrol idle yang lebih presisi
+
 - **Flexible Applications**: Idle 2 dapat digunakan untuk boost control, VVT, atau kontrol PWM lainnya
+
 - **Output Capacity**: Total 6 output arus tinggi vs 5 output di v1
 
 #### Solder Jumper
 PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
+
 - **Input/Output Selection**: Konfigurasi pin untuk berbagai fungsi
+
 - **Pemilihan tegangan pengapian**: Pilih tegangan yang sesuai untuk koil pengapian
+
 - **Knock Sensor Enable**: Aktivasi input knock sensor
 
 ### Langkah Instalasi
@@ -163,13 +180,21 @@ PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
 
 ### Catatan Wiring
 - **Multiple Ground**: Gunakan semua pin ground (11, 20, 21, 22) untuk koneksi yang optimal
+
 - **Referensi 5V**: Pin 8 menyediakan referensi 5V untuk sensor
+
 - **Knock Sensor**: Pin 30 memiliki IC conditioning khusus untuk sinyal knock
+
 - **High Current Outputs**: Pin 1-5 dan 12 adalah output arus tinggi 3A untuk injektor dan kontrol PWM
+
 - **Idle 2 Flexibility**: Pin 12 (Idle 2) dapat digunakan untuk idle control, boost control, VVT, atau kontrol PWM arus tinggi lainnya
+
 - **Konektor Yamaha**: Konektor grade otomotif dengan keandalan tinggi
+
 - **AC Switch**: Pin 31 adalah input aktif ground untuk switch AC
+
 - **Kompatibilitas Wiring**: Kompatibel dengan standar Speeduino dengan pin mapping yang diperbarui
+
 - **Referensi**: Informasi wiring tambahan tersedia di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
 
 ## Perbandingan v1 vs v2.1

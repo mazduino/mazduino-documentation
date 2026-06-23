@@ -55,8 +55,11 @@ Menu **Fuel** menyediakan akses ke berbagai pengaturan yang mengontrol fuel inje
 **Enabled**: Set ke `true` untuk mengaktifkan fuel injection
 
 **Mode**: Opsi meliputi:
+
 - **Sequential**: Individual injector timing - setiap injector fire sesuai firing order
+
 - **Batch**: Semua injectors fire bersamaan
+
 - **Batch Injection with Individual Wiring**: Injectors diwiring terpisah tapi beroperasi dalam batch mode
 
 **Alpha-N Uses IAT Density Correction**: Saat set ke `true`, mengaktifkan koreksi berbasis intake air temperature untuk strategi tuning Alpha-N
@@ -76,8 +79,11 @@ Menu **Fuel** menyediakan akses ke berbagai pengaturan yang mengontrol fuel inje
 **Injector Flow Units**: Pilih antara **Volumetric Flow** (cc/min) atau unit lainnya
 
 **Injector Flow Compensation Mode**:
+
 - **None**: Untuk setup dengan MAP-referenced fuel pressure regulator
+
 - **Fixed Rail Pressure**: Untuk sistem dengan atmosphere-referenced fuel pressure regulator
+
 - **Sensed Rail Pressure**: Untuk sistem dengan fuel pressure sensor
 
 **Fuel Rail Pressure Sensor**: Hanya digunakan saat "Sensed Rail Pressure" dipilih
@@ -102,17 +108,22 @@ VE Table menampilkan nilai volumetric efficiency engine sebagai fungsi **load (k
 
 #### Idle Conditions
 - **Load**: 30-50 kPa, **RPM**: 500-1000
+
 - **VE Values**: 30-40%
+
 - Merepresentasikan airflow yang relatif rendah saat engine running pada low RPM dan tanpa load
 
 #### High Load Conditions  
 - **Load**: 100-250 kPa, **RPM**: 4000-7000
+
 - **VE Values**: 80-100% atau lebih
+
 - Engines dengan forced induction dapat memiliki values melebihi 100%
 
 #### Troubleshooting VE Values
 
 Jika VE values signifikan berbeda dari ranges ini, mungkin mengindikasikan **injectors belum correctly modeled**:
+
 - Incorrect injector flow rates
 - Dead time settings salah
 - Kesalahan kalibrasi lainnya
@@ -133,6 +144,7 @@ Table contoh ini di-setup untuk turbocharged, cammed engine:
 
 #### Boost Conditions (150-250 kPa)
 - AFR targets lebih rich: 10.7-11.0 AFR
+
 - Mengurangi risiko detonation 
 - Menjaga combustion temperatures aman
 - Memastikan reliable performance di bawah high load
@@ -164,7 +176,9 @@ Table contoh ini di-setup untuk turbocharged, cammed engine:
 **Region Configuration** memungkinkan kustomisasi RPM dan load thresholds:
 
 - **Idle region RPM**: RPM yang dianggap sebagai idle threshold
+
 - **Overrun region load**: Load limit untuk membedakan deceleration
+
 - **Power region load**: Load limit untuk high load conditions
 
 ### Region-Specific Parameters
@@ -172,6 +186,7 @@ Table contoh ini di-setup untuk turbocharged, cammed engine:
 Setiap region (Main, Idle, Power, Overrun) memiliki **time constants** dan **maximum add/remove percentages**:
 
 - **Time constant**: Mengontrol responsiveness corrections
+
 - **Max add/remove**: Membatasi maximum fuel adjustment
 
 ## Coasting Fuel Cutoff (DFCO)

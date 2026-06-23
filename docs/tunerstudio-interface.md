@@ -7,8 +7,11 @@ Panduan lengkap untuk navigasi dan penggunaan interface TunerStudio beserta penj
 TunerStudio menyediakan interface yang komprehensif untuk monitoring, tuning, dan konfigurasi ECU Mazduino. Interface utama terdiri dari:
 
 - **Dashboard**: Area utama dengan gauge dan indikator real-time
+
 - **Menu Bar**: File, Options, Data Logging, Communications, Tools, Help
+
 - **Status Indicators**: Menampilkan status sistem dan koneksi
+
 - **Navigation Buttons**: Akses cepat ke berbagai fungsi tuning
 
 ## File Menu - Manajemen Project dan Tune
@@ -30,6 +33,7 @@ TunerStudio menyediakan interface yang komprehensif untuk monitoring, tuning, da
 
 ### 4. Load Tune (.msq)
 Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari komputer langsung ke ECU. Berguna untuk:
+
 - Menerapkan pengaturan yang tersimpan sebelumnya
 - Beralih antara tune yang berbeda
 - Restore backup tune
@@ -90,6 +94,7 @@ Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari 
 ### 5. Preferred Units
 - Memungkinkan menyesuaikan satuan untuk parameter tertentu
 - Contoh: mengubah satuan Y-axis **Manifold Absolute Pressure** dari **kPa** ke **PSI**
+
 - Berguna untuk preferensi regional atau kebiasaan pengguna
 
 ## Data Logging Menu - Recording dan Analisis
@@ -112,6 +117,7 @@ Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari 
 ### 4. Triggered Logging
 - Memungkinkan data logging dimulai secara otomatis saat kondisi tertentu terpenuhi
 - Contoh: RPM tertentu atau posisi throttle
+
 - Berguna untuk capture data hanya saat event tertentu terjadi
 
 ### 5. Data Logging Preferences
@@ -171,6 +177,7 @@ Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari 
 ### 2. Update / Install Firmware
 - Opsi ini memungkinkan update firmware atau instalasi baru untuk ECU yang kompatibel
 - **PENTING**: Fungsi ini **tidak bekerja** dengan Mazduino, jadi hindari menggunakannya dengan setup Mazduino
+
 - Gunakan metode flashing firmware yang disediakan dalam [dokumentasi downloads](downloads.md)
 
 ### 3. Add Custom Channel Wizard
@@ -202,6 +209,7 @@ Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari 
 - Membuka tool kalibrasi Throttle Position Sensor (TPS)
 - Essential untuk memastikan ECU menginterpretasikan posisi throttle dengan benar
 - **PENTING**: Fungsi ini hanya kompatibel dengan cable throttle
+
 - Untuk electronic throttle, prosedur kalibrasi spesifik diperlukan yang akan dibahas dalam bagian **Advanced**
 
 ## Help Menu - Bantuan dan Dokumentasi
@@ -230,9 +238,13 @@ Opsi ini memungkinkan memuat konfigurasi tuning yang tersimpan (file .msq) dari 
 
 ### Keyboard Shortcuts Berguna
 - **Ctrl + S**: Save tune
+
 - **Ctrl + O**: Open project  
+
 - **F1**: Help
+
 - **Ctrl + L**: Start logging
+
 - **Esc**: Cancel current operation
 
 ### Kustomisasi Dashboard

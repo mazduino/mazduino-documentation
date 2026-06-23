@@ -5,7 +5,9 @@
 Mazduino Mini 6CH v1.3 adalah Engine Control Unit 6-channel yang kompak dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor STM32F407VGT6 ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Fitur Baru v1.3:**
+
 - **Knock Input**: Dukungan sensor knock untuk deteksi ketukan mesin
+
 - **ETB (Electronic Throttle Body)**: Kontrol throttle elektronik terintegrasi
 
 ![Mazduino Mini 6ch](img/mazduino-mini-6ch-v1.3.jpeg)
@@ -20,7 +22,9 @@ Mazduino Mini 6CH v1.3 adalah Engine Control Unit 6-channel yang kompak dirancan
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - 6x output 12V atau 5V untuk sinyal koil pengapian
 - **Knock Input (v1.3)**: Input sensor knock untuk deteksi ketukan mesin
+
 - **ETB Support (v1.3)**: Kontrol Electronic Throttle Body dengan TPS1 dan TPS2
+
 - Dukungan untuk Modul VR Conditioner tambahan
 - Dukungan untuk Modul Stepper Idle tambahan
 - Prosesor 168 MHz ARM Cortex-M4
@@ -30,87 +34,114 @@ Mazduino Mini 6CH v1.3 adalah Engine Control Unit 6-channel yang kompak dirancan
 - Konektor otomotif 48-pin
 - Kartu SD untuk data logging
 
-## ⚙️ Konfigurasi Jumper
+## Konfigurasi Jumper
 
 Mazduino Mini 6CH v1.3 dilengkapi dengan sistem jumper solder yang memungkinkan kustomisasi fungsi sesuai kebutuhan aplikasi Anda. Jumper ini memberikan fleksibilitas konfigurasi tanpa perlu mengubah firmware, memastikan kompatibilitas optimal dengan berbagai setup mesin.
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6232.jpeg)
 
-### 🔌 Zona Konfigurasi Atas (Kanan)
+### Zona Konfigurasi Atas (Kanan)
 
 #### JP11 - Tachometer Pullup
 - **Fungsi**: Menentukan tegangan sinyal output tachometer
+
 - **Pilihan**: 12V atau 5V
+
 - **Aplikasi**: Sesuaikan dengan kompatibilitas dashboard kendaraan Anda
 
 #### Ignition VDrive Jumper
 - **Fungsi**: Mengatur tegangan sinyal pengapian untuk **Smart Coil Only**
+
 - **Pilihan**: Sinyal 12V atau 5V
+
 - **Khusus Smart Coil**: Jumper ini hanya untuk smart coil dengan driver internal
-- **⚠️ PENTING**: Dump coil memerlukan IGBT eksternal 
+
+- **PENTING**: Dump coil memerlukan IGBT eksternal 
 
 #### Knock/PC13 Input Selection
 - **Mode Knock**: Input sensor knock untuk deteksi ketukan mesin (default)
+
 - **Mode PC13**: Akses langsung ke pin MCU untuk fungsi custom
+
 - **Fitur Baru v1.3**: Dukungan deteksi knock terintegrasi
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6229.jpeg)
 
-### 🎛️ Zona Konfigurasi Tengah
+### Zona Konfigurasi Tengah
 
 #### JP5 & JP4 - Sensor Pullup Configuration
 - **JP5**: Pullup 5V untuk sinyal CKP (Crankshaft Position)
+
 - **JP4**: Pullup 5V untuk sinyal CMP (Camshaft Position)
+
 - **Manfaat**: Sinyal trigger yang bersih dan stabil
 
 #### JP3 & JP2 - Sensor Type Selection
 - **JP3**: Mode sinyal CKP (VR atau Hall sensor)
+
 - **JP2**: Mode sinyal CMP (VR atau Hall sensor)
+
 - **Fleksibilitas**: Kompatibel dengan berbagai jenis sensor posisi
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6230.jpeg)
 
-### 🌐 Zona Konfigurasi Kiri
+### Zona Konfigurasi Kiri
 
 #### JP10 - CAN Bus Controller
 - **Fungsi**: Mengaktifkan IC CAN bus TJA1051T/3
+
 - **Aplikasi**: Komunikasi data high-speed dengan perangkat lain
+
 - **Protocol**: Mendukung standar automotive CAN 2.0
 
 #### JP6 - Stepper Motor Enable
 - **Fungsi**: Kontrol aktivasi driver stepper motor
+
 - **Note**: Konsultasi skematik untuk konfigurasi optimal
+
 - **Aplikasi**: Idle Air Control (IAC) dengan presisi tinggi
 
 #### JP7 & JP8 - Knock Sensor Filter Bypass
 - **Fungsi**: Bypass filter untuk sensor knock
+
 - **JP7**: Bypass filter knock channel 1
+
 - **JP8**: Bypass filter knock channel 2
+
 - **Advanced Feature**: Fine-tuning sensitivitas deteksi knock
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6231.jpeg)
 
-### 💡 Tips Konfigurasi Jumper
+### Tips Konfigurasi Jumper
 
-#### ⚡ Pengaturan Optimal:
+#### Pengaturan Optimal:
+
 - **Smart Coils**: Gunakan VDrive 5V untuk Coil dengan sinyal 5V dan 12V untuk coil dengan sinyal 12V
+
 - **Dump/Conventional Coils**: Memerlukan IGBT eksternal
+
 - **VR Sensors**: Aktifkan pullup dan pilih mode VR untuk sinyal bersih
+
 - **Hall Sensors**: Nonaktifkan pullup dan pilih mode Hall
 
-#### 🔧 Best Practices:
+#### Best Practices:
+
 1. **Pre-Installation**: Konfigurasi jumper sebelum instalasi final
 2. **Documentation**: Catat konfigurasi jumper untuk referensi masa depan
 3. **Testing**: Verifikasi sinyal setelah perubahan konfigurasi jumper
 4. **Compatibility**: Pastikan jumper sesuai dengan hardware yang digunakan
 
-#### ⚠️ Perhatian Khusus:
-- **Jenis Coil Kritis**: VDrive hanya untuk smart coil - dump coil butuh IGBT eksternal
-- **Solder dengan Hati-hati**: Gunakan suhu solder yang tepat
-- **Verifikasi Koneksi**: Pastikan sambungan solder yang solid
-- **Konsultasi Skematik**: Rujuk diagram untuk konfigurasi lanjutan
-- **Power Off**: Selalu matikan power saat mengubah jumper
+#### Perhatian Khusus:
 
+- **Jenis Coil Kritis**: VDrive hanya untuk smart coil - dump coil butuh IGBT eksternal
+
+- **Solder dengan Hati-hati**: Gunakan suhu solder yang tepat
+
+- **Verifikasi Koneksi**: Pastikan sambungan solder yang solid
+
+- **Konsultasi Skematik**: Rujuk diagram untuk konfigurasi lanjutan
+
+- **Power Off**: Selalu matikan power saat mengubah jumper
 
 ## Wiring dan Instalasi
 
@@ -242,28 +273,39 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Knock Input (Baru di v1.3)
 - **Pin 8 (Knock/PC13)**: Input sensor knock dengan solder jumper default untuk deteksi ketukan
+
 - **Dual Knock Support**: Knock1 (PC0) dan Knock2 (PC1) untuk monitoring multi-silinder
+
 - **Aplikasi**: Deteksi ketukan mesin untuk perlindungan dan optimasi timing pengapian
 
 #### Electronic Throttle Body (Baru di v1.3)
 - **Pin 33 (ETB-)**: Output negatif untuk kontrol ETB
+
 - **Pin 34 (ETB+)**: Output positif untuk kontrol ETB
+
 - **Pin 43 (TPS2)**: Sensor posisi throttle kedua untuk ETB (dual TPS)
+
 - **Pin 18/35 (PPS1/PPS2)**: Dual Pedal Position Sensor untuk kontrol ETB
+
 - **ETB Control**: PWM (PA8), Direction (PB8), Disable (PB9)
 
 #### Dukungan VR Conditioner
 - **VR-1 & VR-2**: Pin input untuk modul VR conditioner (DIP 8)
+
 - **VR1+ & VR2+**: Input sensor VR positif
 
 #### Kontrol Stepper Motor
 - **Stepper A1/A2**: Output fase A untuk stepper motor (DRV8825)
+
 - **Stepper B1/B2**: Output fase B untuk stepper motor
+
 - **Direction/Enable/Step**: Sinyal kontrol untuk driver stepper
 
 #### Konfigurasi Injector Fleksibel
 Untuk mesin 4-silinder:
+
 - **Injector 5 & 6**: Dapat digunakan sebagai output arus tinggi cadangan
+
 - **Aplikasi**: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.
 
 ### Panduan Instalasi
@@ -278,61 +320,28 @@ Untuk mesin 4-silinder:
 
 ### Catatan Wiring
 - **Multiple Ground**: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal
+
 - **Referensi 5V**: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya
+
 - **Sensor O2/TPS2**: Pin 43 dapat digunakan untuk O2 sensor atau TPS2 untuk ETB
+
 - **Sensor VR**: Dapat menggunakan input digital atau input modul VR conditioner
+
 - **Knock Sensor**: Pin 8 dikonfigurasi default untuk knock input via solder jumper
+
 - **ETB Wiring**: ETB memerlukan koneksi dual (pin 33/34) dan dual TPS (pin 30/43)
+
 - **Konektor Yamaha**: Konektor 48-pin grade otomotif profesional
+
 - **Kompatibilitas Wiring**: Kompatibel dengan standar wiring Speeduino
+
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
-
-## Dukungan dan Sumber Daya
-
-### Dokumentasi
-- **Datasheet STM32F407VGT6**: Informasi lengkap tentang MCU
-- **Manual Referensi v1.3**: Dokumentasi pin mapping dan konfigurasi khusus untuk v1.3
-- **Wiring Diagram**: Diagram lengkap untuk instalasi dengan fitur baru v1.3
-- **TunerStudio Configuration**: File konfigurasi siap pakai untuk Speeduino dan rusEFI
-
-### File Firmware & Konfigurasi
-- **[Halaman Download](downloads.md)** - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio
-- Dukungan penuh 6-channel dengan fitur-fitur canggih
-- Konfigurasi pin mapping khusus untuk v1.3 sudah disertakan
-- Kompatibel dengan firmware rusEFI dan Speeduino
-- **Dukungan Knock**: Konfigurasi khusus untuk sensor knock
-- **Dukungan ETB**: Konfigurasi siap pakai untuk Electronic Throttle Body
-
-## Dukungan Modul
-
-### Modul VR-Conditioner
-- **Package DIP 8**: Instalasi dan penggantian yang mudah
-- **Dukungan Sensor VR**: Mengkonversi sinyal VR ke digital (pin 9, 10)
-- **Signal Conditioning**: Sinyal trigger yang bersih dan andal
-- **Kompatibilitas**: Bekerja dengan berbagai jenis sensor VR
-
-### Modul Stepper Motor
-- **Driver DRV8825**: Kontrol stepper berperforma tinggi
-- **Idle Air Control**: Manajemen kecepatan idle yang presisi (pin 11-14)
-- **Integrasi Mudah**: Desain modul plug-and-play
-- **Operasi Andal**: Komponen grade otomotif
 
 ## Catatan Penting
 
 ### Persyaratan Sistem Pengapian
-- **Smart Coils**: Koneksi langsung didukung
-- **Dump Coils**: IGBT eksternal diperlukan untuk operasi yang tepat
-- **Pemilihan Coil**: Pilih jenis coil yang sesuai untuk aplikasi Anda
-- **Keamanan**: Driver eksternal yang tepat penting untuk sistem dump coil
+- **Smart Coils**: Koneksi langsung didukung — pilih VDrive 5V atau 12V sesuai spesifikasi coil
 
-### Knock Detection (v1.3)
-- **Sensor Knock**: Gunakan sensor knock yang kompatibel dengan input analog
-- **Solder Jumper**: Pin 8 dikonfigurasi default untuk knock input
-- **Dual Channel**: Dukungan untuk dua sensor knock (Knock1/Knock2)
-- **Aplikasi**: Perlindungan mesin dan optimasi timing pengapian
+- **Dump Coils**: IGBT eksternal diperlukan; VDrive jumper **tidak** digunakan untuk dump coil
 
-### Electronic Throttle Body (v1.3)
-- **Dual TPS**: Menggunakan TPS1 (pin 30) dan TPS2 (pin 43) untuk redundansi
-- **Dual PPS**: Pedal Position Sensor 1 & 2 untuk input pedal gas
-- **H-Bridge Control**: Driver ETB terintegrasi dengan kontrol PWM, Direction, dan Disable
-- **Safety**: Sistem failsafe dengan dual sensor untuk keamanan operasi
+**[Download firmware dan file konfigurasi](downloads.md)**

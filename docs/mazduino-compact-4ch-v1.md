@@ -117,8 +117,11 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 ### Solder Jumper
 
 PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
+
 - **Pin 3**: CANH atau Input Analog Cadangan 1
+
 - **Pin 6**: CANL atau Kontrol Relay Utama
+
 - **Pemilihan tegangan pengapian**: Pilih tegangan yang sesuai untuk koil pengapian
 
 ### Langkah Instalasi
@@ -130,9 +133,13 @@ PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
 
 ### Catatan Wiring
 - **Ground Sensor**: Gunakan pin 19 dan 20 untuk koneksi ground sensor
+
 - **Referensi 5V**: Pin 8 menyediakan referensi 5V untuk sensor
+
 - **Konfigurasi CAN**: Gunakan solder jumper untuk memilih fungsi CAN atau relay (pin 3 & 6)
+
 - **Kompatibilitas Wiring**: Wiring kompatibel dengan standar Speeduino
+
 - **Referensi**: Informasi wiring tambahan tersedia di [Speeduino Wiki](https://wiki.speeduino.com/en/wiring/system)
 
 ## Dukungan dan Sumber Daya

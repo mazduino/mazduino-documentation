@@ -62,12 +62,14 @@ Sistem CAN Bus pada Mazduino memungkinkan komunikasi dengan berbagai perangkat e
 ### Konfigurasi CAN Wideband
 
 **Enable CAN Wideband**:
+
 - Bekerja dengan **unit wideband AEM** atau **Mazduino** yang dihubungkan melalui CAN
 - Pilih **channel CAN bus** tempat wideband terhubung
 - Jika channel tertukar, aktifkan **Swap Channels 1 and 2**
 - Opsi **Force O2 sensor heating** dapat mengesampingkan kontrol heating otomatis, meskipun biasanya diatur ke "No"
 
 **CAN Indicators**:
+
 - Menampilkan status operasional sistem wideband
 - Indikator hijau menandakan operasi yang tepat (mis. Heating Allowed, Communication OK)
 - Indikator merah menyoroti masalah seperti kegagalan heating atau sensor underheating/overheating
@@ -95,7 +97,9 @@ Sistem CAN Bus pada Mazduino memungkinkan komunikasi dengan berbagai perangkat e
 ### Keuntungan CAN VSS
 
 - **Akurasi Tinggi**: Data digital memberikan akurasi lebih baik daripada sensor analog
+
 - **Integrasi Mudah**: Menggunakan data yang sudah tersedia dari ECU OEM
+
 - **Reduced Wiring**: Mengurangi kebutuhan wiring tambahan untuk sensor kecepatan
 
 ## CAN EGT Sensors
@@ -124,8 +128,11 @@ Sensor EGT (Exhaust Gas Temperature) berbasis CAN memungkinkan monitoring suhu g
 ### Aplikasi EGT Monitoring
 
 - **Tuning Optimization**: Monitoring suhu untuk tuning yang aman
+
 - **Engine Protection**: Deteksi kondisi lean atau overheating
+
 - **Performance Analysis**: Analisis distribusi suhu antar silinder
+
 - **Turbo Protection**: Monitoring suhu untuk proteksi turbocharger
 
 ## CAN IO Box Configuration
@@ -152,8 +159,11 @@ CAN IO Box memungkinkan ekspansi input/output melalui jaringan CAN, ideal untuk 
 ### Keuntungan IO Box
 
 - **Ekspansi I/O**: Menambah kemampuan input/output tanpa ECU yang lebih besar
+
 - **Distributed Control**: IO dapat ditempatkan dekat dengan sensor/aktuator
+
 - **Modular Design**: Mudah untuk menambah atau mengurangi I/O sesuai kebutuhan
+
 - **Cost Effective**: Lebih ekonomis daripada upgrade ke ECU yang lebih besar
 
 ## Troubleshooting CAN Bus
@@ -178,8 +188,11 @@ CAN IO Box memungkinkan ekspansi input/output melalui jaringan CAN, ideal untuk 
 ### Diagnostic Tools
 
 - **CAN Bus Monitor**: Real-time monitoring pesan CAN
+
 - **Error Counters**: Tracking error transmit/receive
+
 - **Bus Load Analysis**: Monitoring utilisasi bandwidth CAN
+
 - **Message Logging**: Recording untuk analisis offline
 
 ## Best Practices
@@ -197,13 +210,3 @@ CAN IO Box memungkinkan ekspansi input/output melalui jaringan CAN, ideal untuk 
 2. **Message Priority**: Set prioritas berdasarkan kritikalitas data
 3. **Redundancy**: Pertimbangkan backup communication untuk sistem critical
 4. **Error Handling**: Implement proper error detection dan recovery
-
-## Navigasi
-
-- [← Kembali ke Sensor Configuration](tunerstudio-sensors.md)
-- [Lanjut ke Controller & Diagnostics →](tunerstudio-controller.md)
-- [Kembali ke Manual Utama](tunerstudio-manual.md)
-
----
-
-*Dokumentasi ini mencakup konfigurasi lengkap CAN Bus untuk TunerStudio Mazduino. Implementasi CAN Bus yang tepat memungkinkan sistem engine management yang lebih canggih dengan kemampuan komunikasi dan monitoring yang luas.*

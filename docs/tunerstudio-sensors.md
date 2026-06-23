@@ -95,12 +95,16 @@ Dialog **Other Sensor Inputs** memungkinkan konfigurasi sensor tambahan yang ber
 
 #### 1. Clutch Down
 - **Signal**: Menetapkan pin dan jenis input untuk mendeteksi ketika kopling ditekan penuh
+
 - **Mode**: Opsi termasuk **Pull-up** atau **Pull-down** untuk mengkonfigurasi polaritas sinyal  
+
 - **Signal Polarity**: Dapat diatur ke **Normal** atau **Inverted**, tergantung cara kerja sensor
 
 #### 2. Clutch Up
 - **Signal**: Mengkonfigurasi pin untuk mendeteksi ketika kopling dilepas penuh
+
 - **Mode**: Mirip dengan clutch down, dapat diatur ke **Pull-up** atau **Pull-down**
+
 - **Signal Polarity**: Pilih antara **Normal** dan **Inverted**
 
 #### 3. Throttle Up Switch
@@ -108,7 +112,9 @@ Menetapkan sinyal untuk aktuasi throttle ketika input sekunder diperlukan.
 
 #### 4. Brake Pedal
 - **Signal**: Mendeteksi aktivasi pedal rem
+
 - **Mode**: Mengkonfigurasi polaritas sinyal untuk input rem (mis. Pull-up atau Pull-down)
+
 - **Signal Polarity**: Opsi termasuk **Normal** atau **Inverted**
 
 #### 5. Flex Fuel Sensor
@@ -128,7 +134,9 @@ Mengkalibrasi sensor untuk monitoring tekanan output dari turbocharger atau supe
 ### Catatan Penggunaan
 
 - **Signal Polarity (Normal/Inverted)**: Saat mengkonfigurasi input dengan opsi **Normal/Inverted**, pastikan pengaturan sesuai dengan perilaku sensor yang diharapkan. Misalnya, sinyal inverted membalik logika input untuk mencocokkan wiring perangkat keras.
+
 - **Flex Fuel dan Turbo Sensors**: Ini opsional tetapi direkomendasikan untuk setup yang memerlukan manajemen ethanol atau turbocharger yang presisi.
+
 - Kalibrasi yang tepat sangat penting untuk sensor seperti **turbo speed** dan **pressure sensors** untuk memastikan akurasi dan menghindari masalah performa.
 
 ## Konfigurasi TPS dan Accelerator Pedal
@@ -165,7 +173,9 @@ Window **TPS (Throttle Position Sensor)** dan **Accelerator Pedal Sensor (PPS)**
 ### Catatan Penting
 
 - **Persyaratan Kalibrasi**: Kalibrasi TPS dan PPS harus diselesaikan dengan sukses agar ECU berfungsi dengan baik dengan ETB
+
 - **Penanganan Error**: Jika kalibrasi gagal atau pengaturan salah, ECU akan menampilkan error dan mencegah mesin berjalan sampai masalah diselesaikan dan error dibersihkan
+
 - Pengaturan ini **hanya diperlukan untuk setup ETB**. Untuk setup throttle drive-by-cable tradisional, konfigurasi ini tidak berlaku
 
 ## Konfigurasi Sensor O2
@@ -204,10 +214,15 @@ Dropdown **O2 Type** memungkinkan konfigurasi tipe sensor O2 yang digunakan untu
   - **High Value (AFR)**: AFR yang sesuai dengan voltase tinggi
 
 - **BP SX**: Skala predefined untuk sensor wideband BP SX
+
 - **Innovate**: Skala predefined untuk kontroler wideband Innovate
+
 - **14Point7**: Skala predefined untuk sensor wideband 14Point7
+
 - **PLX**: Skala predefined untuk kontroler wideband PLX
+
 - **Narrow Band**: Untuk sensor O2 narrowband tradisional. Terbatas pada perilaku switching stoichiometric
+
 - **AEM**: Skala predefined untuk kontroler wideband AEM
 
 ### Pengaturan Opsi yang Benar
@@ -241,7 +256,9 @@ Screen ini digunakan untuk mengkonfigurasi **VR (Voltage Reference) Sensor Thres
 ### Catatan Penting
 
 - **Wire-in Only**: Fitur ini eksklusif untuk ECU wire-in dan tidak tersedia di unit plug-and-play
+
 - **Kalibrasi**: Kalibrasi threshold yang tepat sangat penting untuk mencegah deteksi sinyal palsu atau pulse yang terlewat, terutama pada RPM tinggi
+
 - **Penyesuaian**: Pastikan output voltase sensor VR selaras dengan threshold yang diatur dalam tabel untuk operasi yang akurat. Gunakan scope jika diperlukan untuk mengamati waveform VR dan memverifikasi pengaturan
 
 Mengkonfigurasi threshold VR dengan benar memastikan operasi optimal sistem ignition dan timing, terutama dalam setup high-performance atau custom dimana sensor VR umumnya digunakan.
@@ -285,7 +302,9 @@ Screen ini digunakan untuk mengkonfigurasi pengaturan speed sensor dan menghitun
 ### Catatan Kunci
 
 - **Akurasi**: Konfigurasi yang tepat dari semua parameter sangat penting untuk deteksi kecepatan dan gear yang akurat
+
 - **Kalibrasi**: Pastikan ukuran ban dan rasio gear diukur atau diverifikasi untuk menghindari error dalam kalkulasi kecepatan dan gear
+
 - **CAN VSS**: Saat menggunakan CAN untuk kecepatan kendaraan, pastikan jaringan dikonfigurasi dan operasional untuk menghindari fallback ke pembacaan kecepatan yang salah
 
 ## Konfigurasi Sensor Fuel Pressure
@@ -323,16 +342,9 @@ Screen ini memungkinkan konfigurasi sensor fuel pressure untuk sistem low-pressu
 ### Catatan Penting
 
 - **Kalibrasi**: Konfigurasi yang tepat dari voltase rendah dan tinggi dengan tekanan yang sesuai memastikan pembacaan sensor yang akurat
+
 - **Raw Voltage Readout**: Gauge di sebelah kanan menampilkan sinyal voltase raw real-time dari sensor yang terhubung
+
 - **Sensor Type**: Pastikan tipe sensor yang benar (Absolute atau Gauge) dipilih untuk menghindari misinterpretasi data
+
 - **High Pressure**: Bagian *High Pressure* **hanya berlaku untuk sistem GDI**. Sistem port-injected tradisional tidak menggunakan fitur ini
-
-## Navigasi
-
-- [← Kembali ke Ignition System](tunerstudio-ignition.md)
-- [Lanjut ke CAN Bus Configuration →](tunerstudio-canbus.md)
-- [Kembali ke Manual Utama](tunerstudio-manual.md)
-
----
-
-*Dokumentasi ini mencakup konfigurasi lengkap sensor untuk TunerStudio Mazduino. Pastikan untuk mengkalibrasi setiap sensor dengan benar sesuai spesifikasi manufaktur untuk menghindari pembacaan yang tidak akurat atau masalah performa.*

@@ -10,17 +10,20 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![No RPM Signal](images/no-rpm-signal.png)
 
 **Gejala**: 
+
 - Engine tidak start
 - RPM gauge tetap di nol selama cranking
 - Tidak ada indikasi aktivitas ignition
 
 **Penyebab Potensial**:
+
 - Sensor crankshaft atau camshaft tidak terpasang dengan benar
 - Wiring yang rusak atau terputus ke sensor
 - Tipe sensor atau konfigurasi salah di software
 - Gap sensor tidak sesuai spesifikasi
 
 **Solusi**:
+
 1. **Verifikasi Instalasi Sensor**:
    - Pastikan instalasi sensor crank dan cam yang tepat
    - Periksa alignment dan gap yang benar (biasanya 0.5-1.5mm untuk sensor Hall)
@@ -46,17 +49,20 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![Wideband O2 Issues](images/wideband-o2-issues.png)
 
 **Gejala**:
+
 - Pembacaan AFR tidak akurat atau tidak ditampilkan
 - Nilai AFR tidak masuk akal (terlalu rich atau lean)
 - Pembacaan AFR tidak stabil
 
 **Penyebab Potensial**:
+
 - Scaling sensor salah dikonfigurasi di software
 - Wiring atau grounding yang rusak untuk sensor wideband
 - Konfigurasi sinyal CAN atau analog salah
 - Sensor wideband tidak ter-heat dengan benar
 
 **Solusi**:
+
 1. **Verifikasi Konfigurasi Sensor**:
    - Periksa tipe sensor dan input scaling di software Mazduino
    - Pastikan setting sesuai dengan spesifikasi (AEM, PLX, atau Custom)
@@ -82,18 +88,21 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![Engine Misfire](images/engine-misfire.png)
 
 **Gejala**:
+
 - Idle kasar
 - Hesitasi selama akselerasi
 - Misfire di bawah load
 - RPM tidak stabil
 
 **Penyebab Potensial**:
+
 - Setting ignition atau fuel timing salah
 - Busi rusak atau gap tidak sesuai
 - Kegagalan injector atau coil driver
 - Masalah kompresi mekanis
 
 **Solusi**:
+
 1. **Verifikasi Timing**:
    - Gunakan timing light untuk memverifikasi ignition timing selaras dengan base timing yang dikonfigurasi
    - Periksa fuel timing dan injector sequence
@@ -119,18 +128,21 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![Sensor Voltage Out of Range](images/sensor-voltage-range.png)
 
 **Gejala**:
+
 - Warning error sensor dalam diagnostics
 - Pembacaan sensor yang tidak menentu atau tidak ada
 - Error code terkait sensor
 - Pembacaan sensor yang tidak masuk akal
 
 **Penyebab Potensial**:
+
 - Wiring sensor rusak atau grounding buruk
 - Ketidaksesuaian kalibrasi antara sensor dan ECU
 - Sensor rusak atau tidak berfungsi
 - Supply voltage tidak stabil
 
 **Solusi**:
+
 1. **Periksa Wiring Sensor**:
    - Test kontinuitas wiring untuk semua koneksi sensor
    - Verifikasi grounding yang proper dan bersih
@@ -156,18 +168,21 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![Pressure Alerts](images/pressure-alerts.png)
 
 **Gejala**:
+
 - Warning tekanan rendah
 - Engine shutdown di bawah load
 - Pressure gauge menunjukkan nilai abnormal
 - Alarm tekanan aktif
 
 **Penyebab Potensial**:
+
 - Kegagalan mekanis dalam sistem fuel atau oil delivery
 - Threshold pressure sensor salah dikonfigurasi
 - Sensor pressure yang rusak
 - Kebocoran dalam sistem
 
 **Solusi**:
+
 1. **Inspeksi Sistem Mekanis**:
    - Periksa fuel pump, filter, dan oil pump untuk masalah mekanis
    - Verifikasi tidak ada kebocoran dalam sistem
@@ -193,18 +208,21 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 ![Throttle Calibration Error](images/throttle-calibration.png)
 
 **Gejala**:
+
 - ETB (Electronic Throttle Body) gagal kalibrasi
 - Response throttle tidak normal
 - Error TPS atau PPS
 - Engine tidak mau start dengan ETB error
 
 **Penyebab Potensial**:
+
 - Kalibrasi TPS dan PPS salah atau tidak lengkap
 - Sensor posisi throttle atau pedal rusak
 - Masalah wiring atau power supply
 - Mechanical binding pada throttle body
 
 **Solusi**:
+
 1. **Lakukan Kalibrasi Ulang**:
    - Ikuti prosedur kalibrasi TPS dan PPS seperti yang diuraikan dalam bagian setup
    - Pastikan throttle body bebas bergerak secara mekanis
@@ -234,6 +252,7 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
 Gunakan menu diagnostics software Mazduino untuk monitor sinyal voltase real-time dari sensor. Pembacaan ini membantu memvalidasi fungsionalitas sensor dan mendeteksi masalah wiring atau konfigurasi.
 
 **Cara Menggunakan**:
+
 - Buka menu Diagnostics > Sensor Readings
 - Monitor voltage readings untuk setiap sensor
 - Bandingkan dengan spesifikasi sensor
@@ -246,9 +265,13 @@ Gunakan menu diagnostics software Mazduino untuk monitor sinyal voltase real-tim
 Unit Mazduino tertentu dilengkapi LED onboard yang memberikan feedback visual untuk sistem kritikal seperti power, komunikasi, dan aktivasi output, membantu troubleshooting cepat.
 
 **LED Indicators**:
+
 - **Power LED**: Menunjukkan ECU mendapat power yang tepat
+
 - **Communication LED**: Mengindikasikan komunikasi dengan TunerStudio
+
 - **Error LED**: Menunjukkan adanya error sistem
+
 - **Activity LED**: Mengindikasikan aktivitas processor
 
 ### 3. Remote Assistance
@@ -258,6 +281,7 @@ Unit Mazduino tertentu dilengkapi LED onboard yang memberikan feedback visual un
 Jika usaha troubleshooting tidak berhasil, Mazduino mendukung remote assistance melalui tool seperti **AnyDesk**. Ini memungkinkan teknisi profesional untuk mendiagnosis dan mengatasi masalah kompleks secara remote.
 
 **Prosedur Remote Assistance**:
+
 1. Install AnyDesk pada komputer yang terhubung ke Mazduino
 2. Hubungi support Mazduino untuk appointment
 3. Share AnyDesk ID dengan teknisi
@@ -328,13 +352,3 @@ Jika usaha troubleshooting tidak berhasil, Mazduino mendukung remote assistance 
 4. **Professional Help**: Jangan ragu untuk mencari bantuan profesional untuk masalah kompleks
 
 Panduan ini memastikan pendekatan metodis untuk troubleshooting sistem Mazduino, menggunakan tool diagnostics yang tersedia untuk performa yang reliable.
-
-## Navigasi
-
-- [← Kembali ke Controller & Diagnostics](tunerstudio-controller.md)
-- [Lanjut ke Examples & Map Switching →](tunerstudio-examples.md)
-- [Kembali ke Manual Utama](tunerstudio-manual.md)
-
----
-
-*Dokumentasi troubleshooting ini menyediakan solusi komprehensif untuk masalah umum sistem Mazduino. Pendekatan sistematis dan penggunaan tool diagnostics yang tepat akan memastikan resolusi masalah yang efektif.*

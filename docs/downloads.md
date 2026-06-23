@@ -1,151 +1,126 @@
 # Downloads - Firmware dan Konfigurasi ECU Mazduino
 
-Halaman ini menyediakan firmware dan file konfigurasi untuk semua model ECU Mazduino. Pilih firmware yang sesuai berdasarkan model ECU Anda dan software manajemen mesin yang diinginkan.
-
-## Firmware Downloads
-
-### rusEFI Firmware
-
-#### Official rusEFI Firmware
-Gunakan build resmi dari rusEFI untuk kompatibilitas standar:
-
-- **mega100-F4** atau **F407 Discovery** builds dari [rusEFI Build Server](https://rusefi.com/build_server/)
-- **Catatan**: Pin mapping mungkin perlu disesuaikan manual untuk ECU Mazduino
-
-#### Custom Mazduino Firmware
-Firmware rusEFI yang dioptimalkan khusus untuk semua board Mazduino:
-
-- **Download**: [Mazduino Custom Firmware](https://github.com/amrikarisma/fw-custom-mazduino/actions/workflows/build-firmware.yaml)
-- **Pilih build terbaru** dengan status berhasil
-- **Format tersedia**:
-  - **Bundle (.zip ~40MB)**: **REKOMENDASI** - Firmware + driver + file .ini TunerStudio
-  - **File .hex**: Firmware format Intel Hex (untuk programmer)
-  - **File .bin**: Firmware format binary (untuk DFU/ST-Link)
-
-#### Keuntungan Custom Firmware:
-- Pin mapping pre-configured untuk semua versi Mazduino
-- File .ini included dengan konfigurasi yang sudah ditest
-- Driver support untuk Windows/Linux/macOS
-- Auto-update compatibility antara firmware dan TunerStudio config
-
-### Speeduino Firmware
-
-#### Custom Speeduino untuk Mazduino
-- **Download**: [Speeduino Custom Releases](https://github.com/amrikarisma/speeduino-custom/releases)
-- **PENTING**: Mazduino ECU **TIDAK MENDUKUNG** official Speeduino firmware
-- **Kompatibilitas**: Mazduino Compact dan Mini 6CH v1.3
-
-#### Catatan Speeduino:
-- **Official Speeduino**: Tidak kompatibel dengan Mazduino
-- **Custom version only**: Pin mapping khusus untuk Mazduino
-- **Mini 6CH v1.0-v1.2**: Tidak didukung, gunakan rusEFI saja
-
-## Compatibility Matrix
-
-| ECU Model | rusEFI Official | rusEFI Custom | Speeduino Custom |
-|-----------|----------------|---------------|------------------|
-| **Compact v1** | Manual config | Ready to use | Supported |
-| **Compact v2.1** | Manual config | Ready to use | Supported |
-| **Compact v2.2** | Manual config | Ready to use | Supported |
-| **Mini 6CH v1.0-v1.2** | Manual config | Ready to use | Not supported |
-| **Mini 6CH v1.3** | Manual config | Ready to use | Supported |
+Halaman ini menyediakan firmware dan file konfigurasi untuk semua model ECU Mazduino. Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.
 
 ---
 
-## Petunjuk Instalasi
+## Firmware rusEFI
 
-### Instalasi rusEFI Custom (REKOMENDASI)
+Ada dua pilihan firmware rusEFI untuk ECU Mazduino.
 
-#### Langkah 1: Download Bundle
+### Mazduino Firmware (Direkomendasikan)
 
-1. **Kunjungi**: [GitHub Actions](https://github.com/amrikarisma/fw-custom-mazduino/actions/workflows/build-firmware.yaml)
-2. **Pilih build terbaru** dengan status berhasil
-3. **Download Bundle**: Pilih file .zip (~40MB) 
-4. **Extract**: Extract ke folder kerja Anda
+Firmware rusEFI yang dikustomisasi dan dioptimalkan khusus untuk semua board Mazduino.
 
-#### Langkah 2: Flash Firmware
+- **Repositori**: [github.com/mazduino/mazduino-fw](https://github.com/mazduino/mazduino-fw)
 
-**A. STM32CubeProgrammer + ST-Link (REKOMENDASI untuk first-time install)**
+- **Releases**: [github.com/mazduino/mazduino-fw/releases](https://github.com/mazduino/mazduino-fw/releases)
 
-1. **Install STM32CubeProgrammer**: Download dari [ST website](https://www.st.com/en/development-tools/stm32cubeprog.html)
-2. **Connect Hardware**: Hubungkan ST-Link ke ECU via SWD (4-pin)
-3. **Open STM32CubeProgrammer**: Pilih ST-Link sebagai interface
-4. **Connect**: Klik Connect ke MCU
-5. **Load File**: Browse file .hex/.bin dari bundle
-6. **Program**: Klik "Download" untuk flash
+- **Build terbaru**: [Build Matrix Workflow](https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml)
 
-**B. DFU Mode (USB) - untuk ECU yang sudah ada bootloader**
+- **File INI untuk TunerStudio**: disertakan dalam bundle release (file `.zip` di halaman releases)
 
-1. **Set DFU Mode**: Tekan tombol Boot + Reset pada ECU
-2. **Connect USB**: Hubungkan ECU ke PC via USB
-3. **Flash via DFU**: Gunakan STM32CubeProgrammer atau DFU tools
+Board target yang tersedia:
 
-**C. rusEFI Console (untuk firmware updates)**
+- `mazduino-lite`
+- `mazduino-compact`
+- `mazduino-mega100`
+- `mazduino-mega100-512`
+- `mazduino-mini6ch`
 
-1. **Install rusEFI Console**: Download dari [rusefi.com](https://rusefi.com)
-2. **Connect ECU**: Via USB setelah firmware pertama ter-install
-3. **Update**: Gunakan built-in firmware update feature
+Keunggulan dibanding firmware resmi:
 
-#### Langkah 3: Konfigurasi TunerStudio
+- Pin mapping sudah pre-configured untuk semua versi Mazduino
+- File .ini untuk TunerStudio sudah disertakan dan diuji
+- Tidak perlu konfigurasi pin manual
 
-1. **Install TunerStudio**: Download dari [tunerstudio.com](https://www.tunerstudio.com)
-2. **Load .ini file**: Gunakan file .ini yang included dalam bundle
-3. **Connect**: Hubungkan ke ECU via USB
-4. **Base tune**: Load base map sesuai aplikasi mesin Anda
+**Catatan penting**: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.
 
-### Instalasi Speeduino Custom
+### Official rusEFI Firmware
 
-#### Download dan Install
+Firmware standar dari proyek rusEFI tanpa kustomisasi Mazduino.
 
-1. **Download**: [Speeduino Custom Releases](https://github.com/amrikarisma/speeduino-custom/releases)
-2. **Flash**: Gunakan STM32CubeProgrammer atau Arduino IDE
-3. **TunerStudio**: Load file .ini yang disertakan
-4. **Pin Mapping**: Verifikasi sesuai dengan ECU Mazduino yang didukung
+- **Download**: [rusefi.com/build_server/](https://rusefi.com/build_server/)
+
+Gunakan build **mega100-F4** atau **F407 Discovery** untuk board Mazduino. Firmware ini memerlukan konfigurasi pin mapping manual agar sesuai dengan hardware Mazduino. Direkomendasikan hanya untuk pengguna yang sudah familiar dengan rusEFI dan membutuhkan fitur upstream terbaru.
 
 ---
 
-## Kebutuhan Software & Hardware
+## Firmware Speeduino
 
-### Software Requirements
-- **TunerStudio MS**: [tunerstudio.com](https://www.tunerstudio.com) - Ultra version recommended
-- **STM32CubeProgrammer**: [ST website](https://www.st.com/en/development-tools/stm32cubeprog.html) - for firmware flashing
-- **rusEFI Console**: [rusefi.com](https://rusefi.com) - for rusEFI management
-- **USB Drivers**: Included in firmware bundle
+Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang telah dikustomisasi.
 
-### Hardware Requirements  
-- **ST-Link V2/V3**: Hardware programmer untuk SWD connection
-- **USB Cable**: Type-C untuk komunikasi dengan ECU
-- **SWD Cable**: 4-pin (VCC, GND, SWDIO, SWCLK) untuk programming
+- **Download**: [github.com/mazduino/speeduino-fw/releases](https://github.com/mazduino/speeduino-fw/releases)
+
+**Peringatan**: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Mini 6CH v1.0-v1.2 tidak didukung Speeduino — gunakan rusEFI.
 
 ---
 
-## Catatan Penting & Best Practices
+## Tabel Kompatibilitas
 
-### Critical Notes
-- **Official vs Custom**: Official rusEFI memerlukan manual pin configuration
-- **Speeduino Official**: TIDAK kompatibel dengan Mazduino - hanya gunakan custom version
-- **Bundle Priority**: Selalu gunakan bundle untuk memastikan firmware + .ini compatibility
-- **Hardware Specific**: Firmware ini khusus untuk Mazduino - jangan gunakan di ECU lain
-
-### Best Practices
-1. **Always backup**: Backup konfigurasi sebelum update firmware
-2. **Use Bundle**: Download bundle lengkap untuk compatibility terjamin
-3. **Verify Hardware**: Pastikan model ECU sesuai dengan firmware
-4. **Test Safe**: Test di bench sebelum install di kendaraan
-5. **Documentation**: Baca dokumentasi hardware spesifik ECU Anda
-
-### Troubleshooting
-- **Connection Issues**: Periksa USB drivers dan port settings  
-- **Flash Failures**: Pastikan programmer dan connection yang benar
-- **Pin Mapping Errors**: Gunakan file .ini dari bundle yang sama
-- **Sensor Reading**: Verifikasi wiring sesuai pin mapping dokumentasi
-
-### Support Resources
-- **Mazduino Wiki**: [github.com/amrikarisma/Mazduino/wiki](https://github.com/amrikarisma/Mazduino/wiki)
-- **rusEFI Wiki**: [wiki.rusefi.com](https://wiki.rusefi.com)
-- **Speeduino Wiki**: [wiki.speeduino.com](https://wiki.speeduino.com)
-- **TunerStudio Manual**: Tersedia di dokumentasi ini
+| Model ECU | rusEFI Official | rusEFI Mazduino | Speeduino Custom |
+|-----------|:--------------:|:---------------:|:----------------:|
+| Compact v1 | Manual config | Siap pakai | Didukung |
+| Compact v2.1 | Manual config | Siap pakai | Didukung |
+| Compact v2.2+ | Manual config | Siap pakai | Didukung |
+| Mini 6CH v1.0-v1.2 | Manual config | Siap pakai | Tidak didukung |
+| Mini 6CH v1.3+ | Manual config | Siap pakai | Didukung |
+| LITE | Manual config | Siap pakai | Tidak didukung |
+| Mega100 | Manual config | Siap pakai | Tidak didukung |
 
 ---
 
-**SAFETY WARNING**: Selalu verifikasi kompatibilitas firmware dengan model ECU Mazduino spesifik Anda sebelum flashing. Firmware yang salah dapat merusak ECU atau menyebabkan operasi mesin yang tidak aman. Test selalu di bench terlebih dahulu sebelum instalasi final.
+## Software yang Dibutuhkan
+
+- **TunerStudio MS**: [tunerstudio.com](https://www.tunerstudio.com) — software tuning dan konfigurasi ECU
+
+- **STM32CubeProgrammer**: [st.com](https://www.st.com/en/development-tools/stm32cubeprog.html) — untuk flashing firmware via ST-Link atau DFU
+
+- **rusEFI Console**: [rusefi.com](https://rusefi.com) — untuk update firmware setelah instalasi pertama
+
+---
+
+## Metode Flash Firmware
+
+### ST-Link via SWD (Instalasi Pertama)
+
+Metode ini digunakan saat ECU belum pernah di-flash sebelumnya, atau perlu full flash dari awal.
+
+**Hardware yang dibutuhkan**: ST-Link V2 atau V3, kabel SWD 4-pin (VCC, GND, SWDIO, SWCLK).
+
+1. Install STM32CubeProgrammer dari situs ST.
+2. Hubungkan ST-Link ke ECU melalui port SWD.
+3. Buka STM32CubeProgrammer, pilih ST-LINK sebagai interface, lalu klik Connect.
+4. Browse dan pilih file .hex atau .bin firmware Mazduino.
+5. Klik Download untuk mulai proses flash.
+6. Setelah selesai, lepas ST-Link dan nyalakan ECU.
+
+### DFU via USB (Update Firmware)
+
+Metode ini menggunakan mode DFU (Device Firmware Upgrade) melalui USB, tanpa memerlukan ST-Link. ECU harus sudah pernah di-flash sebelumnya.
+
+1. Tekan dan tahan tombol Boot pada ECU, lalu tekan Reset.
+2. Lepas tombol Reset, lalu lepas tombol Boot — ECU masuk ke mode DFU.
+3. Hubungkan ECU ke PC via USB.
+4. Buka STM32CubeProgrammer, pilih USB sebagai interface, lalu klik Connect.
+5. Load file firmware dan klik Download.
+
+### rusEFI Console (Update Setelah Instalasi Pertama)
+
+Setelah firmware pertama ter-install, update selanjutnya dapat dilakukan langsung melalui rusEFI Console tanpa mode DFU.
+
+1. Hubungkan ECU ke PC via USB.
+2. Buka rusEFI Console dan pilih port yang sesuai.
+3. Gunakan fitur firmware update yang tersedia di console.
+
+---
+
+## Konfigurasi TunerStudio
+
+Setelah firmware ter-flash:
+
+1. Install TunerStudio dari [tunerstudio.com](https://www.tunerstudio.com).
+2. Buat project baru di TunerStudio.
+3. Extract bundle release dan load file `.ini` yang sesuai versi firmware yang digunakan.
+4. Hubungkan ECU ke PC via USB dan pilih port yang benar.
+5. Load base map sesuai konfigurasi mesin Anda sebagai titik awal tuning.

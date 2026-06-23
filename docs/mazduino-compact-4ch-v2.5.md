@@ -7,8 +7,11 @@ ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-ch
 **Pembaruan v2.5:**
 
 - **Pembaruan Pin Mapping MCU pada High Side**: High side kini menjadi dua kanal independen dengan mapping **HS1 = PD15** dan **HS2 = PD14**
+
 - **Optimasi Hall Input**: Perbaikan jalur dan conditioning input hall (CKP/CMP) untuk sinyal trigger lebih stabil pada rpm rendah maupun tinggi
+
 - **Optimasi Analog Input**: Penyempurnaan filtering analog untuk meningkatkan akurasi pembacaan sensor dan ketahanan terhadap noise
+
 - **PCB Optimization**: Penyempurnaan routing dan konfigurasi jumper untuk fleksibilitas instalasi
 
 ![Mazduino Compact 4ch v2.5](img/mazduino-compact-4ch-v2.3.jpeg)
@@ -23,6 +26,7 @@ ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-ch
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
 - 3 input digital pullup untuk AC Switch, VSS, dan Clutch
 - 6x driver low-side arus tinggi 3A: 4 injektor + Idle 1 + Idle 2
+
 - 5x driver low-side arus rendah untuk main relay, fuel pump, AC compressor, fan, dan tacho
 - 4x output 12V atau 5V untuk sinyal koil pengapian
 - **2x High Side Switching** untuk kontrol alternator, VVT, atau 12V switching tambahan
@@ -33,17 +37,21 @@ ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-ch
 
 ### Pembaruan High Side (v2.5)
 - **HS1 (utama)** menggunakan pin MCU **PD15**
+
 - **HS2 (tambahan)** menggunakan pin MCU **PD14**
+
 - Pada konektor, terdapat opsi **GND / HS2 (Jumper)** untuk menyesuaikan mode pemakaian
 - Memungkinkan kontrol beban 12V lebih fleksibel untuk kebutuhan setup lanjutan
 
 ### Optimasi Hall Input (v2.5)
 - Alokasi pin hall tetap: **CKP = PD3** dan **CMP = PD4**
+
 - Peningkatan dilakukan pada sisi jalur/rangkaian input (tanpa perubahan pin mapping)
 - Tujuan optimasi: memperbaiki stabilitas trigger dan mengurangi gangguan noise
 
 ### Optimasi Analog Input (v2.5)
 - Alokasi pin analog tetap: MAP, TPS, IAT, CLT, O2, dan spare analog tidak berubah
+
 - Perbaikan berada pada filtering dan kualitas conditioning sinyal analog
 - Tujuan optimasi: pembacaan sensor lebih konsisten dan akurat
 
@@ -135,8 +143,8 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Main Relay | PE8 | - |
 | Idle 1 | PD9 | - |
 | Idle 2 | PD10 | - |
-| **High Side Output 1 (HS1)** | **PD15** | **🔄 Pin high side diperbarui** |
-| **High Side Output 2 (HS2)** | **PD14** | **🆕 Kanal high side baru** |
+| **High Side Output 1 (HS1)** | **PD15** | **Pin high side diperbarui** |
+| **High Side Output 2 (HS2)** | **PD14** | **Kanal high side baru** |
 | TXD1 | PA9 | - |
 | RXD1 | PA10 | - |
 | TXD3 | PB10 | - |

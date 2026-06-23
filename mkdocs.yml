@@ -16,6 +16,7 @@ nav:
     - v1.0-v1.2: mazduino-mini-6ch-v1.0-v1.2.md
     - v1.3: mazduino-mini-6ch-v1.3.md
     - v1.3B: mazduino-mini-6ch-v1.3b.md
+    - v1.3C: mazduino-mini-6ch-v1.3c.md
     - v1.4: mazduino-mini-6ch-v1.4.md
   - Mazduino Core: 
     - rev0: mazduino-core-rev0.md
@@ -33,6 +34,18 @@ nav:
     - Controller & Diagnostics: tunerstudio-controller.md
     - Troubleshooting: tunerstudio-troubleshooting.md
     - Examples & Map Switching: tunerstudio-examples.md
+  - Firmware:
+    - Overview: firmware/index.md
+    - CAN Input:
+      - CAN Sensor Input: firmware/can-sensor-input.md
+      - CAN Analog Input: firmware/can-analog-input.md
+      - CAN Virtual Input (Digital): firmware/can-virtual-input.md
+    - CAN Output: firmware/can-output.md
+    - Math Channels: firmware/math-channels.md
+    - User Tables: firmware/user-tables.md
+    - Logic Outputs: firmware/logic-outputs.md
+    - Spark Cut & Fuel Cut: firmware/fuel-spark-cut.md
+  - Ucapan Terima Kasih: acknowledgments.md
   - Tentang: about.md
-theme: 
+theme:
   name: readthedocs

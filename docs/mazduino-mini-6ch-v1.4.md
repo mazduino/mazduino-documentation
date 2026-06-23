@@ -5,9 +5,13 @@
 Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel terbaru dengan fitur-fitur canggih yang dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor STM32F407VGT6 ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dengan dukungan penuh untuk teknologi terdepan seperti Variable Valve Timing (VVT), Boost Control, dan dual Electronic Throttle Body (ETB).
 
 **Fitur Baru v1.4:**
+
 - **VVT (Variable Valve Timing)**: Kontrol timing katup variabel untuk performa dan efisiensi optimal
+
 - **BOOST Control**: Kontrol boost pressure terintegrasi untuk aplikasi forced induction
+
 - **Dual ETB IC**: Dukungan dual Electronic Throttle Body dengan IC driver terintegrasi
+
 - **Enhanced Idle Control**: Driver khusus untuk Electronic Throttle Body atau Idle Stepper Motor
 
 ![Mazduino Mini 6ch](img/mazduino-mini-6ch-v1.4.jpeg)
@@ -23,9 +27,13 @@ Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel terbaru dengan fitur
 - 6x output 12V atau 5V untuk sinyal koil pengapian
 - Knock Input untuk deteksi ketukan mesin
 - **VVT Control (v1.4)**: Kontrol Variable Valve Timing untuk optimasi performa
+
 - **Boost Control (v1.4)**: Kontrol boost pressure dengan PWM presisi
+
 - **Dual ETB Support (v1.4)**: Dukungan dual Electronic Throttle Body dengan IC driver terintegrasi
+
 - **ETB/Stepper Compatibility (v1.4)**: Dapat menggunakan driver untuk ETB atau Idle Stepper Motor
+
 - Dukungan untuk Modul VR Conditioner tambahan
 - Prosesor 168 MHz ARM Cortex-M4
 - Komunikasi data via CANbus
@@ -34,78 +42,104 @@ Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel terbaru dengan fitur
 - Konektor otomotif 48-pin
 - Kartu SD untuk data logging
 
-## ⚙️ Konfigurasi Jumper
+## Konfigurasi Jumper
 
 Mazduino Mini 6CH v1.4 dilengkapi dengan sistem jumper solder yang memungkinkan kustomisasi fungsi sesuai kebutuhan aplikasi Anda. Jumper ini memberikan fleksibilitas konfigurasi tanpa perlu mengubah firmware, memastikan kompatibilitas optimal dengan berbagai setup mesin.
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6232.jpeg)
 
-### 🔌 Zona Konfigurasi Atas (Kanan)
+### Zona Konfigurasi Atas (Kanan)
 
 #### JP11 - Tachometer Pullup
 - **Fungsi**: Menentukan tegangan sinyal output tachometer
+
 - **Pilihan**: 12V atau 5V
+
 - **Aplikasi**: Sesuaikan dengan kompatibilitas dashboard kendaraan Anda
 
 #### Ignition VDrive Jumper
 - **Fungsi**: Mengatur tegangan sinyal pengapian untuk **Smart Coil Only**
+
 - **Pilihan**: Sinyal 12V atau 5V
+
 - **Khusus Smart Coil**: Jumper ini hanya untuk smart coil dengan driver internal
-- **⚠️ PENTING**: Dump coil memerlukan IGBT eksternal 
+
+- **PENTING**: Dump coil memerlukan IGBT eksternal 
 
 #### Knock/PC13 Input Selection
 - **Mode Knock**: Input sensor knock untuk deteksi ketukan mesin (default)
+
 - **Mode PC13**: Akses langsung ke pin MCU untuk fungsi custom
+
 - **Enhanced v1.4**: Sensitivitas knock detection yang ditingkatkan
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6229.jpeg)
 
-### 🎛️ Zona Konfigurasi Tengah
+### Zona Konfigurasi Tengah
 
 #### JP5 & JP4 - Sensor Pullup Configuration
 - **JP5**: Pullup 5V untuk sinyal CKP (Crankshaft Position)
+
 - **JP4**: Pullup 5V untuk sinyal CMP (Camshaft Position)
+
 - **Manfaat**: Sinyal trigger yang bersih dan stabil
 
 #### JP3 & JP2 - Sensor Type Selection
 - **JP3**: Mode sinyal CKP (VR atau Hall sensor)
+
 - **JP2**: Mode sinyal CMP (VR atau Hall sensor)
+
 - **Fleksibilitas**: Kompatibel dengan berbagai jenis sensor posisi
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6230.jpeg)
 
-### 🌐 Zona Konfigurasi Kiri
+### Zona Konfigurasi Kiri
 
 #### JP10 - CAN Bus Controller
 - **Fungsi**: Mengaktifkan IC CAN bus TJA1051T/3
+
 - **Aplikasi**: Komunikasi data high-speed dengan perangkat lain
+
 - **Protocol**: Mendukung standar automotive CAN 2.0
 
 #### JP6 - ETB/Stepper Motor Mode Selection (Baru di v1.4)
 - **Mode ETB**: Konfigurasi untuk Electronic Throttle Body dengan IC driver terintegrasi
+
 - **Mode Stepper**: Konfigurasi untuk Idle Stepper Motor control
+
 - **Fleksibilitas**: Dapat mengganti fungsi tanpa mengubah hardware
+
 - **Default**: Mode ETB untuk aplikasi throttle control modern
 
 #### JP7 & JP8 - Knock Sensor Filter Bypass
 - **Fungsi**: Bypass filter untuk sensor knock
+
 - **JP7**: Bypass filter knock channel 1
+
 - **JP8**: Bypass filter knock channel 2
+
 - **Advanced Feature**: Fine-tuning sensitivitas deteksi knock
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6231.jpeg)
 
-### 💡 Tips Konfigurasi Jumper
+### Tips Konfigurasi Jumper
 
-#### ⚡ Pengaturan Optimal v1.4:
+#### Pengaturan Optimal v1.4:
+
 - **Smart Coils**: Gunakan VDrive 5V untuk Coil dengan sinyal 5V dan 12V untuk coil dengan sinyal 12V
+
 - **Dump/Conventional Coils**: Memerlukan IGBT eksternal
+
 - **VR Sensors**: Aktifkan pullup dan pilih mode VR untuk sinyal bersih
+
 - **Hall Sensors**: Nonaktifkan pullup dan pilih mode Hall
+
 - **ETB Mode**: Pilih mode ETB untuk aplikasi throttle elektronik modern
+
 - **Stepper Mode**: Pilih mode stepper untuk kontrol idle konvensional
 
-#### 🔧 Best Practices:
+#### Best Practices:
+
 1. **Pre-Installation**: Konfigurasi jumper sebelum instalasi final
 2. **Documentation**: Catat konfigurasi jumper untuk referensi masa depan
 3. **Testing**: Verifikasi sinyal setelah perubahan konfigurasi jumper
@@ -113,13 +147,20 @@ Mazduino Mini 6CH v1.4 dilengkapi dengan sistem jumper solder yang memungkinkan 
 5. **ETB Testing**: Test driver ETB sebelum menghubungkan throttle body aktual
 6. **VVT Calibration**: Kalibrasi sistem VVT dengan hati-hati
 
-#### ⚠️ Perhatian Khusus:
+#### Perhatian Khusus:
+
 - **Jenis Coil Kritis**: VDrive hanya untuk smart coil - dump coil butuh IGBT eksternal
+
 - **ETB Safety**: Dual ETB memerlukan konfigurasi failsafe yang tepat
+
 - **High Current**: Output VVT dan Boost dapat menangani arus tinggi, pastikan wiring memadai
+
 - **Solder dengan Hati-hati**: Gunakan suhu solder yang tepat
+
 - **Verifikasi Koneksi**: Pastikan sambungan solder yang solid
+
 - **Konsultasi Skematik**: Rujuk diagram untuk konfigurasi lanjutan
+
 - **Power Off**: Selalu matikan power saat mengubah jumper
 
 ## Wiring dan Instalasi
@@ -254,7 +295,9 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Variable Valve Timing (VVT) - Baru di v1.4
 - **Pin 4 (VVT)**: Output kontrol VVT dengan PWM presisi
+
 - **MCU Pin**: PB6 untuk kontrol timing katup variabel
+
 - **Aplikasi**: 
   - Optimasi torsi dan power di berbagai RPM
   - Pengurangan emisi dan konsumsi bahan bakar
@@ -263,7 +306,9 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Boost Control System - Baru di v1.4
 - **Pin 6 (BOOST)**: Output kontrol boost pressure
+
 - **MCU Pin**: PB4 untuk kontrol wastegate atau blow-off valve
+
 - **Aplikasi**:
   - Kontrol boost pressure pada aplikasi turbocharger
   - Managemen overboost protection
@@ -272,10 +317,15 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Dual Electronic Throttle Body (ETB) - Baru di v1.4
 - **ETB1**: Pin 33/34 (ETB-/ETB+) dengan kontrol PB8, PB9, PA8
+
 - **ETB2**: Pin 11/12 (ETB2-/ETB2+) dengan kontrol PD12, PD11, PD14 **[BARU]**
+
 - **Dual TPS Support**: TPS1 (pin 30) dan TPS2 (pin 43)
+
 - **Dual PPS Support**: PPS1 (pin 18) dan PPS2 (pin 35)
+
 - **IC Driver Terintegrasi**: Driver H-bridge dengan proteksi overcurrent
+
 - **Aplikasi**:
   - Sistem throttle redundant untuk aplikasi kritis
   - Dual throttle untuk mesin V-configuration
@@ -283,11 +333,15 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### Enhanced Idle Control - v1.4
 - **Dual Mode Operation**: ETB atau Stepper Motor control
+
 - **ETB Mode**: Menggunakan driver ETB untuk throttle control presisi
+
 - **Stepper Mode**: Kontrol tradisional dengan stepper motor driver
+
 - **Pin Assignment**: 
   - IDLE1 (pin 2): PD10 untuk kontrol idle 1
   - IDLE2 (pin 3): PE9 untuk kontrol idle 2
+
 - **Fleksibilitas**: Dapat dikonfigurasi via jumper JP6
 
 #### High Current Low Side Outputs - Enhanced v1.4
@@ -303,7 +357,9 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 #### 1. Persiapan Sistem
 - **Power Supply**: Pastikan sistem kelistrikan 12V stabil
+
 - **Grounding**: Gunakan multiple ground points untuk noise reduction
+
 - **Cooling**: Pasang ECU dengan ventilasi memadai
 
 #### 2. Instalasi Dasar
@@ -355,154 +411,116 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 
 ##### Idle Control Setup (v1.4)
 - **Mode ETB**: Konfigurasi jumper JP6 untuk mode ETB
+
 - **Mode Stepper**: Konfigurasi jumper JP6 untuk mode stepper
+
 - **Pin Assignment**:
   - IDLE1 (pin 2) untuk primary idle control
   - IDLE2 (pin 3) untuk secondary atau backup
 
 ##### High Current Outputs (Injector 5&6)
 - **VVT Control**: Gunakan injector 5/6 untuk VVT tambahan
+
 - **Boost Control**: Alternative boost control output
+
 - **Water/Meth Injection**: Kontrol sistem injeksi tambahan
-
-### Catatan Instalasi v1.4
-
-#### ⚠️ Safety Considerations
-1. **ETB Safety**: Dual ETB memerlukan sistem failsafe yang robust
-2. **VVT Timing**: Incorrect VVT timing dapat merusak engine
-3. **Boost Limits**: Set boost limits untuk melindungi engine
-4. **High Current**: Pastikan wiring memadai untuk output arus tinggi
-
-#### 🔧 Best Practices
-1. **Testing**: Test setiap sistem secara terpisah sebelum integrasi
-2. **Documentation**: Catat semua konfigurasi untuk troubleshooting
-3. **Backup**: Simpan konfigurasi TunerStudio sebagai backup
-4. **Monitoring**: Monitor semua parameter selama initial tuning
-5. **Professional Tuning**: Konsultasi dengan tuner berpengalaman untuk setup kompleks
-
-#### 📊 Performance Optimization
-- **VVT Mapping**: Map VVT timing untuk berbagai kondisi RPM/load
-- **Boost Control**: Tune boost control untuk response optimal
-- **ETB Response**: Kalibrasi ETB response untuk drivability terbaik
-- **Integration**: Optimasi interaksi antara VVT, boost, dan ETB
-
-## Dukungan dan Sumber Daya
-
-### Dokumentasi v1.4
-- **Enhanced Manual**: Dokumentasi lengkap dengan fitur-fitur baru v1.4
-- **VVT Tuning Guide**: Panduan tuning Variable Valve Timing
-- **Boost Control Setup**: Tutorial setup sistem boost control
-- **Dual ETB Configuration**: Panduan konfigurasi dual throttle body
-- **Wiring Diagrams**: Diagram wiring dengan fitur-fitur baru v1.4
-
-### File Firmware & Konfigurasi
-- **[Halaman Download](downloads.md)** - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio
-- **rusEFI v1.4 Support**: Firmware dengan dukungan penuh fitur v1.4
-- **TunerStudio Templates**: Template konfigurasi siap pakai
-- **Pin Mapping Files**: File konfigurasi pin mapping untuk v1.4
-- **Example Configurations**:
-  - VVT setup examples
-  - Boost control configurations
-  - Dual ETB setups
-
-### Community Support
-- **Forum Mazduino**: Diskusi teknis dan troubleshooting
-- **rusEFI Community**: Dukungan firmware dan tuning
-- **Facebook Groups**: Komunitas pengguna Indonesia
-- **YouTube Channel**: Tutorial video dan case studies
-
-## Kompatibilitas dan Upgrade
-
-### Upgrade dari v1.3 ke v1.4
-- **Hardware**: Tidak kompatibel langsung - perlu penggantian ECU
-- **Wiring**: Beberapa pin assignment berubah, perlu rewiring
-- **Firmware**: Menggunakan firmware rusEFI khusus v1.4
-- **Configuration**: Template TunerStudio baru untuk fitur v1.4
-
-### Firmware Support
-- **rusEFI**: Dukungan penuh dengan konfigurasi khusus v1.4
-- **Speeduino**: Dalam development untuk dukungan fitur v1.4
-- **Custom Firmware**: Dokumentasi pin mapping tersedia untuk development
-
-### Accessories Compatibility
-- **VR Conditioner Module**: Compatible dengan modul existing
-- **CAN Bus Devices**: Compatible dengan standar automotive CAN
-- **SD Card**: Mendukung kartu SD hingga 32GB untuk data logging
-- **USB Type-C**: Komunikasi high-speed untuk tuning dan diagnostics
 
 ## Spesifikasi Teknis v1.4
 
 ### Hardware Specifications
 - **MCU**: STM32F407VGT6 ARM Cortex-M4 @ 168MHz
+
 - **Flash Memory**: 1MB untuk firmware dan konfigurasi
+
 - **RAM**: 192KB untuk operasi real-time
+
 - **ADC**: 12-bit resolution, 1µs sampling time
+
 - **PWM Resolution**: 16-bit untuk kontrol presisi
+
 - **Operating Temperature**: -40°C to +85°C
+
 - **Input Voltage**: 9V - 16V (12V nominal)
+
 - **Current Consumption**: <200mA @ 12V
+
 - **Dimensions**: Compatible dengan mounting bracket existing
 
 ### Performance Specifications
 - **Maximum RPM**: 20,000 RPM (configurable)
+
 - **Injection Timing Resolution**: 0.1ms
+
 - **Ignition Timing Resolution**: 0.1° crank angle
+
 - **VVT Response Time**: <100ms typical
+
 - **ETB Response Time**: <50ms typical
+
 - **Boost Control Response**: <200ms typical
+
 - **Data Logging Rate**: Up to 100Hz per channel
 
 ### Output Specifications
 - **High Current Outputs**: 8x @ 3A continuous (injectors, VVT, boost)
+
 - **Low Current Outputs**: 5x @ 500mA (relays, tacho)
+
 - **Ignition Outputs**: 6x @ 12V/5V selectable
+
 - **ETB Outputs**: 2x H-bridge @ 10A peak
+
 - **VVT Output**: PWM @ 1kHz, 3A continuous
+
 - **Boost Output**: PWM @ 100Hz, 3A continuous
 
 ### Input Specifications
 - **Analog Inputs**: 7x 0-5V, 12-bit resolution
+
 - **Digital Inputs**: 4x with internal pullup
+
 - **VR Inputs**: 2x with conditioning circuit
+
 - **Knock Inputs**: 1x with integrated amplifier and filter
+
 - **CAN Bus**: ISO 11898 compliant
+
 - **Serial**: 2x UART (USB + dedicated)
 
 ## Catatan Penting v1.4
 
 ### Persyaratan Sistem Pengapian
 - **Smart Coils**: Koneksi langsung didukung dengan voltage selection
+
 - **Dump Coils**: IGBT eksternal diperlukan untuk operasi yang tepat
+
 - **Coil Selection**: Critical untuk system reliability dan performance
 
 ### Variable Valve Timing (VVT)
 - **Engine Compatibility**: Pastikan engine mendukung VVT mechanism
+
 - **Actuator Selection**: Gunakan VVT actuator yang sesuai dengan engine
+
 - **Timing Safety**: Incorrect VVT timing dapat menyebabkan valve interference
+
 - **Oil Pressure**: VVT memerlukan oil pressure minimal untuk operasi
 
 ### Boost Control System
 - **Turbo/Supercharger**: Compatible dengan berbagai jenis forced induction
+
 - **Wastegate Type**: Mendukung pneumatic dan electronic wastegate
+
 - **Safety Limits**: Set overboost protection untuk keamanan engine
+
 - **Response Tuning**: Tune PID parameters untuk response optimal
 
 ### Dual ETB System
 - **Failsafe Critical**: Dual ETB harus memiliki sistem failsafe yang robust
+
 - **TPS Redundancy**: Dual TPS untuk safety dan accuracy
+
 - **PPS Redundancy**: Dual PPS untuk pedal input validation
+
 - **Emergency Mode**: Konfigurasi limp-home mode untuk kondisi emergency
 
-### Sistem Terintegrasi
-- **VVT + Boost**: Koordinasi antara VVT dan boost untuk performance optimal
-- **ETB + VVT**: Integrasi throttle control dan valve timing
-- **All Systems**: Tuning holistik untuk performa dan efisiensi maksimal
-
-### Professional Installation Recommended
-Mengingat kompleksitas fitur-fitur baru v1.4, sangat disarankan untuk menggunakan jasa installer dan tuner yang berpengalaman dengan sistem:
-- Variable Valve Timing
-- Electronic Boost Control
-- Dual Electronic Throttle Body
-- Advanced engine management systems
-
-Dokumentasi ini memberikan overview komprehensif, namun implementasi yang optimal memerlukan pemahaman mendalam tentang engine management dan tuning experience.
+**[Download firmware dan file konfigurasi](downloads.md)**

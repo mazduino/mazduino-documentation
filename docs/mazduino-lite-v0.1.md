@@ -14,26 +14,37 @@ Mazduino LITE v0.1 adalah varian pertama dari keluarga ECU Mazduino LITE yang di
 
 ### Sistem Input
 - **Trigger Input**: CKP dan CMP untuk Hall/Optical sensors
+
 - **VR Support**: Variable Reluctance sensors dengan konditioner module
+
 - **Analog Inputs**: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare
+
 - **Digital Inputs**: 5x pullup untuk AC Switch, VSS, Clutch, dan launch control
+
 - **Sensor Power**: 5V regulated dengan internal fuse protection
 
 ### Sistem Output
 - **Injection**: 4x high-current drivers untuk sequential atau batch mode
+
 - **Ignition**: 2x outputs dengan Smart Coil (5V/12V) support
   - **v0.1**: IGBT footprint tidak umum - **gunakan IGBT eksternal atau COP**
+
 - **Control**: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer
+
 - **Idle Control**: 2x PWM outputs untuk ISC valve
 
 ### Komunikasi
 - **USB Type-C**: Modern connector untuk tuning dan programming
+
 - **CAN Bus**: 4-pin connector dengan power selection (5V/12V)
+
 - **Serial**: RX/TX pins untuk additional communication
 
 ### Penyimpanan dan Timing
 - **SD Card**: Micro SD untuk onboard data logging (max 32GB)
+
 - **RTC**: Battery-backed real-time clock
+
 - **Processor**: ARM Cortex-M4 STM32F4 series
 
 ## Sistem Konektor
@@ -150,15 +161,21 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 
 #### Top Side Board
 - **Coil Voltage**: 12V/5V selection (default berdasarkan coil type)
+
 - **CAN Terminator**: Enable/disable resistor terminator
+
 - **VR Conditioner**: 8-pin connector untuk VR module
 
 #### Bottom Side Board
 - **Tacho Signal**: 5V/12V output selection (default 12V)
+
 - **IGN1/IGN2 Mode**: Smart Coil selection (JP3/JP4)
   - **v0.1**: **Hanya gunakan Smart Coil** - IGBT footprint tidak umum
+
 - **VR1/Hall, VR2/Hall**: Input type selection
+
 - **Digital Pullup**: Enable internal pullup resistors
+
 - **CAN Power**: 12V/5V pada CAN connector
 
 ### Peringatan Keselamatan

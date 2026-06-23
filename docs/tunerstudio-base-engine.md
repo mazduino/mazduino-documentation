@@ -35,6 +35,7 @@ Menu **Base Engine** dalam TunerStudio berisi pengaturan esensial yang berkaitan
 **Layout** dropdown memungkinkan Anda memilih kompleksitas tampilan pengaturan:
 
 - **Tuning Layout**: Direkomendasikan untuk sebagian besar pengguna, terutama yang menggunakan Mazduino Plug and Play. Layout ini menyembunyikan beberapa tombol yang jarang digunakan, menciptakan interface yang lebih bersih
+
 - **Full Layout**: Menampilkan semua opsi untuk konfigurasi lengkap. Manual ini menggunakan Full layout untuk memastikan kejelasan
 
 ![Base Engine Settings][image28]
@@ -71,22 +72,30 @@ Menentukan metode yang digunakan untuk menghitung fuel delivery. Opsi yang terse
 
 #### 1. Speed Density
 - **Prinsip**: Menggunakan intake manifold pressure (MAP) dan intake air temperature (IAT) untuk menghitung air density dan fuel requirements
+
 - **Aplikasi**: Strategi umum, terutama untuk naturally aspirated atau turbocharged engines
+
 - **Keuntungan**: Reliable dan well-tested untuk sebagian besar aplikasi
 
 #### 2. MAF Air Charge
 - **Prinsip**: Bergantung pada Mass Air Flow (MAF) sensor untuk mengukur jumlah udara yang masuk engine secara langsung
+
 - **Aplikasi**: Efektif untuk engine yang dilengkapi dengan MAF sensor
+
 - **Keuntungan**: Direct measurement dari airflow
 
 #### 3. Alpha-N
 - **Prinsip**: Menggunakan throttle position sebagai load input utama untuk kalkulasi fuel
+
 - **Aplikasi**: Digunakan pada engine dengan individual throttle bodies atau yang tidak memiliki MAP signal yang reliable
+
 - **Keuntungan**: Cocok untuk ITB setups dan modified intake systems
 
 #### 4. Lua
 - **Prinsip**: Memungkinkan kalkulasi fuel custom menggunakan Lua scripting
+
 - **Aplikasi**: Aplikasi tuning yang highly specific di mana strategi lain tidak applicable
+
 - **Keuntungan**: Fleksibilitas maksimum untuk custom applications
 
 ## Rekomendasi Berdasarkan Tipe Unit
@@ -120,8 +129,11 @@ Menentukan metode yang digunakan untuk menghitung fuel delivery. Opsi yang terse
 
 ### Troubleshooting
 - **Engine tidak start**: Periksa firing order dan trigger settings
+
 - **Rough idle**: Verifikasi number of cylinders dan displacement
+
 - **Poor fuel economy**: Review fuel strategy selection
+
 - **Inconsistent performance**: Check engine metadata untuk akurasi
 
 ---

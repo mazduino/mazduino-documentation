@@ -16,27 +16,39 @@ Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluar
 
 ### Sistem Input
 - **Trigger Input**: CKP dan CMP untuk Hall/Optical sensors
+
 - **VR Support**: Variable Reluctance sensors dengan konditioner module
+
 - **Analog Inputs**: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare
+
 - **Digital Inputs**: 5x pullup untuk AC Switch, VSS, Clutch, dan launch control
+
 - **Sensor Power**: 5V regulated dengan internal fuse protection
+
 - **Barometer Internal**: **Tersedia pada v0.2 (optional, tidak terpasang default kecuali diminta)**
 
 ### Sistem Output
 - **Injection**: 4x high-current drivers untuk sequential atau batch mode
+
 - **Ignition**: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support
   - **v0.2**: IGBT footprint **D2Pak to 263** yang umum dan mudah ditemukan
+
 - **Control**: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer
+
 - **Idle Control**: 2x PWM outputs untuk ISC valve
 
 ### Komunikasi
 - **USB Type-C**: Modern connector untuk tuning dan programming
+
 - **CAN Bus**: 4-pin connector dengan power selection (5V/12V)
+
 - **Serial**: RX/TX pins untuk additional communication
 
 ### Penyimpanan dan Timing
 - **SD Card**: Micro SD untuk onboard data logging (max 32GB)
+
 - **RTC**: Battery-backed real-time clock
+
 - **Processor**: ARM Cortex-M4 STM32F4 series
 
 ## Sistem Konektor
@@ -150,6 +162,7 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 **Tambahan v0.2**: Pin mapping untuk **Barometric Pressure Sensor**
 
 - **BARO SCL**: PB10 (shared dengan TXD3)
+
 - **BARO SDA**: PB11 (shared dengan RXD3)
 
 ## Konfigurasi Hardware
@@ -160,15 +173,21 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 
 #### Top Side Board
 - **Coil Voltage**: 12V/5V selection (default berdasarkan coil type)
+
 - **CAN Terminator**: Enable/disable resistor terminator
+
 - **VR Conditioner**: 8-pin connector untuk VR module
 
 #### Bottom Side Board
 - **Tacho Signal**: 5V/12V output selection (default 12V)
+
 - **IGN1/IGN2 Mode**: Smart Coil/IGBT selection (JP3/JP4)
   - **v0.2**: IGBT internal dengan footprint **D2Pak to 263** (umum & mudah ditemukan)
+
 - **VR1/Hall, VR2/Hall**: Input type selection
+
 - **Digital Pullup**: Enable internal pullup resistors
+
 - **CAN Power**: 12V/5V pada CAN connector
 
 ### Perbaikan pada v0.2
@@ -176,8 +195,11 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 **Perbaikan Utama:**
 
 - **Jalur PCB**: Perbaikan routing dan koreksi jalur untuk kemudahan jumper
+
 - **IGBT Compatibility**: Footprint yang lebih umum dan mudah ditemukan
+
 - **Barometer Support**: Mounting untuk sensor barometer internal (optional)
+
 - **Pin Assignment**: Optimasi pin assignment untuk konektor 33-pin
 
 ### Sensor Barometer Internal (Optional)
@@ -187,9 +209,13 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 **Spesifikasi:**
 
 - **Sensor Type**: Barometric Pressure Sensor
+
 - **Interface**: I2C
+
 - **Pin MCU**: BARO SCL (PB10), BARO SDA (PB11)
+
 - **Ketersediaan**: Optional - tidak terpasang default, dapat diminta saat pembelian
+
 - **Fungsi**: Koreksi altitude dan referensi tekanan atmosfer
 
 **Cara Pemesanan:**
@@ -224,7 +250,9 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 **CATATAN PINOUT v0.2**:
 
 - **Pin 7**: Ground Coil (berbeda dengan v0.1)
+
 - **Pin 9**: Ignition 2 (berbeda dengan v0.1)
+
 - **Periksa kembali koneksi saat upgrade dari v0.1**
 
 ## Perbandingan dengan v0.1

@@ -52,10 +52,12 @@ Submenu **Limits and Protection** di bawah **Base Engine** mencakup pengaturan e
 
 #### Basic RPM Settings
 - **RPM hard limit (RPM)**: RPM maksimum sebelum cut actions (fuel atau spark) dipicu
+
 - **RPM limit hysteresis (RPM)**: Buffer di bawah RPM hard limit untuk menghindari rapid cycling
 
 #### Boost Cut Limits
 - **Boost cut pressure (kPa absolute)**: Tekanan boost maksimum absolut yang diizinkan
+
 - **Boost cut pressure hysteresis (kPa absolute)**: Range tekanan di bawah cut limit untuk kontrol yang lebih smooth
 
 ### Injector Duty Cycle Limiter
@@ -67,14 +69,18 @@ Submenu **Limits and Protection** di bawah **Base Engine** mencakup pengaturan e
 
 #### Sustained Protection
 - **Sustained injector duty cycle limit (%)**: Limit untuk operasi berkelanjutan
+
 - **Sustained injector duty cycle delay (seconds)**: Waktu delay sebelum limit sustained aktif
+
 - Memungkinkan high fuel demands sementara sambil melindungi injectors dari prolonged stress
 
 ### Soft RPM Limit Options
 
 #### Gradual Engagement
 - **Window size (RPM)**: Range RPM untuk gradual engagement
+
 - **Timing retard (degrees)**: Retard timing secara bertahap
+
 - **Fuel added (%)**: Tambahan fuel untuk smooth transition
 
 Opsi-opsi ini memungkinkan membuat "soft" limiter yang gradually engage, bukan abruptly cutting fuel atau spark.
@@ -83,6 +89,7 @@ Opsi-opsi ini memungkinkan membuat "soft" limiter yang gradually engage, bukan a
 
 #### Throttle-Based Limiting
 - **Soft limiter start RPM**: RPM mulai throttle closing
+
 - **Soft limiter range (RPM)**: Range RPM untuk gradual throttle closing
 
 Secara bertahap menutup throttle saat RPM mendekati limit, memberikan smooth limiter response.
@@ -94,6 +101,7 @@ Secara bertahap menutup throttle saat RPM mendekati limit, memberikan smooth lim
 ### Configuration Options
 
 **Minimum oil pressure after start (kPa)**:
+
 - Field untuk memasukkan nilai minimum oil pressure dalam kilopascals
 - Jika oil pressure turun di bawah threshold ini selama operasi, sistem akan mengaktivasi protective measure
 - Essential untuk engine longevity, terutama high-performance atau heavily modified engines
@@ -133,7 +141,9 @@ Lambda protection hanya aktif saat semua kondisi berikut terpenuhi:
 **Lambda Difference Table** (sisi kanan window) memungkinkan setting maksimum allowable deviation dalam Lambda values:
 
 - **Y-axis**: Load
+
 - **X-axis**: RPM  
+
 - **Z-axis values**: Lambda values (bukan AFR)
 
 Table ini membantu menentukan Lambda deviation limits di bawah berbagai engine loads dan RPMs.
@@ -142,12 +152,16 @@ Table ini membantu menentukan Lambda deviation limits di bawah berbagai engine l
 
 ### Conservative Settings (Recommended untuk pemula)
 - **RPM limit**: 500-1000 RPM di bawah engine redline
+
 - **Oil pressure minimum**: Sesuai spesifikasi engine manufacturer
+
 - **Lambda protection**: Aktif di atas 70% load dan 3000 RPM
 
 ### Performance Settings
 - **Soft RPM limit**: Window size 200-500 RPM untuk smooth engagement
+
 - **Lambda protection**: Tighter tolerances untuk precision control
+
 - **Boost cut**: 50-100 kPa di bawah maximum safe boost
 
 ### Troubleshooting Protection Issues

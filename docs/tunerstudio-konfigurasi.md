@@ -8,9 +8,9 @@ Panduan lengkap untuk membuat project baru dan mengkonfigurasi TunerStudio untuk
 
 Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau melanjutkan pekerjaan dengan project. Berikut penjelasan masing-masing opsi:
 
-*Referensi Gambar*: Pada screenshot, opsi-opsi ini ditampilkan pada welcome screen, memungkinkan Anda memilih metode yang paling sesuai untuk membuka atau membuat project di TunerStudio.
-
 ![TunerStudio Welcome Screen][image12]
+
+*Referensi Gambar*: Pada screenshot, opsi-opsi ini ditampilkan pada welcome screen, memungkinkan Anda memilih metode yang paling sesuai untuk membuka atau membuat project di TunerStudio.
 
 1. **Create New Project**:
    - Opsi ini memungkinkan Anda memulai project baru dari awal
@@ -45,9 +45,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 
 5. **Klik Next**: Setelah project diberi nama dan firmware terdeteksi, klik **Next** untuk melanjutkan konfigurasi project baru
 
-*Referensi Gambar*: Pada screenshot di atas, Anda dapat melihat jendela konfigurasi project tempat Anda memasukkan nama project dan mendeteksi firmware.
-
 ![Project Configuration][image13]
+
+*Referensi Gambar*: Pada screenshot di atas, Anda dapat melihat jendela konfigurasi project tempat Anda memasukkan nama project dan mendeteksi firmware.
 
 ## Deteksi dan Koneksi ECU
 
@@ -61,9 +61,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
    - Setelah Mazduino Anda muncul di kotak dialog, klik untuk highlight
    - Kemudian, klik **Accept** untuk mengonfirmasi pilihan dan melanjutkan dengan setup project
 
-*Referensi Gambar*: Pada screenshot di atas, jendela deteksi ditampilkan sedang memindai device. Setelah Mazduino Anda terdaftar, pilih dan klik **Accept**.
-
 ![Device Detection][image14]
+
+*Referensi Gambar*: Pada screenshot di atas, jendela deteksi ditampilkan sedang memindai device. Setelah Mazduino Anda terdaftar, pilih dan klik **Accept**.
 
 ### Langkah 16: Konfirmasi Detail Project dan Melanjutkan
 
@@ -73,9 +73,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 
 3. **Klik Next**: Setelah semuanya dikonfirmasi, klik **Next** untuk melanjutkan dengan proses setup
 
-*Referensi Gambar*: Layar konfigurasi project sekarang menampilkan semua informasi relevan tentang Mazduino Anda. Klik **Next** untuk melanjutkan.
-
 ![Project Configuration Complete][image15]
+
+*Referensi Gambar*: Layar konfigurasi project sekarang menampilkan semua informasi relevan tentang Mazduino Anda. Klik **Next** untuk melanjutkan.
 
 ## Konfigurasi Display dan Komunikasi
 
@@ -89,9 +89,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 
 3. **Klik Next**: Setelah memilih opsi tampilan yang diinginkan, klik **Next** untuk melanjutkan
 
-*Referensi Gambar*: Pada screenshot di atas, opsi AFR (Default) dipilih. Sebagian besar pengguna lebih memilih pengaturan ini.
-
 ![Lambda Display Configuration][image16]
+
+*Referensi Gambar*: Pada screenshot di atas, opsi AFR (Default) dipilih. Sebagian besar pengguna lebih memilih pengaturan ini.
 
 ### Langkah 18: Konfigurasi Communication Settings
 
@@ -111,9 +111,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 
 5. **Testing the Connection (Opsional)**: Jika Anda ingin mengonfirmasi koneksi, klik **Test Port**. Opsi ini memverifikasi koneksi sebelum melanjutkan
 
-*Referensi Gambar*: Pada screenshot di atas, pengaturan COM Port ditampilkan, dengan opsi untuk memilih port yang benar jika diperlukan. Setelah port diatur, klik **Next**.
-
 ![Communication Settings][image17]
+
+*Referensi Gambar*: Pada screenshot di atas, pengaturan COM Port ditampilkan, dengan opsi untuk memilih port yang benar jika diperlukan. Setelah port diatur, klik **Next**.
 
 ## Menyelesaikan Setup
 
@@ -127,9 +127,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 
 3. **Klik Finish**: Setelah default dashboard dipilih, klik **Finish** untuk menyelesaikan setup project dan meluncurkan TunerStudio dengan konfigurasi baru Anda
 
-*Referensi Gambar*: Pada screenshot di atas, opsi Default dashboard dipilih. Klik **Finish** untuk mulai menggunakan TunerStudio.
-
 ![Dashboard Selection][image18]
+
+*Referensi Gambar*: Pada screenshot di atas, opsi Default dashboard dipilih. Klik **Finish** untuk mulai menggunakan TunerStudio.
 
 ### Langkah 20: Verifikasi Koneksi dan Status Dashboard
 
@@ -143,9 +143,9 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 3. **Periksa Indicator Status**:
    - Ketika terhubung, tombol indikator bawah akan menampilkan berbagai status dalam warna yang berbeda (misalnya "Fuel pump on," "Fan on," "Brake down"). Indikator ini memberikan feedback real-time tentang status sistem dan masalah potensial
 
-*Referensi Gambar*: Pada screenshot pertama, dashboard menampilkan sebagai "Not Connected." Pada screenshot kedua, gauge aktif, dan indikator menampilkan berbagai status sistem.
-
 ![Dashboard Not Connected][image19]
+
+*Referensi Gambar*: Pada screenshot pertama, dashboard menampilkan sebagai "Not Connected." Pada screenshot kedua, gauge aktif, dan indikator menampilkan berbagai status sistem.
 ![Dashboard Connected][image20]
 
 ## Troubleshooting Koneksi
@@ -155,11 +155,13 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 #### 1. ECU Tidak Terdeteksi
 
 **Gejala**: 
+
 - Gauge menampilkan "Not Connected"
 - COM port tidak muncul dalam daftar
 - Error message saat detect firmware
 
 **Solusi**:
+
 1. **Periksa Koneksi Fisik**:
    - Pastikan kabel USB terpasang dengan benar
    - Coba kabel USB yang berbeda
@@ -178,11 +180,13 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 #### 2. Koneksi Terputus-putus
 
 **Gejala**:
+
 - Gauge kadang menampilkan data, kadang "Not Connected"
 - Data freeze atau tidak update
 - Error message intermittent
 
 **Solusi**:
+
 1. **Periksa Data Rate**:
    - Masuk ke Communications → Data Rate
    - Coba turunkan data rate jika terlalu tinggi
@@ -198,11 +202,13 @@ Ketika TunerStudio terbuka, Anda akan melihat beberapa opsi untuk memulai atau m
 #### 3. Firmware Tidak Kompatibel
 
 **Gejala**:
+
 - TunerStudio mendeteksi ECU tapi tidak bisa komunikasi
 - Error message tentang firmware version
 - Fitur tidak berfungsi dengan benar
 
 **Solusi**:
+
 1. **Update Firmware**:
    - Download firmware terbaru dari [Download Page](downloads.md)
    - Flash firmware sesuai petunjuk

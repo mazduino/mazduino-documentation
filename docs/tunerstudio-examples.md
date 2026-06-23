@@ -14,6 +14,7 @@ Map Switching adalah fitur powerful yang memungkinkan ECU untuk beralih antara k
 Map Switching bekerja dengan cara "blending" atau mencampur table utama (base table) dengan table tambahan (blend table) berdasarkan parameter tertentu. Hasil akhir adalah interpolasi antara kedua table sesuai dengan kondisi yang diinginkan.
 
 **Keuntungan Map Switching**:
+
 - Optimasi untuk kondisi operasi berbeda (street vs track)
 - Adaptasi untuk kualitas bahan bakar berbeda (octane rating)
 - Penyesuaian untuk kondisi cuaca atau ketinggian
@@ -28,11 +29,15 @@ Map Switching bekerja dengan cara "blending" atau mencampur table utama (base ta
 Untuk mengaktifkan map switching, Anda perlu menghubungkan switch fisik antara pin +5V ECU dan pin analog input yang tersedia (misalnya salah satu Aux Linear Sensor).
 
 **Konfigurasi Wiring**:
+
 - **Switch OFF**: Analog input membaca 0V
+
 - **Switch ON**: Analog input membaca +5V
+
 - **Threshold**: Kalibrasi seperti gambar berikut, dimana nilai di bawah 3V dianggap sebagai 0, dan nilai di atas 3.5V dianggap sebagai 1
 
 **Langkah Wiring**:
+
 1. Identifikasi pin analog input yang tidak digunakan
 2. Hubungkan satu terminal switch ke pin +5V ECU
 3. Hubungkan terminal lain switch ke analog input terpilih
@@ -55,6 +60,7 @@ Setelah wiring selesai, konfigurasikan blend table yang diinginkan di TunerStudi
 **Blend Parameter** diatur ke analog input (misalnya **Aux Linear 1**) dimana switch dihubungkan. Input ini menentukan seberapa banyak blend table yang dicampur ke base table.
 
 - **Switch OFF (0V)**: Parameter value minimum (0), ECU menggunakan nilai "Bias" yang didefinisikan dalam table (misalnya 0% blend)
+
 - **Switch ON (5V)**: Parameter value maksimum (misalnya 1.0), ECU menggunakan **100% dari blend table**
 
 ### 3. Cara Kerja Bias Table
@@ -64,11 +70,15 @@ Setelah wiring selesai, konfigurasikan blend table yang diinginkan di TunerStudi
 **Bias Table** mendefinisikan persentase blend table yang akan diterapkan:
 
 - **Param = 0**: Bias value **0%**, tidak ada blend yang diterapkan, base table tetap aktif
+
 - **Param = 1.0**: Bias value **100%**, ECU sepenuhnya menggunakan blend table
 
 **Contoh Praktis VE Blend**:
+
 - **Switch OFF (0V)**: Blend table diabaikan (0% bias)
+
 - **Switch ON (5V)**: Blend table sepenuhnya diterapkan (100% bias)
+
 - Dalam VE blend ini, ketika switch tidak diaktifkan, table diabaikan. Setelah switch diaktifkan, table ini secara langsung menambah ke base VE table, artinya jika switch diaktifkan dan kita berada di 4000RPM dengan 80% load, kita akan menambahkan 10% VE ke kalkulasi fueling utama.
 
 ## Contoh Aplikasi Map Switching
@@ -78,7 +88,9 @@ Setelah wiring selesai, konfigurasikan blend table yang diinginkan di TunerStudi
 ![Street vs Track Mode](images/street-track-mode.png)
 
 **Setup**:
+
 - **Base Map**: Tune conservative untuk penggunaan harian
+
 - **Blend Map**: Modifikasi aggressive untuk track day
 
 **Konfigurasi**:
@@ -90,7 +102,9 @@ Ignition Blend: +3° advance untuk race fuel
 ```
 
 **Operasi**:
+
 - Switch OFF: Street mode dengan fueling conservative dan timing safe
+
 - Switch ON: Track mode dengan fueling enriched dan timing advanced
 
 ### 2. Fuel Quality Switching
@@ -98,7 +112,9 @@ Ignition Blend: +3° advance untuk race fuel
 ![Fuel Quality Switching](images/fuel-quality-switch.png)
 
 **Setup**:
+
 - **Base Map**: Tune untuk premium fuel (RON 92-95)
+
 - **Blend Map**: Adjustment untuk race fuel (RON 98+)
 
 **Konfigurasi**:
@@ -116,11 +132,15 @@ Boost Blend: +0.2 bar additional boost untuk race fuel
 Gunakan analog input variable (potensiometer) alih-alih switch on/off untuk progressive blending:
 
 **Setup Potensiometer**:
+
 - **0V**: 0% blend (full base map)
+
 - **2.5V**: 50% blend (mixture of base and blend)
+
 - **5V**: 100% blend (full blend map)
 
 **Aplikasi**:
+
 - Driver dapat adjust level aggressiveness secara real-time
 - Testing berbagai setting tanpa reflash ECU
 - Gradual transition antara tune yang berbeda
@@ -141,6 +161,7 @@ Aux Linear 3: Load condition (street/highway/track)
 ```
 
 **Table Configuration**:
+
 - Base table untuk kondisi normal
 - Multiple blend tables untuk kombinasi kondisi
 - Advanced blending logic menggunakan multiple parameters
@@ -152,17 +173,24 @@ Aux Linear 3: Load condition (street/highway/track)
 Implementasi switching otomatis berdasarkan kondisi operasi:
 
 **Trigger Conditions**:
+
 - **RPM Range**: Switch ke high-RPM tune di atas 6000 RPM
+
 - **Load Based**: Aggressive tune hanya pada high load (>80% TPS)
+
 - **Temperature**: Cold start enrichment automatic switching
+
 - **Speed Based**: Highway vs city driving modes
 
 **Configuration Example**:
 ```
 Blend Parameter: RPM
 Bias Table:
+
 - RPM < 4000: 0% blend (base tune)
+
 - RPM 4000-6000: Progressive blend 0-50%
+
 - RPM > 6000: 100% blend (performance tune)
 ```
 
@@ -173,6 +201,7 @@ Bias Table:
 Implementasi safety features dengan map switching:
 
 **Limp Mode**:
+
 - Automatic switch ke safe tune jika sensor error
 - Reduced power dan conservative timing
 - Enable basic engine operation untuk safely reach service
@@ -265,6 +294,7 @@ Blend Map: Increased boost dengan supporting fuel/timing
 ### Approved Uses
 
 Map switching untuk approved applications tidak void warranty:
+
 - Different fuel grades switching
 - Weather condition adaptation
 - Conservative vs performance modes
@@ -272,6 +302,7 @@ Map switching untuk approved applications tidak void warranty:
 ### Restricted Uses
 
 Certain extreme applications dapat void warranty:
+
 - Nitrous oxide switching (requires approval)
 - Extreme boost level switching
 - Racing-only applications tanpa safety limits
@@ -281,16 +312,8 @@ Certain extreme applications dapat void warranty:
 Map switching adalah tool powerful yang memberikan fleksibilitas tremendous untuk adaptasi tune terhadap berbagai kondisi operasi. Dengan implementasi yang tepat, fitur ini dapat significantly improve drivability, performance, dan safety dari engine management system.
 
 Key points untuk successful map switching:
+
 - Proper electrical installation dan calibration
 - Conservative base maps dengan well-designed blend tables
 - Thorough testing dan documentation
 - Regular maintenance dan monitoring
-
-## Navigasi
-
-- [← Kembali ke Troubleshooting](tunerstudio-troubleshooting.md)
-- [Kembali ke Manual Utama](tunerstudio-manual.md)
-
----
-
-*Dokumentasi examples dan map switching ini menyediakan panduan lengkap untuk implementasi fitur advanced TunerStudio. Map switching yang properly implemented dapat significantly enhance engine management capability dan user experience.*
