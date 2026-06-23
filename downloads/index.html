@@ -207,13 +207,13 @@
 <p>Firmware rusEFI yang dikustomisasi dan dioptimalkan khusus untuk semua board Mazduino.</p>
 <ul>
 <li>
-<p><strong>Repositori</strong>: [github.com/mazduino/mazduino-fw][mazduino-fw]</p>
+<p><strong>Repositori</strong>: <a href="https://github.com/mazduino/mazduino-fw">github.com/mazduino/mazduino-fw</a></p>
 </li>
 <li>
-<p><strong>Releases</strong>: [github.com/mazduino/mazduino-fw/releases][mazduino-releases]</p>
+<p><strong>Releases</strong>: <a href="https://github.com/mazduino/mazduino-fw/releases">github.com/mazduino/mazduino-fw/releases</a></p>
 </li>
 <li>
-<p><strong>Build terbaru</strong>: [Build Matrix Workflow][mazduino-build]</p>
+<p><strong>Build terbaru</strong>: <a href="https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml">Build Matrix Workflow</a></p>
 </li>
 <li>
 <p><strong>File INI untuk TunerStudio</strong>: disertakan dalam bundle release (file <code>.zip</code> di halaman releases)</p>
@@ -237,14 +237,14 @@
 <h3 id="official-rusefi-firmware">Official rusEFI Firmware<a class="headerlink" href="#official-rusefi-firmware" title="Permanent link">&para;</a></h3>
 <p>Firmware standar dari proyek rusEFI tanpa kustomisasi Mazduino.</p>
 <ul>
-<li><strong>Download</strong>: [rusefi.com/build_server/][rusefi-build]</li>
+<li><strong>Download</strong>: <a href="https://rusefi.com/build_server/">rusefi.com/build_server/</a></li>
 </ul>
 <p>Gunakan build <strong>mega100-F4</strong> atau <strong>F407 Discovery</strong> untuk board Mazduino. Firmware ini memerlukan konfigurasi pin mapping manual agar sesuai dengan hardware Mazduino. Direkomendasikan hanya untuk pengguna yang sudah familiar dengan rusEFI dan membutuhkan fitur upstream terbaru.</p>
 <hr />
 <h2 id="firmware-speeduino">Firmware Speeduino<a class="headerlink" href="#firmware-speeduino" title="Permanent link">&para;</a></h2>
 <p>Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang telah dikustomisasi.</p>
 <ul>
-<li><strong>Download</strong>: [github.com/mazduino/speeduino-fw/releases][speeduino-releases]</li>
+<li><strong>Download</strong>: <a href="https://github.com/mazduino/speeduino-fw/releases">github.com/mazduino/speeduino-fw/releases</a></li>
 </ul>
 <p><strong>Peringatan</strong>: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Mini 6CH v1.0-v1.2 tidak didukung Speeduino — gunakan rusEFI.</p>
 <hr />
@@ -307,13 +307,13 @@
 <h2 id="software-yang-dibutuhkan">Software yang Dibutuhkan<a class="headerlink" href="#software-yang-dibutuhkan" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>TunerStudio MS</strong>: [tunerstudio.com][tunerstudio] — software tuning dan konfigurasi ECU</p>
+<p><strong>TunerStudio MS</strong>: <a href="https://www.tunerstudio.com">tunerstudio.com</a> — software tuning dan konfigurasi ECU</p>
 </li>
 <li>
-<p><strong>STM32CubeProgrammer</strong>: [st.com][stm32cubeprog] — untuk flashing firmware via ST-Link atau DFU</p>
+<p><strong>STM32CubeProgrammer</strong>: <a href="https://www.st.com/en/development-tools/stm32cubeprog.html">st.com</a> — untuk flashing firmware via ST-Link atau DFU</p>
 </li>
 <li>
-<p><strong>rusEFI Console</strong>: [rusefi.com][rusefi] — untuk update firmware setelah instalasi pertama</p>
+<p><strong>rusEFI Console</strong>: <a href="https://rusefi.com">rusefi.com</a> — untuk update firmware setelah instalasi pertama</p>
 </li>
 </ul>
 <hr />
@@ -349,20 +349,12 @@
 <h2 id="konfigurasi-tunerstudio">Konfigurasi TunerStudio<a class="headerlink" href="#konfigurasi-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>Setelah firmware ter-flash:</p>
 <ol>
-<li>Install TunerStudio dari [tunerstudio.com][tunerstudio].</li>
+<li>Install TunerStudio dari <a href="https://www.tunerstudio.com">tunerstudio.com</a>.</li>
 <li>Buat project baru di TunerStudio.</li>
 <li>Extract bundle release dan load file <code>.ini</code> yang sesuai versi firmware yang digunakan.</li>
 <li>Hubungkan ECU ke PC via USB dan pilih port yang benar.</li>
 <li>Load base map sesuai konfigurasi mesin Anda sebagai titik awal tuning.</li>
 </ol>
-<p>[mazduino-fw]: https://github.com/mazduino/mazduino-fw {:target="_blank"}
-[mazduino-releases]: https://github.com/mazduino/mazduino-fw/releases {:target="_blank"}
-[mazduino-build]: https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml {:target="_blank"}
-[rusefi-build]: https://rusefi.com/build_server/ {:target="_blank"}
-[speeduino-releases]: https://github.com/mazduino/speeduino-fw/releases {:target="_blank"}
-[tunerstudio]: https://www.tunerstudio.com {:target="_blank"}
-[stm32cubeprog]: https://www.st.com/en/development-tools/stm32cubeprog.html {:target="_blank"}
-[rusefi]: https://rusefi.com {:target="_blank"}</p>
               
             </div>
           </div><footer>
@@ -399,6 +391,7 @@
     <script>var base_url = "..";</script>
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
