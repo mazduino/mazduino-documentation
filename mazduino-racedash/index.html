@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-racedash/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>3.5" & 4" - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3.5\" \u0026 4\"";
+        var mkdocs_page_input_path = "mazduino-racedash.md";
+        var mkdocs_page_url = "/mazduino-racedash/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino LITE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Compact 4 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mini 6 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Racedash</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">3.5" & 4"</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-header-internal-pcb">Pin Header Internal PCB</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#update-firmware-ota">Update Firmware (OTA)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi">Konfigurasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-terbaru-direkomendasikan">Firmware Terbaru (Direkomendasikan)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-lama-legacy">Firmware Lama / Legacy</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#referensi">Referensi</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash-pro/">Pro (4.3", 5" & 7")</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Mazduino Racedash</li>
+      <li class="breadcrumb-item active">3.5" & 4"</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
+<p>Mazduino Racedash adalah dash display digital yang menampilkan data real-time dari ECU, seperti RPM, gear indicator, kecepatan, dan berbagai data sensor lainnya. Halaman ini membahas varian layar <strong>3.5"</strong> dan <strong>4"</strong>. Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Varian</th>
+<th style="text-align: left;">Ukuran Layar</th>
+<th style="text-align: left;">Konektor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="#racedash-35-konektor-jst-4-pin">Racedash 3.5"</a></td>
+<td style="text-align: left;">3.5 inch</td>
+<td style="text-align: left;">JST 4 Pin</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#racedash-4-cabus-konektor-dtm4">Racedash 4" (Cabus)</a></td>
+<td style="text-align: left;">4 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
+</tr>
+</tbody>
+</table>
+<p>Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, seperti dijelaskan pada bagian <a href="#konfigurasi">Konfigurasi</a> di bawah.</p>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Layar digital menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time</li>
+<li>Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan</li>
+<li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order (khusus varian JST 4 Pin — varian DTM4 hanya CAN Bus). ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
+</ul>
+<h2 id="racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)<a class="headerlink" href="#racedash-35-konektor-jst-4-pin" title="Permanent link">&para;</a></h2>
+<p><img alt="Mazduino Racedash 3.5 inch JST 4 Pin" src="../img/dash/racedash-jst4-product.png" /></p>
+<p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi, lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</p>
+<h3 id="konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)<a class="headerlink" href="#konektor-jst-4-pin-wiring-ke-kendaraan" title="Permanent link">&para;</a></h3>
+<p>Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.</p>
+<p><img alt="Wiring Konektor JST 4 Pin" src="../img/dash/racedash-jst4-wiring.png" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pin</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12V</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">GND</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">RX / CANL</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">TX / CANH</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pin-header-internal-pcb">Pin Header Internal PCB<a class="headerlink" href="#pin-header-internal-pcb" title="Permanent link">&para;</a></h3>
+<p>Selain konektor JST 4 Pin, board Racedash 3.5" juga memiliki pin header internal dengan fungsi tambahan untuk mode Serial dan update firmware via USB TTL.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pin</th>
+<th style="text-align: left;">Deskripsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">+12V</td>
+<td style="text-align: left;">Power Supply 12V</td>
+</tr>
+<tr>
+<td style="text-align: left;">GND</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">CANL</td>
+<td style="text-align: left;">(CAN Mode) Hubungkan ke CANL ECU</td>
+</tr>
+<tr>
+<td style="text-align: left;">CANH</td>
+<td style="text-align: left;">(CAN Mode) Hubungkan ke CANH ECU</td>
+</tr>
+<tr>
+<td style="text-align: left;">RX2</td>
+<td style="text-align: left;">(Serial Mode) Hubungkan ke TX Serial3 Speeduino ECU</td>
+</tr>
+<tr>
+<td style="text-align: left;">TX2</td>
+<td style="text-align: left;">(Serial Mode) Hubungkan ke RX Serial3 Speeduino ECU</td>
+</tr>
+<tr>
+<td style="text-align: left;">+5V</td>
+<td style="text-align: left;">Power 5V hingga 3A</td>
+</tr>
+<tr>
+<td style="text-align: left;">TXD0</td>
+<td style="text-align: left;">Hubungkan ke USB TTL RX (Optional)</td>
+</tr>
+<tr>
+<td style="text-align: left;">RXD0</td>
+<td style="text-align: left;">Hubungkan ke USB TTL TX (Optional)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Catatan:</strong></p>
+<ul>
+<li>CANL dan CANH digunakan saat <strong>CAN Mode</strong>, sedangkan RX2 dan TX2 digunakan saat <strong>Serial Mode</strong>. Mode yang terpasang mengikuti permintaan saat order — ECU <strong>Speeduino</strong> menggunakan Serial Mode, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan CAN Mode.</li>
+<li>+12V dan GND digunakan sebagai jalur power utama. +5V adalah output referensi 5V (hingga 3A) untuk sensor, bukan input power.</li>
+<li>TXD0 dan RXD0 terhubung ke chip USB-TTL internal (<strong>CP2102N</strong>) pada PCB, namun pin ini <strong>tidak terekspos ke luar case</strong> dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</li>
+</ul>
+<h2 id="racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)<a class="headerlink" href="#racedash-4-cabus-konektor-dtm4" title="Permanent link">&para;</a></h2>
+<p><strong>Tampak Depan</strong></p>
+<p><img alt="Tampak depan Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-front.png" /></p>
+<p><strong>Tampak Belakang</strong></p>
+<p><img alt="Tampak belakang Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-back.png" /></p>
+<p>Varian ini menggunakan konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui <strong>CAN Bus</strong>.</p>
+<h3 id="konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin<a class="headerlink" href="#konektor-dtm4-4-pin" title="Permanent link">&para;</a></h3>
+<p><img alt="Sisi konektor Racedash" src="../img/dash/racedash-dtm4-connector-side.png" /></p>
+<p><em>Dash connector side</em></p>
+<p><img alt="Sisi konektor kabel" src="../img/dash/racedash-dtm4-cable-connector.png" /></p>
+<p><em>Cable connector side</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No. Pin</th>
+<th style="text-align: left;">Deskripsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12V Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">CAN High</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CAN Low</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update-firmware-ota">Update Firmware (OTA)<a class="headerlink" href="#update-firmware-ota" title="Permanent link">&para;</a></h2>
+<p>Racedash tidak memiliki port USB yang terekspos di luar case, sehingga update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi menggunakan <strong>Mazduino Flasher</strong>.</p>
+<p><img alt="Halaman Mazduino Flasher" src="../img/dash/mazduino-flasher.png" /></p>
+<ol>
+<li>Login terlebih dahulu ke akun Mazduino di <a href="https://www.mazduino.com/">mazduino.com</a>, lalu buka <strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>.</li>
+<li>Pilih tab <strong>OTA (WiFi)</strong>.</li>
+<li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> yang dipancarkan oleh Racedash, atau pastikan Racedash berada di jaringan WiFi yang sama.</li>
+<li>Pilih model Racedash pada <strong>Select Device</strong>, lalu klik <strong>Start Flashing</strong>.</li>
+<li>Tunggu proses flashing selesai. Riwayat proses dapat dilihat pada <strong>Flash History</strong>.</li>
+</ol>
+<h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
+<p>Konfigurasi tampilan dashboard dilakukan melalui browser HP/laptop, tanpa aplikasi tambahan. Langkah ini berlaku untuk kedua varian Racedash.</p>
+<h3 id="firmware-terbaru-direkomendasikan">Firmware Terbaru (Direkomendasikan)<a class="headerlink" href="#firmware-terbaru-direkomendasikan" title="Permanent link">&para;</a></h3>
+<p>Pada firmware terbaru, halaman konfigurasi lokal <code>192.168.4.1</code> digantikan oleh <strong><a href="https://www.mazduino.com/display-control">https://www.mazduino.com/display-control</a></strong>.</p>
+<ol>
+<li>Sebelum berpindah WiFi, buka browser dan akses <strong><a href="https://www.mazduino.com/display-control">https://www.mazduino.com/display-control</a></strong> terlebih dahulu selagi HP/laptop masih terhubung internet.</li>
+<li>Setelah halaman terbuka, hubungkan WiFi HP/laptop ke <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong> yang dipancarkan oleh Racedash. Koneksi internet akan terputus, namun halaman yang sudah terbuka tetap dapat digunakan.</li>
+<li>Tunggu hingga Racedash terdeteksi otomatis pada <strong>Network Scanner</strong>. Jika tidak terdeteksi otomatis, masukkan IP Racedash secara manual pada kolom <strong>Manual IP Address</strong>: <strong>192.168.4.1</strong>, lalu klik <strong>Test Connection</strong>.</li>
+</ol>
+<p><img alt="Network Scanner Mazduino Display Control" src="../img/dash/mazduino-display-control-1.png" /></p>
+<ol>
+<li>Setelah terhubung, halaman <strong>Display Control</strong> menampilkan informasi device serta data CAN Bus/ECU secara real-time.</li>
+</ol>
+<p><img alt="Halaman Display Control" src="../img/dash/mazduino-display-control-2.png" /></p>
+<ol>
+<li>Atur data yang ditampilkan pada tiap posisi panel, template layar, brightness, dan mode komunikasi (CAN Bus/Serial) sesuai kebutuhan pada bagian <strong>Display Configuration</strong>.</li>
+</ol>
+<p><img alt="Display Configuration pada Mazduino Display Control" src="../img/dash/mazduino-display-control-3.png" /></p>
+<h3 id="firmware-lama-legacy">Firmware Lama / Legacy<a class="headerlink" href="#firmware-lama-legacy" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Metode di bawah ini berlaku untuk firmware versi lama yang masih menggunakan halaman konfigurasi lokal di <code>192.168.4.1</code>. Jika Racedash Anda sudah menjalankan firmware terbaru, gunakan metode <strong><a href="#firmware-terbaru-direkomendasikan">Firmware Terbaru</a></strong> di atas.</p>
+</blockquote>
+<ol>
+<li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong>.</li>
+</ol>
+<p><img alt="Hubungkan ke WiFi Mazduino Display" src="../img/dash/racedash-jst4-wifi-connect.png" /></p>
+<ol>
+<li>Setelah terhubung, buka browser dan akses <a href="http://192.168.4.1">http://192.168.4.1</a>.</li>
+</ol>
+<p><img alt="Halaman Konfigurasi Mazduino Display" src="../img/dash/racedash-jst4-config-main.png" /></p>
+<ol>
+<li>Atur data yang ditampilkan pada tiap posisi panel sesuai kebutuhan.</li>
+</ol>
+<p><img alt="Pengaturan Display Configuration" src="../img/dash/racedash-jst4-config-display.png" /></p>
+<p><img alt="Pilihan Data Panel" src="../img/dash/racedash-jst4-config-dropdown.png" /></p>
+<p>Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
+<h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Website Mazduino - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>
+<li>Wiki Mazduino - <a href="https://wiki.mazduino.com/">https://wiki.mazduino.com/</a></li>
+<li>Github Mazduino - <a href="https://github.com/mazduino/mazduino">https://github.com/mazduino/mazduino</a></li>
+</ul>
+<p>Jika butuh skematik dan file pendukung lainnya, tersedia di website Mazduino.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-core-rev0/" class="btn btn-neutral float-left" title="rev0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-right" title="Pro (4.3", 5" & 7")">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-core-rev0/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

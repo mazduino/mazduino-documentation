@@ -60,6 +60,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#mazduino-mini-6ch">Mazduino Mini 6ch</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mazduino-core">Mazduino Core</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mazduino-racedash">Mazduino Racedash</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#memulai">Memulai</a>
@@ -115,6 +119,13 @@
               <p class="caption"><span class="caption-text">Mazduino Core</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="mazduino-core-rev0/">rev0</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Racedash</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-racedash/">3.5" & 4"</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-racedash-pro/">Pro (4.3", 5" & 7")</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
@@ -303,6 +314,39 @@
 <li><strong><a href="mazduino-mini-6ch-v1.3c/">v1.3C</a></strong> - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6</li>
 <li><strong><a href="mazduino-mini-6ch-v1.4/">v1.4</a></strong> - Versi terbaru</li>
 </ul>
+<h3 id="mazduino-core">Mazduino Core<a class="headerlink" href="#mazduino-core" title="Permanent link">&para;</a></h3>
+<p>ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH, dilengkapi dual ETB, dual CAN bus, dan kombinasi input Hall + VR.</p>
+<p><img alt="Mazduino Core" src="img/core/mazduino-core.jpeg" /></p>
+<p><strong>Fitur Umum:</strong></p>
+<ul>
+<li>MCU STM32F427 ARM Cortex-M4</li>
+<li>Dual ETB (ETB1 &amp; ETB2) dan Dual CAN Bus</li>
+<li>Kombinasi input Hall/Digital dan VR</li>
+<li>Konektor otomotif 48-pin</li>
+<li>Firmware rusEFI based</li>
+</ul>
+<p><strong><a href="mazduino-core-rev0/">Dokumentasi Mazduino Core rev0</a></strong></p>
+<h3 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h3>
+<p>Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear indicator, kecepatan, dan data sensor lainnya, dengan konfigurasi tampilan via WiFi dan browser.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Racedash 3.5" / 4"</th>
+<th style="text-align: center;">Racedash Pro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Mazduino Racedash" src="img/dash/racedash-jst4-product.png" /></td>
+<td style="text-align: center;"><img alt="Mazduino Racedash DTM4" src="img/dash/racedash-dtm4-front.png" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Varian yang Tersedia:</strong></p>
+<ul>
+<li><strong><a href="mazduino-racedash/">Racedash 3.5" &amp; 4"</a></strong> - Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)</li>
+<li><strong><a href="mazduino-racedash-pro/">Racedash Pro (4.3", 5" &amp; 7")</a></strong> - Coming Soon</li>
+</ul>
 <hr />
 <h2 id="memulai">Memulai<a class="headerlink" href="#memulai" title="Permanent link">&para;</a></h2>
 <ol>
@@ -331,6 +375,9 @@
 <li><strong><a href="mazduino-mini-6ch-v1.3b/">Mini 6CH v1.3B</a></strong> - MCU upgrade, optimisasi hardware dan input analog tambahan</li>
 <li><strong><a href="mazduino-mini-6ch-v1.3c/">Mini 6CH v1.3C</a></strong> - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah</li>
 <li><strong><a href="mazduino-mini-6ch-v1.4/">Mini 6CH v1.4</a></strong> - Versi terbaru</li>
+<li><strong><a href="mazduino-core-rev0/">Mazduino Core rev0</a></strong> - Konektor 48-pin, dual ETB, dual CAN bus</li>
+<li><strong><a href="mazduino-racedash/">Mazduino Racedash 3.5" &amp; 4"</a></strong> - Dash display konektor JST 4 Pin dan DTM4</li>
+<li><strong><a href="mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong> - Varian layar 4.3", 5", dan 7" (Coming Soon)</li>
 </ul>
 <hr />
 <h2 id="dukungan">Dukungan<a class="headerlink" href="#dukungan" title="Permanent link">&para;</a></h2>
@@ -399,5 +446,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-06-23 12:58:52.450543+00:00
+Build Date UTC : 2026-07-09 02:48:25.708779+00:00
 -->
