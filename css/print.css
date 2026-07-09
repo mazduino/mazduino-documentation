@@ -1,0 +1,72 @@
+/**
+ * Print stylesheet — makes documentation pages printable on A4 paper.
+ * Hides site chrome (sidebar nav, breadcrumbs, footer buttons, version flyout)
+ * and adjusts layout/typography for a clean printed manual.
+ */
+@media print {
+  @page {
+    size: A4;
+    margin: 18mm 15mm;
+  }
+
+  /* Hide site chrome */
+  .wy-nav-side,
+  .wy-nav-top,
+  div[role="navigation"][aria-label="breadcrumbs navigation"],
+  footer,
+  .rst-versions {
+    display: none !important;
+  }
+
+  /* Expand content to full page width (sidebar no longer reserves space) */
+  .wy-nav-content-wrap {
+    margin-left: 0 !important;
+  }
+
+  html, body {
+    background: #fff !important;
+    font-size: 11pt;
+    color: #000;
+  }
+
+  a, a:visited {
+    color: #000 !important;
+    text-decoration: none;
+  }
+
+  /* Print full URL after external links so the paper copy stays usable */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #333;
+    word-break: break-all;
+  }
+
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  table, figure, img, pre, blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid #999;
+  }
+
+  th, td {
+    padding: 4px 8px;
+  }
+}

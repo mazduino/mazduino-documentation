@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -306,10 +307,6 @@
 <td style="text-align: left;">(Serial Mode) Hubungkan ke RX Serial3 Speeduino ECU</td>
 </tr>
 <tr>
-<td style="text-align: left;">+5V</td>
-<td style="text-align: left;">Power 5V hingga 3A</td>
-</tr>
-<tr>
 <td style="text-align: left;">TXD0</td>
 <td style="text-align: left;">Hubungkan ke USB TTL RX (Optional)</td>
 </tr>
@@ -322,7 +319,7 @@
 <p><strong>Catatan:</strong></p>
 <ul>
 <li>CANL dan CANH digunakan saat <strong>CAN Mode</strong>, sedangkan RX2 dan TX2 digunakan saat <strong>Serial Mode</strong>. Mode yang terpasang mengikuti permintaan saat order — ECU <strong>Speeduino</strong> menggunakan Serial Mode, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan CAN Mode.</li>
-<li>+12V dan GND digunakan sebagai jalur power utama. +5V adalah output referensi 5V (hingga 3A) untuk sensor, bukan input power.</li>
+<li>+12V dan GND adalah jalur power utama.</li>
 <li>TXD0 dan RXD0 terhubung ke chip USB-TTL internal (<strong>CP2102N</strong>) pada PCB, namun pin ini <strong>tidak terekspos ke luar case</strong> dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</li>
 </ul>
 <h2 id="racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)<a class="headerlink" href="#racedash-4-cabus-konektor-dtm4" title="Permanent link">&para;</a></h2>
