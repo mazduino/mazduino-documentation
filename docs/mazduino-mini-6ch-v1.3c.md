@@ -443,8 +443,8 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 ### Konfigurasi Khusus v1.3C
 - **TPS Pin**: Pastikan konfigurasi TPS menggunakan **PA6** (bukan PA3 seperti v1.3B)
 
-[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
-[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads
 
 - **Battery/VRef Pin**: Pastikan konfigurasi Battery/Voltage Reference menggunakan **PA7**
 

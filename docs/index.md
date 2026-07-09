@@ -4,6 +4,20 @@ Selamat datang di dokumentasi resmi untuk ECU Mazduino — Engine Control Unit s
 
 ---
 
+## Download Firmware
+
+> **[⬇ Download Firmware Mazduino di GitHub Releases](https://github.com/mazduino/mazduino-fw/releases)**
+
+Setiap release sudah berisi:
+
+- File `.hex` / `.bin` siap flash untuk setiap board
+- File `.ini` TunerStudio yang matching — **selalu gunakan dari rilis yang sama dengan firmware**
+- Changelog perubahan dari versi sebelumnya
+
+Panduan lengkap cara flash dan pemilihan firmware ada di **[halaman Downloads](downloads.md)**.
+
+---
+
 ## Produk Terbaru
 
 ### Mazduino LITE
@@ -84,6 +98,35 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 - **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6
 - **[v1.4](mazduino-mini-6ch-v1.4.md)** - Versi terbaru
 
+### Mazduino Core
+
+ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH, dilengkapi dual ETB, dual CAN bus, dan kombinasi input Hall + VR.
+
+![Mazduino Core](img/core/mazduino-core.jpeg)
+
+**Fitur Umum:**
+
+- MCU STM32F427 ARM Cortex-M4
+- Dual ETB (ETB1 & ETB2) dan Dual CAN Bus
+- Kombinasi input Hall/Digital dan VR
+- Konektor otomotif 48-pin
+- Firmware rusEFI based
+
+**[Dokumentasi Mazduino Core rev0](mazduino-core-rev0.md)**
+
+### Mazduino Racedash
+
+Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear indicator, kecepatan, dan data sensor lainnya, dengan konfigurasi tampilan via WiFi dan browser.
+
+| Racedash 3.5" / 4" | Racedash Pro |
+|:-------------------:|:------------:|
+| ![Mazduino Racedash](img/dash/racedash-jst4-product.png) | ![Mazduino Racedash DTM4](img/dash/racedash-dtm4-front.png) |
+
+**Varian yang Tersedia:**
+
+- **[Racedash 3.5" & 4"](mazduino-racedash.md)** - Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)
+- **[Racedash Pro (4.3", 5" & 7")](mazduino-racedash-pro.md)** - Coming Soon
+
 ---
 
 ## Memulai
@@ -113,6 +156,9 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 - **[Mini 6CH v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU upgrade, optimisasi hardware dan input analog tambahan
 - **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah
 - **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Versi terbaru
+- **[Mazduino Core rev0](mazduino-core-rev0.md)** - Konektor 48-pin, dual ETB, dual CAN bus
+- **[Mazduino Racedash 3.5" & 4"](mazduino-racedash.md)** - Dash display konektor JST 4 Pin dan DTM4
+- **[Mazduino Racedash Pro](mazduino-racedash-pro.md)** - Varian layar 4.3", 5", dan 7" (Coming Soon)
 
 ---
 
@@ -126,8 +172,8 @@ Untuk informasi detail mengenai PCB design, schematic, dan Bill of Materials (BO
 
 **[Mazduino Wiki][mazduino-hw]**
 
-[mazduino-fw]: https://github.com/mazduino/mazduino-fw {:target="_blank"}
-[mazduino-hw]: https://github.com/mazduino/mazduino-hw/wiki {:target="_blank"}
+[mazduino-fw]: https://github.com/mazduino/mazduino-fw
+[mazduino-hw]: https://github.com/mazduino/mazduino/wiki
 
 Wiki ini berisi:
 

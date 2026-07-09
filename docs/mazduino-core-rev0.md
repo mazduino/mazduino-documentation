@@ -220,7 +220,7 @@ Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan d
 
 - Informasi produk: [www.mazduino.com][mazduino-site]
 
-[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
-[rusefi-wiki]: https://wiki.rusefi.com {:target="_blank"}
-[mazduino-site]: https://www.mazduino.com {:target="_blank"}
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads
+[rusefi-wiki]: https://wiki.rusefi.com
+[mazduino-site]: https://www.mazduino.com
 

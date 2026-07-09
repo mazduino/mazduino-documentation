@@ -189,7 +189,7 @@ Untuk mesin 4-silinder:
 
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
 
-[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
 
 ## Dukungan dan Sumber Daya
 

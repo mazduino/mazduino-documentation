@@ -240,7 +240,7 @@ Pin assignment **STM32F427VGT6** yang telah diperbaiki untuk v1.3B:
 | IAT Sensor | PA5 |
 | CLT Sensor | PA4 |
 | O2 Sensor | PA1 |
-| Battery/Voltage Reff | PA6 |
+| Battery/Voltage Reff | PA7 |
 | Analog Spare Input 1 | PB0 |
 | Analog Spare Input 2 | PB1 |
 | **Analog Spare Input 3** | **PA2** |
@@ -436,5 +436,5 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 **[Download firmware dan file konfigurasi](downloads.md)**
 
-[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
-[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads {:target="_blank"}
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
+[tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads

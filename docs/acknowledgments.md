@@ -42,13 +42,13 @@ Dokumentasi lengkap fitur-fitur ini tersedia di bagian **[Firmware](../firmware/
 
 - Dokumentasi Zgrywus: [wiki.zgrywus.com][zgrywus-wiki]
 
-[rusefi]: https://rusefi.com/ {:target="_blank"}
-[rusefi-wiki]: https://wiki.rusefi.com/ {:target="_blank"}
-[rusefi-gh]: https://github.com/rusefi/rusefi {:target="_blank"}
-[fome]: https://wiki.fome.tech/ {:target="_blank"}
-[fome-wiki]: https://wiki.fome.tech/ {:target="_blank"}
-[zgrywus]: https://wiki.zgrywus.com/ {:target="_blank"}
-[zgrywus-wiki]: https://wiki.zgrywus.com/ {:target="_blank"}
+[rusefi]: https://rusefi.com/
+[rusefi-wiki]: https://wiki.rusefi.com/
+[rusefi-gh]: https://github.com/rusefi/rusefi
+[fome]: https://wiki.fome.tech/
+[fome-wiki]: https://wiki.fome.tech/
+[zgrywus]: https://wiki.zgrywus.com/
+[zgrywus-wiki]: https://wiki.zgrywus.com/
 
 ---
 

@@ -125,11 +125,11 @@ Setelah firmware ter-flash:
 4. Hubungkan ECU ke PC via USB dan pilih port yang benar.
 5. Load base map sesuai konfigurasi mesin Anda sebagai titik awal tuning.
 
-[mazduino-fw]: https://github.com/mazduino/mazduino-fw {:target="_blank"}
-[mazduino-releases]: https://github.com/mazduino/mazduino-fw/releases {:target="_blank"}
-[mazduino-build]: https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml {:target="_blank"}
-[rusefi-build]: https://rusefi.com/build_server/ {:target="_blank"}
-[speeduino-releases]: https://github.com/mazduino/speeduino-fw/releases {:target="_blank"}
-[tunerstudio]: https://www.tunerstudio.com {:target="_blank"}
-[stm32cubeprog]: https://www.st.com/en/development-tools/stm32cubeprog.html {:target="_blank"}
-[rusefi]: https://rusefi.com {:target="_blank"}
+[mazduino-fw]: https://github.com/mazduino/mazduino-fw
+[mazduino-releases]: https://github.com/mazduino/mazduino-fw/releases
+[mazduino-build]: https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml
+[rusefi-build]: https://rusefi.com/build_server/
+[speeduino-releases]: https://github.com/mazduino/speeduino-fw/releases
+[tunerstudio]: https://www.tunerstudio.com
+[stm32cubeprog]: https://www.st.com/en/development-tools/stm32cubeprog.html
+[rusefi]: https://rusefi.com

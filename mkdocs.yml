@@ -18,8 +18,11 @@ nav:
     - v1.3B: mazduino-mini-6ch-v1.3b.md
     - v1.3C: mazduino-mini-6ch-v1.3c.md
     - v1.4: mazduino-mini-6ch-v1.4.md
-  - Mazduino Core: 
+  - Mazduino Core:
     - rev0: mazduino-core-rev0.md
+  - Mazduino Racedash:
+    - 3.5" & 4": mazduino-racedash.md
+    - Pro (4.3", 5" & 7"): mazduino-racedash-pro.md
   - Manual TunerStudio:
     - Manual Lengkap: tunerstudio-manual.md
     - Instalasi: tunerstudio-instalasi.md
@@ -34,7 +37,7 @@ nav:
     - Controller & Diagnostics: tunerstudio-controller.md
     - Troubleshooting: tunerstudio-troubleshooting.md
     - Examples & Map Switching: tunerstudio-examples.md
-  - Firmware:
+  - Custom Firmware:
     - Overview: firmware/index.md
     - CAN Input:
       - CAN Sensor Input: firmware/can-sensor-input.md
@@ -45,10 +48,14 @@ nav:
     - User Tables: firmware/user-tables.md
     - Logic Outputs: firmware/logic-outputs.md
     - Spark Cut & Fuel Cut: firmware/fuel-spark-cut.md
-  - Ucapan Terima Kasih: acknowledgments.md
+    - Konsumsi Bahan Bakar: firmware/fuel-consumption.md
   - Tentang: about.md
 theme:
   name: readthedocs
+extra_javascript:
+  - js/external-links.js
+extra_css:
+  - css/print.css
 markdown_extensions:
   - attr_list
   - toc:

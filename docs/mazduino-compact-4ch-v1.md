@@ -142,7 +142,7 @@ PCB termasuk solder jumper di bagian belakang untuk konfigurasi:
 
 - **Referensi**: Informasi wiring tambahan tersedia di [Speeduino Wiki][speeduino-wiring]
 
-[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system {:target="_blank"}
+[speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
 
 ## Dukungan dan Sumber Daya
 
