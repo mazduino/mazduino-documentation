@@ -15,7 +15,7 @@ Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, se
 
 - Layar digital menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time
 - Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan
-- Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung permintaan saat order (khusus varian JST 4 Pin — varian DTM4 hanya CAN Bus). ECU berbasis **Speeduino** wajib menggunakan mode Serial, sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
+- Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis **Speeduino** wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
 
 ## Racedash 3.5" (Konektor JST 4 Pin)
 
@@ -67,7 +67,7 @@ Selain konektor JST 4 Pin, board Racedash 3.5" juga memiliki pin header internal
 
 ![Tampak belakang Mazduino Racedash DTM4](img/dash/racedash-dtm4-back.png)
 
-Varian ini menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui **CAN Bus**.
+Varian ini menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui **CAN Bus**, kecuali untuk ECU **Speeduino** yang menggunakan mode **Serial** (secondary serial dari Arduino Mega).
 
 ### Konektor DTM4 / 4 Pin
 
@@ -83,8 +83,13 @@ Varian ini menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang tahan getaran 
 | :---- | :---- |
 | 1 | 12V Power Supply |
 | 2 | Ground |
-| 3 | CAN High |
-| 4 | CAN Low |
+| 3 | CAN High / TX |
+| 4 | CAN Low / RX |
+
+**Catatan:**
+
+- Pin 3 dan 4 berfungsi sebagai **CAN High/CAN Low** untuk ECU **rusEFI**, **Haltech**, dan **MaxxECU** (mode CAN Bus).
+- Khusus untuk ECU **Speeduino**, pin 3 dan 4 berfungsi sebagai **TX/RX Serial** — Speeduino tidak memiliki CAN Bus native, sehingga data diambil melalui **secondary serial (Serial3) Arduino Mega**.
 
 ## Update Firmware (OTA)
 
