@@ -238,7 +238,7 @@
 <ul>
 <li>Layar digital menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time</li>
 <li>Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan</li>
-<li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order (khusus varian JST 4 Pin — varian DTM4 hanya CAN Bus). ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
+<li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
 </ul>
 <h2 id="racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)<a class="headerlink" href="#racedash-35-konektor-jst-4-pin" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash 3.5 inch JST 4 Pin" src="../img/dash/racedash-jst4-product.png" /></p>
@@ -327,7 +327,7 @@
 <p><img alt="Tampak depan Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-front.png" /></p>
 <p><strong>Tampak Belakang</strong></p>
 <p><img alt="Tampak belakang Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-back.png" /></p>
-<p>Varian ini menggunakan konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui <strong>CAN Bus</strong>.</p>
+<p>Varian ini menggunakan konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui <strong>CAN Bus</strong>, kecuali untuk ECU <strong>Speeduino</strong> yang menggunakan mode <strong>Serial</strong> (secondary serial dari Arduino Mega).</p>
 <h3 id="konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin<a class="headerlink" href="#konektor-dtm4-4-pin" title="Permanent link">&para;</a></h3>
 <p><img alt="Sisi konektor Racedash" src="../img/dash/racedash-dtm4-connector-side.png" /></p>
 <p><em>Dash connector side</em></p>
@@ -351,14 +351,19 @@
 </tr>
 <tr>
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">CAN High</td>
+<td style="text-align: left;">CAN High / TX</td>
 </tr>
 <tr>
 <td style="text-align: left;">4</td>
-<td style="text-align: left;">CAN Low</td>
+<td style="text-align: left;">CAN Low / RX</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Catatan:</strong></p>
+<ul>
+<li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk ECU <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> (mode CAN Bus).</li>
+<li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX Serial</strong> — Speeduino tidak memiliki CAN Bus native, sehingga data diambil melalui <strong>secondary serial (Serial3) Arduino Mega</strong>.</li>
+</ul>
 <h2 id="update-firmware-ota">Update Firmware (OTA)<a class="headerlink" href="#update-firmware-ota" title="Permanent link">&para;</a></h2>
 <p>Racedash tidak memiliki port USB yang terekspos di luar case, sehingga update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi menggunakan <strong>Mazduino Flasher</strong>.</p>
 <p><img alt="Halaman Mazduino Flasher" src="../img/dash/mazduino-flasher.png" /></p>
