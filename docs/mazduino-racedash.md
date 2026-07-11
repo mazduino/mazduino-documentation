@@ -17,6 +17,14 @@ Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, se
 - Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan
 - Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis **Speeduino** wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
 
+## Custom Splash Screen
+
+Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui **Splash Screen Generator** dan diunggah ke Racedash melalui WiFi.
+
+1. Buka **[mazduino.com/splash-generator](https://www.mazduino.com/splash-generator)** melalui browser HP/laptop.
+2. Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.
+3. Unggah hasilnya ke Racedash melalui koneksi WiFi **"Mazduino_Display"**.
+
 ## Racedash 3.5" (Konektor JST 4 Pin)
 
 ![Mazduino Racedash 3.5 inch JST 4 Pin](img/dash/racedash-jst4-product.png)
@@ -91,16 +99,19 @@ Varian ini menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang tahan getaran 
 - Pin 3 dan 4 berfungsi sebagai **CAN High/CAN Low** untuk ECU **rusEFI**, **Haltech**, dan **MaxxECU** (mode CAN Bus).
 - Khusus untuk ECU **Speeduino**, pin 3 dan 4 berfungsi sebagai **TX/RX Serial** — Speeduino tidak memiliki CAN Bus native, sehingga data diambil melalui **secondary serial (Serial3) Arduino Mega**.
 
-## Update Firmware (OTA)
+## Update Firmware (USB atau OTA)
 
-Racedash tidak memiliki port USB yang terekspos di luar case, sehingga update firmware dilakukan secara **OTA (Over-The-Air)** melalui WiFi menggunakan **Mazduino Flasher**.
+Update firmware Racedash dapat dilakukan dengan dua cara:
+
+1. **USB** — membuka case Racedash, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.
+2. **OTA (Over-The-Air)** — melalui WiFi menggunakan **Mazduino Flasher**, tanpa perlu membuka case.
 
 ![Halaman Mazduino Flasher](img/dash/mazduino-flasher.png)
 
 1. Login terlebih dahulu ke akun Mazduino di [mazduino.com](https://www.mazduino.com/), lalu buka **[mazduino.com/dashboard/flasher](https://www.mazduino.com/dashboard/flasher)**.
 2. Pilih tab **OTA (WiFi)**.
 3. Hubungkan HP/laptop ke WiFi **"Mazduino_Display"** yang dipancarkan oleh Racedash, atau pastikan Racedash berada di jaringan WiFi yang sama.
-4. Pilih model Racedash pada **Select Device**, lalu klik **Start Flashing**.
+4. Pilih model Racedash yang sesuai pada **Select Device** — **pastikan device dipilih dengan benar** — lalu klik **Start Flashing**.
 5. Tunggu proses flashing selesai. Riwayat proses dapat dilihat pada **Flash History**.
 
 ## Konfigurasi
