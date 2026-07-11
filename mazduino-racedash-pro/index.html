@@ -94,7 +94,33 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#dokumentasi">Dokumentasi</a>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-via-wifi">Fitur via WiFi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#custom-splash-screen">Custom Splash Screen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pengaturan-via-touchscreen">Pengaturan via Touchscreen</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#main-screen">Main Screen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#bench-test-screen-khusus-rusefi">Bench Test Screen (Khusus rusEFI)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#warning-setting-screen">Warning Setting Screen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#slot-setting-screen">Slot Setting Screen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#display-setting-screen">Display Setting Screen</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connection-setting-screen">Connection Setting Screen</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#referensi">Referensi</a>
     </li>
@@ -187,33 +213,152 @@
               
                 <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan <strong>4.3", 5", dan 7"</strong>. Untuk varian layar 3.5" dan 4", lihat <strong><a href="../mazduino-racedash/">Mazduino Racedash</a></strong>.</p>
+<p>Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan <strong>4.3", 5", dan 7"</strong>. Berbeda dengan varian <a href="../mazduino-racedash/">Mazduino Racedash</a> (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, seluruh pengaturan Racedash Pro dilakukan <strong>langsung dari layar (touchscreen)</strong> tanpa perlu terhubung ke HP/laptop.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Varian</th>
 <th style="text-align: left;">Ukuran Layar</th>
+<th style="text-align: left;">Konektor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Racedash Pro 4.3"</td>
 <td style="text-align: left;">4.3 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Racedash Pro 5"</td>
 <td style="text-align: left;">5 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 <tr>
 <td style="text-align: left;">Racedash Pro 7"</td>
 <td style="text-align: left;">7 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="dokumentasi">Dokumentasi<a class="headerlink" href="#dokumentasi" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p><strong>Coming Soon</strong> — Dokumentasi lengkap untuk Mazduino Racedash Pro (4.3", 5", dan 7") sedang dalam penyusunan dan akan segera tersedia.</p>
-</blockquote>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Layar sentuh (touchscreen) sehingga seluruh pengaturan dashboard dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan</li>
+<li>Menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time</li>
+<li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> menggunakan mode Serial, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
+<li>Tersedia halaman <strong>Bench Test</strong> khusus untuk ECU <strong>rusEFI</strong></li>
+</ul>
+<h2 id="fitur-via-wifi">Fitur via WiFi<a class="headerlink" href="#fitur-via-wifi" title="Permanent link">&para;</a></h2>
+<p>Meskipun sebagian besar pengaturan Racedash Pro dilakukan langsung dari touchscreen, ada beberapa fitur yang tetap memerlukan koneksi WiFi ke situs Mazduino, yaitu update firmware dan custom splash screen.</p>
+<h3 id="update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)<a class="headerlink" href="#update-firmware-usb-atau-ota" title="Permanent link">&para;</a></h3>
+<p>Update firmware Racedash Pro dapat dilakukan dengan dua cara:</p>
+<ol>
+<li><strong>USB</strong> — membuka case Racedash Pro, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.</li>
+<li><strong>OTA (Over-The-Air)</strong> — melalui WiFi menggunakan <strong>Mazduino Flasher</strong> pada <strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>, tanpa perlu membuka case. Hubungkan HP/laptop ke WiFi yang dipancarkan oleh Racedash Pro (atau pastikan berada di jaringan WiFi yang sama), lalu pilih model Racedash Pro yang sesuai pada <strong>Select Device</strong> — <strong>pastikan device dipilih dengan benar</strong> — sebelum klik <strong>Start Flashing</strong>.</li>
+</ol>
+<h3 id="custom-splash-screen">Custom Splash Screen<a class="headerlink" href="#custom-splash-screen" title="Permanent link">&para;</a></h3>
+<p>Racedash Pro mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui <strong>Splash Screen Generator</strong> dan diunggah ke Racedash Pro melalui WiFi.</p>
+<ol>
+<li>Buka <strong><a href="https://www.mazduino.com/splash-generator">mazduino.com/splash-generator</a></strong> melalui browser HP/laptop.</li>
+<li>Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.</li>
+<li>Unggah hasilnya ke Racedash Pro melalui koneksi WiFi yang dipancarkan oleh device.</li>
+</ol>
+<h2 id="konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin<a class="headerlink" href="#konektor-dtm4-4-pin" title="Permanent link">&para;</a></h2>
+<p>Racedash Pro menggunakan konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang sama dengan varian <a href="../mazduino-racedash/#racedash-4-cabus-konektor-dtm4">Racedash 4"</a>, baik dari sisi bentuk fisik konektor maupun fungsi pin.</p>
+<p><img alt="Sisi konektor Racedash" src="../img/dash/racedash-dtm4-connector-side.png" /></p>
+<p><em>Dash connector side</em></p>
+<p><img alt="Sisi konektor kabel" src="../img/dash/racedash-dtm4-cable-connector.png" /></p>
+<p><em>Cable connector side</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No. Pin</th>
+<th style="text-align: left;">Deskripsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12V Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">CAN High / TX</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CAN Low / RX</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Catatan:</strong></p>
+<ul>
+<li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk ECU <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> (mode CAN Bus).</li>
+<li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX Serial</strong>, karena Speeduino tidak memiliki CAN Bus native.</li>
+</ul>
+<h2 id="pengaturan-via-touchscreen">Pengaturan via Touchscreen<a class="headerlink" href="#pengaturan-via-touchscreen" title="Permanent link">&para;</a></h2>
+<p>Berbeda dengan varian Racedash biasa, Racedash Pro tidak memerlukan koneksi WiFi/browser untuk konfigurasi — semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman). Menu pengaturan terdiri dari 6 halaman berikut:</p>
+<ul>
+<li><a href="#main-screen">Main Screen</a></li>
+<li><a href="#bench-test-screen-khusus-rusefi">Bench Test Screen (Khusus rusEFI)</a></li>
+<li><a href="#warning-setting-screen">Warning Setting Screen</a></li>
+<li><a href="#slot-setting-screen">Slot Setting Screen</a></li>
+<li><a href="#display-setting-screen">Display Setting Screen</a></li>
+<li><a href="#connection-setting-screen">Connection Setting Screen</a></li>
+</ul>
+<h3 id="main-screen">Main Screen<a class="headerlink" href="#main-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Main Screen Racedash Pro" src="../img/dash/racedash-pro-main.jpeg" /></p>
+<p>Halaman utama menampilkan data real-time dari ECU:</p>
+<ul>
+<li><strong>Gear indicator &amp; shift light bar</strong> di bagian atas (angka gigi 1–7, warna bar berubah mengikuti RPM) beserta nilai RPM di pojok kanan atas</li>
+<li><strong>Kecepatan (KM/H)</strong> ditampilkan besar di tengah layar</li>
+<li><strong>6 slot data</strong> tambahan (kiri dan kanan) berupa gauge bar + nilai, misalnya Oil Pressure (OIL P), Fuel Pressure (FUEL P), VBATT, MAP, dan Ignition Advance (ADV) — parameter pada tiap slot dapat diatur melalui <a href="#slot-setting-screen">Slot Setting Screen</a></li>
+</ul>
+<h3 id="bench-test-screen-khusus-rusefi">Bench Test Screen (Khusus rusEFI)<a class="headerlink" href="#bench-test-screen-khusus-rusefi" title="Permanent link">&para;</a></h3>
+<p><img alt="Bench Test Screen Racedash Pro" src="../img/dash/racedash-pro-bench-test.jpeg" /></p>
+<p>Halaman khusus untuk ECU <strong>rusEFI</strong> yang digunakan untuk menguji wiring/actuator sebelum mesin dinyalakan, tanpa perlu bantuan software tambahan di laptop. Tersedia tombol untuk memicu langsung:</p>
+<ul>
+<li><strong>Ignition</strong> koil pengapian 1–8</li>
+<li><strong>Injectors</strong> injektor 1–8</li>
+<li><strong>Fan 1</strong> dan <strong>Fan 2</strong></li>
+<li><strong>Fuel Pump</strong></li>
+<li><strong>Start/Stop Engine</strong></li>
+</ul>
+<h3 id="warning-setting-screen">Warning Setting Screen<a class="headerlink" href="#warning-setting-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Warning Setting Screen Racedash Pro" src="../img/dash/racedash-pro-warning-setting.jpeg" /></p>
+<p>Halaman untuk mengatur batas (threshold) peringatan pada tiap parameter, masing-masing dengan tombol <strong>+ / -</strong> untuk mengubah nilai:</p>
+<ul>
+<li><strong>RPM Warning</strong> — batas RPM/shift light</li>
+<li><strong>CLT Warning</strong> — batas suhu air (Coolant Temp)</li>
+<li><strong>IAT Warning</strong> — batas suhu udara masuk (Intake Air Temp)</li>
+<li><strong>Oil P Warning</strong> — batas tekanan oli</li>
+<li><strong>Fuel P Warning</strong> — batas tekanan bahan bakar</li>
+<li><strong>VBATT Warning</strong> — batas tegangan baterai</li>
+</ul>
+<p>Terdapat juga tombol navigasi ke <strong>Display</strong> dan <strong>Slot Cfg</strong>, tombol <strong>Default</strong> untuk mengembalikan ke pengaturan awal, serta tombol <strong>Save</strong> untuk menyimpan perubahan.</p>
+<h3 id="slot-setting-screen">Slot Setting Screen<a class="headerlink" href="#slot-setting-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Slot Setting Screen Racedash Pro" src="../img/dash/racedash-pro-slot-setting.jpeg" /></p>
+<p>Halaman <strong>Slot Config</strong> untuk mengatur parameter yang ditampilkan pada tiap slot di Main Screen. Slot tersedia untuk posisi <strong>Left 1–3</strong> dan <strong>Right 1–3</strong>, masing-masing dapat dipilih dari daftar parameter yang tersedia (contoh: CLT, BAT, TPS, OIL P, FUEL P, ADV) dengan cara swipe. Gunakan tombol <strong>Discard</strong> untuk membatalkan perubahan atau <strong>Save</strong> untuk menyimpan.</p>
+<h3 id="display-setting-screen">Display Setting Screen<a class="headerlink" href="#display-setting-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Display Setting Screen Racedash Pro" src="../img/dash/racedash-pro-display-setting.jpeg" /></p>
+<p>Halaman <strong>Display Settings</strong> untuk mengatur tampilan dashboard:</p>
+<ul>
+<li><strong>Color Palette</strong> — pilihan tema/skema warna tampilan (contoh: "Volt Line"), diatur dengan tombol <strong>+ / -</strong></li>
+</ul>
+<p>Tombol <strong>Back</strong> digunakan untuk kembali ke halaman sebelumnya.</p>
+<h3 id="connection-setting-screen">Connection Setting Screen<a class="headerlink" href="#connection-setting-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Connection Setting Screen Racedash Pro" src="../img/dash/racedash-pro-connection-setting.jpeg" /></p>
+<p>Halaman <strong>Connection Settings</strong> untuk mengatur mode komunikasi ke ECU:</p>
+<ul>
+<li><strong>ECU</strong> — pilih tipe ECU yang digunakan (rusEFI, Haltech, MaxxECU, atau Speeduino), diatur dengan tombol <strong>+ / -</strong></li>
+<li><strong>Baudrate</strong> — baudrate komunikasi CAN Bus mengikuti ECU yang dipilih secara otomatis: <strong>1 Mbps</strong> untuk <strong>Haltech</strong>, dan <strong>500 kbps</strong> untuk ECU lainnya</li>
+<li><strong>WiFi/AP Server</strong> — tombol on/off untuk mengaktifkan/menonaktifkan WiFi Access Point pada Racedash Pro</li>
+<li><strong>BLE Telemetry</strong> — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy</li>
+</ul>
+<p>Tombol <strong>Default</strong> mengembalikan ke pengaturan awal, dan <strong>Save</strong> menyimpan perubahan.</p>
 <h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Website Mazduino - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>

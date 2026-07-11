@@ -94,6 +94,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#custom-splash-screen">Custom Splash Screen</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)</a>
@@ -108,7 +110,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#update-firmware-ota">Update Firmware (OTA)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#konfigurasi">Konfigurasi</a>
         <ul>
@@ -240,6 +242,13 @@
 <li>Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan</li>
 <li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
 </ul>
+<h2 id="custom-splash-screen">Custom Splash Screen<a class="headerlink" href="#custom-splash-screen" title="Permanent link">&para;</a></h2>
+<p>Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui <strong>Splash Screen Generator</strong> dan diunggah ke Racedash melalui WiFi.</p>
+<ol>
+<li>Buka <strong><a href="https://www.mazduino.com/splash-generator">mazduino.com/splash-generator</a></strong> melalui browser HP/laptop.</li>
+<li>Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.</li>
+<li>Unggah hasilnya ke Racedash melalui koneksi WiFi <strong>"Mazduino_Display"</strong>.</li>
+</ol>
 <h2 id="racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)<a class="headerlink" href="#racedash-35-konektor-jst-4-pin" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash 3.5 inch JST 4 Pin" src="../img/dash/racedash-jst4-product.png" /></p>
 <p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi, lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</p>
@@ -364,14 +373,18 @@
 <li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk ECU <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> (mode CAN Bus).</li>
 <li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX Serial</strong> — Speeduino tidak memiliki CAN Bus native, sehingga data diambil melalui <strong>secondary serial (Serial3) Arduino Mega</strong>.</li>
 </ul>
-<h2 id="update-firmware-ota">Update Firmware (OTA)<a class="headerlink" href="#update-firmware-ota" title="Permanent link">&para;</a></h2>
-<p>Racedash tidak memiliki port USB yang terekspos di luar case, sehingga update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi menggunakan <strong>Mazduino Flasher</strong>.</p>
+<h2 id="update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)<a class="headerlink" href="#update-firmware-usb-atau-ota" title="Permanent link">&para;</a></h2>
+<p>Update firmware Racedash dapat dilakukan dengan dua cara:</p>
+<ol>
+<li><strong>USB</strong> — membuka case Racedash, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.</li>
+<li><strong>OTA (Over-The-Air)</strong> — melalui WiFi menggunakan <strong>Mazduino Flasher</strong>, tanpa perlu membuka case.</li>
+</ol>
 <p><img alt="Halaman Mazduino Flasher" src="../img/dash/mazduino-flasher.png" /></p>
 <ol>
 <li>Login terlebih dahulu ke akun Mazduino di <a href="https://www.mazduino.com/">mazduino.com</a>, lalu buka <strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>.</li>
 <li>Pilih tab <strong>OTA (WiFi)</strong>.</li>
 <li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> yang dipancarkan oleh Racedash, atau pastikan Racedash berada di jaringan WiFi yang sama.</li>
-<li>Pilih model Racedash pada <strong>Select Device</strong>, lalu klik <strong>Start Flashing</strong>.</li>
+<li>Pilih model Racedash yang sesuai pada <strong>Select Device</strong> — <strong>pastikan device dipilih dengan benar</strong> — lalu klik <strong>Start Flashing</strong>.</li>
 <li>Tunggu proses flashing selesai. Riwayat proses dapat dilihat pada <strong>Flash History</strong>.</li>
 </ol>
 <h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
