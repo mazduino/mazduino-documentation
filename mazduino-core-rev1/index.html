@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-core-rev0/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-core-rev1/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>rev0 - Mazduino Documentation</title>
+    <title>rev1 - Mazduino Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "rev0";
-        var mkdocs_page_input_path = "mazduino-core-rev0.md";
-        var mkdocs_page_url = "/mazduino-core-rev0/";
+        var mkdocs_page_name = "rev1";
+        var mkdocs_page_input_path = "mazduino-core-rev1.md";
+        var mkdocs_page_url = "/mazduino-core-rev1/";
       </script>
     
     <!--[if lt IE 9]>
@@ -83,11 +83,15 @@
               </ul>
               <p class="caption"><span class="caption-text">Mazduino Core</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">rev0</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">rev1</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#perubahan-pada-rev1">Perubahan pada Rev1</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-hardware-dan-jumper">Konfigurasi Hardware dan Jumper</a>
         <ul>
@@ -119,6 +123,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#mapping-fungsional-firmware">Mapping Fungsional Firmware</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-skenario-penggunaan-io">Contoh Skenario Penggunaan I/O</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#informasi-mcu">Informasi MCU</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#panduan-instalasi-singkat">Panduan Instalasi Singkat</a>
@@ -128,8 +134,6 @@
     <li class="toctree-l2"><a class="reference internal" href="#software-tuning">Software Tuning</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Mazduino Racedash</span></p>
@@ -219,7 +223,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Mazduino Core</li>
-      <li class="breadcrumb-item active">rev0</li>
+      <li class="breadcrumb-item active">rev1</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -228,18 +232,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Juli 2026 03:04:06 UTC">9 Juli 2026</span></em></p>
-  <h1 id="mazduino-core">Mazduino Core<a class="headerlink" href="#mazduino-core" title="Permanent link">&para;</a></h1>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 Juli 2026 17:13:41 UTC">17 Juli 2026</span></em></p>
+  <h1 id="mazduino-core-rev1">Mazduino Core Rev1<a class="headerlink" href="#mazduino-core-rev1" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan <strong>STM32F427</strong> sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan <strong>dual ETB</strong>, <strong>dual CAN bus</strong>, kombinasi input <strong>Hall + VR</strong>, serta output aktuator yang lebih banyak untuk mesin modern.</p>
+<p>Mazduino Core Rev1 adalah revisi lanjutan dari <a href="../mazduino-core-rev0/">Mazduino Core Rev0</a>, ECU berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan <strong>STM32F427</strong> sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan <strong>dual ETB</strong>, <strong>dual CAN bus</strong>, kombinasi input <strong>Hall + VR</strong>, serta output aktuator yang lebih banyak untuk mesin modern.</p>
+<p>Rev1 membawa sejumlah perbaikan dibanding Rev0, di antaranya penambahan <strong>12V Out</strong> untuk suplai sensor (pin 17, misalnya untuk CKP/CMP sensor yang membutuhkan power 12V), perbaikan <strong>5V sensor supply</strong> yang kini sanggup hingga <strong>3A</strong> dan tidak mudah panas, penamaan jalur jumper opsional (CON21, CON22, CON37, CON38), serta penambahan opsi jumper baru pada pin 21 dan pin 37. Lihat bagian <a href="#perubahan-pada-rev1">Perubahan pada Rev1</a> untuk ringkasan lengkap.</p>
 <p>Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referensi hardware pada dokumen MAZDUINO CORE.</p>
 <p><img alt="Foto produk Mazduino Core" src="../img/core/mazduino-core.jpeg" /></p>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>MCU <strong>STM32F427</strong> ARM Cortex-M4</li>
-<li>Built-in <strong>5V sensor supply</strong> dengan proteksi internal</li>
-<li><strong>4x input Hall/Digital</strong> untuk CKP, CMP, VSS, clutch, launch, atau switch lainnya</li>
-<li><strong>12x input analog</strong> untuk MAP, TPS, O2, tekanan, temperatur, PPS, dan sensor tambahan</li>
+<li>Built-in <strong>5V sensor supply</strong> hingga <strong>3A</strong> dengan proteksi internal, lebih tahan panas dibanding Rev0</li>
+<li>Built-in <strong>12V sensor supply</strong> (pin 17) untuk sensor yang membutuhkan power 12V, misalnya sensor CKP/CMP tipe 12V</li>
+<li><strong>4x input Hall/Digital</strong> untuk CKP, CMP, VSS, clutch, launch, atau switch lainnya (seluruhnya memiliki opsi jumper alternatif)</li>
+<li><strong>11x input analog</strong> untuk MAP, TPS, O2, tekanan, temperatur, PPS, dan sensor tambahan</li>
 <li><strong>6x output ignition</strong> (untuk smart coil, 5V/12V sesuai konfigurasi)</li>
 <li><strong>10x output low side 3A</strong> untuk injektor, idle PWM, boost, VVT, dan aktuator beban menengah</li>
 <li><strong>5x output low side low current</strong> untuk relay (main relay, fuel pump, fan, AC, tach)</li>
@@ -258,16 +264,94 @@
 <li>Komunikasi USB, Serial, dan CAN</li>
 <li>Dukungan firmware <strong>rusEFI based</strong> saja (official atau custom firmware dengan MCU F4)</li>
 </ul>
+<h2 id="perubahan-pada-rev1">Perubahan pada Rev1<a class="headerlink" href="#perubahan-pada-rev1" title="Permanent link">&para;</a></h2>
+<p>Dibanding Rev0, perbaikan/perubahan pada Rev1 adalah sebagai berikut:</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Rev0</th>
+<th>Rev1</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 (JP3)</td>
+<td>AVS2 (Analog Volt 5) atau Ignition 6</td>
+<td>AVS5 (Analog Volt 5) atau Ignition 6</td>
+<td>Penamaan opsi jumper diperbarui, sinyal tetap Analog Volt 5</td>
+</tr>
+<tr>
+<td>5 (JP5)</td>
+<td>AVS3 (Analog Volt 6) atau High Side 2</td>
+<td>AVS6 (Analog Volt 6) atau High Side 2</td>
+<td>Penamaan opsi jumper diperbarui, sinyal tetap Analog Volt 6</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5V Sensor Supply</td>
+<td>5V Sensor Supply (hingga <strong>3A</strong>)</td>
+<td>Kapasitas arus suplai 5V diperbesar, lebih tahan panas dibanding Rev0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Ground (Ground power)</td>
+<td><strong>12V Out</strong> (Sensor 12V power)</td>
+<td>Pin baru untuk suplai 12V sensor, misalnya CKP/CMP sensor tipe 12V; bukan lagi ground</td>
+</tr>
+<tr>
+<td>20 (JP4)</td>
+<td>ATS2 (Analog Temp 4) atau Ignition 5</td>
+<td>ATS4 (Analog Temp 4) atau Ignition 5</td>
+<td>Penamaan opsi jumper diperbarui, sinyal tetap Analog Temp 4</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Digital 1 (tetap)</td>
+<td><strong>CON21</strong>: Digital 1 atau AV5 (Analog Volt 5) — Jumper Option</td>
+<td>Pin 21 kini punya opsi jumper tambahan ke Analog Volt 5</td>
+</tr>
+<tr>
+<td>22</td>
+<td>IN22: Digital 3 atau VR1+</td>
+<td><strong>CON22</strong>: Digital 3 atau VR1+</td>
+<td>Penamaan pin diperbarui, fungsi tetap sama</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Digital 2 (tetap)</td>
+<td><strong>CON37</strong>: Digital 2 atau AVS6 (Analog Volt 6) — Jumper Option</td>
+<td>Pin 37 kini punya opsi jumper tambahan ke Analog Volt 6</td>
+</tr>
+<tr>
+<td>38</td>
+<td>IN38: Digital 4 atau VR1-</td>
+<td><strong>CON38</strong>: Digital 4 atau VR1- — Jumper Option</td>
+<td>Penamaan pin diperbarui, fungsi tetap sama</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Analog Volt 8</td>
+<td>Analog Volt 5</td>
+<td>Kanal Analog Volt 8 dihapus, pin 41 kini membawa Analog Volt 5 secara langsung</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Perhatian:</strong> Pin 17 pada Rev1 berubah fungsi dari <strong>Ground</strong> menjadi <strong>12V Out</strong> (suplai 12V untuk sensor). Jangan menyambungkan pin 17 sebagai ground saat migrasi harness dari Rev0 ke Rev1 — gunakan pin 18, 39, atau 40 untuk ground.</p>
+</blockquote>
 <h2 id="konfigurasi-hardware-dan-jumper">Konfigurasi Hardware dan Jumper<a class="headerlink" href="#konfigurasi-hardware-dan-jumper" title="Permanent link">&para;</a></h2>
 <p>Mazduino Core memiliki beberapa pin yang dapat dialihkan fungsinya melalui jumper solder. Konsep ini memberi fleksibilitas agar satu board bisa dipakai untuk berbagai konfigurasi mesin.</p>
 <h3 id="posisi-jumper-solder-jp3-jp4-dan-jp5">Posisi Jumper Solder JP3, JP4, dan JP5<a class="headerlink" href="#posisi-jumper-solder-jp3-jp4-dan-jp5" title="Permanent link">&para;</a></h3>
-<p><img alt="Posisi jumper solder JP3 JP4 JP5" src="../img/core/Picture1.png" /></p>
+<p><img alt="Posisi jumper solder JP3 JP4 JP5" src="../img/core/rev1/JP.png" /></p>
 <p>Posisi pin <strong>JP3</strong>, <strong>JP4</strong>, dan <strong>JP5</strong> berada di bagian bawah board dengan model solder jumper.</p>
 <p>Dibagian belakang board ada jumper yang bisa disesuaikan kebutuhan atau permintaan diawal pesanan. ingin digunakan untuk mobil dengan 6 silinder atau hanya 4 silinder. Atau butuh ekstra analog input atau high side output (12v switching).</p>
 <p>Solder Jumper 2 pin ke tengah untuk meneruskan ke konektor ECU pada JP3, JP4 dan JP5.</p>
 <h3 id="pin-header-jumper-tanpa-solder">Pin Header Jumper Tanpa Solder<a class="headerlink" href="#pin-header-jumper-tanpa-solder" title="Permanent link">&para;</a></h3>
-<p><img alt="Pin header jumper tanpa solder" src="../img/core/Picture2.png" /></p>
-<p>Pin header jumper tanpa solder sesuai permintaan saat awal pesanan atau dapat dipindahkan sendiri sesuai kebutuhan. konektor ECU akan mengeluarkan CANL atau VR2-, Digital 4 atau VR1-, CANH atau VR2+, Digital 3 atau VR1+.</p>
+<p><img alt="Pin header jumper tanpa solder" src="../img/core/rev1/JP_Header.png" /></p>
+<p>Pin header jumper tanpa solder sesuai permintaan saat awal pesanan atau dapat dipindahkan sendiri sesuai kebutuhan. Konektor ECU akan mengeluarkan CANL atau VR2-, Digital 4 atau VR1-, CANH atau VR2+, Digital 3 atau VR1+ (pin IN33/IN34/CON22/CON38).</p>
+<p>Selain itu, pada Rev1 pin <strong>CON21</strong> (Digital 1 atau AV5) dan <strong>CON37</strong> (Digital 2 atau AVS6) juga menggunakan model pin header jumper tanpa solder yang sama.</p>
 <h3 id="pin-header-tambahan-prototype">Pin Header Tambahan (Prototype)<a class="headerlink" href="#pin-header-tambahan-prototype" title="Permanent link">&para;</a></h3>
 <p>Untuk kebutuhan prototype, tersedia 4 buah pin header 6 pin yang bisa menggunakan konektor <strong>JST XH 2.54</strong>.</p>
 <table>
@@ -304,31 +388,37 @@
 <h3 id="opsi-jumper-penting">Opsi Jumper Penting<a class="headerlink" href="#opsi-jumper-penting" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><strong>JP3 (Pin 4)</strong>: pilih <strong>AVS2 (Analog Volt 5)</strong> atau <strong>Ignition 6</strong></p>
+<p><strong>JP3 (Pin 4)</strong>: pilih <strong>AVS5 (Analog Volt 5)</strong> atau <strong>Ignition 6</strong></p>
 </li>
 <li>
-<p><strong>JP4 (Pin 20)</strong>: pilih <strong>ATS2 (Analog Temp 4)</strong> atau <strong>Ignition 5</strong></p>
+<p><strong>JP4 (Pin 20)</strong>: pilih <strong>ATS4 (Analog Temp 4)</strong> atau <strong>Ignition 5</strong></p>
 </li>
 <li>
-<p><strong>JP5 (Pin 5)</strong>: pilih <strong>AVS3 (Analog Volt 6)</strong> atau <strong>High Side 2</strong></p>
+<p><strong>JP5 (Pin 5)</strong>: pilih <strong>AVS6 (Analog Volt 6)</strong> atau <strong>High Side 2</strong></p>
 </li>
 <li>
-<p><strong>IN22</strong>: pilih <strong>Digital 3</strong> atau <strong>VR1+</strong></p>
+<p><strong>CON21 (Pin 21)</strong>: pilih <strong>Digital 1</strong> atau <strong>AV5 (Analog Volt 5)</strong></p>
 </li>
 <li>
-<p><strong>IN38</strong>: pilih <strong>Digital 4</strong> atau <strong>VR1-</strong></p>
+<p><strong>CON22 (Pin 22)</strong>: pilih <strong>Digital 3</strong> atau <strong>VR1+</strong></p>
 </li>
 <li>
-<p><strong>IN33</strong>: pilih <strong>CANH1</strong> atau <strong>VR2+</strong></p>
+<p><strong>CON37 (Pin 37)</strong>: pilih <strong>Digital 2</strong> atau <strong>AVS6 (Analog Volt 6)</strong></p>
 </li>
 <li>
-<p><strong>IN34</strong>: pilih <strong>CANL1</strong> atau <strong>VR2-</strong></p>
+<p><strong>CON38 (Pin 38)</strong>: pilih <strong>Digital 4</strong> atau <strong>VR1-</strong></p>
+</li>
+<li>
+<p><strong>IN33 (Pin 33)</strong>: pilih <strong>CANH1</strong> atau <strong>VR2+</strong></p>
+</li>
+<li>
+<p><strong>IN34 (Pin 34)</strong>: pilih <strong>CANL1</strong> atau <strong>VR2-</strong></p>
 </li>
 </ul>
 <h3 id="catatan-konfigurasi">Catatan Konfigurasi<a class="headerlink" href="#catatan-konfigurasi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Untuk setup <strong>6 ignition penuh</strong>, aktifkan mode ignition pada Pin 4 dan Pin 20.</li>
-<li>Untuk setup yang butuh analog ekstra, aktifkan mode analog di Pin 4/5/20.</li>
+<li>Untuk setup yang butuh analog ekstra, aktifkan mode analog di Pin 4/5/20/21/37.</li>
 <li>Untuk sensor trigger VR, pindahkan jalur Digital 3/4 atau CANH/CANL ke VR sesuai kebutuhan.</li>
 <li>Selalu matikan sumber daya ECU sebelum mengubah konfigurasi jumper.</li>
 </ul>
@@ -367,17 +457,17 @@
 <tr>
 <td>4</td>
 <td>OUT4 (JP3)</td>
-<td>Pilih AVS2 (Analog Volt 5) atau Ignition 6</td>
+<td>Pilih AVS5 (Analog Volt 5) atau Ignition 6</td>
 </tr>
 <tr>
 <td>5</td>
 <td>OUT5 (JP5)</td>
-<td>Pilih AVS3 (Analog Volt 6) atau High Side 2 untuk 12V switching</td>
+<td>Pilih AVS6 (Analog Volt 6) atau High Side 2 untuk 12V switching</td>
 </tr>
 <tr>
 <td>6</td>
 <td>5V Sensor Supply</td>
-<td>Referensi 5V sensor</td>
+<td>Referensi 5V sensor, hingga 3A</td>
 </tr>
 <tr>
 <td>7</td>
@@ -431,8 +521,8 @@
 </tr>
 <tr>
 <td>17</td>
-<td>Ground</td>
-<td>Ground power</td>
+<td>12V Out</td>
+<td>Sensor 12V power, misalnya untuk CKP/CMP sensor tipe 12V</td>
 </tr>
 <tr>
 <td>18</td>
@@ -447,16 +537,16 @@
 <tr>
 <td>20</td>
 <td>OUT20 (JP4)</td>
-<td>Pilih ATS2 (Analog Temp 4) atau Ignition 5</td>
+<td>Pilih ATS4 (Analog Temp 4) atau Ignition 5</td>
 </tr>
 <tr>
 <td>21</td>
-<td>Digital 1</td>
-<td>Input hall/digital</td>
+<td>CON21</td>
+<td>Pilih Digital 1 atau AV5 (Analog Volt 5)</td>
 </tr>
 <tr>
 <td>22</td>
-<td>IN22</td>
+<td>CON22</td>
 <td>Pilih Digital 3 atau VR1+</td>
 </tr>
 <tr>
@@ -531,12 +621,12 @@
 </tr>
 <tr>
 <td>37</td>
-<td>Digital 2</td>
-<td>Input hall/digital</td>
+<td>CON37</td>
+<td>Pilih Digital 2 atau AVS6 (Analog Volt 6)</td>
 </tr>
 <tr>
 <td>38</td>
-<td>IN38</td>
+<td>CON38</td>
 <td>Pilih Digital 4 atau VR1-</td>
 </tr>
 <tr>
@@ -551,7 +641,7 @@
 </tr>
 <tr>
 <td>41</td>
-<td>Analog Volt 8</td>
+<td>Analog Volt 5</td>
 <td>Input analog 0-5V</td>
 </tr>
 <tr>
@@ -604,7 +694,7 @@
 <tr>
 <td>Input Hall/Digital</td>
 <td>4</td>
-<td>Digital 1, 2, 3, 4 (3/4 via jumper)</td>
+<td>Digital 1, 2, 3, 4 (seluruhnya memiliki opsi jumper alternatif ke AV/VR)</td>
 </tr>
 <tr>
 <td>Input VR</td>
@@ -613,8 +703,8 @@
 </tr>
 <tr>
 <td>Input Analog</td>
-<td>12</td>
-<td>Analog Volt + Analog Temp termasuk pin opsi jumper</td>
+<td>11</td>
+<td>Analog Volt (1-7) + Analog Temp (1-4) termasuk pin opsi jumper</td>
 </tr>
 <tr>
 <td>Ignition Output</td>
@@ -672,7 +762,7 @@
 </tr>
 <tr>
 <td>MAP / TPS / O2 / PPS / Sensor tekanan</td>
-<td>Analog Volt 1 sampai 8</td>
+<td>Analog Volt 1 sampai 7</td>
 </tr>
 <tr>
 <td>CLT / IAT / Temp tambahan</td>
@@ -696,6 +786,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="contoh-skenario-penggunaan-io">Contoh Skenario Penggunaan I/O<a class="headerlink" href="#contoh-skenario-penggunaan-io" title="Permanent link">&para;</a></h2>
+<p>Jalur Low Side, Analog Volt, dan Analog Temp bersifat generik sehingga alokasinya tergantung konfigurasi mesin dan mode ignition yang dipakai. Beberapa contoh skenario:</p>
+<ul>
+<li><strong>Low Side sebagai injector</strong>: Low Side 1 sampai 8 dapat dipakai sebagai output injector untuk mesin <strong>8 silinder full sequential</strong> (1 injector per channel). Untuk mesin dengan jumlah silinder lebih sedikit atau mode <strong>batch/semi-sequential</strong>, jumlah Low Side yang dipakai untuk injector menyesuaikan (sisanya bebas dipakai untuk idle PWM, boost, VVT, atau aktuator lain).</li>
+<li><strong>Ignition mode Wasted Spark</strong>: dipakai untuk mesin <strong>8 silinder ke atas</strong>, dengan <strong>4 channel ignition</strong> (masing-masing coil melayani sepasang silinder). Untuk mesin <strong>6 silinder ke bawah</strong>, ignition dapat dipasang <strong>individual/COP</strong> (1 channel per silinder) karena board menyediakan hingga 6 channel ignition. Channel ignition yang tidak terpakai dapat dialihkan lewat jumper (Pin 4/Pin 20) menjadi Analog Volt 5 / Analog Temp 4 sesuai kebutuhan sensor tambahan.</li>
+<li><strong>Analog Volt</strong>: dipakai untuk input sensor analog 0-5V seperti <strong>MAP</strong>, <strong>TPS</strong>, <strong>O2/wideband</strong>, <strong>PPS</strong>, atau sensor tekanan lain.</li>
+<li><strong>Analog Temp</strong>: dipakai untuk input sensor temperatur seperti <strong>CLT (Coolant Temp)</strong> dan <strong>IAT (Intake Air Temp)</strong>.</li>
+</ul>
 <h2 id="informasi-mcu">Informasi MCU<a class="headerlink" href="#informasi-mcu" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -704,13 +802,14 @@
 <li>
 <p>ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.</p>
 </li>
-<li>Gunakan file konfigurasi firmware yang memang ditujukan untuk <strong>Mazduino Core</strong> agar semua pin berfungsi sesuai desain board.</li>
+<li>Gunakan file konfigurasi firmware yang memang ditujukan untuk <strong>Mazduino Core Rev1</strong> agar semua pin berfungsi sesuai desain board.</li>
 <li>Firmware untuk board ini hanya untuk <strong>rusEFI based</strong> (baik official maupun custom firmware dengan MCU F4).</li>
 </ul>
 <h2 id="panduan-instalasi-singkat">Panduan Instalasi Singkat<a class="headerlink" href="#panduan-instalasi-singkat" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Pastikan semua ground utama (pin 17/18/39/40) terhubung baik.</li>
+<li>Pastikan semua ground utama (pin 18/39/40) terhubung baik.</li>
 <li>Hubungkan pin 1 ke suplai 12V ECU yang stabil.</li>
+<li>Jika membutuhkan suplai 12V untuk sensor (misalnya sensor CKP/CMP tipe 12V), gunakan pin 17 (<strong>12V Out</strong>) — jangan disambung sebagai ground.</li>
 <li>Konfigurasikan jumper dulu sebelum ECU dipasang ke harness final.</li>
 <li>Pilih mode trigger Hall atau VR sesuai jenis sensor CKP/CMP.</li>
 <li>Jika menggunakan 6 ignition, aktifkan opsi ignition pada pin jumper terkait.</li>
@@ -719,6 +818,8 @@
 </ol>
 <h2 id="catatan-penting">Catatan Penting<a class="headerlink" href="#catatan-penting" title="Permanent link">&para;</a></h2>
 <ul>
+<li><strong>Pin 17 berubah fungsi dibanding Rev0</strong>: dari <strong>Ground</strong> menjadi <strong>12V Out</strong> (suplai 12V untuk sensor, misalnya CKP/CMP tipe 12V). Periksa ulang harness saat migrasi dari Rev0 ke Rev1.</li>
+<li><strong>5V Sensor Supply</strong> (pin 6) pada Rev1 sanggup hingga <strong>3A</strong> dan lebih tahan panas dibanding Rev0, sehingga lebih aman untuk banyak sensor 5V sekaligus.</li>
 <li>Output ignition ditujukan untuk <strong>smart coil</strong>. Untuk dumb coil wajib menggunakan driver/IGBT eksternal.</li>
 <li>Jalur output low current dipakai untuk relay atau beban ringan, bukan beban motor langsung.</li>
 <li><strong>HS1 dan HS2</strong> dapat digunakan sebagai output <strong>12V switching</strong>, misalnya untuk <strong>alternator control</strong>.</li>
@@ -742,8 +843,8 @@
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../mazduino-mini-6ch-v1.4/" class="btn btn-neutral float-left" title="v1.4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../mazduino-core-rev1/" class="btn btn-neutral float-right" title="rev1">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mazduino-core-rev0/" class="btn btn-neutral float-left" title="rev0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-racedash/" class="btn btn-neutral float-right" title="3.5" & 4"">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -766,10 +867,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../mazduino-mini-6ch-v1.4/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mazduino-core-rev0/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../mazduino-core-rev1/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../mazduino-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

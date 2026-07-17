@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/persiapan-sensor-wiring/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Persiapan - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Persiapan";
+        var mkdocs_page_input_path = "persiapan-sensor-wiring.md";
+        var mkdocs_page_url = "/persiapan-sensor-wiring/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino LITE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Compact 4 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mini 6 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Racedash</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash-pro/">Pro (4.3", 5" & 7")</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Persiapan</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pengantar">Pengantar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensor-dasar-yang-dibutuhkan">Sensor Dasar yang Dibutuhkan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#prinsip-wiring-yang-benar">Prinsip Wiring yang Benar</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#grounding">Grounding</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kabel-sensor-trigger-ckpcmp">Kabel Sensor Trigger (CKP/CMP)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#routing-kabel-sensor-analog-tps-map-clt-iat-o2">Routing Kabel Sensor Analog (TPS, MAP, CLT, IAT, O2)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#power-supply-dan-fusing">Power Supply dan Fusing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#can-bus-jika-digunakan">CAN Bus (jika digunakan)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-wiring-mesin-4-silinder">Contoh Wiring Mesin 4 Silinder</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#wiring-koil-pengapian-4-silinder-cop">Wiring Koil Pengapian (4 Silinder COP)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wiring-injector-4-silinder">Wiring Injector (4 Silinder)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#checklist-sebelum-power-up">Checklist Sebelum Power-Up</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Sensor dan Wiring</li>
+      <li class="breadcrumb-item active">Persiapan</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="17 Juli 2026 17:13:41 UTC">17 Juli 2026</span></em></p>
+  <h1 id="persiapan-sensor-dan-wiring">Persiapan Sensor dan Wiring<a class="headerlink" href="#persiapan-sensor-dan-wiring" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
+<p>Sebelum masuk ke konfigurasi TunerStudio, ECU perlu dipasang dengan sensor yang lengkap dan wiring yang benar. Kesalahan wiring adalah penyebab paling umum mesin tidak mau start atau tuning yang tidak stabil, jadi tahap persiapan ini sebaiknya tidak dilewati.</p>
+<p>Halaman ini membahas sensor dasar yang dibutuhkan untuk kebanyakan aplikasi standalone ECU, prinsip wiring yang benar, dan contoh skema untuk mesin 4 silinder. Pin exact untuk masing-masing board (Compact 4CH, Mini 6CH, Core, LITE) dapat dilihat di halaman dokumentasi hardware masing-masing produk.</p>
+<h2 id="sensor-dasar-yang-dibutuhkan">Sensor Dasar yang Dibutuhkan<a class="headerlink" href="#sensor-dasar-yang-dibutuhkan" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sensor</th>
+<th>Fungsi</th>
+<th>Wajib?</th>
+<th>Jenis Sinyal</th>
+<th>Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CKP (Crankshaft Position)</td>
+<td>Referensi RPM dan sinkronisasi mesin</td>
+<td><strong>Wajib</strong></td>
+<td>Hall (3-wire) atau VR (2-wire)</td>
+<td>Tanpa sensor ini mesin tidak akan menyala</td>
+</tr>
+<tr>
+<td>CMP (Camshaft Position)</td>
+<td>Sinkronisasi bank/silinder untuk sequential injection &amp; ignition</td>
+<td>Wajib untuk sequential, opsional untuk wasted spark/batch</td>
+<td>Hall (3-wire) atau VR (2-wire)</td>
+<td>Bisa lebih dari 1 tergantung mesin (mis. dual VVT)</td>
+</tr>
+<tr>
+<td>TPS (Throttle Position)</td>
+<td>Posisi throttle untuk acceleration enrichment dan idle</td>
+<td><strong>Wajib</strong></td>
+<td>Analog 0-5V (potensiometer 3-wire)</td>
+<td>Kalibrasi 0% dan 100% wajib dilakukan di TunerStudio</td>
+</tr>
+<tr>
+<td>MAP (Manifold Absolute Pressure)</td>
+<td>Load mesin untuk strategi Speed Density</td>
+<td>Wajib untuk Speed Density, opsional untuk Alpha-N</td>
+<td>Analog 0-5V</td>
+<td>Bisa built-in di board atau eksternal tergantung produk</td>
+</tr>
+<tr>
+<td>CLT (Coolant Temperature)</td>
+<td>Suhu coolant untuk fueling &amp; kontrol kipas</td>
+<td><strong>Wajib</strong></td>
+<td>Analog (NTC thermistor 2-wire)</td>
+<td>Gunakan sensor sesuai tabel resistansi yang didukung firmware</td>
+</tr>
+<tr>
+<td>IAT (Intake Air Temperature)</td>
+<td>Suhu udara masuk untuk koreksi densitas udara</td>
+<td><strong>Wajib</strong></td>
+<td>Analog (NTC thermistor 2-wire)</td>
+<td>Pasang sedekat mungkin dengan intake, hindari panas radiator</td>
+</tr>
+<tr>
+<td>Battery Voltage</td>
+<td>Referensi tegangan untuk koreksi dwell/duty cycle</td>
+<td>Otomatis (built-in)</td>
+<td>Analog internal</td>
+<td>Tidak perlu wiring tambahan, dibaca dari suplai 12V ECU</td>
+</tr>
+<tr>
+<td>O2 / Wideband</td>
+<td>Feedback AFR untuk closed loop dan tuning</td>
+<td>Sangat disarankan</td>
+<td>Analog 0-5V (linear wideband controller)</td>
+<td>Wajib untuk tuning fuel yang akurat</td>
+</tr>
+</tbody>
+</table>
+<p>Contoh wiring dasar untuk sensor analog — ground sensor, IAT, CLT, TPS, referensi 5V (VRef), O2, dan MAP eksternal (opsional) — semuanya diambil langsung dari konektor ECU:</p>
+<p><img alt="Contoh wiring sensor analog: GND, IAT, CLT, TPS, VRef 5V, O2, dan external MAP" src="../img/manual/wiring-analog-sensor.png" /></p>
+<h2 id="prinsip-wiring-yang-benar">Prinsip Wiring yang Benar<a class="headerlink" href="#prinsip-wiring-yang-benar" title="Permanent link">&para;</a></h2>
+<h3 id="grounding">Grounding<a class="headerlink" href="#grounding" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Ground ECU</strong> sebaiknya diambil <strong>langsung dari terminal negatif aki, atau sedekat mungkin dengan aki</strong> — jangan digroundkan ke body. Body/chassis memiliki resistansi dan drop tegangan yang lebih besar dan tidak konsisten, yang dapat menyebabkan noise dan ground offset pada pembacaan sensor.</li>
+<li><strong>Ground coil pengapian wajib dipisah</strong> dari ground ECU, dan ditempelkan langsung ke <strong>mesin/engine block</strong> (bukan ke body atau ke titik ground ECU). Ground coil membawa arus switching tinggi yang bisa menimbulkan noise besar jika disatukan dengan ground ECU/sensor.</li>
+<li><strong>Ground sensor wajib diambil dari pin ground ECU</strong>, bukan dari body atau titik ground lain, agar referensi sinyal sensor konsisten dengan referensi ADC ECU.</li>
+<li><strong>Injector</strong>: sisi <strong>+12V</strong> disuplai dari <strong>relay injector yang sudah difuse</strong> (bukan langsung dari ECU). Sisi lainnya terhubung ke <strong>output low-side ECU</strong> — ECU-lah yang bertindak sebagai ground/switching untuk mengaktifkan injector.</li>
+<li><strong>Relay (fuel pump, fan, AC, main relay)</strong>: coil relay diaktifkan oleh <strong>output low-side ECU</strong> yang bertindak sebagai ground switching untuk beban relay. Meski sinyal switching ini berasal dari ECU, jalur ground/beban relay tetap harus <strong>dipisahkan secara fisik dari ground sensor ECU</strong> agar arus switching relay tidak menimbulkan noise pada sirkuit sensor.</li>
+<li>Pastikan setiap titik ground (aki, ECU, engine block) memiliki resistansi rendah — bersihkan titik kontak dari cat/karat sebelum baut ground dipasang.</li>
+</ul>
+<h3 id="kabel-sensor-trigger-ckpcmp">Kabel Sensor Trigger (CKP/CMP)<a class="headerlink" href="#kabel-sensor-trigger-ckpcmp" title="Permanent link">&para;</a></h3>
+<p>Sensor CKP dan CMP umumnya tersedia dalam 2 jenis, dengan cara wiring yang berbeda:</p>
+<ul>
+<li><strong>Hall/Optical (3 kabel)</strong>: terdiri dari <strong>12V (VCC)</strong>, <strong>Signal</strong>, dan <strong>Ground</strong>. Ground sensor <strong>wajib diambil dari ground ECU</strong>, bukan dari body atau titik ground lain, agar referensi sinyal konsisten.</li>
+<li><strong>VR (Variable Reluctance, 2 kabel)</strong>: tidak memiliki suplai tegangan, cukup hubungkan 2 kabel sensor ke input <strong>VR+</strong> dan <strong>VR-</strong> pada ECU. Umumnya <strong>VR1+/VR1-</strong> dipakai untuk CKP dan <strong>VR2+/VR2-</strong> untuk CMP — sesuaikan dengan pin mapping board yang dipakai.</li>
+</ul>
+<p>Catatan wiring kabel trigger secara umum:</p>
+<ul>
+<li>Gunakan <strong>kabel shielded twisted pair</strong> untuk sensor VR, dan idealnya juga untuk sensor Hall di lingkungan dengan banyak noise (dekat coil/alternator).</li>
+<li>Sambungkan shield hanya di <strong>satu ujung</strong> (sisi ECU) untuk menghindari ground loop.</li>
+<li>Jaga jarak kabel trigger dari kabel koil pengapian, kabel injector, dan kabel alternator — jangan diikat sejajar dalam harness yang sama.</li>
+</ul>
+<h3 id="routing-kabel-sensor-analog-tps-map-clt-iat-o2">Routing Kabel Sensor Analog (TPS, MAP, CLT, IAT, O2)<a class="headerlink" href="#routing-kabel-sensor-analog-tps-map-clt-iat-o2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Rute kabel sensor sejauh mungkin dari sumber noise (coil pack, injector driver, alternator, kabel power tegangan tinggi).</li>
+<li>Untuk sensor 3-wire (TPS, MAP eksternal), gunakan referensi 5V dan ground langsung dari ECU, jangan diambil dari titik lain.</li>
+<li>Panjang kabel diusahakan sependek mungkin dan dihindari looping berlebihan.</li>
+</ul>
+<h3 id="power-supply-dan-fusing">Power Supply dan Fusing<a class="headerlink" href="#power-supply-dan-fusing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Suplai 12V utama ECU sebaiknya diberi <strong>fuse terpisah</strong> dan diambil langsung dari baterai (switched melalui relay utama), bukan disambung dari jalur aksesoris lain.</li>
+<li>Pasang <strong>relay utama (main relay)</strong> yang dikontrol ECU untuk memutus suplai ke injector/ignition saat ECU tidak aktif.</li>
+<li>Untuk board dengan output high current (injector, ignition, idle valve), pastikan ukuran kabel (AWG) sesuai arus beban agar tidak overheat.</li>
+</ul>
+<h3 id="can-bus-jika-digunakan">CAN Bus (jika digunakan)<a class="headerlink" href="#can-bus-jika-digunakan" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gunakan kabel <strong>twisted pair</strong> untuk CANH/CANL.</li>
+<li>Pasang termination resistor 120Ω di kedua ujung jalur CAN bus (biasanya sudah tersedia sebagai jumper di board/device CAN).</li>
+</ul>
+<h2 id="contoh-wiring-mesin-4-silinder">Contoh Wiring Mesin 4 Silinder<a class="headerlink" href="#contoh-wiring-mesin-4-silinder" title="Permanent link">&para;</a></h2>
+<p>Contoh berikut menggambarkan skema sensor dan aktuator dasar untuk mesin <strong>4 silinder</strong> dengan <strong>individual coil-on-plug (COP)</strong> dan <strong>full sequential injection</strong> — konfigurasi paling umum untuk mesin 4 silinder modern.</p>
+<table>
+<thead>
+<tr>
+<th>Fungsi</th>
+<th>Jumlah Channel</th>
+<th>Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Injector</td>
+<td>4x (Injector 1-4)</td>
+<td>1 injector per silinder, sequential mengikuti firing order</td>
+</tr>
+<tr>
+<td>Ignition</td>
+<td>4x (Ignition 1-4)</td>
+<td>Individual COP, 1 coil per silinder</td>
+</tr>
+<tr>
+<td>CKP</td>
+<td>1x</td>
+<td>Wajib, biasanya di crank pulley</td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>1x</td>
+<td>Untuk sinkronisasi sequential (bisa 2x jika ada dual VVT)</td>
+</tr>
+<tr>
+<td>TPS</td>
+<td>1x</td>
+<td>Analog 0-5V</td>
+</tr>
+<tr>
+<td>MAP</td>
+<td>1x</td>
+<td>Analog 0-5V (built-in di sebagian board, atau eksternal)</td>
+</tr>
+<tr>
+<td>CLT</td>
+<td>1x</td>
+<td>Analog temperatur</td>
+</tr>
+<tr>
+<td>IAT</td>
+<td>1x</td>
+<td>Analog temperatur</td>
+</tr>
+<tr>
+<td>O2/Wideband</td>
+<td>1x</td>
+<td>Analog 0-5V dari wideband controller</td>
+</tr>
+<tr>
+<td>Fuel Pump Relay</td>
+<td>1x</td>
+<td>Low side output ke relay pompa</td>
+</tr>
+<tr>
+<td>Main Relay</td>
+<td>1x</td>
+<td>Low side output ke relay utama</td>
+</tr>
+<tr>
+<td>Tacho Output</td>
+<td>1x (opsional)</td>
+<td>Untuk RPM gauge analog</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Jika mesin menggunakan <strong>wasted spark</strong> (2 coil untuk 4 silinder), cukup gunakan 2 channel ignition dan CMP menjadi opsional karena tidak dibutuhkan sequential ignition (namun tetap dibutuhkan jika injection tetap sequential).</p>
+</blockquote>
+<h3 id="wiring-koil-pengapian-4-silinder-cop">Wiring Koil Pengapian (4 Silinder COP)<a class="headerlink" href="#wiring-koil-pengapian-4-silinder-cop" title="Permanent link">&para;</a></h3>
+<p>Suplai +12V ke masing-masing koil diambil dari relay khusus ignition yang sudah difuse (10A), bukan langsung dari ECU. ECU (IGN1-IGN4) hanya mengeluarkan sinyal switching/trigger ke tiap koil, dan ground koil ditempelkan langsung ke ground engine — bukan ke ground ECU (lihat bagian <a href="#grounding">Grounding</a>).</p>
+<p><img alt="Contoh wiring koil pengapian 4 silinder: aki, kunci kontak, relay dengan fuse 10A, ke IGN1-IGN4 dan ground engine" src="../img/manual/wiring-ignition-coil.png" /></p>
+<h3 id="wiring-injector-4-silinder">Wiring Injector (4 Silinder)<a class="headerlink" href="#wiring-injector-4-silinder" title="Permanent link">&para;</a></h3>
+<p>Suplai +12V ke injector diambil dari relay injector yang sudah difuse (5A per pasang), sedangkan sisi lain injector terhubung ke output low-side ECU (INJ1-INJ4) yang bertindak sebagai ground switching untuk mengaktifkan injector.</p>
+<p><img alt="Contoh wiring injector 4 silinder: aki, kunci kontak, relay dengan fuse 5A per pasang, ke INJ1-INJ4" src="../img/manual/wiring-injectior.png" /></p>
+<p>Untuk pin exact sesuai board yang dipakai, lihat tabel pin assignment di halaman dokumentasi hardware masing-masing produk, misalnya <a href="../mazduino-compact-4ch-v1/">Mazduino Compact 4CH v1</a>, <a href="../mazduino-mini-6ch-v1.4/">Mazduino Mini 6CH v1.4</a>, atau <a href="../mazduino-core-rev1/">Mazduino Core rev1</a>.</p>
+<h2 id="checklist-sebelum-power-up">Checklist Sebelum Power-Up<a class="headerlink" href="#checklist-sebelum-power-up" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Semua ground (ECU, sensor, block mesin) terhubung dengan baik dan resistansi rendah.</li>
+<li>Suplai 12V utama melalui fuse dan main relay, bukan langsung dari baterai tanpa proteksi.</li>
+<li>Sensor CKP/CMP terpasang dengan air gap yang sesuai spesifikasi (untuk VR) dan polaritas benar (untuk Hall).</li>
+<li>TPS terpasang dan bisa diputar penuh dari closed ke wide-open tanpa macet.</li>
+<li>Tidak ada kabel sensor yang berdekatan/sejajar dengan kabel coil, injector, atau alternator.</li>
+<li>Konektor terpasang rapat dan tidak ada pin yang bengkok atau longgar.</li>
+<li>Cek kontinuitas dan short circuit sebelum menyalakan power pertama kali.</li>
+</ol>
+<p>Setelah wiring selesai dan diverifikasi, lanjutkan ke <strong><a href="../tunerstudio-manual/">Manual TunerStudio</a></strong> untuk konfigurasi project dan kalibrasi sensor.</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-left" title="Pro (4.3", 5" & 7")"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-manual/" class="btn btn-neutral float-right" title="Manual Lengkap">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-manual/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
