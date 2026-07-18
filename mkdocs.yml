@@ -20,9 +20,12 @@ nav:
     - v1.4: mazduino-mini-6ch-v1.4.md
   - Mazduino Core:
     - rev0: mazduino-core-rev0.md
+    - rev1: mazduino-core-rev1.md
   - Mazduino Racedash:
     - 3.5" & 4": mazduino-racedash.md
     - Pro (4.3", 5" & 7"): mazduino-racedash-pro.md
+  - Sensor dan Wiring: 
+    - Persiapan: persiapan-sensor-wiring.md
   - Manual TunerStudio:
     - Manual Lengkap: tunerstudio-manual.md
     - Instalasi: tunerstudio-instalasi.md
@@ -52,6 +55,13 @@ nav:
   - Tentang: about.md
 theme:
   name: readthedocs
+  custom_dir: theme_overrides
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+      locale: id
+      fallback_to_build_date: true
 extra_javascript:
   - js/external-links.js
 extra_css:

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {%- if page.meta.git_revision_date_localized %}
+  <p><em>Terakhir diperbarui: {{ page.meta.git_revision_date_localized }}</em></p>
+  {%- endif %}
+  {{ page.content }}
+{% endblock %}
