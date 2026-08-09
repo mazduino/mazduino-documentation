@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-x600/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>X600 (4.3") - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "X600 (4.3\")";
+        var mkdocs_page_input_path = "mazduino-x600.md";
+        var mkdocs_page_url = "/mazduino-x600/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino LITE</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Compact 4 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mini 6 Channel</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Core</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino X600</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">X600 (4.3")</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring-dan-instalasi">Wiring dan Instalasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#layout-konektor-34-pin">Layout Konektor 34-pin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pin-assignment-konektor-34-pin">Pin Assignment Konektor 34-pin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jalur-bersama-jumper-option">Jalur Bersama (Jumper Option)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ringkasan-jumlah-io">Ringkasan Jumlah I/O</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#mapping-fungsional-firmware">Mapping Fungsional Firmware</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-skenario-penggunaan-io">Contoh Skenario Penggunaan I/O</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#layar-terintegrasi-43-inch">Layar Terintegrasi 4.3 inch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software-tuning">Software Tuning</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#panduan-instalasi-singkat">Panduan Instalasi Singkat</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#catatan-penting">Catatan Penting</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#referensi">Referensi</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Racedash</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash-pro/">Pro (4.3", 5" & 7")</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Mazduino X600</li>
+      <li class="breadcrumb-item active">X600 (4.3")</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Agustus 2026 08:47:40 UTC">9 Agustus 2026</span></em></p>
+  <h1 id="mazduino-x600">Mazduino X600<a class="headerlink" href="#mazduino-x600" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
+<p>Mazduino X600 adalah ECU dengan <strong>layar terintegrasi 4.3 inch</strong> — unit <strong>Dash dan ECU menjadi satu</strong>, sehingga tidak memerlukan dash display terpisah untuk memantau data mesin secara real-time. Produk ini berbasis firmware <strong>rusEFI</strong> dan dikonfigurasi/tuning melalui software <strong>TunerStudio</strong>.</p>
+<p>Koneksi ke komputer menggunakan <strong>USB Type B</strong>, sedangkan wiring ke harness mesin menggunakan <strong>konektor 34-pin</strong>. Dengan 6 output ignition, 12 output low side, kombinasi input Hall (Digital) dan VR, serta input analog untuk sensor tegangan dan temperatur, X600 mendukung mesin hingga <strong>6 silinder</strong>.</p>
+<p>Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino X600 dan referensi pinout hardware pada dokumen manual X600.</p>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Layar 4.3 inch terintegrasi</strong> — Dash dan ECU dalam satu unit untuk menampilkan RPM, data sensor, dan status mesin secara real-time (display-only; seluruh tuning dilakukan via TunerStudio)</li>
+<li>Firmware <strong>rusEFI based</strong></li>
+<li>Koneksi ke komputer via <strong>USB Type B</strong> untuk tuning dengan <strong>TunerStudio</strong></li>
+<li><strong>Konektor 34-pin</strong> untuk wiring ke harness mesin</li>
+<li><strong>6x output ignition</strong> (IGN1–IGN6; IGN5/IGN6 berbagi jalur dengan High Side 1/2)</li>
+<li><strong>2x output High Side</strong> (HS1, HS2) untuk beban 12V switching (via jumper option pada IGN5/IGN6)</li>
+<li><strong>12x output low side</strong> (LS1–LS12) untuk injektor, idle PWM, boost, VVT, relay, dan aktuator lain</li>
+<li><strong>4x input Analog Volt</strong> (AV1–AV4) untuk MAP, TPS, O2/wideband, PPS, atau sensor tekanan (0–5V)</li>
+<li><strong>4x input Analog Temp</strong> (AT1, AT2, AT3, AT6) untuk CLT, IAT, dan sensor temperatur lain</li>
+<li><strong>2x input Digital/Hall</strong> (Digital 1, Digital 2) untuk CKP/CMP, VSS, atau switch</li>
+<li><strong>2x input VR</strong> (VR1, VR2) untuk CKP/CMP tipe variable reluctor (berbagi jalur dengan Digital/Analog Temp via <strong>jumper option</strong>)</li>
+<li><strong>Output TACH</strong> untuk sinyal RPM ke tacho</li>
+<li>Built-in <strong>5V sensor supply</strong> untuk referensi sensor 5V</li>
+</ul>
+<h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
+<p>X600 menggunakan <strong>konektor 34-pin</strong> untuk seluruh koneksi ke harness mesin, dan <strong>USB Type B</strong> terpisah untuk koneksi tuning ke komputer.</p>
+<p><img alt="Pinout konektor 34-pin dan port USB Type B Mazduino X600" src="../img/x600/pinout-connector.png" /></p>
+<p><em>Posisi pin pada konektor 34-pin dan port USB Type B.</em></p>
+<h3 id="layout-konektor-34-pin">Layout Konektor 34-pin<a class="headerlink" href="#layout-konektor-34-pin" title="Permanent link">&para;</a></h3>
+<p>Konektor tersusun dalam 4 baris. Nomor pin naik dari kiri ke kanan pada tiap baris:</p>
+<pre><code>Baris 1:  P1  P2  P3  P4  P5  P6  P7  P8  P9
+Baris 2:  P10 P11 P12 P13 P14 P15 P16 P17
+Baris 3:  P18 P19 P20 P21 P22 P23 P24 P25
+Baris 4:  P26 P27 P28 P29 P30 P31 P32 P33 P34
+</code></pre>
+<p>Sebagai acuan cepat: <strong>P1</strong> berada di ujung kiri baris atas, <strong>P9</strong> di ujung kanan baris atas, <strong>P26</strong> di ujung kiri baris bawah, dan <strong>P34</strong> di ujung kanan baris bawah (lihat gambar di atas).</p>
+<h3 id="pin-assignment-konektor-34-pin">Pin Assignment Konektor 34-pin<a class="headerlink" href="#pin-assignment-konektor-34-pin" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Fungsi</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>12V</td>
+<td>Catu daya utama ECU</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>IGN6 / HS2</td>
+<td>Ignition 6 atau High Side 2 (12V switching) — jumper option</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>IGN5 / HS1</td>
+<td>Ignition 5 atau High Side 1 (12V switching) — jumper option</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>IGN2</td>
+<td>Output pengapian 2</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>TACH</td>
+<td>Output sinyal tacho (RPM)</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>AT6 / VR1-</td>
+<td>Analog Temp 6 atau VR1- (input VR1 negatif) — jumper option</td>
+</tr>
+<tr>
+<td>P7</td>
+<td>AT3 / VR2-</td>
+<td>Analog Temp 3 atau VR2- (input VR2 negatif) — jumper option</td>
+</tr>
+<tr>
+<td>P8</td>
+<td>AT2</td>
+<td>Analog Temp 2</td>
+</tr>
+<tr>
+<td>P9</td>
+<td>AT1</td>
+<td>Analog Temp 1</td>
+</tr>
+<tr>
+<td>P10</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>P11</td>
+<td>IGN4</td>
+<td>Output pengapian 4</td>
+</tr>
+<tr>
+<td>P12</td>
+<td>IGN3</td>
+<td>Output pengapian 3</td>
+</tr>
+<tr>
+<td>P13</td>
+<td>IGN1</td>
+<td>Output pengapian 1</td>
+</tr>
+<tr>
+<td>P14</td>
+<td>AV1</td>
+<td>Analog Volt 1 (input 0–5V)</td>
+</tr>
+<tr>
+<td>P15</td>
+<td>AV2</td>
+<td>Analog Volt 2 (input 0–5V)</td>
+</tr>
+<tr>
+<td>P16</td>
+<td>AV3</td>
+<td>Analog Volt 3 (input 0–5V)</td>
+</tr>
+<tr>
+<td>P17</td>
+<td>AV4</td>
+<td>Analog Volt 4 (input 0–5V)</td>
+</tr>
+<tr>
+<td>P18</td>
+<td>LS2</td>
+<td>Low Side 2</td>
+</tr>
+<tr>
+<td>P19</td>
+<td>LS1</td>
+<td>Low Side 1</td>
+</tr>
+<tr>
+<td>P20</td>
+<td>DIGITAL1 / VR1+</td>
+<td>Digital 1 (Hall) atau VR1+ (input VR1 positif) — jumper option</td>
+</tr>
+<tr>
+<td>P21</td>
+<td>DIGITAL2 / VR2+</td>
+<td>Digital 2 (Hall) atau VR2+ (input VR2 positif) — jumper option</td>
+</tr>
+<tr>
+<td>P22</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>P23</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>P24</td>
+<td>5V SENSOR</td>
+<td>5V sensor supply</td>
+</tr>
+<tr>
+<td>P25</td>
+<td>LS12</td>
+<td>Low Side 12</td>
+</tr>
+<tr>
+<td>P26</td>
+<td>LS4</td>
+<td>Low Side 4</td>
+</tr>
+<tr>
+<td>P27</td>
+<td>LS3</td>
+<td>Low Side 3</td>
+</tr>
+<tr>
+<td>P28</td>
+<td>LS6</td>
+<td>Low Side 6</td>
+</tr>
+<tr>
+<td>P29</td>
+<td>LS5</td>
+<td>Low Side 5</td>
+</tr>
+<tr>
+<td>P30</td>
+<td>LS8</td>
+<td>Low Side 8</td>
+</tr>
+<tr>
+<td>P31</td>
+<td>LS7</td>
+<td>Low Side 7</td>
+</tr>
+<tr>
+<td>P32</td>
+<td>LS9</td>
+<td>Low Side 9</td>
+</tr>
+<tr>
+<td>P33</td>
+<td>LS10</td>
+<td>Low Side 10</td>
+</tr>
+<tr>
+<td>P34</td>
+<td>LS11</td>
+<td>Low Side 11</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jalur-bersama-jumper-option">Jalur Bersama (Jumper Option)<a class="headerlink" href="#jalur-bersama-jumper-option" title="Permanent link">&para;</a></h3>
+<p>Beberapa pin memiliki fungsi ganda yang dipilih melalui <strong>jumper</strong>. Konfigurasi jumper dapat <strong>ditentukan saat pemesanan pertama</strong> (dipilih sesuai kebutuhan mesin) atau <strong>diubah sendiri</strong> dengan mengatur jumper pada board. Selalu matikan sumber daya ECU sebelum mengubah konfigurasi jumper.</p>
+<ul>
+<li><strong>P2 (IGN6 / HS2)</strong> dan <strong>P3 (IGN5 / HS1)</strong> — dapat dikonfigurasi sebagai output <strong>ignition</strong> (IGN5/IGN6) atau sebagai <strong>High Side</strong> (HS1/HS2) untuk beban 12V switching, misalnya alternator control atau solenoid 12V.</li>
+<li><strong>P6 (AT6 / VR1-)</strong> dan <strong>P20 (DIGITAL1 / VR1+)</strong> — pasangan jalur untuk <strong>VR1</strong>. Pilih sebagai VR (VR1+ dan VR1-) untuk sensor CKP/CMP tipe variable reluctor, atau sebagai Analog Temp 6 + Digital 1 (Hall) untuk sensor Hall/temperatur.</li>
+<li><strong>P7 (AT3 / VR2-)</strong> dan <strong>P21 (DIGITAL2 / VR2+)</strong> — pasangan jalur untuk <strong>VR2</strong>, dengan pola konfigurasi yang sama seperti VR1.</li>
+</ul>
+<blockquote>
+<p><strong>Catatan:</strong> Fungsi pin di atas ditentukan oleh posisi jumper. Pastikan konfigurasi jumper sesuai dengan wiring dan jenis sensor/aktuator yang dipakai. Jika ragu, tentukan konfigurasi saat pemesanan.</p>
+</blockquote>
+<h2 id="ringkasan-jumlah-io">Ringkasan Jumlah I/O<a class="headerlink" href="#ringkasan-jumlah-io" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Kelompok</th>
+<th>Jumlah</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ignition Output</td>
+<td>6</td>
+<td>IGN1–IGN6 (IGN5/IGN6 berbagi jalur dengan HS1/HS2)</td>
+</tr>
+<tr>
+<td>High Side</td>
+<td>2</td>
+<td>HS1, HS2 untuk 12V switching (via jalur IGN5/IGN6)</td>
+</tr>
+<tr>
+<td>Low Side</td>
+<td>12</td>
+<td>LS1–LS12 untuk injektor dan aktuator</td>
+</tr>
+<tr>
+<td>Input Analog Volt</td>
+<td>4</td>
+<td>AV1–AV4 (0–5V)</td>
+</tr>
+<tr>
+<td>Input Analog Temp</td>
+<td>4</td>
+<td>AT1, AT2, AT3, AT6</td>
+</tr>
+<tr>
+<td>Input Digital/Hall</td>
+<td>2</td>
+<td>Digital 1, Digital 2 (berbagi jalur dengan VR+)</td>
+</tr>
+<tr>
+<td>Input VR</td>
+<td>2</td>
+<td>VR1 (+/-), VR2 (+/-)</td>
+</tr>
+<tr>
+<td>Output Tacho</td>
+<td>1</td>
+<td>TACH</td>
+</tr>
+<tr>
+<td>5V Sensor Supply</td>
+<td>1</td>
+<td>Referensi 5V sensor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mapping-fungsional-firmware">Mapping Fungsional Firmware<a class="headerlink" href="#mapping-fungsional-firmware" title="Permanent link">&para;</a></h2>
+<p>Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan dengan kebutuhan mesin dan strategi tuning.</p>
+<table>
+<thead>
+<tr>
+<th>Fungsi Umum</th>
+<th>Jalur Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ignition 1–6</td>
+<td>IGN1 sampai IGN6</td>
+</tr>
+<tr>
+<td>Injector</td>
+<td>Low Side (LS1 dan seterusnya)</td>
+</tr>
+<tr>
+<td>Main Relay / Fuel Pump / Fan / AC / Idle</td>
+<td>Low Side (LS yang tidak dipakai injector)</td>
+</tr>
+<tr>
+<td>MAP / TPS / O2 / PPS / Sensor tekanan</td>
+<td>Analog Volt 1–4</td>
+</tr>
+<tr>
+<td>CLT / IAT / Temp tambahan</td>
+<td>Analog Temp (AT1, AT2, AT3, AT6)</td>
+</tr>
+<tr>
+<td>CKP / CMP Hall</td>
+<td>Digital 1 dan Digital 2</td>
+</tr>
+<tr>
+<td>CKP / CMP VR</td>
+<td>VR1 dan VR2 (via jalur bersama)</td>
+</tr>
+<tr>
+<td>Tacho</td>
+<td>TACH</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contoh-skenario-penggunaan-io">Contoh Skenario Penggunaan I/O<a class="headerlink" href="#contoh-skenario-penggunaan-io" title="Permanent link">&para;</a></h2>
+<p>Jalur Low Side, Analog Volt, dan Analog Temp bersifat generik sehingga alokasinya tergantung konfigurasi mesin. Beberapa contoh skenario:</p>
+<ul>
+<li><strong>Mesin 6 silinder full sequential</strong>: gunakan IGN1–IGN6 untuk pengapian COP/individual, dan 6 jalur Low Side untuk injektor sequential. Sisa Low Side (LS7–LS12) bebas dipakai untuk idle PWM, boost solenoid, VVT, fuel pump, fan, atau aktuator lain.</li>
+<li><strong>Mesin 4 silinder</strong>: gunakan 4 channel ignition dan 4 Low Side untuk injektor, sisanya untuk aktuator dan relay. Jalur IGN5/IGN6 dapat dialihkan menjadi High Side (HS1/HS2) untuk 12V switching.</li>
+<li><strong>Trigger VR</strong>: untuk sensor CKP/CMP tipe variable reluctor, gunakan jalur VR1 (P6 + P20) dan VR2 (P7 + P21).</li>
+<li><strong>Trigger Hall</strong>: untuk sensor CKP/CMP tipe Hall, gunakan Digital 1 (P20) dan Digital 2 (P21).</li>
+<li><strong>Analog Volt</strong>: input sensor analog 0–5V seperti MAP, TPS, O2/wideband, PPS, atau sensor tekanan.</li>
+<li><strong>Analog Temp</strong>: input sensor temperatur seperti CLT (Coolant Temp) dan IAT (Intake Air Temp).</li>
+</ul>
+<h2 id="layar-terintegrasi-43-inch">Layar Terintegrasi 4.3 inch<a class="headerlink" href="#layar-terintegrasi-43-inch" title="Permanent link">&para;</a></h2>
+<p>X600 dilengkapi layar <strong>4.3 inch</strong> yang menyatu dengan ECU untuk menampilkan data mesin secara real-time (RPM, data sensor, dan status), sehingga tidak memerlukan dash display terpisah. Layar bersifat <strong>display-only</strong> — seluruh konfigurasi dan tuning dilakukan melalui <strong>TunerStudio</strong>, bukan melalui menu di layar.</p>
+<h2 id="software-tuning">Software Tuning<a class="headerlink" href="#software-tuning" title="Permanent link">&para;</a></h2>
+<p>X600 dikonfigurasi dan dituning menggunakan <strong>TunerStudio</strong> melalui koneksi <strong>USB Type B</strong> ke komputer.</p>
+<ol>
+<li>Hubungkan X600 ke komputer menggunakan kabel <strong>USB Type B</strong>.</li>
+<li>Buka <strong>TunerStudio</strong> dan pilih/port yang sesuai, lalu hubungkan ke ECU.</li>
+<li>Gunakan file konfigurasi (firmware/definition) yang memang ditujukan untuk <strong>Mazduino X600</strong> agar seluruh pin berfungsi sesuai desain board.</li>
+<li>Lakukan pengecekan output dengan test mode di TunerStudio sebelum start engine.</li>
+</ol>
+<h2 id="panduan-instalasi-singkat">Panduan Instalasi Singkat<a class="headerlink" href="#panduan-instalasi-singkat" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Pastikan ground (P10, P22, P23) terhubung dengan baik.</li>
+<li>Hubungkan P1 ke suplai 12V ECU yang stabil.</li>
+<li>Pilih mode trigger <strong>Hall (Digital)</strong> atau <strong>VR</strong> sesuai jenis sensor CKP/CMP, lalu wiring pada jalur bersama yang sesuai.</li>
+<li>Tentukan pemakaian jalur IGN5/IGN6 sebagai ignition atau High Side sesuai kebutuhan.</li>
+<li>Hubungkan sensor 5V ke jalur 5V Sensor Supply (P24) dan sensor temperatur/tegangan ke jalur Analog yang sesuai.</li>
+<li>Hubungkan X600 ke komputer via USB Type B dan verifikasi output dengan test mode di TunerStudio sebelum menyalakan mesin.</li>
+</ol>
+<h2 id="catatan-penting">Catatan Penting<a class="headerlink" href="#catatan-penting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Layar 4.3 inch bersifat <strong>display-only</strong>; seluruh tuning dilakukan via TunerStudio.</li>
+<li>Output ignition ditujukan untuk <strong>smart coil</strong>. Untuk dumb coil wajib menggunakan driver/IGBT eksternal.</li>
+<li><strong>HS1 dan HS2</strong> (jalur IGN5/IGN6) dapat digunakan sebagai output <strong>12V switching</strong>, misalnya alternator control.</li>
+<li>Jalur VR (VR1/VR2) berbagi pin dengan Digital dan Analog Temp — pastikan hanya satu fungsi yang diwiring per pasangan pin.</li>
+<li>Firmware untuk board ini berbasis <strong>rusEFI</strong>. Gunakan definition/firmware khusus X600.</li>
+</ul>
+<h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Website Mazduino - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>
+<li>Wiki Mazduino - <a href="https://wiki.mazduino.com/">https://wiki.mazduino.com/</a></li>
+<li>Download TunerStudio - <a href="https://www.tunerstudio.com/index.php/downloads">https://www.tunerstudio.com/index.php/downloads</a></li>
+<li>Referensi firmware rusEFI - <a href="https://wiki.rusefi.com">https://wiki.rusefi.com</a></li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-core-rev1/" class="btn btn-neutral float-left" title="rev1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-racedash/" class="btn btn-neutral float-right" title="3.5" & 4"">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-core-rev1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
