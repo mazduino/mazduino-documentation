@@ -221,7 +221,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Agustus 2026 08:53:11 UTC">9 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Agustus 2026 08:55:35 UTC">9 Agustus 2026</span></em></p>
   <h1 id="mazduino-x600">Mazduino X600<a class="headerlink" href="#mazduino-x600" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino X600 adalah ECU dengan <strong>layar terintegrasi 4.3 inch</strong> — unit <strong>Dash dan ECU menjadi satu</strong>, sehingga tidak memerlukan dash display terpisah untuk memantau data mesin secara real-time. Produk ini berbasis firmware <strong>rusEFI</strong> dan dikonfigurasi/tuning melalui software <strong>TunerStudio</strong>.</p>
@@ -266,7 +266,7 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <tr>
 <td>P1</td>
 <td>12V</td>
-<td>Catu daya utama ECU</td>
+<td>12V ECU power supply</td>
 </tr>
 <tr>
 <td>P2</td>
@@ -311,7 +311,7 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <tr>
 <td>P10</td>
 <td>GND</td>
-<td>Ground</td>
+<td>Power ground (ECU power ground)</td>
 </tr>
 <tr>
 <td>P11</td>
@@ -371,12 +371,12 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <tr>
 <td>P22</td>
 <td>GND</td>
-<td>Ground</td>
+<td>Sensor ground</td>
 </tr>
 <tr>
 <td>P23</td>
 <td>GND</td>
-<td>Ground</td>
+<td>Sensor ground</td>
 </tr>
 <tr>
 <td>P24</td>
@@ -568,7 +568,7 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 </ol>
 <h2 id="panduan-instalasi-singkat">Panduan Instalasi Singkat<a class="headerlink" href="#panduan-instalasi-singkat" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Pastikan ground (P10, P22, P23) terhubung dengan baik.</li>
+<li>Pastikan <strong>power ground</strong> (P10) dan <strong>sensor ground</strong> (P22, P23) terhubung dengan baik.</li>
 <li>Hubungkan P1 ke suplai 12V ECU yang stabil.</li>
 <li>Pilih mode trigger <strong>Hall (Digital)</strong> atau <strong>VR</strong> sesuai jenis sensor CKP/CMP, lalu wiring pada jalur bersama yang sesuai.</li>
 <li>Tentukan pemakaian jalur IGN5/IGN6 sebagai ignition atau High Side sesuai kebutuhan.</li>
