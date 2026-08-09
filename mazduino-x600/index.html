@@ -221,7 +221,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Agustus 2026 08:50:33 UTC">9 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Agustus 2026 08:53:11 UTC">9 Agustus 2026</span></em></p>
   <h1 id="mazduino-x600">Mazduino X600<a class="headerlink" href="#mazduino-x600" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino X600 adalah ECU dengan <strong>layar terintegrasi 4.3 inch</strong> — unit <strong>Dash dan ECU menjadi satu</strong>, sehingga tidak memerlukan dash display terpisah untuk memantau data mesin secara real-time. Produk ini berbasis firmware <strong>rusEFI</strong> dan dikonfigurasi/tuning melalui software <strong>TunerStudio</strong>.</p>
@@ -281,7 +281,7 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <tr>
 <td>P4</td>
 <td>IGN2</td>
-<td>Output pengapian 2</td>
+<td>Ignition 2</td>
 </tr>
 <tr>
 <td>P5</td>
@@ -316,17 +316,17 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <tr>
 <td>P11</td>
 <td>IGN4</td>
-<td>Output pengapian 4</td>
+<td>Ignition 4</td>
 </tr>
 <tr>
 <td>P12</td>
 <td>IGN3</td>
-<td>Output pengapian 3</td>
+<td>Ignition 3</td>
 </tr>
 <tr>
 <td>P13</td>
 <td>IGN1</td>
-<td>Output pengapian 1</td>
+<td>Ignition 1</td>
 </tr>
 <tr>
 <td>P14</td>
@@ -549,7 +549,7 @@ P26  P27  P28  P29  P30  P31  P32  P33  P34
 <h2 id="contoh-skenario-penggunaan-io">Contoh Skenario Penggunaan I/O<a class="headerlink" href="#contoh-skenario-penggunaan-io" title="Permanent link">&para;</a></h2>
 <p>Jalur Low Side, Analog Volt, dan Analog Temp bersifat generik sehingga alokasinya tergantung konfigurasi mesin. Beberapa contoh skenario:</p>
 <ul>
-<li><strong>Mesin 6 silinder full sequential</strong>: gunakan IGN1–IGN6 untuk pengapian COP/individual, dan 6 jalur Low Side untuk injektor sequential. Sisa Low Side (LS7–LS12) bebas dipakai untuk idle PWM, boost solenoid, VVT, fuel pump, fan, atau aktuator lain.</li>
+<li><strong>Mesin 6 silinder full sequential</strong>: gunakan IGN1–IGN6 untuk ignition COP/individual, dan 6 jalur Low Side untuk injektor sequential. Sisa Low Side (LS7–LS12) bebas dipakai untuk idle PWM, boost solenoid, VVT, fuel pump, fan, atau aktuator lain.</li>
 <li><strong>Mesin 4 silinder</strong>: gunakan 4 channel ignition dan 4 Low Side untuk injektor, sisanya untuk aktuator dan relay. Jalur IGN5/IGN6 dapat dialihkan menjadi High Side (HS1/HS2) untuk 12V switching.</li>
 <li><strong>Trigger VR</strong>: untuk sensor CKP/CMP tipe variable reluctor, gunakan jalur VR1 (P6 + P20) dan VR2 (P7 + P21).</li>
 <li><strong>Trigger Hall</strong>: untuk sensor CKP/CMP tipe Hall, gunakan Digital 1 (P20) dan Digital 2 (P21).</li>
