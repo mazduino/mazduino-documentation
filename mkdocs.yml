@@ -21,6 +21,8 @@ nav:
   - Mazduino Core:
     - rev0: mazduino-core-rev0.md
     - rev1: mazduino-core-rev1.md
+  - Mazduino X600:
+    - X600 (4.3"): mazduino-x600.md
   - Mazduino Racedash:
     - 3.5" & 4": mazduino-racedash.md
     - Pro (4.3", 5" & 7"): mazduino-racedash-pro.md
