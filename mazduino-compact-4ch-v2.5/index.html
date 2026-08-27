@@ -257,7 +257,7 @@
 <p>5x driver low-side arus rendah untuk main relay, fuel pump, AC compressor, fan, dan tacho</p>
 </li>
 <li>4x output 12V atau 5V untuk sinyal koil pengapian</li>
-<li><strong>2x High Side Switching</strong> untuk kontrol alternator, VVT, atau 12V switching tambahan</li>
+<li><strong>2x High Side Switching (sinyal 12V / logic level)</strong> untuk kontrol alternator, VVT, atau switching 12V tambahan. Output ini hanya menghasilkan sinyal 12V dan <strong>tidak dapat menggerakkan solenoid atau beban induktif secara langsung</strong> — gunakan relay atau modul driver eksternal</li>
 <li>Prosesor 168 MHz ARM Cortex-M4</li>
 <li>Komunikasi via CANbus, USB Type-C, dan Serial RX/TX</li>
 <li>Konektor Yamaha 33-pin otomotif grade</li>
@@ -274,8 +274,11 @@
 <li>
 <p>Pada konektor, terdapat opsi <strong>GND / HS2 (Jumper)</strong> untuk menyesuaikan mode pemakaian</p>
 </li>
-<li>Memungkinkan kontrol beban 12V lebih fleksibel untuk kebutuhan setup lanjutan</li>
+<li>Memungkinkan pengiriman sinyal 12V lebih fleksibel untuk kebutuhan setup lanjutan</li>
 </ul>
+<blockquote>
+<p><strong>Penting</strong>: HS1 dan HS2 adalah <strong>12V logic switching (sinyal)</strong>, bukan output daya. Keduanya tidak dirancang untuk menarik arus besar dan <strong>tidak boleh dipakai langsung untuk solenoid, VVT solenoid, atau beban induktif lain</strong>. Untuk menggerakkan aktuator, hubungkan output high side ke <strong>relay atau driver/modul eksternal</strong> yang sesuai.</p>
+</blockquote>
 <h3 id="optimasi-hall-input-v25">Optimasi Hall Input (v2.5)<a class="headerlink" href="#optimasi-hall-input-v25" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -418,12 +421,12 @@
 <tr>
 <td><strong>21</strong></td>
 <td><strong>GND / HS2 (Jumper)</strong></td>
-<td><strong>Ground atau High Side 2 (sesuai konfigurasi jumper)</strong></td>
+<td><strong>Ground atau High Side 2 - sinyal 12V (sesuai konfigurasi jumper)</strong></td>
 </tr>
 <tr>
 <td><strong>22</strong></td>
 <td><strong>HS1</strong></td>
-<td><strong>High Side Output 1</strong></td>
+<td><strong>High Side Output 1 - sinyal 12V</strong></td>
 </tr>
 <tr>
 <td>23</td>
@@ -751,7 +754,7 @@
 </tr>
 <tr>
 <td>High Side Output</td>
-<td>2 channels (HS1 + HS2)</td>
+<td>2 channels (HS1 + HS2), 12V logic switching (sinyal, bukan output daya)</td>
 </tr>
 <tr>
 <td>Communication</td>
