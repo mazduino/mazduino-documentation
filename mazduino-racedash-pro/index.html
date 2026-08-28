@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-racedash-pro/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Pro (4.3", 5" & 7") - Mazduino Documentation</title>
+    <title>Pro / M4, M5, M7 (4.3", 5" & 7") - Mazduino Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,7 +13,7 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Pro (4.3\", 5\" \u0026 7\")";
+        var mkdocs_page_name = "Pro / M4, M5, M7 (4.3\", 5\" \u0026 7\")";
         var mkdocs_page_input_path = "mazduino-racedash-pro.md";
         var mkdocs_page_url = "/mazduino-racedash-pro/";
       </script>
@@ -97,7 +97,7 @@
               <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pro (4.3", 5" & 7")</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
     </li>
@@ -113,7 +113,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#pengaturan-via-touchscreen">Pengaturan via Touchscreen</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pengaturan-via-touchscreen-firmware-lama">Pengaturan via Touchscreen (firmware lama)</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#main-screen">Main Screen</a>
     </li>
@@ -126,6 +126,48 @@
     <li class="toctree-l3"><a class="reference internal" href="#display-setting-screen">Display Setting Screen</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#connection-setting-screen">Connection Setting Screen</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#racedash-pro-m4-m5-m7">Racedash Pro M4 / M5 / M7</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ecu-yang-didukung">ECU yang didukung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mengganti-tampilan-template">Mengganti tampilan (template)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#menu-di-layar-m4-m5-m7">Menu di layar (M4 / M5 / M7)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gerakan-di-layar">Gerakan di layar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#susunan-menu">Susunan menu</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#display-setting-mengatur-isi-tiap-template">Display Setting — mengatur isi tiap template</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#general-setting-satuan-dan-rentang-data">General Setting — satuan dan rentang data</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#can-tipe-ecu-dan-tombol">CAN — tipe ECU dan tombol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tombol-can">Tombol CAN</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pengaturan-lain-yang-hanya-ada-di-dashtune">Pengaturan lain yang hanya ada di DashTune</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lampu-indikator">Lampu indikator</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#menyambungkan-pertama-kali">Menyambungkan pertama kali</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#isi-menu-dashtune">Isi menu DashTune</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#membuat-splash-screen-sendiri">Membuat splash screen sendiri</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-firmware">Update firmware</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fitur-relay-google-maps-dan-musik">Fitur relay: Google Maps dan musik</a>
     </li>
         </ul>
     </li>
@@ -214,7 +256,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Mazduino Racedash</li>
-      <li class="breadcrumb-item active">Pro (4.3", 5" & 7")</li>
+      <li class="breadcrumb-item active">Pro / M4, M5, M7 (4.3", 5" & 7")</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -237,22 +279,39 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Racedash Pro 4.3"</td>
+<td style="text-align: left;">Racedash Pro 4.3" (M4)</td>
 <td style="text-align: left;">4.3 inch</td>
 <td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Racedash Pro 5"</td>
+<td style="text-align: left;">Racedash Pro 5" (M5)</td>
 <td style="text-align: left;">5 inch</td>
 <td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 <tr>
-<td style="text-align: left;">Racedash Pro 7"</td>
+<td style="text-align: left;">Racedash Pro 7" (M7)</td>
 <td style="text-align: left;">7 inch</td>
 <td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<p><strong>Dua generasi firmware</strong>: Racedash Pro hadir dalam dua generasi. Keduanya
+memakai bodi, layar, dan konektor yang sama — yang berbeda adalah tampilan
+dan cara mengaturnya.</p>
+<ul>
+<li><strong>Generasi lama</strong> — seluruh pengaturan dilakukan dari layar sentuh.
+  Halamannya bernama <em>Main</em>, <em>Bench Test</em>, <em>Warning Setting</em>, <em>Slot Setting</em>,
+  <em>Display Setting</em>, dan <em>Connection Setting</em>. Panduannya ada di bagian
+  <a href="#pengaturan-via-touchscreen-firmware-lama">Pengaturan via Touchscreen (firmware lama)</a>.</li>
+<li><strong>Generasi M4 / M5 / M7</strong> — punya beberapa pilihan tampilan (template) yang
+  bisa digeser, dan bisa diatur dari HP lewat aplikasi <strong>DashTune</strong> selain
+  dari layar. Panduannya ada di bagian
+  <a href="#racedash-pro-m4-m5-m7">Racedash Pro M4 / M5 / M7</a>.</li>
+</ul>
+<p>Cara membedakannya paling mudah: kalau dashboard-mu bisa <strong>digeser
+kiri-kanan</strong> untuk berganti tampilan, berarti generasi M4/M5/M7.</p>
+</blockquote>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Layar sentuh (touchscreen) sehingga seluruh pengaturan dashboard dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan</li>
@@ -262,6 +321,12 @@
 </ul>
 <h2 id="fitur-via-wifi">Fitur via WiFi<a class="headerlink" href="#fitur-via-wifi" title="Permanent link">&para;</a></h2>
 <p>Meskipun sebagian besar pengaturan Racedash Pro dilakukan langsung dari touchscreen, ada beberapa fitur yang tetap memerlukan koneksi WiFi ke situs Mazduino, yaitu update firmware dan custom splash screen.</p>
+<blockquote>
+<p><strong>Untuk generasi M4 / M5 / M7</strong>, update firmware dan splash screen dilakukan
+lewat aplikasi <strong>DashTune</strong> di HP, bukan melalui situs Mazduino. Langkahnya
+ada di <a href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>. Cara di bawah
+ini berlaku untuk firmware generasi lama.</p>
+</blockquote>
 <h3 id="update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)<a class="headerlink" href="#update-firmware-usb-atau-ota" title="Permanent link">&para;</a></h3>
 <p>Update firmware Racedash Pro dapat dilakukan dengan dua cara:</p>
 <ol>
@@ -312,8 +377,14 @@
 <li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk ECU <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> (mode CAN Bus).</li>
 <li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX Serial</strong>, karena Speeduino tidak memiliki CAN Bus native.</li>
 </ul>
-<h2 id="pengaturan-via-touchscreen">Pengaturan via Touchscreen<a class="headerlink" href="#pengaturan-via-touchscreen" title="Permanent link">&para;</a></h2>
-<p>Berbeda dengan varian Racedash biasa, Racedash Pro tidak memerlukan koneksi WiFi/browser untuk konfigurasi — semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman). Menu pengaturan terdiri dari 6 halaman berikut:</p>
+<h2 id="pengaturan-via-touchscreen-firmware-lama">Pengaturan via Touchscreen (firmware lama)<a class="headerlink" href="#pengaturan-via-touchscreen-firmware-lama" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Bagian ini untuk firmware generasi lama.</strong> Kalau dash-mu bisa <strong>digeser
+kiri-kanan untuk berganti tampilan</strong>, berarti memakai firmware M4/M5/M7 dan
+menunya berbeda — lihat
+<a href="#menu-di-layar-m4-m5-m7">Menu di layar (M4 / M5 / M7)</a>.</p>
+</blockquote>
+<p>Pada firmware lama, semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman) tanpa perlu WiFi/browser. Menu pengaturan terdiri dari 6 halaman berikut:</p>
 <ul>
 <li><a href="#main-screen">Main Screen</a></li>
 <li><a href="#bench-test-screen-khusus-rusefi">Bench Test Screen (Khusus rusEFI)</a></li>
@@ -372,6 +443,305 @@
 <li><strong>BLE Telemetry</strong> — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy</li>
 </ul>
 <p>Tombol <strong>Default</strong> mengembalikan ke pengaturan awal, dan <strong>Save</strong> menyimpan perubahan.</p>
+<h2 id="racedash-pro-m4-m5-m7">Racedash Pro M4 / M5 / M7<a class="headerlink" href="#racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
+<p>Bagian ini khusus untuk generasi M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
+pemasangan kabelnya sama persis dengan yang dijelaskan di
+<a href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a> di atas.</p>
+<h3 id="ecu-yang-didukung">ECU yang didukung<a class="headerlink" href="#ecu-yang-didukung" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ECU</th>
+<th style="text-align: left;">Cara sambung</th>
+<th style="text-align: left;">Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rusEFI</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+<td style="text-align: left;">Paling lengkap datanya</td>
+</tr>
+<tr>
+<td style="text-align: left;">Haltech</td>
+<td style="text-align: left;">CAN Bus 1 Mbps</td>
+<td style="text-align: left;">Satu-satunya yang mengirim data lampu sein, rem tangan, dan tekanan ban</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxxECU</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Speeduino</td>
+<td style="text-align: left;">Serial</td>
+<td style="text-align: left;">Speeduino tidak punya CAN, jadi pin 3 dan 4 dipakai sebagai TX/RX</td>
+</tr>
+<tr>
+<td style="text-align: left;">OBD-II</td>
+<td style="text-align: left;">CAN Bus</td>
+<td style="text-align: left;">Untuk ECU standar bawaan mobil</td>
+</tr>
+</tbody>
+</table>
+<p>Tipe ECU dipilih dari aplikasi DashTune atau dari menu di layar, dan <strong>tidak
+perlu ganti firmware</strong>. Kecepatan CAN mengikuti ECU yang dipilih secara
+otomatis.</p>
+<p>Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
+AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
+gigi, kadar etanol, dan tegangan aki.</p>
+<blockquote>
+<p><strong>Catatan</strong>: Lampu <strong>sein</strong>, <strong>rem tangan</strong>, dan <strong>tekanan ban</strong> hanya
+menyala kalau memakai <strong>Haltech</strong>, karena hanya Haltech yang mengirimkan
+datanya. Pada rusEFI dan MaxxECU ketiga lampu itu memang tidak akan menyala —
+bukan kerusakan.</p>
+</blockquote>
+<h3 id="mengganti-tampilan-template">Mengganti tampilan (template)<a class="headerlink" href="#mengganti-tampilan-template" title="Permanent link">&para;</a></h3>
+<p>Tersedia lima tampilan dashboard, diberi nama <strong>Template 1</strong> sampai
+<strong>Template 5</strong>. Untuk berpindah, <strong>geser kiri atau kanan di bagian atas layar</strong>
+(di area bar RPM). Bagian bawah layar sengaja tidak menerima geseran supaya
+tombol CAN tidak ikut tersentuh.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tampilan</th>
+<th style="text-align: left;">Isi singkat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Template 1</strong></td>
+<td style="text-align: left;">Bar RPM di atas, gigi dan kecepatan besar di tengah, panel data di sekelilingnya</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Template 2</strong></td>
+<td style="text-align: left;">Susunan serupa Template 1 dengan tata letak panel yang berbeda</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Template 3</strong></td>
+<td style="text-align: left;">Pada M4/M5 tampilan khas Mazduino; pada M7 berupa tiga gauge besar dengan lampu indikator</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Template 4</strong></td>
+<td style="text-align: left;">Tampilan padat, menampilkan banyak angka sekaligus</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Template 5</strong></td>
+<td style="text-align: left;">Gaya jarum analog</td>
+</tr>
+</tbody>
+</table>
+<p>Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
+langsung membuka tampilan yang sama.</p>
+<h3 id="menu-di-layar-m4-m5-m7">Menu di layar (M4 / M5 / M7)<a class="headerlink" href="#menu-di-layar-m4-m5-m7" title="Permanent link">&para;</a></h3>
+<p>Menu firmware ini berbeda sama sekali dari firmware lama. Tidak ada lagi
+halaman <em>Warning Setting</em>, <em>Slot Setting</em>, atau <em>Connection Setting</em> — semuanya
+disusun ulang di bawah satu menu.</p>
+<h4 id="gerakan-di-layar">Gerakan di layar<a class="headerlink" href="#gerakan-di-layar" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gerakan</th>
+<th style="text-align: left;">Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Geser kiri / kanan <strong>di bar RPM (bagian atas layar)</strong></td>
+<td style="text-align: left;">Ganti tampilan dashboard</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geser ke atas</td>
+<td style="text-align: left;">Buka halaman tombol CAN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cubit dua jari</strong> (pinch)</td>
+<td style="text-align: left;">Buka menu utama</td>
+</tr>
+</tbody>
+</table>
+<p>Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
+bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
+berpindah tampilan.</p>
+<h4 id="susunan-menu">Susunan menu<a class="headerlink" href="#susunan-menu" title="Permanent link">&para;</a></h4>
+<pre><code>Menu
+├── Dash      → kembali ke dashboard terakhir
+├── CAN       → halaman tombol CAN
+└── Setting
+    ├── Display Setting   → pilih template, lalu atur isi tiap panelnya
+    ├── General Setting   → satuan, RPM maksimum, rentang tiap data
+    └── CAN
+        ├── Protokol      → pilih tipe ECU
+        └── CAN Button    → buat dan ubah tombol CAN
+</code></pre>
+<h4 id="display-setting-mengatur-isi-tiap-template">Display Setting — mengatur isi tiap template<a class="headerlink" href="#display-setting-mengatur-isi-tiap-template" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → Display Setting</strong>, lalu pilih template yang ingin diubah
+(Template 1 sampai Template 5). Setiap kotak data pada template bisa diganti
+isinya — misalnya dari tekanan oli menjadi suhu gearbox — dengan
+tombol panah kiri/kanan.</p>
+<p>Tekan <strong>Save</strong> untuk menyimpan, atau <strong>Discard</strong> untuk membatalkan. Pengaturan
+tersimpan di dash dan tidak hilang saat mesin dimatikan.</p>
+<blockquote>
+<p><strong>Catatan untuk M7</strong>: <strong>Template 3</strong> pada M7 sudah tetap isinya, jadi
+memilihnya di Display Setting akan langsung membuka tampilannya, bukan
+halaman pengaturan.</p>
+</blockquote>
+<h4 id="general-setting-satuan-dan-rentang-data">General Setting — satuan dan rentang data<a class="headerlink" href="#general-setting-satuan-dan-rentang-data" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → General Setting</strong>:</p>
+<ul>
+<li><strong>Satuan tekanan</strong> — kPa atau PSI</li>
+<li><strong>Satuan suhu</strong> — °C atau °F</li>
+<li><strong>RPM maksimum</strong> — skala penuh semua gauge RPM, diatur naik-turun 250 RPM;
+  garis merah otomatis di sekitar 5/6 dari angka ini</li>
+<li><strong>Data Source</strong> — daftar semua kanal data. Pilih salah satu untuk mengatur
+  <strong>nilai minimum dan maksimum</strong>-nya, yang menentukan rentang gauge dan angka
+  min/max yang tercetak di layar</li>
+</ul>
+<p>Perubahan satuan dan RPM maksimum langsung terlihat di semua template.</p>
+<h4 id="can-tipe-ecu-dan-tombol">CAN — tipe ECU dan tombol<a class="headerlink" href="#can-tipe-ecu-dan-tombol" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → CAN</strong> berisi dua hal:</p>
+<ul>
+<li><strong>Protokol</strong> — memilih tipe ECU (rusEFI, Haltech, MaxxECU, Speeduino, OBD-II).
+  Kecepatan CAN ikut menyesuaikan sendiri. <strong>Tidak perlu ganti firmware dan
+  tidak perlu restart</strong> — begitu disimpan, dash langsung membaca dengan
+  protokol yang baru.</li>
+<li><strong>CAN Button</strong> — membuat dan mengubah tombol CAN: nama, ID, dan data yang
+  dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.</li>
+</ul>
+<h4 id="tombol-can">Tombol CAN<a class="headerlink" href="#tombol-can" title="Permanent link">&para;</a></h4>
+<p>Geser ke atas dari dashboard untuk membukanya. Halaman ini dipakai untuk
+mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
+menyalakan kipas atau memicu launch control — cukup dengan menekan tombol di
+layar. Tombolnya bisa diatur dari layar (Setting → CAN → CAN Button) maupun
+dari aplikasi DashTune.</p>
+<h3 id="pengaturan-lain-yang-hanya-ada-di-dashtune">Pengaturan lain yang hanya ada di DashTune<a class="headerlink" href="#pengaturan-lain-yang-hanya-ada-di-dashtune" title="Permanent link">&para;</a></h3>
+<p>Beberapa pengaturan tidak tersedia di menu layar dan hanya bisa diubah dari
+aplikasi:</p>
+<ul>
+<li><strong>Mode MAP</strong> — <em>Absolute</em> (angka apa adanya, sekitar 101 kPa saat idle) atau
+  <em>Boost</em> (dihitung dari tekanan udara luar, jadi saat vakum angkanya minus dan
+  0 berarti belum ada boost)</li>
+<li><strong>Lama splash screen</strong> saat dinyalakan</li>
+<li><strong>Modul GPS</strong> — nyalakan kalau memakai GPS sebagai sumber kecepatan</li>
+</ul>
+<p>Pengaturan splash dan GPS baru berlaku setelah dash dimatikan dan dinyalakan
+kembali.</p>
+<h3 id="lampu-indikator">Lampu indikator<a class="headerlink" href="#lampu-indikator" title="Permanent link">&para;</a></h3>
+<p>Lampu-lampu peringatan menyala otomatis:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lampu</th>
+<th style="text-align: left;">Menyala saat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Check engine</td>
+<td style="text-align: left;">ECU melaporkan ada kode kesalahan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aki</td>
+<td style="text-align: left;">Tegangan di luar 11,5–15,5 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">Suhu air</td>
+<td style="text-align: left;">Di atas 105 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Suhu oli</td>
+<td style="text-align: left;">Di atas 130 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tekanan oli</td>
+<td style="text-align: left;">Mesin hidup (di atas 800 RPM) tapi tekanan di bawah 100 kPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sein kiri/kanan, rem tangan, tekanan ban</td>
+<td style="text-align: left;">Hanya pada Haltech</td>
+</tr>
+</tbody>
+</table>
+<p>Semua lampu ikut padam kalau sambungan ke ECU terputus, jadi tidak ada lampu
+yang menyala terus setelah kunci kontak dimatikan.</p>
+<hr />
+<h2 id="panduan-aplikasi-dashtune">Panduan Aplikasi DashTune<a class="headerlink" href="#panduan-aplikasi-dashtune" title="Permanent link">&para;</a></h2>
+<p>DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
+Pro M4/M5/M7, sambungannya lewat <strong>Bluetooth</strong> — tidak perlu WiFi dan tidak
+perlu mencabut apa pun.</p>
+<h3 id="menyambungkan-pertama-kali">Menyambungkan pertama kali<a class="headerlink" href="#menyambungkan-pertama-kali" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Nyalakan kunci kontak sampai dash menyala.</li>
+<li>Buka DashTune, masuk ke tab <strong>Perangkat</strong>, tekan <strong>Tambah Dash</strong>.</li>
+<li>Tekan <strong>Pindai</strong>. Dash akan muncul dengan sendirinya.</li>
+<li>Pilih dash tersebut. Setelah tersambung, aplikasi langsung membuka halaman
+   menu.</li>
+</ol>
+<p>Kalau tidak ketemu: pastikan Bluetooth HP menyala, dash dalam keadaan hidup,
+dan dash tidak sedang tersambung ke HP lain. Bisa juga memilih modelnya secara
+manual di bagian <strong>Model Dash</strong> di layar yang sama.</p>
+<p>Dash yang sudah pernah disambungkan akan diingat, dan aplikasi menyambung
+sendiri saat dibuka berikutnya.</p>
+<h3 id="isi-menu-dashtune">Isi menu DashTune<a class="headerlink" href="#isi-menu-dashtune" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Menu</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CAN Buttons</strong></td>
+<td style="text-align: left;">Membuat dan mengatur tombol CAN yang tampil di layar dash</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>General Setting</strong></td>
+<td style="text-align: left;">Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Dashboard</strong></td>
+<td style="text-align: left;">Mengatur tata letak panel dan data yang tampil pada tiap template</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Splash</strong></td>
+<td style="text-align: left;">Membuat gambar pembuka sendiri (lihat di bawah)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Info</strong></td>
+<td style="text-align: left;">Versi firmware dan kondisi perangkat</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Update Firmware</strong></td>
+<td style="text-align: left;">Memperbarui firmware dash</td>
+</tr>
+</tbody>
+</table>
+<h3 id="membuat-splash-screen-sendiri">Membuat splash screen sendiri<a class="headerlink" href="#membuat-splash-screen-sendiri" title="Permanent link">&para;</a></h3>
+<p>Masuk ke menu <strong>Splash</strong>. Di sana bisa menambahkan gambar dari galeri,
+menambah tulisan, menggeser dan memperbesar-kecilkan, lalu memilih warna latar.
+Setelah selesai tekan kirim.</p>
+<p>Karena gambar dikirim lewat WiFi, dash akan otomatis menyalakan WiFi-nya
+sendiri sebentar, HP berpindah ke sana, gambar dikirim, lalu HP kembali ke
+jaringan semula. Prosesnya berjalan sendiri — cukup <strong>biarkan layar HP menyala
+dan jangan tutup aplikasi</strong> sampai selesai.</p>
+<p>Tersedia juga pengaturan <strong>lama tampil</strong> splash, dan tombol untuk menghapusnya
+kembali ke gambar bawaan.</p>
+<h3 id="update-firmware">Update firmware<a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h3>
+<p>Masuk ke menu <strong>Update Firmware</strong>, aplikasi akan memeriksa versi terbaru dan
+menampilkan versi yang terpasang sekarang. Kalau ada versi baru, tekan tombol
+update.</p>
+<blockquote>
+<p><strong>Peringatan</strong>: Jangan lakukan update sambil berkendara. Selama update layar
+dash akan mati beberapa saat lalu menyala kembali sendiri. Pastikan kendaraan
+dalam keadaan aman, listrik tidak terputus, dan aplikasi tidak ditutup sampai
+selesai. Update yang terputus di tengah jalan bisa membuat dash gagal menyala.</p>
+</blockquote>
+<h3 id="fitur-relay-google-maps-dan-musik">Fitur relay: Google Maps dan musik<a class="headerlink" href="#fitur-relay-google-maps-dan-musik" title="Permanent link">&para;</a></h3>
+<p>DashTune bisa meneruskan <strong>petunjuk arah Google Maps</strong> dan <strong>judul lagu yang
+sedang diputar</strong> ke layar dash. Pengaturannya ada di tab <strong>Lainnya → Relay</strong>.</p>
+<p>Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
+halaman pengaturannya saat pertama kali diaktifkan.</p>
 <h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Website Mazduino - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>
