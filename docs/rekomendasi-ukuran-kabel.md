@@ -27,14 +27,15 @@ Berlaku untuk versi berikut:
 
 | Ukuran | AWG | Dipakai untuk |
 |--------|-----|---------------|
-| **0.3 mm²** | 22 AWG | Input sensor analog (MAP, TPS, IAT, CLT, O2, spare, PPS, TPS2), input digital (AC switch, VSS, clutch), trigger CKP/CMP/VR (shielded), knock (shielded), output tacho |
-| **0.5 mm²** | 20 AWG | CAN (twisted pair), sinyal ignition, 5V referensi, ground sensor, output relay, injector, idle valve, stepper, high side switching |
+| **0.3 mm²** | 22 AWG | Input sensor analog (MAP, TPS, IAT, CLT, O2, spare, PPS, TPS2), input digital (AC switch, VSS, clutch), trigger CKP/CMP/VR (shielded), knock (shielded), CAN (twisted pair), output tacho |
+| **0.5 mm²** | 20 AWG | Sinyal ignition, 5V referensi, ground sensor, output relay, injector, idle valve, stepper, high side switching, power pada konektor CAN |
 | **0.75 / 0.85 mm²** | 18 AWG | Suplai 12V ECU (fuse 5-7.5 A), ground ECU, ETB, ignition dan ground coil pada mode IGBT internal |
 
 Catatan pemakaian:
 
 - **0.3 mm²** boleh diganti **0.5 mm²** kapan saja bila Anda ingin menyederhanakan stok atau menginginkan kabel yang lebih kuat menahan getaran. Yang tidak boleh adalah kebalikannya — jangan memakai 0.3 mm² untuk pin output, 5V, atau ground.
 - **Trigger dan knock** tetap wajib memakai **kabel shielded** (twisted pair untuk VR), ukuran 0.3 mm² sudah cukup. Shield di-ground **hanya di sisi ECU**.
+- **CAN Bus** yang menentukan bukan ukuran kabel melainkan **twisted pair dengan impedansi 120 ohm** dan resistor terminator di kedua ujung jaringan. Ukuran 0.3 mm² sudah cukup — kabel CAN otomotif pabrikan umumnya 0.35 mm². Pin power pada konektor CAN tetap 0.5 mm² karena mengikuti kebutuhan perangkat yang disuplai (dash, gauge, dan sejenisnya).
 - **0.75 dan 0.85 mm² sama-sama 18 AWG**, selisihnya tipis. Pilih salah satu saja sesuai yang tersedia di toko — tidak perlu menyetok keduanya.
 - **Ground ECU** jangan dikecilkan dari ukuran ini. Pakai **semua** pin ground yang tersedia, disambung sependek mungkin ke blok mesin atau negatif aki.
 - **Ground sensor dipisah dari ground power**, jangan digabung dalam satu titik dengan ground injector dan ignition.
@@ -87,8 +88,8 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | Pin | Fungsi | Ukuran Kabel |
 |-----|--------|--------------|
 | 1 | Power (12V/5V) | 0.5 mm² |
-| 2 | CAN Low | 0.5 mm² (twisted pair dengan pin 3) |
-| 3 | CAN High | 0.5 mm² (twisted pair dengan pin 2) |
+| 2 | CAN Low | 0.3 mm² (twisted pair dengan pin 3) |
+| 3 | CAN High | 0.3 mm² (twisted pair dengan pin 2) |
 | 4 | Ground | 0.5 mm² |
 
 ### Rekap Jumlah Kabel LITE v0.2
@@ -101,7 +102,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 0.5 mm² | 15 kabel | 1, 2, 5, 6, 9, 10, 12, 13, 17, 18, 19, 23, 24, 25, 26 |
 | 0.75 / 0.85 mm² | 3 kabel | 7, 11, 22 |
 | **Total** | **33 kabel** | — |
-| CAN Bus (opsional) | 4 kabel 0.5 mm² | Konektor terpisah |
+| CAN Bus (opsional) | 2 kabel 0.3 mm² + 2 kabel 0.5 mm² | Konektor terpisah |
 
 **Mode IGBT Internal:**
 
@@ -185,7 +186,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 1 | 12V ECU | 0.75 / 0.85 mm² | Fuse 5-7.5 A |
 | 2 | IDLE1 | 0.5 mm² | — |
 | 3 | IDLE2 | 0.5 mm² | — |
-| 4 | CANH | 0.5 mm² | Twisted pair dengan pin 21 |
+| 4 | CANH | 0.3 mm² | Twisted pair dengan pin 21 |
 | 5 | 5V | 0.5 mm² | — |
 | 6 | AC-OUT / AC Compressor | 0.5 mm² | — |
 | 7 | Fuel Pump | 0.5 mm² | Sinyal ke relay, bukan power pompa |
@@ -202,7 +203,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 18 | Spare Analog 1 / PPS1 | 0.3 mm² | — |
 | 19 | VSS | 0.3 mm² | — |
 | 20 | AC-IN / AC Switch | 0.3 mm² | Hanya menerima ground |
-| 21 | CANL | 0.5 mm² | Twisted pair dengan pin 4 |
+| 21 | CANL | 0.3 mm² | Twisted pair dengan pin 4 |
 | 22 | GND | 0.75 / 0.85 mm² | Satu-satunya ground power, langsung ke blok mesin |
 | 23 | FAN | 0.5 mm² | Sinyal ke relay, bukan power kipas |
 | 24 | Ignition 6 | 0.5 mm² | — |
@@ -237,15 +238,15 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 
 | Ukuran | Jumlah | Pin |
 |--------|--------|-----|
-| 0.3 mm² | 17 kabel | 8, 9, 10, 18, 19, 20, 30, 31, 35, 36, 39, 40, 41, 42, 43, 44, 45 |
-| 0.5 mm² | 27 kabel | 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 21, 23, 24, 25, 26, 27, 28, 29, 32, 37, 38, 46, 47, 48 |
+| 0.3 mm² | 19 kabel | 4, 8, 9, 10, 18, 19, 20, 21, 30, 31, 35, 36, 39, 40, 41, 42, 43, 44, 45 |
+| 0.5 mm² | 25 kabel | 2, 3, 5, 6, 7, 11, 12, 13, 14, 15, 16, 17, 23, 24, 25, 26, 27, 28, 29, 32, 37, 38, 46, 47, 48 |
 | 0.75 / 0.85 mm² | 4 kabel | 1, 22, 33, 34 |
 | **Total** | **48 kabel** | — |
 
 Penyesuaian bila ada pin yang tidak dipakai:
 
 - **Tanpa ETB** (pin 33, 34 kosong): 0.75 / 0.85 mm² turun menjadi **2 kabel**, total 46 kabel.
-- **Tanpa stepper idle** (pin 11-14 kosong): 0.5 mm² turun menjadi **23 kabel**, total 44 kabel.
+- **Tanpa stepper idle** (pin 11-14 kosong): 0.5 mm² turun menjadi **21 kabel**, total 44 kabel.
 
 ---
 
@@ -253,8 +254,8 @@ Penyesuaian bila ada pin yang tidak dipakai:
 
 | Ukuran | LITE v0.2 | Compact 4CH v2.5 | Mini 6CH v1.3C |
 |--------|-----------|------------------|----------------|
-| 0.3 mm² (22 AWG) | 15 | 13 | 17 |
-| 0.5 mm² (20 AWG) | 15 | 16 | 27 |
+| 0.3 mm² (22 AWG) | 15 | 13 | 19 |
+| 0.5 mm² (20 AWG) | 15 | 16 | 25 |
 | 0.75 / 0.85 mm² (18 AWG) | 3 | 4 | 4 |
 | **Total pin konektor** | **33** | **33** | **48** |
 
@@ -274,8 +275,8 @@ Perkiraan kebutuhan belanja dengan rata-rata 1.5 meter per kabel sinyal dan 2 me
 
 | Ukuran | LITE v0.2 | Compact 4CH v2.5 | Mini 6CH v1.3C |
 |--------|-----------|------------------|----------------|
-| 0.3 mm² | ~23 m | ~20 m | ~26 m |
-| 0.5 mm² | ~23 m | ~24 m | ~41 m |
+| 0.3 mm² | ~23 m | ~20 m | ~29 m |
+| 0.5 mm² | ~23 m | ~24 m | ~38 m |
 | 0.75 / 0.85 mm² | ~6 m | ~8 m | ~8 m |
 
 Tambahkan cadangan 20% untuk kesalahan potong dan service loop. Untuk ukuran 18 AWG beli minimal 10 meter karena kebutuhannya sedikit dan sisanya berguna untuk perbaikan.
