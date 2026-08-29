@@ -10,6 +10,17 @@ Berlaku untuk versi berikut:
 - [Mazduino Compact 4CH v2.5](mazduino-compact-4ch-v2.5.md)
 - [Mazduino Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)
 
+> **Disclaimer**
+>
+> Angka pada halaman ini adalah **rekomendasi dasar sebagai titik awal**, bukan ketentuan mutlak. Kebutuhan sebenarnya tetap harus disesuaikan dengan kondisi masing-masing mesin dan instalasi, karena dipengaruhi oleh:
+>
+> - **Panjang harness** — semakin panjang jarak ECU ke komponen, semakin besar ukuran kabel yang dibutuhkan, terutama pada jalur power dan ground. Tabel di halaman ini mengasumsikan panjang maksimal sekitar 3 meter.
+> - **Spesifikasi aktuator yang dipakai** — injector low-impedance, solenoid idle besar, ETB non-standar, atau koil dengan kebutuhan arus tinggi bisa memerlukan ukuran di atas rekomendasi.
+> - **Kondisi lingkungan** — suhu ruang mesin, kepadatan bundel harness, dan kedekatan dengan sumber panas mempengaruhi kemampuan hantar kabel.
+> - **Jenis dan kualitas kabel** — rating suhu, jumlah serabut, dan kemurnian tembaga berbeda antar merek.
+>
+> Selalu periksa kembali terhadap spesifikasi komponen yang benar-benar Anda pasang. Bila ragu, naikkan satu tingkat ukuran — terutama pada jalur power, ground, dan output aktuator. Tanggung jawab atas hasil akhir instalasi tetap ada pada pemasang.
+
 > Ukuran terbesar yang dibutuhkan di sisi konektor ECU adalah **0.85 mm²** (atau 0.75 mm², keduanya 18 AWG dan bisa dipilih salah satu). Kabel yang lebih besar dari itu hanya diperlukan di luar ECU (aki, ground mesin, feed koil dan pompa) — lihat bagian [Kabel di Luar ECU](#kabel-di-luar-ecu).
 
 ## Ukuran Berdasarkan Fungsi Pin
@@ -293,6 +304,10 @@ Kabel berikut **tidak lewat pin ECU** dan ukurannya jauh lebih besar. Jangan dis
 - Beri **service loop** di dekat konektor ECU agar konektor bisa dilepas tanpa menarik harness.
 - Untuk area dekat exhaust atau turbo, gunakan kabel rating 150-200°C dan tambahkan heat sleeve.
 - Ikat harness dengan tesa tape atau split loom.
+
+## Catatan Penutup
+
+Rekomendasi di halaman ini disusun untuk instalasi umum dengan harness standar. Untuk aplikasi khusus — harness panjang, mesin balap dengan aktuator arus tinggi, atau instalasi di lingkungan bersuhu ekstrem — hitung ulang kebutuhan berdasarkan spesifikasi komponen yang dipakai, atau konsultasikan dengan tim Mazduino.
 
 ## Referensi Terkait
 
