@@ -37,9 +37,22 @@ Catatan pemakaian:
 - **Trigger dan knock** tetap wajib memakai **kabel shielded** (twisted pair untuk VR), ukuran 0.3 mm² sudah cukup. Shield di-ground **hanya di sisi ECU**.
 - **CAN Bus** yang menentukan bukan ukuran kabel melainkan **twisted pair dengan impedansi 120 ohm** dan resistor terminator di kedua ujung jaringan. Ukuran 0.3 mm² sudah cukup — kabel CAN otomotif pabrikan umumnya 0.35 mm². Pin power pada konektor CAN tetap 0.5 mm² karena mengikuti kebutuhan perangkat yang disuplai (dash, gauge, dan sejenisnya).
 - **0.75 dan 0.85 mm² sama-sama 18 AWG**, selisihnya tipis. Pilih salah satu saja sesuai yang tersedia di toko — tidak perlu menyetok keduanya.
-- **Ground ECU** jangan dikecilkan dari ukuran ini. Pakai **semua** pin ground yang tersedia, disambung sependek mungkin ke blok mesin atau negatif aki.
+- **Ground ECU wajib diambil langsung dari negatif aki**, jangan dari ground bodi atau blok mesin. Jangan dikecilkan dari ukuran ini, dan pakai **semua** pin ground yang tersedia.
+- **Ground coil justru diambil langsung dari blok mesin**, bukan disatukan dengan ground ECU. Jalur ini membawa noise dari pengapian, jadi harus dipisah agar tidak mengotori referensi ECU.
 - **Ground sensor dipisah dari ground power**, jangan digabung dalam satu titik dengan ground injector dan ignition.
 - Gunakan kabel otomotif thin-wall (**AVSS / AVSSF / TXL / GXL**) rating minimal 105°C, tembaga murni. Hindari CCA dan kabel instalasi rumah (NYAF).
+
+### Aturan Grounding
+
+Titik pengambilan ground sama pentingnya dengan ukuran kabelnya. Ketiga jalur ini **tidak boleh disatukan**:
+
+| Jalur ground | Diambil dari | Alasan |
+|--------------|--------------|--------|
+| **Ground ECU (power/input)** | **Negatif aki, langsung** | Referensi ECU harus bersih dan stabil. Ground bodi atau blok mesin membawa tegangan liar dari starter, alternator, dan pengapian |
+| **Ground coil pengapian** | **Blok mesin, langsung** | Jalur ini membawa noise pengapian. Dipisah agar tidak mengotori referensi ECU |
+| **Ground sensor** | **Pin ground sensor pada ECU** | Referensi pembacaan analog, tidak boleh dilewati arus injector atau ignition |
+
+Jangan mengambil ground ECU dari baut bodi, dudukan mesin, atau titik ground bersama dengan beban lain.
 
 ---
 
@@ -55,7 +68,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 4 | VR1- | 0.3 mm² | Shielded twisted pair dengan pin 27 |
 | 5 | Ignition 1 | 0.5 mm² | Mode IGBT: 0.75 / 0.85 mm² |
 | 6 | Main Relay | 0.5 mm² | — |
-| 7 | Ground Coil | 0.75 / 0.85 mm² | — |
+| 7 | Ground Coil | 0.75 / 0.85 mm² | Langsung ke blok mesin, jangan disatukan dengan ground ECU |
 | 8 | Tacho / RPM | 0.3 mm² | — |
 | 9 | Ignition 2 | 0.5 mm² | Mode IGBT: 0.75 / 0.85 mm² |
 | 10 | +5V | 0.5 mm² | — |
@@ -70,7 +83,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 19 | Fan Relay | 0.5 mm² | Sinyal ke relay, bukan power kipas |
 | 20 | IAT | 0.3 mm² | — |
 | 21 | TPS | 0.3 mm² | — |
-| 22 | Ground ECU | 0.75 / 0.85 mm² | Langsung ke blok mesin |
+| 22 | Ground ECU | 0.75 / 0.85 mm² | **Langsung ke negatif aki**, bukan ke bodi atau blok mesin |
 | 23 | Injector 2 | 0.5 mm² | — |
 | 24 | Injector 1 | 0.5 mm² | — |
 | 25 | Ground Sensor | 0.5 mm² | Pisahkan dari ground power pin 22 |
@@ -129,7 +142,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 8 | 5V | 0.5 mm² | — |
 | 9 | 12V | 0.75 / 0.85 mm² | Fuse 5-7.5 A |
 | 10 | Main Relay | 0.5 mm² | — |
-| 11 | GND | 0.75 / 0.85 mm² | Ground power, langsung ke blok mesin |
+| 11 | GND | 0.75 / 0.85 mm² | Ground power, **langsung ke negatif aki** |
 | 12 | Idle 2 | 0.5 mm² | — |
 | 13 | Ignition 4 | 0.5 mm² | — |
 | 14 | Ignition 3 | 0.5 mm² | — |
@@ -155,7 +168,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 
 > **High Side (pin 22 HS1, dan pin 21 bila mode HS2)**: output ini adalah **12V logic switching (sinyal)**, bukan output daya. **Jangan** menyambungkannya langsung ke solenoid, VVT solenoid, atau beban induktif lain — gunakan relay atau modul driver eksternal.
 
-> **Ground**: pakai semua pin ground yang tersedia. Susunan yang rapi: pin 11 dan 21 sebagai ground power (0.85 mm², ke blok mesin), pin 20 didedikasikan sebagai ground sensor (0.5 mm²).
+> **Ground**: pakai semua pin ground yang tersedia, dan **ambil langsung dari negatif aki** — bukan dari ground bodi atau blok mesin. Susunan yang rapi: pin 11 dan 21 sebagai ground power ke negatif aki, pin 20 didedikasikan sebagai ground sensor (0.5 mm²).
 
 ### Rekap Jumlah Kabel Compact 4CH v2.5
 
@@ -204,7 +217,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 19 | VSS | 0.3 mm² | — |
 | 20 | AC-IN / AC Switch | 0.3 mm² | Hanya menerima ground |
 | 21 | CANL | 0.3 mm² | Twisted pair dengan pin 4 |
-| 22 | GND | 0.75 / 0.85 mm² | Satu-satunya ground power, langsung ke blok mesin |
+| 22 | GND | 0.75 / 0.85 mm² | Satu-satunya ground power, **langsung ke negatif aki** |
 | 23 | FAN | 0.5 mm² | Sinyal ke relay, bukan power kipas |
 | 24 | Ignition 6 | 0.5 mm² | — |
 | 25 | Ignition 5 | 0.5 mm² | — |
@@ -232,7 +245,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 47 | Injector 1 | 0.5 mm² | — |
 | 48 | Injector 3 | 0.5 mm² | — |
 
-> **Pin 22 (GND)**: Mini 6CH v1.3C hanya punya **satu pin ground power** untuk seluruh output low-side. Gunakan 0.85 mm² dan sambung sependek mungkin langsung ke blok mesin atau negatif aki. Ground sensor (pin 37, 38) tetap dipisah dari pin ini.
+> **Pin 22 (GND)**: Mini 6CH v1.3C hanya punya **satu pin ground power** untuk seluruh output low-side. Sambungkan **langsung ke negatif aki**, jangan ke ground bodi atau blok mesin. Ground sensor (pin 37, 38) tetap dipisah dari pin ini.
 
 ### Rekap Jumlah Kabel Mini 6CH v1.3C
 
@@ -293,6 +306,7 @@ Kabel berikut **tidak lewat pin ECU** dan ukurannya jauh lebih besar. Jangan dis
 | +12V feed ke rail injector (dari relay) | 1.25 - 2.0 mm² |
 | +12V feed ke koil pengapian (dari relay) | 2.0 mm² |
 | Ground koil pengapian ke blok mesin | 2.0 - 3.0 mm² |
+| Ground ECU ke negatif aki | mengikuti tabel pin ECU |
 | Power pompa bahan bakar (dari relay) | 1.25 - 2.0 mm² |
 | Power kipas radiator (dari relay) | 2.0 - 3.0 mm² |
 | Power O2 heater wideband | 1.25 mm² |
