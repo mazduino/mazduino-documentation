@@ -29,7 +29,7 @@ Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat
 
 ![Mazduino Racedash 3.5 inch JST 4 Pin](img/dash/racedash-jst4-product.png)
 
-Varian ini menggunakan konektor **JST 4 Pin** yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara **OTA (Over-The-Air)** melalui WiFi, lihat bagian [Update Firmware](#update-firmware-ota).
+Varian ini menggunakan konektor **JST 4 Pin** yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara **OTA (Over-The-Air)** melalui WiFi, lihat bagian [Update Firmware](#update-firmware-usb-atau-ota).
 
 ### Konektor JST 4 Pin (Wiring ke Kendaraan)
 
@@ -63,7 +63,7 @@ Selain konektor JST 4 Pin, board Racedash 3.5" juga memiliki pin header internal
 
 - CANL dan CANH digunakan saat **CAN Mode**, sedangkan RX2 dan TX2 digunakan saat **Serial Mode**. Mode yang terpasang mengikuti permintaan saat order — ECU **Speeduino** menggunakan Serial Mode, sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan CAN Mode.
 - +12V dan GND adalah jalur power utama.
-- TXD0 dan RXD0 terhubung ke chip USB-TTL internal (**CP2102N**) pada PCB, namun pin ini **tidak terekspos ke luar case** dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian [Update Firmware](#update-firmware-ota).
+- TXD0 dan RXD0 terhubung ke chip USB-TTL internal (**CP2102N**) pada PCB, namun pin ini **tidak terekspos ke luar case** dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian [Update Firmware](#update-firmware-usb-atau-ota).
 
 ## Racedash 4" / Cabus (Konektor DTM4)
 
@@ -116,11 +116,14 @@ Update firmware Racedash dapat dilakukan dengan dua cara:
 
 ## Konfigurasi
 
-Konfigurasi tampilan dashboard dilakukan melalui browser HP/laptop, tanpa aplikasi tambahan. Langkah ini berlaku untuk kedua varian Racedash.
+Pada firmware terbaru ada dua cara mengatur tampilan dashboard: lewat **browser** di
+mazduino.com, atau lewat aplikasi Android **DashTune**. Keduanya mengatur hal yang sama
+dan berlaku untuk kedua varian Racedash — pilih mana yang lebih praktis.
 
-### Firmware Terbaru (Direkomendasikan)
+Halaman konfigurasi lokal `192.168.4.1` hanya dipakai oleh firmware lama, dan ada di
+bagian paling bawah halaman ini.
 
-Pada firmware terbaru, halaman konfigurasi lokal `192.168.4.1` digantikan oleh **[https://www.mazduino.com/display-control](https://www.mazduino.com/display-control)**.
+### Lewat Browser (mazduino.com)
 
 1. Sebelum berpindah WiFi, buka browser dan akses **[https://www.mazduino.com/display-control](https://www.mazduino.com/display-control)** terlebih dahulu selagi HP/laptop masih terhubung internet.
 2. Setelah halaman terbuka, hubungkan WiFi HP/laptop ke **"Mazduino_Display"** dengan password **"12345678"** yang dipancarkan oleh Racedash. Koneksi internet akan terputus, namun halaman yang sudah terbuka tetap dapat digunakan.
@@ -136,9 +139,30 @@ Pada firmware terbaru, halaman konfigurasi lokal `192.168.4.1` digantikan oleh *
 
    ![Display Configuration pada Mazduino Display Control](img/dash/mazduino-display-control-3.png)
 
-### Firmware Lama / Legacy
+### Lewat Aplikasi DashTune (Android)
 
-> Metode di bawah ini berlaku untuk firmware versi lama yang masih menggunakan halaman konfigurasi lokal di `192.168.4.1`. Jika Racedash Anda sudah menjalankan firmware terbaru, gunakan metode **[Firmware Terbaru](#firmware-terbaru-direkomendasikan)** di atas.
+DashTune dapat mengatur Racedash lewat WiFi, tanpa membuka browser. Racedash
+M1/M2/M3/C1 tersambung lewat **WiFi** (berbeda dengan Racedash Pro M4/M5/M7
+yang lewat Bluetooth).
+
+1. Pasang DashTune di HP Android, lalu hubungkan WiFi HP ke **"Mazduino_Display"**
+   dengan password **"12345678"**.
+2. Buka DashTune. Dash akan terdeteksi sendiri dan muncul sebagai kartu di
+   halaman **Home**.
+3. Pilih **Display Control** untuk mengatur brightness, template layar, RPM
+   maksimum, data tiap panel, serta indikator mana saja yang ditampilkan.
+4. Menu **Splash** dan **Background** dipakai untuk mengganti gambar pembuka dan
+   latar template.
+
+Pengaturan lampu RPM (RGB) hanya muncul pada dash yang memang memiliki strip
+LED-nya, sehingga menu ini tidak akan tampil di unit tanpa LED.
+
+<details markdown="1">
+<summary><strong>Firmware lama / legacy — konfigurasi lewat 192.168.4.1</strong> (klik untuk membuka)</summary>
+
+Bagian ini hanya berlaku untuk firmware versi lama, yang masih memakai halaman
+konfigurasi lokal di `192.168.4.1`. Kalau Racedash Anda sudah menjalankan
+firmware terbaru, pakai salah satu cara di atas dan lewati bagian ini.
 
 1. Hubungkan HP/laptop ke WiFi **"Mazduino_Display"** dengan password **"12345678"**.
 
@@ -153,6 +177,8 @@ Pada firmware terbaru, halaman konfigurasi lokal `192.168.4.1` digantikan oleh *
    ![Pengaturan Display Configuration](img/dash/racedash-jst4-config-display.png)
 
    ![Pilihan Data Panel](img/dash/racedash-jst4-config-dropdown.png)
+
+</details>
 
 Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat **[Mazduino Racedash Pro](mazduino-racedash-pro.md)**.
 
