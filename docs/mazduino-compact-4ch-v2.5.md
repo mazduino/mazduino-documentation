@@ -29,7 +29,7 @@ ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-ch
 
 - 5x driver low-side arus rendah untuk main relay, fuel pump, AC compressor, fan, dan tacho
 - 4x output 12V atau 5V untuk sinyal koil pengapian
-- **2x High Side Switching** untuk kontrol alternator, VVT, atau 12V switching tambahan
+- **2x High Side Switching (sinyal 12V / logic level)** untuk kontrol alternator, VVT, atau switching 12V tambahan. Output ini hanya menghasilkan sinyal 12V dan **tidak dapat menggerakkan solenoid atau beban induktif secara langsung** — gunakan relay atau modul driver eksternal
 - Prosesor 168 MHz ARM Cortex-M4
 - Komunikasi via CANbus, USB Type-C, dan Serial RX/TX
 - Konektor Yamaha 33-pin otomotif grade
@@ -41,7 +41,9 @@ ECU Mazduino Compact v2.5 adalah pengembangan terbaru dari platform Compact 4-ch
 - **HS2 (tambahan)** menggunakan pin MCU **PD14**
 
 - Pada konektor, terdapat opsi **GND / HS2 (Jumper)** untuk menyesuaikan mode pemakaian
-- Memungkinkan kontrol beban 12V lebih fleksibel untuk kebutuhan setup lanjutan
+- Memungkinkan pengiriman sinyal 12V lebih fleksibel untuk kebutuhan setup lanjutan
+
+> **Penting**: HS1 dan HS2 adalah **12V logic switching (sinyal)**, bukan output daya. Keduanya tidak dirancang untuk menarik arus besar dan **tidak boleh dipakai langsung untuk solenoid, VVT solenoid, atau beban induktif lain**. Untuk menggerakkan aktuator, hubungkan output high side ke **relay atau driver/modul eksternal** yang sesuai.
 
 ### Optimasi Hall Input (v2.5)
 - Alokasi pin hall tetap: **CKP = PD3** dan **CMP = PD4**
@@ -94,8 +96,8 @@ ECU Mazduino Compact v2.5 menggunakan konektor Yamaha 33-pin dengan pin assignme
 | 18 | AC Compressor Relay | Relay kompresor AC |
 | 19 | CKP / Trigger 1 | Sensor posisi crankshaft |
 | 20 | GND | Ground |
-| **21** | **GND / HS2 (Jumper)** | **Ground atau High Side 2 (sesuai konfigurasi jumper)** |
-| **22** | **HS1** | **High Side Output 1** |
+| **21** | **GND / HS2 (Jumper)** | **Ground atau High Side 2 - sinyal 12V (sesuai konfigurasi jumper)** |
+| **22** | **HS1** | **High Side Output 1 - sinyal 12V** |
 | 23 | CLT | Sensor suhu coolant |
 | 24 | TPS | Sensor posisi throttle |
 | 25 | O2 | Sensor oksigen |
@@ -170,7 +172,7 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Ignition Outputs | 4 channels (12V/5V) |
 | Low Side MOSFET Outputs | 6 channels (4 Injector + Idle 1 + Idle 2, 3A max) |
 | Auxiliary Outputs | 7 channels |
-| High Side Output | 2 channels (HS1 + HS2) |
+| High Side Output | 2 channels (HS1 + HS2), 12V logic switching (sinyal, bukan output daya) |
 | Communication | USB-C, CAN, Serial |
 | Data Logging | SD Card |
 | Operating Temp | -40C to +85C |

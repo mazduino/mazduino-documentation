@@ -1,8 +1,10 @@
 # Mazduino Mini 6CH (v1.4)
 
+> **Catatan**: v1.4 **bukan versi produksi**. Versi produksi terakhir dari lini Mini 6CH adalah **[v1.3C](mazduino-mini-6ch-v1.3c.md)**. Halaman ini disimpan sebagai dokumentasi referensi.
+
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel terbaru dengan fitur-fitur canggih yang dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor STM32F407VGT6 ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dengan dukungan penuh untuk teknologi terdepan seperti Variable Valve Timing (VVT), Boost Control, dan dual Electronic Throttle Body (ETB).
+Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel dengan fitur-fitur canggih yang dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor STM32F407VGT6 ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dengan dukungan penuh untuk teknologi terdepan seperti Variable Valve Timing (VVT), Boost Control, dan dual Electronic Throttle Body (ETB).
 
 **Fitur Baru v1.4:**
 

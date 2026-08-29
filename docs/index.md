@@ -95,8 +95,8 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 - **[v1.0-v1.2](mazduino-mini-6ch-v1.0-v1.2.md)** - Versi standar dengan fitur dasar
 - **[v1.3](mazduino-mini-6ch-v1.3.md)** - Dengan Knock Input dan Electronic Throttle Body (ETB)
 - **[v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU STM32F427VGT6, input analog TPS2 tambahan, dan optimisasi hardware
-- **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6
-- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Versi terbaru
+- **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6 - **versi produksi terakhir**
+- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3C
 
 ### Mazduino Core
 
@@ -154,8 +154,8 @@ Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear 
 - **[Mini 6CH v1.0-v1.2](mazduino-mini-6ch-v1.0-v1.2.md)** - Versi standar dengan fitur dasar
 - **[Mini 6CH v1.3](mazduino-mini-6ch-v1.3.md)** - Dengan knock input dan ETB support
 - **[Mini 6CH v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU upgrade, optimisasi hardware dan input analog tambahan
-- **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah
-- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Versi terbaru
+- **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah - **versi produksi terakhir**
+- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi; versi produksi terakhir adalah v1.3C
 - **[Mazduino Core rev0](mazduino-core-rev0.md)** - Konektor 48-pin, dual ETB, dual CAN bus
 - **[Mazduino Racedash 3.5" & 4"](mazduino-racedash.md)** - Dash display konektor JST 4 Pin dan DTM4
 - **[Mazduino Racedash Pro](mazduino-racedash-pro.md)** - Varian layar 4.3", 5", dan 7" (Coming Soon)

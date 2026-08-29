@@ -2,7 +2,7 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.3C adalah perbaikan dan peningkatan dari versi v1.3B, dirancang sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor **STM32F427VGT6** ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
+Mazduino Mini 6CH v1.3C adalah **versi produksi terakhir** dari lini Mini 6CH, merupakan perbaikan dan peningkatan dari versi v1.3B sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor **STM32F427VGT6** ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Perbaikan v1.3C dari v1.3B:**
 
