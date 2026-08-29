@@ -107,8 +107,6 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#pin-header-internal-pcb">Pin Header Internal PCB</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)</a>
@@ -121,9 +119,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#konfigurasi">Konfigurasi</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#firmware-terbaru-direkomendasikan">Firmware Terbaru (Direkomendasikan)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#lewat-browser-mazduinocom">Lewat Browser (mazduino.com)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#firmware-lama-legacy">Firmware Lama / Legacy</a>
+    <li class="toctree-l3"><a class="reference internal" href="#lewat-aplikasi-dashtune-android">Lewat Aplikasi DashTune (Android)</a>
     </li>
         </ul>
     </li>
@@ -225,7 +223,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 Juli 2026 04:50:08 UTC">11 Juli 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 Agustus 2026 17:41:28 UTC">29 Agustus 2026</span></em></p>
   <h1 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Racedash adalah dash display digital yang menampilkan data real-time dari ECU, seperti RPM, gear indicator, kecepatan, dan berbagai data sensor lainnya. Halaman ini membahas varian layar <strong>3.5"</strong> dan <strong>4"</strong>. Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
@@ -266,7 +264,7 @@
 </ol>
 <h2 id="racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)<a class="headerlink" href="#racedash-35-konektor-jst-4-pin" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash 3.5 inch JST 4 Pin" src="../img/dash/racedash-jst4-product.png" /></p>
-<p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi, lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</p>
+<p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi, lihat bagian <a href="#update-firmware-usb-atau-ota">Update Firmware</a>.</p>
 <h3 id="konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)<a class="headerlink" href="#konektor-jst-4-pin-wiring-ke-kendaraan" title="Permanent link">&para;</a></h3>
 <p>Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.</p>
 <p><img alt="Wiring Konektor JST 4 Pin" src="../img/dash/racedash-jst4-wiring.png" /></p>
@@ -296,56 +294,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="pin-header-internal-pcb">Pin Header Internal PCB<a class="headerlink" href="#pin-header-internal-pcb" title="Permanent link">&para;</a></h3>
-<p>Selain konektor JST 4 Pin, board Racedash 3.5" juga memiliki pin header internal dengan fungsi tambahan untuk mode Serial dan update firmware via USB TTL.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Pin</th>
-<th style="text-align: left;">Deskripsi</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">+12V</td>
-<td style="text-align: left;">Power Supply 12V</td>
-</tr>
-<tr>
-<td style="text-align: left;">GND</td>
-<td style="text-align: left;">Ground</td>
-</tr>
-<tr>
-<td style="text-align: left;">CANL</td>
-<td style="text-align: left;">(CAN Mode) Hubungkan ke CANL ECU</td>
-</tr>
-<tr>
-<td style="text-align: left;">CANH</td>
-<td style="text-align: left;">(CAN Mode) Hubungkan ke CANH ECU</td>
-</tr>
-<tr>
-<td style="text-align: left;">RX2</td>
-<td style="text-align: left;">(Serial Mode) Hubungkan ke TX Serial3 Speeduino ECU</td>
-</tr>
-<tr>
-<td style="text-align: left;">TX2</td>
-<td style="text-align: left;">(Serial Mode) Hubungkan ke RX Serial3 Speeduino ECU</td>
-</tr>
-<tr>
-<td style="text-align: left;">TXD0</td>
-<td style="text-align: left;">Hubungkan ke USB TTL RX (Optional)</td>
-</tr>
-<tr>
-<td style="text-align: left;">RXD0</td>
-<td style="text-align: left;">Hubungkan ke USB TTL TX (Optional)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Catatan:</strong></p>
-<ul>
-<li>CANL dan CANH digunakan saat <strong>CAN Mode</strong>, sedangkan RX2 dan TX2 digunakan saat <strong>Serial Mode</strong>. Mode yang terpasang mengikuti permintaan saat order — ECU <strong>Speeduino</strong> menggunakan Serial Mode, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan CAN Mode.</li>
-<li>+12V dan GND adalah jalur power utama.</li>
-<li>TXD0 dan RXD0 terhubung ke chip USB-TTL internal (<strong>CP2102N</strong>) pada PCB, namun pin ini <strong>tidak terekspos ke luar case</strong> dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian <a href="#update-firmware-ota">Update Firmware</a>.</li>
-</ul>
 <h2 id="racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)<a class="headerlink" href="#racedash-4-cabus-konektor-dtm4" title="Permanent link">&para;</a></h2>
 <p><strong>Tampak Depan</strong></p>
 <p><img alt="Tampak depan Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-front.png" /></p>
@@ -403,9 +351,12 @@
 <li>Tunggu proses flashing selesai. Riwayat proses dapat dilihat pada <strong>Flash History</strong>.</li>
 </ol>
 <h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
-<p>Konfigurasi tampilan dashboard dilakukan melalui browser HP/laptop, tanpa aplikasi tambahan. Langkah ini berlaku untuk kedua varian Racedash.</p>
-<h3 id="firmware-terbaru-direkomendasikan">Firmware Terbaru (Direkomendasikan)<a class="headerlink" href="#firmware-terbaru-direkomendasikan" title="Permanent link">&para;</a></h3>
-<p>Pada firmware terbaru, halaman konfigurasi lokal <code>192.168.4.1</code> digantikan oleh <strong><a href="https://www.mazduino.com/display-control">https://www.mazduino.com/display-control</a></strong>.</p>
+<p>Pada firmware terbaru ada dua cara mengatur tampilan dashboard: lewat <strong>browser</strong> di
+mazduino.com, atau lewat aplikasi Android <strong>DashTune</strong>. Keduanya mengatur hal yang sama
+dan berlaku untuk kedua varian Racedash — pilih mana yang lebih praktis.</p>
+<p>Halaman konfigurasi lokal <code>192.168.4.1</code> hanya dipakai oleh firmware lama, dan ada di
+bagian paling bawah halaman ini.</p>
+<h3 id="lewat-browser-mazduinocom">Lewat Browser (mazduino.com)<a class="headerlink" href="#lewat-browser-mazduinocom" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Sebelum berpindah WiFi, buka browser dan akses <strong><a href="https://www.mazduino.com/display-control">https://www.mazduino.com/display-control</a></strong> terlebih dahulu selagi HP/laptop masih terhubung internet.</li>
 <li>Setelah halaman terbuka, hubungkan WiFi HP/laptop ke <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong> yang dipancarkan oleh Racedash. Koneksi internet akan terputus, namun halaman yang sudah terbuka tetap dapat digunakan.</li>
@@ -420,10 +371,27 @@
 <li>Atur data yang ditampilkan pada tiap posisi panel, template layar, brightness, dan mode komunikasi (CAN Bus/Serial) sesuai kebutuhan pada bagian <strong>Display Configuration</strong>.</li>
 </ol>
 <p><img alt="Display Configuration pada Mazduino Display Control" src="../img/dash/mazduino-display-control-3.png" /></p>
-<h3 id="firmware-lama-legacy">Firmware Lama / Legacy<a class="headerlink" href="#firmware-lama-legacy" title="Permanent link">&para;</a></h3>
-<blockquote>
-<p>Metode di bawah ini berlaku untuk firmware versi lama yang masih menggunakan halaman konfigurasi lokal di <code>192.168.4.1</code>. Jika Racedash Anda sudah menjalankan firmware terbaru, gunakan metode <strong><a href="#firmware-terbaru-direkomendasikan">Firmware Terbaru</a></strong> di atas.</p>
-</blockquote>
+<h3 id="lewat-aplikasi-dashtune-android">Lewat Aplikasi DashTune (Android)<a class="headerlink" href="#lewat-aplikasi-dashtune-android" title="Permanent link">&para;</a></h3>
+<p>DashTune dapat mengatur Racedash lewat WiFi, tanpa membuka browser. Racedash
+M1/M2/M3/C1 tersambung lewat <strong>WiFi</strong> (berbeda dengan Racedash Pro M4/M5/M7
+yang lewat Bluetooth).</p>
+<ol>
+<li>Pasang DashTune di HP Android, lalu hubungkan WiFi HP ke <strong>"Mazduino_Display"</strong>
+   dengan password <strong>"12345678"</strong>.</li>
+<li>Buka DashTune. Dash akan terdeteksi sendiri dan muncul sebagai kartu di
+   halaman <strong>Home</strong>.</li>
+<li>Pilih <strong>Display Control</strong> untuk mengatur brightness, template layar, RPM
+   maksimum, data tiap panel, serta indikator mana saja yang ditampilkan.</li>
+<li>Menu <strong>Splash</strong> dan <strong>Background</strong> dipakai untuk mengganti gambar pembuka dan
+   latar template.</li>
+</ol>
+<p>Pengaturan lampu RPM (RGB) hanya muncul pada dash yang memang memiliki strip
+LED-nya, sehingga menu ini tidak akan tampil di unit tanpa LED.</p>
+<details>
+<summary><strong>Firmware lama / legacy — konfigurasi lewat 192.168.4.1</strong> (klik untuk membuka)</summary>
+<p>Bagian ini hanya berlaku untuk firmware versi lama, yang masih memakai halaman
+konfigurasi lokal di <code>192.168.4.1</code>. Kalau Racedash Anda sudah menjalankan
+firmware terbaru, pakai salah satu cara di atas dan lewati bagian ini.</p>
 <ol>
 <li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong>.</li>
 </ol>
@@ -437,6 +405,7 @@
 </ol>
 <p><img alt="Pengaturan Display Configuration" src="../img/dash/racedash-jst4-config-display.png" /></p>
 <p><img alt="Pilihan Data Panel" src="../img/dash/racedash-jst4-config-dropdown.png" /></p>
+</details>
 <p>Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
 <h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
 <ul>
