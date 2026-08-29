@@ -298,7 +298,13 @@ aplikasi:
   *Boost* (dihitung dari tekanan udara luar, jadi saat vakum angkanya minus dan
   0 berarti belum ada boost)
 - **Lama splash screen** saat dinyalakan
-- **Modul GPS** — nyalakan kalau memakai GPS sebagai sumber kecepatan
+- **Modul GPS** — hanya untuk unit yang memang dipasangi modul GPS
+
+> **Modul GPS bersifat opsional dan tidak termasuk dalam unit yang dijual.**
+> Racedash Pro dikirim tanpa modul GPS, sehingga pengaturan ini tidak perlu
+> dinyalakan pada unit standar. Modul GPS hanya dipasang atas permintaan khusus
+> saat pemesanan. Tanpa modul tersebut, data kecepatan tetap dibaca dari ECU
+> seperti biasa.
 
 Pengaturan splash dan GPS baru berlaku setelah dash dimatikan dan dinyalakan
 kembali.
