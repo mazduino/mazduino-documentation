@@ -44,27 +44,6 @@ Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.
 | 3 | RX / CANL |
 | 4 | TX / CANH |
 
-### Pin Header Internal PCB
-
-Selain konektor JST 4 Pin, board Racedash 3.5" juga memiliki pin header internal dengan fungsi tambahan untuk mode Serial dan update firmware via USB TTL.
-
-| Pin | Deskripsi |
-| :---- | :---- |
-| +12V | Power Supply 12V |
-| GND | Ground |
-| CANL | (CAN Mode) Hubungkan ke CANL ECU |
-| CANH | (CAN Mode) Hubungkan ke CANH ECU |
-| RX2 | (Serial Mode) Hubungkan ke TX Serial3 Speeduino ECU |
-| TX2 | (Serial Mode) Hubungkan ke RX Serial3 Speeduino ECU |
-| TXD0 | Hubungkan ke USB TTL RX (Optional) |
-| RXD0 | Hubungkan ke USB TTL TX (Optional) |
-
-**Catatan:**
-
-- CANL dan CANH digunakan saat **CAN Mode**, sedangkan RX2 dan TX2 digunakan saat **Serial Mode**. Mode yang terpasang mengikuti permintaan saat order — ECU **Speeduino** menggunakan Serial Mode, sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan CAN Mode.
-- +12V dan GND adalah jalur power utama.
-- TXD0 dan RXD0 terhubung ke chip USB-TTL internal (**CP2102N**) pada PCB, namun pin ini **tidak terekspos ke luar case** dan hanya digunakan untuk servis/flashing di pabrik. Untuk update firmware oleh pengguna, gunakan metode OTA melalui Mazduino Flasher — lihat bagian [Update Firmware](#update-firmware-usb-atau-ota).
-
 ## Racedash 4" / Cabus (Konektor DTM4)
 
 **Tampak Depan**
