@@ -1,12 +1,26 @@
 /**
  * Print stylesheet — makes documentation pages printable on A4 paper.
- * Hides site chrome (sidebar nav, breadcrumbs, footer buttons, version flyout)
- * and adjusts layout/typography for a clean printed manual.
+ *
+ * The measured problem was vertical, not horizontal. `page-break-inside: avoid`
+ * used to be set on `table`, which asks the browser to keep a 49-row pin table
+ * whole; it cannot, so the table was pushed onto a fresh sheet and most of the
+ * preceding one printed blank. Letting long tables break across pages, while
+ * keeping individual rows intact and repeating the header row, took the wiring
+ * page from 15 printed pages to 10 with nothing lost.
+ *
+ * The rules that force wrapping and visible overflow on tables are belt and
+ * braces, not a diagnosis: measured under a print-width layout, the readthedocs
+ * theme's .wy-table-responsive wrapper is not applied to MkDocs tables, cells
+ * already compute to `white-space: normal`, and .wy-nav-content's 800px cap
+ * already resolves to `none`, because at A4 width the theme's own narrow-screen
+ * rules take over. The rules are kept so a theme update cannot quietly
+ * reintroduce a clipped table, but nothing here depends on them today.
  */
 @media print {
   @page {
-    size: A4;
-    margin: 18mm 15mm;
+    size: A4 portrait;
+    /* Tight but still inside the non-printable border of common inkjets. */
+    margin: 12mm 10mm;
   }
 
   /* Hide site chrome */
@@ -18,14 +32,29 @@
     display: none !important;
   }
 
-  /* Expand content to full page width (sidebar no longer reserves space) */
-  .wy-nav-content-wrap {
-    margin-left: 0 !important;
+  /* Let the content use the whole sheet: no reserved sidebar, no 800px cap,
+     no full-viewport height that would pad the last page out with blank. */
+  .wy-nav-content-wrap,
+  .wy-nav-content {
+    margin: 0 !important;
+    max-width: none !important;
+    width: auto !important;
+    height: auto !important;
+    background: #fff !important;
+  }
+
+  .wy-nav-content {
+    padding: 0 !important;
+  }
+
+  .wy-grid-for-nav {
+    display: block !important;
+    height: auto !important;
   }
 
   html, body {
     background: #fff !important;
-    font-size: 11pt;
+    font-size: 10.5pt;
     color: #000;
   }
 
@@ -34,7 +63,7 @@
     text-decoration: none;
   }
 
-  /* Print full URL after external links so the paper copy stays usable */
+  /* Print full URLs after external links so the paper copy stays usable... */
   a[href^="http"]::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
@@ -42,12 +71,28 @@
     word-break: break-all;
   }
 
+  /* ...but never inside a table, where a spelled-out URL forces the column
+     wide enough to push the whole table off the page. */
+  table a[href^="http"]::after {
+    content: none !important;
+  }
+
   h1, h2, h3, h4 {
     page-break-after: avoid;
     break-after: avoid;
+    /* The theme's generous heading margins read as gaps on paper. */
+    margin-top: 10pt;
+    margin-bottom: 4pt;
   }
 
-  table, figure, img, pre, blockquote {
+  p, ul, ol {
+    margin-top: 0;
+    margin-bottom: 6pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  figure, img, pre, blockquote, tr {
     page-break-inside: avoid;
     break-inside: avoid;
   }
@@ -57,16 +102,65 @@
     height: auto !important;
   }
 
+  /* Undo the responsive wrapper: on paper it can only clip. */
+  .wy-table-responsive {
+    overflow: visible !important;
+    max-width: none !important;
+    width: auto !important;
+    margin-bottom: 8pt !important;
+  }
+
+  /* Long tables run across pages rather than being held whole and bumped to
+     the next sheet; the header row repeats on each page so a continued table
+     is still readable, and no single row is split down the middle. */
   table {
     border-collapse: collapse;
-    width: 100%;
+    width: 100% !important;
+    page-break-inside: auto;
+    break-inside: auto;
+    margin-bottom: 8pt;
   }
 
-  table, th, td {
+  thead {
+    display: table-header-group;
+  }
+
+  tbody {
+    display: table-row-group;
+  }
+
+  /* The nowrap the theme sets is what cuts wide tables off. Cells wrap now,
+     and a long unbroken token breaks rather than widening the column. */
+  table td,
+  table th,
+  .wy-table-responsive table td,
+  .wy-table-responsive table th {
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    vertical-align: top;
     border: 1px solid #999;
+    padding: 2.5pt 4pt;
+    font-size: 9pt;
+    line-height: 1.3;
   }
 
-  th, td {
-    padding: 4px 8px;
+  th {
+    background: #eee !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    text-align: left;
+  }
+
+  /* Collapsed sections must print open — paper cannot be clicked. The work is
+     done by js/print-details.js, which toggles the elements themselves; Chrome
+     hides the contents via ::details-content, which no portable display rule
+     reaches. This is only a hint for engines that do honour it. */
+  details {
+    display: block !important;
+  }
+
+  details > summary {
+    font-weight: 600;
   }
 }

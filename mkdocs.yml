@@ -67,6 +67,7 @@ plugins:
       fallback_to_build_date: true
 extra_javascript:
   - js/external-links.js
+  - js/print-details.js
 extra_css:
   - css/print.css
 markdown_extensions:
