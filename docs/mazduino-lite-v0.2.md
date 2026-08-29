@@ -267,3 +267,7 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 | **Rekomendasi** | COP/IGBT Eksternal | Semua aplikasi |
 
 ---
+
+## Wiring Harness
+
+Rekomendasi ukuran kabel per pin untuk Mazduino LITE v0.2, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di [Rekomendasi Ukuran Kabel Harness](rekomendasi-ukuran-kabel.md).

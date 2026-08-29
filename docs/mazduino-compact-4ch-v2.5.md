@@ -178,3 +178,7 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Operating Temp | -40C to +85C |
 | Dimensions | 100mm x 80mm |
 | Connector | Yamaha 33-pin |
+
+## Wiring Harness
+
+Rekomendasi ukuran kabel per pin untuk Mazduino Compact 4CH v2.5, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di [Rekomendasi Ukuran Kabel Harness](rekomendasi-ukuran-kabel.md).

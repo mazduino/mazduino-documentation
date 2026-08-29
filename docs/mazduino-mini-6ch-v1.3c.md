@@ -493,3 +493,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 - **VDrive**: Konfigurasi ulang jumper VDrive 1-4 dan VDrive 5-6 di bagian bawah PCB secara terpisah
 
 **[Download firmware dan file konfigurasi](downloads.md)**
+
+## Wiring Harness
+
+Rekomendasi ukuran kabel per pin untuk Mazduino Mini 6CH v1.3C, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di [Rekomendasi Ukuran Kabel Harness](rekomendasi-ukuran-kabel.md).
