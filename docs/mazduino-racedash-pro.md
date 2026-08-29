@@ -6,9 +6,25 @@ Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran 
 
 | Varian | Ukuran Layar | Konektor |
 | :---- | :---- | :---- |
-| Racedash Pro 4.3" | 4.3 inch | DTM4 (Deutsch DTM 4 Pin) |
-| Racedash Pro 5" | 5 inch | DTM4 (Deutsch DTM 4 Pin) |
-| Racedash Pro 7" | 7 inch | DTM4 (Deutsch DTM 4 Pin) |
+| Racedash Pro 4.3" (M4) | 4.3 inch | DTM4 (Deutsch DTM 4 Pin) |
+| Racedash Pro 5" (M5) | 5 inch | DTM4 (Deutsch DTM 4 Pin) |
+| Racedash Pro 7" (M7) | 7 inch | DTM4 (Deutsch DTM 4 Pin) |
+
+> **Dua generasi firmware**: Racedash Pro hadir dalam dua generasi. Keduanya
+> memakai bodi, layar, dan konektor yang sama — yang berbeda adalah tampilan
+> dan cara mengaturnya.
+>
+> - **Generasi lama** — seluruh pengaturan dilakukan dari layar sentuh.
+>   Halamannya bernama *Main*, *Bench Test*, *Warning Setting*, *Slot Setting*,
+>   *Display Setting*, dan *Connection Setting*. Panduannya ada di bagian
+>   [Pengaturan via Touchscreen (firmware lama)](#pengaturan-via-touchscreen-firmware-lama).
+> - **Generasi M4 / M5 / M7** — punya beberapa pilihan tampilan (template) yang
+>   bisa digeser, dan bisa diatur dari HP lewat aplikasi **DashTune** selain
+>   dari layar. Panduannya ada di bagian
+>   [Racedash Pro M4 / M5 / M7](#racedash-pro-m4-m5-m7).
+>
+> Cara membedakannya paling mudah: kalau dashboard-mu bisa **digeser
+> kiri-kanan** untuk berganti tampilan, berarti generasi M4/M5/M7.
 
 ## Fitur Utama
 
@@ -20,6 +36,11 @@ Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran 
 ## Fitur via WiFi
 
 Meskipun sebagian besar pengaturan Racedash Pro dilakukan langsung dari touchscreen, ada beberapa fitur yang tetap memerlukan koneksi WiFi ke situs Mazduino, yaitu update firmware dan custom splash screen.
+
+> **Untuk generasi M4 / M5 / M7**, update firmware dan splash screen dilakukan
+> lewat aplikasi **DashTune** di HP, bukan melalui situs Mazduino. Langkahnya
+> ada di [Panduan Aplikasi DashTune](#panduan-aplikasi-dashtune). Cara di bawah
+> ini berlaku untuk firmware generasi lama.
 
 ### Update Firmware (USB atau OTA)
 
@@ -60,9 +81,14 @@ Racedash Pro menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang sama dengan 
 - Pin 3 dan 4 berfungsi sebagai **CAN High/CAN Low** untuk ECU **rusEFI**, **Haltech**, dan **MaxxECU** (mode CAN Bus).
 - Khusus untuk ECU **Speeduino**, pin 3 dan 4 berfungsi sebagai **TX/RX Serial**, karena Speeduino tidak memiliki CAN Bus native.
 
-## Pengaturan via Touchscreen
+## Pengaturan via Touchscreen (firmware lama)
 
-Berbeda dengan varian Racedash biasa, Racedash Pro tidak memerlukan koneksi WiFi/browser untuk konfigurasi — semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman). Menu pengaturan terdiri dari 6 halaman berikut:
+> **Bagian ini untuk firmware generasi lama.** Kalau dash-mu bisa **digeser
+> kiri-kanan untuk berganti tampilan**, berarti memakai firmware M4/M5/M7 dan
+> menunya berbeda — lihat
+> [Menu di layar (M4 / M5 / M7)](#menu-di-layar-m4-m5-m7).
+
+Pada firmware lama, semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman) tanpa perlu WiFi/browser. Menu pengaturan terdiri dari 6 halaman berikut:
 
 - [Main Screen](#main-screen)
 - [Bench Test Screen (Khusus rusEFI)](#bench-test-screen-khusus-rusefi)
@@ -136,6 +162,229 @@ Halaman **Connection Settings** untuk mengatur mode komunikasi ke ECU:
 - **BLE Telemetry** — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy
 
 Tombol **Default** mengembalikan ke pengaturan awal, dan **Save** menyimpan perubahan.
+
+## Racedash Pro M4 / M5 / M7
+
+Bagian ini khusus untuk generasi M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
+pemasangan kabelnya sama persis dengan yang dijelaskan di
+[Konektor DTM4 / 4 Pin](#konektor-dtm4-4-pin) di atas.
+
+### ECU yang didukung
+
+| ECU | Cara sambung | Catatan |
+| :---- | :---- | :---- |
+| rusEFI | CAN Bus 500 kbps | Paling lengkap datanya |
+| Haltech | CAN Bus 1 Mbps | Satu-satunya yang mengirim data lampu sein, rem tangan, dan tekanan ban |
+| MaxxECU | CAN Bus 500 kbps | |
+| Speeduino | Serial | Speeduino tidak punya CAN, jadi pin 3 dan 4 dipakai sebagai TX/RX |
+| OBD-II | CAN Bus | Untuk ECU standar bawaan mobil |
+
+Tipe ECU dipilih dari aplikasi DashTune atau dari menu di layar, dan **tidak
+perlu ganti firmware**. Kecepatan CAN mengikuti ECU yang dipilih secara
+otomatis.
+
+Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
+AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
+gigi, kadar etanol, dan tegangan aki.
+
+> **Catatan**: Lampu **sein**, **rem tangan**, dan **tekanan ban** hanya
+> menyala kalau memakai **Haltech**, karena hanya Haltech yang mengirimkan
+> datanya. Pada rusEFI dan MaxxECU ketiga lampu itu memang tidak akan menyala —
+> bukan kerusakan.
+
+### Mengganti tampilan (template)
+
+Tersedia lima tampilan dashboard, diberi nama **Template 1** sampai
+**Template 5**. Untuk berpindah, **geser kiri atau kanan di bagian atas layar**
+(di area bar RPM). Bagian bawah layar sengaja tidak menerima geseran supaya
+tombol CAN tidak ikut tersentuh.
+
+| Tampilan | Isi singkat |
+| :---- | :---- |
+| **Template 1** | Bar RPM di atas, gigi dan kecepatan besar di tengah, panel data di sekelilingnya |
+| **Template 2** | Susunan serupa Template 1 dengan tata letak panel yang berbeda |
+| **Template 3** | Pada M4/M5 tampilan khas Mazduino; pada M7 berupa tiga gauge besar dengan lampu indikator |
+| **Template 4** | Tampilan padat, menampilkan banyak angka sekaligus |
+| **Template 5** | Gaya jarum analog |
+
+Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
+langsung membuka tampilan yang sama.
+
+### Menu di layar (M4 / M5 / M7)
+
+Menu firmware ini berbeda sama sekali dari firmware lama. Tidak ada lagi
+halaman *Warning Setting*, *Slot Setting*, atau *Connection Setting* — semuanya
+disusun ulang di bawah satu menu.
+
+#### Gerakan di layar
+
+| Gerakan | Hasil |
+| :---- | :---- |
+| Geser kiri / kanan **di bar RPM (bagian atas layar)** | Ganti tampilan dashboard |
+| Geser ke atas | Buka halaman tombol CAN |
+| **Cubit dua jari** (pinch) | Buka menu utama |
+
+Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
+bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
+berpindah tampilan.
+
+#### Susunan menu
+
+```
+Menu
+├── Dash      → kembali ke dashboard terakhir
+├── CAN       → halaman tombol CAN
+└── Setting
+    ├── Display Setting   → pilih template, lalu atur isi tiap panelnya
+    ├── General Setting   → satuan, RPM maksimum, rentang tiap data
+    └── CAN
+        ├── Protokol      → pilih tipe ECU
+        └── CAN Button    → buat dan ubah tombol CAN
+```
+
+#### Display Setting — mengatur isi tiap template
+
+**Menu → Setting → Display Setting**, lalu pilih template yang ingin diubah
+(Template 1 sampai Template 5). Setiap kotak data pada template bisa diganti
+isinya — misalnya dari tekanan oli menjadi suhu gearbox — dengan
+tombol panah kiri/kanan.
+
+Tekan **Save** untuk menyimpan, atau **Discard** untuk membatalkan. Pengaturan
+tersimpan di dash dan tidak hilang saat mesin dimatikan.
+
+> **Catatan untuk M7**: **Template 3** pada M7 sudah tetap isinya, jadi
+> memilihnya di Display Setting akan langsung membuka tampilannya, bukan
+> halaman pengaturan.
+
+#### General Setting — satuan dan rentang data
+
+**Menu → Setting → General Setting**:
+
+- **Satuan tekanan** — kPa atau PSI
+- **Satuan suhu** — °C atau °F
+- **RPM maksimum** — skala penuh semua gauge RPM, diatur naik-turun 250 RPM;
+  garis merah otomatis di sekitar 5/6 dari angka ini
+- **Data Source** — daftar semua kanal data. Pilih salah satu untuk mengatur
+  **nilai minimum dan maksimum**-nya, yang menentukan rentang gauge dan angka
+  min/max yang tercetak di layar
+
+Perubahan satuan dan RPM maksimum langsung terlihat di semua template.
+
+#### CAN — tipe ECU dan tombol
+
+**Menu → Setting → CAN** berisi dua hal:
+
+- **Protokol** — memilih tipe ECU (rusEFI, Haltech, MaxxECU, Speeduino, OBD-II).
+  Kecepatan CAN ikut menyesuaikan sendiri. **Tidak perlu ganti firmware dan
+  tidak perlu restart** — begitu disimpan, dash langsung membaca dengan
+  protokol yang baru.
+- **CAN Button** — membuat dan mengubah tombol CAN: nama, ID, dan data yang
+  dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.
+
+#### Tombol CAN
+
+Geser ke atas dari dashboard untuk membukanya. Halaman ini dipakai untuk
+mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
+menyalakan kipas atau memicu launch control — cukup dengan menekan tombol di
+layar. Tombolnya bisa diatur dari layar (Setting → CAN → CAN Button) maupun
+dari aplikasi DashTune.
+
+### Pengaturan lain yang hanya ada di DashTune
+
+Beberapa pengaturan tidak tersedia di menu layar dan hanya bisa diubah dari
+aplikasi:
+
+- **Mode MAP** — *Absolute* (angka apa adanya, sekitar 101 kPa saat idle) atau
+  *Boost* (dihitung dari tekanan udara luar, jadi saat vakum angkanya minus dan
+  0 berarti belum ada boost)
+- **Lama splash screen** saat dinyalakan
+- **Modul GPS** — nyalakan kalau memakai GPS sebagai sumber kecepatan
+
+Pengaturan splash dan GPS baru berlaku setelah dash dimatikan dan dinyalakan
+kembali.
+
+### Lampu indikator
+
+Lampu-lampu peringatan menyala otomatis:
+
+| Lampu | Menyala saat |
+| :---- | :---- |
+| Check engine | ECU melaporkan ada kode kesalahan |
+| Aki | Tegangan di luar 11,5–15,5 V |
+| Suhu air | Di atas 105 °C |
+| Suhu oli | Di atas 130 °C |
+| Tekanan oli | Mesin hidup (di atas 800 RPM) tapi tekanan di bawah 100 kPa |
+| Sein kiri/kanan, rem tangan, tekanan ban | Hanya pada Haltech |
+
+Semua lampu ikut padam kalau sambungan ke ECU terputus, jadi tidak ada lampu
+yang menyala terus setelah kunci kontak dimatikan.
+
+---
+
+## Panduan Aplikasi DashTune
+
+DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
+Pro M4/M5/M7, sambungannya lewat **Bluetooth** — tidak perlu WiFi dan tidak
+perlu mencabut apa pun.
+
+### Menyambungkan pertama kali
+
+1. Nyalakan kunci kontak sampai dash menyala.
+2. Buka DashTune, masuk ke tab **Perangkat**, tekan **Tambah Dash**.
+3. Tekan **Pindai**. Dash akan muncul dengan sendirinya.
+4. Pilih dash tersebut. Setelah tersambung, aplikasi langsung membuka halaman
+   menu.
+
+Kalau tidak ketemu: pastikan Bluetooth HP menyala, dash dalam keadaan hidup,
+dan dash tidak sedang tersambung ke HP lain. Bisa juga memilih modelnya secara
+manual di bagian **Model Dash** di layar yang sama.
+
+Dash yang sudah pernah disambungkan akan diingat, dan aplikasi menyambung
+sendiri saat dibuka berikutnya.
+
+### Isi menu DashTune
+
+| Menu | Fungsi |
+| :---- | :---- |
+| **CAN Buttons** | Membuat dan mengatur tombol CAN yang tampil di layar dash |
+| **General Setting** | Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash |
+| **Dashboard** | Mengatur tata letak panel dan data yang tampil pada tiap template |
+| **Splash** | Membuat gambar pembuka sendiri (lihat di bawah) |
+| **Info** | Versi firmware dan kondisi perangkat |
+| **Update Firmware** | Memperbarui firmware dash |
+
+### Membuat splash screen sendiri
+
+Masuk ke menu **Splash**. Di sana bisa menambahkan gambar dari galeri,
+menambah tulisan, menggeser dan memperbesar-kecilkan, lalu memilih warna latar.
+Setelah selesai tekan kirim.
+
+Karena gambar dikirim lewat WiFi, dash akan otomatis menyalakan WiFi-nya
+sendiri sebentar, HP berpindah ke sana, gambar dikirim, lalu HP kembali ke
+jaringan semula. Prosesnya berjalan sendiri — cukup **biarkan layar HP menyala
+dan jangan tutup aplikasi** sampai selesai.
+
+Tersedia juga pengaturan **lama tampil** splash, dan tombol untuk menghapusnya
+kembali ke gambar bawaan.
+
+### Update firmware
+
+Masuk ke menu **Update Firmware**, aplikasi akan memeriksa versi terbaru dan
+menampilkan versi yang terpasang sekarang. Kalau ada versi baru, tekan tombol
+update.
+
+> **Peringatan**: Jangan lakukan update sambil berkendara. Selama update layar
+> dash akan mati beberapa saat lalu menyala kembali sendiri. Pastikan kendaraan
+> dalam keadaan aman, listrik tidak terputus, dan aplikasi tidak ditutup sampai
+> selesai. Update yang terputus di tengah jalan bisa membuat dash gagal menyala.
+
+### Fitur relay: Google Maps dan musik
+
+DashTune bisa meneruskan **petunjuk arah Google Maps** dan **judul lagu yang
+sedang diputar** ke layar dash. Pengaturannya ada di tab **Lainnya → Relay**.
+
+Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
+halaman pengaturannya saat pertama kali diaktifkan.
 
 ## Referensi
 
