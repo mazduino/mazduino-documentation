@@ -303,7 +303,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 Agustus 2026 16:22:37 UTC">29 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 Agustus 2026 10:24:52 UTC">31 Agustus 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v14">Mazduino Mini 6CH (v1.4)<a class="headerlink" href="#mazduino-mini-6ch-v14" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Catatan</strong>: v1.4 <strong>bukan versi produksi</strong>. Versi produksi terakhir dari lini Mini 6CH adalah <strong><a href="../mazduino-mini-6ch-v1.3c/">v1.3C</a></strong>. Halaman ini disimpan sebagai dokumentasi referensi.</p>
@@ -330,7 +330,7 @@
 <ul>
 <li>Input trigger utama untuk sensor CKP VR, hall atau optical</li>
 <li>Input trigger kedua untuk sensor CMP VR, hall atau optical</li>
-<li>7 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 2 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya</li>
+<li>9 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 4 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya</li>
 <li>Catu daya 5V untuk sensor dengan perlindungan fuse internal</li>
 <li>4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control</li>
 <li>8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya</li>
@@ -862,12 +862,12 @@
 </tr>
 <tr>
 <td>MAP Sensor</td>
-<td>PA0</td>
+<td>PC0</td>
 <td>Input sensor MAP</td>
 </tr>
 <tr>
 <td>TPS</td>
-<td>PA3</td>
+<td>PA2</td>
 <td>Input sensor TPS1</td>
 </tr>
 <tr>
@@ -882,12 +882,12 @@
 </tr>
 <tr>
 <td>O2 Sensor</td>
-<td>PA1</td>
+<td>PA0</td>
 <td>Input sensor oksigen</td>
 </tr>
 <tr>
 <td>Battery/Voltage Ref</td>
-<td>PA2</td>
+<td>PA7</td>
 <td>Referensi tegangan baterai</td>
 </tr>
 <tr>
@@ -899,6 +899,16 @@
 <td>Analog Spare Input 2</td>
 <td>PB1</td>
 <td>Input analog cadangan 2</td>
+</tr>
+<tr>
+<td>Analog Spare Input 3</td>
+<td>PA1</td>
+<td>Input analog cadangan 3</td>
+</tr>
+<tr>
+<td>Analog Spare Input 4</td>
+<td>PC1</td>
+<td>Input analog cadangan 4</td>
 </tr>
 <tr>
 <td>AC Input</td>
@@ -1440,6 +1450,7 @@
     <script src="../js/theme_extra.js"></script>
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

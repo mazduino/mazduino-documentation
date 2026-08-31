@@ -1,19 +1,20 @@
 /**
  * Print stylesheet — makes documentation pages printable on A4 paper.
  *
- * Three things fight a clean print on the readthedocs theme, and each is
- * undone below:
+ * The measured problem was vertical, not horizontal. `page-break-inside: avoid`
+ * used to be set on `table`, which asks the browser to keep a 49-row pin table
+ * whole; it cannot, so the table was pushed onto a fresh sheet and most of the
+ * preceding one printed blank. Letting long tables break across pages, while
+ * keeping individual rows intact and repeating the header row, took the wiring
+ * page from 15 printed pages to 10 with nothing lost.
  *
- *   1. theme.js wraps every table at runtime in .wy-table-responsive, which
- *      is `overflow: auto` with `white-space: nowrap` on its cells. On screen
- *      that gives a scrollbar; on paper there is nothing to scroll, so any
- *      table wider than the page is simply cut off at the right edge.
- *   2. .wy-nav-content is capped at max-width 800px and centred, so an A4
- *      sheet prints a narrow column with wide blank margins either side.
- *   3. `page-break-inside: avoid` on tables (previously set here) asks the
- *      browser to keep a 30-row pin table whole. It cannot, so the table is
- *      pushed to a fresh page, leaving most of the previous one blank, and
- *      still overruns.
+ * The rules that force wrapping and visible overflow on tables are belt and
+ * braces, not a diagnosis: measured under a print-width layout, the readthedocs
+ * theme's .wy-table-responsive wrapper is not applied to MkDocs tables, cells
+ * already compute to `white-space: normal`, and .wy-nav-content's 800px cap
+ * already resolves to `none`, because at A4 width the theme's own narrow-screen
+ * rules take over. The rules are kept so a theme update cannot quietly
+ * reintroduce a clipped table, but nothing here depends on them today.
  */
 @media print {
   @page {
@@ -151,12 +152,15 @@
     text-align: left;
   }
 
-  /* Collapsed sections must print open — paper cannot be clicked. */
+  /* Collapsed sections must print open — paper cannot be clicked. The work is
+     done by js/print-details.js, which toggles the elements themselves; Chrome
+     hides the contents via ::details-content, which no portable display rule
+     reaches. This is only a hint for engines that do honour it. */
   details {
     display: block !important;
   }
 
-  details > *:not(summary) {
-    display: revert !important;
+  details > summary {
+    font-weight: 600;
   }
 }
