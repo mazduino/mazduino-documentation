@@ -21,7 +21,7 @@ Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel dengan fitur-fitur c
 ## Fitur Utama
 - Input trigger utama untuk sensor CKP VR, hall atau optical
 - Input trigger kedua untuk sensor CMP VR, hall atau optical
-- 7 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 2 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
+- 9 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 4 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
 - 4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
@@ -251,14 +251,16 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 | Injection Output 4 | PB13 | Channel injektor 4 |
 | Injection Output 5 | PD9 | Channel injektor 5 |
 | Injection Output 6 | PE8 | Channel injektor 6 |
-| MAP Sensor | PA0 | Input sensor MAP |
-| TPS | PA3 | Input sensor TPS1 |
+| MAP Sensor | PC0 | Input sensor MAP |
+| TPS | PA2 | Input sensor TPS1 |
 | IAT Sensor | PA5 | Input sensor suhu udara |
 | CLT Sensor | PA4 | Input sensor suhu coolant |
-| O2 Sensor | PA1 | Input sensor oksigen |
-| Battery/Voltage Ref | PA2 | Referensi tegangan baterai |
+| O2 Sensor | PA0 | Input sensor oksigen |
+| Battery/Voltage Ref | PA7 | Referensi tegangan baterai |
 | Analog Spare Input 1 | PB0 | Input analog cadangan 1 |
 | Analog Spare Input 2 | PB1 | Input analog cadangan 2 |
+| Analog Spare Input 3 | PA1 | Input analog cadangan 3 |
+| Analog Spare Input 4 | PC1 | Input analog cadangan 4 |
 | AC Input | PB5 | Input switch AC |
 | Launch Control Input | PE13 | Input launch control |
 | Clutch Input | PE12 | Input sensor kopling |
