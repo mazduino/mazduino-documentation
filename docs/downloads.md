@@ -1,14 +1,23 @@
-# Downloads - Firmware dan Konfigurasi ECU Mazduino
+# Downloads - Firmware dan Konfigurasi Mazduino
 
-Halaman ini menyediakan firmware dan file konfigurasi untuk semua model ECU Mazduino. Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.
+Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.
+
+- **[Firmware ECU](#firmware-ecu)** — rusEFI dan Speeduino untuk semua model ECU,
+  di-flash lewat ST-Link, DFU, atau rusEFI Console.
+- **[Firmware Racedash](#firmware-racedash)** — dash display; tidak diunduh
+  manual, melainkan lewat Mazduino Flasher atau aplikasi DashTune.
 
 ---
 
-## Firmware rusEFI
+## Firmware ECU
+
+Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.
+
+### Firmware rusEFI
 
 Ada dua pilihan firmware rusEFI untuk ECU Mazduino.
 
-### Mazduino Firmware (Direkomendasikan)
+#### Mazduino Firmware (Direkomendasikan)
 
 Firmware rusEFI yang dikustomisasi dan dioptimalkan khusus untuk semua board Mazduino.
 
@@ -36,7 +45,7 @@ Keunggulan dibanding firmware resmi:
 
 **Catatan penting**: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.
 
-### Official rusEFI Firmware
+#### Official rusEFI Firmware
 
 Firmware standar dari proyek rusEFI tanpa kustomisasi Mazduino.
 
@@ -46,7 +55,7 @@ Gunakan build **mega100-F4** atau **F407 Discovery** untuk board Mazduino. Firmw
 
 ---
 
-## Firmware Speeduino
+### Firmware Speeduino
 
 Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang telah dikustomisasi.
 
@@ -56,7 +65,7 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 
 ---
 
-## Tabel Kompatibilitas
+### Tabel Kompatibilitas
 
 | Model ECU | rusEFI Official | rusEFI Mazduino | Speeduino Custom |
 |-----------|:--------------:|:---------------:|:----------------:|
@@ -70,7 +79,7 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 
 ---
 
-## Software yang Dibutuhkan
+### Software yang Dibutuhkan
 
 - **TunerStudio MS**: [tunerstudio.com][tunerstudio] — software tuning dan konfigurasi ECU
 
@@ -80,9 +89,9 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 
 ---
 
-## Metode Flash Firmware
+### Metode Flash Firmware
 
-### ST-Link via SWD (Instalasi Pertama)
+#### ST-Link via SWD (Instalasi Pertama)
 
 Metode ini digunakan saat ECU belum pernah di-flash sebelumnya, atau perlu full flash dari awal.
 
@@ -95,7 +104,7 @@ Metode ini digunakan saat ECU belum pernah di-flash sebelumnya, atau perlu full 
 5. Klik Download untuk mulai proses flash.
 6. Setelah selesai, lepas ST-Link dan nyalakan ECU.
 
-### DFU via USB (Update Firmware)
+#### DFU via USB (Update Firmware)
 
 Metode ini menggunakan mode DFU (Device Firmware Upgrade) melalui USB, tanpa memerlukan ST-Link. ECU harus sudah pernah di-flash sebelumnya.
 
@@ -105,7 +114,7 @@ Metode ini menggunakan mode DFU (Device Firmware Upgrade) melalui USB, tanpa mem
 4. Buka STM32CubeProgrammer, pilih USB sebagai interface, lalu klik Connect.
 5. Load file firmware dan klik Download.
 
-### rusEFI Console (Update Setelah Instalasi Pertama)
+#### rusEFI Console (Update Setelah Instalasi Pertama)
 
 Setelah firmware pertama ter-install, update selanjutnya dapat dilakukan langsung melalui rusEFI Console tanpa mode DFU.
 
@@ -115,9 +124,46 @@ Setelah firmware pertama ter-install, update selanjutnya dapat dilakukan langsun
 
 ---
 
+## Firmware Racedash
+
+Firmware Racedash **tidak diunduh sebagai file** dari halaman ini. Dash mengambil
+sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.
+
+| Varian | Cara update | Perlu buka case? |
+| :---- | :---- | :---- |
+| Racedash 3.5" & 4" (M1, M2, M3, C1) | **Mazduino Flasher** — OTA lewat WiFi | Tidak |
+| Racedash 3.5" & 4" | USB TTL internal | Ya |
+| Racedash Pro M4, M5, M7 | Aplikasi **DashTune** | Tidak |
+| Racedash Pro generasi lama | **Mazduino Flasher** — OTA lewat WiFi | Tidak |
+
+### Lewat Mazduino Flasher (OTA)
+
+Perlu login ke akun Mazduino terlebih dahulu, lalu buka
+**[mazduino.com/dashboard/flasher](https://www.mazduino.com/dashboard/flasher)**.
+Hubungkan HP/laptop ke WiFi yang dipancarkan dash, pilih model yang benar pada
+**Select Device**, lalu mulai flashing.
+
+> **Pastikan model yang dipilih benar.** Flasher tidak bisa menebaknya untuk
+> Anda, dan firmware model lain akan membuat dash gagal menyala.
+
+Langkah lengkapnya ada di
+[Update Firmware Racedash](mazduino-racedash.md#update-firmware-usb-atau-ota).
+
+### Lewat DashTune (Racedash Pro M4 / M5 / M7)
+
+Generasi M4/M5/M7 diperbarui dari aplikasi Android **DashTune**: menu **Update
+Firmware** memeriksa versi terbaru dan memasangnya sendiri, tanpa kabel maupun
+situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
+[Panduan Aplikasi DashTune](mazduino-racedash-pro.md#panduan-aplikasi-dashtune).
+
+> **Jangan update sambil berkendara.** Layar dash mati beberapa saat selama
+> proses berlangsung.
+
+---
+
 ## Konfigurasi TunerStudio
 
-Setelah firmware ter-flash:
+Setelah firmware ECU ter-flash:
 
 1. Install TunerStudio dari [tunerstudio.com][tunerstudio].
 2. Buat project baru di TunerStudio.
