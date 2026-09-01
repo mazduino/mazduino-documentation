@@ -121,6 +121,11 @@ DashTune dapat mengatur Racedash lewat WiFi, tanpa membuka browser. Racedash
 M1/M2/M3/C1 tersambung lewat **WiFi** (berbeda dengan Racedash Pro M4/M5/M7
 yang lewat Bluetooth).
 
+> **Mendapatkan aplikasinya:** buka **[www.mazduino.com](https://www.mazduino.com/)**
+> dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
+> tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
+> Play Anda di sana, dan undangan akan dikirim lewat email.
+
 1. Pasang DashTune di HP Android, lalu hubungkan WiFi HP ke **"Mazduino_Display"**
    dengan password **"12345678"**.
 2. Buka DashTune. Dash akan terdeteksi sendiri dan muncul sebagai kartu di

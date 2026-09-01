@@ -7,7 +7,7 @@
 *Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
 Template 1 dan sebuah CAN button "Start Engine"*
 
-Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, seluruh pengaturan Racedash Pro dilakukan **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop.
+Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop. Pada generasi M4/M5/M7, tersedia juga aplikasi Android **DashTune** lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.
 
 | Varian | Ukuran Layar | Konektor |
 | :---- | :---- | :---- |
@@ -33,7 +33,7 @@ Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran 
 
 ## Fitur Utama
 
-- Layar sentuh (touchscreen) sehingga seluruh pengaturan dashboard dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan
+- Layar sentuh (touchscreen) sehingga pengaturan dashboard bisa dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan
 - Menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time
 - Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung ECU yang digunakan. ECU berbasis **Speeduino** menggunakan mode Serial, sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
 - Tersedia halaman **Bench Test** khusus untuk ECU **rusEFI**
@@ -342,6 +342,11 @@ yang menyala terus setelah kunci kontak dimatikan.
 DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
 Pro M4/M5/M7, sambungannya lewat **Bluetooth** — tidak perlu WiFi dan tidak
 perlu mencabut apa pun.
+
+> **Mendapatkan aplikasinya:** buka **[www.mazduino.com](https://www.mazduino.com/)**
+> dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
+> tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
+> Play Anda di sana, dan undangan akan dikirim lewat email.
 
 ### Menyambungkan pertama kali
 
