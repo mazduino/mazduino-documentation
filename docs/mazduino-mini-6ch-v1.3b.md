@@ -404,7 +404,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 ### Firmware Support
 - **rusEFI**: Dukungan penuh untuk v1.3B dengan pin mapping yang diperbaiki
 
-- **Speeduino**: Tidak didukung pada v1.3B — gunakan rusEFI
+- **Speeduino**: Kompatibel dengan konfigurasi pin mapping terbaru
 
 - **File Konfigurasi**: Tersedia di [halaman download](downloads.md)
 
