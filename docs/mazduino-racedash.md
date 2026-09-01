@@ -46,16 +46,6 @@ Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.
 
 ## Racedash 4" / Cabus (Konektor DTM4)
 
-**Tampak Depan**
-
-![Tampak depan Mazduino Racedash DTM4](img/dash/racedash-dtm4-front.png)
-
-**Tampak Belakang**
-
-![Tampak belakang Mazduino Racedash DTM4](img/dash/racedash-dtm4-back.png)
-
-**Saat Menyala**
-
 ![Racedash 4 inci menyala](img/dash/racedash-4inch-dtm4.jpeg)
 
 *Racedash 4" saat menyala — bar RPM, indikator gigi, dan deretan lampu
