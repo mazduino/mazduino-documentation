@@ -3,29 +3,34 @@ site_url: https://wiki.mazduino.com
 nav:
   - Unduhan: downloads.md
   - Panduan Cepat: index.md
-  - Mazduino LITE:
-      - v0.1: mazduino-lite-v0.1.md
-      - v0.2: mazduino-lite-v0.2.md
-  - Compact 4 Channel:
-    - v1: mazduino-compact-4ch-v1.md
-    - v2.1: mazduino-compact-4ch-v2.1.md
-    - v2.2: mazduino-compact-4ch-v2.2.md
-    - v2.3: mazduino-compact-4ch-v2.3.md
-    - v2.5: mazduino-compact-4ch-v2.5.md
-  - Mini 6 Channel:
-    - v1.0-v1.2: mazduino-mini-6ch-v1.0-v1.2.md
-    - v1.3: mazduino-mini-6ch-v1.3.md
-    - v1.3B: mazduino-mini-6ch-v1.3b.md
-    - v1.3C: mazduino-mini-6ch-v1.3c.md
-    - v1.4: mazduino-mini-6ch-v1.4.md
-  - Mazduino Core:
-    - rev0: mazduino-core-rev0.md
-    - rev1: mazduino-core-rev1.md
-  - Mazduino X600:
-    - X600 (4.3"): mazduino-x600.md
-  - Mazduino Racedash:
-    - 3.5" & 4": mazduino-racedash.md
-    - Pro / M4, M5, M7 (4.3", 5" & 7"): mazduino-racedash-pro.md
+  # Grouped by product line rather than one flat list of families: Mazduino
+  # ships more than ECUs now, and an accessories group slots in beside these
+  # two when there is something to put in it.
+  - ECU:
+      - Mazduino LITE:
+          - v0.1: mazduino-lite-v0.1.md
+          - v0.2: mazduino-lite-v0.2.md
+      - Compact 4 Channel:
+          - v1: mazduino-compact-4ch-v1.md
+          - v2.1: mazduino-compact-4ch-v2.1.md
+          - v2.2: mazduino-compact-4ch-v2.2.md
+          - v2.3: mazduino-compact-4ch-v2.3.md
+          - v2.5: mazduino-compact-4ch-v2.5.md
+      - Mini 6 Channel:
+          - v1.0-v1.2: mazduino-mini-6ch-v1.0-v1.2.md
+          - v1.3: mazduino-mini-6ch-v1.3.md
+          - v1.3B: mazduino-mini-6ch-v1.3b.md
+          - v1.3C: mazduino-mini-6ch-v1.3c.md
+          - v1.4: mazduino-mini-6ch-v1.4.md
+      - Mazduino Core:
+          - rev0: mazduino-core-rev0.md
+          - rev1: mazduino-core-rev1.md
+      - Mazduino X600:
+          - X600 (4.3"): mazduino-x600.md
+  - Dash Display:
+      - Mazduino Racedash:
+          - 3.5" & 4": mazduino-racedash.md
+          - Pro / M4, M5, M7 (4.3", 5" & 7"): mazduino-racedash-pro.md
   - Sensor dan Wiring: 
     - Persiapan: persiapan-sensor-wiring.md
     - Rekomendasi Ukuran Kabel: rekomendasi-ukuran-kabel.md

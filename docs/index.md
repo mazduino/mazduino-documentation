@@ -1,10 +1,27 @@
-# Dokumentasi ECU Mazduino
+# Dokumentasi Mazduino
 
-Selamat datang di dokumentasi resmi untuk ECU Mazduino — Engine Control Unit standalone open-source yang didukung oleh mikrokontroler STM32 dan kompatibel dengan firmware rusEFI dan Speeduino.
+Selamat datang di dokumentasi resmi Mazduino. Mazduino membuat perangkat
+manajemen mesin standalone open-source berbasis mikrokontroler STM32 beserta
+perangkat pendukungnya.
+
+## Lini Produk
+
+| Lini | Isi | Mulai dari |
+| :--- | :--- | :--- |
+| **[ECU](#ecu)** | Engine Control Unit standalone, firmware rusEFI dan Speeduino | [Mazduino LITE](mazduino-lite-v0.2.md) |
+| **[Dash Display](#dash-display)** | Layar digital yang menampilkan data ECU secara real-time | [Racedash](mazduino-racedash.md) |
+
+Baru pertama kali? Lihat **[Memulai](#memulai)** di bawah — langkahnya berbeda
+untuk ECU dan untuk dash.
 
 ---
 
-## Download Firmware
+## ECU
+
+Engine Control Unit standalone berbasis STM32, kompatibel dengan firmware
+rusEFI dan Speeduino, dikonfigurasi lewat TunerStudio.
+
+### Download Firmware ECU
 
 > **[⬇ Download Firmware Mazduino di GitHub Releases](https://github.com/mazduino/mazduino-fw/releases)**
 
@@ -16,11 +33,14 @@ Setiap release sudah berisi:
 
 Panduan lengkap cara flash dan pemilihan firmware ada di **[halaman Downloads](downloads.md)**.
 
+> Firmware untuk Racedash terpisah dan diperbarui lewat aplikasi DashTune atau
+> Mazduino Flasher — lihat halaman dash masing-masing.
+
 ---
 
-## Produk Terbaru
+### Model
 
-### Mazduino LITE
+#### Mazduino LITE
 
 Solusi ECU compact terbaru untuk engine 4-silinder dengan Wasted Spark builtin IGBT dan fitur modern.
 
@@ -49,9 +69,7 @@ Solusi ECU compact terbaru untuk engine 4-silinder dengan Wasted Spark builtin I
 
 ---
 
-## Produk Lainnya
-
-### Mazduino Compact 4ch
+#### Mazduino Compact 4ch
 
 Engine Control Unit 4-channel yang kompak, dirancang untuk mesin yang lebih kecil dan aplikasi dengan keterbatasan ruang.
 
@@ -74,7 +92,7 @@ Engine Control Unit 4-channel yang kompak, dirancang untuk mesin yang lebih keci
 - **[v2.3-v2.4](mazduino-compact-4ch-v2.3.md)** - Pin mapping yang dioptimalkan, perbaikan knock sensor, dan RTC battery support
 - **[v2.5](mazduino-compact-4ch-v2.5.md)** - Dual high side output, optimasi Hall Input, dan optimasi Analog Input
 
-### Mazduino Mini 6ch
+#### Mazduino Mini 6ch
 
 Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential penuh.
 
@@ -98,7 +116,7 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 - **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6 - **versi produksi terakhir**
 - **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3C
 
-### Mazduino Core
+#### Mazduino Core
 
 ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH, dilengkapi dual ETB, dual CAN bus, dan kombinasi input Hall + VR.
 
@@ -114,9 +132,22 @@ ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang l
 
 **[Dokumentasi Mazduino Core rev0](mazduino-core-rev0.md)**
 
-### Mazduino Racedash
+#### Mazduino X600
 
-Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear indicator, kecepatan, dan data sensor lainnya, dengan konfigurasi tampilan via WiFi dan browser.
+ECU dengan layar 4.3 inci terintegrasi — unit dash dan ECU menjadi satu,
+sehingga tidak memerlukan dash display terpisah.
+
+**[Dokumentasi Mazduino X600](mazduino-x600.md)**
+
+---
+
+## Dash Display
+
+Layar digital yang menampilkan data ECU secara real-time — RPM, gigi,
+kecepatan, dan pembacaan sensor. Dash membaca data dari ECU lewat CAN Bus atau
+Serial; ia tidak mengendalikan mesin.
+
+### Mazduino Racedash
 
 | Racedash 3.5" / 4" | Racedash Pro |
 |:-------------------:|:------------:|
@@ -124,17 +155,31 @@ Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear 
 
 **Varian yang Tersedia:**
 
-- **[Racedash 3.5" & 4"](mazduino-racedash.md)** - Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)
-- **[Racedash Pro (4.3", 5" & 7")](mazduino-racedash-pro.md)** - Coming Soon
+- **[Racedash 3.5" & 4"](mazduino-racedash.md)** — Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)
+- **[Racedash Pro — M4, M5, M7 (4.3", 5" & 7")](mazduino-racedash-pro.md)** — Layar lebih besar, pengaturan lewat aplikasi DashTune
+
+**ECU yang didukung:** rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II.
+
+**Pengaturan:** lewat browser di
+[mazduino.com/display-control](https://www.mazduino.com/display-control),
+lewat aplikasi Android **DashTune**, atau dari layar sentuh dash itu sendiri.
 
 ---
 
 ## Memulai
 
-1. **Pilih Model** - Pilih ECU yang sesuai dengan kebutuhan mesin dan aplikasi Anda
-2. **Install Firmware** - Download dan flash firmware dari [github.com/mazduino/mazduino-fw][mazduino-fw]
-3. **Konfigurasi TunerStudio** - Load file .ini yang sesuai dan atur parameter mesin
-4. **Mulai Tuning** - Gunakan base map sebagai titik awal dan sesuaikan untuk aplikasi spesifik Anda
+### Kalau Anda memakai ECU
+
+1. **Pilih Model** — Pilih ECU yang sesuai dengan kebutuhan mesin dan aplikasi Anda
+2. **Install Firmware** — Download dan flash firmware dari [github.com/mazduino/mazduino-fw][mazduino-fw]
+3. **Konfigurasi TunerStudio** — Load file .ini yang sesuai dan atur parameter mesin
+4. **Mulai Tuning** — Gunakan base map sebagai titik awal dan sesuaikan untuk aplikasi spesifik Anda
+
+### Kalau Anda memakai Racedash
+
+1. **Pasang dash** — Sambungkan ke ECU lewat CAN Bus atau Serial sesuai pinout di halaman varian Anda
+2. **Pilih protokol ECU** — Sesuaikan dengan ECU yang dipakai; tidak perlu ganti firmware
+3. **Atur tampilan** — Pilih template, data tiap panel, dan lampu peringatan lewat browser atau aplikasi DashTune
 
 ---
 
@@ -143,9 +188,9 @@ Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear 
 ### Panduan Umum
 - **[Downloads](downloads.md)** - Firmware Mazduino, file .ini untuk TunerStudio, dan panduan flashing
 - **[Manual TunerStudio](tunerstudio-manual.md)** - Panduan lengkap tuning dan konfigurasi ECU
-- **[Tentang](about.md)** - Informasi lengkap tentang proyek ECU Mazduino
+- **[Tentang](about.md)** - Informasi lengkap tentang proyek Mazduino
 
-### Dokumentasi Hardware
+### Dokumentasi Hardware — ECU
 - **[Compact 4CH v1](mazduino-compact-4ch-v1.md)** - Spesifikasi dan wiring untuk v1
 - **[Compact 4CH v2.1](mazduino-compact-4ch-v2.1.md)** - Dengan knock sensor dan konektor Yamaha
 - **[Compact 4CH v2.2](mazduino-compact-4ch-v2.2.md)** - Dengan high side switching
@@ -157,8 +202,12 @@ Dash display digital yang menampilkan data real-time dari ECU seperti RPM, gear 
 - **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah - **versi produksi terakhir**
 - **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi; versi produksi terakhir adalah v1.3C
 - **[Mazduino Core rev0](mazduino-core-rev0.md)** - Konektor 48-pin, dual ETB, dual CAN bus
+- **[Mazduino Core rev1](mazduino-core-rev1.md)** - Revisi terbaru lini Core
+- **[Mazduino X600](mazduino-x600.md)** - ECU dengan layar 4.3 inci terintegrasi
+
+### Dokumentasi Hardware — Dash Display
 - **[Mazduino Racedash 3.5" & 4"](mazduino-racedash.md)** - Dash display konektor JST 4 Pin dan DTM4
-- **[Mazduino Racedash Pro](mazduino-racedash-pro.md)** - Varian layar 4.3", 5", dan 7" (Coming Soon)
+- **[Mazduino Racedash Pro](mazduino-racedash-pro.md)** - Varian layar 4.3", 5", dan 7" (M4, M5, M7)
 
 ---
 
@@ -168,7 +217,7 @@ Untuk dukungan teknis, pertanyaan, atau kontribusi, silakan kunjungi forum komun
 
 ## PCB Design dan Technical Resources
 
-Untuk informasi detail mengenai PCB design, schematic, dan Bill of Materials (BOM) untuk semua versi ECU Mazduino, silakan kunjungi:
+Untuk informasi detail mengenai PCB design, schematic, dan Bill of Materials (BOM) untuk perangkat keras Mazduino, silakan kunjungi:
 
 **[Mazduino Wiki][mazduino-hw]**
 
