@@ -16,7 +16,9 @@ Firmware Mazduino tersedia di [github.com/mazduino/mazduino-fw][mazduino-fw] —
 
 ### Speeduino
 
-Beberapa model Mazduino (Compact dan Mini 6CH v1.3+) juga mendukung Speeduino dengan firmware khusus. **Tidak kompatibel** dengan official Speeduino karena perbedaan pin mapping.
+Sebagian model Mazduino — Compact, Mini 6CH v1.3 dan v1.3B, serta LITE — juga dapat menjalankan Speeduino dengan firmware khusus. **Tidak kompatibel** dengan official Speeduino karena perbedaan pin mapping.
+
+**Pengembangan Speeduino sudah dihentikan.** Mazduino kini fokus pada firmware sendiri yang berbasis rusEFI, dan itu yang disarankan untuk pemasangan baru — seluruh fitur board hanya tersedia di sana. Rincian per model ada di [tabel kompatibilitas](downloads.md#tabel-kompatibilitas).
 
 ## Open Source
 

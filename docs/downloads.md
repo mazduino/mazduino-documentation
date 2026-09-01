@@ -13,6 +13,12 @@ Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.
 
 Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.
 
+> **Mazduino menyarankan firmware berbasis rusEFI.** Firmware itu yang
+> dikembangkan Mazduino sendiri dan terus diperbarui, sehingga seluruh fitur
+> board dapat dipakai optimal dengan risiko masalah paling kecil. Dukungan
+> Speeduino masih ada untuk board yang sudah memakainya, tetapi
+> **pengembangannya sudah dihentikan** — tidak ada fitur atau perbaikan baru.
+
 ### Firmware rusEFI
 
 Ada dua pilihan firmware rusEFI untuk ECU Mazduino.
@@ -56,6 +62,11 @@ Gunakan build **mega100-F4** atau **F407 Discovery** untuk board Mazduino. Firmw
 ---
 
 ### Firmware Speeduino
+
+> **Tidak lagi dikembangkan.** Build ini tetap tersedia untuk board yang sudah
+> berjalan dengannya, tetapi tidak lagi mendapat fitur maupun perbaikan baru.
+> Untuk pemasangan baru, gunakan [firmware rusEFI](#firmware-rusefi) — fitur
+> board yang lebih baru hanya ada di sana.
 
 Tersedia firmware Speeduino yang telah dikustomisasi untuk ECU Mazduino Compact, Mini 6CH v1.3/v1.3B, dan LITE. LITE memakai build yang dibuat untuk Compact.
 

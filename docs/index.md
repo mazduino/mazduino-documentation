@@ -18,8 +18,11 @@ untuk ECU dan untuk dash.
 
 ## ECU
 
-Engine Control Unit standalone berbasis ARM Cortex, kompatibel dengan firmware
-rusEFI dan Speeduino, dikonfigurasi lewat TunerStudio.
+Engine Control Unit standalone berbasis ARM Cortex, dikonfigurasi lewat
+TunerStudio. Mazduino mengembangkan firmware sendiri berbasis **rusEFI**, dan
+itu yang disarankan agar seluruh fitur board terpakai optimal. Sebagian board
+juga dapat menjalankan Speeduino, tetapi pengembangannya sudah dihentikan —
+lihat [tabel kompatibilitas](downloads.md#tabel-kompatibilitas).
 
 ### Download Firmware ECU
 
