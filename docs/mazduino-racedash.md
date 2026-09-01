@@ -94,7 +94,9 @@ Update firmware Racedash dapat dilakukan dengan dua cara:
 
 Pada firmware terbaru ada dua cara mengatur tampilan dashboard: lewat **browser** di
 mazduino.com, atau lewat aplikasi Android **DashTune**. Keduanya mengatur hal yang sama
-dan berlaku untuk kedua varian Racedash — pilih mana yang lebih praktis.
+dan berlaku untuk kedua varian di halaman ini, 3.5" dan 4" — pilih mana yang
+lebih praktis. Untuk [Racedash Pro](mazduino-racedash-pro.md) caranya berbeda:
+pengaturannya lewat DashTune atau layar sentuh, bukan lewat browser.
 
 Halaman konfigurasi lokal `192.168.4.1` hanya dipakai oleh firmware lama, dan ada di
 bagian paling bawah halaman ini.

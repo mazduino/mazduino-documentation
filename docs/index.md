@@ -160,9 +160,14 @@ Serial; ia tidak mengendalikan mesin.
 
 **ECU yang didukung:** rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II.
 
-**Pengaturan:** lewat browser di
-[mazduino.com/display-control](https://www.mazduino.com/display-control),
-lewat aplikasi Android **DashTune**, atau dari layar sentuh dash itu sendiri.
+**Cara mengaturnya berbeda antar varian:**
+
+- **Racedash 3.5" & 4"** — lewat browser di
+  [mazduino.com/display-control](https://www.mazduino.com/display-control) atau
+  lewat aplikasi **DashTune**, keduanya melalui WiFi yang dipancarkan dash.
+- **Racedash Pro M4 / M5 / M7** — lewat aplikasi **DashTune** melalui Bluetooth,
+  atau dari layar sentuh dash itu sendiri. Varian ini **tidak** dapat diatur
+  lewat browser.
 
 ---
 
