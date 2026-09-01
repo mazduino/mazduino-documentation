@@ -51,12 +51,25 @@ Firmware Mazduino berbasis **[rusEFI][rusefi]** — proyek firmware engine manag
 
 - Dokumentasi: [wiki.zgrywus.com][zgrywus-wiki]
 
+### EpicEFI
+
+**[EpicEFI][epicefi]** adalah proyek engine management berbasis rusEFI dengan
+unit epicECU. Dua bagiannya lebih lengkap dibanding rusEFI official, dan
+keduanya menjadi rujukan dalam pengembangan firmware Mazduino:
+
+- **CAN Bus** — cakupan fitur yang lebih luas
+- **Transmisi otomatis** — kontrol yang lebih lengkap
+
+- Dokumentasi: [content.epicefi.com][epicefi-docs]
+
 ### Komunitas
 
 Terima kasih kepada seluruh kontributor, tester, dan pengguna yang telah membantu pengembangan proyek ini. Mazduino berkomitmen untuk tetap open source dan berkontribusi kembali kepada komunitas.
 
 [mazduino-fw]: https://github.com/mazduino/mazduino-fw
 [mazduino-hw]: https://github.com/mazduino/mazduino/wiki
+[epicefi]: https://epicefi.com/
+[epicefi-docs]: http://content.epicefi.com/
 [rusefi]: https://rusefi.com/
 [rusefi-wiki]: https://wiki.rusefi.com/
 [rusefi-gh]: https://github.com/rusefi/rusefi

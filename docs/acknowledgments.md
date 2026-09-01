@@ -42,6 +42,21 @@ Dokumentasi lengkap fitur-fitur ini tersedia di bagian **[Firmware](../firmware/
 
 - Dokumentasi Zgrywus: [wiki.zgrywus.com][zgrywus-wiki]
 
+## EpicEFI
+
+**[EpicEFI][epicefi]** adalah proyek engine management berbasis rusEFI dengan
+unit epicECU.
+
+Dua bagian berikut lebih lengkap dibanding rusEFI official, dan menjadi rujukan
+dalam pengembangan firmware Mazduino:
+
+- **CAN Bus** — cakupan fitur yang lebih luas dibanding implementasi official
+- **Transmisi otomatis** — kontrol yang lebih lengkap
+
+- Dokumentasi EpicEFI: [content.epicefi.com][epicefi-docs]
+
+[epicefi]: https://epicefi.com/
+[epicefi-docs]: http://content.epicefi.com/
 [rusefi]: https://rusefi.com/
 [rusefi-wiki]: https://wiki.rusefi.com/
 [rusefi-gh]: https://github.com/rusefi/rusefi
