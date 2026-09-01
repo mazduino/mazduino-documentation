@@ -61,7 +61,7 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 
 - **Download**: [github.com/mazduino/speeduino-fw/releases][speeduino-releases]
 
-**Peringatan**: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Mini 6CH v1.0-v1.2 tidak didukung Speeduino — gunakan rusEFI.
+**Peringatan**: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Pada lini Mini 6CH, hanya **v1.3 polos** yang didukung dan sudah diuji; v1.0-v1.2 dan v1.3B ke atas tidak didukung — gunakan rusEFI.
 
 ---
 
@@ -73,7 +73,8 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 | Compact v2.1 | Manual config | Siap pakai | Didukung |
 | Compact v2.2+ | Manual config | Siap pakai | Didukung |
 | Mini 6CH v1.0-v1.2 | Manual config | Siap pakai | Tidak didukung |
-| Mini 6CH v1.3+ | Manual config | Siap pakai | Didukung |
+| Mini 6CH v1.3 (polos) | Manual config | Siap pakai | Didukung, teruji |
+| Mini 6CH v1.3B ke atas | Manual config | Siap pakai | Tidak didukung |
 | LITE | Manual config | Siap pakai | Tidak didukung |
 | Mega100 | Manual config | Siap pakai | Tidak didukung |
 

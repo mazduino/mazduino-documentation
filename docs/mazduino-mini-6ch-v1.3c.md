@@ -459,7 +459,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 ### Firmware Support
 - **rusEFI**: Dukungan penuh untuk v1.3C dengan pin mapping yang diperbarui
 
-- **Speeduino**: Kompatibel dengan konfigurasi pin mapping terbaru
+- **Speeduino**: Tidak didukung pada v1.3C — gunakan rusEFI
 
 - **File Konfigurasi**: Tersedia di [halaman download](downloads.md)
 
