@@ -54,6 +54,13 @@ Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.
 
 ![Tampak belakang Mazduino Racedash DTM4](img/dash/racedash-dtm4-back.png)
 
+**Saat Menyala**
+
+![Racedash 4 inci menyala](img/dash/racedash-4inch-dtm4.jpeg)
+
+*Racedash 4" saat menyala — bar RPM, indikator gigi, dan deretan lampu
+peringatan di bawah layar*
+
 Varian ini menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui **CAN Bus**, kecuali untuk ECU **Speeduino** yang menggunakan mode **Serial** (secondary serial dari Arduino Mega).
 
 ### Konektor DTM4 / 4 Pin

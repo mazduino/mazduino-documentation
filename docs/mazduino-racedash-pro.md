@@ -66,11 +66,6 @@ Racedash Pro mendukung splash screen (gambar/logo) custom yang tampil saat peran
 
 Racedash Pro menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang sama dengan varian [Racedash 4"](mazduino-racedash.md#racedash-4-cabus-konektor-dtm4), baik dari sisi bentuk fisik konektor maupun fungsi pin.
 
-![Racedash Pro M4 dengan konektor DTM4](img/dash/racedash-pro-m4-dtm4.jpeg)
-
-*Racedash Pro M4 dengan konektor DTM 4 pin — deretan lampu indikator terlihat
-di bawah layar*
-
 ![Sisi konektor Racedash](img/dash/racedash-dtm4-connector-side.png)
 
 *Dash connector side*
