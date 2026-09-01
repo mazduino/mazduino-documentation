@@ -1,7 +1,7 @@
 # Dokumentasi Mazduino
 
 Selamat datang di dokumentasi resmi Mazduino. Mazduino membuat perangkat
-manajemen mesin standalone open-source berbasis mikrokontroler STM32 beserta
+manajemen mesin standalone open-source berbasis mikrokontroler ARM Cortex beserta
 perangkat pendukungnya.
 
 ## Lini Produk
@@ -18,7 +18,7 @@ untuk ECU dan untuk dash.
 
 ## ECU
 
-Engine Control Unit standalone berbasis STM32, kompatibel dengan firmware
+Engine Control Unit standalone berbasis ARM Cortex, kompatibel dengan firmware
 rusEFI dan Speeduino, dikonfigurasi lewat TunerStudio.
 
 ### Download Firmware ECU
@@ -81,7 +81,7 @@ Engine Control Unit 4-channel yang kompak, dirancang untuk mesin yang lebih keci
 
 - 4 channel injeksi
 - Faktor bentuk kompak
-- MCU STM32F407VGT6
+- MCU ARM Cortex-M4 168 MHz
 - Kompatibel dengan rusEFI dan Speeduino
 
 **Versi yang Tersedia:**
@@ -104,7 +104,7 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 
 - 6 channel injeksi
 - Operasi sequential penuh
-- MCU STM32F407VGT6
+- MCU ARM Cortex-M4 168 MHz
 - Kemampuan I/O yang diperluas
 - Kompatibel dengan rusEFI dan Speeduino
 
@@ -112,7 +112,7 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 
 - **[v1.0-v1.2](mazduino-mini-6ch-v1.0-v1.2.md)** - Versi standar dengan fitur dasar
 - **[v1.3](mazduino-mini-6ch-v1.3.md)** - Dengan Knock Input dan Electronic Throttle Body (ETB)
-- **[v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU STM32F427VGT6, input analog TPS2 tambahan, dan optimisasi hardware
+- **[v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU lebih cepat, input analog TPS2 tambahan, dan optimisasi hardware
 - **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6 - **versi produksi terakhir**
 - **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3C
 
@@ -124,7 +124,7 @@ ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang l
 
 **Fitur Umum:**
 
-- MCU STM32F427 ARM Cortex-M4
+- MCU ARM Cortex-M4 180 MHz
 - Dual ETB (ETB1 & ETB2) dan Dual CAN Bus
 - Kombinasi input Hall/Digital dan VR
 - Konektor otomotif 48-pin

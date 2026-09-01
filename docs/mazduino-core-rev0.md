@@ -2,7 +2,7 @@
 
 ## Gambaran Umum
 
-Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan **STM32F427** sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan **dual ETB**, **dual CAN bus**, kombinasi input **Hall + VR**, serta output aktuator yang lebih banyak untuk mesin modern.
+Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan **ARM Cortex-M4 180 MHz** sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan **dual ETB**, **dual CAN bus**, kombinasi input **Hall + VR**, serta output aktuator yang lebih banyak untuk mesin modern.
 
 Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referensi hardware pada dokumen MAZDUINO CORE.
 
@@ -10,7 +10,7 @@ Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referen
 
 ## Fitur Utama
 
-- MCU **STM32F427** ARM Cortex-M4
+- MCU **ARM Cortex-M4 180 MHz**
 - Built-in **5V sensor supply** dengan proteksi internal
 - **4x input Hall/Digital** untuk CKP, CMP, VSS, clutch, launch, atau switch lainnya
 - **12x input analog** untuk MAP, TPS, O2, tekanan, temperatur, PPS, dan sensor tambahan
@@ -187,7 +187,7 @@ Berikut mapping fungsi umum untuk setup firmware. Assignment dapat disesuaikan d
 
 ## Informasi MCU
 
-- **MCU**: STM32F427
+- **MCU**: ARM Cortex-M4 180 MHz
 
 - ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.
 - Gunakan file konfigurasi firmware yang memang ditujukan untuk **Mazduino Core** agar semua pin berfungsi sesuai desain board.

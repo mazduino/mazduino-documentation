@@ -181,7 +181,7 @@ VVT Solenoid (-) → Vehicle Ground
 
 | Feature | v2.1 | v2.2 |
 |---------|------|------|
-| Core MCU | STM32F407VGT6 | STM32F407VGT6 |
+| Core MCU | ARM Cortex-M4 168 MHz | ARM Cortex-M4 168 MHz |
 | Ignition Outputs | 4x | 4x |
 | Injection Outputs | 4x | 4x |
 | Low Side Outputs | 5x | 5x |

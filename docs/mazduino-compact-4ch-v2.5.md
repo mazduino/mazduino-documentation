@@ -163,7 +163,7 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Parameter | Nilai |
 |-----------|-------|
 | Input Voltage | 12V (9V - 16V) |
-| MCU | STM32F407VGT6 |
+| MCU | ARM Cortex-M4 168 MHz |
 | Clock Speed | 168 MHz |
 | Flash Memory | 1MB |
 | RAM | 192KB |

@@ -45,7 +45,7 @@ Mazduino LITE v0.1 adalah varian pertama dari keluarga ECU Mazduino LITE yang di
 
 - **RTC**: Battery-backed real-time clock
 
-- **Processor**: ARM Cortex-M4 STM32F4 series
+- **Processor**: ARM Cortex-M4
 
 ## Sistem Konektor
 

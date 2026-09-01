@@ -4,7 +4,7 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel dengan fitur-fitur canggih yang dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor STM32F407VGT6 ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dengan dukungan penuh untuk teknologi terdepan seperti Variable Valve Timing (VVT), Boost Control, dan dual Electronic Throttle Body (ETB).
+Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel dengan fitur-fitur canggih yang dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor ARM Cortex-M4 32-bit yang powerful, memberikan manajemen mesin komprehensif dengan dukungan penuh untuk teknologi terdepan seperti Variable Valve Timing (VVT), Boost Control, dan dual Electronic Throttle Body (ETB).
 
 **Fitur Baru v1.4:**
 
@@ -432,7 +432,7 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 ## Spesifikasi Teknis v1.4
 
 ### Hardware Specifications
-- **MCU**: STM32F407VGT6 ARM Cortex-M4 @ 168MHz
+- **MCU**: ARM Cortex-M4 @ 168MHz
 
 - **Flash Memory**: 1MB untuk firmware dan konfigurasi
 

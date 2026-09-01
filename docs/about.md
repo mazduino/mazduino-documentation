@@ -1,6 +1,6 @@
 # Tentang ECU Mazduino
 
-ECU Mazduino adalah Engine Control Unit (ECU) standalone open-source yang dibangun di atas mikrokontroler STM32F407VGT6 (ARM Cortex-M4 @ 168MHz). Dirancang untuk penggemar otomotif dan profesional yang membutuhkan solusi manajemen mesin yang fleksibel.
+ECU Mazduino adalah Engine Control Unit (ECU) standalone open-source yang dibangun di atas mikrokontroler ARM Cortex-M4 @ 168MHz. Dirancang untuk penggemar otomotif dan profesional yang membutuhkan solusi manajemen mesin yang fleksibel.
 
 ## Firmware
 

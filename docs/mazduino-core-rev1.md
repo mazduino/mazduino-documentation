@@ -2,7 +2,7 @@
 
 ## Gambaran Umum
 
-Mazduino Core Rev1 adalah revisi lanjutan dari [Mazduino Core Rev0](mazduino-core-rev0.md), ECU berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan **STM32F427** sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan **dual ETB**, **dual CAN bus**, kombinasi input **Hall + VR**, serta output aktuator yang lebih banyak untuk mesin modern.
+Mazduino Core Rev1 adalah revisi lanjutan dari [Mazduino Core Rev0](mazduino-core-rev0.md), ECU berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan **ARM Cortex-M4 180 MHz** sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan **dual ETB**, **dual CAN bus**, kombinasi input **Hall + VR**, serta output aktuator yang lebih banyak untuk mesin modern.
 
 Rev1 membawa sejumlah perbaikan dibanding Rev0, di antaranya penambahan **12V Out** untuk suplai sensor (pin 17, misalnya untuk CKP/CMP sensor yang membutuhkan power 12V), perbaikan **5V sensor supply** yang kini sanggup hingga **3A** dan tidak mudah panas, penamaan jalur jumper opsional (CON21, CON22, CON37, CON38), serta penambahan opsi jumper baru pada pin 21 dan pin 37. Lihat bagian [Perubahan pada Rev1](#perubahan-pada-rev1) untuk ringkasan lengkap.
 
@@ -12,7 +12,7 @@ Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referen
 
 ## Fitur Utama
 
-- MCU **STM32F427** ARM Cortex-M4
+- MCU **ARM Cortex-M4 180 MHz**
 - Built-in **5V sensor supply** hingga **3A** dengan proteksi internal, lebih tahan panas dibanding Rev0
 - Built-in **12V sensor supply** (pin 17) untuk sensor yang membutuhkan power 12V, misalnya sensor CKP/CMP tipe 12V
 - **4x input Hall/Digital** untuk CKP, CMP, VSS, clutch, launch, atau switch lainnya (seluruhnya memiliki opsi jumper alternatif)
@@ -224,7 +224,7 @@ Jalur Low Side, Analog Volt, dan Analog Temp bersifat generik sehingga alokasiny
 
 ## Informasi MCU
 
-- **MCU**: STM32F427
+- **MCU**: ARM Cortex-M4 180 MHz
 
 - ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.
 - Gunakan file konfigurasi firmware yang memang ditujukan untuk **Mazduino Core Rev1** agar semua pin berfungsi sesuai desain board.

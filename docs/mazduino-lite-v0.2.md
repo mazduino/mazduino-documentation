@@ -49,7 +49,7 @@ Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluar
 
 - **RTC**: Battery-backed real-time clock
 
-- **Processor**: ARM Cortex-M4 STM32F4 series
+- **Processor**: ARM Cortex-M4
 
 ## Sistem Konektor
 

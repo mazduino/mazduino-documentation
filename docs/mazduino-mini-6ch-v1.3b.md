@@ -2,11 +2,11 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, dirancang sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor **STM32F427VGT6** ARM 32-bit yang lebih powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
+Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, dirancang sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor **ARM Cortex-M4 180 MHz** 32-bit yang lebih powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Perbaikan v1.3B dari v1.3:**
 
-- **Upgrade MCU**: Menggunakan STM32F427VGT6 (180MHz) yang lebih powerful menggantikan STM32F407VGT6 (168MHz)
+- **Upgrade MCU**: Menggunakan ARM Cortex-M4 180 MHz, naik dari 168 MHz pada v1.3
 
 - **Penambahan Input Analog**: Menambahkan 1 spare input analog khusus untuk sensor TPS2 yang dibutuhkan untuk ETB
 
@@ -35,7 +35,7 @@ Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, diranc
 
 - Dukungan untuk Modul VR Conditioner tambahan
 - Dukungan untuk Modul Stepper Idle tambahan
-- **Prosesor 180 MHz ARM Cortex-M4 (STM32F427VGT6)** - **Upgrade dari v1.3**
+- **Prosesor 180 MHz ARM Cortex-M4** - **Upgrade dari v1.3**
 
 - Komunikasi data via CANbus
 - Komunikasi data via USB Type-C
@@ -351,7 +351,7 @@ Untuk mesin 4-silinder:
 
 ## Informasi Hardware
 
-Mazduino Mini 6CH v1.3B didesain dengan **STM32F427VGT6** sebagai MCU utama, memberikan performa yang lebih tinggi dibanding v1.3. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3B hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).
+Mazduino Mini 6CH v1.3B didesain dengan **ARM Cortex-M4 180 MHz** sebagai MCU utama, memberikan performa yang lebih tinggi dibanding v1.3. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3B hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).
 
 ![VR Module](img/mini6ch/vr-module.jpeg)
 
