@@ -57,11 +57,17 @@ Gunakan build **mega100-F4** atau **F407 Discovery** untuk board Mazduino. Firmw
 
 ### Firmware Speeduino
 
-Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang telah dikustomisasi.
+Tersedia firmware Speeduino yang telah dikustomisasi untuk ECU Mazduino Compact, Mini 6CH v1.3/v1.3B, dan LITE. LITE memakai build yang dibuat untuk Compact.
 
 - **Download**: [github.com/mazduino/speeduino-fw/releases][speeduino-releases]
 
-**Peringatan**: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Pada lini Mini 6CH, Speeduino berjalan sampai **v1.3B**, dengan **v1.3 polos** sebagai versi yang sudah diuji; v1.0-v1.2 dan v1.3C ke atas tidak didukung — gunakan rusEFI.
+**Peringatan**: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas.
+
+Yang sudah benar-benar diuji jalan dengan Speeduino hanya **Compact v1**, **Mini 6CH v1.3 polos**, dan **LITE** — LITE memakai firmware yang dibuat untuk Compact, bukan build tersendiri.
+
+**Belum diuji** berarti secara hardware mestinya jalan tetapi belum pernah dibuktikan: Compact v2.1 dan v2.2 ke atas masuk kategori ini, jadi siapkan rencana cadangan ke rusEFI kalau ternyata tidak jalan.
+
+**Tidak didukung** berarti memang tidak bisa: Mini 6CH v1.0-v1.2, Mini 6CH v1.3C ke atas, dan Mega100 — gunakan rusEFI.
 
 ---
 
@@ -69,14 +75,14 @@ Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang t
 
 | Model ECU | rusEFI Official | rusEFI Mazduino | Speeduino Custom |
 |-----------|:--------------:|:---------------:|:----------------:|
-| Compact v1 | Manual config | Siap pakai | Didukung |
-| Compact v2.1 | Manual config | Siap pakai | Didukung |
-| Compact v2.2+ | Manual config | Siap pakai | Didukung |
+| Compact v1 | Manual config | Siap pakai | Didukung, teruji |
+| Compact v2.1 | Manual config | Siap pakai | Belum diuji |
+| Compact v2.2+ | Manual config | Siap pakai | Belum diuji |
 | Mini 6CH v1.0-v1.2 | Manual config | Siap pakai | Tidak didukung |
 | Mini 6CH v1.3 (polos) | Manual config | Siap pakai | Didukung, teruji |
 | Mini 6CH v1.3B | Manual config | Siap pakai | Didukung |
 | Mini 6CH v1.3C ke atas | Manual config | Siap pakai | Tidak didukung |
-| LITE | Manual config | Siap pakai | Tidak didukung |
+| LITE | Manual config | Siap pakai | Didukung, teruji — pakai firmware Compact |
 | Mega100 | Manual config | Siap pakai | Tidak didukung |
 
 ---

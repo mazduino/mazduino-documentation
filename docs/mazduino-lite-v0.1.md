@@ -4,6 +4,12 @@
 
 Mazduino LITE v0.1 adalah varian pertama dari keluarga ECU Mazduino LITE yang dirancang khusus untuk aplikasi engine 4-silinder dengan 4 channel injector dan 2 channel ignition. Versi ini ideal untuk setup **Coil On Plug** atau aplikasi dengan **IGBT Eksternal**.
 
+> **Firmware**: LITE berjalan dengan rusEFI, dan juga dapat memakai firmware
+> **Speeduino** — memakai build yang dibuat untuk Mazduino Compact, bukan build
+> tersendiri. Keduanya sudah diuji jalan. Lihat
+> [halaman Downloads](downloads.md#firmware-speeduino).
+
+
 ![Mazduino LITE ECU](img/lite/mazduino-lite-with-case.jpeg)
 
 **Catatan Penting v0.1**: 

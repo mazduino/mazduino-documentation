@@ -6,6 +6,12 @@ Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluar
 
 ![Mazduino LITE ECU](img/lite/mazduino-lite-with-case.jpeg)
 
+> **Firmware**: LITE berjalan dengan rusEFI, dan juga dapat memakai firmware
+> **Speeduino** — memakai build yang dibuat untuk Mazduino Compact, bukan build
+> tersendiri. Keduanya sudah diuji jalan. Lihat
+> [halaman Downloads](downloads.md#firmware-speeduino).
+
+
 **Keunggulan v0.2**: 
 
 - IGBT footprint D2Pak to 263 (umum & mudah ditemukan)
