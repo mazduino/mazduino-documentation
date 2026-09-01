@@ -2,6 +2,11 @@
 
 ## Gambaran Umum
 
+![Mazduino Racedash Pro M4](img/dash/racedash-pro-m4.jpeg)
+
+*Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
+Template 1 dan sebuah CAN button "Start Engine"*
+
 Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, seluruh pengaturan Racedash Pro dilakukan **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop.
 
 | Varian | Ukuran Layar | Konektor |
@@ -60,6 +65,11 @@ Racedash Pro mendukung splash screen (gambar/logo) custom yang tampil saat peran
 ## Konektor DTM4 / 4 Pin
 
 Racedash Pro menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang sama dengan varian [Racedash 4"](mazduino-racedash.md#racedash-4-cabus-konektor-dtm4), baik dari sisi bentuk fisik konektor maupun fungsi pin.
+
+![Racedash Pro M4 dengan konektor DTM4](img/dash/racedash-pro-m4-dtm4.jpeg)
+
+*Racedash Pro M4 dengan konektor DTM 4 pin — deretan lampu indikator terlihat
+di bawah layar*
 
 ![Sisi konektor Racedash](img/dash/racedash-dtm4-connector-side.png)
 
@@ -168,6 +178,11 @@ Tombol **Default** mengembalikan ke pengaturan awal, dan **Save** menyimpan peru
 Bagian ini khusus untuk generasi M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
 pemasangan kabelnya sama persis dengan yang dijelaskan di
 [Konektor DTM4 / 4 Pin](#konektor-dtm4-4-pin) di atas.
+
+![Mazduino Racedash Pro M7](img/dash/racedash-pro-m7.jpeg)
+
+*Racedash Pro M7 (7") — tampak depan saat menyala, tampak depan, sisi belakang
+beserta dudukannya, dan tampak samping*
 
 ### ECU yang didukung
 

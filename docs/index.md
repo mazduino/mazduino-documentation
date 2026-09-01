@@ -151,7 +151,7 @@ Serial; ia tidak mengendalikan mesin.
 
 | Racedash 3.5" / 4" | Racedash Pro |
 |:-------------------:|:------------:|
-| ![Mazduino Racedash](img/dash/racedash-jst4-product.png) | ![Mazduino Racedash DTM4](img/dash/racedash-dtm4-front.png) |
+| ![Mazduino Racedash](img/dash/racedash-jst4-product.png) | ![Mazduino Racedash Pro M4](img/dash/racedash-pro-m4.jpeg) |
 
 **Varian yang Tersedia:**
 
