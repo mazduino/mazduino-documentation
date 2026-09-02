@@ -50,7 +50,7 @@ unit epicECU.
 Dua bagian berikut lebih lengkap dibanding rusEFI official, dan menjadi rujukan
 dalam pengembangan firmware Mazduino:
 
-- **CAN Bus** — cakupan fitur yang lebih luas dibanding implementasi official
+- **CAN Bus** — fitur yang lebih lengkap dibanding implementasi official
 - **Transmisi otomatis** — kontrol yang lebih lengkap
 
 - Dokumentasi EpicEFI: [content.epicefi.com][epicefi-docs]

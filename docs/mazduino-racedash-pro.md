@@ -197,6 +197,15 @@ Tipe ECU dipilih dari aplikasi DashTune atau dari menu di layar, dan **tidak
 perlu ganti firmware**. Kecepatan CAN mengikuti ECU yang dipilih secara
 otomatis.
 
+Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
+AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
+gigi, kadar etanol, dan tegangan aki.
+
+> **Catatan**: Lampu **sein**, **rem tangan**, dan **tekanan ban** hanya
+> menyala kalau memakai **Haltech**, karena hanya Haltech yang mengirimkan
+> datanya. Pada rusEFI dan MaxxECU ketiga lampu itu memang tidak akan menyala —
+> bukan kerusakan.
+
 #### Batasan OBD-II
 
 > **Tidak semua mobil OBD-II dapat dibaca dash ini, dan kami tidak menjamin
@@ -211,8 +220,8 @@ Yang **tidak** didukung:
 
 | Protokol | Keterangan |
 | :---- | :---- |
-| ISO 9141-2 | Jalur K-line, umum pada mobil lama |
-| ISO 14230-4 (KWP2000) | Jalur K-line |
+| ISO 9141-2 | K-line, umum pada mobil lama |
+| ISO 14230-4 (KWP2000) | K-line |
 | SAE J1850 PWM / VPW | Umum pada mobil Amerika lama |
 | ISO 15765-4 identifier 29-bit | Varian CAN yang dipakai sebagian kendaraan |
 
@@ -222,23 +231,14 @@ antar merek dan negara.
 
 Meski protokolnya cocok, data yang muncul **bergantung pada apa yang direspons
 mobil Anda**. Dash menanyakan dulu PID mana yang didukung, lalu hanya membaca
-yang dijawab. PID yang dibaca: putaran mesin, kecepatan, posisi throttle, MAP,
-suhu coolant, suhu udara masuk, beban mesin, tegangan, dan suhu oli. Banyak
+yang dijawab. PID yang dibaca: RPM, kecepatan, TPS, MAP, suhu coolant, suhu udara
+masuk, engine load, tegangan, dan suhu oli. Banyak
 mobil tidak menjawab sebagian di antaranya — suhu oli termasuk yang paling
 sering tidak tersedia.
 
 OBD-II juga lebih lambat dibanding protokol CAN khusus ECU standalone, karena
 dash harus bertanya lalu menunggu jawaban untuk tiap nilai, bukan menerima
-siaran berkala.
-
-Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
-AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
-gigi, kadar etanol, dan tegangan aki.
-
-> **Catatan**: Lampu **sein**, **rem tangan**, dan **tekanan ban** hanya
-> menyala kalau memakai **Haltech**, karena hanya Haltech yang mengirimkan
-> datanya. Pada rusEFI dan MaxxECU ketiga lampu itu memang tidak akan menyala —
-> bukan kerusakan.
+broadcast berkala.
 
 ### Mengganti tampilan (template)
 
@@ -326,7 +326,7 @@ tersimpan di dash dan tidak hilang saat mesin dimatikan.
 - **Satuan suhu** — °C atau °F
 - **RPM maksimum** — skala penuh semua gauge RPM, diatur naik-turun 250 RPM;
   garis merah otomatis di sekitar 5/6 dari angka ini
-- **Data Source** — daftar semua kanal data. Pilih salah satu untuk mengatur
+- **Data Source** — daftar semua data source. Pilih salah satu untuk mengatur
   **nilai minimum dan maksimum**-nya, yang menentukan rentang gauge dan angka
   min/max yang tercetak di layar
 

@@ -57,7 +57,7 @@ Firmware Mazduino berbasis **[rusEFI][rusefi]** — proyek firmware engine manag
 unit epicECU. Dua bagiannya lebih lengkap dibanding rusEFI official, dan
 keduanya menjadi rujukan dalam pengembangan firmware Mazduino:
 
-- **CAN Bus** — cakupan fitur yang lebih luas
+- **CAN Bus** — fitur yang lebih lengkap
 - **Transmisi otomatis** — kontrol yang lebih lengkap
 
 - Dokumentasi: [content.epicefi.com][epicefi-docs]
