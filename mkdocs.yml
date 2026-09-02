@@ -73,6 +73,7 @@ plugins:
 extra_javascript:
   - js/external-links.js
   - js/print-details.js
+  - js/print-source.js
 extra_css:
   - css/print.css
 markdown_extensions:
