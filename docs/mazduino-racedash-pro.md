@@ -179,6 +179,10 @@ pemasangan kabelnya sama persis dengan yang dijelaskan di
 *Racedash Pro M7 (7") — tampak depan saat menyala, tampak depan, sisi belakang
 beserta dudukannya, dan tampak samping*
 
+![Sisi belakang Racedash Pro M7](img/dash/racedash-pro-m7-belakang.jpeg)
+
+*Sisi belakang dengan konektor terpasang*
+
 ### ECU yang didukung
 
 | ECU | Cara sambung | Catatan |
@@ -217,6 +221,17 @@ tombol CAN tidak ikut tersentuh.
 | **Template 4** | Tampilan padat, menampilkan banyak angka sekaligus |
 | **Template 5** | Gaya jarum analog |
 
+Contoh kelimanya pada Racedash Pro M7:
+
+| | |
+| :----: | :----: |
+| ![Template 1](img/dash/racedash-pro-m7-template-1.jpeg) | ![Template 2](img/dash/racedash-pro-m7-template-2.jpeg) |
+| **Template 1** — bar RPM, gigi dan kecepatan besar, panel data, serta tombol CAN di kiri bawah | **Template 2** — susunan serupa dengan panel yang lebih sedikit dan angka lebih besar |
+| ![Template 3](img/dash/racedash-pro-m7-template-3.jpeg) | ![Template 4](img/dash/racedash-pro-m7-template-4.jpeg) |
+| **Template 3** — tiga gauge besar | **Template 4** — padat, banyak angka sekaligus |
+| ![Template 5](img/dash/racedash-pro-m7-template-5.jpeg) | |
+| **Template 5** — gaya jarum analog | |
+
 Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
 langsung membuka tampilan yang sama.
 
@@ -237,6 +252,14 @@ disusun ulang di bawah satu menu.
 Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
 bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
 berpindah tampilan.
+
+![Menu utama Racedash Pro M7](img/dash/racedash-pro-m7-menu.jpeg)
+
+*Menu utama, dibuka dengan cubit dua jari*
+
+![Halaman tombol CAN](img/dash/racedash-pro-m7-can-buttons.jpeg)
+
+*Halaman tombol CAN, dibuka dengan geser ke atas*
 
 #### Susunan menu
 
@@ -290,6 +313,10 @@ Perubahan satuan dan RPM maksimum langsung terlihat di semua template.
   protokol yang baru.
 - **CAN Button** — membuat dan mengubah tombol CAN: nama, ID, dan data yang
   dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.
+
+![Pengaturan protokol ECU di layar dash](img/dash/racedash-pro-m7-ecu-protocol.jpeg)
+
+*Menu → Setting → CAN → Protokol*
 
 #### Tombol CAN
 
