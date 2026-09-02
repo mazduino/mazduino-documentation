@@ -25,6 +25,11 @@
 
     var el = document.createElement('div');
     el.className = 'print-source';
+    // Hidden inline rather than relying on print.css alone. A stale cached
+    // stylesheet, or the file failing to load at all, would otherwise leave
+    // this line sitting in the middle of the page on screen. The print rule
+    // overrides it with !important.
+    el.style.display = 'none';
 
     var url = document.createElement('span');
     url.className = 'print-source-url';

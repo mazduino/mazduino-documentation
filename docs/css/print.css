@@ -159,7 +159,9 @@
   /* The page's own address, added by js/print-source.js. Printed once at the
      end so a loose sheet can be traced back to the page it came from. */
   .print-source {
-    display: block;
+    /* !important because the element carries an inline display:none, which is
+       what guarantees it never appears on screen. */
+    display: block !important;
     margin-top: 18pt;
     padding-top: 6pt;
     border-top: 1px solid #999;

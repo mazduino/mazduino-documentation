@@ -19,14 +19,15 @@ Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran 
 > memakai bodi, layar, dan konektor yang sama — yang berbeda adalah tampilan
 > dan cara mengaturnya.
 >
-> - **Generasi lama** — seluruh pengaturan dilakukan dari layar sentuh.
->   Halamannya bernama *Main*, *Bench Test*, *Warning Setting*, *Slot Setting*,
->   *Display Setting*, dan *Connection Setting*. Panduannya ada di bagian
->   [Pengaturan via Touchscreen (firmware lama)](#pengaturan-via-touchscreen-firmware-lama).
 > - **Generasi M4 / M5 / M7** — punya beberapa pilihan tampilan (template) yang
 >   bisa digeser, dan bisa diatur dari HP lewat aplikasi **DashTune** selain
 >   dari layar. Panduannya ada di bagian
 >   [Racedash Pro M4 / M5 / M7](#racedash-pro-m4-m5-m7).
+> - **Generasi lama** — seluruh pengaturan dilakukan dari layar sentuh.
+>   Halamannya bernama *Main*, *Bench Test*, *Warning Setting*, *Slot Setting*,
+>   *Display Setting*, dan *Connection Setting*. Panduannya ada di bagian
+>   [Pengaturan via Touchscreen (firmware lama)](#pengaturan-via-touchscreen-firmware-lama)
+>   di akhir halaman ini.
 >
 > Cara membedakannya paling mudah: kalau dashboard-mu bisa **digeser
 > kiri-kanan** untuk berganti tampilan, berarti generasi M4/M5/M7.
@@ -85,88 +86,6 @@ Racedash Pro menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang sama dengan 
 
 - Pin 3 dan 4 berfungsi sebagai **CAN High/CAN Low** untuk ECU **rusEFI**, **Haltech**, dan **MaxxECU** (mode CAN Bus).
 - Khusus untuk ECU **Speeduino**, pin 3 dan 4 berfungsi sebagai **TX/RX Serial**, karena Speeduino tidak memiliki CAN Bus native.
-
-## Pengaturan via Touchscreen (firmware lama)
-
-> **Bagian ini untuk firmware generasi lama.** Kalau dash-mu bisa **digeser
-> kiri-kanan untuk berganti tampilan**, berarti memakai firmware M4/M5/M7 dan
-> menunya berbeda — lihat
-> [Menu di layar (M4 / M5 / M7)](#menu-di-layar-m4-m5-m7).
-
-Pada firmware lama, semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman) tanpa perlu WiFi/browser. Menu pengaturan terdiri dari 6 halaman berikut:
-
-- [Main Screen](#main-screen)
-- [Bench Test Screen (Khusus rusEFI)](#bench-test-screen-khusus-rusefi)
-- [Warning Setting Screen](#warning-setting-screen)
-- [Slot Setting Screen](#slot-setting-screen)
-- [Display Setting Screen](#display-setting-screen)
-- [Connection Setting Screen](#connection-setting-screen)
-
-### Main Screen
-
-![Main Screen Racedash Pro](img/dash/racedash-pro-main.jpeg)
-
-Halaman utama menampilkan data real-time dari ECU:
-
-- **Gear indicator & shift light bar** di bagian atas (angka gigi 1–7, warna bar berubah mengikuti RPM) beserta nilai RPM di pojok kanan atas
-- **Kecepatan (KM/H)** ditampilkan besar di tengah layar
-- **6 slot data** tambahan (kiri dan kanan) berupa gauge bar + nilai, misalnya Oil Pressure (OIL P), Fuel Pressure (FUEL P), VBATT, MAP, dan Ignition Advance (ADV) — parameter pada tiap slot dapat diatur melalui [Slot Setting Screen](#slot-setting-screen)
-
-### Bench Test Screen (Khusus rusEFI)
-
-![Bench Test Screen Racedash Pro](img/dash/racedash-pro-bench-test.jpeg)
-
-Halaman khusus untuk ECU **rusEFI** yang digunakan untuk menguji wiring/actuator sebelum mesin dinyalakan, tanpa perlu bantuan software tambahan di laptop. Tersedia tombol untuk memicu langsung:
-
-- **Ignition** koil pengapian 1–8
-- **Injectors** injektor 1–8
-- **Fan 1** dan **Fan 2**
-- **Fuel Pump**
-- **Start/Stop Engine**
-
-### Warning Setting Screen
-
-![Warning Setting Screen Racedash Pro](img/dash/racedash-pro-warning-setting.jpeg)
-
-Halaman untuk mengatur batas (threshold) peringatan pada tiap parameter, masing-masing dengan tombol **+ / -** untuk mengubah nilai:
-
-- **RPM Warning** — batas RPM/shift light
-- **CLT Warning** — batas suhu air (Coolant Temp)
-- **IAT Warning** — batas suhu udara masuk (Intake Air Temp)
-- **Oil P Warning** — batas tekanan oli
-- **Fuel P Warning** — batas tekanan bahan bakar
-- **VBATT Warning** — batas tegangan baterai
-
-Terdapat juga tombol navigasi ke **Display** dan **Slot Cfg**, tombol **Default** untuk mengembalikan ke pengaturan awal, serta tombol **Save** untuk menyimpan perubahan.
-
-### Slot Setting Screen
-
-![Slot Setting Screen Racedash Pro](img/dash/racedash-pro-slot-setting.jpeg)
-
-Halaman **Slot Config** untuk mengatur parameter yang ditampilkan pada tiap slot di Main Screen. Slot tersedia untuk posisi **Left 1–3** dan **Right 1–3**, masing-masing dapat dipilih dari daftar parameter yang tersedia (contoh: CLT, BAT, TPS, OIL P, FUEL P, ADV) dengan cara swipe. Gunakan tombol **Discard** untuk membatalkan perubahan atau **Save** untuk menyimpan.
-
-### Display Setting Screen
-
-![Display Setting Screen Racedash Pro](img/dash/racedash-pro-display-setting.jpeg)
-
-Halaman **Display Settings** untuk mengatur tampilan dashboard:
-
-- **Color Palette** — pilihan tema/skema warna tampilan (contoh: "Volt Line"), diatur dengan tombol **+ / -**
-
-Tombol **Back** digunakan untuk kembali ke halaman sebelumnya.
-
-### Connection Setting Screen
-
-![Connection Setting Screen Racedash Pro](img/dash/racedash-pro-connection-setting.jpeg)
-
-Halaman **Connection Settings** untuk mengatur mode komunikasi ke ECU:
-
-- **ECU** — pilih tipe ECU yang digunakan (rusEFI, Haltech, MaxxECU, atau Speeduino), diatur dengan tombol **+ / -**
-- **Baudrate** — baudrate komunikasi CAN Bus mengikuti ECU yang dipilih secara otomatis: **1 Mbps** untuk **Haltech**, dan **500 kbps** untuk ECU lainnya
-- **WiFi/AP Server** — tombol on/off untuk mengaktifkan/menonaktifkan WiFi Access Point pada Racedash Pro
-- **BLE Telemetry** — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy
-
-Tombol **Default** mengembalikan ke pengaturan awal, dan **Save** menyimpan perubahan.
 
 ## Racedash Pro M4 / M5 / M7
 
@@ -462,6 +381,88 @@ sedang diputar** ke layar dash. Pengaturannya ada di tab **Lainnya → Relay**.
 
 Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
 halaman pengaturannya saat pertama kali diaktifkan.
+
+## Pengaturan via Touchscreen (firmware lama)
+
+> **Bagian ini untuk firmware generasi lama.** Kalau dash-mu bisa **digeser
+> kiri-kanan untuk berganti tampilan**, berarti memakai firmware M4/M5/M7 dan
+> menunya berbeda — lihat
+> [Menu di layar (M4 / M5 / M7)](#menu-di-layar-m4-m5-m7).
+
+Pada firmware lama, semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman) tanpa perlu WiFi/browser. Menu pengaturan terdiri dari 6 halaman berikut:
+
+- [Main Screen](#main-screen)
+- [Bench Test Screen (Khusus rusEFI)](#bench-test-screen-khusus-rusefi)
+- [Warning Setting Screen](#warning-setting-screen)
+- [Slot Setting Screen](#slot-setting-screen)
+- [Display Setting Screen](#display-setting-screen)
+- [Connection Setting Screen](#connection-setting-screen)
+
+### Main Screen
+
+![Main Screen Racedash Pro](img/dash/racedash-pro-main.jpeg)
+
+Halaman utama menampilkan data real-time dari ECU:
+
+- **Gear indicator & shift light bar** di bagian atas (angka gigi 1–7, warna bar berubah mengikuti RPM) beserta nilai RPM di pojok kanan atas
+- **Kecepatan (KM/H)** ditampilkan besar di tengah layar
+- **6 slot data** tambahan (kiri dan kanan) berupa gauge bar + nilai, misalnya Oil Pressure (OIL P), Fuel Pressure (FUEL P), VBATT, MAP, dan Ignition Advance (ADV) — parameter pada tiap slot dapat diatur melalui [Slot Setting Screen](#slot-setting-screen)
+
+### Bench Test Screen (Khusus rusEFI)
+
+![Bench Test Screen Racedash Pro](img/dash/racedash-pro-bench-test.jpeg)
+
+Halaman khusus untuk ECU **rusEFI** yang digunakan untuk menguji wiring/actuator sebelum mesin dinyalakan, tanpa perlu bantuan software tambahan di laptop. Tersedia tombol untuk memicu langsung:
+
+- **Ignition** koil pengapian 1–8
+- **Injectors** injektor 1–8
+- **Fan 1** dan **Fan 2**
+- **Fuel Pump**
+- **Start/Stop Engine**
+
+### Warning Setting Screen
+
+![Warning Setting Screen Racedash Pro](img/dash/racedash-pro-warning-setting.jpeg)
+
+Halaman untuk mengatur batas (threshold) peringatan pada tiap parameter, masing-masing dengan tombol **+ / -** untuk mengubah nilai:
+
+- **RPM Warning** — batas RPM/shift light
+- **CLT Warning** — batas suhu air (Coolant Temp)
+- **IAT Warning** — batas suhu udara masuk (Intake Air Temp)
+- **Oil P Warning** — batas tekanan oli
+- **Fuel P Warning** — batas tekanan bahan bakar
+- **VBATT Warning** — batas tegangan baterai
+
+Terdapat juga tombol navigasi ke **Display** dan **Slot Cfg**, tombol **Default** untuk mengembalikan ke pengaturan awal, serta tombol **Save** untuk menyimpan perubahan.
+
+### Slot Setting Screen
+
+![Slot Setting Screen Racedash Pro](img/dash/racedash-pro-slot-setting.jpeg)
+
+Halaman **Slot Config** untuk mengatur parameter yang ditampilkan pada tiap slot di Main Screen. Slot tersedia untuk posisi **Left 1–3** dan **Right 1–3**, masing-masing dapat dipilih dari daftar parameter yang tersedia (contoh: CLT, BAT, TPS, OIL P, FUEL P, ADV) dengan cara swipe. Gunakan tombol **Discard** untuk membatalkan perubahan atau **Save** untuk menyimpan.
+
+### Display Setting Screen
+
+![Display Setting Screen Racedash Pro](img/dash/racedash-pro-display-setting.jpeg)
+
+Halaman **Display Settings** untuk mengatur tampilan dashboard:
+
+- **Color Palette** — pilihan tema/skema warna tampilan (contoh: "Volt Line"), diatur dengan tombol **+ / -**
+
+Tombol **Back** digunakan untuk kembali ke halaman sebelumnya.
+
+### Connection Setting Screen
+
+![Connection Setting Screen Racedash Pro](img/dash/racedash-pro-connection-setting.jpeg)
+
+Halaman **Connection Settings** untuk mengatur mode komunikasi ke ECU:
+
+- **ECU** — pilih tipe ECU yang digunakan (rusEFI, Haltech, MaxxECU, atau Speeduino), diatur dengan tombol **+ / -**
+- **Baudrate** — baudrate komunikasi CAN Bus mengikuti ECU yang dipilih secara otomatis: **1 Mbps** untuk **Haltech**, dan **500 kbps** untuk ECU lainnya
+- **WiFi/AP Server** — tombol on/off untuk mengaktifkan/menonaktifkan WiFi Access Point pada Racedash Pro
+- **BLE Telemetry** — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy
+
+Tombol **Default** mengembalikan ke pengaturan awal, dan **Save** menyimpan perubahan.
 
 ## Referensi
 
