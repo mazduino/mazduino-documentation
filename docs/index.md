@@ -162,6 +162,9 @@ Serial; ia tidak mengendalikan mesin.
 - **[Racedash Pro — M4, M5, M7 (4.3", 5" & 7")](mazduino-racedash-pro.md)** — Layar lebih besar, pengaturan lewat aplikasi DashTune
 
 **ECU yang didukung:** rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II.
+Untuk OBD-II hanya varian CAN Bus (ISO 15765-4) yang didukung dan tidak semua
+mobil dapat dibaca — lihat
+[batasannya](mazduino-racedash-pro.md#batasan-obd-ii).
 
 **Cara mengaturnya berbeda antar varian:**
 

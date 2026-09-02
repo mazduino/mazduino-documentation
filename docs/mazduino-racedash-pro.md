@@ -191,11 +191,45 @@ beserta dudukannya, dan tampak samping*
 | Haltech | CAN Bus 1 Mbps | Satu-satunya yang mengirim data lampu sein, rem tangan, dan tekanan ban |
 | MaxxECU | CAN Bus 500 kbps | |
 | Speeduino | Serial | Speeduino tidak punya CAN, jadi pin 3 dan 4 dipakai sebagai TX/RX |
-| OBD-II | CAN Bus | Untuk ECU standar bawaan mobil |
+| OBD-II | CAN Bus (ISO 15765-4) | Untuk ECU standar bawaan mobil — [baca batasannya](#batasan-obd-ii) |
 
 Tipe ECU dipilih dari aplikasi DashTune atau dari menu di layar, dan **tidak
 perlu ganti firmware**. Kecepatan CAN mengikuti ECU yang dipilih secara
 otomatis.
+
+#### Batasan OBD-II
+
+> **Tidak semua mobil OBD-II dapat dibaca dash ini, dan kami tidak menjamin
+> mobil Anda termasuk yang bisa.** Pastikan hal berikut sebelum membeli untuk
+> keperluan OBD-II.
+
+Yang didukung hanya **OBD-II di atas CAN Bus**, yaitu **ISO 15765-4** dengan
+**identifier 11-bit** (dash mengirim permintaan ke ID `0x7DF` dan membaca
+jawaban di `0x7E8`–`0x7EF`), pada kecepatan **500 kbps** atau **250 kbps**.
+
+Yang **tidak** didukung:
+
+| Protokol | Keterangan |
+| :---- | :---- |
+| ISO 9141-2 | Jalur K-line, umum pada mobil lama |
+| ISO 14230-4 (KWP2000) | Jalur K-line |
+| SAE J1850 PWM / VPW | Umum pada mobil Amerika lama |
+| ISO 15765-4 identifier 29-bit | Varian CAN yang dipakai sebagian kendaraan |
+
+Secara umum, mobil produksi **2008 ke atas** di banyak pasar sudah memakai
+OBD-II di atas CAN, tetapi ini bukan jaminan — tahun peralihan berbeda-beda
+antar merek dan negara.
+
+Meski protokolnya cocok, data yang muncul **bergantung pada apa yang direspons
+mobil Anda**. Dash menanyakan dulu PID mana yang didukung, lalu hanya membaca
+yang dijawab. PID yang dibaca: putaran mesin, kecepatan, posisi throttle, MAP,
+suhu coolant, suhu udara masuk, beban mesin, tegangan, dan suhu oli. Banyak
+mobil tidak menjawab sebagian di antaranya — suhu oli termasuk yang paling
+sering tidak tersedia.
+
+OBD-II juga lebih lambat dibanding protokol CAN khusus ECU standalone, karena
+dash harus bertanya lalu menunggu jawaban untuk tiap nilai, bukan menerima
+siaran berkala.
 
 Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
 AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
@@ -208,32 +242,27 @@ gigi, kadar etanol, dan tegangan aki.
 
 ### Mengganti tampilan (template)
 
-Tersedia lima tampilan dashboard, diberi nama **Template 1** sampai
-**Template 5**. Untuk berpindah, **geser kiri atau kanan di bagian atas layar**
-(di area bar RPM). Bagian bawah layar sengaja tidak menerima geseran supaya
-tombol CAN tidak ikut tersentuh.
-
-| Tampilan | Isi singkat |
-| :---- | :---- |
-| **Template 1** | Bar RPM di atas, gigi dan kecepatan besar di tengah, panel data di sekelilingnya |
-| **Template 2** | Susunan serupa Template 1 dengan tata letak panel yang berbeda |
-| **Template 3** | Pada M4/M5 tampilan khas Mazduino; pada M7 berupa tiga gauge besar dengan lampu indikator |
-| **Template 4** | Tampilan padat, menampilkan banyak angka sekaligus |
-| **Template 5** | Gaya jarum analog |
-
-Contoh kelimanya pada Racedash Pro M7:
-
-| | |
-| :----: | :----: |
-| ![Template 1](img/dash/racedash-pro-m7-template-1.jpeg) | ![Template 2](img/dash/racedash-pro-m7-template-2.jpeg) |
-| **Template 1** — bar RPM, gigi dan kecepatan besar, panel data, serta tombol CAN di kiri bawah | **Template 2** — susunan serupa dengan panel yang lebih sedikit dan angka lebih besar |
-| ![Template 3](img/dash/racedash-pro-m7-template-3.jpeg) | ![Template 4](img/dash/racedash-pro-m7-template-4.jpeg) |
-| **Template 3** — tiga gauge besar | **Template 4** — padat, banyak angka sekaligus |
-| ![Template 5](img/dash/racedash-pro-m7-template-5.jpeg) | |
-| **Template 5** — gaya jarum analog | |
+Dash menyediakan beberapa tampilan dashboard. Untuk berpindah, **geser kiri
+atau kanan di bagian atas layar** (di area bar RPM). Bagian bawah layar sengaja
+tidak menerima geseran supaya tombol CAN tidak ikut tersentuh.
 
 Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
 langsung membuka tampilan yang sama.
+
+Beberapa contoh tampilan pada Racedash Pro M7:
+
+<!-- A flex row rather than a table: a two-column table gives each cell a fixed
+     share of the width and the images do not shrink to fit it, so the second
+     column was being cut off. These wrap and scale instead. -->
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0">
+  <img src="../img/dash/racedash-pro-m7-template-1.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-2.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-3.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-4.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+</div>
+
+Warna gauge dan isi tiap panel dapat diubah, jadi tampilan di dash Anda bisa
+berbeda dari contoh di atas.
 
 ### Menu di layar (M4 / M5 / M7)
 
