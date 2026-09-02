@@ -248,15 +248,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Juli 2026 03:04:06 UTC">9 Juli 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:31:36 UTC">1 September 2026</span></em></p>
   <h1 id="mazduino-core">Mazduino Core<a class="headerlink" href="#mazduino-core" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan <strong>STM32F427</strong> sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan <strong>dual ETB</strong>, <strong>dual CAN bus</strong>, kombinasi input <strong>Hall + VR</strong>, serta output aktuator yang lebih banyak untuk mesin modern.</p>
+<p>Mazduino Core adalah ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH. Produk ini menggunakan <strong>ARM Cortex-M4 180 MHz</strong> sebagai MCU utama untuk kebutuhan kontrol mesin advanced, termasuk dukungan <strong>dual ETB</strong>, <strong>dual CAN bus</strong>, kombinasi input <strong>Hall + VR</strong>, serta output aktuator yang lebih banyak untuk mesin modern.</p>
 <p>Dokumentasi ini disusun berdasarkan spesifikasi produk Mazduino Core dan referensi hardware pada dokumen MAZDUINO CORE.</p>
 <p><img alt="Foto produk Mazduino Core" src="../img/core/mazduino-core.jpeg" /></p>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
-<li>MCU <strong>STM32F427</strong> ARM Cortex-M4</li>
+<li>MCU <strong>ARM Cortex-M4 180 MHz</strong></li>
 <li>Built-in <strong>5V sensor supply</strong> dengan proteksi internal</li>
 <li><strong>4x input Hall/Digital</strong> untuk CKP, CMP, VSS, clutch, launch, atau switch lainnya</li>
 <li><strong>12x input analog</strong> untuk MAP, TPS, O2, tekanan, temperatur, PPS, dan sensor tambahan</li>
@@ -719,7 +719,7 @@
 <h2 id="informasi-mcu">Informasi MCU<a class="headerlink" href="#informasi-mcu" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>MCU</strong>: STM32F427</p>
+<p><strong>MCU</strong>: ARM Cortex-M4 180 MHz</p>
 </li>
 <li>
 <p>ETB control lines pada firmware biasanya dipetakan ke pin MCU khusus (DIR/DIS/PWM) sesuai package firmware.</p>
@@ -799,6 +799,7 @@
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

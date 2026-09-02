@@ -196,6 +196,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#zgrywus">Zgrywus</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#epicefi">EpicEFI</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#komunitas">Komunitas</a>
     </li>
         </ul>
@@ -226,9 +228,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Juli 2026 03:04:06 UTC">9 Juli 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 September 2026 07:03:32 UTC">2 September 2026</span></em></p>
   <h1 id="tentang-ecu-mazduino">Tentang ECU Mazduino<a class="headerlink" href="#tentang-ecu-mazduino" title="Permanent link">&para;</a></h1>
-<p>ECU Mazduino adalah Engine Control Unit (ECU) standalone open-source yang dibangun di atas mikrokontroler STM32F407VGT6 (ARM Cortex-M4 @ 168MHz). Dirancang untuk penggemar otomotif dan profesional yang membutuhkan solusi manajemen mesin yang fleksibel.</p>
+<p>ECU Mazduino adalah Engine Control Unit (ECU) standalone open-source yang dibangun di atas mikrokontroler ARM Cortex-M4 @ 168MHz. Dirancang untuk penggemar otomotif dan profesional yang membutuhkan solusi manajemen mesin yang fleksibel.</p>
 <h2 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h2>
 <h3 id="rusefi-direkomendasikan">rusEFI (Direkomendasikan)<a class="headerlink" href="#rusefi-direkomendasikan" title="Permanent link">&para;</a></h3>
 <p>Mazduino menggunakan <strong>rusEFI</strong> sebagai firmware utama — firmware manajemen mesin open-source yang mendukung:</p>
@@ -239,7 +241,8 @@
 </ul>
 <p>Firmware Mazduino tersedia di <a href="https://github.com/mazduino/mazduino-fw">github.com/mazduino/mazduino-fw</a> — fork rusEFI dengan pin mapping pre-configured untuk semua board Mazduino.</p>
 <h3 id="speeduino">Speeduino<a class="headerlink" href="#speeduino" title="Permanent link">&para;</a></h3>
-<p>Beberapa model Mazduino (Compact dan Mini 6CH v1.3+) juga mendukung Speeduino dengan firmware khusus. <strong>Tidak kompatibel</strong> dengan official Speeduino karena perbedaan pin mapping.</p>
+<p>Sebagian model Mazduino — Compact, Mini 6CH v1.3 dan v1.3B, serta LITE — juga dapat menjalankan Speeduino dengan firmware khusus. <strong>Tidak kompatibel</strong> dengan official Speeduino karena perbedaan pin mapping.</p>
+<p><strong>Pengembangan Speeduino sudah dihentikan.</strong> Mazduino kini fokus pada firmware sendiri yang berbasis rusEFI, dan itu yang disarankan untuk pemasangan baru — seluruh fitur board hanya tersedia di sana. Rincian per model ada di <a href="../downloads/#tabel-kompatibilitas">tabel kompatibilitas</a>.</p>
 <h2 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h2>
 <p>Mazduino sepenuhnya open source — schematic, PCB layout, BOM, dan firmware tersedia publik. Detail PCB tersedia di <a href="https://github.com/mazduino/mazduino/wiki">Mazduino Wiki</a>.</p>
 <hr />
@@ -264,6 +267,19 @@
 </li>
 <li>
 <p>Dokumentasi: <a href="https://wiki.zgrywus.com/">wiki.zgrywus.com</a></p>
+</li>
+</ul>
+<h3 id="epicefi">EpicEFI<a class="headerlink" href="#epicefi" title="Permanent link">&para;</a></h3>
+<p><strong><a href="https://epicefi.com/">EpicEFI</a></strong> adalah proyek engine management berbasis rusEFI dengan
+unit epicECU. Dua bagiannya lebih lengkap dibanding rusEFI official, dan
+keduanya menjadi rujukan dalam pengembangan firmware Mazduino:</p>
+<ul>
+<li><strong>CAN Bus</strong> — fitur yang lebih lengkap</li>
+<li>
+<p><strong>Transmisi otomatis</strong> — kontrol yang lebih lengkap</p>
+</li>
+<li>
+<p>Dokumentasi: <a href="http://content.epicefi.com/">content.epicefi.com</a></p>
 </li>
 </ul>
 <h3 id="komunitas">Komunitas<a class="headerlink" href="#komunitas" title="Permanent link">&para;</a></h3>
@@ -306,6 +322,7 @@
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

@@ -1,3 +1,7 @@
+.print-source {
+  display: none;
+}
+
 /**
  * Print stylesheet — makes documentation pages printable on A4 paper.
  *
@@ -150,6 +154,25 @@
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     text-align: left;
+  }
+
+  /* The page's own address, added by js/print-source.js. Printed once at the
+     end so a loose sheet can be traced back to the page it came from. */
+  .print-source {
+    display: block;
+    margin-top: 18pt;
+    padding-top: 6pt;
+    border-top: 1px solid #999;
+    font-size: 9pt;
+    color: #333;
+    /* Never orphaned onto a page of its own. */
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+
+  .print-source-url {
+    font-family: inherit;
+    word-break: break-all;
   }
 
   /* Collapsed sections must print open — paper cannot be clicked. The work is

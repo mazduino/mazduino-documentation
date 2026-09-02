@@ -43,27 +43,39 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Unduhan</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#firmware-rusefi">Firmware rusEFI</a>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware-ecu">Firmware ECU</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#mazduino-firmware-direkomendasikan">Mazduino Firmware (Direkomendasikan)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-rusefi">Firmware rusEFI</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-firmware-direkomendasikan">Mazduino Firmware (Direkomendasikan)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#official-rusefi-firmware">Official rusEFI Firmware</a>
+    <li class="toctree-l4"><a class="reference internal" href="#official-rusefi-firmware">Official rusEFI Firmware</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#firmware-speeduino">Firmware Speeduino</a>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-speeduino">Firmware Speeduino</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#tabel-kompatibilitas">Tabel Kompatibilitas</a>
+    <li class="toctree-l3"><a class="reference internal" href="#tabel-kompatibilitas">Tabel Kompatibilitas</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#software-yang-dibutuhkan">Software yang Dibutuhkan</a>
+    <li class="toctree-l3"><a class="reference internal" href="#software-yang-dibutuhkan">Software yang Dibutuhkan</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#metode-flash-firmware">Metode Flash Firmware</a>
+    <li class="toctree-l3"><a class="reference internal" href="#metode-flash-firmware">Metode Flash Firmware</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#st-link-via-swd-instalasi-pertama">ST-Link via SWD (Instalasi Pertama)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#st-link-via-swd-instalasi-pertama">ST-Link via SWD (Instalasi Pertama)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dfu-via-usb-update-firmware">DFU via USB (Update Firmware)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#dfu-via-usb-update-firmware">DFU via USB (Update Firmware)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#rusefi-console-update-setelah-instalasi-pertama">rusEFI Console (Update Setelah Instalasi Pertama)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#rusefi-console-update-setelah-instalasi-pertama">rusEFI Console (Update Setelah Instalasi Pertama)</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware-racedash">Firmware Racedash</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lewat-mazduino-flasher-ota">Lewat Mazduino Flasher (OTA)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lewat-dashtune-racedash-pro-m4-m5-m7">Lewat DashTune (Racedash Pro M4 / M5 / M7)</a>
     </li>
         </ul>
     </li>
@@ -230,13 +242,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 Juli 2026 03:04:06 UTC">9 Juli 2026</span></em></p>
-  <h1 id="downloads-firmware-dan-konfigurasi-ecu-mazduino">Downloads - Firmware dan Konfigurasi ECU Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-ecu-mazduino" title="Permanent link">&para;</a></h1>
-<p>Halaman ini menyediakan firmware dan file konfigurasi untuk semua model ECU Mazduino. Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.</p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 19:01:08 UTC">1 September 2026</span></em></p>
+  <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
+<p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
+<ul>
+<li><strong><a href="#firmware-ecu">Firmware ECU</a></strong> — rusEFI dan Speeduino untuk semua model ECU,
+  di-flash lewat ST-Link, DFU, atau rusEFI Console.</li>
+<li><strong><a href="#firmware-racedash">Firmware Racedash</a></strong> — dash display; tidak diunduh
+  manual, melainkan lewat Mazduino Flasher atau aplikasi DashTune.</li>
+</ul>
 <hr />
-<h2 id="firmware-rusefi">Firmware rusEFI<a class="headerlink" href="#firmware-rusefi" title="Permanent link">&para;</a></h2>
+<h2 id="firmware-ecu">Firmware ECU<a class="headerlink" href="#firmware-ecu" title="Permanent link">&para;</a></h2>
+<p>Pilih firmware yang sesuai berdasarkan model ECU dan kebutuhan Anda.</p>
+<blockquote>
+<p><strong>Mazduino menyarankan firmware berbasis rusEFI.</strong> Firmware itu yang
+dikembangkan Mazduino sendiri dan terus diperbarui, sehingga seluruh fitur
+board dapat dipakai optimal dengan risiko masalah paling kecil. Dukungan
+Speeduino masih ada untuk board yang sudah memakainya, tetapi
+<strong>pengembangannya sudah dihentikan</strong> — tidak ada fitur atau perbaikan baru.</p>
+</blockquote>
+<h3 id="firmware-rusefi">Firmware rusEFI<a class="headerlink" href="#firmware-rusefi" title="Permanent link">&para;</a></h3>
 <p>Ada dua pilihan firmware rusEFI untuk ECU Mazduino.</p>
-<h3 id="mazduino-firmware-direkomendasikan">Mazduino Firmware (Direkomendasikan)<a class="headerlink" href="#mazduino-firmware-direkomendasikan" title="Permanent link">&para;</a></h3>
+<h4 id="mazduino-firmware-direkomendasikan">Mazduino Firmware (Direkomendasikan)<a class="headerlink" href="#mazduino-firmware-direkomendasikan" title="Permanent link">&para;</a></h4>
 <p>Firmware rusEFI yang dikustomisasi dan dioptimalkan khusus untuk semua board Mazduino.</p>
 <ul>
 <li>
@@ -267,21 +294,30 @@
 <li>Tidak perlu konfigurasi pin manual</li>
 </ul>
 <p><strong>Catatan penting</strong>: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.</p>
-<h3 id="official-rusefi-firmware">Official rusEFI Firmware<a class="headerlink" href="#official-rusefi-firmware" title="Permanent link">&para;</a></h3>
+<h4 id="official-rusefi-firmware">Official rusEFI Firmware<a class="headerlink" href="#official-rusefi-firmware" title="Permanent link">&para;</a></h4>
 <p>Firmware standar dari proyek rusEFI tanpa kustomisasi Mazduino.</p>
 <ul>
 <li><strong>Download</strong>: <a href="https://rusefi.com/build_server/">rusefi.com/build_server/</a></li>
 </ul>
 <p>Gunakan build <strong>mega100-F4</strong> atau <strong>F407 Discovery</strong> untuk board Mazduino. Firmware ini memerlukan konfigurasi pin mapping manual agar sesuai dengan hardware Mazduino. Direkomendasikan hanya untuk pengguna yang sudah familiar dengan rusEFI dan membutuhkan fitur upstream terbaru.</p>
 <hr />
-<h2 id="firmware-speeduino">Firmware Speeduino<a class="headerlink" href="#firmware-speeduino" title="Permanent link">&para;</a></h2>
-<p>Untuk ECU Mazduino Compact dan Mini 6CH v1.3, tersedia firmware Speeduino yang telah dikustomisasi.</p>
+<h3 id="firmware-speeduino">Firmware Speeduino<a class="headerlink" href="#firmware-speeduino" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>Tidak lagi dikembangkan.</strong> Build ini tetap tersedia untuk board yang sudah
+berjalan dengannya, tetapi tidak lagi mendapat fitur maupun perbaikan baru.
+Untuk pemasangan baru, gunakan <a href="#firmware-rusefi">firmware rusEFI</a> — fitur
+board yang lebih baru hanya ada di sana.</p>
+</blockquote>
+<p>Tersedia firmware Speeduino yang telah dikustomisasi untuk ECU Mazduino Compact, Mini 6CH v1.3/v1.3B, dan LITE. LITE memakai build yang dibuat untuk Compact.</p>
 <ul>
 <li><strong>Download</strong>: <a href="https://github.com/mazduino/speeduino-fw/releases">github.com/mazduino/speeduino-fw/releases</a></li>
 </ul>
-<p><strong>Peringatan</strong>: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas. Mini 6CH v1.0-v1.2 tidak didukung Speeduino — gunakan rusEFI.</p>
+<p><strong>Peringatan</strong>: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas.</p>
+<p>Yang sudah benar-benar diuji jalan dengan Speeduino hanya <strong>Compact v1</strong>, <strong>Mini 6CH v1.3 polos</strong>, dan <strong>LITE</strong> — LITE memakai firmware yang dibuat untuk Compact, bukan build tersendiri.</p>
+<p><strong>Belum diuji</strong> berarti secara hardware mestinya jalan tetapi belum pernah dibuktikan: Compact v2.1 dan v2.2 ke atas masuk kategori ini, jadi siapkan rencana cadangan ke rusEFI kalau ternyata tidak jalan.</p>
+<p><strong>Tidak didukung</strong> berarti memang tidak bisa: Mini 6CH v1.0-v1.2, Mini 6CH v1.3C ke atas, dan Mega100 — gunakan rusEFI.</p>
 <hr />
-<h2 id="tabel-kompatibilitas">Tabel Kompatibilitas<a class="headerlink" href="#tabel-kompatibilitas" title="Permanent link">&para;</a></h2>
+<h3 id="tabel-kompatibilitas">Tabel Kompatibilitas<a class="headerlink" href="#tabel-kompatibilitas" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -296,19 +332,19 @@
 <td>Compact v1</td>
 <td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Siap pakai</td>
-<td style="text-align: center;">Didukung</td>
+<td style="text-align: center;">Didukung, teruji</td>
 </tr>
 <tr>
 <td>Compact v2.1</td>
 <td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Siap pakai</td>
-<td style="text-align: center;">Didukung</td>
+<td style="text-align: center;">Belum diuji</td>
 </tr>
 <tr>
 <td>Compact v2.2+</td>
 <td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Siap pakai</td>
-<td style="text-align: center;">Didukung</td>
+<td style="text-align: center;">Belum diuji</td>
 </tr>
 <tr>
 <td>Mini 6CH v1.0-v1.2</td>
@@ -317,16 +353,28 @@
 <td style="text-align: center;">Tidak didukung</td>
 </tr>
 <tr>
-<td>Mini 6CH v1.3+</td>
+<td>Mini 6CH v1.3 (polos)</td>
+<td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Didukung, teruji</td>
+</tr>
+<tr>
+<td>Mini 6CH v1.3B</td>
 <td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Didukung</td>
 </tr>
 <tr>
-<td>LITE</td>
+<td>Mini 6CH v1.3C ke atas</td>
 <td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Tidak didukung</td>
+</tr>
+<tr>
+<td>LITE</td>
+<td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Didukung, teruji — pakai firmware Compact</td>
 </tr>
 <tr>
 <td>Mega100</td>
@@ -337,7 +385,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="software-yang-dibutuhkan">Software yang Dibutuhkan<a class="headerlink" href="#software-yang-dibutuhkan" title="Permanent link">&para;</a></h2>
+<h3 id="software-yang-dibutuhkan">Software yang Dibutuhkan<a class="headerlink" href="#software-yang-dibutuhkan" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><strong>TunerStudio MS</strong>: <a href="https://www.tunerstudio.com">tunerstudio.com</a> — software tuning dan konfigurasi ECU</p>
@@ -350,8 +398,8 @@
 </li>
 </ul>
 <hr />
-<h2 id="metode-flash-firmware">Metode Flash Firmware<a class="headerlink" href="#metode-flash-firmware" title="Permanent link">&para;</a></h2>
-<h3 id="st-link-via-swd-instalasi-pertama">ST-Link via SWD (Instalasi Pertama)<a class="headerlink" href="#st-link-via-swd-instalasi-pertama" title="Permanent link">&para;</a></h3>
+<h3 id="metode-flash-firmware">Metode Flash Firmware<a class="headerlink" href="#metode-flash-firmware" title="Permanent link">&para;</a></h3>
+<h4 id="st-link-via-swd-instalasi-pertama">ST-Link via SWD (Instalasi Pertama)<a class="headerlink" href="#st-link-via-swd-instalasi-pertama" title="Permanent link">&para;</a></h4>
 <p>Metode ini digunakan saat ECU belum pernah di-flash sebelumnya, atau perlu full flash dari awal.</p>
 <p><strong>Hardware yang dibutuhkan</strong>: ST-Link V2 atau V3, kabel SWD 4-pin (VCC, GND, SWDIO, SWCLK).</p>
 <ol>
@@ -362,7 +410,7 @@
 <li>Klik Download untuk mulai proses flash.</li>
 <li>Setelah selesai, lepas ST-Link dan nyalakan ECU.</li>
 </ol>
-<h3 id="dfu-via-usb-update-firmware">DFU via USB (Update Firmware)<a class="headerlink" href="#dfu-via-usb-update-firmware" title="Permanent link">&para;</a></h3>
+<h4 id="dfu-via-usb-update-firmware">DFU via USB (Update Firmware)<a class="headerlink" href="#dfu-via-usb-update-firmware" title="Permanent link">&para;</a></h4>
 <p>Metode ini menggunakan mode DFU (Device Firmware Upgrade) melalui USB, tanpa memerlukan ST-Link. ECU harus sudah pernah di-flash sebelumnya.</p>
 <ol>
 <li>Tekan dan tahan tombol Boot pada ECU, lalu tekan Reset.</li>
@@ -371,7 +419,7 @@
 <li>Buka STM32CubeProgrammer, pilih USB sebagai interface, lalu klik Connect.</li>
 <li>Load file firmware dan klik Download.</li>
 </ol>
-<h3 id="rusefi-console-update-setelah-instalasi-pertama">rusEFI Console (Update Setelah Instalasi Pertama)<a class="headerlink" href="#rusefi-console-update-setelah-instalasi-pertama" title="Permanent link">&para;</a></h3>
+<h4 id="rusefi-console-update-setelah-instalasi-pertama">rusEFI Console (Update Setelah Instalasi Pertama)<a class="headerlink" href="#rusefi-console-update-setelah-instalasi-pertama" title="Permanent link">&para;</a></h4>
 <p>Setelah firmware pertama ter-install, update selanjutnya dapat dilakukan langsung melalui rusEFI Console tanpa mode DFU.</p>
 <ol>
 <li>Hubungkan ECU ke PC via USB.</li>
@@ -379,8 +427,63 @@
 <li>Gunakan fitur firmware update yang tersedia di console.</li>
 </ol>
 <hr />
+<h2 id="firmware-racedash">Firmware Racedash<a class="headerlink" href="#firmware-racedash" title="Permanent link">&para;</a></h2>
+<p>Firmware Racedash <strong>tidak diunduh sebagai file</strong> dari halaman ini. Dash mengambil
+sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Varian</th>
+<th style="text-align: left;">Cara update</th>
+<th style="text-align: left;">Perlu buka case?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Racedash 3.5" &amp; 4" (M1, M2, M3, C1)</td>
+<td style="text-align: left;"><strong>Mazduino Flasher</strong> — OTA lewat WiFi</td>
+<td style="text-align: left;">Tidak</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash 3.5" &amp; 4"</td>
+<td style="text-align: left;">USB TTL internal</td>
+<td style="text-align: left;">Ya</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash Pro M4, M5, M7</td>
+<td style="text-align: left;">Aplikasi <strong>DashTune</strong></td>
+<td style="text-align: left;">Tidak</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash Pro generasi lama</td>
+<td style="text-align: left;"><strong>Mazduino Flasher</strong> — OTA lewat WiFi</td>
+<td style="text-align: left;">Tidak</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lewat-mazduino-flasher-ota">Lewat Mazduino Flasher (OTA)<a class="headerlink" href="#lewat-mazduino-flasher-ota" title="Permanent link">&para;</a></h3>
+<p>Perlu login ke akun Mazduino terlebih dahulu, lalu buka
+<strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>.
+Hubungkan HP/laptop ke WiFi yang dipancarkan dash, pilih model yang benar pada
+<strong>Select Device</strong>, lalu mulai flashing.</p>
+<blockquote>
+<p><strong>Pastikan model yang dipilih benar.</strong> Flasher tidak bisa menebaknya untuk
+Anda, dan firmware model lain akan membuat dash gagal menyala.</p>
+</blockquote>
+<p>Langkah lengkapnya ada di
+<a href="../mazduino-racedash/#update-firmware-usb-atau-ota">Update Firmware Racedash</a>.</p>
+<h3 id="lewat-dashtune-racedash-pro-m4-m5-m7">Lewat DashTune (Racedash Pro M4 / M5 / M7)<a class="headerlink" href="#lewat-dashtune-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h3>
+<p>Generasi M4/M5/M7 diperbarui dari aplikasi Android <strong>DashTune</strong>: menu <strong>Update
+Firmware</strong> memeriksa versi terbaru dan memasangnya sendiri, tanpa kabel maupun
+situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
+<a href="../mazduino-racedash-pro/#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>.</p>
+<blockquote>
+<p><strong>Jangan update sambil berkendara.</strong> Layar dash mati beberapa saat selama
+proses berlangsung.</p>
+</blockquote>
+<hr />
 <h2 id="konfigurasi-tunerstudio">Konfigurasi TunerStudio<a class="headerlink" href="#konfigurasi-tunerstudio" title="Permanent link">&para;</a></h2>
-<p>Setelah firmware ter-flash:</p>
+<p>Setelah firmware ECU ter-flash:</p>
 <ol>
 <li>Install TunerStudio dari <a href="https://www.tunerstudio.com">tunerstudio.com</a>.</li>
 <li>Buat project baru di TunerStudio.</li>
@@ -426,6 +529,7 @@
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

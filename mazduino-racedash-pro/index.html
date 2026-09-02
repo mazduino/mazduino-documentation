@@ -266,10 +266,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 Agustus 2026 17:38:14 UTC">29 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 September 2026 07:03:32 UTC">2 September 2026</span></em></p>
   <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan <strong>4.3", 5", dan 7"</strong>. Berbeda dengan varian <a href="../mazduino-racedash/">Mazduino Racedash</a> (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, seluruh pengaturan Racedash Pro dilakukan <strong>langsung dari layar (touchscreen)</strong> tanpa perlu terhubung ke HP/laptop.</p>
+<p><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></p>
+<p><em>Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
+Template 1 dan sebuah CAN button "Start Engine"</em></p>
+<p>Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan <strong>4.3", 5", dan 7"</strong>. Berbeda dengan varian <a href="../mazduino-racedash/">Mazduino Racedash</a> (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur <strong>langsung dari layar (touchscreen)</strong> tanpa perlu terhubung ke HP/laptop. Pada generasi M4/M5/M7, tersedia juga aplikasi Android <strong>DashTune</strong> lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.</p>
 <table>
 <thead>
 <tr>
@@ -315,7 +318,7 @@ kiri-kanan</strong> untuk berganti tampilan, berarti generasi M4/M5/M7.</p>
 </blockquote>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Layar sentuh (touchscreen) sehingga seluruh pengaturan dashboard dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan</li>
+<li>Layar sentuh (touchscreen) sehingga pengaturan dashboard bisa dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan</li>
 <li>Menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time</li>
 <li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> menggunakan mode Serial, sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
 <li>Tersedia halaman <strong>Bench Test</strong> khusus untuk ECU <strong>rusEFI</strong></li>
@@ -448,6 +451,11 @@ menunya berbeda — lihat
 <p>Bagian ini khusus untuk generasi M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
 pemasangan kabelnya sama persis dengan yang dijelaskan di
 <a href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a> di atas.</p>
+<p><img alt="Mazduino Racedash Pro M7" src="../img/dash/racedash-pro-m7.jpeg" /></p>
+<p><em>Racedash Pro M7 (7") — tampak depan saat menyala, tampak depan, sisi belakang
+beserta dudukannya, dan tampak samping</em></p>
+<p><img alt="Sisi belakang Racedash Pro M7" src="../img/dash/racedash-pro-m7-belakang.jpeg" /></p>
+<p><em>Sisi belakang dengan konektor terpasang</em></p>
 <h3 id="ecu-yang-didukung">ECU yang didukung<a class="headerlink" href="#ecu-yang-didukung" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -480,8 +488,8 @@ pemasangan kabelnya sama persis dengan yang dijelaskan di
 </tr>
 <tr>
 <td style="text-align: left;">OBD-II</td>
-<td style="text-align: left;">CAN Bus</td>
-<td style="text-align: left;">Untuk ECU standar bawaan mobil</td>
+<td style="text-align: left;">CAN Bus (ISO 15765-4)</td>
+<td style="text-align: left;">Untuk ECU standar bawaan mobil — <a href="#batasan-obd-ii">baca batasannya</a></td>
 </tr>
 </tbody>
 </table>
@@ -497,43 +505,73 @@ menyala kalau memakai <strong>Haltech</strong>, karena hanya Haltech yang mengir
 datanya. Pada rusEFI dan MaxxECU ketiga lampu itu memang tidak akan menyala —
 bukan kerusakan.</p>
 </blockquote>
-<h3 id="mengganti-tampilan-template">Mengganti tampilan (template)<a class="headerlink" href="#mengganti-tampilan-template" title="Permanent link">&para;</a></h3>
-<p>Tersedia lima tampilan dashboard, diberi nama <strong>Template 1</strong> sampai
-<strong>Template 5</strong>. Untuk berpindah, <strong>geser kiri atau kanan di bagian atas layar</strong>
-(di area bar RPM). Bagian bawah layar sengaja tidak menerima geseran supaya
-tombol CAN tidak ikut tersentuh.</p>
+<h4 id="batasan-obd-ii">Batasan OBD-II<a class="headerlink" href="#batasan-obd-ii" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><strong>Tidak semua mobil OBD-II dapat dibaca dash ini, dan kami tidak menjamin
+mobil Anda termasuk yang bisa.</strong> Pastikan hal berikut sebelum membeli untuk
+keperluan OBD-II.</p>
+</blockquote>
+<p>Yang didukung hanya <strong>OBD-II di atas CAN Bus</strong>, yaitu <strong>ISO 15765-4</strong> dengan
+<strong>identifier 11-bit</strong> (dash mengirim permintaan ke ID <code>0x7DF</code> dan membaca
+jawaban di <code>0x7E8</code>–<code>0x7EF</code>), pada kecepatan <strong>500 kbps</strong> atau <strong>250 kbps</strong>.</p>
+<p>Yang <strong>tidak</strong> didukung:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Tampilan</th>
-<th style="text-align: left;">Isi singkat</th>
+<th style="text-align: left;">Protokol</th>
+<th style="text-align: left;">Keterangan</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Template 1</strong></td>
-<td style="text-align: left;">Bar RPM di atas, gigi dan kecepatan besar di tengah, panel data di sekelilingnya</td>
+<td style="text-align: left;">ISO 9141-2</td>
+<td style="text-align: left;">K-line, umum pada mobil lama</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Template 2</strong></td>
-<td style="text-align: left;">Susunan serupa Template 1 dengan tata letak panel yang berbeda</td>
+<td style="text-align: left;">ISO 14230-4 (KWP2000)</td>
+<td style="text-align: left;">K-line</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Template 3</strong></td>
-<td style="text-align: left;">Pada M4/M5 tampilan khas Mazduino; pada M7 berupa tiga gauge besar dengan lampu indikator</td>
+<td style="text-align: left;">SAE J1850 PWM / VPW</td>
+<td style="text-align: left;">Umum pada mobil Amerika lama</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Template 4</strong></td>
-<td style="text-align: left;">Tampilan padat, menampilkan banyak angka sekaligus</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Template 5</strong></td>
-<td style="text-align: left;">Gaya jarum analog</td>
+<td style="text-align: left;">ISO 15765-4 identifier 29-bit</td>
+<td style="text-align: left;">Varian CAN yang dipakai sebagian kendaraan</td>
 </tr>
 </tbody>
 </table>
+<p>Secara umum, mobil produksi <strong>2008 ke atas</strong> di banyak pasar sudah memakai
+OBD-II di atas CAN, tetapi ini bukan jaminan — tahun peralihan berbeda-beda
+antar merek dan negara.</p>
+<p>Meski protokolnya cocok, data yang muncul <strong>bergantung pada apa yang direspons
+mobil Anda</strong>. Dash menanyakan dulu PID mana yang didukung, lalu hanya membaca
+yang dijawab. PID yang dibaca: RPM, kecepatan, TPS, MAP, suhu coolant, suhu udara
+masuk, engine load, tegangan, dan suhu oli. Banyak
+mobil tidak menjawab sebagian di antaranya — suhu oli termasuk yang paling
+sering tidak tersedia.</p>
+<p>OBD-II juga lebih lambat dibanding protokol CAN khusus ECU standalone, karena
+dash harus bertanya lalu menunggu jawaban untuk tiap nilai, bukan menerima
+broadcast berkala.</p>
+<h3 id="mengganti-tampilan-template">Mengganti tampilan (template)<a class="headerlink" href="#mengganti-tampilan-template" title="Permanent link">&para;</a></h3>
+<p>Dash menyediakan beberapa tampilan dashboard. Untuk berpindah, <strong>geser kiri
+atau kanan di bagian atas layar</strong> (di area bar RPM). Bagian bawah layar sengaja
+tidak menerima geseran supaya tombol CAN tidak ikut tersentuh.</p>
 <p>Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
 langsung membuka tampilan yang sama.</p>
+<p>Beberapa contoh tampilan pada Racedash Pro M7:</p>
+<!-- A flex row rather than a table: a two-column table gives each cell a fixed
+     share of the width and the images do not shrink to fit it, so the second
+     column was being cut off. These wrap and scale instead. -->
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0">
+  <img src="../img/dash/racedash-pro-m7-template-1.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-2.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-3.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../img/dash/racedash-pro-m7-template-4.jpeg" alt="Tampilan dashboard Racedash Pro" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+</div>
+
+<p>Warna gauge dan isi tiap panel dapat diubah, jadi tampilan di dash Anda bisa
+berbeda dari contoh di atas.</p>
 <h3 id="menu-di-layar-m4-m5-m7">Menu di layar (M4 / M5 / M7)<a class="headerlink" href="#menu-di-layar-m4-m5-m7" title="Permanent link">&para;</a></h3>
 <p>Menu firmware ini berbeda sama sekali dari firmware lama. Tidak ada lagi
 halaman <em>Warning Setting</em>, <em>Slot Setting</em>, atau <em>Connection Setting</em> — semuanya
@@ -564,6 +602,10 @@ disusun ulang di bawah satu menu.</p>
 <p>Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
 bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
 berpindah tampilan.</p>
+<p><img alt="Menu utama Racedash Pro M7" src="../img/dash/racedash-pro-m7-menu.jpeg" /></p>
+<p><em>Menu utama, dibuka dengan cubit dua jari</em></p>
+<p><img alt="Halaman tombol CAN" src="../img/dash/racedash-pro-m7-can-buttons.jpeg" /></p>
+<p><em>Halaman tombol CAN, dibuka dengan geser ke atas</em></p>
 <h4 id="susunan-menu">Susunan menu<a class="headerlink" href="#susunan-menu" title="Permanent link">&para;</a></h4>
 <pre><code>Menu
 ├── Dash      → kembali ke dashboard terakhir
@@ -594,7 +636,7 @@ halaman pengaturan.</p>
 <li><strong>Satuan suhu</strong> — °C atau °F</li>
 <li><strong>RPM maksimum</strong> — skala penuh semua gauge RPM, diatur naik-turun 250 RPM;
   garis merah otomatis di sekitar 5/6 dari angka ini</li>
-<li><strong>Data Source</strong> — daftar semua kanal data. Pilih salah satu untuk mengatur
+<li><strong>Data Source</strong> — daftar semua data source. Pilih salah satu untuk mengatur
   <strong>nilai minimum dan maksimum</strong>-nya, yang menentukan rentang gauge dan angka
   min/max yang tercetak di layar</li>
 </ul>
@@ -609,6 +651,8 @@ halaman pengaturan.</p>
 <li><strong>CAN Button</strong> — membuat dan mengubah tombol CAN: nama, ID, dan data yang
   dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.</li>
 </ul>
+<p><img alt="Pengaturan protokol ECU di layar dash" src="../img/dash/racedash-pro-m7-ecu-protocol.jpeg" /></p>
+<p><em>Menu → Setting → CAN → Protokol</em></p>
 <h4 id="tombol-can">Tombol CAN<a class="headerlink" href="#tombol-can" title="Permanent link">&para;</a></h4>
 <p>Geser ke atas dari dashboard untuk membukanya. Halaman ini dipakai untuk
 mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
@@ -677,6 +721,12 @@ yang menyala terus setelah kunci kontak dimatikan.</p>
 <p>DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
 Pro M4/M5/M7, sambungannya lewat <strong>Bluetooth</strong> — tidak perlu WiFi dan tidak
 perlu mencabut apa pun.</p>
+<blockquote>
+<p><strong>Mendapatkan aplikasinya:</strong> buka <strong><a href="https://www.mazduino.com/">www.mazduino.com</a></strong>
+dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
+tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
+Play Anda di sana, dan undangan akan dikirim lewat email.</p>
+</blockquote>
 <h3 id="menyambungkan-pertama-kali">Menyambungkan pertama kali<a class="headerlink" href="#menyambungkan-pertama-kali" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Nyalakan kunci kontak sampai dash menyala.</li>
@@ -797,6 +847,7 @@ halaman pengaturannya saat pertama kali diaktifkan.</p>
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

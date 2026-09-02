@@ -276,10 +276,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 Agustus 2026 16:27:01 UTC">29 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:52:47 UTC">1 September 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13c">Mazduino Mini 6CH (v1.3C)<a class="headerlink" href="#mazduino-mini-6ch-v13c" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C adalah <strong>versi produksi terakhir</strong> dari lini Mini 6CH, merupakan perbaikan dan peningkatan dari versi v1.3B sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor <strong>STM32F427VGT6</strong> ARM 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
+<p>Mazduino Mini 6CH v1.3C adalah <strong>versi produksi terakhir</strong> dari lini Mini 6CH, merupakan perbaikan dan peningkatan dari versi v1.3B sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor <strong>ARM Cortex-M4 180 MHz</strong> 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
 <p><strong>Perbaikan v1.3C dari v1.3B:</strong></p>
 <ul>
 <li>
@@ -317,7 +317,7 @@
 </li>
 <li>Dukungan untuk Modul Stepper Idle tambahan</li>
 <li>
-<p><strong>Prosesor 180 MHz ARM Cortex-M4 (STM32F427VGT6)</strong></p>
+<p><strong>Prosesor 180 MHz ARM Cortex-M4</strong></p>
 </li>
 <li>
 <p>Komunikasi data via CANbus</p>
@@ -1199,7 +1199,7 @@
 </li>
 </ul>
 <h2 id="informasi-hardware">Informasi Hardware<a class="headerlink" href="#informasi-hardware" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C didesain dengan <strong>STM32F427VGT6</strong> sebagai MCU utama, memberikan performa tinggi dengan clock 180MHz. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3C hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).</p>
+<p>Mazduino Mini 6CH v1.3C didesain dengan <strong>ARM Cortex-M4 180 MHz</strong> sebagai MCU utama, memberikan performa tinggi dengan clock 180MHz. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3C hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).</p>
 <p><img alt="VR Module" src="img/mini6ch/vr-module.jpeg" /></p>
 <p>Kemudian untuk bagian Idle, Mazduino Mini 6CH v1.3C sudah support Idle PWM, terdapat 2 output dari low side mosfet yang dapat digunakan untuk kontrol IDLE PWM.</p>
 <p>Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module. Disini bisa menggunakan driver DRV8825.</p>
@@ -1272,7 +1272,7 @@
 <p><strong>rusEFI</strong>: Dukungan penuh untuk v1.3C dengan pin mapping yang diperbarui</p>
 </li>
 <li>
-<p><strong>Speeduino</strong>: Kompatibel dengan konfigurasi pin mapping terbaru</p>
+<p><strong>Speeduino</strong>: Tidak didukung pada v1.3C — gunakan rusEFI</p>
 </li>
 <li>
 <p><strong>File Konfigurasi</strong>: Tersedia di <a href="../downloads/">halaman download</a></p>
@@ -1355,6 +1355,7 @@
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {

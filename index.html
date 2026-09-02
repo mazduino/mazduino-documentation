@@ -254,10 +254,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:27:27 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 September 2026 06:59:27 UTC">2 September 2026</span></em></p>
   <h1 id="dokumentasi-mazduino">Dokumentasi Mazduino<a class="headerlink" href="#dokumentasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Selamat datang di dokumentasi resmi Mazduino. Mazduino membuat perangkat
-manajemen mesin standalone open-source berbasis mikrokontroler STM32 beserta
+manajemen mesin standalone open-source berbasis mikrokontroler ARM Cortex beserta
 perangkat pendukungnya.</p>
 <h2 id="lini-produk">Lini Produk<a class="headerlink" href="#lini-produk" title="Permanent link">&para;</a></h2>
 <table>
@@ -285,8 +285,11 @@ perangkat pendukungnya.</p>
 untuk ECU dan untuk dash.</p>
 <hr />
 <h2 id="ecu">ECU<a class="headerlink" href="#ecu" title="Permanent link">&para;</a></h2>
-<p>Engine Control Unit standalone berbasis STM32, kompatibel dengan firmware
-rusEFI dan Speeduino, dikonfigurasi lewat TunerStudio.</p>
+<p>Engine Control Unit standalone berbasis ARM Cortex, dikonfigurasi lewat
+TunerStudio. Mazduino mengembangkan firmware sendiri berbasis <strong>rusEFI</strong>, dan
+itu yang disarankan agar seluruh fitur board terpakai optimal. Sebagian board
+juga dapat menjalankan Speeduino, tetapi pengembangannya sudah dihentikan —
+lihat <a href="downloads/#tabel-kompatibilitas">tabel kompatibilitas</a>.</p>
 <h3 id="download-firmware-ecu">Download Firmware ECU<a class="headerlink" href="#download-firmware-ecu" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p><strong><a href="https://github.com/mazduino/mazduino-fw/releases">⬇ Download Firmware Mazduino di GitHub Releases</a></strong></p>
@@ -347,7 +350,7 @@ Mazduino Flasher — lihat halaman dash masing-masing.</p>
 <ul>
 <li>4 channel injeksi</li>
 <li>Faktor bentuk kompak</li>
-<li>MCU STM32F407VGT6</li>
+<li>MCU ARM Cortex-M4 168 MHz</li>
 <li>Kompatibel dengan rusEFI dan Speeduino</li>
 </ul>
 <p><strong>Versi yang Tersedia:</strong></p>
@@ -378,7 +381,7 @@ Mazduino Flasher — lihat halaman dash masing-masing.</p>
 <ul>
 <li>6 channel injeksi</li>
 <li>Operasi sequential penuh</li>
-<li>MCU STM32F407VGT6</li>
+<li>MCU ARM Cortex-M4 168 MHz</li>
 <li>Kemampuan I/O yang diperluas</li>
 <li>Kompatibel dengan rusEFI dan Speeduino</li>
 </ul>
@@ -386,7 +389,7 @@ Mazduino Flasher — lihat halaman dash masing-masing.</p>
 <ul>
 <li><strong><a href="mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a></strong> - Versi standar dengan fitur dasar</li>
 <li><strong><a href="mazduino-mini-6ch-v1.3/">v1.3</a></strong> - Dengan Knock Input dan Electronic Throttle Body (ETB)</li>
-<li><strong><a href="mazduino-mini-6ch-v1.3b/">v1.3B</a></strong> - MCU STM32F427VGT6, input analog TPS2 tambahan, dan optimisasi hardware</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3b/">v1.3B</a></strong> - MCU lebih cepat, input analog TPS2 tambahan, dan optimisasi hardware</li>
 <li><strong><a href="mazduino-mini-6ch-v1.3c/">v1.3C</a></strong> - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6 - <strong>versi produksi terakhir</strong></li>
 <li><strong><a href="mazduino-mini-6ch-v1.4/">v1.4</a></strong> - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3C</li>
 </ul>
@@ -395,7 +398,7 @@ Mazduino Flasher — lihat halaman dash masing-masing.</p>
 <p><img alt="Mazduino Core" src="img/core/mazduino-core.jpeg" /></p>
 <p><strong>Fitur Umum:</strong></p>
 <ul>
-<li>MCU STM32F427 ARM Cortex-M4</li>
+<li>MCU ARM Cortex-M4 180 MHz</li>
 <li>Dual ETB (ETB1 &amp; ETB2) dan Dual CAN Bus</li>
 <li>Kombinasi input Hall/Digital dan VR</li>
 <li>Konektor otomotif 48-pin</li>
@@ -422,7 +425,7 @@ Serial; ia tidak mengendalikan mesin.</p>
 <tbody>
 <tr>
 <td style="text-align: center;"><img alt="Mazduino Racedash" src="img/dash/racedash-jst4-product.png" /></td>
-<td style="text-align: center;"><img alt="Mazduino Racedash DTM4" src="img/dash/racedash-dtm4-front.png" /></td>
+<td style="text-align: center;"><img alt="Mazduino Racedash Pro M4" src="img/dash/racedash-pro-m4.jpeg" /></td>
 </tr>
 </tbody>
 </table>
@@ -431,10 +434,19 @@ Serial; ia tidak mengendalikan mesin.</p>
 <li><strong><a href="mazduino-racedash/">Racedash 3.5" &amp; 4"</a></strong> — Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)</li>
 <li><strong><a href="mazduino-racedash-pro/">Racedash Pro — M4, M5, M7 (4.3", 5" &amp; 7")</a></strong> — Layar lebih besar, pengaturan lewat aplikasi DashTune</li>
 </ul>
-<p><strong>ECU yang didukung:</strong> rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II.</p>
-<p><strong>Pengaturan:</strong> lewat browser di
-<a href="https://www.mazduino.com/display-control">mazduino.com/display-control</a>,
-lewat aplikasi Android <strong>DashTune</strong>, atau dari layar sentuh dash itu sendiri.</p>
+<p><strong>ECU yang didukung:</strong> rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II.
+Untuk OBD-II hanya varian CAN Bus (ISO 15765-4) yang didukung dan tidak semua
+mobil dapat dibaca — lihat
+<a href="mazduino-racedash-pro/#batasan-obd-ii">batasannya</a>.</p>
+<p><strong>Cara mengaturnya berbeda antar varian:</strong></p>
+<ul>
+<li><strong>Racedash 3.5" &amp; 4"</strong> — lewat browser di
+  <a href="https://www.mazduino.com/display-control">mazduino.com/display-control</a> atau
+  lewat aplikasi <strong>DashTune</strong>, keduanya melalui WiFi yang dipancarkan dash.</li>
+<li><strong>Racedash Pro M4 / M5 / M7</strong> — lewat aplikasi <strong>DashTune</strong> melalui Bluetooth,
+  atau dari layar sentuh dash itu sendiri. Varian ini <strong>tidak</strong> dapat diatur
+  lewat browser.</li>
+</ul>
 <hr />
 <h2 id="memulai">Memulai<a class="headerlink" href="#memulai" title="Permanent link">&para;</a></h2>
 <h3 id="kalau-anda-memakai-ecu">Kalau Anda memakai ECU<a class="headerlink" href="#kalau-anda-memakai-ecu" title="Permanent link">&para;</a></h3>
@@ -535,6 +547,7 @@ lewat aplikasi Android <strong>DashTune</strong>, atau dari layar sentuh dash it
     <script src="js/theme.js"></script>
       <script src="js/external-links.js"></script>
       <script src="js/print-details.js"></script>
+      <script src="js/print-source.js"></script>
       <script src="search/main.js"></script>
     <script>
         jQuery(function () {
@@ -547,5 +560,5 @@ lewat aplikasi Android <strong>DashTune</strong>, atau dari layar sentuh dash it
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-09-01 18:28:12.324670+00:00
+Build Date UTC : 2026-09-02 07:08:55.485960+00:00
 -->

@@ -236,7 +236,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="29 Agustus 2026 17:41:28 UTC">29 Agustus 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:44:01 UTC">1 September 2026</span></em></p>
   <h1 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Racedash adalah dash display digital yang menampilkan data real-time dari ECU, seperti RPM, gear indicator, kecepatan, dan berbagai data sensor lainnya. Halaman ini membahas varian layar <strong>3.5"</strong> dan <strong>4"</strong>. Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
@@ -308,10 +308,9 @@
 </tbody>
 </table>
 <h2 id="racedash-4-cabus-konektor-dtm4">Racedash 4" / Cabus (Konektor DTM4)<a class="headerlink" href="#racedash-4-cabus-konektor-dtm4" title="Permanent link">&para;</a></h2>
-<p><strong>Tampak Depan</strong></p>
-<p><img alt="Tampak depan Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-front.png" /></p>
-<p><strong>Tampak Belakang</strong></p>
-<p><img alt="Tampak belakang Mazduino Racedash DTM4" src="../img/dash/racedash-dtm4-back.png" /></p>
+<p><img alt="Racedash 4 inci menyala" src="../img/dash/racedash-4inch-dtm4.jpeg" /></p>
+<p><em>Racedash 4" saat menyala — bar RPM, indikator gigi, dan deretan lampu
+peringatan di bawah layar</em></p>
 <p>Varian ini menggunakan konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang tahan getaran dan cuaca, cocok untuk aplikasi racing. Komunikasi ke ECU dilakukan melalui <strong>CAN Bus</strong>, kecuali untuk ECU <strong>Speeduino</strong> yang menggunakan mode <strong>Serial</strong> (secondary serial dari Arduino Mega).</p>
 <h3 id="konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin<a class="headerlink" href="#konektor-dtm4-4-pin" title="Permanent link">&para;</a></h3>
 <p><img alt="Sisi konektor Racedash" src="../img/dash/racedash-dtm4-connector-side.png" /></p>
@@ -366,7 +365,9 @@
 <h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
 <p>Pada firmware terbaru ada dua cara mengatur tampilan dashboard: lewat <strong>browser</strong> di
 mazduino.com, atau lewat aplikasi Android <strong>DashTune</strong>. Keduanya mengatur hal yang sama
-dan berlaku untuk kedua varian Racedash — pilih mana yang lebih praktis.</p>
+dan berlaku untuk kedua varian di halaman ini, 3.5" dan 4" — pilih mana yang
+lebih praktis. Untuk <a href="../mazduino-racedash-pro/">Racedash Pro</a> caranya berbeda:
+pengaturannya lewat DashTune atau layar sentuh, bukan lewat browser.</p>
 <p>Halaman konfigurasi lokal <code>192.168.4.1</code> hanya dipakai oleh firmware lama, dan ada di
 bagian paling bawah halaman ini.</p>
 <h3 id="lewat-browser-mazduinocom">Lewat Browser (mazduino.com)<a class="headerlink" href="#lewat-browser-mazduinocom" title="Permanent link">&para;</a></h3>
@@ -388,6 +389,12 @@ bagian paling bawah halaman ini.</p>
 <p>DashTune dapat mengatur Racedash lewat WiFi, tanpa membuka browser. Racedash
 M1/M2/M3/C1 tersambung lewat <strong>WiFi</strong> (berbeda dengan Racedash Pro M4/M5/M7
 yang lewat Bluetooth).</p>
+<blockquote>
+<p><strong>Mendapatkan aplikasinya:</strong> buka <strong><a href="https://www.mazduino.com/">www.mazduino.com</a></strong>
+dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
+tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
+Play Anda di sana, dan undangan akan dikirim lewat email.</p>
+</blockquote>
 <ol>
 <li>Pasang DashTune di HP Android, lalu hubungkan WiFi HP ke <strong>"Mazduino_Display"</strong>
    dengan password <strong>"12345678"</strong>.</li>
@@ -468,6 +475,7 @@ firmware terbaru, pakai salah satu cara di atas dan lewati bagian ini.</p>
     <script src="../js/theme.js"></script>
       <script src="../js/external-links.js"></script>
       <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
       <script src="../search/main.js"></script>
     <script>
         jQuery(function () {
