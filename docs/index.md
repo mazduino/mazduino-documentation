@@ -57,7 +57,7 @@ Solusi ECU compact terbaru untuk engine 4-silinder dengan Wasted Spark builtin I
 - 6 analog inputs + 5 digital inputs
 - CAN Bus, USB Type-C, Serial communication
 - SD card data logging
-- Konektor 30-pin Microfit (2x12 + 2x3)
+- Konektor Yamaha 33-pin
 
 **Ideal untuk:**
 
