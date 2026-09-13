@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-lite-v0.2/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-lite-v0.3/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>v0.2 - Mazduino Documentation</title>
+    <title>v0.3 - Mazduino Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
@@ -13,9 +13,9 @@
     
       <script>
         // Current page data
-        var mkdocs_page_name = "v0.2";
-        var mkdocs_page_input_path = "mazduino-lite-v0.2.md";
-        var mkdocs_page_url = "/mazduino-lite-v0.2/";
+        var mkdocs_page_name = "v0.3";
+        var mkdocs_page_input_path = "mazduino-lite-v0.3.md";
+        var mkdocs_page_url = "/mazduino-lite-v0.3/";
       </script>
     
     <!--[if lt IE 9]>
@@ -54,7 +54,9 @@
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
                 </li>
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">v0.2</a>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">v0.3</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#pengantar">Pengantar</a>
     </li>
@@ -84,23 +86,23 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#pengaturan-jumper-kritis">Pengaturan Jumper Kritis</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#perbaikan-pada-v02">Perbaikan pada v0.2</a>
+    <li class="toctree-l4"><a class="reference internal" href="#perbaikan-yang-dibawa-dari-v02">Perbaikan yang Dibawa dari v0.2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#header-i2c-baru-di-v03">Header I2C (Baru di v0.3)</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#sensor-barometer-internal-optional">Sensor Barometer Internal (Optional)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#rekomendasi-penggunaan-v02">Rekomendasi Penggunaan v0.2</a>
+    <li class="toctree-l4"><a class="reference internal" href="#rekomendasi-penggunaan-v03">Rekomendasi Penggunaan v0.3</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#peringatan-keselamatan">Peringatan Keselamatan</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#perbandingan-dengan-v01">Perbandingan dengan v0.1</a>
+    <li class="toctree-l3"><a class="reference internal" href="#perbandingan-antar-versi">Perbandingan Antar Versi</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#wiring-harness">Wiring Harness</a>
     </li>
     </ul>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
                 </li>
     </ul>
                   </li>
@@ -248,7 +250,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">ECU</li>
           <li class="breadcrumb-item">Mazduino LITE</li>
-      <li class="breadcrumb-item active">v0.2</li>
+      <li class="breadcrumb-item active">v0.3</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -257,10 +259,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:57:25 UTC">1 September 2026</span></em></p>
-  <h1 id="mazduino-lite-v02">Mazduino LITE v0.2<a class="headerlink" href="#mazduino-lite-v02" title="Permanent link">&para;</a></h1>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 September 2026 07:56:23 UTC">13 September 2026</span></em></p>
+  <h1 id="mazduino-lite-v03">Mazduino LITE v0.3<a class="headerlink" href="#mazduino-lite-v03" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
-<p>Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluarga ECU Mazduino LITE. Versi ini dirancang untuk aplikasi engine 4-silinder dengan 4 channel injector dan 2 channel ignition, dengan perbaikan signifikan pada IGBT footprint dan penambahan sensor barometer internal.</p>
+<p>Mazduino LITE v0.3 adalah versi terbaru dari keluarga ECU Mazduino LITE. Dirancang untuk aplikasi engine 4-silinder dengan 4 channel injector dan 2 channel ignition. Dibanding v0.2, board ini praktis sama — yang ditambahkan adalah header I2C untuk perangkat tambahan.</p>
 <p><img alt="Mazduino LITE ECU" src="../img/lite/mazduino-lite-with-case.jpeg" /></p>
 <blockquote>
 <p><strong>Firmware</strong>: LITE berjalan dengan rusEFI, dan juga dapat memakai firmware
@@ -268,7 +270,13 @@
 tersendiri. Keduanya sudah diuji jalan. Lihat
 <a href="../downloads/#firmware-speeduino">halaman Downloads</a>.</p>
 </blockquote>
-<p><strong>Keunggulan v0.2</strong>: </p>
+<p><strong>Perubahan v0.3 dari v0.2:</strong></p>
+<ul>
+<li><strong>Header I2C (J10)</strong>: Dua pin SDA dan SCL dibawa keluar ke header, sebaris dengan header serial RX/TX yang sudah ada. Bus-nya sama dengan yang dipakai sensor barometer internal</li>
+</ul>
+<p>!!! info "Pinout tidak berubah"
+    Konektor utama 33-pin dan pemetaan pin MCU <strong>identik dengan v0.2</strong> (diverifikasi pin per pin dari file desain). Wiring harness dan konfigurasi firmware v0.2 dapat dipakai langsung tanpa perubahan.</p>
+<p><strong>Yang diwarisi dari v0.2:</strong></p>
 <ul>
 <li>IGBT footprint D2Pak to 263 (umum &amp; mudah ditemukan)</li>
 <li>Sensor barometer internal (optional)</li>
@@ -293,7 +301,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>Sensor Power</strong>: 5V regulated dengan internal fuse protection</p>
 </li>
 <li>
-<p><strong>Barometer Internal</strong>: <strong>Tersedia pada v0.2 (optional, tidak terpasang default kecuali diminta)</strong></p>
+<p><strong>Barometer Internal</strong>: <strong>Optional, tidak terpasang default kecuali diminta</strong> (sejak v0.2)</p>
 </li>
 </ul>
 <h3 id="sistem-output">Sistem Output<a class="headerlink" href="#sistem-output" title="Permanent link">&para;</a></h3>
@@ -305,7 +313,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>Ignition</strong>: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support</p>
 </li>
 <li>
-<p><strong>v0.2</strong>: IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan</p>
+<p>IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan (sejak v0.2)</p>
 </li>
 <li>
 <p><strong>Control</strong>: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer</p>
@@ -323,7 +331,10 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>CAN Bus</strong>: 4-pin connector dengan power selection (5V/12V)</p>
 </li>
 <li>
-<p><strong>Serial</strong>: RX/TX pins untuk additional communication</p>
+<p><strong>Serial</strong>: Header RX/TX untuk komunikasi tambahan</p>
+</li>
+<li>
+<p><strong>I2C (Baru di v0.3)</strong>: Header SDA/SCL untuk perangkat I2C tambahan</p>
 </li>
 </ul>
 <h3 id="penyimpanan-dan-timing">Penyimpanan dan Timing<a class="headerlink" href="#penyimpanan-dan-timing" title="Permanent link">&para;</a></h3>
@@ -346,7 +357,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 22  21  20  19  18  17  16  15  14  13  12
 33  32  31  30  29  28  27  26  25  24  23
 </code></pre>
-<h4 id="pin-assignment-v02">Pin Assignment v0.2<a class="headerlink" href="#pin-assignment-v02" title="Permanent link">&para;</a></h4>
+<h4 id="pin-assignment-v03">Pin Assignment v0.3<a class="headerlink" href="#pin-assignment-v03" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -523,7 +534,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 </tr>
 </tbody>
 </table>
-<p><strong>Perbedaan Penting v0.2</strong>: Pin 7 dan 9 <strong>ditukar</strong> - Pin 7 adalah <strong>Ground Coil</strong>, Pin 9 adalah <strong>Ignition 2</strong></p>
+<p><strong>Perbedaan Penting terhadap v0.1</strong>: Pin 7 dan 9 <strong>ditukar</strong> sejak v0.2 — Pin 7 adalah <strong>Ground Coil</strong>, Pin 9 adalah <strong>Ignition 2</strong>. Pinout v0.3 sama persis dengan v0.2</p>
 <h3 id="can-bus-konektor-4-pin">CAN Bus Konektor (4-Pin)<a class="headerlink" href="#can-bus-konektor-4-pin" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -719,7 +730,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 </tr>
 </tbody>
 </table>
-<p><strong>Tambahan v0.2</strong>: Pin mapping untuk <strong>Barometric Pressure Sensor</strong></p>
+<p><strong>Barometric Pressure Sensor</strong> (sejak v0.2)</p>
 <ul>
 <li>
 <p><strong>BARO SCL</strong>: PB10 (shared dengan TXD3)</p>
@@ -752,7 +763,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>IGN1/IGN2 Mode</strong>: Smart Coil/IGBT selection (JP3/JP4)</p>
 </li>
 <li>
-<p><strong>v0.2</strong>: IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</p>
+<p>IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</p>
 </li>
 <li>
 <p><strong>VR1/Hall, VR2/Hall</strong>: Input type selection</p>
@@ -764,7 +775,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>CAN Power</strong>: 12V/5V pada CAN connector</p>
 </li>
 </ul>
-<h3 id="perbaikan-pada-v02">Perbaikan pada v0.2<a class="headerlink" href="#perbaikan-pada-v02" title="Permanent link">&para;</a></h3>
+<h3 id="perbaikan-yang-dibawa-dari-v02">Perbaikan yang Dibawa dari v0.2<a class="headerlink" href="#perbaikan-yang-dibawa-dari-v02" title="Permanent link">&para;</a></h3>
 <p><strong>Perbaikan Utama:</strong></p>
 <ul>
 <li>
@@ -780,8 +791,49 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>Pin Assignment</strong>: Optimasi pin assignment untuk konektor 33-pin</p>
 </li>
 </ul>
+<h3 id="header-i2c-baru-di-v03">Header I2C (Baru di v0.3)<a class="headerlink" href="#header-i2c-baru-di-v03" title="Permanent link">&para;</a></h3>
+<p>Dua pin bus I2C dibawa keluar ke header <strong>J10</strong>, sebaris dengan header serial RX/TX yang sudah ada di v0.2.</p>
+<table>
+<thead>
+<tr>
+<th>Pin J10</th>
+<th>Sinyal</th>
+<th>Pin MCU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SDA</td>
+<td>PB11</td>
+</tr>
+<tr>
+<td>2</td>
+<td>SCL</td>
+<td>PB10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Yang perlu diperhatikan:</strong></p>
+<ul>
+<li>
+<p><strong>Level 3.3V</strong>: Bus ini bekerja di 3.3V — kedua jalur sudah di-pullup ke 3.3V di board. <strong>Jangan sambungkan modul I2C yang jalurnya bekerja di 5V</strong> tanpa level shifter, karena tegangan itu masuk langsung ke pin MCU</p>
+</li>
+<li>
+<p><strong>Pull-up sudah ada</strong>: Modul tambahan tidak perlu membawa pull-up sendiri</p>
+</li>
+<li>
+<p><strong>Hanya dua jalur</strong>: Header ini hanya membawa SDA dan SCL — tidak ada catu daya maupun ground di situ, jadi modul tambahan perlu mengambil daya dan ground dari tempat lain</p>
+</li>
+<li>
+<p><strong>Bus dipakai bersama</strong>: Ini bus yang sama dengan sensor barometer internal. Modul tambahan harus memakai alamat I2C yang berbeda dari barometer</p>
+</li>
+<li>
+<p><strong>Dukungan firmware</strong>: Header ini hanya menyediakan jalurnya — perangkat yang disambungkan tetap harus didukung firmware yang Anda pakai</p>
+</li>
+</ul>
 <h3 id="sensor-barometer-internal-optional">Sensor Barometer Internal (Optional)<a class="headerlink" href="#sensor-barometer-internal-optional" title="Permanent link">&para;</a></h3>
-<p><strong>Fitur Baru v0.2</strong>: Sensor barometer internal tersedia sebagai opsi</p>
+<p>Sensor barometer internal tersedia sebagai opsi sejak v0.2</p>
 <p><strong>Spesifikasi:</strong></p>
 <ul>
 <li>
@@ -801,8 +853,8 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 </li>
 </ul>
 <p><strong>Cara Pemesanan:</strong>
-Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian LITE v0.2</p>
-<h3 id="rekomendasi-penggunaan-v02">Rekomendasi Penggunaan v0.2<a class="headerlink" href="#rekomendasi-penggunaan-v02" title="Permanent link">&para;</a></h3>
+Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian LITE v0.3</p>
+<h3 id="rekomendasi-penggunaan-v03">Rekomendasi Penggunaan v0.3<a class="headerlink" href="#rekomendasi-penggunaan-v03" title="Permanent link">&para;</a></h3>
 <p><strong>Ideal untuk:</strong></p>
 <ul>
 <li><strong>Semua aplikasi</strong> engine management</li>
@@ -826,7 +878,7 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 <li><strong>Gunakan sensor ground terpisah dari power ground</strong></li>
 <li><strong>Check all jumper settings sebelum first power-up</strong></li>
 </ul>
-<p><strong>CATATAN PINOUT v0.2</strong>:</p>
+<p><strong>CATATAN PINOUT v0.3</strong>:</p>
 <ul>
 <li>
 <p><strong>Pin 7</strong>: Ground Coil (berbeda dengan v0.1)</p>
@@ -838,13 +890,14 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 <p><strong>Periksa kembali koneksi saat upgrade dari v0.1</strong></p>
 </li>
 </ul>
-<h2 id="perbandingan-dengan-v01">Perbandingan dengan v0.1<a class="headerlink" href="#perbandingan-dengan-v01" title="Permanent link">&para;</a></h2>
+<h2 id="perbandingan-antar-versi">Perbandingan Antar Versi<a class="headerlink" href="#perbandingan-antar-versi" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
 <th>Aspek</th>
 <th>v0.1</th>
 <th>v0.2</th>
+<th>v0.3</th>
 </tr>
 </thead>
 <tbody>
@@ -852,43 +905,56 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
 <td><strong>IGBT Footprint</strong></td>
 <td>Tidak umum (issue)</td>
 <td>D2Pak to 263 (umum)</td>
+<td>D2Pak to 263 (umum)</td>
 </tr>
 <tr>
 <td><strong>Pin 7</strong></td>
 <td>Ignition 2</td>
+<td>Ground Coil</td>
 <td>Ground Coil</td>
 </tr>
 <tr>
 <td><strong>Pin 9</strong></td>
 <td>Ground Coil</td>
 <td>Ignition 2</td>
+<td>Ignition 2</td>
 </tr>
 <tr>
 <td><strong>Barometer Internal</strong></td>
 <td>Tidak tersedia</td>
+<td>Optional</td>
 <td>Optional</td>
 </tr>
 <tr>
 <td><strong>Jalur PCB</strong></td>
 <td>Standard</td>
 <td>Diperbaiki</td>
+<td>Diperbaiki</td>
+</tr>
+<tr>
+<td><strong>Header I2C</strong></td>
+<td>Tidak ada</td>
+<td>Tidak ada</td>
+<td>Ada (J10)</td>
 </tr>
 <tr>
 <td><strong>Rekomendasi</strong></td>
 <td>COP/IGBT Eksternal</td>
 <td>Semua aplikasi</td>
+<td>Semua aplikasi</td>
 </tr>
 </tbody>
 </table>
+<p>Upgrade dari v0.2 ke v0.3 tidak menuntut perubahan apa pun pada harness maupun konfigurasi firmware.</p>
 <hr />
 <h2 id="wiring-harness">Wiring Harness<a class="headerlink" href="#wiring-harness" title="Permanent link">&para;</a></h2>
-<p>Rekomendasi ukuran kabel per pin untuk Mazduino LITE v0.2, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di <a href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel Harness</a>.</p>
+<p>Rekomendasi ukuran kabel per pin untuk Mazduino LITE v0.3, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di <a href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel Harness</a>.</p>
 
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../mazduino-lite-v0.1/" class="btn btn-neutral float-left" title="v0.1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../mazduino-lite-v0.3/" class="btn btn-neutral float-right" title="v0.3">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mazduino-lite-v0.2/" class="btn btn-neutral float-left" title="v0.2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-compact-4ch-v1/" class="btn btn-neutral float-right" title="v1">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -911,10 +977,10 @@ Hubungi tim Mazduino dan sebutkan kebutuhan "barometer internal" saat pembelian 
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../mazduino-lite-v0.1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mazduino-lite-v0.2/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../mazduino-lite-v0.3/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../mazduino-compact-4ch-v1/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
