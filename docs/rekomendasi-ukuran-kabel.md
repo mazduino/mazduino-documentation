@@ -7,6 +7,7 @@ Halaman ini berisi rekomendasi ukuran kabel (luas penampang, mm²) untuk setiap 
 Berlaku untuk versi berikut:
 
 - [Mazduino LITE v0.2](mazduino-lite-v0.2.md)
+- [Mazduino LITE v0.3](mazduino-lite-v0.3.md) — pinout konektornya identik dengan v0.2
 - [Mazduino Compact 4CH v2.5](mazduino-compact-4ch-v2.5.md)
 - [Mazduino Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)
 - [Mazduino Mini 6CH v1.3D](mazduino-mini-6ch-v1.3d.md) — pinout konektornya identik dengan v1.3C
@@ -57,7 +58,7 @@ Jangan mengambil ground ECU dari baut bodi, dudukan mesin, atau titik ground ber
 
 ---
 
-## Mazduino LITE v0.2 (Konektor 33-Pin)
+## Mazduino LITE v0.2 dan v0.3 (Konektor 33-Pin)
 
 Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT internal**, lihat catatan di kolom paling kanan.
 
@@ -97,7 +98,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 32 | VSS / Digital4 | 0.3 mm² | — |
 | 33 | O2 Sensor | 0.3 mm² | Dari wideband controller |
 
-### Konektor CAN Bus 4-Pin (LITE v0.2)
+### Konektor CAN Bus 4-Pin (LITE v0.2 dan v0.3)
 
 | Pin | Fungsi | Ukuran Kabel |
 |-----|--------|--------------|
@@ -106,7 +107,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 3 | CAN High | 0.3 mm² (twisted pair dengan pin 2) |
 | 4 | Ground | 0.5 mm² |
 
-### Rekap Jumlah Kabel LITE v0.2
+### Rekap Jumlah Kabel LITE v0.2 dan v0.3
 
 **Mode Smart Coil (default):**
 
@@ -266,7 +267,7 @@ Penyesuaian bila ada pin yang tidak dipakai:
 
 ## Ringkasan Tiga Tipe
 
-| Ukuran | LITE v0.2 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
+| Ukuran | LITE v0.2/0.3 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
 |--------|-----------|------------------|----------------|
 | 0.3 mm² (22 AWG) | 15 | 13 | 19 |
 | 0.5 mm² (20 AWG) | 15 | 16 | 25 |
@@ -277,7 +278,7 @@ Konfigurasi default: LITE mode Smart Coil, Compact pin 21 sebagai GND.
 
 Bila 0.3 mm² diganti 0.5 mm² untuk menyederhanakan stok:
 
-| Ukuran | LITE v0.2 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
+| Ukuran | LITE v0.2/0.3 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
 |--------|-----------|------------------|----------------|
 | 0.5 mm² | 30 | 29 | 44 |
 | 0.75 / 0.85 mm² | 3 | 4 | 4 |
@@ -287,7 +288,7 @@ Bila 0.3 mm² diganti 0.5 mm² untuk menyederhanakan stok:
 
 Perkiraan kebutuhan belanja dengan rata-rata 1.5 meter per kabel sinyal dan 2 meter per kabel power/ground:
 
-| Ukuran | LITE v0.2 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
+| Ukuran | LITE v0.2/0.3 | Compact 4CH v2.5 | Mini 6CH v1.3C/D |
 |--------|-----------|------------------|----------------|
 | 0.3 mm² | ~23 m | ~20 m | ~29 m |
 | 0.5 mm² | ~23 m | ~24 m | ~38 m |

@@ -8,7 +8,7 @@ perangkat pendukungnya.
 
 | Lini | Isi | Mulai dari |
 | :--- | :--- | :--- |
-| **[ECU](#ecu)** | Engine Control Unit standalone, firmware rusEFI dan Speeduino | [Mazduino LITE](mazduino-lite-v0.2.md) |
+| **[ECU](#ecu)** | Engine Control Unit standalone, firmware rusEFI dan Speeduino | [Mazduino LITE](mazduino-lite-v0.3.md) |
 | **[Dash Display](#dash-display)** | Layar digital yang menampilkan data ECU secara real-time | [Racedash](mazduino-racedash.md) |
 
 Baru pertama kali? Lihat **[Memulai](#memulai)** di bawah — langkahnya berbeda
@@ -69,6 +69,8 @@ Solusi ECU compact terbaru untuk engine 4-silinder dengan Wasted Spark builtin I
 **[Dokumentasi Mazduino LITE v0.1](mazduino-lite-v0.1.md)**
 
 **[Dokumentasi Mazduino LITE v0.2](mazduino-lite-v0.2.md)**
+
+**[Dokumentasi Mazduino LITE v0.3](mazduino-lite-v0.3.md)** — versi terbaru
 
 ---
 
