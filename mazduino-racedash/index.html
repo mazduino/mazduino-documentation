@@ -145,12 +145,16 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
     </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Aksesori</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
@@ -245,7 +249,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:44:01 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:03:37 UTC">20 September 2026</span></em></p>
   <h1 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Racedash adalah dash display digital yang menampilkan data real-time dari ECU, seperti RPM, gear indicator, kecepatan, dan berbagai data sensor lainnya. Halaman ini membahas varian layar <strong>3.5"</strong> dan <strong>4"</strong>. Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
@@ -277,6 +281,11 @@
 <li>Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan</li>
 <li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
 </ul>
+<blockquote>
+<p><strong>Sisi ECU juga harus diatur.</strong> Dash hanya mendengarkan — ECU yang harus
+menyiarkan datanya, pada kecepatan CAN yang tepat. Lihat
+<a href="../setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a>.</p>
+</blockquote>
 <h2 id="custom-splash-screen">Custom Splash Screen<a class="headerlink" href="#custom-splash-screen" title="Permanent link">&para;</a></h2>
 <p>Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui <strong>Splash Screen Generator</strong> dan diunggah ke Racedash melalui WiFi.</p>
 <ol>

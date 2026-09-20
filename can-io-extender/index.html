@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/can-io-extender/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>CAN IO Extender - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CAN IO Extender";
+        var mkdocs_page_input_path = "can-io-extender.md";
+        var mkdocs_page_url = "/can-io-extender/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Racedash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CAN IO Extender</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#daya-can-dan-terminasi">Daya, CAN, dan Terminasi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#input">Input</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#output">Output</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memakai-dengan-racedash-pro-m4-m5-m7">Memakai dengan Racedash Pro (M4, M5, M7)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#nilai-sensor-tambahan">Nilai sensor tambahan</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-yang-dikirim-modul">Data yang Dikirim Modul</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memakai-dua-modul">Memakai Dua Modul</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Aksesori</li>
+      <li class="breadcrumb-item active">CAN IO Extender</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:20:19 UTC">20 September 2026</span></em></p>
+  <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
+<p>CAN IO Extender menambah <strong>input dan output</strong> ke Racedash lewat bus CAN yang
+sama dengan ECU. Modul ini membaca sensor dan saklar yang tidak diketahui ECU —
+misalnya lampu sein, rem tangan, lampu jauh, sensor tekanan tambahan, atau
+sensor kecepatan roda — lalu mem-broadcast-nya sebagai frame CAN yang bisa dibaca
+dash. Sebaliknya, dash juga bisa menyalakan output modul ini untuk menggerakkan
+relay, pompa, kipas, atau solenoid.</p>
+<p>Modul bekerja mandiri: bitrate bus dideteksi sendiri, dan tidak ada yang perlu
+diatur lewat aplikasi. Fungsi tiap pin ditentukan saat pemasangan, sesuai
+kebutuhan kendaraan.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Kemampuan</th>
+<th style="text-align: center;">Jumlah</th>
+<th style="text-align: left;">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Analog input</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Satu dipakai untuk tegangan aki; dua di antaranya sudah ber-pull-up untuk sensor NTC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch input 12 V</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Berbagi pin dengan sebagian analog input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hall / frequency input</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Berbagi pin dengan sebagian analog input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Low-side output</td>
+<td style="text-align: center;">5 + 2</td>
+<td style="text-align: left;">Lima arus kecil, dua arus besar</td>
+</tr>
+<tr>
+<td style="text-align: left;">High-side output</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Mendukung PWM dan melaporkan fault</td>
+</tr>
+<tr>
+<td style="text-align: left;">Logic output</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Output sinyal 5 V atau 12 V</td>
+</tr>
+</tbody>
+</table>
+<p>Tujuh output tersedia sekaligus di konektor utama; dua lagi berbagi pin dengan
+logic output.</p>
+<h2 id="daya-can-dan-terminasi">Daya, CAN, dan Terminasi<a class="headerlink" href="#daya-can-dan-terminasi" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pin konektor</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">J2-24</td>
+<td style="text-align: left;">12 V dari kontak (switched)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-12</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-14</td>
+<td style="text-align: left;">CAN H</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-13</td>
+<td style="text-align: left;">CAN L</td>
+</tr>
+</tbody>
+</table>
+<p>Tersedia juga header CAN + daya 4 pin terpisah (J12) sebagai alternatif.</p>
+<p><strong>Terminasi:</strong> modul menyediakan resistor 120 Ω yang bisa diaktifkan di board.
+Aktifkan <strong>hanya kalau modul ini berada di salah satu ujung bus</strong>. Sebuah bus
+CAN perlu tepat dua terminator, dan menambah yang ketiga akan membuat
+komunikasi gagal.</p>
+<h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
+<p>Delapan pin input bisa dipilih fungsinya, dan dua pin lagi khusus analog.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pin konektor</th>
+<th style="text-align: left;">Dapat difungsikan sebagai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">J2-9</td>
+<td style="text-align: left;">Analog input (A3) <strong>atau</strong> switch input 12 V (SW1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-8</td>
+<td style="text-align: left;">Analog input (A4) <strong>atau</strong> switch input 12 V (SW2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-7</td>
+<td style="text-align: left;">Analog input (A5) <strong>atau</strong> switch input 12 V (SW3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-6</td>
+<td style="text-align: left;">Analog input (A6) <strong>atau</strong> switch input 12 V (SW4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-5</td>
+<td style="text-align: left;">Analog input (A7) <strong>atau</strong> Hall / frequency input (HALL1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-4</td>
+<td style="text-align: left;">Analog input (A8) <strong>atau</strong> Hall / frequency input (HALL2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-3</td>
+<td style="text-align: left;">Analog input (A9) <strong>atau</strong> Hall / frequency input (HALL3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-2</td>
+<td style="text-align: left;">Analog input (A10) <strong>atau</strong> Hall / frequency input (HALL4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-11</td>
+<td style="text-align: left;">Analog input (A1), sudah ber-pull-up untuk sensor NTC</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-10</td>
+<td style="text-align: left;">Analog input (A2), sudah ber-pull-up untuk sensor NTC</td>
+</tr>
+</tbody>
+</table>
+<p>Pull-up pada J2-10 dan J2-11 adalah yang dibutuhkan sensor NTC, seperti sensor
+suhu air atau suhu udara masuk. Sensor yang mengeluarkan tegangan 0–5 V sendiri
+— misalnya sensor tekanan — dipasang di pin analog mana pun.</p>
+<p><strong>SW1–SW4 menerima 12 V langsung.</strong> Gunakan untuk apa pun yang disaklar oleh
+12 V kendaraan: lampu sein, lampu jauh, lampu rem, rem tangan.</p>
+<p><strong>HALL1–HALL4</strong> membaca logic 5 V, tahan terhadap 12 V, dan keempatnya juga
+berfungsi sebagai <strong>frequency counter</strong> — cocok untuk sensor kecepatan roda atau
+flow meter.</p>
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: left;">Pin konektor</th>
+<th style="text-align: left;">Tipe</th>
+<th style="text-align: left;">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LC1</td>
+<td style="text-align: left;">J2-23</td>
+<td style="text-align: left;">Low-side, arus kecil</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LC2</td>
+<td style="text-align: left;">J2-22</td>
+<td style="text-align: left;">Low-side, arus kecil</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LC3</td>
+<td style="text-align: left;">J2-20</td>
+<td style="text-align: left;">Low-side, arus kecil</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4</td>
+<td style="text-align: left;">J2-19</td>
+<td style="text-align: left;">Low-side, arus kecil</td>
+<td style="text-align: left;">Pin ini dipakai untuk LC4 <strong>atau</strong> LOGIC1</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC5</td>
+<td style="text-align: left;">J2-17</td>
+<td style="text-align: left;">Low-side, arus kecil</td>
+<td style="text-align: left;">Pin ini dipakai untuk LC5 <strong>atau</strong> LOGIC2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1</td>
+<td style="text-align: left;">J2-15</td>
+<td style="text-align: left;">Low-side, arus besar</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LS2</td>
+<td style="text-align: left;">J2-16</td>
+<td style="text-align: left;">Low-side, arus besar</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">HS1</td>
+<td style="text-align: left;">J2-21</td>
+<td style="text-align: left;"><strong>High-side</strong></td>
+<td style="text-align: left;">Mendukung PWM, melaporkan fault</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS2</td>
+<td style="text-align: left;">J2-18</td>
+<td style="text-align: left;"><strong>High-side</strong></td>
+<td style="text-align: left;">Mendukung PWM, melaporkan fault</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ini kesalahan wiring yang paling sering terjadi:</strong> output <strong>low-side</strong>
+menyaklar sisi <strong>ground</strong>, jadi ujung beban yang lain harus di 12 V. Output
+<strong>high-side</strong> justru mengeluarkan 12 V, jadi ujung beban yang lain harus di
+ground. Tertukar berarti beban tidak akan bekerja.</p>
+<p>Hanya <strong>HS1 dan HS2</strong> yang menerima nilai PWM; output lain hanya on/off.</p>
+<p><strong>Logic output</strong> (LOGIC1 dan LOGIC2) adalah output sinyal, bukan driver coil.
+Tegangannya bisa dipilih <strong>5 V atau 12 V</strong> saat pemasangan. Keduanya memakai pin
+yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.</p>
+<p>!!! danger "Output mati sendiri kalau perintah berhenti"
+    Semua output dimatikan bila perintah dari dash tidak diterima selama
+    <strong>500 ms</strong>, dan modul memang menyala dalam keadaan semua output mati. Jadi
+    kalau dash mati atau kabel CAN lepas, pompa atau solenoid tidak akan terus
+    menyala. Kondisi ini normal, bukan kerusakan.</p>
+<h2 id="memakai-dengan-racedash-pro-m4-m5-m7">Memakai dengan Racedash Pro (M4, M5, M7)<a class="headerlink" href="#memakai-dengan-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
+<p>Bisa langsung dipakai tanpa ganti firmware, <strong>bersamaan dengan protokol ECU yang
+sedang aktif</strong>.</p>
+<h3 id="lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan<a class="headerlink" href="#lampu-indikator-dari-saklar-kendaraan" title="Permanent link">&para;</a></h3>
+<p>Di DashTune, buka pengaturan indikator, pilih mode <strong>CAN</strong>, lalu isi:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lampu</th>
+<th style="text-align: left;">CAN ID</th>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: center;">Bit</th>
+<th style="text-align: left;">Sambungkan ke</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Turn left</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">J2-9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Turn right</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">J2-8</td>
+</tr>
+<tr>
+<td style="text-align: left;">High beam</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">J2-7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hand brake</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">J2-6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Head light</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">J2-5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Park light</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">J2-4</td>
+</tr>
+</tbody>
+</table>
+<p>Pastikan keenam pin itu difungsikan sebagai <strong>switch input 12 V</strong>, dan biarkan
+pilihan <strong>invert dalam keadaan mati</strong> — modul sudah melaporkan 1 = aktif.</p>
+<h3 id="nilai-sensor-tambahan">Nilai sensor tambahan<a class="headerlink" href="#nilai-sensor-tambahan" title="Permanent link">&para;</a></h3>
+<p>Nilai seperti tegangan aki, sensor analog, atau frequency input bisa
+ditampilkan lewat <strong>Custom Channel</strong> di DashTune. Custom Channel menumpang pada
+protokol ECU yang sedang aktif, jadi data ECU tetap terbaca seperti biasa.</p>
+<p>Gunakan daftar frame di <a href="#data-yang-dikirim-modul">bagian berikutnya</a> sebagai
+acuan CAN ID, posisi byte, dan skalanya.</p>
+<h2 id="memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"<a class="headerlink" href="#memakai-dengan-racedash-35-dan-4" title="Permanent link">&para;</a></h2>
+<p>!!! warning "Tidak bisa bersamaan dengan protokol ECU"
+    Pada varian ini, modul hanya terbaca kalau protokol dash diset ke
+    <strong>Custom</strong>, dan mode Custom menggantikan decoder ECU bawaan. Artinya dash
+    bisa membaca <strong>modul ini atau ECU</strong>, tidak keduanya sekaligus. Kalau Anda
+    butuh dua-duanya, gunakan Racedash Pro.</p>
+<p>Langkahnya: set protokol dash ke <strong>Custom</strong>, samakan bitrate dengan bus, lalu
+susun channel-nya lewat DashTune. Semua nilai <strong>little-endian</strong>, jadi biarkan
+pilihan <strong>MSB first (Motorola) mati</strong>.</p>
+<p>Kalau Anda memakai Custom CAN map untuk keperluan lain, jangan memakai CAN ID
+<code>0x640</code>–<code>0x67F</code> agar tidak bentrok dengan modul ini.</p>
+<h2 id="data-yang-dikirim-modul">Data yang Dikirim Modul<a class="headerlink" href="#data-yang-dikirim-modul" title="Permanent link">&para;</a></h2>
+<p>CAN ID di bawah berlaku untuk modul node 0. Semua nilai <strong>little-endian</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CAN ID</th>
+<th style="text-align: left;">Isi</th>
+<th style="text-align: left;">Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0x640</code></td>
+<td style="text-align: left;">Tegangan aki, lalu AV1, AV2, AV3</td>
+<td style="text-align: left;">50 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x641</code></td>
+<td style="text-align: left;">AV4, AV5, AV6, AV7</td>
+<td style="text-align: left;">50 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x642</code></td>
+<td style="text-align: left;">AV8, AV9, AV10</td>
+<td style="text-align: left;">50 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: left;">Status digital input, diagnosa, status output</td>
+<td style="text-align: left;">50 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x644</code></td>
+<td style="text-align: left;">Frekuensi HALL1–HALL4</td>
+<td style="text-align: left;">20 Hz</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frame analog</strong> (<code>0x640</code>–<code>0x642</code>) berisi empat nilai <code>uint16</code> berurutan, dalam
+<strong>milivolt</strong>. Tegangan aki sudah dikalikan faktor pembaginya, jadi angka <code>13800</code>
+berarti 13,8 V. Untuk menampilkan sebagai volt, pakai scale <code>0.001</code>.</p>
+<p><strong>Frame digital</strong> (<code>0x643</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: left;">Isi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">bit 0–3 = SW1–SW4, bit 4–7 = HALL1–HALL4</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">bit 0–1 = fault high-side output</td>
+</tr>
+<tr>
+<td style="text-align: center;">2–3</td>
+<td style="text-align: left;">status output yang benar-benar aktif</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">bit 0 = failsafe aktif, bit 1 = bitrate sudah terkunci</td>
+</tr>
+<tr>
+<td style="text-align: center;">5–6</td>
+<td style="text-align: left;">uptime dalam detik</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">versi firmware dan nomor node</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frame frekuensi</strong> (<code>0x644</code>) berisi empat nilai <code>uint16</code> dalam satuan 0,1 Hz —
+kalikan <code>0.1</code> untuk mendapatkan Hz.</p>
+<h2 id="memakai-dua-modul">Memakai Dua Modul<a class="headerlink" href="#memakai-dua-modul" title="Permanent link">&para;</a></h2>
+<p>Satu bus bisa memuat sampai <strong>empat</strong> modul. Tiap modul harus memakai nomor node
+berbeda, yang ditentukan saat firmware di-flash. Nomor node menggeser blok CAN
+ID-nya:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Node</th>
+<th style="text-align: left;">Blok CAN ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;"><code>0x640</code>–<code>0x64F</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><code>0x650</code>–<code>0x65F</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><code>0x660</code>–<code>0x66F</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><code>0x670</code>–<code>0x67F</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gejala</th>
+<th style="text-align: left;">Penyebab yang paling sering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Modul tidak pernah mengunci bitrate</td>
+<td style="text-align: left;">CAN H dan CAN L tertukar, terminasi kurang, atau tidak ada perangkat lain yang mengirim di bus — modul mengunci pada frame valid pertama, jadi bus yang sepi tidak akan pernah terkunci</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bus terkunci, tetapi dash tidak menampilkan apa-apa</td>
+<td style="text-align: left;">CAN ID di dash tidak sama dengan blok node modul</td>
+</tr>
+<tr>
+<td style="text-align: left;">Output tidak mau menyala</td>
+<td style="text-align: left;">Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4 atau LC5 tidak bekerja</td>
+<td style="text-align: left;">Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tegangan aki terbaca meleset</td>
+<td style="text-align: left;">Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch input tidak terbaca</td>
+<td style="text-align: left;">Pin itu masih difungsikan sebagai analog input, bukan switch input</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../wbo-can-controller/" class="btn btn-neutral float-left" title="WBO CAN Controller"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../persiapan-sensor-wiring/" class="btn btn-neutral float-right" title="Persiapan">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../wbo-can-controller/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../persiapan-sensor-wiring/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

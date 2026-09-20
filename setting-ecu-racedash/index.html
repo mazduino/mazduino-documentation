@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/setting-ecu-racedash/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Konfigurasi ECU - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Konfigurasi ECU";
+        var mkdocs_page_input_path = "setting-ecu-racedash.md";
+        var mkdocs_page_url = "/setting-ecu-racedash/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Racedash</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Konfigurasi ECU</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#tiga-hal-yang-menentukan-berhasil-atau-tidak">Tiga hal yang menentukan berhasil atau tidak</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ringkasan-per-ecu">Ringkasan per ECU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rusefi">rusEFI</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#haltech">Haltech</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maxxecu">MaxxECU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#aracer">aRacer</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ecumaster-emu-black">ECUMASTER EMU Black</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#link-g4-g4x-g5">Link G4+ / G4X / G5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#obd-ii-ecu-standar-bawaan-mobil">OBD-II (ECU standar bawaan mobil)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#speeduino">Speeduino</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ecu-yang-tidak-ada-di-daftar">ECU yang tidak ada di daftar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kalau-dash-tidak-menampilkan-data">Kalau dash tidak menampilkan data</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dash Display</li>
+          <li class="breadcrumb-item">Mazduino Racedash</li>
+      <li class="breadcrumb-item active">Konfigurasi ECU</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:11:32 UTC">20 September 2026</span></em></p>
+  <h1 id="konfigurasi-ecu-untuk-racedash">Konfigurasi ECU untuk Racedash<a class="headerlink" href="#konfigurasi-ecu-untuk-racedash" title="Permanent link">&para;</a></h1>
+<p>Halaman ini membahas sisi <strong>ECU</strong>-nya: apa yang harus diaktifkan di ECU supaya
+datanya sampai ke dash. Untuk pengaturan dash-nya sendiri, lihat
+<a href="../mazduino-racedash/">Racedash 3.5" &amp; 4"</a> atau
+<a href="../mazduino-racedash-pro/">Racedash Pro</a>.</p>
+<h2 id="tiga-hal-yang-menentukan-berhasil-atau-tidak">Tiga hal yang menentukan berhasil atau tidak<a class="headerlink" href="#tiga-hal-yang-menentukan-berhasil-atau-tidak" title="Permanent link">&para;</a></h2>
+<p><strong>1. Dash hanya mendengarkan.</strong> Racedash tidak mengirim apa pun ke bus CAN —
+ia menunggu ECU mem-broadcast datanya. Jadi kalau broadcast (dash stream) di
+ECU belum diaktifkan, dash tidak akan menampilkan apa-apa meskipun kabelnya
+benar. Satu-satunya pengecualian adalah OBD-II, yang memang harus bertanya
+lebih dulu.</p>
+<p><strong>2. Kecepatan CAN ditentukan oleh tipe ECU yang dipilih, bukan oleh Anda.</strong>
+Begitu tipe ECU dipilih, dash otomatis memakai kecepatan protokol itu dan
+kecepatan tersebut tidak bisa diubah sendiri. Kalau ECU Anda diatur di
+kecepatan yang berbeda, <strong>dash tidak menerima satu frame pun</strong> — layarnya
+kosong, bukan salah nilai. Satu-satunya pengecualian adalah mode <strong>Custom</strong>
+pada Racedash 3.5"/4", di mana kecepatannya memang Anda yang pilih.</p>
+<p><strong>3. Tipe ECU di dash harus cocok dengan yang dikirim ECU.</strong> Frame Haltech
+yang dibaca dengan profil rusEFI tidak akan menghasilkan data yang benar.</p>
+<h2 id="ringkasan-per-ecu">Ringkasan per ECU<a class="headerlink" href="#ringkasan-per-ecu" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ECU</th>
+<th style="text-align: center;">Racedash 3.5" &amp; 4"</th>
+<th style="text-align: center;">Racedash Pro M4/M5/M7</th>
+<th style="text-align: left;">Kecepatan</th>
+<th style="text-align: left;">ID frame</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rusEFI</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;">500 kbps</td>
+<td style="text-align: left;"><code>0x200</code>–<code>0x209</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Haltech</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;"><strong>1 Mbps</strong></td>
+<td style="text-align: left;"><code>0x360</code>–<code>0x3E4</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxxECU</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;">500 kbps</td>
+<td style="text-align: left;"><code>0x500</code>–<code>0x5FF</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">aRacer</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: left;"><strong>250 kbps</strong></td>
+<td style="text-align: left;"><code>0x2D0</code>–<code>0x2D3</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">ECUMASTER EMU Black</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;"><strong>1 Mbps</strong></td>
+<td style="text-align: left;"><code>0x600</code>–<code>0x607</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Link G4+/G4X/G5</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">Ya (eksperimental)</td>
+<td style="text-align: left;"><strong>1 Mbps</strong></td>
+<td style="text-align: left;"><code>0x3E8</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">OBD-II (ECU standar)</td>
+<td style="text-align: center;">Firmware generik saja</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;">500 kbps</td>
+<td style="text-align: left;"><code>0x7DF</code> / <code>0x7E8</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Speeduino</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: center;">Ya</td>
+<td style="text-align: left;">Serial 115200</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p>Pada <strong>Racedash Pro</strong>, tipe ECU dipilih dari DashTune atau menu di layar tanpa
+ganti firmware. Pada <strong>Racedash 3.5"/4"</strong>, tipe ECU melekat pada firmware yang
+terpasang — menggantinya berarti mem-flash image protokol lain, yang bisa
+dilakukan lewat DashTune.</p>
+<hr />
+<h2 id="rusefi">rusEFI<a class="headerlink" href="#rusefi" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Kecepatan CAN:</strong> 500 kbps</li>
+<li><strong>Yang harus aktif di ECU:</strong> CAN bus menyala, dan <strong>broadcast (verbose) CAN</strong>
+  diaktifkan dengan <strong>base address <code>0x200</code></strong> (512 desimal) — itu nilai bawaan
+  rusEFI</li>
+<li><strong>Frame yang dibaca dash:</strong> <code>0x200</code> sampai <code>0x209</code></li>
+</ul>
+<p>Di TunerStudio, pengaturannya ada di bagian CAN bus. Nama menunya berbeda-beda
+antar versi rusEFI, tetapi yang harus benar selalu sama: CAN aktif, baud 500
+kbps, broadcast/verbose menyala, base address <code>0x200</code>.</p>
+<p>Racedash 3.5"/4" juga membaca frame bench test rusEFI, sehingga fitur bench
+test di dash hanya tersedia pada ECU rusEFI.</p>
+<h2 id="haltech">Haltech<a class="headerlink" href="#haltech" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong> — ini yang paling sering terlewat</li>
+<li><strong>Yang harus aktif di ECU:</strong> broadcast standar Haltech (Haltech Broadcast
+  Protocol). Pada Elite/Nexus ini menyala secara bawaan</li>
+<li><strong>Frame yang dibaca dash:</strong> <code>0x360</code>–<code>0x373</code> dan <code>0x3E0</code>–<code>0x3E4</code></li>
+</ul>
+<p>Haltech adalah satu-satunya protokol yang mengirim data <strong>lampu sein, rem
+tangan, dan tekanan ban</strong>, jadi hanya di Haltech ketiga indikator itu bisa
+menyala. Pada ECU lain ketiganya memang tidak akan aktif — bukan kerusakan.</p>
+<h2 id="maxxecu">MaxxECU<a class="headerlink" href="#maxxecu" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Kecepatan CAN:</strong> 500 kbps</li>
+<li><strong>Yang harus aktif di ECU:</strong> protokol CAN bawaan MaxxECU (MaxxECU default /
+  CAN dash output)</li>
+<li><strong>Frame yang dibaca dash:</strong> seluruh rentang <code>0x500</code>–<code>0x5FF</code></li>
+</ul>
+<p>Kalau ECU Anda memakai User Channel untuk sensor tambahan, channel itu bisa
+ditampilkan lewat Custom Channel — lihat <a href="#ecu-yang-tidak-ada-di-daftar">bagian Custom</a>.</p>
+<h2 id="aracer">aRacer<a class="headerlink" href="#aracer" title="Permanent link">&para;</a></h2>
+<p><strong>Hanya untuk Racedash 3.5" dan 4".</strong> Racedash Pro tidak punya profil aRacer.</p>
+<ul>
+<li><strong>Kecepatan CAN:</strong> <strong>250 kbps</strong></li>
+<li><strong>Frame yang dibaca dash:</strong> <code>0x2D0</code>–<code>0x2D3</code></li>
+</ul>
+<p>aRacer hanya mengirim kecepatan roda per gardan, sehingga channel roda kanan
+depan dan kanan belakang memang tidak terisi.</p>
+<h2 id="ecumaster-emu-black">ECUMASTER EMU Black<a class="headerlink" href="#ecumaster-emu-black" title="Permanent link">&para;</a></h2>
+<p><strong>Hanya untuk Racedash Pro.</strong></p>
+<ul>
+<li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong> — nilai bawaan EMU Black</li>
+<li><strong>Yang harus aktif di ECU:</strong> "EMU stream" dengan <strong>base ID <code>0x600</code></strong> (bawaan
+  software EMU)</li>
+<li><strong>Frame yang dibaca dash:</strong> <code>0x600</code>–<code>0x607</code></li>
+</ul>
+<p>EMU Black bisa diatur ke 500 kbps, tetapi dash membaca profil ini <strong>hanya pada
+1 Mbps</strong>. Kalau ECU Anda terlanjur diatur 500 kbps, kembalikan ke 1 Mbps.</p>
+<h2 id="link-g4-g4x-g5">Link G4+ / G4X / G5<a class="headerlink" href="#link-g4-g4x-g5" title="Permanent link">&para;</a></h2>
+<p><strong>Hanya untuk Racedash Pro, dan statusnya masih eksperimental.</strong></p>
+<ul>
+<li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong></li>
+<li><strong>Yang harus aktif di ECU:</strong> stream <strong>Generic Dash</strong> di PCLink, dan
+  transmisinya harus dinyalakan sendiri — tidak aktif secara bawaan</li>
+<li><strong>Frame yang dibaca dash:</strong> semuanya di satu ID, <code>0x3E8</code> (1000 desimal),
+  dengan nomor frame di dua byte pertama</li>
+</ul>
+<h2 id="obd-ii-ecu-standar-bawaan-mobil">OBD-II (ECU standar bawaan mobil)<a class="headerlink" href="#obd-ii-ecu-standar-bawaan-mobil" title="Permanent link">&para;</a></h2>
+<p>Tidak ada yang perlu diatur di mobil — dash yang bertanya. Yang perlu
+dipastikan justru mobilnya memang mendukung: hanya <strong>OBD-II di atas CAN
+(ISO 15765-4, identifier 11-bit, 500 kbps)</strong> yang bisa dibaca, dan data yang
+muncul bergantung pada PID yang dijawab mobil Anda.</p>
+<p>Baca <a href="../mazduino-racedash-pro/#batasan-obd-ii">batasan OBD-II</a> sebelum
+mengandalkan mode ini.</p>
+<p>Pada Racedash 3.5"/4", OBD-II hanya ada di firmware generik, tidak pada
+firmware yang terkunci ke satu ECU.</p>
+<h2 id="speeduino">Speeduino<a class="headerlink" href="#speeduino" title="Permanent link">&para;</a></h2>
+<p>Speeduino tidak punya CAN, jadi sambungannya lewat <strong>serial</strong>: pin TX/RX dash
+ke secondary serial Speeduino, dengan ground yang sama.</p>
+<ul>
+<li><strong>Kecepatan:</strong> 115200 baud</li>
+<li><strong>Yang harus aktif di ECU:</strong> <strong>Secondary Serial</strong> dinyalakan</li>
+<li><strong>Protokol secondary serial:</strong> <strong><code>Generic (Fixed List)</code></strong></li>
+</ul>
+<p>Pilihan protokol itu yang paling sering salah, dan salahnya sulit dikenali:</p>
+<blockquote>
+<p>Kalau dipilih <strong><code>Generic (ini File)</code></strong>, sambungannya tetap "jalan" — panjang
+datanya benar, tidak ada error, tetapi <strong>semua nilainya salah</strong> karena
+byte order-nya berbeda.</p>
+</blockquote>
+<p>Catatan versi firmware Speeduino:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rilis Speeduino</th>
+<th style="text-align: left;">Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">202402 ke atas</td>
+<td style="text-align: left;">Ada pilihan protokol — pilih <strong>Generic (Fixed List)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">202310</td>
+<td style="text-align: left;">Selalu mengirim urutan ini File, <strong>tidak bisa dipakai</strong> dengan dash ini</td>
+</tr>
+<tr>
+<td style="text-align: left;">202305 ke bawah</td>
+<td style="text-align: left;">Selalu mengirim fixed list, langsung cocok</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ecu-yang-tidak-ada-di-daftar">ECU yang tidak ada di daftar<a class="headerlink" href="#ecu-yang-tidak-ada-di-daftar" title="Permanent link">&para;</a></h2>
+<p>Kalau ECU Anda mem-broadcast data lewat CAN tetapi protokolnya tidak ada di
+daftar di atas, datanya masih bisa ditampilkan dengan memetakan sendiri CAN ID,
+posisi byte, dan skalanya:</p>
+<ul>
+<li><strong>Racedash 3.5"/4"</strong> — pilih protokol <strong>Custom</strong>, lalu susun petanya lewat
+  DashTune. Hanya pada mode inilah kecepatan CAN bisa Anda pilih sendiri
+  (125 kbps, 250 kbps, 500 kbps, atau 1 Mbps)</li>
+<li><strong>Racedash Pro</strong> — pakai <strong>Custom Channel</strong> di DashTune. Kanal custom di sini
+  menumpang pada protokol yang sedang aktif, jadi kecepatannya tetap mengikuti
+  protokol tersebut</li>
+</ul>
+<p>Cara ini juga berguna untuk channel tambahan pada ECU yang sudah didukung,
+misalnya User Channel MaxxECU atau output CAN cadangan rusEFI.</p>
+<p>Kalau data yang Anda inginkan memang tidak diketahui ECU sama sekali — saklar
+lampu, sensor tambahan, atau sensor kecepatan roda — data itu bisa dimasukkan ke
+bus dengan <a href="../can-io-extender/">CAN IO Extender</a>.</p>
+<h2 id="kalau-dash-tidak-menampilkan-data">Kalau dash tidak menampilkan data<a class="headerlink" href="#kalau-dash-tidak-menampilkan-data" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gejala</th>
+<th style="text-align: left;">Penyebab yang paling sering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Sama sekali tidak ada data</td>
+<td style="text-align: left;">Kecepatan CAN tidak cocok, CANH/CANL tertukar, atau broadcast di ECU belum diaktifkan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sama sekali tidak ada data, kecepatan sudah benar</td>
+<td style="text-align: left;">Terminasi bus: sebuah bus CAN perlu tepat <strong>dua</strong> resistor 120 Ω</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sebagian channel kosong terus</td>
+<td style="text-align: left;">Memang tidak dikirim ECU itu. Setiap ECU punya kumpulan channel berbeda</td>
+</tr>
+<tr>
+<td style="text-align: left;">Data muncul tetapi nilainya aneh</td>
+<td style="text-align: left;">Tipe ECU di dash tidak cocok dengan ECU sebenarnya. Pada Speeduino, hampir selalu karena protokol secondary serial-nya <code>Generic (ini File)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Data sempat muncul lalu hilang</td>
+<td style="text-align: left;">Kabel/ground, atau ECU berhenti broadcast</td>
+</tr>
+</tbody>
+</table>
+<p>Pastikan juga <strong>ground dash dan ground ECU tersambung</strong>. CAN memerlukan acuan
+tegangan yang sama di kedua ujungnya.</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-left" title="Pro / M4, M5, M7 (4.3", 5" & 7")"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../wbo-can-controller/" class="btn btn-neutral float-right" title="WBO CAN Controller">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../wbo-can-controller/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

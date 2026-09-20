@@ -175,12 +175,16 @@
     </li>
     </ul>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
     </ul>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Aksesori</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
@@ -275,7 +279,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 September 2026 07:13:15 UTC">2 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:11:32 UTC">20 September 2026</span></em></p>
   <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></p>
@@ -440,6 +444,10 @@ beserta dudukannya, dan tampak samping</em></p>
 <p>Tipe ECU dipilih dari aplikasi DashTune atau dari menu di layar, dan <strong>tidak
 perlu ganti firmware</strong>. Kecepatan CAN mengikuti ECU yang dipilih secara
 otomatis.</p>
+<p>Selain rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II di tabel ini, Racedash
+Pro juga mendukung <strong>ECUMASTER EMU Black</strong> dan <strong>Link Generic Dash</strong>. Apa yang
+harus diaktifkan di masing-masing ECU dibahas di
+<a href="../setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a>.</p>
 <p>Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
 AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
 gigi, kadar etanol, dan tegangan aki.</p>
@@ -660,6 +668,9 @@ kembali.</p>
 </table>
 <p>Semua lampu ikut padam kalau sambungan ke ECU terputus, jadi tidak ada lampu
 yang menyala terus setelah kunci kontak dimatikan.</p>
+<p>Untuk ECU selain Haltech, lampu sein, rem tangan, lampu jauh, dan lampu kota
+tetap bisa dinyalakan dari saklar kendaraan dengan menambahkan
+<a href="../can-io-extender/">CAN IO Extender</a>.</p>
 <hr />
 <h2 id="panduan-aplikasi-dashtune">Panduan Aplikasi DashTune<a class="headerlink" href="#panduan-aplikasi-dashtune" title="Permanent link">&para;</a></h2>
 <p>DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
@@ -821,7 +832,7 @@ menunya berbeda — lihat
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../mazduino-racedash/" class="btn btn-neutral float-left" title="3.5" & 4""><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../wbo-can-controller/" class="btn btn-neutral float-right" title="WBO CAN Controller">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-right" title="Konfigurasi ECU">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -847,7 +858,7 @@ menunya berbeda — lihat
       <span><a href="../mazduino-racedash/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../wbo-can-controller/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
