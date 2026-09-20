@@ -25,12 +25,6 @@ kebutuhan kendaraan.
 Tujuh output tersedia sekaligus di konektor utama; dua lagi berbagi pin dengan
 logic output.
 
-!!! warning "Periksa dulu sebelum memakai di bus Haltech"
-    Board versi sekarang memakai crystal **8 MHz**, sehingga bitrate CAN
-    maksimalnya **500 kbps**. Bus **Haltech berjalan di 1 Mbps**, jadi modul ini
-    **tidak bisa bergabung ke bus Haltech** apa adanya. Bus rusEFI, MaxxECU,
-    OBD-II (500 kbps), dan aRacer (250 kbps) tidak terpengaruh.
-
 ## Daya, CAN, dan Terminasi
 
 | Pin konektor | Fungsi |
@@ -200,7 +194,6 @@ ID-nya:
 | :--- | :--- |
 | Modul tidak pernah mengunci bitrate | CAN H dan CAN L tertukar, terminasi kurang, atau tidak ada perangkat lain yang mengirim di bus — modul mengunci pada frame valid pertama, jadi bus yang sepi tidak akan pernah terkunci |
 | Bus terkunci, tetapi dash tidak menampilkan apa-apa | CAN ID di dash tidak sama dengan blok node modul |
-| Bus Haltech tidak pernah terkunci | Memang tidak didukung dengan crystal 8 MHz — lihat peringatan di awal halaman |
 | Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe |
 | LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
 | Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware |
