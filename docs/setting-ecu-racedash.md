@@ -8,8 +8,8 @@ datanya sampai ke dash. Untuk pengaturan dash-nya sendiri, lihat
 ## Tiga hal yang menentukan berhasil atau tidak
 
 **1. Dash hanya mendengarkan.** Racedash tidak mengirim apa pun ke bus CAN —
-ia menunggu ECU menyiarkan datanya. Jadi kalau di ECU tidak ada broadcast/dash
-stream yang diaktifkan, dash tidak akan menampilkan apa-apa meskipun kabelnya
+ia menunggu ECU mem-broadcast datanya. Jadi kalau broadcast (dash stream) di
+ECU belum diaktifkan, dash tidak akan menampilkan apa-apa meskipun kabelnya
 benar. Satu-satunya pengecualian adalah OBD-II, yang memang harus bertanya
 lebih dulu.
 
@@ -76,7 +76,7 @@ menyala. Pada ECU lain ketiganya memang tidak akan aktif — bukan kerusakan.
   CAN dash output)
 - **Frame yang dibaca dash:** seluruh rentang `0x500`–`0x5FF`
 
-Kalau ECU Anda memakai User Channel untuk sensor tambahan, kanalnya bisa
+Kalau ECU Anda memakai User Channel untuk sensor tambahan, channel itu bisa
 ditampilkan lewat Custom Channel — lihat [bagian Custom](#ecu-yang-tidak-ada-di-daftar).
 
 ## aRacer
@@ -86,7 +86,7 @@ ditampilkan lewat Custom Channel — lihat [bagian Custom](#ecu-yang-tidak-ada-d
 - **Kecepatan CAN:** **250 kbps**
 - **Frame yang dibaca dash:** `0x2D0`–`0x2D3`
 
-aRacer hanya mengirim kecepatan roda per gardan, sehingga kanal roda kanan
+aRacer hanya mengirim kecepatan roda per gardan, sehingga channel roda kanan
 depan dan kanan belakang memang tidak terisi.
 
 ## ECUMASTER EMU Black
@@ -137,7 +137,7 @@ Pilihan protokol itu yang paling sering salah, dan salahnya sulit dikenali:
 
 > Kalau dipilih **`Generic (ini File)`**, sambungannya tetap "jalan" — panjang
 > datanya benar, tidak ada error, tetapi **semua nilainya salah** karena
-> urutan byte-nya berbeda.
+> byte order-nya berbeda.
 
 Catatan versi firmware Speeduino:
 
@@ -154,7 +154,7 @@ keduanya memakai UART yang sama.
 
 ## ECU yang tidak ada di daftar
 
-Kalau ECU Anda menyiarkan data lewat CAN tetapi protokolnya tidak ada di
+Kalau ECU Anda mem-broadcast data lewat CAN tetapi protokolnya tidak ada di
 daftar di atas, datanya masih bisa ditampilkan dengan memetakan sendiri CAN ID,
 posisi byte, dan skalanya:
 
@@ -165,7 +165,7 @@ posisi byte, dan skalanya:
   menumpang pada protokol yang sedang aktif, jadi kecepatannya tetap mengikuti
   protokol tersebut
 
-Cara ini juga berguna untuk kanal tambahan pada ECU yang sudah didukung,
+Cara ini juga berguna untuk channel tambahan pada ECU yang sudah didukung,
 misalnya User Channel MaxxECU atau output CAN cadangan rusEFI.
 
 ## Kalau dash tidak menampilkan data
@@ -174,7 +174,7 @@ misalnya User Channel MaxxECU atau output CAN cadangan rusEFI.
 | :--- | :--- |
 | Sama sekali tidak ada data | Kecepatan CAN tidak cocok, CANH/CANL tertukar, atau broadcast di ECU belum diaktifkan |
 | Sama sekali tidak ada data, kecepatan sudah benar | Terminasi bus: sebuah bus CAN perlu tepat **dua** resistor 120 Ω |
-| Sebagian kanal kosong terus | Memang tidak dikirim ECU itu. Setiap ECU punya kumpulan kanal berbeda |
+| Sebagian channel kosong terus | Memang tidak dikirim ECU itu. Setiap ECU punya kumpulan channel berbeda |
 | Data muncul tetapi nilainya aneh | Tipe ECU di dash tidak cocok dengan ECU sebenarnya. Pada Speeduino, hampir selalu karena protokol secondary serial-nya `Generic (ini File)` |
 | Data sempat muncul lalu hilang | Kabel/ground, atau ECU berhenti broadcast |
 
