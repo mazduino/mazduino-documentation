@@ -103,9 +103,7 @@ EMU Black bisa diatur ke 500 kbps, tetapi dash membaca profil ini **hanya pada
 
 ## Link G4+ / G4X / G5
 
-**Hanya untuk Racedash Pro, dan statusnya masih eksperimental.** Susunan
-byte-nya disusun dari sumber publik, belum diverifikasi terhadap ECU Link
-asli, jadi sebagian nilai bisa saja tidak tepat.
+**Hanya untuk Racedash Pro, dan statusnya masih eksperimental.**
 
 - **Kecepatan CAN:** **1 Mbps**
 - **Yang harus aktif di ECU:** stream **Generic Dash** di PCLink, dan
