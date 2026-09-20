@@ -147,9 +147,6 @@ Catatan versi firmware Speeduino:
 | 202310 | Selalu mengirim urutan ini File, **tidak bisa dipakai** dengan dash ini |
 | 202305 ke bawah | Selalu mengirim fixed list, langsung cocok |
 
-Pada Racedash Pro, memilih Speeduino otomatis mematikan modul GPS karena
-keduanya memakai UART yang sama.
-
 ---
 
 ## ECU yang tidak ada di daftar
