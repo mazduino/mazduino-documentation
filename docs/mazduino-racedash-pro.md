@@ -315,6 +315,10 @@ Lampu-lampu peringatan menyala otomatis:
 Semua lampu ikut padam kalau sambungan ke ECU terputus, jadi tidak ada lampu
 yang menyala terus setelah kunci kontak dimatikan.
 
+Untuk ECU selain Haltech, lampu sein, rem tangan, lampu jauh, dan lampu kota
+tetap bisa dinyalakan dari saklar kendaraan dengan menambahkan
+[CAN IO Extender](can-io-extender.md).
+
 ---
 
 ## Panduan Aplikasi DashTune

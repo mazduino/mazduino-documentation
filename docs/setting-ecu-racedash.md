@@ -165,6 +165,10 @@ posisi byte, dan skalanya:
 Cara ini juga berguna untuk channel tambahan pada ECU yang sudah didukung,
 misalnya User Channel MaxxECU atau output CAN cadangan rusEFI.
 
+Kalau data yang Anda inginkan memang tidak diketahui ECU sama sekali — saklar
+lampu, sensor tambahan, atau sensor kecepatan roda — data itu bisa dimasukkan ke
+bus dengan [CAN IO Extender](can-io-extender.md).
+
 ## Kalau dash tidak menampilkan data
 
 | Gejala | Penyebab yang paling sering |

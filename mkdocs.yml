@@ -36,6 +36,7 @@ nav:
           - Konfigurasi ECU: setting-ecu-racedash.md
   - Aksesori:
       - WBO CAN Controller: wbo-can-controller.md
+      - CAN IO Extender: can-io-extender.md
   - Sensor dan Wiring: 
     - Persiapan: persiapan-sensor-wiring.md
     - Rekomendasi Ukuran Kabel: rekomendasi-ukuran-kabel.md
