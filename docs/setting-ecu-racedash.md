@@ -1,4 +1,4 @@
-# Setting ECU agar Terbaca Racedash
+# Konfigurasi ECU untuk Racedash
 
 Halaman ini membahas sisi **ECU**-nya: apa yang harus diaktifkan di ECU supaya
 datanya sampai ke dash. Untuk pengaturan dash-nya sendiri, lihat

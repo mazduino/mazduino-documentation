@@ -19,7 +19,7 @@ Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, se
 
 > **Sisi ECU juga harus diatur.** Dash hanya mendengarkan — ECU yang harus
 > menyiarkan datanya, pada kecepatan CAN yang tepat. Lihat
-> [Setting ECU agar Terbaca Racedash](setting-ecu-racedash.md).
+> [Konfigurasi ECU untuk Racedash](setting-ecu-racedash.md).
 
 ## Custom Splash Screen
 

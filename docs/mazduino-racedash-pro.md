@@ -119,7 +119,7 @@ otomatis.
 Selain rusEFI, Haltech, MaxxECU, Speeduino, dan OBD-II di tabel ini, Racedash
 Pro juga mendukung **ECUMASTER EMU Black** dan **Link Generic Dash**. Apa yang
 harus diaktifkan di masing-masing ECU dibahas di
-[Setting ECU agar Terbaca Racedash](setting-ecu-racedash.md).
+[Konfigurasi ECU untuk Racedash](setting-ecu-racedash.md).
 
 Data yang tampil di semua ECU: RPM, MAP, TPS, timing pengapian, duty injektor,
 AFR/lambda, tekanan dan suhu (air, oli, bahan bakar, udara masuk), EGT 1–4,
