@@ -17,6 +17,10 @@ Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, se
 - Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan
 - Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis **Speeduino** wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
 
+> **Sisi ECU juga harus diatur.** Dash hanya mendengarkan — ECU yang harus
+> menyiarkan datanya, pada kecepatan CAN yang tepat. Lihat
+> [Setting ECU agar Terbaca Racedash](setting-ecu-racedash.md).
+
 ## Custom Splash Screen
 
 Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui **Splash Screen Generator** dan diunggah ke Racedash melalui WiFi.
