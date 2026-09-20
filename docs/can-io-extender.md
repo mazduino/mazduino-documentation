@@ -10,20 +10,20 @@ dash. Sebaliknya, dash juga bisa menyalakan output modul ini untuk menggerakkan
 relay, pompa, kipas, atau solenoid.
 
 Modul bekerja mandiri: bitrate bus dideteksi sendiri, dan tidak ada yang perlu
-diatur lewat aplikasi. Semua pemilihan fungsi pin dilakukan lewat **jumper** di
-board.
+diatur lewat aplikasi. Fungsi tiap pin ditentukan saat pemasangan, sesuai
+kebutuhan kendaraan.
 
 | Kemampuan | Jumlah | Keterangan |
 | :--- | :---: | :--- |
-| Analog input | 11 | A0 dipakai untuk tegangan aki; A1–A2 punya pull-up 2k7 untuk sensor NTC |
-| Switch input 12 V | 4 | SW1–SW4, berbagi pin dengan A3–A6 lewat jumper |
-| Hall / frequency input | 4 | HALL1–HALL4, berbagi pin dengan A7–A10 lewat jumper |
-| Low-side output | 5 + 2 | LC1–LC5 arus kecil, LS1–LS2 arus besar |
+| Analog input | 11 | Satu dipakai untuk tegangan aki; dua di antaranya sudah ber-pull-up untuk sensor NTC |
+| Switch input 12 V | 4 | Berbagi pin dengan sebagian analog input |
+| Hall / frequency input | 4 | Berbagi pin dengan sebagian analog input |
+| Low-side output | 5 + 2 | Lima arus kecil, dua arus besar |
 | High-side output | 2 | Mendukung PWM dan melaporkan fault |
-| Logic output | 2 | Push-pull, 5 V atau 12 V lewat jumper |
+| Logic output | 2 | Output sinyal 5 V atau 12 V |
 
 Tujuh output tersedia sekaligus di konektor utama; dua lagi berbagi pin dengan
-logic output lewat jumper J14/J15.
+logic output.
 
 !!! warning "Periksa dulu sebelum memakai di bus Haltech"
     Board versi sekarang memakai crystal **8 MHz**, sehingga bitrate CAN
@@ -42,28 +42,31 @@ logic output lewat jumper J14/J15.
 
 Tersedia juga header CAN + daya 4 pin terpisah (J12) sebagai alternatif.
 
-**Terminasi:** jumper **J1** memasang resistor 120 Ω di board. Pasang **hanya
-kalau modul ini berada di salah satu ujung bus**. Sebuah bus CAN perlu tepat dua
-terminator, dan menambah yang ketiga akan membuat komunikasi gagal.
+**Terminasi:** modul menyediakan resistor 120 Ω yang bisa diaktifkan di board.
+Aktifkan **hanya kalau modul ini berada di salah satu ujung bus**. Sebuah bus
+CAN perlu tepat dua terminator, dan menambah yang ketiga akan membuat
+komunikasi gagal.
 
 ## Input
 
-Setiap pin input bisa dipakai sebagai **analog atau digital**, dipilih lewat
-jumper: hubungkan pin 2–1 untuk analog, pin 2–3 untuk digital.
+Delapan pin input bisa dipilih fungsinya, dan dua pin lagi khusus analog.
 
-| Pin konektor | Jumper | Analog | Digital |
-| :--- | :--- | :--- | :--- |
-| J2-9 | J8 | A3 | SW1 |
-| J2-8 | J9 | A4 | SW2 |
-| J2-7 | J10 | A5 | SW3 |
-| J2-6 | J11 | A6 | SW4 |
-| J2-5 | J3 | A7 | HALL1 |
-| J2-4 | J4 | A8 | HALL2 |
-| J2-3 | J5 | A9 | HALL3 |
-| J2-2 | J6 | A10 | HALL4 |
+| Pin konektor | Dapat difungsikan sebagai |
+| :--- | :--- |
+| J2-9 | Analog input (A3) **atau** switch input 12 V (SW1) |
+| J2-8 | Analog input (A4) **atau** switch input 12 V (SW2) |
+| J2-7 | Analog input (A5) **atau** switch input 12 V (SW3) |
+| J2-6 | Analog input (A6) **atau** switch input 12 V (SW4) |
+| J2-5 | Analog input (A7) **atau** Hall / frequency input (HALL1) |
+| J2-4 | Analog input (A8) **atau** Hall / frequency input (HALL2) |
+| J2-3 | Analog input (A9) **atau** Hall / frequency input (HALL3) |
+| J2-2 | Analog input (A10) **atau** Hall / frequency input (HALL4) |
+| J2-11 | Analog input (A1), sudah ber-pull-up untuk sensor NTC |
+| J2-10 | Analog input (A2), sudah ber-pull-up untuk sensor NTC |
 
-J2-10 dan J2-11 hanya analog (A2 dan A1) dan sudah dilengkapi pull-up 2k7 —
-inilah yang dibutuhkan sensor NTC seperti sensor suhu air atau suhu udara masuk.
+Pull-up pada J2-10 dan J2-11 adalah yang dibutuhkan sensor NTC, seperti sensor
+suhu air atau suhu udara masuk. Sensor yang mengeluarkan tegangan 0–5 V sendiri
+— misalnya sensor tekanan — dipasang di pin analog mana pun.
 
 **SW1–SW4 menerima 12 V langsung.** Gunakan untuk apa pun yang disaklar oleh
 12 V kendaraan: lampu sein, lampu jauh, lampu rem, rem tangan.
@@ -79,8 +82,8 @@ flow meter.
 | LC1 | J2-23 | Low-side, arus kecil | |
 | LC2 | J2-22 | Low-side, arus kecil | |
 | LC3 | J2-20 | Low-side, arus kecil | |
-| LC4 | J2-19 | Low-side, arus kecil | Berbagi pin dengan LOGIC1 lewat J14 |
-| LC5 | J2-17 | Low-side, arus kecil | Berbagi pin dengan LOGIC2 lewat J15 |
+| LC4 | J2-19 | Low-side, arus kecil | Pin ini dipakai untuk LC4 **atau** LOGIC1 |
+| LC5 | J2-17 | Low-side, arus kecil | Pin ini dipakai untuk LC5 **atau** LOGIC2 |
 | LS1 | J2-15 | Low-side, arus besar | |
 | LS2 | J2-16 | Low-side, arus besar | |
 | HS1 | J2-21 | **High-side** | Mendukung PWM, melaporkan fault |
@@ -94,7 +97,8 @@ ground. Tertukar berarti beban tidak akan bekerja.
 Hanya **HS1 dan HS2** yang menerima nilai PWM; output lain hanya on/off.
 
 **Logic output** (LOGIC1 dan LOGIC2) adalah output sinyal, bukan driver coil.
-Jumper **J13** menentukan tegangannya: pin 2–1 untuk 12 V, pin 2–3 untuk 5 V.
+Tegangannya bisa dipilih **5 V atau 12 V** saat pemasangan. Keduanya memakai pin
+yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.
 
 !!! danger "Output mati sendiri kalau perintah berhenti"
     Semua output dimatikan bila perintah dari dash tidak diterima selama
@@ -120,9 +124,8 @@ Di DashTune, buka pengaturan indikator, pilih mode **CAN**, lalu isi:
 | Head light | `0x643` | 0 | 4 | J2-5 |
 | Park light | `0x643` | 0 | 5 | J2-4 |
 
-Pastikan jumper pin tersebut diset ke posisi **digital**, dan biarkan pilihan
-**invert dalam keadaan mati** — modul sudah melaporkan 1 = aktif, termasuk untuk
-SW1–SW4 yang secara hardware aktif-rendah.
+Pastikan keenam pin itu difungsikan sebagai **switch input 12 V**, dan biarkan
+pilihan **invert dalam keadaan mati** — modul sudah melaporkan 1 = aktif.
 
 ### Nilai sensor tambahan
 
@@ -199,6 +202,6 @@ ID-nya:
 | Bus terkunci, tetapi dash tidak menampilkan apa-apa | CAN ID di dash tidak sama dengan blok node modul |
 | Bus Haltech tidak pernah terkunci | Memang tidak didukung dengan crystal 8 MHz — lihat peringatan di awal halaman |
 | Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe |
-| Output 4 atau 5 tidak bekerja | Periksa jumper J14/J15 — pin itu sedang dipakai logic output |
+| LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
 | Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware |
-| Switch input terbaca terbalik | Jumper masih di posisi analog; pindahkan ke posisi digital (pin 2–3) |
+| Switch input tidak terbaca | Pin itu masih difungsikan sebagai analog input, bukan switch input |
