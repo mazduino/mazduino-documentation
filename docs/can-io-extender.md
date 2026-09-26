@@ -105,6 +105,16 @@ yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.
 Bisa langsung dipakai tanpa ganti firmware, **bersamaan dengan protokol ECU yang
 sedang aktif**.
 
+!!! tip "CAN ID: heksadesimal atau desimal"
+    Halaman ini menulis CAN ID dalam heksadesimal, misalnya `0x643`. Beberapa
+    software, seperti rusEFI dan TunerStudio, menampilkan angka yang sama dalam
+    desimal: `0x643` = `1603`.
+
+    Di DashTune, pilih tampilannya di **Settings → Format CAN ID**. Pilihan ini
+    juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
+    ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
+    diawali `0x` selalu dibaca sebagai heksadesimal, apa pun pilihannya.
+
 ### Lampu indikator dari saklar kendaraan
 
 Di DashTune, buka pengaturan indikator, pilih mode **CAN**, lalu isi:
@@ -143,19 +153,19 @@ susun channel-nya lewat DashTune. Semua nilai **little-endian**, jadi biarkan
 pilihan **MSB first (Motorola) mati**.
 
 Kalau Anda memakai Custom CAN map untuk keperluan lain, jangan memakai CAN ID
-`0x640`–`0x67F` agar tidak bentrok dengan modul ini.
+`0x640`–`0x67F` (desimal 1600–1663) agar tidak bentrok dengan modul ini.
 
 ## Data yang Dikirim Modul
 
 CAN ID di bawah berlaku untuk modul node 0. Semua nilai **little-endian**.
 
-| CAN ID | Isi | Rate |
-| :--- | :--- | :--- |
-| `0x640` | Tegangan aki, lalu AV1, AV2, AV3 | 50 Hz |
-| `0x641` | AV4, AV5, AV6, AV7 | 50 Hz |
-| `0x642` | AV8, AV9, AV10 | 50 Hz |
-| `0x643` | Status digital input, diagnosa, status output | 50 Hz |
-| `0x644` | Frekuensi HALL1–HALL4 | 20 Hz |
+| CAN ID | Desimal | Isi | Rate |
+| :--- | :--- | :--- | :--- |
+| `0x640` | 1600 | Tegangan aki, lalu AV1, AV2, AV3 | 50 Hz |
+| `0x641` | 1601 | AV4, AV5, AV6, AV7 | 50 Hz |
+| `0x642` | 1602 | AV8, AV9, AV10 | 50 Hz |
+| `0x643` | 1603 | Status digital input, diagnosa, status output | 50 Hz |
+| `0x644` | 1604 | Frekuensi HALL1–HALL4 | 20 Hz |
 
 **Frame analog** (`0x640`–`0x642`) berisi empat nilai `uint16` berurutan, dalam
 **milivolt**. Tegangan aki sudah dikalikan faktor pembaginya, jadi angka `13800`
@@ -181,19 +191,19 @@ Satu bus bisa memuat sampai **empat** modul. Tiap modul harus memakai nomor node
 berbeda, yang ditentukan saat firmware di-flash. Nomor node menggeser blok CAN
 ID-nya:
 
-| Node | Blok CAN ID |
-| :---: | :--- |
-| 0 | `0x640`–`0x64F` |
-| 1 | `0x650`–`0x65F` |
-| 2 | `0x660`–`0x66F` |
-| 3 | `0x670`–`0x67F` |
+| Node | Blok CAN ID | Desimal |
+| :---: | :--- | :--- |
+| 0 | `0x640`–`0x64F` | 1600–1615 |
+| 1 | `0x650`–`0x65F` | 1616–1631 |
+| 2 | `0x660`–`0x66F` | 1632–1647 |
+| 3 | `0x670`–`0x67F` | 1648–1663 |
 
 ## Troubleshooting
 
 | Gejala | Penyebab yang paling sering |
 | :--- | :--- |
 | Modul tidak pernah mengunci bitrate | CAN H dan CAN L tertukar, terminasi kurang, atau tidak ada perangkat lain yang mengirim di bus — modul mengunci pada frame valid pertama, jadi bus yang sepi tidak akan pernah terkunci |
-| Bus terkunci, tetapi dash tidak menampilkan apa-apa | CAN ID di dash tidak sama dengan blok node modul |
+| Bus terkunci, tetapi dash tidak menampilkan apa-apa | CAN ID di dash tidak sama dengan blok node modul, atau CAN ID diketik dalam notasi yang salah (`643` dibaca desimal padahal yang dimaksud `0x643`) — cek **Settings → Format CAN ID** di DashTune |
 | Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe |
 | LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
 | Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware |
