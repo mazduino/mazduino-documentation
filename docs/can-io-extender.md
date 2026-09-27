@@ -264,6 +264,19 @@ Modul ini berbasis Arduino Mega 2560 dan di-flash lewat kabel USB-nya.
     Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
     mendapat daya dari USB selama proses flash.
 
+**Cara termudah: script flash.** Unduh `flash.bat` (Windows) atau `flash.sh`
+(macOS/Linux) dari halaman Releases yang sama. Script ini mengunduh firmware
+yang benar sendiri, jadi file `.hex` tidak perlu diunduh terpisah.
+
+- **Windows:** double-click `flash.bat`, lalu ketik port COM saat ditanya
+  (lihat di Device Manager, misalnya `COM5`). Untuk modul kedua dan seterusnya,
+  jalankan dari Command Prompt dengan nomor node: `flash.bat COM5 1`.
+- **macOS / Linux:** pasang `avrdude` dulu (`brew install avrdude` atau
+  `sudo apt install avrdude`), lalu jalankan `./flash.sh`. Port dicari
+  otomatis; nomor node ditulis setelah port: `./flash.sh /dev/ttyUSB0 1`.
+
+Kalau ingin flash manual:
+
 **Windows** — pakai [XLoader](https://github.com/xinabox/xLoader) atau
 [AVRDUDESS](https://github.com/ZakKemble/AVRDUDESS):
 
