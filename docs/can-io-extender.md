@@ -224,8 +224,8 @@ kalikan `0.1` untuk mendapatkan Hz.
 ## Memakai Dua Modul
 
 Satu bus bisa memuat sampai **empat** modul. Tiap modul harus memakai nomor node
-berbeda, yang ditentukan saat firmware di-flash. Nomor node menggeser blok CAN
-ID-nya:
+berbeda, yang ditentukan oleh [file firmware](#firmware) yang di-flash. Nomor
+node menggeser blok CAN ID-nya:
 
 | Node | Blok CAN ID | Desimal |
 | :---: | :--- | :--- |
@@ -233,6 +233,57 @@ ID-nya:
 | 1 | `0x650`–`0x65F` | 1616–1631 |
 | 2 | `0x660`–`0x66F` | 1632–1647 |
 | 3 | `0x670`–`0x67F` | 1648–1663 |
+
+## Firmware
+
+Modul dikirim sudah berisi firmware untuk **node 0**. Flash ulang hanya
+diperlukan untuk memperbarui firmware, atau untuk modul kedua dan seterusnya di
+bus yang sama ([Memakai Dua Modul](#memakai-dua-modul)).
+
+### Unduh
+
+Ambil file `.hex` dari
+**[github.com/mazduino/can-io-extender/releases](https://github.com/mazduino/can-io-extender/releases)**.
+Nama file menyebut nomor node-nya:
+
+| File | Dipakai untuk |
+| :--- | :--- |
+| `can-io-extender-8mhz-node0.hex` | Modul pertama (bawaan pabrik) |
+| `can-io-extender-8mhz-node1.hex` | Modul kedua |
+| `can-io-extender-8mhz-node2.hex` | Modul ketiga |
+| `can-io-extender-8mhz-node3.hex` | Modul keempat |
+
+Pakai file berakhiran `8mhz`. File `16mhz` hanya untuk board yang sudah
+dimodifikasi, dan hanya dipakai kalau tim Mazduino mengarahkan Anda ke sana.
+
+### Flash
+
+Modul ini berbasis Arduino Mega 2560 dan di-flash lewat kabel USB-nya.
+
+!!! warning "Lepas 12 V sebelum menyambungkan USB"
+    Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
+    mendapat daya dari USB selama proses flash.
+
+**Windows** — pakai [XLoader](https://github.com/xinabox/xLoader) atau
+[AVRDUDESS](https://github.com/ZakKemble/AVRDUDESS):
+
+1. Sambungkan USB, lalu cari nomor port-nya di Device Manager (misalnya `COM5`).
+2. Di XLoader, pilih file `.hex`, device **Mega(ATMEGA2560)**, port tadi, dan
+   baud rate **115200**.
+3. Klik **Upload** dan tunggu sampai muncul jumlah byte yang ter-upload.
+
+**macOS / Linux** — pakai `avrdude`:
+
+```sh
+avrdude -p m2560 -c wiring -P /dev/ttyUSB0 -b 115200 -D \
+  -U flash:w:can-io-extender-8mhz-node0.hex:i
+```
+
+Ganti `/dev/ttyUSB0` dengan port board Anda (di macOS biasanya
+`/dev/cu.usbserial-…` atau `/dev/cu.usbmodem…`).
+
+Setelah selesai, cabut USB dan sambungkan lagi 12 V. Output tetap mati sampai
+dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.
 
 ## Troubleshooting
 
@@ -243,5 +294,5 @@ ID-nya:
 | Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan tombolnya memakai CAN ID `0x648` (1608) dan mode **Toggle** |
 | Output menyala sebentar lalu mati | Tombolnya dalam mode Momentary. Ganti ke **Toggle** |
 | LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
-| Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware |
+| Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V. Hubungi support@mazduino.com untuk firmware yang dikalibrasi ke board Anda |
 | Switch input tidak terbaca | Pin itu masih difungsikan sebagai analog input, bukan switch input |

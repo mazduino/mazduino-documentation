@@ -6,6 +6,8 @@ Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.
   di-flash lewat ST-Link, DFU, atau rusEFI Console.
 - **[Firmware Racedash](#firmware-racedash)** — dash display; tidak diunduh
   manual, melainkan lewat Mazduino Flasher atau aplikasi DashTune.
+- **[Firmware CAN IO Extender](#firmware-can-io-extender)** — file `.hex`,
+  di-flash lewat USB.
 
 ---
 
@@ -180,6 +182,16 @@ situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
 
 ---
 
+## Firmware CAN IO Extender
+
+Modul dikirim sudah berisi firmware node 0, jadi file ini hanya dibutuhkan untuk
+update atau untuk modul kedua dan seterusnya di bus yang sama.
+
+- **Download**: [github.com/mazduino/can-io-extender/releases][iox-releases]
+- **Cara memilih file dan flash**: [CAN IO Extender → Firmware](can-io-extender.md#firmware)
+
+---
+
 ## Konfigurasi TunerStudio
 
 Setelah firmware ECU ter-flash:
@@ -198,3 +210,4 @@ Setelah firmware ECU ter-flash:
 [tunerstudio]: https://www.tunerstudio.com
 [stm32cubeprog]: https://www.st.com/en/development-tools/stm32cubeprog.html
 [rusefi]: https://rusefi.com
+[iox-releases]: https://github.com/mazduino/can-io-extender/releases
