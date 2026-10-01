@@ -2,6 +2,8 @@
 
 ## Gambaran Umum
 
+![Mazduino CAN IO Extender dengan konektor kabel Molex 24 pin](img/can-io/can-io-extender.jpeg)
+
 CAN IO Extender menambah **input dan output** ke Racedash lewat bus CAN yang
 sama dengan ECU. Modul ini membaca sensor dan saklar yang tidak diketahui ECU —
 misalnya lampu sein, rem tangan, lampu jauh, sensor tekanan tambahan, atau
