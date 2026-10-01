@@ -39,18 +39,17 @@ Semua kabel kendaraan masuk lewat satu konektor **Molex Micro-Fit 3.0, 24 pin
 
 ![Konektor J2 dilihat dari depan modul, dengan nomor pin 1, 12, 13, dan 24](img/can-io/can-io-connector.jpeg)
 
-Dilihat dari depan modul dengan latch di atas, **pin 1 ada di kanan bawah**.
+Dilihat dari depan modul dengan **kait pengunci** (tonjolan kecil di tengah
+atas konektor) menghadap ke atas, **pin 1 ada di kanan bawah**.
 Baris bawah berisi pin 1–12 dari kanan ke kiri, dan baris atas berisi pin 13–24
 dari kanan ke kiri. Konektor kabel yang dilihat dari sisi masuk kabel, dengan
-latch di atas, memakai susunan yang sama.
+kait pengunci di atas, memakai susunan yang sama.
 
-```
-                                     ┌─ latch ─┐
-  24     23     22     21     20     19     18     17     16     15     14     13
-  12V    LC1    LC2    HS1    LC3   OUT4    HS2   OUT5    LS2    LS1   CANH   CANL
-  12     11     10      9      8      7      6      5      4      3      2      1
-  GND    AV1    AV2    A3     A4     A5     A6     A7     A8     A9     A10    --
-```
+<table>
+<tr><th></th><th colspan="12" align="center">▼ kait pengunci ▼</th></tr>
+<tr><th>Atas</th><td align="center"><b>24</b><br>12V</td><td align="center"><b>23</b><br>LC1</td><td align="center"><b>22</b><br>LC2</td><td align="center"><b>21</b><br>HS1</td><td align="center"><b>20</b><br>LC3</td><td align="center"><b>19</b><br>OUT4</td><td align="center"><b>18</b><br>HS2</td><td align="center"><b>17</b><br>OUT5</td><td align="center"><b>16</b><br>LS2</td><td align="center"><b>15</b><br>LS1</td><td align="center"><b>14</b><br>CAN H</td><td align="center"><b>13</b><br>CAN L</td></tr>
+<tr><th>Bawah</th><td align="center"><b>12</b><br>GND</td><td align="center"><b>11</b><br>A1</td><td align="center"><b>10</b><br>A2</td><td align="center"><b>9</b><br>A3</td><td align="center"><b>8</b><br>A4</td><td align="center"><b>7</b><br>A5</td><td align="center"><b>6</b><br>A6</td><td align="center"><b>5</b><br>A7</td><td align="center"><b>4</b><br>A8</td><td align="center"><b>3</b><br>A9</td><td align="center"><b>2</b><br>A10</td><td align="center"><b>1</b><br>—</td></tr>
+</table>
 
 | Pin | Fungsi | Pin | Fungsi |
 | :---: | :--- | :---: | :--- |
