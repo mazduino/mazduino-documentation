@@ -83,6 +83,7 @@ extra_javascript:
 extra_css:
   - css/print.css
 markdown_extensions:
+  - admonition
   - attr_list
   # Lets Markdown inside <details markdown="1"> still be parsed, which is what
   # makes the collapsible legacy sections work. Built into Python-Markdown, so
