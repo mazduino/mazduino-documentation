@@ -79,6 +79,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware-can-io-extender">Firmware CAN IO Extender</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-tunerstudio">Konfigurasi TunerStudio</a>
     </li>
     </ul>
@@ -255,7 +257,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 19:01:08 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 September 2026 00:46:39 UTC">27 September 2026</span></em></p>
   <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
 <ul>
@@ -263,6 +265,8 @@
   di-flash lewat ST-Link, DFU, atau rusEFI Console.</li>
 <li><strong><a href="#firmware-racedash">Firmware Racedash</a></strong> — dash display; tidak diunduh
   manual, melainkan lewat Mazduino Flasher atau aplikasi DashTune.</li>
+<li><strong><a href="#firmware-can-io-extender">Firmware CAN IO Extender</a></strong> — file <code>.hex</code>,
+  di-flash lewat USB.</li>
 </ul>
 <hr />
 <h2 id="firmware-ecu">Firmware ECU<a class="headerlink" href="#firmware-ecu" title="Permanent link">&para;</a></h2>
@@ -494,6 +498,14 @@ situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
 <p><strong>Jangan update sambil berkendara.</strong> Layar dash mati beberapa saat selama
 proses berlangsung.</p>
 </blockquote>
+<hr />
+<h2 id="firmware-can-io-extender">Firmware CAN IO Extender<a class="headerlink" href="#firmware-can-io-extender" title="Permanent link">&para;</a></h2>
+<p>Modul dikirim sudah berisi firmware node 0, jadi file ini hanya dibutuhkan untuk
+update atau untuk modul kedua dan seterusnya di bus yang sama.</p>
+<ul>
+<li><strong>Download</strong>: <a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></li>
+<li><strong>Cara memilih file dan flash</strong>: <a href="../can-io-extender/#firmware">CAN IO Extender → Firmware</a></li>
+</ul>
 <hr />
 <h2 id="konfigurasi-tunerstudio">Konfigurasi TunerStudio<a class="headerlink" href="#konfigurasi-tunerstudio" title="Permanent link">&para;</a></h2>
 <p>Setelah firmware ECU ter-flash:</p>

@@ -126,6 +126,8 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#konektor-utama-j2">Konektor Utama (J2)</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#daya-can-dan-terminasi">Daya, CAN, dan Terminasi</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#input">Input</a>
@@ -138,6 +140,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nilai-sensor-tambahan">Nilai sensor tambahan</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#menyalakan-output">Menyalakan output</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"</a>
@@ -145,6 +149,14 @@
     <li class="toctree-l2"><a class="reference internal" href="#data-yang-dikirim-modul">Data yang Dikirim Modul</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#memakai-dua-modul">Memakai Dua Modul</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware">Firmware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#unduh">Unduh</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flash">Flash</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
     </li>
@@ -242,9 +254,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:20:19 UTC">20 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 Oktober 2026 07:28:21 UTC">1 Oktober 2026</span></em></p>
   <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
+<p><img alt="Mazduino CAN IO Extender dengan konektor kabel Molex 24 pin" src="../img/can-io/can-io-extender.jpeg" /></p>
 <p>CAN IO Extender menambah <strong>input dan output</strong> ke Racedash lewat bus CAN yang
 sama dengan ECU. Modul ini membaca sensor dan saklar yang tidak diketahui ECU —
 misalnya lampu sein, rem tangan, lampu jauh, sensor tekanan tambahan, atau
@@ -297,6 +310,125 @@ kebutuhan kendaraan.</p>
 </table>
 <p>Tujuh output tersedia sekaligus di konektor utama; dua lagi berbagi pin dengan
 logic output.</p>
+<h2 id="konektor-utama-j2">Konektor Utama (J2)<a class="headerlink" href="#konektor-utama-j2" title="Permanent link">&para;</a></h2>
+<p>Semua kabel kendaraan masuk lewat satu konektor <strong>Molex Micro-Fit 3.0, 24 pin
+(2 baris × 12)</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Part number Molex</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header di board</td>
+<td style="text-align: left;">43045-2400</td>
+</tr>
+<tr>
+<td style="text-align: left;">Konektor kabel (pasangannya)</td>
+<td style="text-align: left;">43025-2400, dengan terminal crimp female Micro-Fit 3.0</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Konektor J2 dilihat dari depan modul, dengan nomor pin 1, 12, 13, dan 24" src="../img/can-io/can-io-connector.jpeg" /></p>
+<p>Dilihat dari depan modul dengan <strong>kait pengunci</strong> (tonjolan kecil di tengah
+atas konektor) menghadap ke atas, <strong>pin 1 ada di kanan bawah</strong>.
+Baris bawah berisi pin 1–12 dari kanan ke kiri, dan baris atas berisi pin 13–24
+dari kanan ke kiri. Konektor kabel yang dilihat dari sisi masuk kabel, dengan
+kait pengunci di atas, memakai susunan yang sama.</p>
+<table>
+<tr><th></th><th colspan="12" align="center">▼ kait pengunci ▼</th></tr>
+<tr><th>Atas</th><td align="center"><b>24</b><br>12V</td><td align="center"><b>23</b><br>LC1</td><td align="center"><b>22</b><br>LC2</td><td align="center"><b>21</b><br>HS1</td><td align="center"><b>20</b><br>LC3</td><td align="center"><b>19</b><br>OUT4</td><td align="center"><b>18</b><br>HS2</td><td align="center"><b>17</b><br>OUT5</td><td align="center"><b>16</b><br>LS2</td><td align="center"><b>15</b><br>LS1</td><td align="center"><b>14</b><br>CAN H</td><td align="center"><b>13</b><br>CAN L</td></tr>
+<tr><th>Bawah</th><td align="center"><b>12</b><br>GND</td><td align="center"><b>11</b><br>A1</td><td align="center"><b>10</b><br>A2</td><td align="center"><b>9</b><br>A3</td><td align="center"><b>8</b><br>A4</td><td align="center"><b>7</b><br>A5</td><td align="center"><b>6</b><br>A6</td><td align="center"><b>5</b><br>A7</td><td align="center"><b>4</b><br>A8</td><td align="center"><b>3</b><br>A9</td><td align="center"><b>2</b><br>A10</td><td align="center"><b>1</b><br>—</td></tr>
+</table>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: left;">Fungsi</th>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Tidak dipakai</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">CAN L</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Input: A10 atau HALL4</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">CAN H</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Input: A9 atau HALL3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Output LS1 (low-side, arus besar)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Input: A8 atau HALL2</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">Output LS2 (low-side, arus besar)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Input: A7 atau HALL1</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">Output LC5 <strong>atau</strong> LOGIC2</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Input: A6 atau SW4</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Output HS2 (high-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Input: A5 atau SW3</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">Output LC4 <strong>atau</strong> LOGIC1</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Input: A4 atau SW2</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Output LC3 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Input: A3 atau SW1</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">Output HS1 (high-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Input: A2 (untuk sensor NTC)</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Output LC2 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Input: A1 (untuk sensor NTC)</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">Output LC1 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Ground</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">12 V dari kontak (switched)</td>
+</tr>
+</tbody>
+</table>
+<p>Penjelasan tiap kelompok pin ada di bagian <a href="#daya-can-dan-terminasi">Daya</a>,
+<a href="#input">Input</a>, dan <a href="#output">Output</a> di bawah.</p>
 <h2 id="daya-can-dan-terminasi">Daya, CAN, dan Terminasi<a class="headerlink" href="#daya-can-dan-terminasi" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -472,6 +604,15 @@ yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.</p>
 <h2 id="memakai-dengan-racedash-pro-m4-m5-m7">Memakai dengan Racedash Pro (M4, M5, M7)<a class="headerlink" href="#memakai-dengan-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
 <p>Bisa langsung dipakai tanpa ganti firmware, <strong>bersamaan dengan protokol ECU yang
 sedang aktif</strong>.</p>
+<p>!!! tip "CAN ID: heksadesimal atau desimal"
+    Halaman ini menulis CAN ID dalam heksadesimal, misalnya <code>0x643</code>. Beberapa
+    software, seperti rusEFI dan TunerStudio, menampilkan angka yang sama dalam
+    desimal: <code>0x643</code> = <code>1603</code>.</p>
+<pre><code>Di DashTune, pilih tampilannya di **Settings → Format CAN ID**. Pilihan ini
+juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
+ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
+diawali `0x` selalu dibaca sebagai heksadesimal, apa pun pilihannya.
+</code></pre>
 <h3 id="lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan<a class="headerlink" href="#lampu-indikator-dari-saklar-kendaraan" title="Permanent link">&para;</a></h3>
 <p>Di DashTune, buka pengaturan indikator, pilih mode <strong>CAN</strong>, lalu isi:</p>
 <table>
@@ -537,6 +678,89 @@ ditampilkan lewat <strong>Custom Channel</strong> di DashTune. Custom Channel me
 protokol ECU yang sedang aktif, jadi data ECU tetap terbaca seperti biasa.</p>
 <p>Gunakan daftar frame di <a href="#data-yang-dikirim-modul">bagian berikutnya</a> sebagai
 acuan CAN ID, posisi byte, dan skalanya.</p>
+<h3 id="menyalakan-output">Menyalakan output<a class="headerlink" href="#menyalakan-output" title="Permanent link">&para;</a></h3>
+<p>Output dinyalakan lewat <strong>CAN Buttons</strong>: satu tombol untuk satu output, diatur
+di DashTune atau langsung di layar dash. Semua tombol memakai CAN ID yang sama,
+<code>0x648</code> (desimal <strong>1608</strong>), dan harus dalam mode <strong>Toggle</strong>. Selama tombol
+menyala, dash mengirim ulang perintahnya terus-menerus. Tombol mode Momentary
+hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: center;">Nilai ON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LC1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">64</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LOGIC1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">LOGIC2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<p>Isi <strong>nilai OFF dengan 0</strong> untuk semua tombol. Beberapa tombol boleh berada di
+byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.</p>
+<p>HS1 dan HS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol Toggle
+lagi di byte <strong>2</strong> (HS1) atau byte <strong>3</strong> (HS2), dengan nilai ON 1–254 sebagai
+duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
+kembali menyala penuh.</p>
+<p>!!! note "Butuh firmware terbaru"
+    Cara di atas memerlukan firmware Racedash dan firmware CAN IO Extender
+    versi terbaru. Pada firmware lama, tombol-tombol yang berada di byte yang
+    sama saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
+    4 byte.</p>
 <h2 id="memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"<a class="headerlink" href="#memakai-dengan-racedash-35-dan-4" title="Permanent link">&para;</a></h2>
 <p>!!! warning "Tidak bisa bersamaan dengan protokol ECU"
     Pada varian ini, modul hanya terbaca kalau protokol dash diset ke
@@ -547,13 +771,14 @@ acuan CAN ID, posisi byte, dan skalanya.</p>
 susun channel-nya lewat DashTune. Semua nilai <strong>little-endian</strong>, jadi biarkan
 pilihan <strong>MSB first (Motorola) mati</strong>.</p>
 <p>Kalau Anda memakai Custom CAN map untuk keperluan lain, jangan memakai CAN ID
-<code>0x640</code>–<code>0x67F</code> agar tidak bentrok dengan modul ini.</p>
+<code>0x640</code>–<code>0x67F</code> (desimal 1600–1663) agar tidak bentrok dengan modul ini.</p>
 <h2 id="data-yang-dikirim-modul">Data yang Dikirim Modul<a class="headerlink" href="#data-yang-dikirim-modul" title="Permanent link">&para;</a></h2>
 <p>CAN ID di bawah berlaku untuk modul node 0. Semua nilai <strong>little-endian</strong>.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">CAN ID</th>
+<th style="text-align: left;">Desimal</th>
 <th style="text-align: left;">Isi</th>
 <th style="text-align: left;">Rate</th>
 </tr>
@@ -561,26 +786,31 @@ pilihan <strong>MSB first (Motorola) mati</strong>.</p>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>0x640</code></td>
+<td style="text-align: left;">1600</td>
 <td style="text-align: left;">Tegangan aki, lalu AV1, AV2, AV3</td>
 <td style="text-align: left;">50 Hz</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x641</code></td>
+<td style="text-align: left;">1601</td>
 <td style="text-align: left;">AV4, AV5, AV6, AV7</td>
 <td style="text-align: left;">50 Hz</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x642</code></td>
+<td style="text-align: left;">1602</td>
 <td style="text-align: left;">AV8, AV9, AV10</td>
 <td style="text-align: left;">50 Hz</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: left;">1603</td>
 <td style="text-align: left;">Status digital input, diagnosa, status output</td>
 <td style="text-align: left;">50 Hz</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x644</code></td>
+<td style="text-align: left;">1604</td>
 <td style="text-align: left;">Frekuensi HALL1–HALL4</td>
 <td style="text-align: left;">20 Hz</td>
 </tr>
@@ -628,34 +858,108 @@ berarti 13,8 V. Untuk menampilkan sebagai volt, pakai scale <code>0.001</code>.<
 kalikan <code>0.1</code> untuk mendapatkan Hz.</p>
 <h2 id="memakai-dua-modul">Memakai Dua Modul<a class="headerlink" href="#memakai-dua-modul" title="Permanent link">&para;</a></h2>
 <p>Satu bus bisa memuat sampai <strong>empat</strong> modul. Tiap modul harus memakai nomor node
-berbeda, yang ditentukan saat firmware di-flash. Nomor node menggeser blok CAN
-ID-nya:</p>
+berbeda, yang ditentukan oleh <a href="#firmware">file firmware</a> yang di-flash. Nomor
+node menggeser blok CAN ID-nya:</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Node</th>
 <th style="text-align: left;">Blok CAN ID</th>
+<th style="text-align: left;">Desimal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">0</td>
 <td style="text-align: left;"><code>0x640</code>–<code>0x64F</code></td>
+<td style="text-align: left;">1600–1615</td>
 </tr>
 <tr>
 <td style="text-align: center;">1</td>
 <td style="text-align: left;"><code>0x650</code>–<code>0x65F</code></td>
+<td style="text-align: left;">1616–1631</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;"><code>0x660</code>–<code>0x66F</code></td>
+<td style="text-align: left;">1632–1647</td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;"><code>0x670</code>–<code>0x67F</code></td>
+<td style="text-align: left;">1648–1663</td>
 </tr>
 </tbody>
 </table>
+<h2 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h2>
+<p>Modul dikirim sudah berisi firmware untuk <strong>node 0</strong>. Flash ulang hanya
+diperlukan untuk memperbarui firmware, atau untuk modul kedua dan seterusnya di
+bus yang sama (<a href="#memakai-dua-modul">Memakai Dua Modul</a>).</p>
+<h3 id="unduh">Unduh<a class="headerlink" href="#unduh" title="Permanent link">&para;</a></h3>
+<p>Ambil file <code>.hex</code> dari
+<strong><a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></strong>.
+Nama file menyebut nomor node-nya:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Dipakai untuk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node0.hex</code></td>
+<td style="text-align: left;">Modul pertama (bawaan pabrik)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node1.hex</code></td>
+<td style="text-align: left;">Modul kedua</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node2.hex</code></td>
+<td style="text-align: left;">Modul ketiga</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node3.hex</code></td>
+<td style="text-align: left;">Modul keempat</td>
+</tr>
+</tbody>
+</table>
+<p>Pakai file berakhiran <code>8mhz</code>. File <code>16mhz</code> hanya untuk board yang sudah
+dimodifikasi, dan hanya dipakai kalau tim Mazduino mengarahkan Anda ke sana.</p>
+<h3 id="flash">Flash<a class="headerlink" href="#flash" title="Permanent link">&para;</a></h3>
+<p>Modul ini berbasis Arduino Mega 2560 dan di-flash lewat kabel USB-nya.</p>
+<p>!!! warning "Lepas 12 V sebelum menyambungkan USB"
+    Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
+    mendapat daya dari USB selama proses flash.</p>
+<p><strong>Cara termudah: script flash.</strong> Unduh <code>flash.bat</code> (Windows) atau <code>flash.sh</code>
+(macOS/Linux) dari halaman Releases yang sama. Script ini mengunduh firmware
+yang benar sendiri, jadi file <code>.hex</code> tidak perlu diunduh terpisah.</p>
+<ul>
+<li><strong>Windows:</strong> double-click <code>flash.bat</code>, lalu ketik port COM saat ditanya
+  (lihat di Device Manager, misalnya <code>COM5</code>). Untuk modul kedua dan seterusnya,
+  jalankan dari Command Prompt dengan nomor node: <code>flash.bat COM5 1</code>.</li>
+<li><strong>macOS / Linux:</strong> pasang <code>avrdude</code> dulu (<code>brew install avrdude</code> atau
+  <code>sudo apt install avrdude</code>), lalu jalankan <code>./flash.sh</code>. Port dicari
+  otomatis; nomor node ditulis setelah port: <code>./flash.sh /dev/ttyUSB0 1</code>.</li>
+</ul>
+<p>Kalau ingin flash manual:</p>
+<p><strong>Windows</strong> — pakai <a href="https://github.com/xinabox/xLoader">XLoader</a> atau
+<a href="https://github.com/ZakKemble/AVRDUDESS">AVRDUDESS</a>:</p>
+<ol>
+<li>Sambungkan USB, lalu cari nomor port-nya di Device Manager (misalnya <code>COM5</code>).</li>
+<li>Di XLoader, pilih file <code>.hex</code>, device <strong>Mega(ATMEGA2560)</strong>, port tadi, dan
+   baud rate <strong>115200</strong>.</li>
+<li>Klik <strong>Upload</strong> dan tunggu sampai muncul jumlah byte yang ter-upload.</li>
+</ol>
+<p><strong>macOS / Linux</strong> — pakai <code>avrdude</code>:</p>
+<pre><code class="language-sh">avrdude -p m2560 -c wiring -P /dev/ttyUSB0 -b 115200 -D \
+  -U flash:w:can-io-extender-8mhz-node0.hex:i
+</code></pre>
+<p>Ganti <code>/dev/ttyUSB0</code> dengan port board Anda (di macOS biasanya
+<code>/dev/cu.usbserial-…</code> atau <code>/dev/cu.usbmodem…</code>).</p>
+<p>Setelah selesai, cabut USB dan sambungkan lagi 12 V. Output tetap mati sampai
+dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.</p>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -671,11 +975,15 @@ ID-nya:</p>
 </tr>
 <tr>
 <td style="text-align: left;">Bus terkunci, tetapi dash tidak menampilkan apa-apa</td>
-<td style="text-align: left;">CAN ID di dash tidak sama dengan blok node modul</td>
+<td style="text-align: left;">CAN ID di dash tidak sama dengan blok node modul, atau CAN ID diketik dalam notasi yang salah (<code>643</code> dibaca desimal padahal yang dimaksud <code>0x643</code>) — cek <strong>Settings → Format CAN ID</strong> di DashTune</td>
 </tr>
 <tr>
 <td style="text-align: left;">Output tidak mau menyala</td>
-<td style="text-align: left;">Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe</td>
+<td style="text-align: left;">Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan tombolnya memakai CAN ID <code>0x648</code> (1608) dan mode <strong>Toggle</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Output menyala sebentar lalu mati</td>
+<td style="text-align: left;">Tombolnya dalam mode Momentary. Ganti ke <strong>Toggle</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;">LC4 atau LC5 tidak bekerja</td>
@@ -683,7 +991,7 @@ ID-nya:</p>
 </tr>
 <tr>
 <td style="text-align: left;">Tegangan aki terbaca meleset</td>
-<td style="text-align: left;">Rail 5 V board tidak tepat 5,000 V; nilai acuannya perlu disesuaikan saat flash firmware</td>
+<td style="text-align: left;">Rail 5 V board tidak tepat 5,000 V. Hubungi support@mazduino.com untuk firmware yang dikalibrasi ke board Anda</td>
 </tr>
 <tr>
 <td style="text-align: left;">Switch input tidak terbaca</td>
