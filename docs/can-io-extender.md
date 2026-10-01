@@ -25,6 +25,45 @@ kebutuhan kendaraan.
 Tujuh output tersedia sekaligus di konektor utama; dua lagi berbagi pin dengan
 logic output.
 
+## Konektor Utama (J2)
+
+Semua kabel kendaraan masuk lewat satu konektor **Molex Micro-Fit 3.0, 24 pin
+(2 baris × 12)**.
+
+| | Part number Molex |
+| :--- | :--- |
+| Header di board | 43045-2400 |
+| Konektor kabel (pasangannya) | 43025-2400, dengan terminal crimp female Micro-Fit 3.0 |
+
+Pin 1–12 ada di satu baris dan pin 13–24 di baris lainnya; pin 1 sejajar dengan
+pin 13, dan pin 12 sejajar dengan pin 24. Nomor pin juga tercetak kecil di rumah
+konektor, jadi cocokkan dengan nomor itu saat memasukkan terminal.
+
+```
+   1      2      3      4      5      6      7      8      9     10     11     12
+  --     A10    A9     A8     A7     A6     A5     A4     A3     AV2    AV1    GND
+  13     14     15     16     17     18     19     20     21     22     23     24
+ CANL   CANH    LS1    LS2   OUT5    HS2   OUT4    LC3    HS1    LC2    LC1    12V
+```
+
+| Pin | Fungsi | Pin | Fungsi |
+| :---: | :--- | :---: | :--- |
+| 1 | Tidak dipakai | 13 | CAN L |
+| 2 | Input: A10 atau HALL4 | 14 | CAN H |
+| 3 | Input: A9 atau HALL3 | 15 | Output LS1 (low-side, arus besar) |
+| 4 | Input: A8 atau HALL2 | 16 | Output LS2 (low-side, arus besar) |
+| 5 | Input: A7 atau HALL1 | 17 | Output LC5 **atau** LOGIC2 |
+| 6 | Input: A6 atau SW4 | 18 | Output HS2 (high-side) |
+| 7 | Input: A5 atau SW3 | 19 | Output LC4 **atau** LOGIC1 |
+| 8 | Input: A4 atau SW2 | 20 | Output LC3 (low-side) |
+| 9 | Input: A3 atau SW1 | 21 | Output HS1 (high-side) |
+| 10 | Input: A2 (untuk sensor NTC) | 22 | Output LC2 (low-side) |
+| 11 | Input: A1 (untuk sensor NTC) | 23 | Output LC1 (low-side) |
+| 12 | Ground | 24 | 12 V dari kontak (switched) |
+
+Penjelasan tiap kelompok pin ada di bagian [Daya](#daya-can-dan-terminasi),
+[Input](#input), dan [Output](#output) di bawah.
+
 ## Daya, CAN, dan Terminasi
 
 | Pin konektor | Fungsi |
