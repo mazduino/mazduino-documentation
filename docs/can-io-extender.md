@@ -37,15 +37,19 @@ Semua kabel kendaraan masuk lewat satu konektor **Molex Micro-Fit 3.0, 24 pin
 | Header di board | 43045-2400 |
 | Konektor kabel (pasangannya) | 43025-2400, dengan terminal crimp female Micro-Fit 3.0 |
 
-Pin 1–12 ada di satu baris dan pin 13–24 di baris lainnya; pin 1 sejajar dengan
-pin 13, dan pin 12 sejajar dengan pin 24. Nomor pin juga tercetak kecil di rumah
-konektor, jadi cocokkan dengan nomor itu saat memasukkan terminal.
+![Konektor J2 dilihat dari depan modul, dengan nomor pin 1, 12, 13, dan 24](img/can-io/can-io-connector.jpeg)
+
+Dilihat dari depan modul dengan latch di atas, **pin 1 ada di kanan bawah**.
+Baris bawah berisi pin 1–12 dari kanan ke kiri, dan baris atas berisi pin 13–24
+dari kanan ke kiri. Konektor kabel yang dilihat dari sisi masuk kabel, dengan
+latch di atas, memakai susunan yang sama.
 
 ```
-   1      2      3      4      5      6      7      8      9     10     11     12
-  --     A10    A9     A8     A7     A6     A5     A4     A3     AV2    AV1    GND
-  13     14     15     16     17     18     19     20     21     22     23     24
- CANL   CANH    LS1    LS2   OUT5    HS2   OUT4    LC3    HS1    LC2    LC1    12V
+                                     ┌─ latch ─┐
+  24     23     22     21     20     19     18     17     16     15     14     13
+  12V    LC1    LC2    HS1    LC3   OUT4    HS2   OUT5    LS2    LS1   CANH   CANL
+  12     11     10      9      8      7      6      5      4      3      2      1
+  GND    AV1    AV2    A3     A4     A5     A6     A7     A8     A9     A10    --
 ```
 
 | Pin | Fungsi | Pin | Fungsi |
