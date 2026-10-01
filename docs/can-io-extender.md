@@ -308,18 +308,22 @@ Modul ini berbasis Arduino Mega 2560 dan di-flash lewat kabel USB-nya.
     Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
     mendapat daya dari USB selama proses flash.
 
-**Cara termudah: script flash.** Unduh `flash.bat` (Windows) atau `flash.sh`
-(macOS/Linux) dari halaman Releases yang sama. Script ini mengunduh firmware
-yang benar sendiri, jadi file `.hex` tidak perlu diunduh terpisah.
+**Dengan script flash (build dari source).** Script `flash.bat` (Windows) dan
+`flash.sh` (macOS/Linux) ada di source code firmware. Script ini mem-build
+firmware untuk nomor node yang dipilih, lalu langsung meng-upload-nya lewat USB.
 
-- **Windows:** double-click `flash.bat`, lalu ketik port COM saat ditanya
-  (lihat di Device Manager, misalnya `COM5`). Untuk modul kedua dan seterusnya,
-  jalankan dari Command Prompt dengan nomor node: `flash.bat COM5 1`.
-- **macOS / Linux:** pasang `avrdude` dulu (`brew install avrdude` atau
-  `sudo apt install avrdude`), lalu jalankan `./flash.sh`. Port dicari
-  otomatis; nomor node ditulis setelah port: `./flash.sh /dev/ttyUSB0 1`.
+1. Unduh source code dari
+   [github.com/mazduino/can-io-extender](https://github.com/mazduino/can-io-extender)
+   (**Code → Download ZIP**), lalu ekstrak.
+2. Pasang [PlatformIO](https://platformio.org/install/cli):
+   `pip install platformio`.
+3. Jalankan dari folder hasil ekstrak, dengan nomor node sebagai argumen:
+    - **Windows:** `flash.bat` untuk node 0, atau `flash.bat 1 COM5` untuk node
+      1 di port COM5.
+    - **macOS / Linux:** `./flash.sh` untuk node 0, atau `./flash.sh 1` untuk
+      node 1. Port dicari otomatis.
 
-Kalau ingin flash manual:
+Kalau ingin flash file `.hex` siap pakai tanpa build:
 
 **Windows** — pakai [XLoader](https://github.com/xinabox/xLoader) atau
 [AVRDUDESS](https://github.com/ZakKemble/AVRDUDESS):
