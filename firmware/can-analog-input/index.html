@@ -275,9 +275,11 @@
 </tbody>
 </table>
 <p>Setelah slot dikonfigurasi, pilih channel tersebut di pengaturan sensor yang diinginkan (misalnya: MAP sensor → pilih <code>EFI_ADC_48</code>).</p>
-<p>!!! tip
-    Hasil konversi adalah tegangan (Volt). Sesuaikan Scale dan Offset agar nilai mentah CAN
-    menghasilkan tegangan yang sesuai dengan kurva sensor yang dikonfigurasi.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Hasil konversi adalah tegangan (Volt). Sesuaikan Scale dan Offset agar nilai mentah CAN
+menghasilkan tegangan yang sesuai dengan kurva sensor yang dikonfigurasi.</p>
+</div>
 <hr />
 <h2 id="contoh-sensor-tekanan-bahan-bakar-via-can">Contoh: Sensor Tekanan Bahan Bakar via CAN<a class="headerlink" href="#contoh-sensor-tekanan-bahan-bakar-via-can" title="Permanent link">&para;</a></h2>
 <p>Sensor mengirim tekanan bar × 100 sebagai 16-bit di CAN ID <code>0x420</code>, byte 2–3:</p>

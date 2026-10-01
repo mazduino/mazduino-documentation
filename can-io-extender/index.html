@@ -254,7 +254,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 Oktober 2026 07:28:21 UTC">1 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 Oktober 2026 09:06:41 UTC">1 Oktober 2026</span></em></p>
   <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino CAN IO Extender dengan konektor kabel Molex 24 pin" src="../img/can-io/can-io-extender.jpeg" /></p>
@@ -337,7 +337,7 @@ atas konektor) menghadap ke atas, <strong>pin 1 ada di kanan bawah</strong>.
 Baris bawah berisi pin 1–12 dari kanan ke kiri, dan baris atas berisi pin 13–24
 dari kanan ke kiri. Konektor kabel yang dilihat dari sisi masuk kabel, dengan
 kait pengunci di atas, memakai susunan yang sama.</p>
-<table>
+<table class="pin-grid">
 <tr><th></th><th colspan="12" align="center">▼ kait pengunci ▼</th></tr>
 <tr><th>Atas</th><td align="center"><b>24</b><br>12V</td><td align="center"><b>23</b><br>LC1</td><td align="center"><b>22</b><br>LC2</td><td align="center"><b>21</b><br>HS1</td><td align="center"><b>20</b><br>LC3</td><td align="center"><b>19</b><br>OUT4</td><td align="center"><b>18</b><br>HS2</td><td align="center"><b>17</b><br>OUT5</td><td align="center"><b>16</b><br>LS2</td><td align="center"><b>15</b><br>LS1</td><td align="center"><b>14</b><br>CAN H</td><td align="center"><b>13</b><br>CAN L</td></tr>
 <tr><th>Bawah</th><td align="center"><b>12</b><br>GND</td><td align="center"><b>11</b><br>A1</td><td align="center"><b>10</b><br>A2</td><td align="center"><b>9</b><br>A3</td><td align="center"><b>8</b><br>A4</td><td align="center"><b>7</b><br>A5</td><td align="center"><b>6</b><br>A6</td><td align="center"><b>5</b><br>A7</td><td align="center"><b>4</b><br>A8</td><td align="center"><b>3</b><br>A9</td><td align="center"><b>2</b><br>A10</td><td align="center"><b>1</b><br>—</td></tr>
@@ -596,23 +596,26 @@ ground. Tertukar berarti beban tidak akan bekerja.</p>
 <p><strong>Logic output</strong> (LOGIC1 dan LOGIC2) adalah output sinyal, bukan driver coil.
 Tegangannya bisa dipilih <strong>5 V atau 12 V</strong> saat pemasangan. Keduanya memakai pin
 yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.</p>
-<p>!!! danger "Output mati sendiri kalau perintah berhenti"
-    Semua output dimatikan bila perintah dari dash tidak diterima selama
-    <strong>500 ms</strong>, dan modul memang menyala dalam keadaan semua output mati. Jadi
-    kalau dash mati atau kabel CAN lepas, pompa atau solenoid tidak akan terus
-    menyala. Kondisi ini normal, bukan kerusakan.</p>
+<div class="admonition danger">
+<p class="admonition-title">Output mati sendiri kalau perintah berhenti</p>
+<p>Semua output dimatikan bila perintah dari dash tidak diterima selama
+<strong>500 ms</strong>, dan modul memang menyala dalam keadaan semua output mati. Jadi
+kalau dash mati atau kabel CAN lepas, pompa atau solenoid tidak akan terus
+menyala. Kondisi ini normal, bukan kerusakan.</p>
+</div>
 <h2 id="memakai-dengan-racedash-pro-m4-m5-m7">Memakai dengan Racedash Pro (M4, M5, M7)<a class="headerlink" href="#memakai-dengan-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
 <p>Bisa langsung dipakai tanpa ganti firmware, <strong>bersamaan dengan protokol ECU yang
 sedang aktif</strong>.</p>
-<p>!!! tip "CAN ID: heksadesimal atau desimal"
-    Halaman ini menulis CAN ID dalam heksadesimal, misalnya <code>0x643</code>. Beberapa
-    software, seperti rusEFI dan TunerStudio, menampilkan angka yang sama dalam
-    desimal: <code>0x643</code> = <code>1603</code>.</p>
-<pre><code>Di DashTune, pilih tampilannya di **Settings → Format CAN ID**. Pilihan ini
+<div class="admonition tip">
+<p class="admonition-title">CAN ID: heksadesimal atau desimal</p>
+<p>Halaman ini menulis CAN ID dalam heksadesimal, misalnya <code>0x643</code>. Beberapa
+software, seperti rusEFI dan TunerStudio, menampilkan angka yang sama dalam
+desimal: <code>0x643</code> = <code>1603</code>.</p>
+<p>Di DashTune, pilih tampilannya di <strong>Settings → Format CAN ID</strong>. Pilihan ini
 juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
 ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
-diawali `0x` selalu dibaca sebagai heksadesimal, apa pun pilihannya.
-</code></pre>
+diawali <code>0x</code> selalu dibaca sebagai heksadesimal, apa pun pilihannya.</p>
+</div>
 <h3 id="lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan<a class="headerlink" href="#lampu-indikator-dari-saklar-kendaraan" title="Permanent link">&para;</a></h3>
 <p>Di DashTune, buka pengaturan indikator, pilih mode <strong>CAN</strong>, lalu isi:</p>
 <table>
@@ -756,17 +759,21 @@ byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.<
 lagi di byte <strong>2</strong> (HS1) atau byte <strong>3</strong> (HS2), dengan nilai ON 1–254 sebagai
 duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
 kembali menyala penuh.</p>
-<p>!!! note "Butuh firmware terbaru"
-    Cara di atas memerlukan firmware Racedash dan firmware CAN IO Extender
-    versi terbaru. Pada firmware lama, tombol-tombol yang berada di byte yang
-    sama saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
-    4 byte.</p>
+<div class="admonition note">
+<p class="admonition-title">Butuh firmware terbaru</p>
+<p>Cara di atas memerlukan firmware Racedash dan firmware CAN IO Extender
+versi terbaru. Pada firmware lama, tombol-tombol yang berada di byte yang
+sama saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
+4 byte.</p>
+</div>
 <h2 id="memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"<a class="headerlink" href="#memakai-dengan-racedash-35-dan-4" title="Permanent link">&para;</a></h2>
-<p>!!! warning "Tidak bisa bersamaan dengan protokol ECU"
-    Pada varian ini, modul hanya terbaca kalau protokol dash diset ke
-    <strong>Custom</strong>, dan mode Custom menggantikan decoder ECU bawaan. Artinya dash
-    bisa membaca <strong>modul ini atau ECU</strong>, tidak keduanya sekaligus. Kalau Anda
-    butuh dua-duanya, gunakan Racedash Pro.</p>
+<div class="admonition warning">
+<p class="admonition-title">Tidak bisa bersamaan dengan protokol ECU</p>
+<p>Pada varian ini, modul hanya terbaca kalau protokol dash diset ke
+<strong>Custom</strong>, dan mode Custom menggantikan decoder ECU bawaan. Artinya dash
+bisa membaca <strong>modul ini atau ECU</strong>, tidak keduanya sekaligus. Kalau Anda
+butuh dua-duanya, gunakan Racedash Pro.</p>
+</div>
 <p>Langkahnya: set protokol dash ke <strong>Custom</strong>, samakan bitrate dengan bus, lalu
 susun channel-nya lewat DashTune. Semua nilai <strong>little-endian</strong>, jadi biarkan
 pilihan <strong>MSB first (Motorola) mati</strong>.</p>
@@ -929,9 +936,11 @@ Nama file menyebut nomor node-nya:</p>
 dimodifikasi, dan hanya dipakai kalau tim Mazduino mengarahkan Anda ke sana.</p>
 <h3 id="flash">Flash<a class="headerlink" href="#flash" title="Permanent link">&para;</a></h3>
 <p>Modul ini berbasis Arduino Mega 2560 dan di-flash lewat kabel USB-nya.</p>
-<p>!!! warning "Lepas 12 V sebelum menyambungkan USB"
-    Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
-    mendapat daya dari USB selama proses flash.</p>
+<div class="admonition warning">
+<p class="admonition-title">Lepas 12 V sebelum menyambungkan USB</p>
+<p>Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
+mendapat daya dari USB selama proses flash.</p>
+</div>
 <p><strong>Cara termudah: script flash.</strong> Unduh <code>flash.bat</code> (Windows) atau <code>flash.sh</code>
 (macOS/Linux) dari halaman Releases yang sama. Script ini mengunduh firmware
 yang benar sendiri, jadi file <code>.hex</code> tidak perlu diunduh terpisah.</p>
