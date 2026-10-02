@@ -177,12 +177,35 @@ pilihan **invert dalam keadaan mati** — modul sudah melaporkan 1 = aktif.
 
 ### Nilai sensor tambahan
 
-Nilai seperti tegangan aki, sensor analog, atau frequency input bisa
-ditampilkan lewat **Custom Channel** di DashTune. Custom Channel menumpang pada
-protokol ECU yang sedang aktif, jadi data ECU tetap terbaca seperti biasa.
+Sensor di AV1–AV10 ditampilkan lewat **Custom Channel** di DashTune. Custom
+Channel menumpang pada protokol ECU yang sedang aktif, jadi data ECU tetap
+terbaca seperti biasa.
 
-Gunakan daftar frame di [bagian berikutnya](#data-yang-dikirim-modul) sebagai
-acuan CAN ID, posisi byte, dan skalanya.
+Cara termudah: di DashTune buka **Custom Channels**, ketuk **CAN IO Extender**,
+pilih nomor node modul, lalu centang input yang ingin ditampilkan. Untuk tiap
+input pilih:
+
+- **Terkalibrasi** — nilai hasil kurva yang diisi di
+  [TunerStudio](#kalibrasi-sensor-di-tunerstudio), misalnya % bensin atau bar.
+  Pilih jumlah desimal yang sama dengan yang diatur di TunerStudio.
+- **Volt** — tegangan input mentah, untuk sensor linier atau sekadar memeriksa
+  wiring.
+
+Aktifkan **Sekalian atur lampu indikator** untuk memetakan sein, lampu jauh,
+rem tangan, lampu kepala dan lampu parkir sekaligus (tabel di atas).
+
+Kalau modul berhenti mengirim — kabel CAN lepas atau modul mati — nilainya
+berubah menjadi **"--"** setelah sekitar 1,5 detik, dan tidak memicu peringatan.
+Dash tidak akan menampilkan angka terakhir seolah masih hidup.
+
+!!! note "Custom Channel tersimpan per protokol ECU"
+    Pengaturan ini menempel pada protokol ECU yang aktif saat disimpan. Kalau
+    protokol ECU di dash diganti, ulangi preset CAN IO Extender di protokol yang
+    baru.
+
+Untuk mengisi Custom Channel secara manual, gunakan daftar frame di
+[Data yang Dikirim Modul](#data-yang-dikirim-modul) sebagai acuan CAN ID,
+posisi byte, dan skalanya.
 
 ### Menyalakan output
 
@@ -235,17 +258,61 @@ pilihan **MSB first (Motorola) mati**.
 Kalau Anda memakai Custom CAN map untuk keperluan lain, jangan memakai CAN ID
 `0x640`–`0x67F` (desimal 1600–1663) agar tidak bentrok dengan modul ini.
 
+## Kalibrasi Sensor di TunerStudio
+
+Modul bisa dihubungkan ke **TunerStudio** lewat kabel USB-nya, seperti ECU.
+Dari sana, setiap input AV1–AV10 bisa diberi kurva kalibrasi, dan nomor node
+serta bitrate CAN bisa diubah tanpa flash ulang.
+
+1. Unduh file `mazduino-iox.ini` dari halaman
+   [Releases](https://github.com/mazduino/can-io-extender/releases).
+2. Di TunerStudio buat project baru, pilih ECU definition **Other / Browse**,
+   lalu arahkan ke file `mazduino-iox.ini`.
+3. Pilih port USB modul dengan baud **115200**, lalu hubungkan.
+
+**Mengisi kurva** — buka menu **AV inputs → AV1** (dan seterusnya):
+
+- **Name**: nama input, misalnya "Fuel level". Dipakai sebagai judul gauge.
+- **Decimals** dan **Unit**: cara nilai ditampilkan. Desimal juga menentukan
+  scale di dash: desimal 1 berarti scale `0.1`.
+- **Kurva**: isi tegangan dari yang terendah, dan nilai di setiap tegangan.
+  Minimal dua baris; baris kosong di bawahnya diabaikan. Kurva yang semuanya
+  nol berarti input itu tidak dikalibrasi.
+- Gauge **Raw AV1** di samping kurva menunjukkan tegangan saat ini, sehingga
+  titik kurva bisa diambil langsung sambil mengubah kondisi sensor (misalnya
+  mengisi tangki bertahap).
+
+Tekan **Burn** agar kurva tersimpan di modul. Ikon **?** di setiap kolom berisi
+penjelasan singkat.
+
+**Node dan CAN** — menu **Module → Node and CAN bus**:
+
+- **Node number**: lihat [Memakai Dua Modul](#memakai-dua-modul).
+- **Bitrate**: **Auto detect** (disarankan) atau bitrate tetap. Bitrate tetap
+  langsung mengirim tanpa mendengarkan bus dulu, jadi pilih hanya kalau sudah
+  pasti sama dengan bus.
+
+Di halaman depan TunerStudio, indikator **CAN CHIP NOT FOUND**, **NO CAN BUS**
+dan **CAN ERROR PASSIVE** menyala merah bila ada masalah di sisi CAN.
+
 ## Data yang Dikirim Modul
 
 CAN ID di bawah berlaku untuk modul node 0. Semua nilai **little-endian**.
 
-| CAN ID | Desimal | Isi | Rate |
-| :--- | :--- | :--- | :--- |
-| `0x640` | 1600 | Tegangan aki, lalu AV1, AV2, AV3 | 50 Hz |
-| `0x641` | 1601 | AV4, AV5, AV6, AV7 | 50 Hz |
-| `0x642` | 1602 | AV8, AV9, AV10 | 50 Hz |
-| `0x643` | 1603 | Status digital input, diagnosa, status output | 50 Hz |
-| `0x644` | 1604 | Frekuensi HALL1–HALL4 | 20 Hz |
+| CAN ID | Desimal | Isi |
+| :--- | :--- | :--- |
+| `0x640` | 1600 | Tegangan aki, lalu AV1, AV2, AV3 (mV) |
+| `0x641` | 1601 | AV4, AV5, AV6, AV7 (mV) |
+| `0x642` | 1602 | AV8, AV9, AV10 (mV) |
+| `0x643` | 1603 | Status digital input, diagnosa, status output |
+| `0x644` | 1604 | Frekuensi HALL1–HALL4 |
+| `0x645` | 1605 | AV1–AV4 terkalibrasi |
+| `0x646` | 1606 | AV5–AV8 terkalibrasi |
+| `0x647` | 1607 | AV9–AV10 terkalibrasi |
+
+Frame dikirim begitu nilainya berubah (paling cepat tiap 25 ms) dan tetap
+diulang minimal tiap 200 ms saat tidak ada perubahan (frame digital tiap
+500 ms, frame frekuensi tiap 50 ms).
 
 **Frame analog** (`0x640`–`0x642`) berisi empat nilai `uint16` berurutan, dalam
 **milivolt**. Tegangan aki sudah dikalikan faktor pembaginya, jadi angka `13800`
@@ -265,11 +332,18 @@ berarti 13,8 V. Untuk menampilkan sebagai volt, pakai scale `0.001`.
 **Frame frekuensi** (`0x644`) berisi empat nilai `uint16` dalam satuan 0,1 Hz —
 kalikan `0.1` untuk mendapatkan Hz.
 
+**Frame terkalibrasi** (`0x645`–`0x647`) berisi nilai `int16` **signed**, dua
+byte per input: `0x645` byte 0–1 = AV1, byte 2–3 = AV2, byte 4–5 = AV3,
+byte 6–7 = AV4, dan seterusnya. Nilainya adalah hasil kurva TunerStudio tanpa
+koma: dengan desimal 1, nilai 62,5 dikirim sebagai `625`, jadi pakai scale
+`0.1`. Input tanpa kurva bernilai 0.
+
 ## Memakai Dua Modul
 
 Satu bus bisa memuat sampai **empat** modul. Tiap modul harus memakai nomor node
-berbeda, yang ditentukan oleh [file firmware](#firmware) yang di-flash. Nomor
-node menggeser blok CAN ID-nya:
+berbeda. Atur di TunerStudio (**Module → Node and CAN bus**, lalu Burn), atau
+flash [file firmware](#firmware) untuk node tersebut. Nomor node menggeser blok
+CAN ID-nya:
 
 | Node | Blok CAN ID | Desimal |
 | :---: | :--- | :--- |
@@ -357,3 +431,8 @@ dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.
 | LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
 | Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V. Hubungi support@mazduino.com untuk firmware yang dikalibrasi ke board Anda |
 | Switch input tidak terbaca | Pin itu masih difungsikan sebagai analog input, bukan switch input |
+| Nilai di dash menjadi "--" | Dash tidak lagi menerima frame-nya: kabel CAN lepas, modul mati, nomor node berubah, atau Custom Channel dibuat di protokol ECU lain |
+| Nilai terkalibrasi selalu 0 | Kurva input itu belum berisi minimal dua baris dengan tegangan yang naik, atau belum di-**Burn** di TunerStudio |
+| TunerStudio menampilkan **CAN CHIP NOT FOUND** | Chip CAN di board tidak menjawab — hubungi support@mazduino.com |
+| TunerStudio menampilkan **NO CAN BUS** | Modul belum menemukan bus: periksa wiring CAN H/L, terminasi, dan apakah ECU atau dash sudah menyala |
+| TunerStudio tidak bisa terhubung | Port dipakai aplikasi lain (serial monitor, flasher), atau baud bukan 115200 |

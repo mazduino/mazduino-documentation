@@ -188,6 +188,8 @@ Modul dikirim sudah berisi firmware node 0, jadi file ini hanya dibutuhkan untuk
 update atau untuk modul kedua dan seterusnya di bus yang sama.
 
 - **Download**: [github.com/mazduino/can-io-extender/releases][iox-releases]
+- **File INI untuk TunerStudio**: `mazduino-iox.ini`, di halaman Releases yang
+  sama — untuk kalibrasi sensor dan pengaturan node
 - **Cara memilih file dan flash**: [CAN IO Extender → Firmware](can-io-extender.md#firmware)
 
 ---
