@@ -30,7 +30,7 @@ sesuai kebutuhan kendaraan, dan kalibrasi sensor diatur lewat
 | Analog input | 11 | Satu dipakai untuk tegangan aki; lima di antaranya (AV1–AV5) sudah ber-pull-up 2,7 kΩ untuk sensor NTC |
 | Switch input 12 V | 4 | Untuk turn signal dan lampu indikator OEM; berbagi pin dengan sebagian analog input |
 | Digital input (HALL) | 4 | RPM, VSS, frequency, atau switch aktif-ground (clutch, launch control); berbagi pin dengan sebagian analog input |
-| Low-side output | 5 + 2 | Lima arus kecil, dua arus besar |
+| Low-side output | 5 + 2 | Lima arus kecil untuk relay, dua arus besar untuk solenoid (PWM) |
 | High-side output | 2 | Mendukung PWM dan melaporkan fault |
 | Logic output | 2 | Output sinyal 5 V atau 12 V |
 
@@ -149,22 +149,33 @@ sudah punya pull-up 1 kΩ ke 5 V. Fungsinya dipilih di TunerStudio:
 
 | Output | Pin konektor | Tipe | Keterangan |
 | :--- | :--- | :--- | :--- |
-| LC1 | J2-23 | Low-side, arus kecil | |
+| LC1 | J2-23 | Low-side, arus kecil | Untuk relay: relay lampu, relay start engine, relay fan |
 | LC2 | J2-22 | Low-side, arus kecil | |
 | LC3 | J2-20 | Low-side, arus kecil | |
 | LC4 | J2-19 | Low-side, arus kecil | Pin ini dipakai untuk LC4 **atau** LOGIC1 |
 | LC5 | J2-17 | Low-side, arus kecil | Pin ini dipakai untuk LC5 **atau** LOGIC2 |
-| LS1 | J2-15 | Low-side, arus besar | |
-| LS2 | J2-16 | Low-side, arus besar | |
-| HS1 | J2-21 | **High-side** | Mendukung PWM, melaporkan fault |
-| HS2 | J2-18 | **High-side** | Mendukung PWM, melaporkan fault |
+| LS1 | J2-15 | Low-side, arus besar | Untuk solenoid; PWM software |
+| LS2 | J2-16 | Low-side, arus besar | Untuk solenoid; PWM software |
+| HS1 | J2-21 | **High-side** | PWM hardware, melaporkan fault |
+| HS2 | J2-18 | **High-side** | PWM hardware, melaporkan fault |
 
 **Ini kesalahan wiring yang paling sering terjadi:** output **low-side**
 menyaklar sisi **ground**, jadi ujung beban yang lain harus di 12 V. Output
 **high-side** justru mengeluarkan 12 V, jadi ujung beban yang lain harus di
 ground. Tertukar berarti beban tidak akan bekerja.
 
-Hanya **HS1 dan HS2** yang menerima nilai PWM; output lain hanya on/off.
+**PWM** tersedia di HS1, HS2, LS1 dan LS2; output lain hanya on/off.
+Frekuensinya diatur di TunerStudio, di halaman masing-masing output:
+
+| Output | Jenis PWM | Frekuensi |
+| :--- | :--- | :--- |
+| HS1, HS2 | Hardware | **Satu frekuensi untuk keduanya** (satu timer): mengubah di HS1 juga mengubah HS2. 4–500 Hz, default 490 Hz |
+| LS1, LS2 | Software | **Masing-masing sendiri.** 4–500 Hz, default 100 Hz |
+
+Batas maksimal **500 Hz**. Solenoid umumnya dipakai di 15–300 Hz (boost control
+sekitar 15–30 Hz, idle valve dan fan sekitar 100–300 Hz). Pada LS, pulsa yang
+lebih pendek dari 0,1 ms dibulatkan menjadi mati atau menyala penuh, jadi di
+500 Hz duty yang bisa dipakai adalah 5–95%.
 
 **Logic output** (LOGIC1 dan LOGIC2) adalah output sinyal, bukan driver coil.
 Tegangannya bisa dipilih **5 V atau 12 V** saat pemasangan. Keduanya memakai pin
@@ -306,8 +317,9 @@ hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.
 Isi **nilai OFF dengan 0** untuk semua tombol. Beberapa tombol boleh berada di
 byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.
 
-HS1 dan HS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol Toggle
-lagi di byte **2** (HS1) atau byte **3** (HS2), dengan nilai ON 1–254 sebagai
+HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol
+Toggle lagi di byte **2** (HS1), **3** (HS2), **4** (LS1) atau **5** (LS2),
+dengan nilai ON 1–254 sebagai
 duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
 kembali menyala penuh.
 
