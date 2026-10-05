@@ -6,8 +6,8 @@
 
 CAN IO Extender menambah **input dan output** ke Racedash lewat bus CAN yang
 sama dengan ECU. Modul ini membaca sensor dan saklar yang tidak diketahui ECU —
-misalnya lampu sein, rem tangan, lampu jauh, sensor tekanan tambahan, atau
-sensor kecepatan roda — lalu mem-broadcast-nya sebagai frame CAN yang bisa dibaca
+misalnya turn signal, handbrake, high beam, oil pressure tambahan, clutch
+switch, atau wheel speed sensor — lalu mem-broadcast-nya sebagai frame CAN yang bisa dibaca
 dash. Sebaliknya, dash juga bisa menyalakan output modul ini untuk menggerakkan
 relay, pompa, kipas, atau solenoid.
 
@@ -28,8 +28,8 @@ sesuai kebutuhan kendaraan, dan kalibrasi sensor diatur lewat
 | Kemampuan | Jumlah | Keterangan |
 | :--- | :---: | :--- |
 | Analog input | 11 | Satu dipakai untuk tegangan aki; lima di antaranya (AV1–AV5) sudah ber-pull-up 2,7 kΩ untuk sensor NTC |
-| Switch input 12 V | 4 | Berbagi pin dengan sebagian analog input |
-| Hall / frequency input | 4 | Berbagi pin dengan sebagian analog input |
+| Switch input 12 V | 4 | Untuk turn signal dan lampu indikator OEM; berbagi pin dengan sebagian analog input |
+| Digital input (HALL) | 4 | RPM, VSS, frequency, atau switch aktif-ground (clutch, launch control); berbagi pin dengan sebagian analog input |
 | Low-side output | 5 + 2 | Lima arus kecil, dua arus besar |
 | High-side output | 2 | Mendukung PWM dan melaporkan fault |
 | Logic output | 2 | Output sinyal 5 V atau 12 V |
@@ -113,8 +113,9 @@ Delapan pin input bisa dipilih fungsinya, dan dua pin lagi khusus analog.
 | J2-10 | Analog input (A2, pull-up NTC) |
 
 **AV1–AV5** (J2-11, J2-10, J2-9, J2-8, J2-7) punya resistor pull-up **2,7 kΩ ke
-5 V**, yaitu bias yang dibutuhkan sensor suhu NTC seperti sensor suhu air, suhu
-udara masuk atau suhu oli. Input ini yang tidak tersambung terbaca mendekati 5 V.
+5 V**, yaitu bias yang dibutuhkan sensor temperatur NTC seperti Coolant
+Temperature (CLT), Intake Air Temperature (IAT) atau Oil Temperature. Input ini
+yang tidak tersambung terbaca mendekati 5 V.
 
 Untuk mengisi kurva NTC di TunerStudio, hitung tegangan tiap titik dari tabel
 resistansi sensor:
@@ -123,16 +124,23 @@ resistansi sensor:
 
 Contoh: sensor 2.500 Ω pada 20 °C → 5 × 2500 ÷ 5200 = **2,40 V**.
 
-Sensor yang mengeluarkan tegangan 0–5 V sendiri — misalnya sensor tekanan —
+Sensor yang mengeluarkan tegangan 0–5 V sendiri — misalnya sensor Oil Pressure —
 paling baik dipasang di **AV6–AV10**, yang tanpa pull-up, supaya sinyalnya tidak
 ikut tertarik.
 
-**SW1–SW4 menerima 12 V langsung.** Gunakan untuk apa pun yang disaklar oleh
-12 V kendaraan: lampu sein, lampu jauh, lampu rem, rem tangan.
+**SW1–SW4 adalah switch input 12 V** (tahan 12 V), untuk sinyal 12 V dari
+kelistrikan mobil: turn signal kiri/kanan, high beam, handbrake, dan lampu
+indikator OEM lainnya.
 
-**HALL1–HALL4** membaca logic 5 V, tahan terhadap 12 V, dan keempatnya juga
-berfungsi sebagai **frequency counter** — cocok untuk sensor kecepatan roda atau
-flow meter.
+**Digital Input 1–4 (HALL1–HALL4)** membaca logic 5 V, tahan terhadap 12 V, dan
+sudah punya pull-up 1 kΩ ke 5 V. Fungsinya dipilih di TunerStudio:
+
+- **Sinyal pulsa** — RPM dari tachometer atau ignition, VSS (Vehicle Speed
+  Sensor), wheel speed sensor, atau frequency apa adanya (flex fuel sensor,
+  flow meter).
+- **Switch** — saklar **aktif-ground** seperti clutch switch atau launch control
+  switch (cukup disambung ke ground, tanpa resistor tambahan), atau sinyal 12 V
+  seperti head light dan park light.
 
 ## Output
 
@@ -188,9 +196,10 @@ membaca sinyal dari kendaraan dan mengirimnya ke dash lewat CAN.
 
 | Yang dibaca modul | Contoh | Masuk lewat |
 | :--- | :--- | :--- |
-| **Analog** | Suhu air dan suhu udara (NTC), tekanan oli, level bensin | AV1–AV10 |
-| **Digital** | Sein kiri/kanan, lampu jauh, rem tangan | SW1–SW4 |
-| **Sinyal pulsa** | RPM dari tachometer atau pengapian, kecepatan dari VSS | Digital Input 1–4 |
+| **Analog** | Coolant Temperature (CLT), Intake Air Temperature (IAT), Oil Pressure, Fuel Level | AV1–AV10 |
+| **Switch 12 V** | Turn signal kiri/kanan, high beam, handbrake, lampu indikator OEM | SW1–SW4 |
+| **Sinyal pulsa** | RPM dari tachometer atau ignition, VSS | Digital Input 1–4 |
+| **Switch aktif-ground** | Clutch switch, launch control switch | Digital Input 1–4 |
 
 **Langkah pemasangan:**
 
@@ -201,23 +210,23 @@ membaca sinyal dari kendaraan dan mengirimnya ke dash lewat CAN.
    sinyal "hidup" ke modul setiap 100 ms, jadi modul langsung terkunci ke bus.
 3. Kalibrasi sensor di [TunerStudio](#kalibrasi-sensor-di-tunerstudio). Untuk
    RPM, atur **Digital Input 1** ke Function **RPM** dengan jumlah silinder
-   mesin. Sinyal koil pengapian mentah harus lewat tach adapter dulu.
+   mesin. Sinyal ignition coil mentah harus lewat tach adapter dulu.
 4. Di DashTune, jalankan preset **CAN IO Extender** (lihat
    [Nilai sensor tambahan](#nilai-sensor-tambahan)) untuk sensor lainnya.
 
-**Yang langsung terbaca tanpa pengaturan:** RPM dari Digital Input 1, tegangan
-aki, dan lampu indikator dari tabel di bawah.
+**Yang langsung terbaca tanpa pengaturan:** RPM dari Digital Input 1, battery
+voltage, dan lampu indikator dari tabel di bawah.
 
 **Sensor lain mengisi gauge bawaan dash** lewat preset: pada tiap input, pilih
 **Sekalian isi kanal bawaan**, misalnya AV1 → **CLT**, AV2 → **IAT**,
-Digital Input 2 → **Speed**. Gauge, peringatan, dan shift light bawaan dash
+Digital Input 2 → **Speed**. Gauge, warning, dan shift light bawaan dash
 lalu membaca nilai dari modul seperti dari ECU biasa.
 
-!!! warning "Digital Input 1 dipakai untuk RPM dan lampu kepala"
-    Di M-Link, dash membaca **RPM** dari Digital Input 1 dan **lampu kepala**
-    dari level pin yang sama (J2-5). Kalau J2-5 dipakai untuk sinyal RPM, lampu
-    kepala di dash ikut berkedip. Di DashTune buka **General Setting →
-    Indikator**, lalu ganti sumber lampu kepala ke input lain atau matikan.
+!!! warning "Digital Input 1 dipakai untuk RPM dan head light"
+    Di M-Link, dash membaca **RPM** dari Digital Input 1 dan **head light**
+    dari pin yang sama (J2-5). Kalau J2-5 dipakai untuk sinyal RPM, indikator
+    head light di dash ikut berkedip. Di DashTune buka **General Setting →
+    Indikator**, lalu ganti sumber head light ke input lain atau matikan.
 
 ### Lampu indikator dari saklar kendaraan
 
@@ -228,12 +237,14 @@ Di DashTune, buka pengaturan indikator, pilih mode **CAN**, lalu isi:
 | Turn left | `0x643` | 0 | 0 | J2-9 |
 | Turn right | `0x643` | 0 | 1 | J2-8 |
 | High beam | `0x643` | 0 | 2 | J2-7 |
-| Hand brake | `0x643` | 0 | 3 | J2-6 |
+| Handbrake | `0x643` | 0 | 3 | J2-6 |
 | Head light | `0x643` | 0 | 4 | J2-5 |
 | Park light | `0x643` | 0 | 5 | J2-4 |
 
-Pastikan keenam pin itu difungsikan sebagai **switch input 12 V**, dan biarkan
-pilihan **invert dalam keadaan mati** — modul sudah melaporkan 1 = aktif.
+J2-9 sampai J2-6 harus difungsikan sebagai **switch input 12 V** (SW1–SW4).
+J2-5 dan J2-4 adalah Digital Input 1 dan 2: di TunerStudio atur Function-nya
+ke **Switch**, **Active at 12 V**. Biarkan pilihan **invert dalam keadaan
+mati** — modul sudah melaporkan 1 = aktif.
 
 ### Nilai sensor tambahan
 
@@ -251,8 +262,8 @@ input pilih:
 - **Volt** — tegangan input mentah, untuk sensor linier atau sekadar memeriksa
   wiring.
 
-Aktifkan **Sekalian atur lampu indikator** untuk memetakan sein, lampu jauh,
-rem tangan, lampu kepala dan lampu parkir sekaligus (tabel di atas).
+Aktifkan **Sekalian atur lampu indikator** untuk memetakan turn signal, high
+beam, handbrake, head light dan park light sekaligus (tabel di atas).
 
 Kalau modul berhenti mengirim — kabel CAN lepas atau modul mati — nilainya
 berubah menjadi **"--"** setelah sekitar 1,5 detik, dan tidak memicu peringatan.
@@ -347,17 +358,20 @@ serta bitrate CAN bisa diubah tanpa flash ulang.
 Tekan **Burn** agar kurva tersimpan di modul. Ikon **?** di setiap kolom berisi
 penjelasan singkat.
 
-**Digital Input (RPM, kecepatan, frekuensi)** — buka menu **Digital Inputs →
+**Digital Input (RPM, VSS, frequency, switch)** — buka menu **Digital Inputs →
 Digital Input 1** (dan seterusnya). Digital Input 1–4 adalah pin HALL1–HALL4 di
 konektor.
 
 ![Dialog Digital Input 1 di TunerStudio diatur sebagai RPM dari sinyal tachometer 4 silinder](img/can-io/ts-digital-input.png)
 
-- **Function**: **RPM** (putaran mesin), **Speed (VSS)** (kecepatan kendaraan)
-  atau **Frequency** (frekuensi apa adanya, misalnya flow meter).
+- **Function**: **RPM** (engine speed), **Speed (VSS)** (vehicle speed),
+  **Frequency** (frequency apa adanya, misalnya flow meter), atau **Switch**.
+- **Switch active** (khusus Switch): **Active to ground** untuk saklar ke ground
+  seperti clutch switch atau launch control switch, atau **Active at 12 V**
+  untuk sinyal 12 V seperti head light. Nilainya 1 saat aktif.
 - **Signal** (khusus RPM): **Tach / ignition (cylinders)** untuk sinyal
-  tachometer atau pengapian — isi **Cylinders** dan **Engine** (2-tak atau
-  4-tak); atau **Custom pulses per rev** untuk trigger wheel, isi jumlah pulsa
+  tachometer atau ignition — isi **Cylinders** dan **Engine** (2-stroke atau
+  4-stroke); atau **Custom pulses per rev** untuk trigger wheel, isi jumlah pulsa
   per putaran.
 - **Pulses per km** (khusus Speed): jumlah pulsa sensor kecepatan per kilometer.
 - **Noise filter**: mengabaikan pulsa palsu dari sinyal yang berdering, misalnya
@@ -366,7 +380,8 @@ konektor.
   makin lambat mengikuti perubahan.
 
 Gauge di bawahnya menunjukkan nilai saat ini. Hasilnya dikirim di CAN
-`0x649` (node 0): RPM apa adanya, kecepatan dan frekuensi dikali 10. Tekan
+`0x649` (node 0): RPM apa adanya, speed dan frequency dikali 10, switch 0
+atau 1. Tekan
 **Burn** untuk menyimpan.
 
 **Node dan CAN** — menu **Module → Node and CAN bus**:
@@ -389,7 +404,7 @@ CAN ID di bawah berlaku untuk modul node 0. Semua nilai **little-endian**.
 | `0x641` | 1601 | AV4, AV5, AV6, AV7 (mV) |
 | `0x642` | 1602 | AV8, AV9, AV10 (mV) |
 | `0x643` | 1603 | Status digital input, diagnosa, status output |
-| `0x644` | 1604 | Frekuensi HALL1–HALL4 |
+| `0x644` | 1604 | Frequency HALL1–HALL4 |
 | `0x645` | 1605 | AV1–AV4 terkalibrasi |
 | `0x646` | 1606 | AV5–AV8 terkalibrasi |
 | `0x647` | 1607 | AV9–AV10 terkalibrasi |
