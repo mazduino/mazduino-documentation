@@ -138,9 +138,12 @@ sudah punya pull-up 1 kΩ ke 5 V. Fungsinya dipilih di TunerStudio:
 - **Sinyal pulsa** — RPM dari tachometer atau ignition, VSS (Vehicle Speed
   Sensor), wheel speed sensor, atau frequency apa adanya (flex fuel sensor,
   flow meter).
-- **Switch** — saklar **aktif-ground** seperti clutch switch atau launch control
-  switch (cukup disambung ke ground, tanpa resistor tambahan), atau sinyal 12 V
-  seperti head light dan park light.
+- **Switch** — saklar on/off, dengan **Polarity**:
+    - **Default** — aktif saat pin HIGH, misalnya sinyal 12 V dari head light
+      atau park light.
+    - **Inverted** — aktif saat pin di-ground, untuk saklar aktif-ground seperti
+      clutch switch atau launch control switch. Cukup disambung ke ground, tanpa
+      resistor tambahan.
 
 ## Output
 
@@ -243,7 +246,7 @@ Di DashTune, buka pengaturan indikator, pilih mode **CAN**, lalu isi:
 
 J2-9 sampai J2-6 harus difungsikan sebagai **switch input 12 V** (SW1–SW4).
 J2-5 dan J2-4 adalah Digital Input 1 dan 2: di TunerStudio atur Function-nya
-ke **Switch**, **Active at 12 V**. Biarkan pilihan **invert dalam keadaan
+ke **Switch**, Polarity **Default**. Di DashTune, biarkan pilihan **invert dalam keadaan
 mati** — modul sudah melaporkan 1 = aktif.
 
 ### Nilai sensor tambahan
@@ -366,8 +369,8 @@ konektor.
 
 - **Function**: **RPM** (engine speed), **Speed (VSS)** (vehicle speed),
   **Frequency** (frequency apa adanya, misalnya flow meter), atau **Switch**.
-- **Switch active** (khusus Switch): **Active to ground** untuk saklar ke ground
-  seperti clutch switch atau launch control switch, atau **Active at 12 V**
+- **Polarity** (khusus Switch): **Inverted** untuk saklar ke ground seperti
+  clutch switch atau launch control switch, atau **Default**
   untuk sinyal 12 V seperti head light. Nilainya 1 saat aktif.
 - **Signal** (khusus RPM): **Tach / ignition (cylinders)** untuk sinyal
   tachometer atau ignition — isi **Cylinders** dan **Engine** (2-stroke atau
