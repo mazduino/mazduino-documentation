@@ -7,7 +7,7 @@
 *Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
 Template 1 dan sebuah CAN button "Start Engine"*
 
-Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop. Pada generasi M4/M5/M7, tersedia juga aplikasi Android **DashTune** lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.
+Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop. Tersedia juga aplikasi Android **DashTune** lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.
 
 | Varian | Ukuran Layar | Konektor |
 | :---- | :---- | :---- |
@@ -15,53 +15,12 @@ Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran 
 | Racedash Pro 5" (M5) | 5 inch | DTM4 (Deutsch DTM 4 Pin) |
 | Racedash Pro 7" (M7) | 7 inch | DTM4 (Deutsch DTM 4 Pin) |
 
-> **Dua generasi firmware**: Racedash Pro hadir dalam dua generasi. Keduanya
-> memakai bodi, layar, dan konektor yang sama — yang berbeda adalah tampilan
-> dan cara mengaturnya.
->
-> - **Generasi M4 / M5 / M7** — punya beberapa pilihan tampilan (template) yang
->   bisa digeser, dan bisa diatur dari HP lewat aplikasi **DashTune** selain
->   dari layar. Panduannya ada di bagian
->   [Racedash Pro M4 / M5 / M7](#racedash-pro-m4-m5-m7).
-> - **Generasi lama** — seluruh pengaturan dilakukan dari layar sentuh.
->   Halamannya bernama *Main*, *Bench Test*, *Warning Setting*, *Slot Setting*,
->   *Display Setting*, dan *Connection Setting*. Panduannya ada di bagian
->   [Pengaturan via Touchscreen (firmware lama)](#pengaturan-via-touchscreen-firmware-lama)
->   di akhir halaman ini.
->
-> Cara membedakannya paling mudah: kalau dashboard-mu bisa **digeser
-> kiri-kanan** untuk berganti tampilan, berarti generasi M4/M5/M7.
-
 ## Fitur Utama
 
 - Layar sentuh (touchscreen) sehingga pengaturan dashboard bisa dilakukan langsung di layar, tanpa aplikasi atau koneksi WiFi tambahan
 - Menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time
 - Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung ECU yang digunakan. ECU berbasis **Speeduino** menggunakan mode Serial, sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
-- Tersedia halaman **Bench Test** khusus untuk ECU **rusEFI**
-
-## Fitur via WiFi
-
-Meskipun sebagian besar pengaturan Racedash Pro dilakukan langsung dari touchscreen, ada beberapa fitur yang tetap memerlukan koneksi WiFi ke situs Mazduino, yaitu update firmware dan custom splash screen.
-
-> **Untuk generasi M4 / M5 / M7**, update firmware dan splash screen dilakukan
-> lewat aplikasi **DashTune** di HP, bukan melalui situs Mazduino. Langkahnya
-> ada di [Panduan Aplikasi DashTune](#panduan-aplikasi-dashtune). Cara di bawah
-> ini berlaku untuk firmware generasi lama.
-
-### Update Firmware (USB atau OTA)
-
-Update firmware Racedash Pro dapat dilakukan dengan dua cara:
-
-1. **USB** — membuka case Racedash Pro, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.
-2. **OTA (Over-The-Air)** — melalui WiFi menggunakan **Mazduino Flasher** pada **[mazduino.com/dashboard/flasher](https://www.mazduino.com/dashboard/flasher)**, tanpa perlu membuka case. Hubungkan HP/laptop ke WiFi yang dipancarkan oleh Racedash Pro (atau pastikan berada di jaringan WiFi yang sama), lalu pilih model Racedash Pro yang sesuai pada **Select Device** — **pastikan device dipilih dengan benar** — sebelum klik **Start Flashing**.
-
-### Custom Splash Screen
-
-Racedash Pro mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui **Splash Screen Generator** dan diunggah ke Racedash Pro melalui WiFi.
-
-1. Buka **[mazduino.com/splash-generator](https://www.mazduino.com/splash-generator)** melalui browser HP/laptop.
-2. Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.
-3. Unggah hasilnya ke Racedash Pro melalui koneksi WiFi yang dipancarkan oleh device.
+- Kendaraan tanpa CAN bus bisa memakai protokol **M-Link** bersama [CAN IO Extender](can-io-extender.md#kendaraan-tanpa-can-bus-protokol-m-link), yang membaca sensor, saklar, dan RPM lalu mengirimnya ke dash
 
 ## Konektor DTM4 / 4 Pin
 
@@ -89,7 +48,7 @@ Racedash Pro menggunakan konektor **DTM4 (Deutsch DTM 4 Pin)** yang sama dengan 
 
 ## Racedash Pro M4 / M5 / M7
 
-Bagian ini khusus untuk generasi M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
+Bagian ini membahas M4 (4.3"), M5 (5"), dan M7 (7"). Konektor dan
 pemasangan kabelnya sama persis dengan yang dijelaskan di
 [Konektor DTM4 / 4 Pin](#konektor-dtm4-4-pin) di atas.
 
@@ -189,10 +148,6 @@ Warna gauge dan isi tiap panel dapat diubah, jadi tampilan di dash Anda bisa
 berbeda dari contoh di atas.
 
 ### Menu di layar (M4 / M5 / M7)
-
-Menu firmware ini berbeda sama sekali dari firmware lama. Tidak ada lagi
-halaman *Warning Setting*, *Slot Setting*, atau *Connection Setting* — semuanya
-disusun ulang di bawah satu menu.
 
 #### Gerakan di layar
 
@@ -390,88 +345,6 @@ sedang diputar** ke layar dash. Pengaturannya ada di tab **Lainnya → Relay**.
 
 Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
 halaman pengaturannya saat pertama kali diaktifkan.
-
-## Pengaturan via Touchscreen (firmware lama)
-
-> **Bagian ini untuk firmware generasi lama.** Kalau dash-mu bisa **digeser
-> kiri-kanan untuk berganti tampilan**, berarti memakai firmware M4/M5/M7 dan
-> menunya berbeda — lihat
-> [Menu di layar (M4 / M5 / M7)](#menu-di-layar-m4-m5-m7).
-
-Pada firmware lama, semua pengaturan tersedia langsung melalui menu di layar (swipe/tap antar halaman) tanpa perlu WiFi/browser. Menu pengaturan terdiri dari 6 halaman berikut:
-
-- [Main Screen](#main-screen)
-- [Bench Test Screen (Khusus rusEFI)](#bench-test-screen-khusus-rusefi)
-- [Warning Setting Screen](#warning-setting-screen)
-- [Slot Setting Screen](#slot-setting-screen)
-- [Display Setting Screen](#display-setting-screen)
-- [Connection Setting Screen](#connection-setting-screen)
-
-### Main Screen
-
-![Main Screen Racedash Pro](img/dash/racedash-pro-main.jpeg)
-
-Halaman utama menampilkan data real-time dari ECU:
-
-- **Gear indicator & shift light bar** di bagian atas (angka gigi 1–7, warna bar berubah mengikuti RPM) beserta nilai RPM di pojok kanan atas
-- **Kecepatan (KM/H)** ditampilkan besar di tengah layar
-- **6 slot data** tambahan (kiri dan kanan) berupa gauge bar + nilai, misalnya Oil Pressure (OIL P), Fuel Pressure (FUEL P), VBATT, MAP, dan Ignition Advance (ADV) — parameter pada tiap slot dapat diatur melalui [Slot Setting Screen](#slot-setting-screen)
-
-### Bench Test Screen (Khusus rusEFI)
-
-![Bench Test Screen Racedash Pro](img/dash/racedash-pro-bench-test.jpeg)
-
-Halaman khusus untuk ECU **rusEFI** yang digunakan untuk menguji wiring/actuator sebelum mesin dinyalakan, tanpa perlu bantuan software tambahan di laptop. Tersedia tombol untuk memicu langsung:
-
-- **Ignition** koil pengapian 1–8
-- **Injectors** injektor 1–8
-- **Fan 1** dan **Fan 2**
-- **Fuel Pump**
-- **Start/Stop Engine**
-
-### Warning Setting Screen
-
-![Warning Setting Screen Racedash Pro](img/dash/racedash-pro-warning-setting.jpeg)
-
-Halaman untuk mengatur batas (threshold) peringatan pada tiap parameter, masing-masing dengan tombol **+ / -** untuk mengubah nilai:
-
-- **RPM Warning** — batas RPM/shift light
-- **CLT Warning** — batas suhu air (Coolant Temp)
-- **IAT Warning** — batas suhu udara masuk (Intake Air Temp)
-- **Oil P Warning** — batas tekanan oli
-- **Fuel P Warning** — batas tekanan bahan bakar
-- **VBATT Warning** — batas tegangan baterai
-
-Terdapat juga tombol navigasi ke **Display** dan **Slot Cfg**, tombol **Default** untuk mengembalikan ke pengaturan awal, serta tombol **Save** untuk menyimpan perubahan.
-
-### Slot Setting Screen
-
-![Slot Setting Screen Racedash Pro](img/dash/racedash-pro-slot-setting.jpeg)
-
-Halaman **Slot Config** untuk mengatur parameter yang ditampilkan pada tiap slot di Main Screen. Slot tersedia untuk posisi **Left 1–3** dan **Right 1–3**, masing-masing dapat dipilih dari daftar parameter yang tersedia (contoh: CLT, BAT, TPS, OIL P, FUEL P, ADV) dengan cara swipe. Gunakan tombol **Discard** untuk membatalkan perubahan atau **Save** untuk menyimpan.
-
-### Display Setting Screen
-
-![Display Setting Screen Racedash Pro](img/dash/racedash-pro-display-setting.jpeg)
-
-Halaman **Display Settings** untuk mengatur tampilan dashboard:
-
-- **Color Palette** — pilihan tema/skema warna tampilan (contoh: "Volt Line"), diatur dengan tombol **+ / -**
-
-Tombol **Back** digunakan untuk kembali ke halaman sebelumnya.
-
-### Connection Setting Screen
-
-![Connection Setting Screen Racedash Pro](img/dash/racedash-pro-connection-setting.jpeg)
-
-Halaman **Connection Settings** untuk mengatur mode komunikasi ke ECU:
-
-- **ECU** — pilih tipe ECU yang digunakan (rusEFI, Haltech, MaxxECU, atau Speeduino), diatur dengan tombol **+ / -**
-- **Baudrate** — baudrate komunikasi CAN Bus mengikuti ECU yang dipilih secara otomatis: **1 Mbps** untuk **Haltech**, dan **500 kbps** untuk ECU lainnya
-- **WiFi/AP Server** — tombol on/off untuk mengaktifkan/menonaktifkan WiFi Access Point pada Racedash Pro
-- **BLE Telemetry** — tombol on/off untuk mengaktifkan/menonaktifkan pengiriman data telemetri via Bluetooth Low Energy
-
-Tombol **Default** mengembalikan ke pengaturan awal, dan **Save** menyimpan perubahan.
 
 ## Referensi
 

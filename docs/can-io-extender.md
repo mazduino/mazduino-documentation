@@ -11,9 +11,19 @@ sensor kecepatan roda — lalu mem-broadcast-nya sebagai frame CAN yang bisa dib
 dash. Sebaliknya, dash juga bisa menyalakan output modul ini untuk menggerakkan
 relay, pompa, kipas, atau solenoid.
 
-Modul bekerja mandiri: bitrate bus dideteksi sendiri, dan tidak ada yang perlu
-diatur lewat aplikasi. Fungsi tiap pin ditentukan saat pemasangan, sesuai
-kebutuhan kendaraan.
+Ada dua cara memakainya:
+
+- **Kendaraan dengan ECU ber-CAN** — modul menambah input dan output yang tidak
+  dimiliki ECU. Data ECU tetap terbaca seperti biasa.
+- **Kendaraan tanpa CAN bus** — misalnya mesin karburator atau ECU lama tanpa
+  CAN. Modul menjadi satu-satunya sumber data dash lewat protokol
+  [M-Link](#kendaraan-tanpa-can-bus-protokol-m-link): ia membaca sinyal
+  analog, digital, dan RPM langsung dari kendaraan, lalu mengirimnya ke dash
+  lewat CAN.
+
+Bitrate bus dideteksi sendiri. Fungsi tiap pin ditentukan saat pemasangan,
+sesuai kebutuhan kendaraan, dan kalibrasi sensor diatur lewat
+[TunerStudio](#kalibrasi-sensor-di-tunerstudio).
 
 | Kemampuan | Jumlah | Keterangan |
 | :--- | :---: | :--- |
@@ -169,6 +179,45 @@ sedang aktif**.
     juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
     ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
     diawali `0x` selalu dibaca sebagai heksadesimal, apa pun pilihannya.
+
+### Kendaraan tanpa CAN bus: protokol M-Link
+
+Pilih protokol ECU **M-Link** (Mazduino Link) bila kendaraan belum memakai CAN
+bus. M-Link tersedia di Racedash Pro M4, M5, dan M7. CAN IO Extender lalu menggantikan ECU sebagai sumber data dash: modul
+membaca sinyal dari kendaraan dan mengirimnya ke dash lewat CAN.
+
+| Yang dibaca modul | Contoh | Masuk lewat |
+| :--- | :--- | :--- |
+| **Analog** | Suhu air dan suhu udara (NTC), tekanan oli, level bensin | AV1–AV10 |
+| **Digital** | Sein kiri/kanan, lampu jauh, rem tangan | SW1–SW4 |
+| **Sinyal pulsa** | RPM dari tachometer atau pengapian, kecepatan dari VSS | Digital Input 1–4 |
+
+**Langkah pemasangan:**
+
+1. Sambungkan CAN H dan CAN L modul ke dash, dan pastikan bus punya dua
+   terminator 120 Ω (lihat [Daya, CAN, dan Terminasi](#daya-can-dan-terminasi)).
+2. Di dash, buka **Setting → CAN → ECU protocol → M-Link**, atau di DashTune
+   **General Setting → ECU → M-Link**. Bitrate-nya 500 kbps dan dash mengirim
+   sinyal "hidup" ke modul setiap 100 ms, jadi modul langsung terkunci ke bus.
+3. Kalibrasi sensor di [TunerStudio](#kalibrasi-sensor-di-tunerstudio). Untuk
+   RPM, atur **Digital Input 1** ke Function **RPM** dengan jumlah silinder
+   mesin. Sinyal koil pengapian mentah harus lewat tach adapter dulu.
+4. Di DashTune, jalankan preset **CAN IO Extender** (lihat
+   [Nilai sensor tambahan](#nilai-sensor-tambahan)) untuk sensor lainnya.
+
+**Yang langsung terbaca tanpa pengaturan:** RPM dari Digital Input 1, tegangan
+aki, dan lampu indikator dari tabel di bawah.
+
+**Sensor lain mengisi gauge bawaan dash** lewat preset: pada tiap input, pilih
+**Sekalian isi kanal bawaan**, misalnya AV1 → **CLT**, AV2 → **IAT**,
+Digital Input 2 → **Speed**. Gauge, peringatan, dan shift light bawaan dash
+lalu membaca nilai dari modul seperti dari ECU biasa.
+
+!!! warning "Digital Input 1 dipakai untuk RPM dan lampu kepala"
+    Di M-Link, dash membaca **RPM** dari Digital Input 1 dan **lampu kepala**
+    dari level pin yang sama (J2-5). Kalau J2-5 dipakai untuk sinyal RPM, lampu
+    kepala di dash ikut berkedip. Di DashTune buka **General Setting →
+    Indikator**, lalu ganti sumber lampu kepala ke input lain atau matikan.
 
 ### Lampu indikator dari saklar kendaraan
 

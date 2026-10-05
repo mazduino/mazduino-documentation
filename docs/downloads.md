@@ -155,7 +155,6 @@ sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.
 | Racedash 3.5" & 4" (M1, M2, M3, C1) | **Mazduino Flasher** — OTA lewat WiFi | Tidak |
 | Racedash 3.5" & 4" | USB TTL internal | Ya |
 | Racedash Pro M4, M5, M7 | Aplikasi **DashTune** | Tidak |
-| Racedash Pro generasi lama | **Mazduino Flasher** — OTA lewat WiFi | Tidak |
 
 ### Lewat Mazduino Flasher (OTA)
 
@@ -172,7 +171,7 @@ Langkah lengkapnya ada di
 
 ### Lewat DashTune (Racedash Pro M4 / M5 / M7)
 
-Generasi M4/M5/M7 diperbarui dari aplikasi Android **DashTune**: menu **Update
+Racedash Pro M4/M5/M7 diperbarui dari aplikasi Android **DashTune**: menu **Update
 Firmware** memeriksa versi terbaru dan memasangnya sendiri, tanpa kabel maupun
 situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
 [Panduan Aplikasi DashTune](mazduino-racedash-pro.md#panduan-aplikasi-dashtune).
