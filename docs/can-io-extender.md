@@ -17,7 +17,7 @@ kebutuhan kendaraan.
 
 | Kemampuan | Jumlah | Keterangan |
 | :--- | :---: | :--- |
-| Analog input | 11 | Satu dipakai untuk tegangan aki; dua di antaranya sudah ber-pull-up untuk sensor NTC |
+| Analog input | 11 | Satu dipakai untuk tegangan aki; lima di antaranya (AV1–AV5) sudah ber-pull-up 2,7 kΩ untuk sensor NTC |
 | Switch input 12 V | 4 | Berbagi pin dengan sebagian analog input |
 | Hall / frequency input | 4 | Berbagi pin dengan sebagian analog input |
 | Low-side output | 5 + 2 | Lima arus kecil, dua arus besar |
@@ -59,11 +59,11 @@ kait pengunci di atas, memakai susunan yang sama.
 | 4 | Input: A8 atau HALL2 | 16 | Output LS2 (low-side, arus besar) |
 | 5 | Input: A7 atau HALL1 | 17 | Output LC5 **atau** LOGIC2 |
 | 6 | Input: A6 atau SW4 | 18 | Output HS2 (high-side) |
-| 7 | Input: A5 atau SW3 | 19 | Output LC4 **atau** LOGIC1 |
-| 8 | Input: A4 atau SW2 | 20 | Output LC3 (low-side) |
-| 9 | Input: A3 atau SW1 | 21 | Output HS1 (high-side) |
-| 10 | Input: A2 (untuk sensor NTC) | 22 | Output LC2 (low-side) |
-| 11 | Input: A1 (untuk sensor NTC) | 23 | Output LC1 (low-side) |
+| 7 | Input: A5 (pull-up NTC) atau SW3 | 19 | Output LC4 **atau** LOGIC1 |
+| 8 | Input: A4 (pull-up NTC) atau SW2 | 20 | Output LC3 (low-side) |
+| 9 | Input: A3 (pull-up NTC) atau SW1 | 21 | Output HS1 (high-side) |
+| 10 | Input: A2 (pull-up NTC) | 22 | Output LC2 (low-side) |
+| 11 | Input: A1 (pull-up NTC) | 23 | Output LC1 (low-side) |
 | 12 | Ground | 24 | 12 V dari kontak (switched) |
 
 Penjelasan tiap kelompok pin ada di bagian [Daya](#daya-can-dan-terminasi),
@@ -91,20 +91,31 @@ Delapan pin input bisa dipilih fungsinya, dan dua pin lagi khusus analog.
 
 | Pin konektor | Dapat difungsikan sebagai |
 | :--- | :--- |
-| J2-9 | Analog input (A3) **atau** switch input 12 V (SW1) |
-| J2-8 | Analog input (A4) **atau** switch input 12 V (SW2) |
-| J2-7 | Analog input (A5) **atau** switch input 12 V (SW3) |
+| J2-9 | Analog input (A3, pull-up NTC) **atau** switch input 12 V (SW1) |
+| J2-8 | Analog input (A4, pull-up NTC) **atau** switch input 12 V (SW2) |
+| J2-7 | Analog input (A5, pull-up NTC) **atau** switch input 12 V (SW3) |
 | J2-6 | Analog input (A6) **atau** switch input 12 V (SW4) |
 | J2-5 | Analog input (A7) **atau** Hall / frequency input (HALL1) |
 | J2-4 | Analog input (A8) **atau** Hall / frequency input (HALL2) |
 | J2-3 | Analog input (A9) **atau** Hall / frequency input (HALL3) |
 | J2-2 | Analog input (A10) **atau** Hall / frequency input (HALL4) |
-| J2-11 | Analog input (A1), sudah ber-pull-up untuk sensor NTC |
-| J2-10 | Analog input (A2), sudah ber-pull-up untuk sensor NTC |
+| J2-11 | Analog input (A1, pull-up NTC) |
+| J2-10 | Analog input (A2, pull-up NTC) |
 
-Pull-up pada J2-10 dan J2-11 adalah yang dibutuhkan sensor NTC, seperti sensor
-suhu air atau suhu udara masuk. Sensor yang mengeluarkan tegangan 0–5 V sendiri
-— misalnya sensor tekanan — dipasang di pin analog mana pun.
+**AV1–AV5** (J2-11, J2-10, J2-9, J2-8, J2-7) punya resistor pull-up **2,7 kΩ ke
+5 V**, yaitu bias yang dibutuhkan sensor suhu NTC seperti sensor suhu air, suhu
+udara masuk atau suhu oli. Input ini yang tidak tersambung terbaca mendekati 5 V.
+
+Untuk mengisi kurva NTC di TunerStudio, hitung tegangan tiap titik dari tabel
+resistansi sensor:
+
+> volt = 5 × R ÷ (R + 2700), dengan R = resistansi sensor (ohm) pada suhu itu
+
+Contoh: sensor 2.500 Ω pada 20 °C → 5 × 2500 ÷ 5200 = **2,40 V**.
+
+Sensor yang mengeluarkan tegangan 0–5 V sendiri — misalnya sensor tekanan —
+paling baik dipasang di **AV6–AV10**, yang tanpa pull-up, supaya sinyalnya tidak
+ikut tertarik.
 
 **SW1–SW4 menerima 12 V langsung.** Gunakan untuk apa pun yang disaklar oleh
 12 V kendaraan: lampu sein, lampu jauh, lampu rem, rem tangan.
@@ -270,7 +281,7 @@ serta bitrate CAN bisa diubah tanpa flash ulang.
    lalu arahkan ke file `mazduino-iox.ini`.
 3. Pilih port USB modul dengan baud **115200**, lalu hubungkan.
 
-**Mengisi kurva** — buka menu **AV inputs → AV1** (dan seterusnya):
+**Mengisi kurva** — buka menu **Analog Volt Inputs → AV1** (dan seterusnya):
 
 - **Name**: nama input, misalnya "Fuel level". Dipakai sebagai judul gauge.
 - **Decimals** dan **Unit**: cara nilai ditampilkan. Desimal juga menentukan
