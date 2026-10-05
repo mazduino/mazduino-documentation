@@ -283,6 +283,8 @@ serta bitrate CAN bisa diubah tanpa flash ulang.
 
 **Mengisi kurva** — buka menu **Analog Volt Inputs → AV1** (dan seterusnya):
 
+![Dialog Analog Volt Input 1 di TunerStudio: pengaturan, kurva volt ke nilai, dan gauge Raw AV1](img/can-io/ts-analog-volt-input.png)
+
 - **Name**: nama input, misalnya "Fuel level". Dipakai sebagai judul gauge.
 - **Decimals** dan **Unit**: cara nilai ditampilkan. Desimal juga menentukan
   scale di dash: desimal 1 berarti scale `0.1`.
@@ -295,6 +297,28 @@ serta bitrate CAN bisa diubah tanpa flash ulang.
 
 Tekan **Burn** agar kurva tersimpan di modul. Ikon **?** di setiap kolom berisi
 penjelasan singkat.
+
+**Digital Input (RPM, kecepatan, frekuensi)** — buka menu **Digital Inputs →
+Digital Input 1** (dan seterusnya). Digital Input 1–4 adalah pin HALL1–HALL4 di
+konektor.
+
+![Dialog Digital Input 1 di TunerStudio diatur sebagai RPM dari sinyal tachometer 4 silinder](img/can-io/ts-digital-input.png)
+
+- **Function**: **RPM** (putaran mesin), **Speed (VSS)** (kecepatan kendaraan)
+  atau **Frequency** (frekuensi apa adanya, misalnya flow meter).
+- **Signal** (khusus RPM): **Tach / ignition (cylinders)** untuk sinyal
+  tachometer atau pengapian — isi **Cylinders** dan **Engine** (2-tak atau
+  4-tak); atau **Custom pulses per rev** untuk trigger wheel, isi jumlah pulsa
+  per putaran.
+- **Pulses per km** (khusus Speed): jumlah pulsa sensor kecepatan per kilometer.
+- **Noise filter**: mengabaikan pulsa palsu dari sinyal yang berdering, misalnya
+  keluaran tach adapter. **Lite** cukup untuk kebanyakan sinyal.
+- **Smoothing**: meredam angka yang meloncat; makin besar makin halus tetapi
+  makin lambat mengikuti perubahan.
+
+Gauge di bawahnya menunjukkan nilai saat ini. Hasilnya dikirim di CAN
+`0x649` (node 0): RPM apa adanya, kecepatan dan frekuensi dikali 10. Tekan
+**Burn** untuk menyimpan.
 
 **Node dan CAN** — menu **Module → Node and CAN bus**:
 
