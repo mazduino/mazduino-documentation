@@ -257,7 +257,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="27 September 2026 00:46:39 UTC">27 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 Oktober 2026 02:58:19 UTC">6 Oktober 2026</span></em></p>
   <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
 <ul>
@@ -265,8 +265,8 @@
   di-flash lewat ST-Link, DFU, atau rusEFI Console.</li>
 <li><strong><a href="#firmware-racedash">Firmware Racedash</a></strong> — dash display; tidak diunduh
   manual, melainkan lewat Mazduino Flasher atau aplikasi DashTune.</li>
-<li><strong><a href="#firmware-can-io-extender">Firmware CAN IO Extender</a></strong> — file <code>.hex</code>,
-  di-flash lewat USB.</li>
+<li><strong><a href="#firmware-can-io-extender">Firmware CAN IO Extender</a></strong> — satu file <code>.zip</code>
+  berisi <code>.hex</code>, <code>.bin</code> dan INI TunerStudio, di-flash lewat USB.</li>
 </ul>
 <hr />
 <h2 id="firmware-ecu">Firmware ECU<a class="headerlink" href="#firmware-ecu" title="Permanent link">&para;</a></h2>
@@ -471,11 +471,6 @@ sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.</p>
 <td style="text-align: left;">Aplikasi <strong>DashTune</strong></td>
 <td style="text-align: left;">Tidak</td>
 </tr>
-<tr>
-<td style="text-align: left;">Racedash Pro generasi lama</td>
-<td style="text-align: left;"><strong>Mazduino Flasher</strong> — OTA lewat WiFi</td>
-<td style="text-align: left;">Tidak</td>
-</tr>
 </tbody>
 </table>
 <h3 id="lewat-mazduino-flasher-ota">Lewat Mazduino Flasher (OTA)<a class="headerlink" href="#lewat-mazduino-flasher-ota" title="Permanent link">&para;</a></h3>
@@ -490,7 +485,7 @@ Anda, dan firmware model lain akan membuat dash gagal menyala.</p>
 <p>Langkah lengkapnya ada di
 <a href="../mazduino-racedash/#update-firmware-usb-atau-ota">Update Firmware Racedash</a>.</p>
 <h3 id="lewat-dashtune-racedash-pro-m4-m5-m7">Lewat DashTune (Racedash Pro M4 / M5 / M7)<a class="headerlink" href="#lewat-dashtune-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h3>
-<p>Generasi M4/M5/M7 diperbarui dari aplikasi Android <strong>DashTune</strong>: menu <strong>Update
+<p>Racedash Pro M4/M5/M7 diperbarui dari aplikasi Android <strong>DashTune</strong>: menu <strong>Update
 Firmware</strong> memeriksa versi terbaru dan memasangnya sendiri, tanpa kabel maupun
 situs web. Aplikasinya masih uji tertutup — cara mendapatkannya ada di
 <a href="../mazduino-racedash-pro/#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>.</p>
@@ -504,6 +499,9 @@ proses berlangsung.</p>
 update atau untuk modul kedua dan seterusnya di bus yang sama.</p>
 <ul>
 <li><strong>Download</strong>: <a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></li>
+<li><strong>Isi file rilis</strong>: satu file <code>can-io-extender-vX.Y.Z.zip</code> berisi folder
+  <code>hex/</code> dan <code>bin/</code> (firmware tiap node) serta <code>tunerstudio/mazduino-iox.ini</code> —
+  INI untuk kalibrasi sensor dan pengaturan node</li>
 <li><strong>Cara memilih file dan flash</strong>: <a href="../can-io-extender/#firmware">CAN IO Extender → Firmware</a></li>
 </ul>
 <hr />

@@ -136,6 +136,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#memakai-dengan-racedash-pro-m4-m5-m7">Memakai dengan Racedash Pro (M4, M5, M7)</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#kendaraan-tanpa-can-bus-protokol-m-link">Kendaraan tanpa CAN bus: protokol M-Link</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#nilai-sensor-tambahan">Nilai sensor tambahan</a>
@@ -145,6 +147,8 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kalibrasi-sensor-di-tunerstudio">Kalibrasi Sensor di TunerStudio</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#data-yang-dikirim-modul">Data yang Dikirim Modul</a>
     </li>
@@ -254,19 +258,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 Oktober 2026 09:06:41 UTC">1 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 Oktober 2026 02:58:19 UTC">6 Oktober 2026</span></em></p>
   <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino CAN IO Extender dengan konektor kabel Molex 24 pin" src="../img/can-io/can-io-extender.jpeg" /></p>
 <p>CAN IO Extender menambah <strong>input dan output</strong> ke Racedash lewat bus CAN yang
 sama dengan ECU. Modul ini membaca sensor dan saklar yang tidak diketahui ECU —
-misalnya lampu sein, rem tangan, lampu jauh, sensor tekanan tambahan, atau
-sensor kecepatan roda — lalu mem-broadcast-nya sebagai frame CAN yang bisa dibaca
+misalnya turn signal, handbrake, high beam, oil pressure tambahan, clutch
+switch, atau wheel speed sensor — lalu mem-broadcast-nya sebagai frame CAN yang bisa dibaca
 dash. Sebaliknya, dash juga bisa menyalakan output modul ini untuk menggerakkan
 relay, pompa, kipas, atau solenoid.</p>
-<p>Modul bekerja mandiri: bitrate bus dideteksi sendiri, dan tidak ada yang perlu
-diatur lewat aplikasi. Fungsi tiap pin ditentukan saat pemasangan, sesuai
-kebutuhan kendaraan.</p>
+<p>Ada dua cara memakainya:</p>
+<ul>
+<li><strong>Kendaraan dengan ECU ber-CAN</strong> — modul menambah input dan output yang tidak
+  dimiliki ECU. Data ECU tetap terbaca seperti biasa.</li>
+<li><strong>Kendaraan tanpa CAN bus</strong> — misalnya mesin karburator atau ECU lama tanpa
+  CAN. Modul menjadi satu-satunya sumber data dash lewat protokol
+  <a href="#kendaraan-tanpa-can-bus-protokol-m-link">M-Link</a>: ia membaca sinyal
+  analog, digital, dan RPM langsung dari kendaraan, lalu mengirimnya ke dash
+  lewat CAN.</li>
+</ul>
+<p>Bitrate bus dideteksi sendiri. Fungsi tiap pin ditentukan saat pemasangan,
+sesuai kebutuhan kendaraan, dan kalibrasi sensor diatur lewat
+<a href="#kalibrasi-sensor-di-tunerstudio">TunerStudio</a>.</p>
 <table>
 <thead>
 <tr>
@@ -279,22 +293,22 @@ kebutuhan kendaraan.</p>
 <tr>
 <td style="text-align: left;">Analog input</td>
 <td style="text-align: center;">11</td>
-<td style="text-align: left;">Satu dipakai untuk tegangan aki; dua di antaranya sudah ber-pull-up untuk sensor NTC</td>
+<td style="text-align: left;">Satu dipakai untuk tegangan aki; lima di antaranya (AV1–AV5) sudah ber-pull-up 2,7 kΩ untuk sensor NTC</td>
 </tr>
 <tr>
 <td style="text-align: left;">Switch input 12 V</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">Berbagi pin dengan sebagian analog input</td>
+<td style="text-align: left;">Untuk turn signal dan lampu indikator OEM; berbagi pin dengan sebagian analog input</td>
 </tr>
 <tr>
-<td style="text-align: left;">Hall / frequency input</td>
+<td style="text-align: left;">Digital input (HALL)</td>
 <td style="text-align: center;">4</td>
-<td style="text-align: left;">Berbagi pin dengan sebagian analog input</td>
+<td style="text-align: left;">RPM, VSS, frequency, atau switch aktif-ground (clutch, launch control); berbagi pin dengan sebagian analog input</td>
 </tr>
 <tr>
 <td style="text-align: left;">Low-side output</td>
 <td style="text-align: center;">5 + 2</td>
-<td style="text-align: left;">Lima arus kecil, dua arus besar</td>
+<td style="text-align: left;">Lima arus kecil untuk relay, dua arus besar untuk solenoid (PWM)</td>
 </tr>
 <tr>
 <td style="text-align: left;">High-side output</td>
@@ -391,31 +405,31 @@ kait pengunci di atas, memakai susunan yang sama.</p>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
-<td style="text-align: left;">Input: A5 atau SW3</td>
+<td style="text-align: left;">Input: A5 (pull-up NTC) atau SW3</td>
 <td style="text-align: center;">19</td>
 <td style="text-align: left;">Output LC4 <strong>atau</strong> LOGIC1</td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
-<td style="text-align: left;">Input: A4 atau SW2</td>
+<td style="text-align: left;">Input: A4 (pull-up NTC) atau SW2</td>
 <td style="text-align: center;">20</td>
 <td style="text-align: left;">Output LC3 (low-side)</td>
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
-<td style="text-align: left;">Input: A3 atau SW1</td>
+<td style="text-align: left;">Input: A3 (pull-up NTC) atau SW1</td>
 <td style="text-align: center;">21</td>
 <td style="text-align: left;">Output HS1 (high-side)</td>
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
-<td style="text-align: left;">Input: A2 (untuk sensor NTC)</td>
+<td style="text-align: left;">Input: A2 (pull-up NTC)</td>
 <td style="text-align: center;">22</td>
 <td style="text-align: left;">Output LC2 (low-side)</td>
 </tr>
 <tr>
 <td style="text-align: center;">11</td>
-<td style="text-align: left;">Input: A1 (untuk sensor NTC)</td>
+<td style="text-align: left;">Input: A1 (pull-up NTC)</td>
 <td style="text-align: center;">23</td>
 <td style="text-align: left;">Output LC1 (low-side)</td>
 </tr>
@@ -473,15 +487,15 @@ komunikasi gagal.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">J2-9</td>
-<td style="text-align: left;">Analog input (A3) <strong>atau</strong> switch input 12 V (SW1)</td>
+<td style="text-align: left;">Analog input (A3, pull-up NTC) <strong>atau</strong> switch input 12 V (SW1)</td>
 </tr>
 <tr>
 <td style="text-align: left;">J2-8</td>
-<td style="text-align: left;">Analog input (A4) <strong>atau</strong> switch input 12 V (SW2)</td>
+<td style="text-align: left;">Analog input (A4, pull-up NTC) <strong>atau</strong> switch input 12 V (SW2)</td>
 </tr>
 <tr>
 <td style="text-align: left;">J2-7</td>
-<td style="text-align: left;">Analog input (A5) <strong>atau</strong> switch input 12 V (SW3)</td>
+<td style="text-align: left;">Analog input (A5, pull-up NTC) <strong>atau</strong> switch input 12 V (SW3)</td>
 </tr>
 <tr>
 <td style="text-align: left;">J2-6</td>
@@ -505,22 +519,45 @@ komunikasi gagal.</p>
 </tr>
 <tr>
 <td style="text-align: left;">J2-11</td>
-<td style="text-align: left;">Analog input (A1), sudah ber-pull-up untuk sensor NTC</td>
+<td style="text-align: left;">Analog input (A1, pull-up NTC)</td>
 </tr>
 <tr>
 <td style="text-align: left;">J2-10</td>
-<td style="text-align: left;">Analog input (A2), sudah ber-pull-up untuk sensor NTC</td>
+<td style="text-align: left;">Analog input (A2, pull-up NTC)</td>
 </tr>
 </tbody>
 </table>
-<p>Pull-up pada J2-10 dan J2-11 adalah yang dibutuhkan sensor NTC, seperti sensor
-suhu air atau suhu udara masuk. Sensor yang mengeluarkan tegangan 0–5 V sendiri
-— misalnya sensor tekanan — dipasang di pin analog mana pun.</p>
-<p><strong>SW1–SW4 menerima 12 V langsung.</strong> Gunakan untuk apa pun yang disaklar oleh
-12 V kendaraan: lampu sein, lampu jauh, lampu rem, rem tangan.</p>
-<p><strong>HALL1–HALL4</strong> membaca logic 5 V, tahan terhadap 12 V, dan keempatnya juga
-berfungsi sebagai <strong>frequency counter</strong> — cocok untuk sensor kecepatan roda atau
-flow meter.</p>
+<p><strong>AV1–AV5</strong> (J2-11, J2-10, J2-9, J2-8, J2-7) punya resistor pull-up <strong>2,7 kΩ ke
+5 V</strong>, yaitu bias yang dibutuhkan sensor temperatur NTC seperti Coolant
+Temperature (CLT), Intake Air Temperature (IAT) atau Oil Temperature. Input ini
+yang tidak tersambung terbaca mendekati 5 V.</p>
+<p>Untuk mengisi kurva NTC di TunerStudio, hitung tegangan tiap titik dari tabel
+resistansi sensor:</p>
+<blockquote>
+<p>volt = 5 × R ÷ (R + 2700), dengan R = resistansi sensor (ohm) pada suhu itu</p>
+</blockquote>
+<p>Contoh: sensor 2.500 Ω pada 20 °C → 5 × 2500 ÷ 5200 = <strong>2,40 V</strong>.</p>
+<p>Sensor yang mengeluarkan tegangan 0–5 V sendiri — misalnya sensor Oil Pressure —
+paling baik dipasang di <strong>AV6–AV10</strong>, yang tanpa pull-up, supaya sinyalnya tidak
+ikut tertarik.</p>
+<p><strong>SW1–SW4 adalah switch input 12 V</strong> (tahan 12 V), untuk sinyal 12 V dari
+kelistrikan mobil: turn signal kiri/kanan, high beam, handbrake, dan lampu
+indikator OEM lainnya.</p>
+<p><strong>Digital Input 1–4 (HALL1–HALL4)</strong> membaca logic 5 V, tahan terhadap 12 V, dan
+sudah punya pull-up 1 kΩ ke 5 V. Fungsinya dipilih di TunerStudio:</p>
+<ul>
+<li><strong>Sinyal pulsa</strong> — RPM dari tachometer atau ignition, VSS (Vehicle Speed
+  Sensor), wheel speed sensor, atau frequency apa adanya (flex fuel sensor,
+  flow meter).</li>
+<li><strong>Switch</strong> — saklar on/off, dengan <strong>Polarity</strong>:<ul>
+<li><strong>Default</strong> — aktif saat pin HIGH, misalnya sinyal 12 V dari head light
+  atau park light.</li>
+<li><strong>Inverted</strong> — aktif saat pin di-ground, untuk saklar aktif-ground seperti
+  clutch switch atau launch control switch. Cukup disambung ke ground, tanpa
+  resistor tambahan.</li>
+</ul>
+</li>
+</ul>
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -536,7 +573,7 @@ flow meter.</p>
 <td style="text-align: left;">LC1</td>
 <td style="text-align: left;">J2-23</td>
 <td style="text-align: left;">Low-side, arus kecil</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Untuk relay: relay lampu, relay start engine, relay fan</td>
 </tr>
 <tr>
 <td style="text-align: left;">LC2</td>
@@ -566,25 +603,25 @@ flow meter.</p>
 <td style="text-align: left;">LS1</td>
 <td style="text-align: left;">J2-15</td>
 <td style="text-align: left;">Low-side, arus besar</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Untuk solenoid; PWM software</td>
 </tr>
 <tr>
 <td style="text-align: left;">LS2</td>
 <td style="text-align: left;">J2-16</td>
 <td style="text-align: left;">Low-side, arus besar</td>
-<td style="text-align: left;"></td>
+<td style="text-align: left;">Untuk solenoid; PWM software</td>
 </tr>
 <tr>
 <td style="text-align: left;">HS1</td>
 <td style="text-align: left;">J2-21</td>
 <td style="text-align: left;"><strong>High-side</strong></td>
-<td style="text-align: left;">Mendukung PWM, melaporkan fault</td>
+<td style="text-align: left;">PWM hardware, melaporkan fault</td>
 </tr>
 <tr>
 <td style="text-align: left;">HS2</td>
 <td style="text-align: left;">J2-18</td>
 <td style="text-align: left;"><strong>High-side</strong></td>
-<td style="text-align: left;">Mendukung PWM, melaporkan fault</td>
+<td style="text-align: left;">PWM hardware, melaporkan fault</td>
 </tr>
 </tbody>
 </table>
@@ -592,7 +629,33 @@ flow meter.</p>
 menyaklar sisi <strong>ground</strong>, jadi ujung beban yang lain harus di 12 V. Output
 <strong>high-side</strong> justru mengeluarkan 12 V, jadi ujung beban yang lain harus di
 ground. Tertukar berarti beban tidak akan bekerja.</p>
-<p>Hanya <strong>HS1 dan HS2</strong> yang menerima nilai PWM; output lain hanya on/off.</p>
+<p><strong>PWM</strong> tersedia di HS1, HS2, LS1 dan LS2; output lain hanya on/off.
+Frekuensinya diatur di TunerStudio, di halaman masing-masing output:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: left;">Jenis PWM</th>
+<th style="text-align: left;">Frekuensi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HS1, HS2</td>
+<td style="text-align: left;">Hardware</td>
+<td style="text-align: left;"><strong>Satu frekuensi untuk keduanya</strong> (satu timer): mengubah di HS1 juga mengubah HS2. 4–500 Hz, default 490 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1, LS2</td>
+<td style="text-align: left;">Software</td>
+<td style="text-align: left;"><strong>Masing-masing sendiri.</strong> 4–500 Hz, default 100 Hz</td>
+</tr>
+</tbody>
+</table>
+<p>Batas maksimal <strong>500 Hz</strong>. Solenoid umumnya dipakai di 15–300 Hz (boost control
+sekitar 15–30 Hz, idle valve dan fan sekitar 100–300 Hz). Pada LS, pulsa yang
+lebih pendek dari 0,1 ms dibulatkan menjadi mati atau menyala penuh, jadi di
+500 Hz duty yang bisa dipakai adalah 5–95%.</p>
 <p><strong>Logic output</strong> (LOGIC1 dan LOGIC2) adalah output sinyal, bukan driver coil.
 Tegangannya bisa dipilih <strong>5 V atau 12 V</strong> saat pemasangan. Keduanya memakai pin
 yang sama dengan LC4 dan LC5, jadi pilih salah satu fungsi per pin.</p>
@@ -615,6 +678,67 @@ desimal: <code>0x643</code> = <code>1603</code>.</p>
 juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
 ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
 diawali <code>0x</code> selalu dibaca sebagai heksadesimal, apa pun pilihannya.</p>
+</div>
+<h3 id="kendaraan-tanpa-can-bus-protokol-m-link">Kendaraan tanpa CAN bus: protokol M-Link<a class="headerlink" href="#kendaraan-tanpa-can-bus-protokol-m-link" title="Permanent link">&para;</a></h3>
+<p>Pilih protokol ECU <strong>M-Link</strong> (Mazduino Link) bila kendaraan belum memakai CAN
+bus. M-Link tersedia di Racedash Pro M4, M5, dan M7. CAN IO Extender lalu menggantikan ECU sebagai sumber data dash: modul
+membaca sinyal dari kendaraan dan mengirimnya ke dash lewat CAN.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Yang dibaca modul</th>
+<th style="text-align: left;">Contoh</th>
+<th style="text-align: left;">Masuk lewat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Analog</strong></td>
+<td style="text-align: left;">Coolant Temperature (CLT), Intake Air Temperature (IAT), Oil Pressure, Fuel Level</td>
+<td style="text-align: left;">AV1–AV10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Switch 12 V</strong></td>
+<td style="text-align: left;">Turn signal kiri/kanan, high beam, handbrake, lampu indikator OEM</td>
+<td style="text-align: left;">SW1–SW4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Sinyal pulsa</strong></td>
+<td style="text-align: left;">RPM dari tachometer atau ignition, VSS</td>
+<td style="text-align: left;">Digital Input 1–4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Switch aktif-ground</strong></td>
+<td style="text-align: left;">Clutch switch, launch control switch</td>
+<td style="text-align: left;">Digital Input 1–4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Langkah pemasangan:</strong></p>
+<ol>
+<li>Sambungkan CAN H dan CAN L modul ke dash, dan pastikan bus punya dua
+   terminator 120 Ω (lihat <a href="#daya-can-dan-terminasi">Daya, CAN, dan Terminasi</a>).</li>
+<li>Di dash, buka <strong>Setting → CAN → ECU protocol → M-Link</strong>, atau di DashTune
+   <strong>General Setting → ECU → M-Link</strong>. Bitrate-nya 500 kbps dan dash mengirim
+   sinyal "hidup" ke modul setiap 100 ms, jadi modul langsung terkunci ke bus.</li>
+<li>Kalibrasi sensor di <a href="#kalibrasi-sensor-di-tunerstudio">TunerStudio</a>. Untuk
+   RPM, atur <strong>Digital Input 1</strong> ke Function <strong>RPM</strong> dengan jumlah silinder
+   mesin. Sinyal ignition coil mentah harus lewat tach adapter dulu.</li>
+<li>Di DashTune, jalankan preset <strong>CAN IO Extender</strong> (lihat
+   <a href="#nilai-sensor-tambahan">Nilai sensor tambahan</a>) untuk sensor lainnya.</li>
+</ol>
+<p><strong>Yang langsung terbaca tanpa pengaturan:</strong> RPM dari Digital Input 1, battery
+voltage, dan lampu indikator dari tabel di bawah.</p>
+<p><strong>Sensor lain mengisi gauge bawaan dash</strong> lewat preset: pada tiap input, pilih
+<strong>Sekalian isi kanal bawaan</strong>, misalnya AV1 → <strong>CLT</strong>, AV2 → <strong>IAT</strong>,
+Digital Input 2 → <strong>Speed</strong>. Gauge, warning, dan shift light bawaan dash
+lalu membaca nilai dari modul seperti dari ECU biasa.</p>
+<div class="admonition warning">
+<p class="admonition-title">Digital Input 1 dipakai untuk RPM dan head light</p>
+<p>Di M-Link, dash membaca <strong>RPM</strong> dari Digital Input 1 dan <strong>head light</strong>
+dari pin yang sama (J2-5). Kalau J2-5 dipakai untuk sinyal RPM, indikator
+head light di dash ikut berkedip. Di DashTune buka <strong>General Setting →
+Indikator</strong>, lalu ganti sumber head light ke input lain atau matikan.</p>
 </div>
 <h3 id="lampu-indikator-dari-saklar-kendaraan">Lampu indikator dari saklar kendaraan<a class="headerlink" href="#lampu-indikator-dari-saklar-kendaraan" title="Permanent link">&para;</a></h3>
 <p>Di DashTune, buka pengaturan indikator, pilih mode <strong>CAN</strong>, lalu isi:</p>
@@ -651,7 +775,7 @@ diawali <code>0x</code> selalu dibaca sebagai heksadesimal, apa pun pilihannya.<
 <td style="text-align: left;">J2-7</td>
 </tr>
 <tr>
-<td style="text-align: left;">Hand brake</td>
+<td style="text-align: left;">Handbrake</td>
 <td style="text-align: left;"><code>0x643</code></td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">3</td>
@@ -673,14 +797,38 @@ diawali <code>0x</code> selalu dibaca sebagai heksadesimal, apa pun pilihannya.<
 </tr>
 </tbody>
 </table>
-<p>Pastikan keenam pin itu difungsikan sebagai <strong>switch input 12 V</strong>, dan biarkan
-pilihan <strong>invert dalam keadaan mati</strong> — modul sudah melaporkan 1 = aktif.</p>
+<p>J2-9 sampai J2-6 harus difungsikan sebagai <strong>switch input 12 V</strong> (SW1–SW4).
+J2-5 dan J2-4 adalah Digital Input 1 dan 2: di TunerStudio atur Function-nya
+ke <strong>Switch</strong>, Polarity <strong>Default</strong>. Di DashTune, biarkan pilihan <strong>invert dalam keadaan
+mati</strong> — modul sudah melaporkan 1 = aktif.</p>
 <h3 id="nilai-sensor-tambahan">Nilai sensor tambahan<a class="headerlink" href="#nilai-sensor-tambahan" title="Permanent link">&para;</a></h3>
-<p>Nilai seperti tegangan aki, sensor analog, atau frequency input bisa
-ditampilkan lewat <strong>Custom Channel</strong> di DashTune. Custom Channel menumpang pada
-protokol ECU yang sedang aktif, jadi data ECU tetap terbaca seperti biasa.</p>
-<p>Gunakan daftar frame di <a href="#data-yang-dikirim-modul">bagian berikutnya</a> sebagai
-acuan CAN ID, posisi byte, dan skalanya.</p>
+<p>Sensor di AV1–AV10 ditampilkan lewat <strong>Custom Channel</strong> di DashTune. Custom
+Channel menumpang pada protokol ECU yang sedang aktif, jadi data ECU tetap
+terbaca seperti biasa.</p>
+<p>Cara termudah: di DashTune buka <strong>Custom Channels</strong>, ketuk <strong>CAN IO Extender</strong>,
+pilih nomor node modul, lalu centang input yang ingin ditampilkan. Untuk tiap
+input pilih:</p>
+<ul>
+<li><strong>Terkalibrasi</strong> — nilai hasil kurva yang diisi di
+  <a href="#kalibrasi-sensor-di-tunerstudio">TunerStudio</a>, misalnya % bensin atau bar.
+  Pilih jumlah desimal yang sama dengan yang diatur di TunerStudio.</li>
+<li><strong>Volt</strong> — tegangan input mentah, untuk sensor linier atau sekadar memeriksa
+  wiring.</li>
+</ul>
+<p>Aktifkan <strong>Sekalian atur lampu indikator</strong> untuk memetakan turn signal, high
+beam, handbrake, head light dan park light sekaligus (tabel di atas).</p>
+<p>Kalau modul berhenti mengirim — kabel CAN lepas atau modul mati — nilainya
+berubah menjadi <strong>"--"</strong> setelah sekitar 1,5 detik, dan tidak memicu peringatan.
+Dash tidak akan menampilkan angka terakhir seolah masih hidup.</p>
+<div class="admonition note">
+<p class="admonition-title">Custom Channel tersimpan per protokol ECU</p>
+<p>Pengaturan ini menempel pada protokol ECU yang aktif saat disimpan. Kalau
+protokol ECU di dash diganti, ulangi preset CAN IO Extender di protokol yang
+baru.</p>
+</div>
+<p>Untuk mengisi Custom Channel secara manual, gunakan daftar frame di
+<a href="#data-yang-dikirim-modul">Data yang Dikirim Modul</a> sebagai acuan CAN ID,
+posisi byte, dan skalanya.</p>
 <h3 id="menyalakan-output">Menyalakan output<a class="headerlink" href="#menyalakan-output" title="Permanent link">&para;</a></h3>
 <p>Output dinyalakan lewat <strong>CAN Buttons</strong>: satu tombol untuk satu output, diatur
 di DashTune atau langsung di layar dash. Semua tombol memakai CAN ID yang sama,
@@ -755,8 +903,9 @@ hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.</p>
 </table>
 <p>Isi <strong>nilai OFF dengan 0</strong> untuk semua tombol. Beberapa tombol boleh berada di
 byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.</p>
-<p>HS1 dan HS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol Toggle
-lagi di byte <strong>2</strong> (HS1) atau byte <strong>3</strong> (HS2), dengan nilai ON 1–254 sebagai
+<p>HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol
+Toggle lagi di byte <strong>2</strong> (HS1), <strong>3</strong> (HS2), <strong>4</strong> (LS1) atau <strong>5</strong> (LS2),
+dengan nilai ON 1–254 sebagai
 duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
 kembali menyala penuh.</p>
 <div class="admonition note">
@@ -779,6 +928,66 @@ susun channel-nya lewat DashTune. Semua nilai <strong>little-endian</strong>, ja
 pilihan <strong>MSB first (Motorola) mati</strong>.</p>
 <p>Kalau Anda memakai Custom CAN map untuk keperluan lain, jangan memakai CAN ID
 <code>0x640</code>–<code>0x67F</code> (desimal 1600–1663) agar tidak bentrok dengan modul ini.</p>
+<h2 id="kalibrasi-sensor-di-tunerstudio">Kalibrasi Sensor di TunerStudio<a class="headerlink" href="#kalibrasi-sensor-di-tunerstudio" title="Permanent link">&para;</a></h2>
+<p>Modul bisa dihubungkan ke <strong>TunerStudio</strong> lewat kabel USB-nya, seperti ECU.
+Dari sana, setiap input AV1–AV10 bisa diberi kurva kalibrasi, dan nomor node
+serta bitrate CAN bisa diubah tanpa flash ulang.</p>
+<ol>
+<li>Unduh file <code>can-io-extender-vX.Y.Z.zip</code> dari halaman
+   <a href="https://github.com/mazduino/can-io-extender/releases">Releases</a>, lalu
+   extract. File INI ada di folder <code>tunerstudio/</code>.</li>
+<li>Di TunerStudio buat project baru, pilih ECU definition <strong>Other / Browse</strong>,
+   lalu arahkan ke file <code>mazduino-iox.ini</code>.</li>
+<li>Pilih port USB modul dengan baud <strong>115200</strong>, lalu hubungkan.</li>
+</ol>
+<p><strong>Mengisi kurva</strong> — buka menu <strong>Analog Volt Inputs → AV1</strong> (dan seterusnya):</p>
+<p><img alt="Dialog Analog Volt Input 1 di TunerStudio: pengaturan, kurva volt ke nilai, dan gauge Raw AV1" src="../img/can-io/ts-analog-volt-input.png" /></p>
+<ul>
+<li><strong>Name</strong>: nama input, misalnya "Fuel level". Dipakai sebagai judul gauge.</li>
+<li><strong>Decimals</strong> dan <strong>Unit</strong>: cara nilai ditampilkan. Desimal juga menentukan
+  scale di dash: desimal 1 berarti scale <code>0.1</code>.</li>
+<li><strong>Kurva</strong>: isi tegangan dari yang terendah, dan nilai di setiap tegangan.
+  Minimal dua baris; baris kosong di bawahnya diabaikan. Kurva yang semuanya
+  nol berarti input itu tidak dikalibrasi.</li>
+<li>Gauge <strong>Raw AV1</strong> di samping kurva menunjukkan tegangan saat ini, sehingga
+  titik kurva bisa diambil langsung sambil mengubah kondisi sensor (misalnya
+  mengisi tangki bertahap).</li>
+</ul>
+<p>Tekan <strong>Burn</strong> agar kurva tersimpan di modul. Ikon <strong>?</strong> di setiap kolom berisi
+penjelasan singkat.</p>
+<p><strong>Digital Input (RPM, VSS, frequency, switch)</strong> — buka menu <strong>Digital Inputs →
+Digital Input 1</strong> (dan seterusnya). Digital Input 1–4 adalah pin HALL1–HALL4 di
+konektor.</p>
+<p><img alt="Dialog Digital Input 1 di TunerStudio diatur sebagai RPM dari sinyal tachometer 4 silinder" src="../img/can-io/ts-digital-input.png" /></p>
+<ul>
+<li><strong>Function</strong>: <strong>RPM</strong> (engine speed), <strong>Speed (VSS)</strong> (vehicle speed),
+  <strong>Frequency</strong> (frequency apa adanya, misalnya flow meter), atau <strong>Switch</strong>.</li>
+<li><strong>Polarity</strong> (khusus Switch): <strong>Inverted</strong> untuk saklar ke ground seperti
+  clutch switch atau launch control switch, atau <strong>Default</strong>
+  untuk sinyal 12 V seperti head light. Nilainya 1 saat aktif.</li>
+<li><strong>Signal</strong> (khusus RPM): <strong>Tach / ignition (cylinders)</strong> untuk sinyal
+  tachometer atau ignition — isi <strong>Cylinders</strong> dan <strong>Engine</strong> (2-stroke atau
+  4-stroke); atau <strong>Custom pulses per rev</strong> untuk trigger wheel, isi jumlah pulsa
+  per putaran.</li>
+<li><strong>Pulses per km</strong> (khusus Speed): jumlah pulsa sensor kecepatan per kilometer.</li>
+<li><strong>Noise filter</strong>: mengabaikan pulsa palsu dari sinyal yang berdering, misalnya
+  keluaran tach adapter. <strong>Lite</strong> cukup untuk kebanyakan sinyal.</li>
+<li><strong>Smoothing</strong>: meredam angka yang meloncat; makin besar makin halus tetapi
+  makin lambat mengikuti perubahan.</li>
+</ul>
+<p>Gauge di bawahnya menunjukkan nilai saat ini. Hasilnya dikirim di CAN
+<code>0x649</code> (node 0): RPM apa adanya, speed dan frequency dikali 10, switch 0
+atau 1. Tekan
+<strong>Burn</strong> untuk menyimpan.</p>
+<p><strong>Node dan CAN</strong> — menu <strong>Module → Node and CAN bus</strong>:</p>
+<ul>
+<li><strong>Node number</strong>: lihat <a href="#memakai-dua-modul">Memakai Dua Modul</a>.</li>
+<li><strong>Bitrate</strong>: <strong>Auto detect</strong> (disarankan) atau bitrate tetap. Bitrate tetap
+  langsung mengirim tanpa mendengarkan bus dulu, jadi pilih hanya kalau sudah
+  pasti sama dengan bus.</li>
+</ul>
+<p>Di halaman depan TunerStudio, indikator <strong>CAN CHIP NOT FOUND</strong>, <strong>NO CAN BUS</strong>
+dan <strong>CAN ERROR PASSIVE</strong> menyala merah bila ada masalah di sisi CAN.</p>
 <h2 id="data-yang-dikirim-modul">Data yang Dikirim Modul<a class="headerlink" href="#data-yang-dikirim-modul" title="Permanent link">&para;</a></h2>
 <p>CAN ID di bawah berlaku untuk modul node 0. Semua nilai <strong>little-endian</strong>.</p>
 <table>
@@ -787,42 +996,54 @@ pilihan <strong>MSB first (Motorola) mati</strong>.</p>
 <th style="text-align: left;">CAN ID</th>
 <th style="text-align: left;">Desimal</th>
 <th style="text-align: left;">Isi</th>
-<th style="text-align: left;">Rate</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>0x640</code></td>
 <td style="text-align: left;">1600</td>
-<td style="text-align: left;">Tegangan aki, lalu AV1, AV2, AV3</td>
-<td style="text-align: left;">50 Hz</td>
+<td style="text-align: left;">Tegangan aki, lalu AV1, AV2, AV3 (mV)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x641</code></td>
 <td style="text-align: left;">1601</td>
-<td style="text-align: left;">AV4, AV5, AV6, AV7</td>
-<td style="text-align: left;">50 Hz</td>
+<td style="text-align: left;">AV4, AV5, AV6, AV7 (mV)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x642</code></td>
 <td style="text-align: left;">1602</td>
-<td style="text-align: left;">AV8, AV9, AV10</td>
-<td style="text-align: left;">50 Hz</td>
+<td style="text-align: left;">AV8, AV9, AV10 (mV)</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x643</code></td>
 <td style="text-align: left;">1603</td>
 <td style="text-align: left;">Status digital input, diagnosa, status output</td>
-<td style="text-align: left;">50 Hz</td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>0x644</code></td>
 <td style="text-align: left;">1604</td>
-<td style="text-align: left;">Frekuensi HALL1–HALL4</td>
-<td style="text-align: left;">20 Hz</td>
+<td style="text-align: left;">Frequency HALL1–HALL4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x645</code></td>
+<td style="text-align: left;">1605</td>
+<td style="text-align: left;">AV1–AV4 terkalibrasi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x646</code></td>
+<td style="text-align: left;">1606</td>
+<td style="text-align: left;">AV5–AV8 terkalibrasi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x647</code></td>
+<td style="text-align: left;">1607</td>
+<td style="text-align: left;">AV9–AV10 terkalibrasi</td>
 </tr>
 </tbody>
 </table>
+<p>Frame dikirim begitu nilainya berubah (paling cepat tiap 25 ms) dan tetap
+diulang minimal tiap 200 ms saat tidak ada perubahan (frame digital tiap
+500 ms, frame frekuensi tiap 50 ms).</p>
 <p><strong>Frame analog</strong> (<code>0x640</code>–<code>0x642</code>) berisi empat nilai <code>uint16</code> berurutan, dalam
 <strong>milivolt</strong>. Tegangan aki sudah dikalikan faktor pembaginya, jadi angka <code>13800</code>
 berarti 13,8 V. Untuk menampilkan sebagai volt, pakai scale <code>0.001</code>.</p>
@@ -863,10 +1084,16 @@ berarti 13,8 V. Untuk menampilkan sebagai volt, pakai scale <code>0.001</code>.<
 </table>
 <p><strong>Frame frekuensi</strong> (<code>0x644</code>) berisi empat nilai <code>uint16</code> dalam satuan 0,1 Hz —
 kalikan <code>0.1</code> untuk mendapatkan Hz.</p>
+<p><strong>Frame terkalibrasi</strong> (<code>0x645</code>–<code>0x647</code>) berisi nilai <code>int16</code> <strong>signed</strong>, dua
+byte per input: <code>0x645</code> byte 0–1 = AV1, byte 2–3 = AV2, byte 4–5 = AV3,
+byte 6–7 = AV4, dan seterusnya. Nilainya adalah hasil kurva TunerStudio tanpa
+koma: dengan desimal 1, nilai 62,5 dikirim sebagai <code>625</code>, jadi pakai scale
+<code>0.1</code>. Input tanpa kurva bernilai 0.</p>
 <h2 id="memakai-dua-modul">Memakai Dua Modul<a class="headerlink" href="#memakai-dua-modul" title="Permanent link">&para;</a></h2>
 <p>Satu bus bisa memuat sampai <strong>empat</strong> modul. Tiap modul harus memakai nomor node
-berbeda, yang ditentukan oleh <a href="#firmware">file firmware</a> yang di-flash. Nomor
-node menggeser blok CAN ID-nya:</p>
+berbeda. Atur di TunerStudio (<strong>Module → Node and CAN bus</strong>, lalu Burn), atau
+flash <a href="#firmware">file firmware</a> untuk node tersebut. Nomor node menggeser blok
+CAN ID-nya:</p>
 <table>
 <thead>
 <tr>
@@ -903,9 +1130,32 @@ node menggeser blok CAN ID-nya:</p>
 diperlukan untuk memperbarui firmware, atau untuk modul kedua dan seterusnya di
 bus yang sama (<a href="#memakai-dua-modul">Memakai Dua Modul</a>).</p>
 <h3 id="unduh">Unduh<a class="headerlink" href="#unduh" title="Permanent link">&para;</a></h3>
-<p>Ambil file <code>.hex</code> dari
-<strong><a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></strong>.
-Nama file menyebut nomor node-nya:</p>
+<p>Unduh file <code>can-io-extender-vX.Y.Z.zip</code> dari
+<strong><a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></strong>,
+lalu extract. Isinya:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Folder</th>
+<th style="text-align: left;">Isi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hex/</code></td>
+<td style="text-align: left;">Firmware <code>.hex</code> untuk XLoader / avrdude</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bin/</code></td>
+<td style="text-align: left;">Firmware yang sama dalam format <code>.bin</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tunerstudio/</code></td>
+<td style="text-align: left;"><code>mazduino-iox.ini</code>, harus dari zip yang sama dengan firmware-nya</td>
+</tr>
+</tbody>
+</table>
+<p>Nama file firmware menyebut nomor node-nya:</p>
 <table>
 <thead>
 <tr>
@@ -941,18 +1191,24 @@ dimodifikasi, dan hanya dipakai kalau tim Mazduino mengarahkan Anda ke sana.</p>
 <p>Cabut konektor utama (J2) atau matikan kunci kontak dulu. Board akan
 mendapat daya dari USB selama proses flash.</p>
 </div>
-<p><strong>Cara termudah: script flash.</strong> Unduh <code>flash.bat</code> (Windows) atau <code>flash.sh</code>
-(macOS/Linux) dari halaman Releases yang sama. Script ini mengunduh firmware
-yang benar sendiri, jadi file <code>.hex</code> tidak perlu diunduh terpisah.</p>
-<ul>
-<li><strong>Windows:</strong> double-click <code>flash.bat</code>, lalu ketik port COM saat ditanya
-  (lihat di Device Manager, misalnya <code>COM5</code>). Untuk modul kedua dan seterusnya,
-  jalankan dari Command Prompt dengan nomor node: <code>flash.bat COM5 1</code>.</li>
-<li><strong>macOS / Linux:</strong> pasang <code>avrdude</code> dulu (<code>brew install avrdude</code> atau
-  <code>sudo apt install avrdude</code>), lalu jalankan <code>./flash.sh</code>. Port dicari
-  otomatis; nomor node ditulis setelah port: <code>./flash.sh /dev/ttyUSB0 1</code>.</li>
+<p><strong>Dengan script flash (build dari source).</strong> Script <code>flash.bat</code> (Windows) dan
+<code>flash.sh</code> (macOS/Linux) ada di source code firmware. Script ini mem-build
+firmware untuk nomor node yang dipilih, lalu langsung meng-upload-nya lewat USB.</p>
+<ol>
+<li>Unduh source code dari
+   <a href="https://github.com/mazduino/can-io-extender">github.com/mazduino/can-io-extender</a>
+   (<strong>Code → Download ZIP</strong>), lalu ekstrak.</li>
+<li>Pasang <a href="https://platformio.org/install/cli">PlatformIO</a>:
+   <code>pip install platformio</code>.</li>
+<li>Jalankan dari folder hasil ekstrak, dengan nomor node sebagai argumen:<ul>
+<li><strong>Windows:</strong> <code>flash.bat</code> untuk node 0, atau <code>flash.bat 1 COM5</code> untuk node
+  1 di port COM5.</li>
+<li><strong>macOS / Linux:</strong> <code>./flash.sh</code> untuk node 0, atau <code>./flash.sh 1</code> untuk
+  node 1. Port dicari otomatis.</li>
 </ul>
-<p>Kalau ingin flash manual:</p>
+</li>
+</ol>
+<p>Kalau ingin flash file <code>.hex</code> siap pakai tanpa build:</p>
 <p><strong>Windows</strong> — pakai <a href="https://github.com/xinabox/xLoader">XLoader</a> atau
 <a href="https://github.com/ZakKemble/AVRDUDESS">AVRDUDESS</a>:</p>
 <ol>
@@ -1005,6 +1261,26 @@ dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.<
 <tr>
 <td style="text-align: left;">Switch input tidak terbaca</td>
 <td style="text-align: left;">Pin itu masih difungsikan sebagai analog input, bukan switch input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nilai di dash menjadi "--"</td>
+<td style="text-align: left;">Dash tidak lagi menerima frame-nya: kabel CAN lepas, modul mati, nomor node berubah, atau Custom Channel dibuat di protokol ECU lain</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nilai terkalibrasi selalu 0</td>
+<td style="text-align: left;">Kurva input itu belum berisi minimal dua baris dengan tegangan yang naik, atau belum di-<strong>Burn</strong> di TunerStudio</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio menampilkan <strong>CAN CHIP NOT FOUND</strong></td>
+<td style="text-align: left;">Chip CAN di board tidak menjawab — hubungi support@mazduino.com</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio menampilkan <strong>NO CAN BUS</strong></td>
+<td style="text-align: left;">Modul belum menemukan bus: periksa wiring CAN H/L, terminasi, dan apakah ECU atau dash sudah menyala</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio tidak bisa terhubung</td>
+<td style="text-align: left;">Port dipakai aplikasi lain (serial monitor, flasher), atau baud bukan 115200</td>
 </tr>
 </tbody>
 </table>
