@@ -350,8 +350,9 @@ Modul bisa dihubungkan ke **TunerStudio** lewat kabel USB-nya, seperti ECU.
 Dari sana, setiap input AV1–AV10 bisa diberi kurva kalibrasi, dan nomor node
 serta bitrate CAN bisa diubah tanpa flash ulang.
 
-1. Unduh file `mazduino-iox.ini` dari halaman
-   [Releases](https://github.com/mazduino/can-io-extender/releases).
+1. Unduh file `can-io-extender-vX.Y.Z.zip` dari halaman
+   [Releases](https://github.com/mazduino/can-io-extender/releases), lalu
+   extract. File INI ada di folder `tunerstudio/`.
 2. Di TunerStudio buat project baru, pilih ECU definition **Other / Browse**,
    lalu arahkan ke file `mazduino-iox.ini`.
 3. Pilih port USB modul dengan baud **115200**, lalu hubungkan.
@@ -474,9 +475,17 @@ bus yang sama ([Memakai Dua Modul](#memakai-dua-modul)).
 
 ### Unduh
 
-Ambil file `.hex` dari
-**[github.com/mazduino/can-io-extender/releases](https://github.com/mazduino/can-io-extender/releases)**.
-Nama file menyebut nomor node-nya:
+Unduh file `can-io-extender-vX.Y.Z.zip` dari
+**[github.com/mazduino/can-io-extender/releases](https://github.com/mazduino/can-io-extender/releases)**,
+lalu extract. Isinya:
+
+| Folder | Isi |
+| :--- | :--- |
+| `hex/` | Firmware `.hex` untuk XLoader / avrdude |
+| `bin/` | Firmware yang sama dalam format `.bin` |
+| `tunerstudio/` | `mazduino-iox.ini`, harus dari zip yang sama dengan firmware-nya |
+
+Nama file firmware menyebut nomor node-nya:
 
 | File | Dipakai untuk |
 | :--- | :--- |
