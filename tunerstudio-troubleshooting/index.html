@@ -174,6 +174,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#6-throttle-calibration-error">6. Throttle Calibration Error</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-signature-firmware-tidak-cocok-dengan-ini">7. Signature Firmware Tidak Cocok dengan INI</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#tool-diagnostics-dan-fitur">Tool Diagnostics dan Fitur</a>
@@ -270,7 +272,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 Oktober 2026 15:41:39 UTC">30 Oktober 2026</span></em></p>
   <h1 id="troubleshooting-tunerstudio-mazduino">Troubleshooting TunerStudio Mazduino<a class="headerlink" href="#troubleshooting-tunerstudio-mazduino" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi masalah umum yang ditemui selama operasi Mazduino. Setiap masalah mencakup gejala, penyebab potensial, dan solusi yang direkomendasikan untuk memastikan fungsionalitas yang tepat.</p>
@@ -554,6 +556,38 @@
 <li>Bersihkan throttle body dari carbon deposits</li>
 <li>Periksa throttle shaft untuk wear atau binding</li>
 <li>Lubricate moving parts jika diperlukan</li>
+</ol>
+<h3 id="7-signature-firmware-tidak-cocok-dengan-ini">7. Signature Firmware Tidak Cocok dengan INI<a class="headerlink" href="#7-signature-firmware-tidak-cocok-dengan-ini" title="Permanent link">&para;</a></h3>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>TunerStudio menampilkan peringatan bahwa signature firmware berbeda dengan project</li>
+<li>TunerStudio menolak tersambung, atau tersambung tetapi nilai setting terlihat aneh</li>
+<li>Setting yang sudah di-burn berubah setelah reconnect</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Firmware ECU sudah di-update, tetapi project masih memakai INI lama</li>
+<li>File INI diambil dari rilis yang berbeda dengan firmware yang ter-flash</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Catat Signature Firmware</strong>:</li>
+<li>
+<p>Lihat signature di peringatan TunerStudio, misalnya <code>rusEFI master.2026.09.08.mazduino-lite.969326114</code></p>
+</li>
+<li>
+<p><strong>Ambil INI yang Cocok</strong>:</p>
+</li>
+<li>Buka <a href="https://mazduino.github.io/mazduino-fw/">mazduino.github.io/mazduino-fw</a> dan pilih board Anda</li>
+<li>Download INI dengan tanggal dan hash yang sama dengan signature firmware</li>
+<li>
+<p>Cara membaca signature dijelaskan di <a href="../downloads/#file-ini-per-versi-firmware">File INI per Versi Firmware</a></p>
+</li>
+<li>
+<p><strong>Ganti INI di Project</strong>:</p>
+</li>
+<li>Buka <strong>File → Project Properties</strong> dan pilih file INI yang baru</li>
+<li>Tutup lalu buka lagi project-nya, kemudian sambungkan ke ECU</li>
 </ol>
 <h2 id="tool-diagnostics-dan-fitur">Tool Diagnostics dan Fitur<a class="headerlink" href="#tool-diagnostics-dan-fitur" title="Permanent link">&para;</a></h2>
 <h3 id="1-raw-sensor-voltage-signals">1. Raw Sensor Voltage Signals<a class="headerlink" href="#1-raw-sensor-voltage-signals" title="Permanent link">&para;</a></h3>

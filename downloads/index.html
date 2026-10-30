@@ -49,6 +49,8 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#mazduino-firmware-direkomendasikan">Mazduino Firmware (Direkomendasikan)</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#file-ini-per-versi-firmware">File INI per Versi Firmware</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#official-rusefi-firmware">Official rusEFI Firmware</a>
     </li>
         </ul>
@@ -257,7 +259,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 Oktober 2026 02:58:19 UTC">6 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 Oktober 2026 15:41:39 UTC">30 Oktober 2026</span></em></p>
   <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
 <ul>
@@ -293,7 +295,7 @@ Speeduino masih ada untuk board yang sudah memakainya, tetapi
 <p><strong>Build terbaru</strong>: <a href="https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml">Build Matrix Workflow</a></p>
 </li>
 <li>
-<p><strong>File INI untuk TunerStudio</strong>: disertakan dalam bundle release (file <code>.zip</code> di halaman releases)</p>
+<p><strong>File INI untuk TunerStudio</strong>: disertakan dalam bundle release (file <code>.zip</code> di halaman releases), dan semua versinya juga tersedia di <a href="https://mazduino.github.io/mazduino-fw/">mazduino.github.io/mazduino-fw</a> — lihat <a href="#file-ini-per-versi-firmware">File INI per Versi Firmware</a></p>
 </li>
 </ul>
 <p>Board target yang tersedia:</p>
@@ -311,6 +313,61 @@ Speeduino masih ada untuk board yang sudah memakainya, tetapi
 <li>Tidak perlu konfigurasi pin manual</li>
 </ul>
 <p><strong>Catatan penting</strong>: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.</p>
+<h4 id="file-ini-per-versi-firmware">File INI per Versi Firmware<a class="headerlink" href="#file-ini-per-versi-firmware" title="Permanent link">&para;</a></h4>
+<p>Setiap firmware Mazduino yang pernah dirilis punya file INI-nya sendiri di
+<strong><a href="https://mazduino.github.io/mazduino-fw/">mazduino.github.io/mazduino-fw</a></strong>. Halaman ini berguna kalau
+bundle release-nya sudah tidak ada, atau TunerStudio menolak tersambung karena
+INI di project tidak cocok dengan firmware di ECU.</p>
+<p>File INI dicocokkan lewat <strong>signature</strong> firmware. Signature terlihat di
+TunerStudio saat muncul peringatan signature tidak cocok, dan juga di baris
+<code>signature</code> file <code>projectCfg/mainController.ini</code> di folder project. Contoh:</p>
+<pre><code>rusEFI master.2026.09.08.mazduino-lite.969326114
+</code></pre>
+<p>Signature itu dipecah menjadi lokasi file INI:</p>
+<table>
+<thead>
+<tr>
+<th>Bagian</th>
+<th>Contoh</th>
+<th>Arti</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Branch</td>
+<td><code>master</code></td>
+<td>branch build firmware</td>
+</tr>
+<tr>
+<td>Tanggal</td>
+<td><code>2026.09.08</code></td>
+<td>tanggal build (tahun, bulan, hari)</td>
+</tr>
+<tr>
+<td>Board</td>
+<td><code>mazduino-lite</code></td>
+<td>target board</td>
+</tr>
+<tr>
+<td>Hash</td>
+<td><code>969326114</code></td>
+<td>hash konfigurasi, jadi nama file</td>
+</tr>
+</tbody>
+</table>
+<p>Jadi signature contoh di atas ada di:</p>
+<pre><code>https://mazduino.github.io/mazduino-fw/ini/master/2026/09/08/mazduino-lite/969326114.ini
+</code></pre>
+<p>Di halaman tersebut file INI dikelompokkan per board, dengan yang terbaru di
+atas. Untuk memakainya: download file INI yang hash-nya sama dengan firmware
+di ECU, lalu di TunerStudio buka <strong>File → Project Properties</strong>, ganti file
+INI (ECU Definition) dengan file yang baru di-download, kemudian tutup dan buka
+lagi project-nya.</p>
+<blockquote>
+<p><strong>Hash harus sama persis.</strong> INI dengan hash berbeda bisa saja tetap
+tersambung, tetapi posisi setting di memori ECU tidak cocok, sehingga nilai
+yang tampil dan yang tersimpan bisa salah.</p>
+</blockquote>
 <h4 id="official-rusefi-firmware">Official rusEFI Firmware<a class="headerlink" href="#official-rusefi-firmware" title="Permanent link">&para;</a></h4>
 <p>Firmware standar dari proyek rusEFI tanpa kustomisasi Mazduino.</p>
 <ul>
@@ -510,7 +567,7 @@ update atau untuk modul kedua dan seterusnya di bus yang sama.</p>
 <ol>
 <li>Install TunerStudio dari <a href="https://www.tunerstudio.com">tunerstudio.com</a>.</li>
 <li>Buat project baru di TunerStudio.</li>
-<li>Extract bundle release dan load file <code>.ini</code> yang sesuai versi firmware yang digunakan.</li>
+<li>Extract bundle release dan load file <code>.ini</code> yang sesuai versi firmware yang digunakan. Kalau bundle-nya tidak ada, ambil file <code>.ini</code> dari <a href="https://mazduino.github.io/mazduino-fw/">mazduino.github.io/mazduino-fw</a> sesuai signature firmware.</li>
 <li>Hubungkan ECU ke PC via USB dan pilih port yang benar.</li>
 <li>Load base map sesuai konfigurasi mesin Anda sebagai titik awal tuning.</li>
 </ol>
