@@ -243,6 +243,33 @@ Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi
    - Periksa throttle shaft untuk wear atau binding
    - Lubricate moving parts jika diperlukan
 
+### 7. Signature Firmware Tidak Cocok dengan INI
+
+**Gejala**:
+
+- TunerStudio menampilkan peringatan bahwa signature firmware berbeda dengan project
+- TunerStudio menolak tersambung, atau tersambung tetapi nilai setting terlihat aneh
+- Setting yang sudah di-burn berubah setelah reconnect
+
+**Penyebab Potensial**:
+
+- Firmware ECU sudah di-update, tetapi project masih memakai INI lama
+- File INI diambil dari rilis yang berbeda dengan firmware yang ter-flash
+
+**Solusi**:
+
+1. **Catat Signature Firmware**:
+   - Lihat signature di peringatan TunerStudio, misalnya `rusEFI master.2026.09.08.mazduino-lite.969326114`
+
+2. **Ambil INI yang Cocok**:
+   - Buka [mazduino.github.io/mazduino-fw](https://mazduino.github.io/mazduino-fw/) dan pilih board Anda
+   - Download INI dengan tanggal dan hash yang sama dengan signature firmware
+   - Cara membaca signature dijelaskan di [File INI per Versi Firmware](downloads.md#file-ini-per-versi-firmware)
+
+3. **Ganti INI di Project**:
+   - Buka **File → Project Properties** dan pilih file INI yang baru
+   - Tutup lalu buka lagi project-nya, kemudian sambungkan ke ECU
+
 ## Tool Diagnostics dan Fitur
 
 ### 1. Raw Sensor Voltage Signals

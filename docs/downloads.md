@@ -35,7 +35,7 @@ Firmware rusEFI yang dikustomisasi dan dioptimalkan khusus untuk semua board Maz
 
 - **Build terbaru**: [Build Matrix Workflow][mazduino-build]
 
-- **File INI untuk TunerStudio**: disertakan dalam bundle release (file `.zip` di halaman releases)
+- **File INI untuk TunerStudio**: disertakan dalam bundle release (file `.zip` di halaman releases), dan semua versinya juga tersedia di [mazduino.github.io/mazduino-fw][mazduino-ini] — lihat [File INI per Versi Firmware](#file-ini-per-versi-firmware)
 
 Board target yang tersedia:
 
@@ -52,6 +52,46 @@ Keunggulan dibanding firmware resmi:
 - Tidak perlu konfigurasi pin manual
 
 **Catatan penting**: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.
+
+#### File INI per Versi Firmware
+
+Setiap firmware Mazduino yang pernah dirilis punya file INI-nya sendiri di
+**[mazduino.github.io/mazduino-fw][mazduino-ini]**. Halaman ini berguna kalau
+bundle release-nya sudah tidak ada, atau TunerStudio menolak tersambung karena
+INI di project tidak cocok dengan firmware di ECU.
+
+File INI dicocokkan lewat **signature** firmware. Signature terlihat di
+TunerStudio saat muncul peringatan signature tidak cocok, dan juga di baris
+`signature` file `projectCfg/mainController.ini` di folder project. Contoh:
+
+```
+rusEFI master.2026.09.08.mazduino-lite.969326114
+```
+
+Signature itu dipecah menjadi lokasi file INI:
+
+| Bagian | Contoh | Arti |
+|---|---|---|
+| Branch | `master` | branch build firmware |
+| Tanggal | `2026.09.08` | tanggal build (tahun, bulan, hari) |
+| Board | `mazduino-lite` | target board |
+| Hash | `969326114` | hash konfigurasi, jadi nama file |
+
+Jadi signature contoh di atas ada di:
+
+```
+https://mazduino.github.io/mazduino-fw/ini/master/2026/09/08/mazduino-lite/969326114.ini
+```
+
+Di halaman tersebut file INI dikelompokkan per board, dengan yang terbaru di
+atas. Untuk memakainya: download file INI yang hash-nya sama dengan firmware
+di ECU, lalu di TunerStudio buka **File → Project Properties**, ganti file
+INI (ECU Definition) dengan file yang baru di-download, kemudian tutup dan buka
+lagi project-nya.
+
+> **Hash harus sama persis.** INI dengan hash berbeda bisa saja tetap
+> tersambung, tetapi posisi setting di memori ECU tidak cocok, sehingga nilai
+> yang tampil dan yang tersimpan bisa salah.
 
 #### Official rusEFI Firmware
 
@@ -200,13 +240,14 @@ Setelah firmware ECU ter-flash:
 
 1. Install TunerStudio dari [tunerstudio.com][tunerstudio].
 2. Buat project baru di TunerStudio.
-3. Extract bundle release dan load file `.ini` yang sesuai versi firmware yang digunakan.
+3. Extract bundle release dan load file `.ini` yang sesuai versi firmware yang digunakan. Kalau bundle-nya tidak ada, ambil file `.ini` dari [mazduino.github.io/mazduino-fw][mazduino-ini] sesuai signature firmware.
 4. Hubungkan ECU ke PC via USB dan pilih port yang benar.
 5. Load base map sesuai konfigurasi mesin Anda sebagai titik awal tuning.
 
 [mazduino-fw]: https://github.com/mazduino/mazduino-fw
 [mazduino-releases]: https://github.com/mazduino/mazduino-fw/releases
 [mazduino-build]: https://github.com/mazduino/mazduino-fw/actions/workflows/build-matrix.yaml
+[mazduino-ini]: https://mazduino.github.io/mazduino-fw/
 [rusefi-build]: https://rusefi.com/build_server/
 [speeduino-releases]: https://github.com/mazduino/speeduino-fw/releases
 [tunerstudio]: https://www.tunerstudio.com
