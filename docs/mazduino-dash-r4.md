@@ -2,14 +2,10 @@
 
 ## Gambaran Umum
 
-<!-- Simulator renders of three themes; the round face is the whole screen. -->
-<div style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0">
-  <img src="../img/dash/dash-r4-theme-street.jpeg" alt="Dash R4 dengan tema Street" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-wangan-night.jpeg" alt="Dash R4 dengan tema Wangan Night" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-vintage-beetle.jpeg" alt="Dash R4 dengan tema Classic Beetle" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-</div>
+![Dash R4 berganti-ganti tema](img/dash/dash-r4-themes.gif)
 
-*Dash R4 dengan tema Street (bawaan), Wangan Night, dan Classic Beetle*
+*Beberapa tema Dash R4: Street (bawaan), Wangan Night, Classic Beetle,
+Motorsport, Car Status, Retro VFD, Synthwave, Halo, Ink Wave, dan Classic*
 
 Mazduino Dash R4 adalah dash display **bulat 4 inch** dengan layar sentuh.
 Tampilannya berupa **tema**, yang bisa dipasang, dilepas, dan diatur sendiri
@@ -103,19 +99,7 @@ untuk Dash R4.
 ## Tema
 
 Tema adalah tampilan dashboard. Setiap tema membawa susunan gauge, warna,
-dan gambarnya sendiri. Beberapa contoh:
-
-<!-- A flex row rather than a table, as on the Racedash Pro page: it wraps
-     and scales on a phone instead of cutting the second column off. -->
-<div style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0">
-  <img src="../img/dash/dash-r4-theme-motorsport.jpeg" alt="Tema Motorsport" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-retro-vfd.jpeg" alt="Tema Retro VFD" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-halo.jpeg" alt="Tema Halo" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-car-status.jpeg" alt="Tema Car Status" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-  <img src="../img/dash/dash-r4-theme-synthwave.jpeg" alt="Tema Synthwave" style="flex:1 1 200px;min-width:0;max-width:100%;height:auto;border-radius:50%">
-</div>
-
-*Motorsport, Retro VFD, Halo, Car Status, dan Synthwave*
+dan gambarnya sendiri, seperti contoh di [Gambaran Umum](#gambaran-umum).
 
 Daftar lengkap ada di **Theme Store** DashTune, dan tema baru terus
 ditambahkan.
