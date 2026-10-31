@@ -87,10 +87,10 @@ Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan
 
 - **Manfaat**: Sinyal trigger yang bersih dan stabil
 
-#### JP3 & JP2 - Sensor Type Selection
-- **JP3**: Mode sinyal CKP (VR atau Hall sensor)
+#### JP2 & JP3 - Sensor Type Selection
+- **JP2**: Mode sinyal CKP (VR atau Hall sensor)
 
-- **JP2**: Mode sinyal CMP (VR atau Hall sensor)
+- **JP3**: Mode sinyal CMP (VR atau Hall sensor)
 
 - **Fleksibilitas**: Kompatibel dengan berbagai jenis sensor posisi
 
@@ -126,9 +126,9 @@ Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan
 
 - **Dump/Conventional Coils**: Memerlukan IGBT eksternal
 
-- **VR Sensors**: Aktifkan pullup dan pilih mode VR untuk sinyal bersih
+- **VR Sensors**: Pilih mode VR (sinyal lewat modul VR Conditioner) dan **lepas** pullup — pullup akan membebani kumparan sensor VR
 
-- **Hall Sensors**: Nonaktifkan pullup dan pilih mode Hall
+- **Hall / Optical Sensors**: Pilih mode Hall dan **pasang** pullup (JP5 untuk CKP, JP4 untuk CMP). Sensor hall umumnya open-collector dan tidak bisa menghasilkan level HIGH sendiri; tanpa pullup, pin trigger mengambang dan terkena noise sehingga muncul trigger error saat mesin hidup. Pullup hanya boleh dilepas untuk sensor yang outputnya push-pull 5V
 
 #### Best Practices:
 
@@ -371,9 +371,9 @@ Selain itu terdapat solder jumper di bagian belakang seperti Tach Pullup, Igniti
 
 - **Knock/MCU PC13:** Opsi input Knock sensor atau langsung ke pin MCU PC13 (default untuk Knock)
 
-- **JP4:** Pullup trigger CKP/Primary
+- **JP5:** Pullup trigger CKP/Primary
 
-- **JP5:** Pullup trigger CMP/Secondary
+- **JP4:** Pullup trigger CMP/Secondary
 
 - **JP2:** Opsi VR atau Hall untuk CKP/Primary
 
