@@ -30,6 +30,8 @@ balap, gauge klasik, sampai tema dengan foto mobil Anda sendiri.
   fuel flow dan kecepatan.
 - Peringatan (alarm) untuk Oil Pressure, Fuel Pressure, CLT, Oil Temp, Fuel
   Level, dan Battery.
+- **Input tambahan**: turn signal, head light, dan fuel level bisa disambungkan
+  langsung ke dash, dan layar meredup otomatis saat lampu menyala.
 - **Petunjuk arah Google Maps** dan **musik** dari HP tampil sebagai notifikasi
   singkat di layar.
 - **Splash screen** sendiri saat dinyalakan, bisa beranimasi, atau dari GIF dan
@@ -233,6 +235,163 @@ lewat **Sesuaikan** dengan memilih **KM/L** di salah satu panel data. Saat
 kendaraan berhenti atau sangat pelan (di bawah 3 km/jam), angkanya 0. Kalau
 ECU Anda tidak mengirim fuel flow atau kecepatan, nilai ini tidak tersedia.
 
+## Input tambahan: turn signal, head light, dan fuel level
+
+Untuk ECU yang tidak mengirim data turn signal, head light, atau fuel level,
+sinyal dari mobil bisa disambungkan langsung ke pin GPIO cadangan di Dash R4.
+Fungsinya diatur dari DashTune di menu **Input tambahan**.
+
+| Fungsi | Pin yang bisa dipakai | Jenis input |
+| :---- | :---- | :---- |
+| Turn signal kiri dan kanan, head light | GPIO 2, 26, 27, 32, 33, 46, 47, 48 | Digital |
+| Fuel level | GPIO 20, 23 | Analog (ADC) |
+
+> **Penting:** semua pin ini bekerja di **3,3 V**. Tegangan listrik mobil
+> 12–14,4 V, dan saat starter atau alternator bekerja bisa ada lonjakan jauh
+> lebih tinggi. **Jangan menyambungkan kabel mobil langsung ke pin.** Selalu
+> lewat salah satu rangkaian di bawah. Pin yang terkena 12 V langsung akan
+> rusak permanen.
+
+Semua rangkaian di bawah memakai **GND** dan **3V3** dari Dash R4 itu sendiri.
+GND dash sudah tersambung ke ground mobil lewat pin 2 konektor DTM4.
+
+### Turn signal dan head light: optocoupler (disarankan)
+
+Optocoupler memisahkan kabel mobil dari dash sepenuhnya. Lonjakan tegangan
+di kabel lampu tidak bisa sampai ke pin GPIO. Ini cara yang paling aman, dan
+satu rangkaian dipakai per sinyal.
+
+```
+  SISI MOBIL                         PC817                 SISI DASH R4
+                               ┌──────────────┐
+  Kabel lampu ──[R1 2,2 kΩ]──┬─┤1 anoda      4├─ kolektor ──── GPIO (mis. GPIO 32)
+  (+12 V saat lampu          │ │   LED → foto- │
+   menyala)               D1 ┴ │   transistor  │
+                     1N4148  ▲ │               │
+  Ground mobil ──────────────┴─┤2 katoda     3├─ emitor ────── GND
+                               └──────────────┘
+
+  D1 paralel dengan LED, arah terbalik: katoda D1 ke pin 1, anoda D1 ke pin 2.
+```
+
+| Komponen | Nilai | Fungsi |
+| :---- | :---- | :---- |
+| U1 | PC817 (atau optocoupler setara) | Memisahkan mobil dari dash |
+| R1 | 2,2 kΩ, ¼ W | Membatasi arus LED: 5–7 mA pada 12–16 V |
+| D1 | 1N4148, dipasang terbalik paralel dengan LED | Melindungi LED dari tegangan terbalik |
+
+Di DashTune, pilih pin untuk fungsinya lalu set **Aktif saat: Ke ground**.
+Pull-up di dalam dash sudah aktif, jadi tidak perlu resistor tambahan di sisi
+dash. Saat lampu menyala, transistor optocoupler menarik pin ke GND dan
+indikator di layar ikut menyala.
+
+**Cara menyambung:**
+
+- **Turn signal:** ambil dari kabel turn signal kiri dan kanan (atau kabel
+  indikatornya di panel instrumen bawaan). Dash membaca kedipnya apa adanya.
+- **Head light:** ambil dari kabel park light atau head light yang menyala saat
+  saklar lampu dihidupkan. Sinyal ini juga yang dipakai **Redupkan layar saat
+  lampu menyala**.
+
+### Turn signal dan head light: pembagi tegangan (alternatif)
+
+Kalau tidak memakai optocoupler, sinyal 12 V bisa diturunkan dengan pembagi
+tegangan. Dioda clamp **wajib** dipasang. Tanpa clamp, tegangan 14,4 V dari
+alternator menghasilkan sekitar 3,6 V di pin, melebihi batas 3,3 V.
+
+```
+  Kabel lampu ─[R1 10 kΩ]─┬───────────┬──────── GPIO
+                          │           │
+                      [R2 3,3 kΩ]   D1 BAT54S ── ke 3V3 dan GND
+                          │           │           (clamp dua arah)
+                         GND      C1 100 nF
+                                      │
+                                     GND
+```
+
+| Komponen | Nilai | Fungsi |
+| :---- | :---- | :---- |
+| R1 | 10 kΩ | Pembagi tegangan, bagian atas |
+| R2 | 3,3 kΩ | Pembagi tegangan, bagian bawah (12 V → sekitar 3,0 V) |
+| D1 | BAT54S (Schottky ganda) | Menahan tegangan pin di antara GND dan 3V3 |
+| C1 | 100 nF | Meredam noise dan lonjakan singkat |
+
+Di DashTune, set **Aktif saat: Ada tegangan**.
+
+### Fuel level
+
+Fuel sender di dalam tangki adalah resistor yang nilainya berubah mengikuti
+pelampung. Dash membaca tegangannya lewat pin ADC (**GPIO 20** atau
+**GPIO 23**), lalu mengubahnya menjadi persen dari kalibrasi kosong/penuh.
+Rangkaiannya tergantung apakah sensor itu masih dipakai gauge bawaan mobil.
+
+#### Sensor hanya untuk dash (gauge bawaan tidak dipakai)
+
+Dash mengalirkan arus kecil ke sensor lewat resistor pull-up dari 3V3.
+
+```
+  3V3 ──[R1 470 Ω]──┬──[R2 1 kΩ]──┬──────── GPIO 20 / 23
+                    │             │
+                    │         C1 100 nF
+                    │             │
+  Kabel sensor ─────┘            GND
+  (fuel sender)
+  Body sensor ──── Ground mobil
+```
+
+| Komponen | Nilai | Fungsi |
+| :---- | :---- | :---- |
+| R1 | 470 Ω | Pull-up ke 3V3; arus ke sensor paling besar sekitar 7 mA |
+| R2 | 1 kΩ | Melindungi pin ADC |
+| C1 | 100 nF | Meredam noise dari kabel panjang |
+
+Dengan R1 470 Ω, tegangan di pin untuk sensor umum:
+
+| Jenis sensor | Kosong | Penuh |
+| :---- | :---- | :---- |
+| 240–33 Ω (umum di mobil Eropa, termasuk VW) | sekitar 1,12 V | sekitar 0,22 V |
+| 0–90 Ω (umum di mobil Amerika) | sekitar 0 V | sekitar 0,53 V |
+| 110–3 Ω (umum di mobil Jepang) | sekitar 0,63 V | sekitar 0,02 V |
+
+Nilai pastinya tidak perlu dihitung: kalibrasi di DashTune akan membaca
+tegangan yang sebenarnya.
+
+#### Sensor juga dipakai gauge bawaan mobil
+
+Gauge bawaan sudah mengalirkan arus ke sensor. **Jangan pasang pull-up**,
+karena akan mengubah bacaan gauge. Ukur saja tegangan di kabel sensor dengan
+pembagi tegangan beresistansi tinggi, sehingga gauge tidak terganggu.
+
+```
+  Kabel sensor ─[R1 22 kΩ]─┬──────────┬──────── GPIO 20 / 23
+  (ke gauge                │          │
+   bawaan juga)        [R2 10 kΩ]   D1 BAT54S ── ke 3V3 dan GND
+                           │          │
+                          GND     C1 100 nF
+                                      │
+                                     GND
+```
+
+Sebelum memasang, **ukur tegangan kabel sensor dengan multimeter** saat tangki
+kosong dan penuh, dengan kunci kontak ON. Pembagi 22 kΩ/10 kΩ aman sampai
+sekitar 10 V di kabel sensor (menjadi sekitar 3,1 V di pin). Kalau tegangannya
+lebih tinggi, perbesar R1.
+
+#### Kalibrasi di DashTune
+
+1. Buka **Input tambahan → Fuel level**, pilih pin yang dipakai (GPIO 20 atau
+   23).
+2. Dengan tangki **kosong** (atau di batas cadangan), tekan **Jadikan kosong**.
+3. Dengan tangki **penuh**, tekan **Jadikan penuh**.
+
+Tegangan kosong boleh lebih tinggi atau lebih rendah dari penuh; dash
+mengikuti arah mana pun. Kalau tegangan sensor sudah diketahui, misalnya dari
+datasheet atau pengukuran multimeter sebelumnya, ketuk nilai **Kosong** atau
+**Penuh** untuk mengisinya langsung. Bacaan di dash dihaluskan beberapa detik,
+supaya goyangan bensin di tangki tidak membuat angkanya naik-turun.
+
+Kalau ECU Anda sudah mengirim fuel level, biarkan pilihan pin di **Dari ECU**.
+
 ---
 
 ## Panduan Aplikasi DashTune
@@ -266,6 +425,7 @@ lagi.
 | :---- | :---- |
 | **Tema** | Tema yang terpasang, Theme Store, dan Sesuaikan |
 | **General Setting** | Tipe ECU, satuan, mode MAP, RPM, tangki, dan batas peringatan |
+| **Input tambahan** | Pin untuk turn signal, head light (dan peredupan layar), dan fuel level |
 | **Splash** | Membuat splash screen sendiri |
 | **Info** | Versi firmware dan kondisi perangkat |
 | **Update Firmware** | Memperbarui firmware dash |
