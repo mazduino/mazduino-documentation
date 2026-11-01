@@ -205,7 +205,10 @@ disimpan saat menu ditutup (**Done**).
 ## Peringatan (alarm)
 
 Kalau sebuah nilai melewati batas selama lebih dari 1 detik, banner peringatan
-muncul di bagian bawah layar. Tema tetap terlihat di atasnya.
+muncul di bagian bawah layar selama 6 detik. Tema tetap terlihat di atasnya.
+Setelah itu banner hilang 20 detik supaya tampilan tidak tertutup, lalu muncul
+lagi kalau masalahnya masih ada. Kalau ada beberapa peringatan sekaligus,
+banner tampil bergantian.
 
 | Data | Batas bawaan |
 | :---- | :---- |
