@@ -25,16 +25,16 @@ yang dibaca dengan profil rusEFI tidak akan menghasilkan data yang benar.
 
 ## Ringkasan per ECU
 
-| ECU | Racedash 3.5" & 4" | Racedash Pro M4/M5/M7 | Kecepatan | ID frame |
-| :--- | :---: | :---: | :--- | :--- |
-| rusEFI | Ya | Ya | 500 kbps | `0x200`–`0x209` |
-| Haltech | Ya | Ya | **1 Mbps** | `0x360`–`0x3E4` |
-| MaxxECU | Ya | Ya | 500 kbps | `0x500`–`0x5FF` |
-| aRacer | Ya | — | **250 kbps** | `0x2D0`–`0x2D3` |
-| ECUMASTER EMU Black | — | Ya | **1 Mbps** | `0x600`–`0x607` |
-| Link G4+/G4X/G5 | — | Ya (eksperimental) | **1 Mbps** | `0x3E8` |
-| OBD-II (ECU standar) | Firmware generik saja | Ya | 500 kbps | `0x7DF` / `0x7E8` |
-| Speeduino | Ya | Ya | Serial 115200 | — |
+| ECU | Racedash 3.5" & 4" | Racedash Pro M4/M5/M7 | Kecepatan |
+| :--- | :---: | :---: | :--- |
+| rusEFI | Ya | Ya | 500 kbps |
+| Haltech | Ya | Ya | **1 Mbps** |
+| MaxxECU | Ya | Ya | 500 kbps |
+| aRacer | Ya | — | **250 kbps** |
+| ECUMASTER EMU Black | Ya (Racedash M2) | Ya | **1 Mbps** |
+| Link G4+/G4X/G5 | Ya (Racedash M2, eksperimental) | Ya (eksperimental) | **1 Mbps** |
+| OBD-II (ECU standar) | Tidak di firmware standar | Ya | 500 kbps |
+| Speeduino | Ya | Ya | Serial 115200 |
 
 Pada **Racedash Pro**, tipe ECU dipilih dari DashTune atau menu di layar tanpa
 ganti firmware. Pada **Racedash 3.5"/4"**, tipe ECU melekat pada firmware yang
@@ -49,7 +49,6 @@ dilakukan lewat DashTune.
 - **Yang harus aktif di ECU:** CAN bus menyala, dan **broadcast (verbose) CAN**
   diaktifkan dengan **base address `0x200`** (512 desimal) — itu nilai bawaan
   rusEFI
-- **Frame yang dibaca dash:** `0x200` sampai `0x209`
 
 Di TunerStudio, pengaturannya ada di bagian CAN bus. Nama menunya berbeda-beda
 antar versi rusEFI, tetapi yang harus benar selalu sama: CAN aktif, baud 500
@@ -61,9 +60,8 @@ test di dash hanya tersedia pada ECU rusEFI.
 ## Haltech
 
 - **Kecepatan CAN:** **1 Mbps** — ini yang paling sering terlewat
-- **Yang harus aktif di ECU:** broadcast standar Haltech (Haltech Broadcast
-  Protocol). Pada Elite/Nexus ini menyala secara bawaan
-- **Frame yang dibaca dash:** `0x360`–`0x373` dan `0x3E0`–`0x3E4`
+- **Yang harus aktif di ECU:** broadcast standar Haltech (Haltech CAN), pada
+  port CAN tempat dash tersambung. Pada ESP dan NSP, port itu harus dipilih
 
 Haltech adalah satu-satunya protokol yang mengirim data **lampu sein, rem
 tangan, dan tekanan ban**, jadi hanya di Haltech ketiga indikator itu bisa
@@ -72,9 +70,8 @@ menyala. Pada ECU lain ketiganya memang tidak akan aktif — bukan kerusakan.
 ## MaxxECU
 
 - **Kecepatan CAN:** 500 kbps
-- **Yang harus aktif di ECU:** protokol CAN bawaan MaxxECU (MaxxECU default /
-  CAN dash output)
-- **Frame yang dibaca dash:** seluruh rentang `0x500`–`0x5FF`
+- **Yang harus aktif di ECU:** di MTune, **Settings > CAN Bus > CAN Protocols**,
+  set output protocol ke **MaxxECU Default 1.3**
 
 Kalau ECU Anda memakai User Channel untuk sensor tambahan, channel itu bisa
 ditampilkan lewat Custom Channel — lihat [bagian Custom](#ecu-yang-tidak-ada-di-daftar).
@@ -84,32 +81,30 @@ ditampilkan lewat Custom Channel — lihat [bagian Custom](#ecu-yang-tidak-ada-d
 **Hanya untuk Racedash 3.5" dan 4".** Racedash Pro tidak punya profil aRacer.
 
 - **Kecepatan CAN:** **250 kbps**
-- **Frame yang dibaca dash:** `0x2D0`–`0x2D3`
 
 aRacer hanya mengirim kecepatan roda per gardan, sehingga channel roda kanan
 depan dan kanan belakang memang tidak terisi.
 
 ## ECUMASTER EMU Black
 
-**Hanya untuk Racedash Pro.**
+**Untuk Racedash Pro dan Racedash M2.** Pada Racedash M2 profil ini melekat pada
+firmware ECUMASTER yang dipasang lewat DashTune.
 
 - **Kecepatan CAN:** **1 Mbps** — nilai bawaan EMU Black
 - **Yang harus aktif di ECU:** "EMU stream" dengan **base ID `0x600`** (bawaan
   software EMU)
-- **Frame yang dibaca dash:** `0x600`–`0x607`
 
 EMU Black bisa diatur ke 500 kbps, tetapi dash membaca profil ini **hanya pada
 1 Mbps**. Kalau ECU Anda terlanjur diatur 500 kbps, kembalikan ke 1 Mbps.
 
 ## Link G4+ / G4X / G5
 
-**Hanya untuk Racedash Pro, dan statusnya masih eksperimental.**
+**Untuk Racedash Pro dan Racedash M2; statusnya masih eksperimental.** Pada
+Racedash M2 profil ini melekat pada firmware Link yang dipasang lewat DashTune.
 
 - **Kecepatan CAN:** **1 Mbps**
-- **Yang harus aktif di ECU:** stream **Generic Dash** di PCLink, dan
-  transmisinya harus dinyalakan sendiri — tidak aktif secara bawaan
-- **Frame yang dibaca dash:** semuanya di satu ID, `0x3E8` (1000 desimal),
-  dengan nomor frame di dua byte pertama
+- **Yang harus aktif di ECU:** stream **Generic Dash** di PCLink dengan **CAN ID
+  1000**, dan transmisinya harus dinyalakan sendiri — tidak aktif secara bawaan
 
 ## OBD-II (ECU standar bawaan mobil)
 
@@ -121,8 +116,8 @@ muncul bergantung pada PID yang dijawab mobil Anda.
 Baca [batasan OBD-II](mazduino-racedash-pro.md#batasan-obd-ii) sebelum
 mengandalkan mode ini.
 
-Pada Racedash 3.5"/4", OBD-II hanya ada di firmware generik, tidak pada
-firmware yang terkunci ke satu ECU.
+Pada Racedash 3.5"/4", OBD-II tidak ada di firmware standar yang terkunci ke
+satu ECU.
 
 ## Speeduino
 

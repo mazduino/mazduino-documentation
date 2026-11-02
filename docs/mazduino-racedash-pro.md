@@ -96,8 +96,7 @@ gigi, kadar etanol, dan tegangan aki.
 > keperluan OBD-II.
 
 Yang didukung hanya **OBD-II di atas CAN Bus**, yaitu **ISO 15765-4** dengan
-**identifier 11-bit** (dash mengirim permintaan ke ID `0x7DF` dan membaca
-jawaban di `0x7E8`–`0x7EF`), pada kecepatan **500 kbps** atau **250 kbps**.
+**identifier 11-bit**, pada kecepatan **500 kbps**.
 
 Yang **tidak** didukung:
 
@@ -115,7 +114,7 @@ antar merek dan negara.
 Meski protokolnya cocok, data yang muncul **bergantung pada apa yang direspons
 mobil Anda**. Dash menanyakan dulu PID mana yang didukung, lalu hanya membaca
 yang dijawab. PID yang dibaca: RPM, kecepatan, TPS, MAP, suhu coolant, suhu udara
-masuk, engine load, tegangan, dan suhu oli. Banyak
+masuk, tegangan, dan suhu oli. Banyak
 mobil tidak menjawab sebagian di antaranya — suhu oli termasuk yang paling
 sering tidak tersedia.
 
