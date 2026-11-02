@@ -107,11 +107,13 @@
               </ul>
               <p class="caption"><span class="caption-text">Dash Display</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Racedash</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Dash</a>
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">Konfigurasi ECU</a>
     <ul class="current">
@@ -233,7 +235,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Dash Display</li>
-          <li class="breadcrumb-item">Mazduino Racedash</li>
+          <li class="breadcrumb-item">Mazduino Dash</li>
       <li class="breadcrumb-item active">Konfigurasi ECU</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -243,7 +245,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:11:32 UTC">20 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 November 2026 21:20:57 UTC">2 November 2026</span></em></p>
   <h1 id="konfigurasi-ecu-untuk-racedash">Konfigurasi ECU untuk Racedash<a class="headerlink" href="#konfigurasi-ecu-untuk-racedash" title="Permanent link">&para;</a></h1>
 <p>Halaman ini membahas sisi <strong>ECU</strong>-nya: apa yang harus diaktifkan di ECU supaya
 datanya sampai ke dash. Untuk pengaturan dash-nya sendiri, lihat
@@ -271,7 +273,6 @@ yang dibaca dengan profil rusEFI tidak akan menghasilkan data yang benar.</p>
 <th style="text-align: center;">Racedash 3.5" &amp; 4"</th>
 <th style="text-align: center;">Racedash Pro M4/M5/M7</th>
 <th style="text-align: left;">Kecepatan</th>
-<th style="text-align: left;">ID frame</th>
 </tr>
 </thead>
 <tbody>
@@ -280,56 +281,48 @@ yang dibaca dengan profil rusEFI tidak akan menghasilkan data yang benar.</p>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;">500 kbps</td>
-<td style="text-align: left;"><code>0x200</code>–<code>0x209</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Haltech</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;"><strong>1 Mbps</strong></td>
-<td style="text-align: left;"><code>0x360</code>–<code>0x3E4</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">MaxxECU</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;">500 kbps</td>
-<td style="text-align: left;"><code>0x500</code>–<code>0x5FF</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">aRacer</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: center;">—</td>
 <td style="text-align: left;"><strong>250 kbps</strong></td>
-<td style="text-align: left;"><code>0x2D0</code>–<code>0x2D3</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">ECUMASTER EMU Black</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">Ya (Racedash M2)</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;"><strong>1 Mbps</strong></td>
-<td style="text-align: left;"><code>0x600</code>–<code>0x607</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Link G4+/G4X/G5</td>
-<td style="text-align: center;">—</td>
+<td style="text-align: center;">Ya (Racedash M2, eksperimental)</td>
 <td style="text-align: center;">Ya (eksperimental)</td>
 <td style="text-align: left;"><strong>1 Mbps</strong></td>
-<td style="text-align: left;"><code>0x3E8</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">OBD-II (ECU standar)</td>
-<td style="text-align: center;">Firmware generik saja</td>
+<td style="text-align: center;">Tidak di firmware standar</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;">500 kbps</td>
-<td style="text-align: left;"><code>0x7DF</code> / <code>0x7E8</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Speeduino</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: center;">Ya</td>
 <td style="text-align: left;">Serial 115200</td>
-<td style="text-align: left;">—</td>
 </tr>
 </tbody>
 </table>
@@ -344,7 +337,6 @@ dilakukan lewat DashTune.</p>
 <li><strong>Yang harus aktif di ECU:</strong> CAN bus menyala, dan <strong>broadcast (verbose) CAN</strong>
   diaktifkan dengan <strong>base address <code>0x200</code></strong> (512 desimal) — itu nilai bawaan
   rusEFI</li>
-<li><strong>Frame yang dibaca dash:</strong> <code>0x200</code> sampai <code>0x209</code></li>
 </ul>
 <p>Di TunerStudio, pengaturannya ada di bagian CAN bus. Nama menunya berbeda-beda
 antar versi rusEFI, tetapi yang harus benar selalu sama: CAN aktif, baud 500
@@ -354,9 +346,8 @@ test di dash hanya tersedia pada ECU rusEFI.</p>
 <h2 id="haltech">Haltech<a class="headerlink" href="#haltech" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong> — ini yang paling sering terlewat</li>
-<li><strong>Yang harus aktif di ECU:</strong> broadcast standar Haltech (Haltech Broadcast
-  Protocol). Pada Elite/Nexus ini menyala secara bawaan</li>
-<li><strong>Frame yang dibaca dash:</strong> <code>0x360</code>–<code>0x373</code> dan <code>0x3E0</code>–<code>0x3E4</code></li>
+<li><strong>Yang harus aktif di ECU:</strong> broadcast standar Haltech (Haltech CAN), pada
+  port CAN tempat dash tersambung. Pada ESP dan NSP, port itu harus dipilih</li>
 </ul>
 <p>Haltech adalah satu-satunya protokol yang mengirim data <strong>lampu sein, rem
 tangan, dan tekanan ban</strong>, jadi hanya di Haltech ketiga indikator itu bisa
@@ -364,9 +355,8 @@ menyala. Pada ECU lain ketiganya memang tidak akan aktif — bukan kerusakan.</p
 <h2 id="maxxecu">MaxxECU<a class="headerlink" href="#maxxecu" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Kecepatan CAN:</strong> 500 kbps</li>
-<li><strong>Yang harus aktif di ECU:</strong> protokol CAN bawaan MaxxECU (MaxxECU default /
-  CAN dash output)</li>
-<li><strong>Frame yang dibaca dash:</strong> seluruh rentang <code>0x500</code>–<code>0x5FF</code></li>
+<li><strong>Yang harus aktif di ECU:</strong> di MTune, <strong>Settings &gt; CAN Bus &gt; CAN Protocols</strong>,
+  set output protocol ke <strong>MaxxECU Default 1.3</strong></li>
 </ul>
 <p>Kalau ECU Anda memakai User Channel untuk sensor tambahan, channel itu bisa
 ditampilkan lewat Custom Channel — lihat <a href="#ecu-yang-tidak-ada-di-daftar">bagian Custom</a>.</p>
@@ -374,28 +364,26 @@ ditampilkan lewat Custom Channel — lihat <a href="#ecu-yang-tidak-ada-di-dafta
 <p><strong>Hanya untuk Racedash 3.5" dan 4".</strong> Racedash Pro tidak punya profil aRacer.</p>
 <ul>
 <li><strong>Kecepatan CAN:</strong> <strong>250 kbps</strong></li>
-<li><strong>Frame yang dibaca dash:</strong> <code>0x2D0</code>–<code>0x2D3</code></li>
 </ul>
 <p>aRacer hanya mengirim kecepatan roda per gardan, sehingga channel roda kanan
 depan dan kanan belakang memang tidak terisi.</p>
 <h2 id="ecumaster-emu-black">ECUMASTER EMU Black<a class="headerlink" href="#ecumaster-emu-black" title="Permanent link">&para;</a></h2>
-<p><strong>Hanya untuk Racedash Pro.</strong></p>
+<p><strong>Untuk Racedash Pro dan Racedash M2.</strong> Pada Racedash M2 profil ini melekat pada
+firmware ECUMASTER yang dipasang lewat DashTune.</p>
 <ul>
 <li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong> — nilai bawaan EMU Black</li>
 <li><strong>Yang harus aktif di ECU:</strong> "EMU stream" dengan <strong>base ID <code>0x600</code></strong> (bawaan
   software EMU)</li>
-<li><strong>Frame yang dibaca dash:</strong> <code>0x600</code>–<code>0x607</code></li>
 </ul>
 <p>EMU Black bisa diatur ke 500 kbps, tetapi dash membaca profil ini <strong>hanya pada
 1 Mbps</strong>. Kalau ECU Anda terlanjur diatur 500 kbps, kembalikan ke 1 Mbps.</p>
 <h2 id="link-g4-g4x-g5">Link G4+ / G4X / G5<a class="headerlink" href="#link-g4-g4x-g5" title="Permanent link">&para;</a></h2>
-<p><strong>Hanya untuk Racedash Pro, dan statusnya masih eksperimental.</strong></p>
+<p><strong>Untuk Racedash Pro dan Racedash M2; statusnya masih eksperimental.</strong> Pada
+Racedash M2 profil ini melekat pada firmware Link yang dipasang lewat DashTune.</p>
 <ul>
 <li><strong>Kecepatan CAN:</strong> <strong>1 Mbps</strong></li>
-<li><strong>Yang harus aktif di ECU:</strong> stream <strong>Generic Dash</strong> di PCLink, dan
-  transmisinya harus dinyalakan sendiri — tidak aktif secara bawaan</li>
-<li><strong>Frame yang dibaca dash:</strong> semuanya di satu ID, <code>0x3E8</code> (1000 desimal),
-  dengan nomor frame di dua byte pertama</li>
+<li><strong>Yang harus aktif di ECU:</strong> stream <strong>Generic Dash</strong> di PCLink dengan <strong>CAN ID
+  1000</strong>, dan transmisinya harus dinyalakan sendiri — tidak aktif secara bawaan</li>
 </ul>
 <h2 id="obd-ii-ecu-standar-bawaan-mobil">OBD-II (ECU standar bawaan mobil)<a class="headerlink" href="#obd-ii-ecu-standar-bawaan-mobil" title="Permanent link">&para;</a></h2>
 <p>Tidak ada yang perlu diatur di mobil — dash yang bertanya. Yang perlu
@@ -404,8 +392,8 @@ dipastikan justru mobilnya memang mendukung: hanya <strong>OBD-II di atas CAN
 muncul bergantung pada PID yang dijawab mobil Anda.</p>
 <p>Baca <a href="../mazduino-racedash-pro/#batasan-obd-ii">batasan OBD-II</a> sebelum
 mengandalkan mode ini.</p>
-<p>Pada Racedash 3.5"/4", OBD-II hanya ada di firmware generik, tidak pada
-firmware yang terkunci ke satu ECU.</p>
+<p>Pada Racedash 3.5"/4", OBD-II tidak ada di firmware standar yang terkunci ke
+satu ECU.</p>
 <h2 id="speeduino">Speeduino<a class="headerlink" href="#speeduino" title="Permanent link">&para;</a></h2>
 <p>Speeduino tidak punya CAN, jadi sambungannya lewat <strong>serial</strong>: pin TX/RX dash
 ke secondary serial Speeduino, dengan ground yang sama.</p>
@@ -498,7 +486,7 @@ tegangan yang sama di kedua ujungnya.</p>
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-left" title="Pro / M4, M5, M7 (4.3", 5" & 7")"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-dash-r4/" class="btn btn-neutral float-left" title="Dash R4 (4" bulat)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../wbo-can-controller/" class="btn btn-neutral float-right" title="WBO CAN Controller">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -522,7 +510,7 @@ tegangan yang sama di kedua ujungnya.</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mazduino-dash-r4/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../wbo-can-controller/" style="color: #fcfcfc">Next &raquo;</a></span>

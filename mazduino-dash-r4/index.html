@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-dash-r4/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Dash R4 (4" bulat) - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Dash R4 (4\" bulat)";
+        var mkdocs_page_input_path = "mazduino-dash-r4.md";
+        var mkdocs_page_url = "/mazduino-dash-r4/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Dash</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Dash R4 (4" bulat)</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#gambaran-umum">Gambaran Umum</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ecu-yang-didukung">ECU yang didukung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tema">Tema</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#berpindah-tema">Berpindah tema</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#memasang-tema-dari-dashtune">Memasang tema dari DashTune</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mengatur-tema-sesuaikan">Mengatur tema (Sesuaikan)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#menu-di-layar-dash">Menu di layar dash</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#gerakan-di-layar">Gerakan di layar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#susunan-menu">Susunan menu</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#settings">Settings</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#peringatan-alarm">Peringatan (alarm)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar-kml">Konsumsi bahan bakar (km/l)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#turn-signal-dan-head-light-optocoupler-disarankan">Turn signal dan head light: optocoupler (disarankan)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#turn-signal-dan-head-light-pembagi-tegangan-alternatif">Turn signal dan head light: pembagi tegangan (alternatif)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fuel-level">Fuel level</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#menyambungkan-pertama-kali">Menyambungkan pertama kali</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isi-menu-dashtune">Isi menu DashTune</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#splash-screen">Splash screen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-firmware">Update firmware</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fitur-relay-google-maps-dan-musik">Fitur relay: Google Maps dan musik</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#referensi">Referensi</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dash Display</li>
+          <li class="breadcrumb-item">Mazduino Dash</li>
+      <li class="breadcrumb-item active">Dash R4 (4" bulat)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 November 2026 11:45:50 UTC">1 November 2026</span></em></p>
+  <h1 id="mazduino-dash-r4">Mazduino Dash R4<a class="headerlink" href="#mazduino-dash-r4" title="Permanent link">&para;</a></h1>
+<h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
+<p><img alt="Dash R4 berganti-ganti tema" src="../img/dash/dash-r4-themes.gif" /></p>
+<p><em>Beberapa tema Dash R4: Street (bawaan), Wangan Night, Classic Beetle,
+Motorsport, Car Status, Retro VFD, Synthwave, Halo, Ink Wave, dan Classic</em></p>
+<p>Mazduino Dash R4 adalah dash display <strong>bulat 4 inch</strong> dengan layar sentuh.
+Tampilannya berupa <strong>tema</strong>, yang bisa dipasang, dilepas, dan diatur sendiri
+dari aplikasi <strong>DashTune</strong> lewat Bluetooth. Pilihannya mulai dari gauge
+balap, gauge klasik, sampai tema dengan foto mobil Anda sendiri.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Varian</th>
+<th style="text-align: left;">Ukuran Layar</th>
+<th style="text-align: left;">Konektor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dash R4</td>
+<td style="text-align: left;">4 inch, bulat</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Puluhan tema siap pasang dari <strong>Theme Store</strong> di DashTune, dan <strong>sampai 10
+  tema</strong> tersimpan di dash sekaligus. Tema <strong>Street</strong> sudah tertanam di
+  firmware dan selalu ada.</li>
+<li>Isi panel data di tiap tema bisa diganti sendiri, misalnya dari Oil
+  Pressure menjadi IAT.</li>
+<li>Mendukung <strong>rusEFI</strong>, <strong>Haltech</strong>, <strong>MaxxECU</strong>, <strong>ECUMASTER EMU Black</strong>,
+  <strong>Link Generic Dash</strong>, <strong>Speeduino</strong>, <strong>OBD-II</strong>, dan <strong>M-Link</strong>
+  (<a href="../can-io-extender/#kendaraan-tanpa-can-bus-protokol-m-link">CAN IO Extender</a>).</li>
+<li><strong>Konsumsi bahan bakar (km/l)</strong> dihitung di dash, kalau ECU mengirim data
+  fuel flow dan kecepatan.</li>
+<li>Peringatan (alarm) untuk Oil Pressure, Fuel Pressure, CLT, Oil Temp, Fuel
+  Level, dan Battery.</li>
+<li><strong>Input tambahan</strong>: turn signal, head light, dan fuel level bisa disambungkan
+  langsung ke dash, dan layar meredup otomatis saat lampu menyala.</li>
+<li><strong>Petunjuk arah Google Maps</strong> dan <strong>musik</strong> dari HP tampil sebagai notifikasi
+  singkat di layar.</li>
+<li><strong>Splash screen</strong> sendiri saat dinyalakan, bisa beranimasi, atau dari GIF dan
+  video.</li>
+<li><strong>Update firmware</strong> lewat aplikasi, tanpa kabel.</li>
+</ul>
+<h2 id="konektor-dtm4-4-pin">Konektor DTM4 / 4 Pin<a class="headerlink" href="#konektor-dtm4-4-pin" title="Permanent link">&para;</a></h2>
+<p>Dash R4 memakai konektor <strong>DTM4 (Deutsch DTM 4 Pin)</strong> yang sama dengan
+<a href="../mazduino-racedash-pro/#konektor-dtm4-4-pin">Racedash Pro</a>, baik bentuk
+fisiknya maupun fungsi tiap pin. Kabel dari Racedash Pro bisa langsung
+dipakai.</p>
+<p><img alt="Sisi konektor dash" src="../img/dash/racedash-dtm4-connector-side.png" /></p>
+<p><em>Dash connector side</em></p>
+<p><img alt="Sisi konektor kabel" src="../img/dash/racedash-dtm4-cable-connector.png" /></p>
+<p><em>Cable connector side</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">No. Pin</th>
+<th style="text-align: left;">Deskripsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12V Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">CAN High / TX</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CAN Low / RX</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Catatan:</strong></p>
+<ul>
+<li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk semua ECU yang
+  memakai CAN Bus (rusEFI, Haltech, MaxxECU, ECUMASTER, Link, OBD-II, M-Link).</li>
+<li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX
+  Serial</strong>, karena Speeduino tidak memiliki CAN Bus native.</li>
+</ul>
+<h2 id="ecu-yang-didukung">ECU yang didukung<a class="headerlink" href="#ecu-yang-didukung" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ECU</th>
+<th style="text-align: left;">Cara sambung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rusEFI</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">Haltech</td>
+<td style="text-align: left;">CAN Bus 1 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxxECU</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">ECUMASTER EMU Black</td>
+<td style="text-align: left;">CAN Bus 1 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">Link Generic Dash</td>
+<td style="text-align: left;">CAN Bus 1 Mbps</td>
+</tr>
+<tr>
+<td style="text-align: left;">Speeduino</td>
+<td style="text-align: left;">Serial</td>
+</tr>
+<tr>
+<td style="text-align: left;">OBD-II</td>
+<td style="text-align: left;">CAN Bus (ISO 15765-4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">M-Link (CAN IO Extender)</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+</tr>
+</tbody>
+</table>
+<p>Tipe ECU dipilih dari menu di layar dash (<strong>Settings → ECU</strong>) atau dari
+DashTune (<strong>General Setting</strong>). <strong>Tidak perlu ganti firmware</strong>, dan kecepatan
+CAN ikut menyesuaikan sendiri.</p>
+<ul>
+<li>Berpindah antar-ECU yang sama-sama memakai CAN Bus langsung berlaku, tanpa
+  restart.</li>
+<li>Berpindah <strong>dari atau ke Speeduino</strong> baru berlaku setelah dash dimatikan dan
+  dinyalakan kembali, karena fungsi pin 3 dan 4 ikut berubah.</li>
+</ul>
+<p>Apa yang harus diaktifkan di masing-masing ECU dibahas di
+<a href="../setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a>. Pengaturannya sama
+untuk Dash R4.</p>
+<blockquote>
+<p><strong>OBD-II</strong>: tidak semua mobil OBD-II bisa dibaca, dan datanya bergantung
+pada apa yang dijawab mobil Anda. Batasannya sama dengan Racedash Pro, baca
+<a href="../mazduino-racedash-pro/#batasan-obd-ii">Batasan OBD-II</a> sebelum membeli
+untuk keperluan OBD-II.</p>
+</blockquote>
+<h2 id="tema">Tema<a class="headerlink" href="#tema" title="Permanent link">&para;</a></h2>
+<p>Tema adalah tampilan dashboard. Setiap tema membawa susunan gauge, warna,
+dan gambarnya sendiri, seperti contoh di <a href="#gambaran-umum">Gambaran Umum</a>.</p>
+<p>Daftar lengkap ada di <strong>Theme Store</strong> DashTune, dan tema baru terus
+ditambahkan.</p>
+<h3 id="berpindah-tema">Berpindah tema<a class="headerlink" href="#berpindah-tema" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Geser kiri atau kanan</strong> di layar untuk pindah ke tema berikutnya.</li>
+<li>Atau buka menu dash, pilih <strong>Themes</strong>, lalu ketuk tema yang diinginkan.</li>
+</ul>
+<p>Dash mengingat tema terakhir yang tampil. Kalau ingin dash selalu menyala
+dengan tema tertentu, buka <strong>Themes</strong> di menu dash lalu tekan <strong>Set default</strong>
+pada tema tersebut.</p>
+<h3 id="memasang-tema-dari-dashtune">Memasang tema dari DashTune<a class="headerlink" href="#memasang-tema-dari-dashtune" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Sambungkan DashTune ke dash (lihat
+   <a href="#menyambungkan-pertama-kali">Menyambungkan pertama kali</a>).</li>
+<li>Buka menu <strong>Tema</strong>. Di sini tampil tema yang sudah terpasang di dash,
+   lengkap dengan gambarnya, beserta jumlahnya (misalnya "4 dari 10 tema").</li>
+<li>Buka <strong>Theme Store</strong>, pilih tema, lalu tekan unduh.</li>
+<li>Tema dikirim ke dash lewat WiFi dash. Prosesnya berjalan sendiri, jadi
+   <strong>biarkan layar HP menyala dan jangan tutup aplikasi</strong> sampai selesai.</li>
+</ol>
+<p>Dash menyimpan <strong>paling banyak 10 tema</strong>. Kalau sudah penuh, DashTune akan
+menanyakan tema mana yang dihapus untuk memberi tempat bagi tema baru. Tema
+yang dihapus tetap ada di Theme Store dan bisa dipasang lagi kapan saja.</p>
+<p>Kalau tema yang terpasang punya versi lebih baru di store, DashTune
+menandainya dengan <strong>UPDATE</strong>.</p>
+<h3 id="mengatur-tema-sesuaikan">Mengatur tema (Sesuaikan)<a class="headerlink" href="#mengatur-tema-sesuaikan" title="Permanent link">&para;</a></h3>
+<p>Di menu <strong>Tema</strong>, pilih tema yang terpasang lalu tekan <strong>Sesuaikan</strong>. Yang
+bisa diatur berbeda-beda per tema:</p>
+<ul>
+<li><strong>Isi panel data</strong>: tiap panel diberi nama <strong>Data 1</strong>, <strong>Data 2</strong>, dan
+  seterusnya. Pilih data yang ingin ditampilkan di panel itu, misalnya Oil
+  Pressure, Fuel Pressure, CLT, IAT, AFR, Battery, atau KM/L.</li>
+<li><strong>Foto mobil</strong> (tema Car Status): ganti foto mobil bawaan dengan foto mobil
+  Anda sendiri.</li>
+<li><strong>Tulisan</strong> (misalnya tema Ink Wave dan Sticker Bomb): ganti tulisan pada
+  tema dengan nama mobil atau tim Anda.</li>
+<li><strong>Warna</strong> dan pilihan lain yang disediakan tema.</li>
+</ul>
+<p>Perubahan dikirim ke dash dan tetap tersimpan meski dash dimatikan.</p>
+<h4 id="memasang-foto-mobil-sendiri-car-status">Memasang foto mobil sendiri (Car Status)<a class="headerlink" href="#memasang-foto-mobil-sendiri-car-status" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Di <strong>Sesuaikan</strong>, pilih <strong>Ganti foto</strong>, lalu <strong>Ambil foto</strong> atau <strong>Pilih
+   dari galeri</strong>. Foto mobil dari samping depan memberi hasil terbaik.</li>
+<li>Pilih cara menangani <strong>latar belakang foto</strong>:<ul>
+<li><strong>Otomatis</strong>: aplikasi memotong mobil dari latarnya sendiri.</li>
+<li><strong>Manual</strong>: hapus latar dengan jari, dengan tombol <strong>Hapus</strong>,
+  <strong>Kembalikan</strong>, dan <strong>Urungkan</strong>.</li>
+<li><strong>Biarkan</strong>: foto dipakai apa adanya, lengkap dengan latarnya.</li>
+</ul>
+</li>
+<li><strong>Geser dan cubit</strong> foto agar mobil pas di dalam bingkai. Bingkai
+   menunjukkan area yang tampil di dash.</li>
+<li>Ketuk bagian lampu yang diminta (misalnya lampu depan), mengikuti
+   <strong>Contoh</strong> di bawah bingkai. Dari sini dash tahu letak lampu yang menyala
+   bersama data dari ECU.</li>
+<li>Tekan <strong>Simpan</strong> untuk mengirim foto ke dash.</li>
+</ol>
+<h2 id="menu-di-layar-dash">Menu di layar dash<a class="headerlink" href="#menu-di-layar-dash" title="Permanent link">&para;</a></h2>
+<h3 id="gerakan-di-layar">Gerakan di layar<a class="headerlink" href="#gerakan-di-layar" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gerakan</th>
+<th style="text-align: left;">Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Geser kiri / kanan</td>
+<td style="text-align: left;">Ganti tema</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geser ke atas dari bagian bawah layar</td>
+<td style="text-align: left;">Buka menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geser ke bawah</td>
+<td style="text-align: left;">Tutup menu</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ketuk banner peringatan</td>
+<td style="text-align: left;">Diamkan peringatan itu selama 60 detik</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ketuk splash screen</td>
+<td style="text-align: left;">Lewati splash, langsung ke dashboard</td>
+</tr>
+</tbody>
+</table>
+<p>Cara membuka menu bisa diganti menjadi <strong>ketuk dua kali</strong> (Double tap) lewat
+<strong>Settings → Open menu</strong>.</p>
+<h3 id="susunan-menu">Susunan menu<a class="headerlink" href="#susunan-menu" title="Permanent link">&para;</a></h3>
+<pre><code>MENU
+├── Settings   → Brightness, ECU, Max RPM, Shift RPM, Fuel tank, Open menu
+├── Themes     → daftar tema; ketuk untuk menampilkan, Set default untuk tema saat menyala
+└── Music      → lagu yang sedang diputar di HP, dengan tombol sebelumnya / putar-jeda / berikutnya
+</code></pre>
+<h3 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pengaturan</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Brightness</td>
+<td style="text-align: left;">Kecerahan layar, 20–100%</td>
+</tr>
+<tr>
+<td style="text-align: left;">ECU</td>
+<td style="text-align: left;">Tipe ECU / protokol</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max RPM</td>
+<td style="text-align: left;">Skala penuh RPM, naik-turun 500 RPM</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shift RPM</td>
+<td style="text-align: left;">RPM saat shift light mulai menyala</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel tank</td>
+<td style="text-align: left;">Kapasitas tangki dalam liter, untuk menghitung sisa bahan bakar</td>
+</tr>
+<tr>
+<td style="text-align: left;">Open menu</td>
+<td style="text-align: left;">Cara membuka menu: Swipe up atau Double tap</td>
+</tr>
+</tbody>
+</table>
+<p>Nilai-nilai ini sama dengan yang diatur di <strong>General Setting</strong> DashTune, dan
+disimpan saat menu ditutup (<strong>Done</strong>).</p>
+<h2 id="peringatan-alarm">Peringatan (alarm)<a class="headerlink" href="#peringatan-alarm" title="Permanent link">&para;</a></h2>
+<p>Kalau sebuah nilai melewati batas selama lebih dari 1 detik, banner peringatan
+muncul di bagian bawah layar selama 6 detik. Tema tetap terlihat di atasnya.
+Setelah itu banner hilang 20 detik supaya tampilan tidak tertutup, lalu muncul
+lagi kalau masalahnya masih ada. Kalau ada beberapa peringatan sekaligus,
+banner tampil bergantian.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Data</th>
+<th style="text-align: left;">Batas bawaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Oil Pressure</td>
+<td style="text-align: left;">Di bawah 1,0 bar saat mesin di atas 1200 RPM</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel Pressure</td>
+<td style="text-align: left;">Di bawah 2,5 bar</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLT</td>
+<td style="text-align: left;">Di atas 102 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oil Temp</td>
+<td style="text-align: left;">Di atas 125 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel Level</td>
+<td style="text-align: left;">Di bawah 10%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Battery</td>
+<td style="text-align: left;">Di bawah 11,5 V</td>
+</tr>
+</tbody>
+</table>
+<p>Batas tiap data bisa diubah di DashTune, di <strong>General Setting → Sumber
+Data</strong>. Ketuk banner untuk mendiamkan
+peringatan itu selama 60 detik.</p>
+<p>Warna gauge di semua tema juga ikut batas yang sama: normal, kuning saat
+mendekati batas, lalu merah saat melewatinya.</p>
+<h2 id="konsumsi-bahan-bakar-kml">Konsumsi bahan bakar (km/l)<a class="headerlink" href="#konsumsi-bahan-bakar-kml" title="Permanent link">&para;</a></h2>
+<p>Dash menghitung <strong>konsumsi bahan bakar dalam km/l</strong> dari dua data ECU:</p>
+<ul>
+<li><strong>Fuel flow</strong>, misalnya dari rusEFI atau Haltech</li>
+<li><strong>Kecepatan kendaraan</strong> (VSS)</li>
+</ul>
+<p>Angkanya muncul di tema yang menampilkannya, atau bisa dipasang sendiri
+lewat <strong>Sesuaikan</strong> dengan memilih <strong>KM/L</strong> di salah satu panel data. Saat
+kendaraan berhenti atau sangat pelan (di bawah 3 km/jam), angkanya 0. Kalau
+ECU Anda tidak mengirim fuel flow atau kecepatan, nilai ini tidak tersedia.</p>
+<h2 id="input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level<a class="headerlink" href="#input-tambahan-turn-signal-head-light-dan-fuel-level" title="Permanent link">&para;</a></h2>
+<p>Untuk ECU yang tidak mengirim data turn signal, head light, atau fuel level,
+sinyal dari mobil bisa disambungkan langsung ke pin GPIO cadangan di Dash R4.
+Fungsinya diatur dari DashTune di menu <strong>Input tambahan</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fungsi</th>
+<th style="text-align: left;">Pin yang bisa dipakai</th>
+<th style="text-align: left;">Jenis input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Turn signal kiri dan kanan, head light</td>
+<td style="text-align: left;">GPIO 2, 26, 27, 32, 33, 46, 47, 48</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel level</td>
+<td style="text-align: left;">GPIO 20, 23</td>
+<td style="text-align: left;">Analog (ADC)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Penting:</strong> semua pin ini bekerja di <strong>3,3 V</strong>. Tegangan listrik mobil
+12–14,4 V, dan saat starter atau alternator bekerja bisa ada lonjakan jauh
+lebih tinggi. <strong>Jangan menyambungkan kabel mobil langsung ke pin.</strong> Selalu
+lewat salah satu rangkaian di bawah. Pin yang terkena 12 V langsung akan
+rusak permanen.</p>
+</blockquote>
+<p>Semua rangkaian di bawah memakai <strong>GND</strong> dan <strong>3V3</strong> dari Dash R4 itu sendiri.
+GND dash sudah tersambung ke ground mobil lewat pin 2 konektor DTM4.</p>
+<h3 id="turn-signal-dan-head-light-optocoupler-disarankan">Turn signal dan head light: optocoupler (disarankan)<a class="headerlink" href="#turn-signal-dan-head-light-optocoupler-disarankan" title="Permanent link">&para;</a></h3>
+<p>Optocoupler memisahkan kabel mobil dari dash sepenuhnya. Lonjakan tegangan
+di kabel lampu tidak bisa sampai ke pin GPIO. Ini cara yang paling aman, dan
+satu rangkaian dipakai per sinyal.</p>
+<pre><code>  SISI MOBIL                         PC817                 SISI DASH R4
+                               ┌──────────────┐
+  Kabel lampu ──[R1 2,2 kΩ]──┬─┤1 anoda      4├─ kolektor ──── GPIO (mis. GPIO 32)
+  (+12 V saat lampu          │ │   LED → foto- │
+   menyala)               D1 ┴ │   transistor  │
+                     1N4148  ▲ │               │
+  Ground mobil ──────────────┴─┤2 katoda     3├─ emitor ────── GND
+                               └──────────────┘
+
+  D1 paralel dengan LED, arah terbalik: katoda D1 ke pin 1, anoda D1 ke pin 2.
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Komponen</th>
+<th style="text-align: left;">Nilai</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">U1</td>
+<td style="text-align: left;">PC817 (atau optocoupler setara)</td>
+<td style="text-align: left;">Memisahkan mobil dari dash</td>
+</tr>
+<tr>
+<td style="text-align: left;">R1</td>
+<td style="text-align: left;">2,2 kΩ, ¼ W</td>
+<td style="text-align: left;">Membatasi arus LED: 5–7 mA pada 12–16 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">D1</td>
+<td style="text-align: left;">1N4148, dipasang terbalik paralel dengan LED</td>
+<td style="text-align: left;">Melindungi LED dari tegangan terbalik</td>
+</tr>
+</tbody>
+</table>
+<p>Di DashTune, pilih pin untuk fungsinya lalu set <strong>Aktif saat: Ke ground</strong>.
+Pull-up di dalam dash sudah aktif, jadi tidak perlu resistor tambahan di sisi
+dash. Saat lampu menyala, transistor optocoupler menarik pin ke GND dan
+indikator di layar ikut menyala.</p>
+<p><strong>Cara menyambung:</strong></p>
+<ul>
+<li><strong>Turn signal:</strong> ambil dari kabel turn signal kiri dan kanan (atau kabel
+  indikatornya di panel instrumen bawaan). Dash membaca kedipnya apa adanya.</li>
+<li><strong>Head light:</strong> ambil dari kabel park light atau head light yang menyala saat
+  saklar lampu dihidupkan. Sinyal ini juga yang dipakai <strong>Redupkan layar saat
+  lampu menyala</strong>.</li>
+</ul>
+<h3 id="turn-signal-dan-head-light-pembagi-tegangan-alternatif">Turn signal dan head light: pembagi tegangan (alternatif)<a class="headerlink" href="#turn-signal-dan-head-light-pembagi-tegangan-alternatif" title="Permanent link">&para;</a></h3>
+<p>Kalau tidak memakai optocoupler, sinyal 12 V bisa diturunkan dengan pembagi
+tegangan. Dioda clamp <strong>wajib</strong> dipasang. Tanpa clamp, tegangan 14,4 V dari
+alternator menghasilkan sekitar 3,6 V di pin, melebihi batas 3,3 V.</p>
+<pre><code>  Kabel lampu ─[R1 10 kΩ]─┬───────────┬──────── GPIO
+                          │           │
+                      [R2 3,3 kΩ]   D1 BAT54S ── ke 3V3 dan GND
+                          │           │           (clamp dua arah)
+                         GND      C1 100 nF
+                                      │
+                                     GND
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Komponen</th>
+<th style="text-align: left;">Nilai</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">R1</td>
+<td style="text-align: left;">10 kΩ</td>
+<td style="text-align: left;">Pembagi tegangan, bagian atas</td>
+</tr>
+<tr>
+<td style="text-align: left;">R2</td>
+<td style="text-align: left;">3,3 kΩ</td>
+<td style="text-align: left;">Pembagi tegangan, bagian bawah (12 V → sekitar 3,0 V)</td>
+</tr>
+<tr>
+<td style="text-align: left;">D1</td>
+<td style="text-align: left;">BAT54S (Schottky ganda)</td>
+<td style="text-align: left;">Menahan tegangan pin di antara GND dan 3V3</td>
+</tr>
+<tr>
+<td style="text-align: left;">C1</td>
+<td style="text-align: left;">100 nF</td>
+<td style="text-align: left;">Meredam noise dan lonjakan singkat</td>
+</tr>
+</tbody>
+</table>
+<p>Di DashTune, set <strong>Aktif saat: Ada tegangan</strong>.</p>
+<h3 id="fuel-level">Fuel level<a class="headerlink" href="#fuel-level" title="Permanent link">&para;</a></h3>
+<p>Fuel sender di dalam tangki adalah resistor yang nilainya berubah mengikuti
+pelampung. Dash membaca tegangannya lewat pin ADC (<strong>GPIO 20</strong> atau
+<strong>GPIO 23</strong>), lalu mengubahnya menjadi persen dari kalibrasi kosong/penuh.
+Rangkaiannya tergantung apakah sensor itu masih dipakai gauge bawaan mobil.</p>
+<h4 id="sensor-hanya-untuk-dash-gauge-bawaan-tidak-dipakai">Sensor hanya untuk dash (gauge bawaan tidak dipakai)<a class="headerlink" href="#sensor-hanya-untuk-dash-gauge-bawaan-tidak-dipakai" title="Permanent link">&para;</a></h4>
+<p>Dash mengalirkan arus kecil ke sensor lewat resistor pull-up dari 3V3.</p>
+<pre><code>  3V3 ──[R1 470 Ω]──┬──[R2 1 kΩ]──┬──────── GPIO 20 / 23
+                    │             │
+                    │         C1 100 nF
+                    │             │
+  Kabel sensor ─────┘            GND
+  (fuel sender)
+  Body sensor ──── Ground mobil
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Komponen</th>
+<th style="text-align: left;">Nilai</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">R1</td>
+<td style="text-align: left;">470 Ω</td>
+<td style="text-align: left;">Pull-up ke 3V3; arus ke sensor paling besar sekitar 7 mA</td>
+</tr>
+<tr>
+<td style="text-align: left;">R2</td>
+<td style="text-align: left;">1 kΩ</td>
+<td style="text-align: left;">Melindungi pin ADC</td>
+</tr>
+<tr>
+<td style="text-align: left;">C1</td>
+<td style="text-align: left;">100 nF</td>
+<td style="text-align: left;">Meredam noise dari kabel panjang</td>
+</tr>
+</tbody>
+</table>
+<p>Dengan R1 470 Ω, tegangan di pin untuk sensor umum:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Jenis sensor</th>
+<th style="text-align: left;">Kosong</th>
+<th style="text-align: left;">Penuh</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">240–33 Ω (umum di mobil Eropa, termasuk VW)</td>
+<td style="text-align: left;">sekitar 1,12 V</td>
+<td style="text-align: left;">sekitar 0,22 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">0–90 Ω (umum di mobil Amerika)</td>
+<td style="text-align: left;">sekitar 0 V</td>
+<td style="text-align: left;">sekitar 0,53 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">110–3 Ω (umum di mobil Jepang)</td>
+<td style="text-align: left;">sekitar 0,63 V</td>
+<td style="text-align: left;">sekitar 0,02 V</td>
+</tr>
+</tbody>
+</table>
+<p>Nilai pastinya tidak perlu dihitung: kalibrasi di DashTune akan membaca
+tegangan yang sebenarnya.</p>
+<h4 id="sensor-juga-dipakai-gauge-bawaan-mobil">Sensor juga dipakai gauge bawaan mobil<a class="headerlink" href="#sensor-juga-dipakai-gauge-bawaan-mobil" title="Permanent link">&para;</a></h4>
+<p>Gauge bawaan sudah mengalirkan arus ke sensor. <strong>Jangan pasang pull-up</strong>,
+karena akan mengubah bacaan gauge. Ukur saja tegangan di kabel sensor dengan
+pembagi tegangan beresistansi tinggi, sehingga gauge tidak terganggu.</p>
+<pre><code>  Kabel sensor ─[R1 22 kΩ]─┬──────────┬──────── GPIO 20 / 23
+  (ke gauge                │          │
+   bawaan juga)        [R2 10 kΩ]   D1 BAT54S ── ke 3V3 dan GND
+                           │          │
+                          GND     C1 100 nF
+                                      │
+                                     GND
+</code></pre>
+<p>Sebelum memasang, <strong>ukur tegangan kabel sensor dengan multimeter</strong> saat tangki
+kosong dan penuh, dengan kunci kontak ON. Pembagi 22 kΩ/10 kΩ aman sampai
+sekitar 10 V di kabel sensor (menjadi sekitar 3,1 V di pin). Kalau tegangannya
+lebih tinggi, perbesar R1.</p>
+<h4 id="kalibrasi-di-dashtune">Kalibrasi di DashTune<a class="headerlink" href="#kalibrasi-di-dashtune" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Buka <strong>Input tambahan → Fuel level</strong>, pilih pin yang dipakai (GPIO 20 atau
+   23).</li>
+<li>Dengan tangki <strong>kosong</strong> (atau di batas cadangan), tekan <strong>Jadikan kosong</strong>.</li>
+<li>Dengan tangki <strong>penuh</strong>, tekan <strong>Jadikan penuh</strong>.</li>
+</ol>
+<p>Tegangan kosong boleh lebih tinggi atau lebih rendah dari penuh; dash
+mengikuti arah mana pun. Kalau tegangan sensor sudah diketahui, misalnya dari
+datasheet atau pengukuran multimeter sebelumnya, ketuk nilai <strong>Kosong</strong> atau
+<strong>Penuh</strong> untuk mengisinya langsung. Bacaan di dash dihaluskan beberapa detik,
+supaya goyangan bensin di tangki tidak membuat angkanya naik-turun.</p>
+<p>Kalau ECU Anda sudah mengirim fuel level, biarkan pilihan pin di <strong>Dari ECU</strong>.</p>
+<hr />
+<h2 id="panduan-aplikasi-dashtune">Panduan Aplikasi DashTune<a class="headerlink" href="#panduan-aplikasi-dashtune" title="Permanent link">&para;</a></h2>
+<p>DashTune adalah aplikasi Android untuk mengatur dash dari HP lewat
+<strong>Bluetooth</strong>.</p>
+<blockquote>
+<p><strong>Mendapatkan aplikasinya:</strong> buka <strong><a href="https://www.mazduino.com/">www.mazduino.com</a></strong>
+dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
+tertutup, jadi aksesnya diberikan per akun. Masukkan alamat email akun Google
+Play Anda di sana, dan undangan akan dikirim lewat email.</p>
+</blockquote>
+<h3 id="menyambungkan-pertama-kali">Menyambungkan pertama kali<a class="headerlink" href="#menyambungkan-pertama-kali" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Nyalakan kunci kontak sampai dash menyala.</li>
+<li>Buka DashTune, masuk ke tab <strong>Perangkat</strong>, tekan <strong>Tambah Dash</strong>.</li>
+<li>Tekan <strong>Pindai</strong>. Dash muncul dengan nama <strong>MazduinoDash-R4</strong>.</li>
+<li>Pilih dash tersebut. Setelah tersambung, aplikasi langsung membuka halaman
+   menu.</li>
+</ol>
+<p>Kalau tidak ketemu: pastikan Bluetooth HP menyala, dash dalam keadaan hidup,
+dan dash tidak sedang tersambung ke HP lain.</p>
+<p>Dash yang sudah pernah disambungkan akan diingat, dan aplikasi menyambung
+sendiri saat dibuka berikutnya, juga setelah dash dimatikan lalu dinyalakan
+lagi.</p>
+<h3 id="isi-menu-dashtune">Isi menu DashTune<a class="headerlink" href="#isi-menu-dashtune" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Menu</th>
+<th style="text-align: left;">Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tema</strong></td>
+<td style="text-align: left;">Tema yang terpasang, Theme Store, dan Sesuaikan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>General Setting</strong></td>
+<td style="text-align: left;">Tipe ECU, satuan, mode MAP, RPM, tangki, dan batas peringatan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Input tambahan</strong></td>
+<td style="text-align: left;">Pin untuk turn signal, head light (dan peredupan layar), dan fuel level</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Splash</strong></td>
+<td style="text-align: left;">Membuat splash screen sendiri</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Info</strong></td>
+<td style="text-align: left;">Versi firmware dan kondisi perangkat</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Update Firmware</strong></td>
+<td style="text-align: left;">Memperbarui firmware dash</td>
+</tr>
+</tbody>
+</table>
+<h3 id="splash-screen">Splash screen<a class="headerlink" href="#splash-screen" title="Permanent link">&para;</a></h3>
+<p>Splash screen tampil beberapa detik saat dash dinyalakan, lalu berganti ke
+tema. Di menu <strong>Splash</strong>, pilih cara membuatnya:</p>
+<ul>
+<li><strong>Buat sendiri</strong>: susun gambar, logo, dan tulisan per layer. Tiap layer bisa
+  diberi animasi masuk sendiri (misalnya fade, pop, spin, slide, flicker,
+  glitch, drop) dan muncul bergantian. Tersedia banyak pilihan font dan efek
+  tulisan, serta tombol untuk menghapus latar belakang gambar.</li>
+<li><strong>GIF</strong>: pilih file GIF dari HP.</li>
+<li><strong>Video</strong>: pilih video dari galeri, lalu atur panjangnya (1–8 detik), jumlah
+  frame per detik, dan apakah diputar berulang.</li>
+</ul>
+<p>GIF dan video diubah dulu di HP agar bisa diputar dash dengan lancar. Semakin
+panjang animasinya, semakin besar ukurannya dan semakin lama dash menyala, jadi
+aplikasi membatasinya sekitar 2 MB dan memotong bagian akhir kalau lebih.</p>
+<p>Setelah terkirim, tekan <strong>Putar di dash</strong> atau <strong>Mulai ulang dash</strong> di halaman
+yang sama untuk langsung melihat hasilnya.</p>
+<p>Seperti tema, splash dikirim lewat WiFi dash, jadi <strong>biarkan layar HP menyala
+dan jangan tutup aplikasi</strong> sampai selesai.</p>
+<h3 id="update-firmware">Update firmware<a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h3>
+<p>Masuk ke menu <strong>Update Firmware</strong>. Aplikasi memeriksa versi terbaru di server
+dan menampilkan versi yang terpasang sekarang. Kalau ada versi baru, tekan
+tombol update.</p>
+<p>Selama update, dashboard tetap tampil sampai firmware selesai terkirim, lalu
+dash menyala ulang sendiri dengan firmware baru, dan DashTune menyambung
+kembali. Kalau firmware baru gagal menyala, dash otomatis kembali ke firmware
+sebelumnya.</p>
+<blockquote>
+<p><strong>Peringatan</strong>: Jangan lakukan update sambil berkendara. Dash menolak update
+selama mesin hidup. Pastikan kendaraan dalam keadaan aman, listrik tidak
+terputus, dan aplikasi tidak ditutup sampai selesai.</p>
+</blockquote>
+<h3 id="fitur-relay-google-maps-dan-musik">Fitur relay: Google Maps dan musik<a class="headerlink" href="#fitur-relay-google-maps-dan-musik" title="Permanent link">&para;</a></h3>
+<p>DashTune bisa meneruskan <strong>petunjuk arah Google Maps</strong> dan <strong>lagu yang sedang
+diputar</strong> ke dash. Pengaturannya ada di tab <strong>Lainnya → Relay</strong>.</p>
+<ul>
+<li>Petunjuk arah muncul di bagian atas layar sebagai notifikasi singkat dan
+  agak transparan, lalu hilang sendiri. Notifikasi muncul lagi saat ada
+  belokan atau jalan baru, atau saat jarak ke belokan berikutnya di bawah
+  200 meter.</li>
+<li>Judul lagu muncul sebentar saat lagu berganti atau saat diputar/dijeda.
+  Lagu yang sedang diputar juga bisa dilihat dan dikendalikan dari menu dash,
+  di <strong>Music</strong>.</li>
+<li>Ketuk notifikasi untuk menutupnya lebih cepat.</li>
+</ul>
+<p>Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
+halaman pengaturannya saat pertama kali diaktifkan.</p>
+<h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Website Mazduino - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>
+<li>Wiki Mazduino - <a href="https://wiki.mazduino.com/">https://wiki.mazduino.com/</a></li>
+<li>Github Mazduino - <a href="https://github.com/mazduino/mazduino">https://github.com/mazduino/mazduino</a></li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-left" title="Pro / M4, M5, M7 (4.3", 5" & 7")"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-right" title="Konfigurasi ECU">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

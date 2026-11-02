@@ -107,7 +107,7 @@
               </ul>
               <p class="caption"><span class="caption-text">Dash Display</span></p>
               <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Racedash</a>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Dash</a>
     <ul class="current">
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
                 </li>
@@ -150,6 +150,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#referensi">Referensi</a>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
                 </li>
@@ -245,7 +247,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
           <li class="breadcrumb-item">Dash Display</li>
-          <li class="breadcrumb-item">Mazduino Racedash</li>
+          <li class="breadcrumb-item">Mazduino Dash</li>
       <li class="breadcrumb-item active">Pro / M4, M5, M7 (4.3", 5" & 7")</li>
     <li class="wy-breadcrumbs-aside">
     </li>
@@ -255,7 +257,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="5 Oktober 2026 17:40:16 UTC">5 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 November 2026 21:20:57 UTC">2 November 2026</span></em></p>
   <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></p>
@@ -401,8 +403,7 @@ mobil Anda termasuk yang bisa.</strong> Pastikan hal berikut sebelum membeli unt
 keperluan OBD-II.</p>
 </blockquote>
 <p>Yang didukung hanya <strong>OBD-II di atas CAN Bus</strong>, yaitu <strong>ISO 15765-4</strong> dengan
-<strong>identifier 11-bit</strong> (dash mengirim permintaan ke ID <code>0x7DF</code> dan membaca
-jawaban di <code>0x7E8</code>–<code>0x7EF</code>), pada kecepatan <strong>500 kbps</strong> atau <strong>250 kbps</strong>.</p>
+<strong>identifier 11-bit</strong>, pada kecepatan <strong>500 kbps</strong>.</p>
 <p>Yang <strong>tidak</strong> didukung:</p>
 <table>
 <thead>
@@ -436,7 +437,7 @@ antar merek dan negara.</p>
 <p>Meski protokolnya cocok, data yang muncul <strong>bergantung pada apa yang direspons
 mobil Anda</strong>. Dash menanyakan dulu PID mana yang didukung, lalu hanya membaca
 yang dijawab. PID yang dibaca: RPM, kecepatan, TPS, MAP, suhu coolant, suhu udara
-masuk, engine load, tegangan, dan suhu oli. Banyak
+masuk, tegangan, dan suhu oli. Banyak
 mobil tidak menjawab sebagian di antaranya — suhu oli termasuk yang paling
 sering tidak tersedia.</p>
 <p>OBD-II juga lebih lambat dibanding protokol CAN khusus ECU standalone, karena
@@ -700,7 +701,7 @@ halaman pengaturannya saat pertama kali diaktifkan.</p>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../mazduino-racedash/" class="btn btn-neutral float-left" title="3.5" & 4""><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-right" title="Konfigurasi ECU">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mazduino-dash-r4/" class="btn btn-neutral float-right" title="Dash R4 (4" bulat)">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -726,7 +727,7 @@ halaman pengaturannya saat pertama kali diaktifkan.</p>
       <span><a href="../mazduino-racedash/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../mazduino-dash-r4/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

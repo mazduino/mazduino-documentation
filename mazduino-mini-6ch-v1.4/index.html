@@ -161,11 +161,13 @@
               </ul>
               <p class="caption"><span class="caption-text">Dash Display</span></p>
               <ul>
-                  <li class="toctree-l1"><a class="reference internal" >Mazduino Racedash</a>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
                 </li>
@@ -271,7 +273,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="8 September 2026 19:38:42 UTC">8 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 Oktober 2026 14:58:52 UTC">31 Oktober 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v14">Mazduino Mini 6CH (v1.4)<a class="headerlink" href="#mazduino-mini-6ch-v14" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p><strong>Catatan</strong>: v1.4 <strong>bukan versi produksi</strong>. Versi produksi terakhir dari lini Mini 6CH adalah <strong><a href="../mazduino-mini-6ch-v1.3d/">v1.3D</a></strong>. Halaman ini disimpan sebagai dokumentasi referensi.</p>
@@ -384,13 +386,13 @@
 <p><strong>Manfaat</strong>: Sinyal trigger yang bersih dan stabil</p>
 </li>
 </ul>
-<h4 id="jp3-jp2-sensor-type-selection">JP3 &amp; JP2 - Sensor Type Selection<a class="headerlink" href="#jp3-jp2-sensor-type-selection" title="Permanent link">&para;</a></h4>
+<h4 id="jp2-jp3-sensor-type-selection">JP2 &amp; JP3 - Sensor Type Selection<a class="headerlink" href="#jp2-jp3-sensor-type-selection" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>JP3</strong>: Mode sinyal CKP (VR atau Hall sensor)</p>
+<p><strong>JP2</strong>: Mode sinyal CKP (VR atau Hall sensor)</p>
 </li>
 <li>
-<p><strong>JP2</strong>: Mode sinyal CMP (VR atau Hall sensor)</p>
+<p><strong>JP3</strong>: Mode sinyal CMP (VR atau Hall sensor)</p>
 </li>
 <li>
 <p><strong>Fleksibilitas</strong>: Kompatibel dengan berbagai jenis sensor posisi</p>
@@ -451,10 +453,10 @@
 <p><strong>Dump/Conventional Coils</strong>: Memerlukan IGBT eksternal</p>
 </li>
 <li>
-<p><strong>VR Sensors</strong>: Aktifkan pullup dan pilih mode VR untuk sinyal bersih</p>
+<p><strong>VR Sensors</strong>: Pilih mode VR (sinyal lewat modul VR Conditioner) dan <strong>lepas</strong> pullup — pullup akan membebani kumparan sensor VR</p>
 </li>
 <li>
-<p><strong>Hall Sensors</strong>: Nonaktifkan pullup dan pilih mode Hall</p>
+<p><strong>Hall / Optical Sensors</strong>: Pilih mode Hall dan <strong>pasang</strong> pullup (JP5 untuk CKP, JP4 untuk CMP). Sensor hall umumnya open-collector dan tidak bisa menghasilkan level HIGH sendiri; tanpa pullup, pin trigger mengambang dan terkena noise sehingga muncul trigger error saat mesin hidup. Pullup hanya boleh dilepas untuk sensor yang outputnya push-pull 5V</p>
 </li>
 <li>
 <p><strong>ETB Mode</strong>: Pilih mode ETB untuk aplikasi throttle elektronik modern</p>
