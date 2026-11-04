@@ -34,6 +34,7 @@ nav:
           - 3.5" & 4": mazduino-racedash.md
           - Pro / M4, M5, M7 (4.3", 5" & 7"): mazduino-racedash-pro.md
           - Dash R4 (4" bulat): mazduino-dash-r4.md
+          - Input Tambahan Dash R4: input-tambahan-dash-r4.md
           - Konfigurasi ECU: setting-ecu-racedash.md
   - Aksesori:
       - WBO CAN Controller: wbo-can-controller.md
