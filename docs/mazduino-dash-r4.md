@@ -246,7 +246,7 @@ pin cadangan di Dash R4 lalu diatur dari DashTune di menu **Input tambahan**.
 > **Penting:** semua pin bekerja di **3,3 V**. **Jangan menyambungkan kabel mobil
 > langsung ke pin.**
 
-Rangkaian, pilihan pin, dan kalibrasi fuel level ada di halaman
+Pilihan pin, pengaturan, dan kalibrasi fuel level ada di halaman
 [Input Tambahan Dash R4](input-tambahan-dash-r4.md).
 
 ---
