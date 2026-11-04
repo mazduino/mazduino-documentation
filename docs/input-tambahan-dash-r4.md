@@ -1,8 +1,9 @@
 # Input Tambahan Dash R4
 
 Kalau ECU Anda tidak mengirim data turn signal, head light, high beam, atau fuel
-level, sinyalnya bisa diambil langsung dari mobil lewat pin cadangan Dash R4.
-Halaman ini membahas rangkaian, pengaturan di DashTune, dan kalibrasi fuel level.
+level, sinyalnya bisa diambil langsung dari mobil lewat pin cadangan Dash R4. Pin
+ini juga bisa dipakai untuk tombol ganti tema. Halaman ini membahas rangkaian,
+pengaturan di DashTune, dan kalibrasi fuel level.
 
 Semua pengaturan ada di DashTune, menu **Input tambahan**. Pilihan di menu ini
 tersimpan di dash dan tetap ada setelah kunci kontak dimatikan.
@@ -20,9 +21,10 @@ tersimpan di dash dan tetap ada setelah kunci kontak dimatikan.
 | Turn signal kanan | GPIO 33 | Digital |
 | Head light | GPIO 46 | Digital |
 | High beam | GPIO 47 | Digital |
+| Tombol ganti tema | GPIO 48 | Digital |
 | Fuel level | GPIO 20 (cadangan GPIO 23) | Analog |
 
-Pin digital lain yang masih bisa dipilih: GPIO 2, 26, 27, dan 48. Fuel level
+Pin digital lain yang masih bisa dipilih: GPIO 2, 26, dan 27. Fuel level
 hanya bisa memakai GPIO 20 atau GPIO 23, karena hanya dua pin ini yang bisa
 membaca tegangan.
 
@@ -102,6 +104,41 @@ ground saat lampu menyala. Untuk kabel seperti ini, ubah sisi mobil:
 Pengaturan di DashTune tetap **Aktif saat: Ke ground**.
 
 Kalau ragu, ukur kabelnya dengan multimeter saat lampu mati dan menyala.
+
+## Tombol ganti tema
+
+Tombol tekan di kabin bisa mengganti tema tanpa menyentuh layar. Setiap ditekan,
+dash pindah ke tema berikutnya dan menampilkan namanya. Tema yang disembunyikan
+dilewati, dan setelah tema terakhir urutannya kembali ke awal.
+
+Pakai tombol **momentary**, yaitu tombol yang kembali sendiri saat dilepas.
+
+```
+  3V3 ──[R1 10 kΩ]──┬──[R2 1 kΩ]──┬──── GPIO 48
+                    │             │
+  Tombol ───────────┘          C1 100 nF
+    │                             │
+  GND dash ───────────────────────┘
+```
+
+| Komponen | Nilai | Fungsi |
+| :---- | :---- | :---- |
+| R1 | 10 kΩ | Menahan pin di 3,3 V saat tombol dilepas |
+| R2 | 1 kΩ | Melindungi pin |
+| C1 | 100 nF | Meredam noise dari kabel tombol |
+
+> **Jangan sambungkan 12 V ke rangkaian ini.** Kalau tombolnya menghubungkan 12 V,
+> pakai rangkaian optocoupler seperti pada turn signal.
+
+### Pengaturan di DashTune
+
+1. Buka **Input tambahan → Tombol ganti tema**, lalu pilih pin yang dipakai.
+2. Set **Aktif saat: Ke ground**.
+3. Tekan tombolnya. Status di DashTune harus berubah dari **Dilepas** ke **Ditekan**.
+
+Kartu ini hanya muncul kalau firmware dash sudah mendukungnya. Tombol tidak bekerja
+selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
+dinyalakan baru terbaca setelah dilepas dan ditekan lagi.
 
 ## Fuel level
 
@@ -210,6 +247,7 @@ Kalau ECU sudah mengirim fuel level, biarkan pilihan pin di **Dari ECU**.
 | Indikator menyala saat lampu mati dan sebaliknya | **Aktif saat** tidak sesuai rangkaian | Set **Ke ground** untuk rangkaian optocoupler |
 | Turn signal menyala terus | Sinyal diambil sebelum relay flasher | Pindahkan ke kabel setelah relay |
 | Hazard tidak terbaca | Hanya satu sisi yang tersambung | Pasang rangkaian untuk kiri dan kanan |
+| Tombol ganti tema tidak mengganti tema | Hanya ada satu tema yang tampil, atau **Aktif saat** salah | Daftar tema di DashTune, status **Ditekan** saat tombol ditekan |
 | Fuel level terbalik | Kalibrasi kosong dan penuh tertukar | Ulangi **Jadikan kosong** dan **Jadikan penuh** |
 | Fuel level selalu 0% atau 100% | Kabel sensor putus atau korsleting, atau R1 putus | Ukur tegangan di pin dan resistansi sensor |
 | Muncul peringatan urutan titik | Tegangan titik tidak berurutan | Ukur ulang atau hapus titik yang salah |
