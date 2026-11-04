@@ -147,15 +147,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar-kml">Konsumsi bahan bakar (km/l)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#turn-signal-dan-head-light-optocoupler-disarankan">Turn signal dan head light: optocoupler (disarankan)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#turn-signal-dan-head-light-pembagi-tegangan-alternatif">Turn signal dan head light: pembagi tegangan (alternatif)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fuel-level">Fuel level</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level">Input tambahan: turn signal, head light, high beam, dan fuel level</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>
         <ul>
@@ -174,6 +166,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#referensi">Referensi</a>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
                 </li>
@@ -279,7 +273,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 November 2026 11:45:50 UTC">1 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 06:18:35 UTC">4 November 2026</span></em></p>
   <h1 id="mazduino-dash-r4">Mazduino Dash R4<a class="headerlink" href="#mazduino-dash-r4" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Dash R4 berganti-ganti tema" src="../img/dash/dash-r4-themes.gif" /></p>
@@ -319,7 +313,7 @@ balap, gauge klasik, sampai tema dengan foto mobil Anda sendiri.</p>
   fuel flow dan kecepatan.</li>
 <li>Peringatan (alarm) untuk Oil Pressure, Fuel Pressure, CLT, Oil Temp, Fuel
   Level, dan Battery.</li>
-<li><strong>Input tambahan</strong>: turn signal, head light, dan fuel level bisa disambungkan
+<li><strong>Input tambahan</strong>: turn signal, head light, high beam, dan fuel level bisa disambungkan
   langsung ke dash, dan layar meredup otomatis saat lampu menyala.</li>
 <li><strong>Petunjuk arah Google Maps</strong> dan <strong>musik</strong> dari HP tampil sebagai notifikasi
   singkat di layar.</li>
@@ -622,236 +616,15 @@ mendekati batas, lalu merah saat melewatinya.</p>
 lewat <strong>Sesuaikan</strong> dengan memilih <strong>KM/L</strong> di salah satu panel data. Saat
 kendaraan berhenti atau sangat pelan (di bawah 3 km/jam), angkanya 0. Kalau
 ECU Anda tidak mengirim fuel flow atau kecepatan, nilai ini tidak tersedia.</p>
-<h2 id="input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level<a class="headerlink" href="#input-tambahan-turn-signal-head-light-dan-fuel-level" title="Permanent link">&para;</a></h2>
-<p>Untuk ECU yang tidak mengirim data turn signal, head light, atau fuel level,
-sinyal dari mobil bisa disambungkan langsung ke pin GPIO cadangan di Dash R4.
-Fungsinya diatur dari DashTune di menu <strong>Input tambahan</strong>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Fungsi</th>
-<th style="text-align: left;">Pin yang bisa dipakai</th>
-<th style="text-align: left;">Jenis input</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Turn signal kiri dan kanan, head light</td>
-<td style="text-align: left;">GPIO 2, 26, 27, 32, 33, 46, 47, 48</td>
-<td style="text-align: left;">Digital</td>
-</tr>
-<tr>
-<td style="text-align: left;">Fuel level</td>
-<td style="text-align: left;">GPIO 20, 23</td>
-<td style="text-align: left;">Analog (ADC)</td>
-</tr>
-</tbody>
-</table>
+<h2 id="input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level">Input tambahan: turn signal, head light, high beam, dan fuel level<a class="headerlink" href="#input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level" title="Permanent link">&para;</a></h2>
+<p>Untuk ECU yang tidak mengirim data ini, sinyal dari mobil bisa disambungkan ke
+pin cadangan di Dash R4 lalu diatur dari DashTune di menu <strong>Input tambahan</strong>.</p>
 <blockquote>
-<p><strong>Penting:</strong> semua pin ini bekerja di <strong>3,3 V</strong>. Tegangan listrik mobil
-12–14,4 V, dan saat starter atau alternator bekerja bisa ada lonjakan jauh
-lebih tinggi. <strong>Jangan menyambungkan kabel mobil langsung ke pin.</strong> Selalu
-lewat salah satu rangkaian di bawah. Pin yang terkena 12 V langsung akan
-rusak permanen.</p>
+<p><strong>Penting:</strong> semua pin bekerja di <strong>3,3 V</strong>. <strong>Jangan menyambungkan kabel mobil
+langsung ke pin.</strong></p>
 </blockquote>
-<p>Semua rangkaian di bawah memakai <strong>GND</strong> dan <strong>3V3</strong> dari Dash R4 itu sendiri.
-GND dash sudah tersambung ke ground mobil lewat pin 2 konektor DTM4.</p>
-<h3 id="turn-signal-dan-head-light-optocoupler-disarankan">Turn signal dan head light: optocoupler (disarankan)<a class="headerlink" href="#turn-signal-dan-head-light-optocoupler-disarankan" title="Permanent link">&para;</a></h3>
-<p>Optocoupler memisahkan kabel mobil dari dash sepenuhnya. Lonjakan tegangan
-di kabel lampu tidak bisa sampai ke pin GPIO. Ini cara yang paling aman, dan
-satu rangkaian dipakai per sinyal.</p>
-<pre><code>  SISI MOBIL                         PC817                 SISI DASH R4
-                               ┌──────────────┐
-  Kabel lampu ──[R1 2,2 kΩ]──┬─┤1 anoda      4├─ kolektor ──── GPIO (mis. GPIO 32)
-  (+12 V saat lampu          │ │   LED → foto- │
-   menyala)               D1 ┴ │   transistor  │
-                     1N4148  ▲ │               │
-  Ground mobil ──────────────┴─┤2 katoda     3├─ emitor ────── GND
-                               └──────────────┘
-
-  D1 paralel dengan LED, arah terbalik: katoda D1 ke pin 1, anoda D1 ke pin 2.
-</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Komponen</th>
-<th style="text-align: left;">Nilai</th>
-<th style="text-align: left;">Fungsi</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">U1</td>
-<td style="text-align: left;">PC817 (atau optocoupler setara)</td>
-<td style="text-align: left;">Memisahkan mobil dari dash</td>
-</tr>
-<tr>
-<td style="text-align: left;">R1</td>
-<td style="text-align: left;">2,2 kΩ, ¼ W</td>
-<td style="text-align: left;">Membatasi arus LED: 5–7 mA pada 12–16 V</td>
-</tr>
-<tr>
-<td style="text-align: left;">D1</td>
-<td style="text-align: left;">1N4148, dipasang terbalik paralel dengan LED</td>
-<td style="text-align: left;">Melindungi LED dari tegangan terbalik</td>
-</tr>
-</tbody>
-</table>
-<p>Di DashTune, pilih pin untuk fungsinya lalu set <strong>Aktif saat: Ke ground</strong>.
-Pull-up di dalam dash sudah aktif, jadi tidak perlu resistor tambahan di sisi
-dash. Saat lampu menyala, transistor optocoupler menarik pin ke GND dan
-indikator di layar ikut menyala.</p>
-<p><strong>Cara menyambung:</strong></p>
-<ul>
-<li><strong>Turn signal:</strong> ambil dari kabel turn signal kiri dan kanan (atau kabel
-  indikatornya di panel instrumen bawaan). Dash membaca kedipnya apa adanya.</li>
-<li><strong>Head light:</strong> ambil dari kabel park light atau head light yang menyala saat
-  saklar lampu dihidupkan. Sinyal ini juga yang dipakai <strong>Redupkan layar saat
-  lampu menyala</strong>.</li>
-</ul>
-<h3 id="turn-signal-dan-head-light-pembagi-tegangan-alternatif">Turn signal dan head light: pembagi tegangan (alternatif)<a class="headerlink" href="#turn-signal-dan-head-light-pembagi-tegangan-alternatif" title="Permanent link">&para;</a></h3>
-<p>Kalau tidak memakai optocoupler, sinyal 12 V bisa diturunkan dengan pembagi
-tegangan. Dioda clamp <strong>wajib</strong> dipasang. Tanpa clamp, tegangan 14,4 V dari
-alternator menghasilkan sekitar 3,6 V di pin, melebihi batas 3,3 V.</p>
-<pre><code>  Kabel lampu ─[R1 10 kΩ]─┬───────────┬──────── GPIO
-                          │           │
-                      [R2 3,3 kΩ]   D1 BAT54S ── ke 3V3 dan GND
-                          │           │           (clamp dua arah)
-                         GND      C1 100 nF
-                                      │
-                                     GND
-</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Komponen</th>
-<th style="text-align: left;">Nilai</th>
-<th style="text-align: left;">Fungsi</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">R1</td>
-<td style="text-align: left;">10 kΩ</td>
-<td style="text-align: left;">Pembagi tegangan, bagian atas</td>
-</tr>
-<tr>
-<td style="text-align: left;">R2</td>
-<td style="text-align: left;">3,3 kΩ</td>
-<td style="text-align: left;">Pembagi tegangan, bagian bawah (12 V → sekitar 3,0 V)</td>
-</tr>
-<tr>
-<td style="text-align: left;">D1</td>
-<td style="text-align: left;">BAT54S (Schottky ganda)</td>
-<td style="text-align: left;">Menahan tegangan pin di antara GND dan 3V3</td>
-</tr>
-<tr>
-<td style="text-align: left;">C1</td>
-<td style="text-align: left;">100 nF</td>
-<td style="text-align: left;">Meredam noise dan lonjakan singkat</td>
-</tr>
-</tbody>
-</table>
-<p>Di DashTune, set <strong>Aktif saat: Ada tegangan</strong>.</p>
-<h3 id="fuel-level">Fuel level<a class="headerlink" href="#fuel-level" title="Permanent link">&para;</a></h3>
-<p>Fuel sender di dalam tangki adalah resistor yang nilainya berubah mengikuti
-pelampung. Dash membaca tegangannya lewat pin ADC (<strong>GPIO 20</strong> atau
-<strong>GPIO 23</strong>), lalu mengubahnya menjadi persen dari kalibrasi kosong/penuh.
-Rangkaiannya tergantung apakah sensor itu masih dipakai gauge bawaan mobil.</p>
-<h4 id="sensor-hanya-untuk-dash-gauge-bawaan-tidak-dipakai">Sensor hanya untuk dash (gauge bawaan tidak dipakai)<a class="headerlink" href="#sensor-hanya-untuk-dash-gauge-bawaan-tidak-dipakai" title="Permanent link">&para;</a></h4>
-<p>Dash mengalirkan arus kecil ke sensor lewat resistor pull-up dari 3V3.</p>
-<pre><code>  3V3 ──[R1 470 Ω]──┬──[R2 1 kΩ]──┬──────── GPIO 20 / 23
-                    │             │
-                    │         C1 100 nF
-                    │             │
-  Kabel sensor ─────┘            GND
-  (fuel sender)
-  Body sensor ──── Ground mobil
-</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Komponen</th>
-<th style="text-align: left;">Nilai</th>
-<th style="text-align: left;">Fungsi</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">R1</td>
-<td style="text-align: left;">470 Ω</td>
-<td style="text-align: left;">Pull-up ke 3V3; arus ke sensor paling besar sekitar 7 mA</td>
-</tr>
-<tr>
-<td style="text-align: left;">R2</td>
-<td style="text-align: left;">1 kΩ</td>
-<td style="text-align: left;">Melindungi pin ADC</td>
-</tr>
-<tr>
-<td style="text-align: left;">C1</td>
-<td style="text-align: left;">100 nF</td>
-<td style="text-align: left;">Meredam noise dari kabel panjang</td>
-</tr>
-</tbody>
-</table>
-<p>Dengan R1 470 Ω, tegangan di pin untuk sensor umum:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Jenis sensor</th>
-<th style="text-align: left;">Kosong</th>
-<th style="text-align: left;">Penuh</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">240–33 Ω (umum di mobil Eropa, termasuk VW)</td>
-<td style="text-align: left;">sekitar 1,12 V</td>
-<td style="text-align: left;">sekitar 0,22 V</td>
-</tr>
-<tr>
-<td style="text-align: left;">0–90 Ω (umum di mobil Amerika)</td>
-<td style="text-align: left;">sekitar 0 V</td>
-<td style="text-align: left;">sekitar 0,53 V</td>
-</tr>
-<tr>
-<td style="text-align: left;">110–3 Ω (umum di mobil Jepang)</td>
-<td style="text-align: left;">sekitar 0,63 V</td>
-<td style="text-align: left;">sekitar 0,02 V</td>
-</tr>
-</tbody>
-</table>
-<p>Nilai pastinya tidak perlu dihitung: kalibrasi di DashTune akan membaca
-tegangan yang sebenarnya.</p>
-<h4 id="sensor-juga-dipakai-gauge-bawaan-mobil">Sensor juga dipakai gauge bawaan mobil<a class="headerlink" href="#sensor-juga-dipakai-gauge-bawaan-mobil" title="Permanent link">&para;</a></h4>
-<p>Gauge bawaan sudah mengalirkan arus ke sensor. <strong>Jangan pasang pull-up</strong>,
-karena akan mengubah bacaan gauge. Ukur saja tegangan di kabel sensor dengan
-pembagi tegangan beresistansi tinggi, sehingga gauge tidak terganggu.</p>
-<pre><code>  Kabel sensor ─[R1 22 kΩ]─┬──────────┬──────── GPIO 20 / 23
-  (ke gauge                │          │
-   bawaan juga)        [R2 10 kΩ]   D1 BAT54S ── ke 3V3 dan GND
-                           │          │
-                          GND     C1 100 nF
-                                      │
-                                     GND
-</code></pre>
-<p>Sebelum memasang, <strong>ukur tegangan kabel sensor dengan multimeter</strong> saat tangki
-kosong dan penuh, dengan kunci kontak ON. Pembagi 22 kΩ/10 kΩ aman sampai
-sekitar 10 V di kabel sensor (menjadi sekitar 3,1 V di pin). Kalau tegangannya
-lebih tinggi, perbesar R1.</p>
-<h4 id="kalibrasi-di-dashtune">Kalibrasi di DashTune<a class="headerlink" href="#kalibrasi-di-dashtune" title="Permanent link">&para;</a></h4>
-<ol>
-<li>Buka <strong>Input tambahan → Fuel level</strong>, pilih pin yang dipakai (GPIO 20 atau
-   23).</li>
-<li>Dengan tangki <strong>kosong</strong> (atau di batas cadangan), tekan <strong>Jadikan kosong</strong>.</li>
-<li>Dengan tangki <strong>penuh</strong>, tekan <strong>Jadikan penuh</strong>.</li>
-</ol>
-<p>Tegangan kosong boleh lebih tinggi atau lebih rendah dari penuh; dash
-mengikuti arah mana pun. Kalau tegangan sensor sudah diketahui, misalnya dari
-datasheet atau pengukuran multimeter sebelumnya, ketuk nilai <strong>Kosong</strong> atau
-<strong>Penuh</strong> untuk mengisinya langsung. Bacaan di dash dihaluskan beberapa detik,
-supaya goyangan bensin di tangki tidak membuat angkanya naik-turun.</p>
-<p>Kalau ECU Anda sudah mengirim fuel level, biarkan pilihan pin di <strong>Dari ECU</strong>.</p>
+<p>Pilihan pin, pengaturan, dan kalibrasi fuel level ada di halaman
+<a href="../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>.</p>
 <hr />
 <h2 id="panduan-aplikasi-dashtune">Panduan Aplikasi DashTune<a class="headerlink" href="#panduan-aplikasi-dashtune" title="Permanent link">&para;</a></h2>
 <p>DashTune adalah aplikasi Android untuk mengatur dash dari HP lewat
@@ -894,7 +667,7 @@ lagi.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Input tambahan</strong></td>
-<td style="text-align: left;">Pin untuk turn signal, head light (dan peredupan layar), dan fuel level</td>
+<td style="text-align: left;">Pin untuk turn signal, head light (dan peredupan layar), high beam, dan fuel level</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Splash</strong></td>
@@ -968,7 +741,7 @@ halaman pengaturannya saat pertama kali diaktifkan.</p>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../mazduino-racedash-pro/" class="btn btn-neutral float-left" title="Pro / M4, M5, M7 (4.3", 5" & 7")"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-right" title="Konfigurasi ECU">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../input-tambahan-dash-r4/" class="btn btn-neutral float-right" title="Input Tambahan Dash R4">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -994,7 +767,7 @@ halaman pengaturannya saat pertama kali diaktifkan.</p>
       <span><a href="../mazduino-racedash-pro/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../input-tambahan-dash-r4/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

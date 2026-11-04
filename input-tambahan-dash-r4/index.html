@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/input-tambahan-dash-r4/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Input Tambahan Dash R4 - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Input Tambahan Dash R4";
+        var mkdocs_page_input_path = "input-tambahan-dash-r4.md";
+        var mkdocs_page_url = "/input-tambahan-dash-r4/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Dash</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Input Tambahan Dash R4</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#pin-yang-dipakai">Pin yang dipakai</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#turn-signal-head-light-dan-high-beam">Turn signal, head light, dan high beam</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pengaturan-di-dashtune">Pengaturan di DashTune</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dari-mana-sinyalnya-diambil">Dari mana sinyalnya diambil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indikator-turn-signal-mengikuti-relay">Indikator turn signal mengikuti relay</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tombol-ganti-tema">Tombol ganti tema</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pengaturan-di-dashtune_1">Pengaturan di DashTune</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fuel-level">Fuel level</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#kalibrasi">Kalibrasi</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#titik-tambahan">Titik tambahan</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mengatasi-masalah">Mengatasi masalah</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dash Display</li>
+          <li class="breadcrumb-item">Mazduino Dash</li>
+      <li class="breadcrumb-item active">Input Tambahan Dash R4</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 06:18:35 UTC">4 November 2026</span></em></p>
+  <h1 id="input-tambahan-dash-r4">Input Tambahan Dash R4<a class="headerlink" href="#input-tambahan-dash-r4" title="Permanent link">&para;</a></h1>
+<p>Kalau ECU Anda tidak mengirim data turn signal, head light, high beam, atau fuel
+level, sinyalnya bisa diambil langsung dari mobil lewat pin cadangan Dash R4. Pin
+ini juga bisa dipakai untuk tombol ganti tema. Halaman ini membahas pilihan pin,
+pengaturan di DashTune, dan kalibrasi fuel level.</p>
+<p>Semua pengaturan ada di DashTune, menu <strong>Input tambahan</strong>. Pilihan di menu ini
+tersimpan di dash dan tetap ada setelah kunci kontak dimatikan.</p>
+<blockquote>
+<p><strong>Penting:</strong> semua pin bekerja di <strong>3,3 V</strong>, sedangkan listrik mobil 12–14,4 V
+dan bisa melonjak lebih tinggi saat starter atau alternator bekerja. <strong>Jangan
+menyambungkan kabel mobil langsung ke pin.</strong> Pin yang terkena 12 V akan rusak
+permanen. Untuk rangkaian pemasangannya, hubungi
+<a href="mailto:support@mazduino.com">support@mazduino.com</a>.</p>
+</blockquote>
+<h2 id="pin-yang-dipakai">Pin yang dipakai<a class="headerlink" href="#pin-yang-dipakai" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Fungsi</th>
+<th style="text-align: left;">Pin yang disarankan</th>
+<th style="text-align: left;">Jenis input</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Turn signal kiri</td>
+<td style="text-align: left;">GPIO 32</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">Turn signal kanan</td>
+<td style="text-align: left;">GPIO 33</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">Head light</td>
+<td style="text-align: left;">GPIO 46</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">High beam</td>
+<td style="text-align: left;">GPIO 47</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tombol ganti tema</td>
+<td style="text-align: left;">GPIO 48</td>
+<td style="text-align: left;">Digital</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel level</td>
+<td style="text-align: left;">GPIO 20 (cadangan GPIO 23)</td>
+<td style="text-align: left;">Analog</td>
+</tr>
+</tbody>
+</table>
+<p>Pin digital lain yang masih bisa dipilih: GPIO 2, 26, dan 27. Fuel level
+hanya bisa memakai GPIO 20 atau GPIO 23, karena hanya dua pin ini yang bisa
+membaca tegangan.</p>
+<p>Kalau sebuah fungsi sudah diberi pin, dash membaca dari pin itu, bukan dari ECU.</p>
+<h2 id="turn-signal-head-light-dan-high-beam">Turn signal, head light, dan high beam<a class="headerlink" href="#turn-signal-head-light-dan-high-beam" title="Permanent link">&para;</a></h2>
+<h3 id="pengaturan-di-dashtune">Pengaturan di DashTune<a class="headerlink" href="#pengaturan-di-dashtune" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Buka <strong>Input tambahan</strong>, lalu pilih kartu fungsinya.</li>
+<li>Pilih pin yang dipakai.</li>
+<li>Set <strong>Aktif saat</strong> sesuai pemasangan: <strong>Ke ground</strong> kalau pin terhubung ke
+   ground saat lampu menyala, <strong>Ada tegangan</strong> kalau pin menerima 3,3 V saat lampu
+   menyala.</li>
+</ol>
+<h3 id="dari-mana-sinyalnya-diambil">Dari mana sinyalnya diambil<a class="headerlink" href="#dari-mana-sinyalnya-diambil" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Turn signal:</strong> ambil dari kabel lampu turn signal <strong>setelah relay flasher</strong>,
+  satu untuk kiri dan satu untuk kanan. Kabel indikator di panel instrumen bawaan
+  juga bisa dipakai.</li>
+<li><strong>Head light:</strong> ambil dari kabel yang menyala saat lampu dihidupkan. Sinyal
+  ini juga dipakai oleh <strong>Redupkan layar saat lampu menyala</strong>.</li>
+<li><strong>High beam:</strong> ambil dari kabel lampu jauh atau indikatornya.</li>
+</ul>
+<h3 id="indikator-turn-signal-mengikuti-relay">Indikator turn signal mengikuti relay<a class="headerlink" href="#indikator-turn-signal-mengikuti-relay" title="Permanent link">&para;</a></h3>
+<p>Kalau turn signal memakai pin, dash tidak membuat kedipan sendiri. Indikator di
+layar menyala saat ada tegangan di kabel dan mati saat tidak ada, jadi iramanya
+sama dengan relay mobil.</p>
+<p>Karena itu, kabel yang tegangannya tetap akan membuat indikator menyala terus.
+Ini biasanya berarti sinyal diambil <strong>sebelum</strong> relay flasher, misalnya dari
+saklar sein. Pindahkan ke kabel setelah relay.</p>
+<p>Hazard terbaca saat turn signal kiri dan kanan menyala bersamaan.</p>
+<h2 id="tombol-ganti-tema">Tombol ganti tema<a class="headerlink" href="#tombol-ganti-tema" title="Permanent link">&para;</a></h2>
+<p>Tombol tekan di kabin bisa mengganti tema tanpa menyentuh layar. Setiap ditekan,
+dash pindah ke tema berikutnya dan menampilkan namanya. Tema yang disembunyikan
+dilewati, dan setelah tema terakhir urutannya kembali ke awal.</p>
+<p>Pakai tombol <strong>momentary</strong>, yaitu tombol yang kembali sendiri saat dilepas.</p>
+<h3 id="pengaturan-di-dashtune_1">Pengaturan di DashTune<a class="headerlink" href="#pengaturan-di-dashtune_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Buka <strong>Input tambahan → Tombol ganti tema</strong>, lalu pilih pin yang dipakai.</li>
+<li>Set <strong>Aktif saat</strong> sesuai pemasangan.</li>
+<li>Tekan tombolnya. Status di DashTune harus berubah dari <strong>Dilepas</strong> ke <strong>Ditekan</strong>.</li>
+</ol>
+<p>Kartu ini hanya muncul kalau firmware dash sudah mendukungnya. Tombol tidak bekerja
+selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
+dinyalakan baru terbaca setelah dilepas dan ditekan lagi.</p>
+<h2 id="fuel-level">Fuel level<a class="headerlink" href="#fuel-level" title="Permanent link">&para;</a></h2>
+<p>Fuel sender adalah resistor yang nilainya berubah mengikuti pelampung. Dash
+membaca tegangannya, lalu mengubahnya menjadi persen dari hasil kalibrasi.</p>
+<p>Saat menghubungi support untuk rangkaiannya, sebutkan apakah sensor masih dipakai
+gauge bawaan, karena pemasangannya berbeda.</p>
+<p>Kalau ECU sudah mengirim fuel level, biarkan pilihan pin di <strong>Dari ECU</strong>.</p>
+<h3 id="kalibrasi">Kalibrasi<a class="headerlink" href="#kalibrasi" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Buka <strong>Input tambahan → Fuel level</strong>, lalu pilih pin yang dipakai.</li>
+<li>Dengan tangki <strong>kosong</strong> atau di batas cadangan, tekan <strong>Jadikan kosong</strong>.</li>
+<li>Dengan tangki <strong>penuh</strong>, tekan <strong>Jadikan penuh</strong>.</li>
+</ol>
+<p>Tegangan kosong boleh lebih tinggi atau lebih rendah dari penuh. Kalau tegangan
+sudah diketahui, ketuk nilai <strong>Kosong</strong> atau <strong>Penuh</strong> untuk mengisinya langsung.</p>
+<p>Bacaan di dash dihaluskan beberapa detik, supaya goyangan bensin di tangki tidak
+membuat angkanya naik-turun.</p>
+<h3 id="titik-tambahan">Titik tambahan<a class="headerlink" href="#titik-tambahan" title="Permanent link">&para;</a></h3>
+<p>Bacaan dari dua titik saja belum tentu akurat di tengah tangki, karena tegangan
+sensor tidak berubah lurus dan bentuk tangki tidak selalu rata. Tambahkan sampai
+6 titik di antara kosong dan penuh dengan <strong>Tambah titik</strong>.</p>
+<ol>
+<li>Mulai dari tangki kosong, lalu isi dengan jumlah bensin yang diketahui,
+   misalnya seperempat kapasitas tangki.</li>
+<li>Pindahkan mobil ke tempat datar dan jauh dari pompa.</li>
+<li>Dengan kunci kontak ON dan mesin mati, tunggu sampai tegangannya stabil.</li>
+<li>Tekan <strong>Tambah titik</strong>, isi persen tangki, lalu simpan.</li>
+<li>Ulangi untuk titik berikutnya.</li>
+</ol>
+<blockquote>
+<p><strong>Jangan menambah titik saat sedang mengisi bensin.</strong> Selesaikan pengisian dan
+jauhi pompa dulu.</p>
+</blockquote>
+<p>Tegangan harus berurutan dari kosong ke penuh. Kalau urutannya salah, DashTune
+menampilkan peringatan, dan dash memakai garis lurus dari kosong ke penuh sampai
+titiknya diperbaiki. Hal ini wajar kalau titik sudah diisi sebelum nilai penuh
+diukur, dan peringatannya hilang setelah <strong>Jadikan penuh</strong>.</p>
+<h2 id="mengatasi-masalah">Mengatasi masalah<a class="headerlink" href="#mengatasi-masalah" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gejala</th>
+<th style="text-align: left;">Penyebab yang mungkin</th>
+<th style="text-align: left;">Yang dicek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Indikator tidak pernah menyala</td>
+<td style="text-align: left;">Salah pin, atau sinyal tidak sampai ke pin</td>
+<td style="text-align: left;">Pilihan pin di DashTune, sambungan kabel</td>
+</tr>
+<tr>
+<td style="text-align: left;">Indikator menyala saat lampu mati dan sebaliknya</td>
+<td style="text-align: left;"><strong>Aktif saat</strong> tidak sesuai pemasangan</td>
+<td style="text-align: left;">Ganti pilihan <strong>Aktif saat</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Turn signal menyala terus</td>
+<td style="text-align: left;">Sinyal diambil sebelum relay flasher</td>
+<td style="text-align: left;">Pindahkan ke kabel setelah relay</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hazard tidak terbaca</td>
+<td style="text-align: left;">Hanya satu sisi yang tersambung</td>
+<td style="text-align: left;">Sambungkan kiri dan kanan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tombol ganti tema tidak mengganti tema</td>
+<td style="text-align: left;">Hanya ada satu tema yang tampil, atau <strong>Aktif saat</strong> salah</td>
+<td style="text-align: left;">Daftar tema di DashTune, status <strong>Ditekan</strong> saat tombol ditekan</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel level terbalik</td>
+<td style="text-align: left;">Kalibrasi kosong dan penuh tertukar</td>
+<td style="text-align: left;">Ulangi <strong>Jadikan kosong</strong> dan <strong>Jadikan penuh</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fuel level selalu 0% atau 100%</td>
+<td style="text-align: left;">Kabel sensor putus atau korsleting</td>
+<td style="text-align: left;">Sambungan kabel dan sensor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Muncul peringatan urutan titik</td>
+<td style="text-align: left;">Tegangan titik tidak berurutan</td>
+<td style="text-align: left;">Ukur ulang atau hapus titik yang salah</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-dash-r4/" class="btn btn-neutral float-left" title="Dash R4 (4" bulat)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-right" title="Konfigurasi ECU">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-dash-r4/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
