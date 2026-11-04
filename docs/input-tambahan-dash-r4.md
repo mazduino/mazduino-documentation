@@ -112,8 +112,10 @@ yang hanya menyambung ke ground tidak akan terbaca.
 Minimal dua tema harus terpasang dan tidak disembunyikan. Kalau hanya ada satu,
 status tetap berubah ke **Ditekan**, tetapi temanya tidak berganti.
 
-Kartu ini hanya muncul kalau firmware dash sudah mendukungnya. Tombol tidak bekerja
-selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
+Kartu ini butuh DashTune 1.2.10 atau lebih baru dan firmware terbaru dash. Tombol
+yang disambung ke **Lampu** hanya terbaca sebagai lampu dan tidak mengganti tema.
+
+Tombol tidak bekerja selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
 dinyalakan baru terbaca setelah dilepas dan ditekan lagi.
 
 ## Fuel level
@@ -167,7 +169,7 @@ diukur, dan peringatannya hilang setelah **Jadikan penuh**.
 | Status **Menyala**, tetapi indikator tidak tampil | Tema aktif tidak punya indikator turn signal | Ganti ke tema di [daftar di atas](#tema-yang-menampilkan-turn-signal) |
 | Turn signal menyala terus | Sinyal diambil sebelum relay flasher | Pindahkan ke kabel setelah relay |
 | Hazard tidak terbaca | Hanya satu sisi yang tersambung | Sambungkan kiri dan kanan |
-| Kartu **Tombol ganti tema** tidak muncul | Firmware dash belum mendukungnya | Perbarui firmware dash |
+| Kartu **Tombol ganti tema** tidak muncul | DashTune atau firmware dash belum mendukungnya | Perbarui DashTune ke 1.2.10 atau lebih baru, dan perbarui firmware dash |
 | GPIO 46 tidak bisa dipilih untuk tombol | Pin masih dipakai **Lampu** | Ubah **Lampu** ke **Tidak dipakai** |
 | Status tetap **Dilepas** saat tombol ditekan | **Aktif saat** di **Ada tegangan**, atau tombol tidak mengirim 12 V | Set **Ke ground**, cek sambungan tombol |
 | Status **Ditekan** muncul, tetapi tema tidak berganti | Hanya satu tema yang tampil, atau menu dash sedang terbuka | Daftar tema di DashTune, tutup menu dash |
