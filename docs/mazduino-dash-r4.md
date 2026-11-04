@@ -30,8 +30,9 @@ balap, gauge klasik, sampai tema dengan foto mobil Anda sendiri.
   fuel flow dan kecepatan.
 - Peringatan (alarm) untuk Oil Pressure, Fuel Pressure, CLT, Oil Temp, Fuel
   Level, dan Battery.
-- **Input tambahan**: turn signal, head light, high beam, dan fuel level bisa disambungkan
-  langsung ke dash, dan layar meredup otomatis saat lampu menyala.
+- **Input tambahan**: sinyal turn signal, head light, dan fuel level bisa diambil
+  dari mobil, dan layar meredup otomatis saat lampu menyala. Input head light juga
+  bisa dipakai untuk tombol ganti tema.
 - **Petunjuk arah Google Maps** dan **musik** dari HP tampil sebagai notifikasi
   singkat di layar.
 - **Splash screen** sendiri saat dinyalakan, bisa beranimasi, atau dari GIF dan
@@ -238,13 +239,13 @@ lewat **Sesuaikan** dengan memilih **KM/L** di salah satu panel data. Saat
 kendaraan berhenti atau sangat pelan (di bawah 3 km/jam), angkanya 0. Kalau
 ECU Anda tidak mengirim fuel flow atau kecepatan, nilai ini tidak tersedia.
 
-## Input tambahan: turn signal, head light, high beam, dan fuel level
+## Input tambahan: turn signal, head light, dan fuel level
 
 Untuk ECU yang tidak mengirim data ini, sinyal dari mobil bisa disambungkan ke
 pin cadangan di Dash R4 lalu diatur dari DashTune di menu **Input tambahan**.
 
-> **Penting:** semua pin bekerja di **3,3 V**. **Jangan menyambungkan kabel mobil
-> langsung ke pin.**
+> **Penting:** semua pin bekerja di **3,3 V**. Sinyal 12 V harus lewat proteksi
+> optocoupler. **Jangan menyambungkan kabel mobil langsung ke pin.**
 
 Pilihan pin, pengaturan, dan kalibrasi fuel level ada di halaman
 [Input Tambahan Dash R4](input-tambahan-dash-r4.md).
@@ -282,7 +283,7 @@ lagi.
 | :---- | :---- |
 | **Tema** | Tema yang terpasang, Theme Store, dan Sesuaikan |
 | **General Setting** | Tipe ECU, satuan, mode MAP, RPM, tangki, dan batas peringatan |
-| **Input tambahan** | Pin untuk turn signal, head light (dan peredupan layar), high beam, dan fuel level |
+| **Input tambahan** | Pin untuk turn signal, head light (dan peredupan layar) atau tombol ganti tema, dan fuel level |
 | **Splash** | Membuat splash screen sendiri |
 | **Info** | Versi firmware dan kondisi perangkat |
 | **Update Firmware** | Memperbarui firmware dash |
