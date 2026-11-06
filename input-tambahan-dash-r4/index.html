@@ -119,13 +119,17 @@
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#pin-yang-dipakai">Pin yang dipakai</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#turn-signal-head-light-dan-high-beam">Turn signal, head light, dan high beam</a>
+    <li class="toctree-l3"><a class="reference internal" href="#turn-signal-dan-head-light">Turn signal dan head light</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#pengaturan-di-dashtune">Pengaturan di DashTune</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#dari-mana-sinyalnya-diambil">Dari mana sinyalnya diambil</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#indikator-turn-signal-mengikuti-relay">Indikator turn signal mengikuti relay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tema-yang-menampilkan-turn-signal">Tema yang menampilkan turn signal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#memeriksa-sinyal-di-pin">Memeriksa sinyal di pin</a>
     </li>
         </ul>
     </li>
@@ -251,19 +255,20 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 06:18:35 UTC">4 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 14:12:39 UTC">4 November 2026</span></em></p>
   <h1 id="input-tambahan-dash-r4">Input Tambahan Dash R4<a class="headerlink" href="#input-tambahan-dash-r4" title="Permanent link">&para;</a></h1>
-<p>Kalau ECU Anda tidak mengirim data turn signal, head light, high beam, atau fuel
-level, sinyalnya bisa diambil langsung dari mobil lewat pin cadangan Dash R4. Pin
-ini juga bisa dipakai untuk tombol ganti tema. Halaman ini membahas pilihan pin,
-pengaturan di DashTune, dan kalibrasi fuel level.</p>
+<p>Kalau ECU Anda tidak mengirim data turn signal, head light, atau fuel level,
+sinyalnya bisa diambil langsung dari mobil lewat pin cadangan Dash R4. GPIO 46
+juga bisa dipakai untuk tombol ganti tema, sebagai pengganti head light. Halaman
+ini membahas pilihan pin, pengaturan di DashTune, dan kalibrasi fuel level.</p>
 <p>Semua pengaturan ada di DashTune, menu <strong>Input tambahan</strong>. Pilihan di menu ini
 tersimpan di dash dan tetap ada setelah kunci kontak dimatikan.</p>
 <blockquote>
 <p><strong>Penting:</strong> semua pin bekerja di <strong>3,3 V</strong>, sedangkan listrik mobil 12–14,4 V
-dan bisa melonjak lebih tinggi saat starter atau alternator bekerja. <strong>Jangan
-menyambungkan kabel mobil langsung ke pin.</strong> Pin yang terkena 12 V akan rusak
-permanen. Untuk rangkaian pemasangannya, hubungi
+dan bisa melonjak lebih tinggi saat starter atau alternator bekerja. Sinyal 12 V
+harus lewat proteksi optocoupler sebelum sampai ke pin. <strong>Jangan menyambungkan
+kabel mobil langsung ke pin.</strong> Pin yang terkena 12 V akan rusak permanen. Untuk
+rangkaian pemasangannya, hubungi
 <a href="mailto:support@mazduino.com">support@mazduino.com</a>.</p>
 </blockquote>
 <h2 id="pin-yang-dipakai">Pin yang dipakai<a class="headerlink" href="#pin-yang-dipakai" title="Permanent link">&para;</a></h2>
@@ -292,34 +297,31 @@ permanen. Untuk rangkaian pemasangannya, hubungi
 <td style="text-align: left;">Digital</td>
 </tr>
 <tr>
-<td style="text-align: left;">High beam</td>
-<td style="text-align: left;">GPIO 47</td>
-<td style="text-align: left;">Digital</td>
-</tr>
-<tr>
-<td style="text-align: left;">Tombol ganti tema</td>
-<td style="text-align: left;">GPIO 48</td>
-<td style="text-align: left;">Digital</td>
-</tr>
-<tr>
 <td style="text-align: left;">Fuel level</td>
-<td style="text-align: left;">GPIO 20 (cadangan GPIO 23)</td>
+<td style="text-align: left;">GPIO 20</td>
 <td style="text-align: left;">Analog</td>
 </tr>
 </tbody>
 </table>
-<p>Pin digital lain yang masih bisa dipilih: GPIO 2, 26, dan 27. Fuel level
-hanya bisa memakai GPIO 20 atau GPIO 23, karena hanya dua pin ini yang bisa
-membaca tegangan.</p>
+<p>Ketiga input digital menerima sinyal 12 V lewat proteksi optocoupler dan aktif ke
+ground: pin tersambung ke ground saat sinyal 12 V ada. Karena itu <strong>Aktif saat</strong>
+untuk ketiganya selalu <strong>Ke ground</strong>.</p>
+<p>GPIO 46 bersifat opsional. Pin ini bisa dipakai untuk head light atau tombol ganti
+tema, tetapi tidak keduanya. Kalau dipakai untuk tombol, data head light dibaca
+dari ECU.</p>
+<p>Fuel level juga bisa memakai GPIO 23. Hanya GPIO 20 dan GPIO 23 yang bisa membaca
+tegangan.</p>
+<p>DashTune juga menyediakan pilihan high beam dan pin digital GPIO 2, 26, 27, 47,
+dan 48, tetapi pin ini tidak termasuk konfigurasi di atas. Pin tambahan butuh
+proteksi sendiri, jadi hubungi support sebelum memakainya.</p>
 <p>Kalau sebuah fungsi sudah diberi pin, dash membaca dari pin itu, bukan dari ECU.</p>
-<h2 id="turn-signal-head-light-dan-high-beam">Turn signal, head light, dan high beam<a class="headerlink" href="#turn-signal-head-light-dan-high-beam" title="Permanent link">&para;</a></h2>
+<h2 id="turn-signal-dan-head-light">Turn signal dan head light<a class="headerlink" href="#turn-signal-dan-head-light" title="Permanent link">&para;</a></h2>
 <h3 id="pengaturan-di-dashtune">Pengaturan di DashTune<a class="headerlink" href="#pengaturan-di-dashtune" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Buka <strong>Input tambahan</strong>, lalu pilih kartu fungsinya.</li>
+<li>Buka <strong>Input tambahan</strong>, lalu pilih kartu fungsinya. Head light ada di kartu
+   <strong>Lampu</strong>.</li>
 <li>Pilih pin yang dipakai.</li>
-<li>Set <strong>Aktif saat</strong> sesuai pemasangan: <strong>Ke ground</strong> kalau pin terhubung ke
-   ground saat lampu menyala, <strong>Ada tegangan</strong> kalau pin menerima 3,3 V saat lampu
-   menyala.</li>
+<li>Set <strong>Aktif saat</strong> ke <strong>Ke ground</strong>, walaupun kabel mobilnya membawa 12 V.</li>
 </ol>
 <h3 id="dari-mana-sinyalnya-diambil">Dari mana sinyalnya diambil<a class="headerlink" href="#dari-mana-sinyalnya-diambil" title="Permanent link">&para;</a></h3>
 <ul>
@@ -328,7 +330,6 @@ membaca tegangan.</p>
   juga bisa dipakai.</li>
 <li><strong>Head light:</strong> ambil dari kabel yang menyala saat lampu dihidupkan. Sinyal
   ini juga dipakai oleh <strong>Redupkan layar saat lampu menyala</strong>.</li>
-<li><strong>High beam:</strong> ambil dari kabel lampu jauh atau indikatornya.</li>
 </ul>
 <h3 id="indikator-turn-signal-mengikuti-relay">Indikator turn signal mengikuti relay<a class="headerlink" href="#indikator-turn-signal-mengikuti-relay" title="Permanent link">&para;</a></h3>
 <p>Kalau turn signal memakai pin, dash tidak membuat kedipan sendiri. Indikator di
@@ -338,19 +339,66 @@ sama dengan relay mobil.</p>
 Ini biasanya berarti sinyal diambil <strong>sebelum</strong> relay flasher, misalnya dari
 saklar sein. Pindahkan ke kabel setelah relay.</p>
 <p>Hazard terbaca saat turn signal kiri dan kanan menyala bersamaan.</p>
+<h3 id="tema-yang-menampilkan-turn-signal">Tema yang menampilkan turn signal<a class="headerlink" href="#tema-yang-menampilkan-turn-signal" title="Permanent link">&para;</a></h3>
+<p>Tidak semua tema punya indikator turn signal. Yang punya: <strong>Street</strong>, <strong>Car Status</strong>,
+<strong>Classic Beetle</strong>, <strong>Vintage Speedo</strong>, <strong>Vintage Tach</strong>, dan <strong>Vintage Trio</strong>. Di tema
+lain, pin yang sudah benar tetap tidak terlihat di layar.</p>
+<h3 id="memeriksa-sinyal-di-pin">Memeriksa sinyal di pin<a class="headerlink" href="#memeriksa-sinyal-di-pin" title="Permanent link">&para;</a></h3>
+<p>Dengan <strong>Aktif saat: Ke ground</strong>, status di DashTune dan tegangan di pin artinya
+seperti ini:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tegangan di pin</th>
+<th style="text-align: left;">Status di DashTune</th>
+<th style="text-align: left;">Artinya</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3,3 V, lampu mobil mati</td>
+<td style="text-align: left;">Mati</td>
+<td style="text-align: left;">Normal</td>
+</tr>
+<tr>
+<td style="text-align: left;">3,3 V, lampu mobil menyala</td>
+<td style="text-align: left;">Mati</td>
+<td style="text-align: left;">Sinyal tidak sampai ke pin. Cek kabel dan titik pengambilan sinyal</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 V</td>
+<td style="text-align: left;">Menyala</td>
+<td style="text-align: left;">Dash sudah membaca dengan benar. Kalau layar kosong, ganti ke tema yang punya indikatornya</td>
+</tr>
+<tr>
+<td style="text-align: left;">0 V</td>
+<td style="text-align: left;">Mati</td>
+<td style="text-align: left;">Pin yang dipilih salah, atau <strong>Aktif saat</strong> masih di <strong>Ada tegangan</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Di DashTune, tegangan hanya tampil untuk fuel level. Tegangan pin digital diukur
+dengan multimeter.</p>
 <h2 id="tombol-ganti-tema">Tombol ganti tema<a class="headerlink" href="#tombol-ganti-tema" title="Permanent link">&para;</a></h2>
 <p>Tombol tekan di kabin bisa mengganti tema tanpa menyentuh layar. Setiap ditekan,
 dash pindah ke tema berikutnya dan menampilkan namanya. Tema yang disembunyikan
 dilewati, dan setelah tema terakhir urutannya kembali ke awal.</p>
-<p>Pakai tombol <strong>momentary</strong>, yaitu tombol yang kembali sendiri saat dilepas.</p>
+<p>Pakai tombol <strong>momentary</strong>, yaitu tombol yang kembali sendiri saat dilepas. Input
+GPIO 46 menerima sinyal 12 V, jadi tombol harus mengirim 12 V saat ditekan. Tombol
+yang hanya menyambung ke ground tidak akan terbaca.</p>
 <h3 id="pengaturan-di-dashtune_1">Pengaturan di DashTune<a class="headerlink" href="#pengaturan-di-dashtune_1" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Buka <strong>Input tambahan → Tombol ganti tema</strong>, lalu pilih pin yang dipakai.</li>
-<li>Set <strong>Aktif saat</strong> sesuai pemasangan.</li>
+<li>Buka <strong>Input tambahan → Lampu</strong>, lalu ubah pin ke <strong>Tidak dipakai</strong>. GPIO 46 tidak
+   bisa dipilih untuk tombol selama masih dipakai lampu.</li>
+<li>Buka <strong>Tombol ganti tema</strong>, lalu pilih GPIO 46.</li>
+<li>Set <strong>Aktif saat</strong> ke <strong>Ke ground</strong>.</li>
 <li>Tekan tombolnya. Status di DashTune harus berubah dari <strong>Dilepas</strong> ke <strong>Ditekan</strong>.</li>
 </ol>
-<p>Kartu ini hanya muncul kalau firmware dash sudah mendukungnya. Tombol tidak bekerja
-selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
+<p>Minimal dua tema harus terpasang dan tidak disembunyikan. Kalau hanya ada satu,
+status tetap berubah ke <strong>Ditekan</strong>, tetapi temanya tidak berganti.</p>
+<p>Kartu ini butuh DashTune 1.2.10 atau lebih baru dan firmware terbaru dash. Tombol
+yang disambung ke <strong>Lampu</strong> hanya terbaca sebagai lampu dan tidak mengganti tema.</p>
+<p>Tombol tidak bekerja selama menu dash atau splash screen tampil. Tombol yang ditekan saat kunci kontak
 dinyalakan baru terbaca setelah dilepas dan ditekan lagi.</p>
 <h2 id="fuel-level">Fuel level<a class="headerlink" href="#fuel-level" title="Permanent link">&para;</a></h2>
 <p>Fuel sender adalah resistor yang nilainya berubah mengikuti pelampung. Dash
@@ -400,13 +448,13 @@ diukur, dan peringatannya hilang setelah <strong>Jadikan penuh</strong>.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">Indikator tidak pernah menyala</td>
-<td style="text-align: left;">Salah pin, atau sinyal tidak sampai ke pin</td>
-<td style="text-align: left;">Pilihan pin di DashTune, sambungan kabel</td>
+<td style="text-align: left;">Salah pin, sinyal tidak sampai ke pin, atau <strong>Aktif saat</strong> di <strong>Ada tegangan</strong></td>
+<td style="text-align: left;">Pilihan pin di DashTune, sambungan kabel, set <strong>Ke ground</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">Indikator menyala saat lampu mati dan sebaliknya</td>
-<td style="text-align: left;"><strong>Aktif saat</strong> tidak sesuai pemasangan</td>
-<td style="text-align: left;">Ganti pilihan <strong>Aktif saat</strong></td>
+<td style="text-align: left;">Status <strong>Menyala</strong>, tetapi indikator tidak tampil</td>
+<td style="text-align: left;">Tema aktif tidak punya indikator turn signal</td>
+<td style="text-align: left;">Ganti ke tema di <a href="#tema-yang-menampilkan-turn-signal">daftar di atas</a></td>
 </tr>
 <tr>
 <td style="text-align: left;">Turn signal menyala terus</td>
@@ -419,9 +467,24 @@ diukur, dan peringatannya hilang setelah <strong>Jadikan penuh</strong>.</p>
 <td style="text-align: left;">Sambungkan kiri dan kanan</td>
 </tr>
 <tr>
-<td style="text-align: left;">Tombol ganti tema tidak mengganti tema</td>
-<td style="text-align: left;">Hanya ada satu tema yang tampil, atau <strong>Aktif saat</strong> salah</td>
-<td style="text-align: left;">Daftar tema di DashTune, status <strong>Ditekan</strong> saat tombol ditekan</td>
+<td style="text-align: left;">Kartu <strong>Tombol ganti tema</strong> tidak muncul</td>
+<td style="text-align: left;">DashTune atau firmware dash belum mendukungnya</td>
+<td style="text-align: left;">Perbarui DashTune ke 1.2.10 atau lebih baru, dan perbarui firmware dash</td>
+</tr>
+<tr>
+<td style="text-align: left;">GPIO 46 tidak bisa dipilih untuk tombol</td>
+<td style="text-align: left;">Pin masih dipakai <strong>Lampu</strong></td>
+<td style="text-align: left;">Ubah <strong>Lampu</strong> ke <strong>Tidak dipakai</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Status tetap <strong>Dilepas</strong> saat tombol ditekan</td>
+<td style="text-align: left;"><strong>Aktif saat</strong> di <strong>Ada tegangan</strong>, atau tombol tidak mengirim 12 V</td>
+<td style="text-align: left;">Set <strong>Ke ground</strong>, cek sambungan tombol</td>
+</tr>
+<tr>
+<td style="text-align: left;">Status <strong>Ditekan</strong> muncul, tetapi tema tidak berganti</td>
+<td style="text-align: left;">Hanya satu tema yang tampil, atau menu dash sedang terbuka</td>
+<td style="text-align: left;">Daftar tema di DashTune, tutup menu dash</td>
 </tr>
 <tr>
 <td style="text-align: left;">Fuel level terbalik</td>

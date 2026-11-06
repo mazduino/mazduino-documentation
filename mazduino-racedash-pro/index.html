@@ -135,6 +135,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>
         <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#kalau-play-store-menampilkan-cant-download-dashtune">Kalau Play Store menampilkan "Can't download DashTune"</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#menyambungkan-pertama-kali">Menyambungkan pertama kali</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#isi-menu-dashtune">Isi menu DashTune</a>
@@ -259,7 +261,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 November 2026 21:20:57 UTC">2 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 15:52:51 UTC">6 November 2026</span></em></p>
   <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></p>
@@ -619,6 +621,22 @@ dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
 tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
 Play Anda di sana, dan undangan akan dikirim lewat email.</p>
 </blockquote>
+<h4 id="kalau-play-store-menampilkan-cant-download-dashtune">Kalau Play Store menampilkan "Can't download DashTune"<a class="headerlink" href="#kalau-play-store-menampilkan-cant-download-dashtune" title="Permanent link">&para;</a></h4>
+<p>Pesan ini biasanya muncul tepat setelah menekan <strong>Install</strong> atau <strong>Update</strong>,
+sebelum unduhan sempat berjalan. Penyebabnya ada di Play Store di HP, bukan di
+aplikasinya.</p>
+<ol>
+<li>Buka <strong>Settings → Apps → Google Play Store → Storage</strong>, lalu tekan
+   <strong>Clear cache</strong> (bukan Clear storage).</li>
+<li>Buka lagi Play Store, cari DashTune, dan tekan <strong>Install</strong> sekali lagi.</li>
+<li>Kalau masih gagal, pastikan akun Google yang aktif di Play Store (foto profil
+   di kanan atas) adalah akun yang emailnya didaftarkan untuk uji DashTune.
+   Kalau HP punya beberapa akun, ganti ke akun itu.</li>
+<li>Versi yang baru dirilis kadang belum siap diunduh selama beberapa menit.
+   Kalau langkah di atas belum berhasil, tunggu sebentar lalu coba lagi.</li>
+</ol>
+<p>Kalau tetap gagal, hubungi <strong>support@mazduino.com</strong> dengan menyebutkan model HP
+dan email akun Play Store yang dipakai.</p>
 <h3 id="menyambungkan-pertama-kali">Menyambungkan pertama kali<a class="headerlink" href="#menyambungkan-pertama-kali" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Nyalakan kunci kontak sampai dash menyala.</li>
@@ -633,6 +651,7 @@ manual di bagian <strong>Model Dash</strong> di layar yang sama.</p>
 <p>Dash yang sudah pernah disambungkan akan diingat, dan aplikasi menyambung
 sendiri saat dibuka berikutnya.</p>
 <h3 id="isi-menu-dashtune">Isi menu DashTune<a class="headerlink" href="#isi-menu-dashtune" title="Permanent link">&para;</a></h3>
+<p>Urutan menu di beranda DashTune:</p>
 <table>
 <thead>
 <tr>
@@ -642,6 +661,10 @@ sendiri saat dibuka berikutnya.</p>
 </thead>
 <tbody>
 <tr>
+<td style="text-align: left;"><strong>Tema</strong></td>
+<td style="text-align: left;">Memilih tema yang tampil di dash dan memasang tema baru dari Theme Store. Pada firmware lama menu ini bernama <strong>Dashboard</strong> dan mengatur data yang tampil pada tiap template</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>CAN Buttons</strong></td>
 <td style="text-align: left;">Membuat dan mengatur tombol CAN yang tampil di layar dash</td>
 </tr>
@@ -650,23 +673,26 @@ sendiri saat dibuka berikutnya.</p>
 <td style="text-align: left;">Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Dashboard</strong></td>
-<td style="text-align: left;">Mengatur tata letak panel dan data yang tampil pada tiap template</td>
+<td style="text-align: left;"><strong>Lampu LED</strong></td>
+<td style="text-align: left;">Shift light dan indikator, hanya pada dash yang memiliki strip LED</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Splash</strong></td>
 <td style="text-align: left;">Membuat gambar pembuka sendiri (lihat di bawah)</td>
 </tr>
 <tr>
+<td style="text-align: left;"><strong>Update Firmware</strong></td>
+<td style="text-align: left;">Memperbarui firmware dash. Di bagian bawahnya ada <strong>Mode WiFi OTA</strong> untuk menyalakan WiFi dash agar bisa dijangkau dari komputer</td>
+</tr>
+<tr>
 <td style="text-align: left;"><strong>Info</strong></td>
 <td style="text-align: left;">Versi firmware dan kondisi perangkat</td>
 </tr>
-<tr>
-<td style="text-align: left;"><strong>Update Firmware</strong></td>
-<td style="text-align: left;">Memperbarui firmware dash</td>
-</tr>
 </tbody>
 </table>
+<p><strong>Riwayat Pengaturan</strong> ada di tab <strong>Lainnya → Akun</strong>. Di sana tersimpan
+pengaturan dash dari waktu ke waktu. Periksa dulu isinya, lalu pilih yang
+ingin dikembalikan ke dash.</p>
 <h3 id="membuat-splash-screen-sendiri">Membuat splash screen sendiri<a class="headerlink" href="#membuat-splash-screen-sendiri" title="Permanent link">&para;</a></h3>
 <p>Masuk ke menu <strong>Splash</strong>. Di sana bisa menambahkan gambar dari galeri,
 menambah tulisan, menggeser dan memperbesar-kecilkan, lalu memilih warna latar.
@@ -677,6 +703,35 @@ jaringan semula. Prosesnya berjalan sendiri — cukup <strong>biarkan layar HP m
 dan jangan tutup aplikasi</strong> sampai selesai.</p>
 <p>Tersedia juga pengaturan <strong>lama tampil</strong> splash, dan tombol untuk menghapusnya
 kembali ke gambar bawaan.</p>
+<h4 id="kalau-kirim-splash-gagal-atau-splash-hilang">Kalau kirim splash gagal atau splash hilang<a class="headerlink" href="#kalau-kirim-splash-gagal-atau-splash-hilang" title="Permanent link">&para;</a></h4>
+<p>Di Racedash Pro M4, M4.1, M5, M5.1, M5.2, dan M7 dengan firmware sebelum
+6 November 2026, penyimpanan dash bisa macet setelah beberapa kali mengganti
+splash, template, atau animasi. M7 Pro tidak terkena masalah ini. Gejalanya:</p>
+<ul>
+<li>Kirim splash gagal, misalnya muncul <strong>"connection reset by peer"</strong> atau
+  <strong>"Dash tidak bisa menyimpan file"</strong>.</li>
+<li>Splash lama ikut hilang, sehingga dash menyala tanpa gambar pembuka.</li>
+</ul>
+<p>Cara mengatasinya:</p>
+<ol>
+<li>Update aplikasi DashTune ke versi <strong>1.2.11</strong> atau lebih baru.</li>
+<li>Update firmware dash lewat menu <strong>Update Firmware</strong> ke versi
+   <strong>2026-11-06</strong> atau lebih baru. Update firmware tetap bisa dilakukan
+   walaupun kirim splash gagal.</li>
+<li>Kirim splash lagi. Kiriman pertama setelah update bisa makan waktu sekitar
+   satu menit lebih lama, karena dash merapikan penyimpanannya dulu. Biarkan
+   layar HP menyala dan aplikasi terbuka sampai selesai.</li>
+</ol>
+<p>Mulai firmware tersebut, splash lama tidak lagi terhapus kalau pengiriman
+gagal. Kalau file memang terlalu besar, DashTune menampilkan <strong>"Ruang di dash
+tidak cukup"</strong>; hapus tema atau animasi yang tidak dipakai, atau perpendek
+splash, lalu coba lagi.</p>
+<p>Kalau HP sudah masuk WiFi <strong>Mazduino-Dash</strong> tetapi muncul <strong>"connection timed
+out"</strong> atau pesan bahwa dash tidak terjangkau, matikan dulu VPN atau aplikasi
+pemblokir iklan di HP. Aplikasi seperti itu membelokkan koneksi sehingga tidak
+sampai ke dash.</p>
+<p>Kalau masih gagal, hubungi support@mazduino.com dengan menyebut model dash,
+versi firmware (Setting &gt; About), dan pesan error yang muncul.</p>
 <h3 id="update-firmware">Update firmware<a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h3>
 <p>Masuk ke menu <strong>Update Firmware</strong>, aplikasi akan memeriksa versi terbaru dan
 menampilkan versi yang terpasang sekarang. Kalau ada versi baru, tekan tombol

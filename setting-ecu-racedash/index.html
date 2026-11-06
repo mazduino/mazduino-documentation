@@ -142,6 +142,10 @@
     <li class="toctree-l3"><a class="reference internal" href="#ecu-yang-tidak-ada-di-daftar">ECU yang tidak ada di daftar</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#kalau-dash-tidak-menampilkan-data">Kalau dash tidak menampilkan data</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#cek-terminasi-can-dengan-multimeter">Cek terminasi CAN dengan multimeter</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -247,7 +251,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2 November 2026 21:20:57 UTC">2 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 13:24:07 UTC">6 November 2026</span></em></p>
   <h1 id="konfigurasi-ecu-untuk-racedash">Konfigurasi ECU untuk Racedash<a class="headerlink" href="#konfigurasi-ecu-untuk-racedash" title="Permanent link">&para;</a></h1>
 <p>Halaman ini membahas sisi <strong>ECU</strong>-nya: apa yang harus diaktifkan di ECU supaya
 datanya sampai ke dash. Untuk pengaturan dash-nya sendiri, lihat
@@ -466,7 +470,7 @@ bus dengan <a href="../can-io-extender/">CAN IO Extender</a>.</p>
 </tr>
 <tr>
 <td style="text-align: left;">Sama sekali tidak ada data, kecepatan sudah benar</td>
-<td style="text-align: left;">Terminasi bus: sebuah bus CAN perlu tepat <strong>dua</strong> resistor 120 Ω</td>
+<td style="text-align: left;">Terminasi bus: sebuah bus CAN perlu tepat <strong>dua</strong> resistor 120 Ω. Ukur dengan multimeter (lihat <a href="#cek-terminasi-can-dengan-multimeter">Cek terminasi CAN dengan multimeter</a>); hasil yang benar sekitar 60 Ω</td>
 </tr>
 <tr>
 <td style="text-align: left;">Sebagian channel kosong terus</td>
@@ -484,6 +488,56 @@ bus dengan <a href="../can-io-extender/">CAN IO Extender</a>.</p>
 </table>
 <p>Pastikan juga <strong>ground dash dan ground ECU tersambung</strong>. CAN memerlukan acuan
 tegangan yang sama di kedua ujungnya.</p>
+<h3 id="cek-terminasi-can-dengan-multimeter">Cek terminasi CAN dengan multimeter<a class="headerlink" href="#cek-terminasi-can-dengan-multimeter" title="Permanent link">&para;</a></h3>
+<p>Dash tidak bisa mengukur terminasi sendiri; yang bisa hanya multimeter. Cek ini
+dilakukan kalau data tidak masuk padahal kecepatan CAN dan broadcast di ECU sudah
+benar.</p>
+<ol>
+<li>Matikan semua daya: kunci kontak OFF. Lebih aman lagi, lepas terminal negatif
+   aki. Mengukur ohm saat bus bertegangan memberi angka yang salah.</li>
+<li>Pasang multimeter di mode ohm (Ω), lalu ukur antara <strong>CAN H</strong> dan <strong>CAN L</strong> di
+   salah satu konektor, misalnya di konektor dash.</li>
+<li>Bandingkan hasilnya:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Hasil ukur</th>
+<th style="text-align: left;">Artinya</th>
+<th style="text-align: left;">Yang dilakukan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Sekitar <strong>60 Ω</strong> (kira-kira 55–65 Ω)</td>
+<td style="text-align: left;">Benar: dua resistor 120 Ω, satu di tiap ujung</td>
+<td style="text-align: left;">Terminasi bukan masalahnya; lanjut cek kabel, ground, dan setting ECU</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sekitar <strong>120 Ω</strong></td>
+<td style="text-align: left;">Hanya satu terminator</td>
+<td style="text-align: left;">Aktifkan atau pasang terminator di ujung bus yang lain</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sekitar <strong>40 Ω</strong></td>
+<td style="text-align: left;">Tiga terminator</td>
+<td style="text-align: left;">Matikan terminator pada perangkat yang tidak berada di ujung bus</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sangat besar atau tidak terbaca</td>
+<td style="text-align: left;">Tidak ada terminator, atau kabel CAN putus</td>
+<td style="text-align: left;">Periksa kabel dan sambungan, lalu pasang terminator di kedua ujung</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mendekati <strong>0 Ω</strong></td>
+<td style="text-align: left;">CAN H dan CAN L korsleting</td>
+<td style="text-align: left;">Cari kabel yang terjepit atau saling menempel</td>
+</tr>
+</tbody>
+</table>
+<p>"Ujung bus" adalah dua perangkat yang paling jauh di sepanjang kabel CAN.
+Perangkat di tengah tidak boleh memasang terminator. Bus CAN mobil standar
+(OBD-II) sudah punya terminasi sendiri; jangan menambah resistor di sana.</p>
 
             </div>
           </div><footer>

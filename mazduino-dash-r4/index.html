@@ -147,7 +147,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar-kml">Konsumsi bahan bakar (km/l)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level">Input tambahan: turn signal, head light, high beam, dan fuel level</a>
+    <li class="toctree-l3"><a class="reference internal" href="#input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#panduan-aplikasi-dashtune">Panduan Aplikasi DashTune</a>
         <ul>
@@ -273,7 +273,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 06:18:35 UTC">4 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="4 November 2026 11:11:29 UTC">4 November 2026</span></em></p>
   <h1 id="mazduino-dash-r4">Mazduino Dash R4<a class="headerlink" href="#mazduino-dash-r4" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Dash R4 berganti-ganti tema" src="../img/dash/dash-r4-themes.gif" /></p>
@@ -313,8 +313,9 @@ balap, gauge klasik, sampai tema dengan foto mobil Anda sendiri.</p>
   fuel flow dan kecepatan.</li>
 <li>Peringatan (alarm) untuk Oil Pressure, Fuel Pressure, CLT, Oil Temp, Fuel
   Level, dan Battery.</li>
-<li><strong>Input tambahan</strong>: turn signal, head light, high beam, dan fuel level bisa disambungkan
-  langsung ke dash, dan layar meredup otomatis saat lampu menyala.</li>
+<li><strong>Input tambahan</strong>: sinyal turn signal, head light, dan fuel level bisa diambil
+  dari mobil, dan layar meredup otomatis saat lampu menyala. Input head light juga
+  bisa dipakai untuk tombol ganti tema.</li>
 <li><strong>Petunjuk arah Google Maps</strong> dan <strong>musik</strong> dari HP tampil sebagai notifikasi
   singkat di layar.</li>
 <li><strong>Splash screen</strong> sendiri saat dinyalakan, bisa beranimasi, atau dari GIF dan
@@ -616,12 +617,12 @@ mendekati batas, lalu merah saat melewatinya.</p>
 lewat <strong>Sesuaikan</strong> dengan memilih <strong>KM/L</strong> di salah satu panel data. Saat
 kendaraan berhenti atau sangat pelan (di bawah 3 km/jam), angkanya 0. Kalau
 ECU Anda tidak mengirim fuel flow atau kecepatan, nilai ini tidak tersedia.</p>
-<h2 id="input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level">Input tambahan: turn signal, head light, high beam, dan fuel level<a class="headerlink" href="#input-tambahan-turn-signal-head-light-high-beam-dan-fuel-level" title="Permanent link">&para;</a></h2>
+<h2 id="input-tambahan-turn-signal-head-light-dan-fuel-level">Input tambahan: turn signal, head light, dan fuel level<a class="headerlink" href="#input-tambahan-turn-signal-head-light-dan-fuel-level" title="Permanent link">&para;</a></h2>
 <p>Untuk ECU yang tidak mengirim data ini, sinyal dari mobil bisa disambungkan ke
 pin cadangan di Dash R4 lalu diatur dari DashTune di menu <strong>Input tambahan</strong>.</p>
 <blockquote>
-<p><strong>Penting:</strong> semua pin bekerja di <strong>3,3 V</strong>. <strong>Jangan menyambungkan kabel mobil
-langsung ke pin.</strong></p>
+<p><strong>Penting:</strong> semua pin bekerja di <strong>3,3 V</strong>. Sinyal 12 V harus lewat proteksi
+optocoupler. <strong>Jangan menyambungkan kabel mobil langsung ke pin.</strong></p>
 </blockquote>
 <p>Pilihan pin, pengaturan, dan kalibrasi fuel level ada di halaman
 <a href="../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>.</p>
@@ -667,7 +668,7 @@ lagi.</p>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Input tambahan</strong></td>
-<td style="text-align: left;">Pin untuk turn signal, head light (dan peredupan layar), high beam, dan fuel level</td>
+<td style="text-align: left;">Pin untuk turn signal, head light (dan peredupan layar) atau tombol ganti tema, dan fuel level</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Splash</strong></td>
