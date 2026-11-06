@@ -286,6 +286,24 @@ perlu mencabut apa pun.
 > tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
 > Play Anda di sana, dan undangan akan dikirim lewat email.
 
+#### Kalau Play Store menampilkan "Can't download DashTune"
+
+Pesan ini biasanya muncul tepat setelah menekan **Install** atau **Update**,
+sebelum unduhan sempat berjalan. Penyebabnya ada di Play Store di HP, bukan di
+aplikasinya.
+
+1. Buka **Settings → Apps → Google Play Store → Storage**, lalu tekan
+   **Clear cache** (bukan Clear storage).
+2. Buka lagi Play Store, cari DashTune, dan tekan **Install** sekali lagi.
+3. Kalau masih gagal, pastikan akun Google yang aktif di Play Store (foto profil
+   di kanan atas) adalah akun yang emailnya didaftarkan untuk uji DashTune.
+   Kalau HP punya beberapa akun, ganti ke akun itu.
+4. Versi yang baru dirilis kadang belum siap diunduh selama beberapa menit.
+   Kalau langkah di atas belum berhasil, tunggu sebentar lalu coba lagi.
+
+Kalau tetap gagal, hubungi **support@mazduino.com** dengan menyebutkan model HP
+dan email akun Play Store yang dipakai.
+
 ### Menyambungkan pertama kali
 
 1. Nyalakan kunci kontak sampai dash menyala.
