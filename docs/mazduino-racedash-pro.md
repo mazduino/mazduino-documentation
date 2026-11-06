@@ -321,14 +321,21 @@ sendiri saat dibuka berikutnya.
 
 ### Isi menu DashTune
 
+Urutan menu di beranda DashTune:
+
 | Menu | Fungsi |
 | :---- | :---- |
+| **Tema** | Memilih tema yang tampil di dash dan memasang tema baru dari Theme Store. Pada firmware lama menu ini bernama **Dashboard** dan mengatur data yang tampil pada tiap template |
 | **CAN Buttons** | Membuat dan mengatur tombol CAN yang tampil di layar dash |
 | **General Setting** | Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash |
-| **Dashboard** | Mengatur tata letak panel dan data yang tampil pada tiap template |
+| **Lampu LED** | Shift light dan indikator, hanya pada dash yang memiliki strip LED |
 | **Splash** | Membuat gambar pembuka sendiri (lihat di bawah) |
+| **Update Firmware** | Memperbarui firmware dash. Di bagian bawahnya ada **Mode WiFi OTA** untuk menyalakan WiFi dash agar bisa dijangkau dari komputer |
 | **Info** | Versi firmware dan kondisi perangkat |
-| **Update Firmware** | Memperbarui firmware dash |
+
+**Riwayat Pengaturan** ada di tab **Lainnya → Akun**. Di sana tersimpan
+pengaturan dash dari waktu ke waktu. Periksa dulu isinya, lalu pilih yang
+ingin dikembalikan ke dash.
 
 ### Membuat splash screen sendiri
 
