@@ -326,6 +326,39 @@ dan jangan tutup aplikasi** sampai selesai.
 Tersedia juga pengaturan **lama tampil** splash, dan tombol untuk menghapusnya
 kembali ke gambar bawaan.
 
+#### Kalau kirim splash gagal atau splash hilang
+
+Di Racedash Pro M4, M4.1, M5, M5.1, M5.2, dan M7 dengan firmware sebelum
+6 November 2026, penyimpanan dash bisa macet setelah beberapa kali mengganti
+splash, template, atau animasi. M7 Pro tidak terkena masalah ini. Gejalanya:
+
+- Kirim splash gagal, misalnya muncul **"connection reset by peer"** atau
+  **"Dash tidak bisa menyimpan file"**.
+- Splash lama ikut hilang, sehingga dash menyala tanpa gambar pembuka.
+
+Cara mengatasinya:
+
+1. Update aplikasi DashTune ke versi **1.2.11** atau lebih baru.
+2. Update firmware dash lewat menu **Update Firmware** ke versi
+   **2026-11-06** atau lebih baru. Update firmware tetap bisa dilakukan
+   walaupun kirim splash gagal.
+3. Kirim splash lagi. Kiriman pertama setelah update bisa makan waktu sekitar
+   satu menit lebih lama, karena dash merapikan penyimpanannya dulu. Biarkan
+   layar HP menyala dan aplikasi terbuka sampai selesai.
+
+Mulai firmware tersebut, splash lama tidak lagi terhapus kalau pengiriman
+gagal. Kalau file memang terlalu besar, DashTune menampilkan **"Ruang di dash
+tidak cukup"**; hapus tema atau animasi yang tidak dipakai, atau perpendek
+splash, lalu coba lagi.
+
+Kalau HP sudah masuk WiFi **Mazduino-Dash** tetapi muncul **"connection timed
+out"** atau pesan bahwa dash tidak terjangkau, matikan dulu VPN atau aplikasi
+pemblokir iklan di HP. Aplikasi seperti itu membelokkan koneksi sehingga tidak
+sampai ke dash.
+
+Kalau masih gagal, hubungi support@mazduino.com dengan menyebut model dash,
+versi firmware (Setting > About), dan pesan error yang muncul.
+
 ### Update firmware
 
 Masuk ke menu **Update Firmware**, aplikasi akan memeriksa versi terbaru dan
