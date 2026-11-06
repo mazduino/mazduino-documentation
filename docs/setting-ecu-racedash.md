@@ -169,10 +169,34 @@ bus dengan [CAN IO Extender](can-io-extender.md).
 | Gejala | Penyebab yang paling sering |
 | :--- | :--- |
 | Sama sekali tidak ada data | Kecepatan CAN tidak cocok, CANH/CANL tertukar, atau broadcast di ECU belum diaktifkan |
-| Sama sekali tidak ada data, kecepatan sudah benar | Terminasi bus: sebuah bus CAN perlu tepat **dua** resistor 120 Ω |
+| Sama sekali tidak ada data, kecepatan sudah benar | Terminasi bus: sebuah bus CAN perlu tepat **dua** resistor 120 Ω. Ukur dengan multimeter (lihat [Cek terminasi CAN dengan multimeter](#cek-terminasi-can-dengan-multimeter)); hasil yang benar sekitar 60 Ω |
 | Sebagian channel kosong terus | Memang tidak dikirim ECU itu. Setiap ECU punya kumpulan channel berbeda |
 | Data muncul tetapi nilainya aneh | Tipe ECU di dash tidak cocok dengan ECU sebenarnya. Pada Speeduino, hampir selalu karena protokol secondary serial-nya `Generic (ini File)` |
 | Data sempat muncul lalu hilang | Kabel/ground, atau ECU berhenti broadcast |
 
 Pastikan juga **ground dash dan ground ECU tersambung**. CAN memerlukan acuan
 tegangan yang sama di kedua ujungnya.
+
+### Cek terminasi CAN dengan multimeter
+
+Dash tidak bisa mengukur terminasi sendiri; yang bisa hanya multimeter. Cek ini
+dilakukan kalau data tidak masuk padahal kecepatan CAN dan broadcast di ECU sudah
+benar.
+
+1. Matikan semua daya: kunci kontak OFF. Lebih aman lagi, lepas terminal negatif
+   aki. Mengukur ohm saat bus bertegangan memberi angka yang salah.
+2. Pasang multimeter di mode ohm (Ω), lalu ukur antara **CAN H** dan **CAN L** di
+   salah satu konektor, misalnya di konektor dash.
+3. Bandingkan hasilnya:
+
+| Hasil ukur | Artinya | Yang dilakukan |
+| :--- | :--- | :--- |
+| Sekitar **60 Ω** (kira-kira 55–65 Ω) | Benar: dua resistor 120 Ω, satu di tiap ujung | Terminasi bukan masalahnya; lanjut cek kabel, ground, dan setting ECU |
+| Sekitar **120 Ω** | Hanya satu terminator | Aktifkan atau pasang terminator di ujung bus yang lain |
+| Sekitar **40 Ω** | Tiga terminator | Matikan terminator pada perangkat yang tidak berada di ujung bus |
+| Sangat besar atau tidak terbaca | Tidak ada terminator, atau kabel CAN putus | Periksa kabel dan sambungan, lalu pasang terminator di kedua ujung |
+| Mendekati **0 Ω** | CAN H dan CAN L korsleting | Cari kabel yang terjepit atau saling menempel |
+
+"Ujung bus" adalah dua perangkat yang paling jauh di sepanjang kabel CAN.
+Perangkat di tengah tidak boleh memasang terminator. Bus CAN mobil standar
+(OBD-II) sudah punya terminasi sendiri; jangan menambah resistor di sana.

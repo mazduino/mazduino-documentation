@@ -93,7 +93,8 @@ Tersedia juga header CAN + daya 4 pin terpisah (J12) sebagai alternatif.
 **Terminasi:** modul menyediakan resistor 120 Ω yang bisa diaktifkan di board.
 Aktifkan **hanya kalau modul ini berada di salah satu ujung bus**. Sebuah bus
 CAN perlu tepat dua terminator, dan menambah yang ketiga akan membuat
-komunikasi gagal.
+komunikasi gagal. Dengan semua daya mati, hambatan antara CAN H dan CAN L yang
+benar sekitar 60 Ω (lihat [Cek terminasi CAN dengan multimeter](setting-ecu-racedash.md#cek-terminasi-can-dengan-multimeter)).
 
 ## Input
 
