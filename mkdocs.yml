@@ -73,7 +73,9 @@ theme:
   name: readthedocs
   custom_dir: theme_overrides
 plugins:
-  - search
+  # Search is often by short words such as "AC" or "CLT"; the default ignores anything under 3 letters.
+  - search:
+      min_search_length: 2
   - git-revision-date-localized:
       type: date
       locale: id

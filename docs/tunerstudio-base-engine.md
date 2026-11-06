@@ -24,7 +24,7 @@ Menu **Base Engine** dalam TunerStudio berisi pengaturan esensial yang berkaitan
 
 7. **Outputs**: Mengkonfigurasi berbagai ECU output yang mengontrol komponen engine
 
-8. **Air Conditioning**: Mengontrol pengaturan untuk interface dengan sistem A/C kendaraan
+8. **Air Conditioning**: Mengontrol pengaturan untuk interface dengan sistem AC kendaraan
 
 9. **Status LEDs**: Memungkinkan konfigurasi status LED pada ECU (jika applicable)
 

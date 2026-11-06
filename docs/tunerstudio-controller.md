@@ -67,7 +67,7 @@ Dialog **Bench Test & Commands** berisi beberapa grup tombol yang memungkinkan t
 2. **Injector Test**: Membuat pulsa pada output injektor  
 3. **TCU Solenoid Test**: Membuat pulsa pada solenoid kontrol transmisi (jika tersedia)
 4. **Lua Out Test**: Membuat pulsa pada output yang dikonfigurasi Lua
-5. **Miscellaneous Commands**: Mengaktifkan fungsi spesifik seperti testing relay A/C, idle air valve, menghentikan engine, reboot ECU, atau reset konfigurasi
+5. **Miscellaneous Commands**: Mengaktifkan fungsi spesifik seperti testing relay AC, idle air valve, menghentikan engine, reboot ECU, atau reset konfigurasi
 
 ### Pengaturan Konfigurasi
 

@@ -258,9 +258,9 @@ Konfigurasi komprehensif untuk semua kontrol output ECU, meliputi:
 - Check Engine Light Configuration
 
 ### [Pengaturan Air Conditioning](tunerstudio-ac-settings.md)
-Kontrol sistem A/C yang terintegrasi dengan ECU, mencakup:
+Kontrol sistem AC yang terintegrasi dengan ECU, mencakup:
 
-- Input dan Output Controls A/C
+- Input dan Output Controls AC
 - Timing dan Protection Settings
 - Kompensasi Idle Speed
 - Kontrol Tekanan Sistem

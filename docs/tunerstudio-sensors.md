@@ -79,7 +79,7 @@ Mengatur sensor ini untuk monitoring suhu output turbocharger/intercooler.
 ### 24. Wastegate and Idle Position Sensors
 Mengkalibrasi sensor posisi wastegate atau bypass valve untuk manajemen boost.
 
-### 25. A/C Pressure Sensor
+### 25. AC Pressure Sensor
 Mengkonfigurasi sensor untuk monitoring sistem air conditioning.
 
 ### 26. Aux Sensors
