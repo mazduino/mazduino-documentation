@@ -25,7 +25,7 @@ Bagian A/C Settings memungkinkan konfigurasi kontrol air conditioning dalam ECU,
 ### Compressor Delay
 **A/C Compressor Delay (sec)**: Mengatur penundaan sebelum kompresor A/C aktif, mencegah peningkatan beban mendadak pada mesin ketika A/C dinyalakan.
 
-- **Rekomendasi**: 1-3 detik untuk startup yang smooth
+- **Rekomendasi**: 0,3-0,5 detik, cukup agar udara idle bertambah lebih dulu. Jeda yang lebih lama membuat RPM sempat naik sebelum kompresor masuk
 
 - **Aplikasi**: Mengurangi shock load pada mesin
 
@@ -110,6 +110,101 @@ Kotak putih di sisi kanan jendela mewakili berbagai pemeriksaan dan status yang 
 - **System Ready**: Semua kondisi terpenuhi untuk operasi A/C
 
 Umpan balik visual ini membantu pengguna dengan cepat menilai apakah semua kondisi terpenuhi untuk operasi A/C.
+
+## Mesin Alpha-N (Tanpa Sensor MAP)
+
+### Kenapa RPM Turun Saat A/C Menyala
+
+Pada mode Alpha-N, ECU menghitung udara yang masuk hanya dari TPS dan RPM. Saat A/C menyala, katup idle (stepper atau solenoid) membuka lebih lebar untuk menambah udara. Udara ini lewat jalur bypass, bukan lewat throttle, jadi TPS tidak berubah dan ECU tidak menambah bahan bakar.
+
+Akibatnya campuran menjadi kurus tepat saat kompresor masuk, RPM turun tajam, dan katup idle membuka lebih lebar lagi sehingga campuran makin kurus. Gejala yang sama bisa muncul saat kipas radiator menyala atau setir diputar.
+
+ECU tidak memiliki penambahan bahan bakar khusus untuk A/C. Semua pengaturan A/C di atas berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.
+
+Pengecualian: jika idle diatur lewat throttle elektronik (ETB), throttle utama yang membuka sehingga TPS ikut naik dan bahan bakar bertambah dengan sendirinya.
+
+### Langkah Mengatasi
+
+Kerjakan berurutan, dan rekam log setiap selesai satu langkah.
+
+**1. Tambah udara sebelum beban masuk**
+
+- **A/C Idle Adder**: naikkan 3-5% per percobaan sampai RPM hampir tidak turun saat kompresor masuk.
+
+- **A/C Compressor Delay**: 0,3-0,5 detik sudah cukup agar udara bertambah lebih dulu. Jeda yang terlalu lama membuat RPM sempat naik sebelum kompresor masuk.
+
+- **A/C Idle RPM**: nilai ini adalah target mutlak, bukan tambahan. Pastikan lebih tinggi dari target idle berdasarkan suhu mesin, misalnya 50-100 RPM di atas idle saat mesin panas.
+
+- **Fan #1 Adder / Fan #2 Adder** (menu Idle): isi juga jika kipas membuat RPM turun.
+
+**2. Aktifkan idle timing PID**
+
+Timing pengapian bereaksi jauh lebih cepat dari katup idle, sehingga paling efektif menahan RPM saat kompresor masuk. Buka menu **Idle → Closed-loop Ignition idle timing**:
+
+- **Enable closed loop idle ignition timing**: aktifkan.
+
+- **Proportional gain**: mulai dari 0,1 (sekitar 10° per 100 RPM dari target).
+
+- **Min / Max adjustment**: -10° / +10°.
+
+Lalu aktifkan **Separate idle ignition table** dan isi **Idle Ignition advance** sedikit mundur, misalnya 10-14°, agar PID punya ruang untuk memajukan timing.
+
+**3. Tambah bahan bakar mengikuti bukaan katup idle**
+
+Langkah ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.
+
+Script Lua dimasukkan lewat `rusefi_console.jar` (ada di setiap bundle firmware) pada tab Lua, lalu burn. TunerStudio tidak memiliki editor script Lua.
+
+```lua
+setTickRate(50)
+function onTick()
+  setLuaGauge(1, getOutput("currentIdlePosition"))
+end
+```
+
+Setelah itu buka **Fuel → VE blend tables → VE blend 1 settings**:
+
+- **Blend parameter**: Lua Gauge 1.
+
+- **Blend bins**: posisi katup idle (%). Isi bias 0% pada posisi katup saat idle normal tanpa beban, dan 100% pada posisi katup saat A/C menyala. Contoh: katup di 25% saat idle normal dan 40% saat A/C menyala, maka isi 25 → 0% dan 40 → 100%.
+
+- **VE blend table 1**: isi +5% sampai +10% di area idle (600-1200 RPM, TPS 0-3%), dan 0 di area lain.
+
+Untuk menyetelnya, rekam log saat A/C menyala setelah koreksi STFT stabil. Jika STFT idle masih menambah sekitar 4%, naikkan nilai tabel kira-kira sebesar itu. Targetnya, STFT idle hampir sama saat A/C menyala maupun mati.
+
+**4. Percepat STFT di area idle**
+
+Di menu **Fuel → Short term fuel trim/Closed loop**:
+
+- **Idle region RPM**: sedikit di atas target idle saat A/C menyala, misalnya 1100-1200 RPM.
+
+- **Time const** (Idle Region): 3-5 detik.
+
+- **Max add** (Idle Region): 8-10%.
+
+Langkah ini membantu saat A/C menyala lama, bukan saat kompresor baru masuk.
+
+**5. Jika memungkinkan, pasang sensor MAP**
+
+Fuel strategy tetap Alpha-N, lalu pakai VE blend dengan Blend parameter **MAP**. Beban apa pun akan menaikkan MAP pada bukaan throttle yang sama, sehingga bahan bakar bertambah otomatis.
+
+### Data yang Perlu Direkam di Log
+
+Rekam di idle saat mesin panas, nyalakan dan matikan A/C beberapa kali dengan jeda sekitar 10 detik:
+
+- RPM dan target idle
+
+- Posisi katup idle (IAC)
+
+- AFR atau lambda
+
+- Koreksi timing idle
+
+- Status tombol A/C dan relay kompresor
+
+- Koreksi STFT
+
+Jika AFR naik (kurus) bersamaan dengan RPM turun, penyebabnya kekurangan bahan bakar (langkah 3). Jika AFR stabil tapi RPM tetap turun, penyebabnya udara atau timing (langkah 1 dan 2).
 
 ## Rekomendasi Konfigurasi
 
