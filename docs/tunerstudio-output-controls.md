@@ -126,10 +126,34 @@ Fan 1 dan Fan 2, ECU Mazduino mendukung kontrol dual fan dengan pengaturan indep
 - **Compatibility**: Pastikan kompatibilitas dengan sistem dashboard existing
 
 ## Check Engine Output
-- **Output Configuration**: Konfigurasi output channel untuk lampu check engine
 
-- **Warning Period**: Durasi periode warning dalam detik
+Buka: **Setup → Check Engine Light**.
 
-- **Trigger Conditions**: Kondisi yang memicu check engine light
+### Check Engine Settings
 
-- **Diagnostic**: Integrasi dengan sistem diagnostik ECU
+- **Output**: pin output untuk lampu check engine.
+
+- **Output mode**: mode output pin, biarkan default kecuali lampu menyala terbalik.
+
+- **Warning Period**: berapa lama sebuah warning dianggap masih aktif setelah terjadi, dalam detik. Nilai di bawah 3 tetap dihitung 3 detik.
+
+- **Test Check Engine**: tombol untuk menyalakan lampu sesaat, untuk memastikan wiring benar.
+
+### Pemeriksaan Sensor
+
+- **Enable sensor checking**: mengaktifkan pemeriksaan sensor. Lampu menyala jika salah satu sensor yang diperiksa berada di luar batas.
+
+- **Active while engine not running**: jika aktif, lampu menyala selama ECU hidup dan mesin belum menyala, seperti lampu check engine bawaan pabrik saat kunci kontak ON (bulb check). Jika tidak aktif, lampu mati selama mesin belum menyala.
+
+- **Delay after start**: jeda setelah mesin menyala sebelum sensor mulai diperiksa, agar pembacaan sensor stabil. Selama jeda ini lampu mati.
+
+- Sensor yang bisa diperiksa: battery, MAP, IAT, CLT, TPS, AFR, oil temp, oil pressure, fuel pressure, MAF, sync loss, cut bahan bakar/pengapian, dan error code. Setiap pemeriksaan punya batas sendiri. Pemeriksaan dengan batas min 0 dan max 0 dianggap tidak aktif.
+
+### Shift Light
+
+- **Use CEL as shift light**: memakai lampu check engine sebagai shift light. Selama aktif, pemeriksaan sensor tidak dipakai.
+
+- **RPM threshold**, **RPM hysteresis**, **Only above TPS**, **Flash**, dan **Flash frequency** mengatur kapan dan bagaimana lampu menyala.
+
+!!! note
+    Saat pemeriksaan sensor atau shift light aktif, hanya fitur ini yang mengatur lampu, termasuk saat ada warning. Pada firmware sebelum Nightly 2026-11-04, lampu bisa berkedip-kedip sendiri atau tetap menyala setelah mesin mati.
