@@ -219,7 +219,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="8 November 2026 14:19:29 UTC">8 November 2026</span></em></p>
   <h1 id="can-output-triggered">CAN Output (Triggered)<a class="headerlink" href="#can-output-triggered" title="Permanent link">&para;</a></h1>
 <p>Halaman ini merupakan bagian dari <a href="../can-output/">CAN Output</a>.</p>
 <p>Triggered CAN Output mengirim frame CAN hanya saat ada <strong>edge (perubahan) pada pin digital</strong> tertentu, bukan secara berkala.</p>
@@ -232,13 +232,21 @@
 </ul>
 <hr />
 <h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
-<p>Buka: <strong>CAN Bus → CAN Output</strong></p>
+<p>Buka: <strong>CAN-bus → Triggered CAN Outputs → Triggered CAN Output 1</strong> sampai <strong>8</strong>.</p>
 <p>Untuk menggunakan mode Triggered:</p>
 <ol>
-<li>Pilih <strong>Trigger Pin</strong> — pin digital yang memicu pengiriman</li>
-<li>Pilih <strong>Trigger Edge</strong> — <code>Rising</code> (0→1) atau <code>Falling</code> (1→0)</li>
-<li>Isi payload seperti pada <a href="../can-output/">CAN Output periodik</a></li>
+<li>Isi <strong>CAN ID</strong>, <strong>CAN Bus</strong>, <strong>Byte order</strong>, dan <strong>DLC</strong>.</li>
+<li>Pilih <strong>Trigger input</strong>, yaitu pin digital yang memicu pengiriman, lalu <strong>Trigger input mode</strong> sesuai wiring.</li>
+<li>Pilih <strong>Trigger edge</strong>: <code>Rising edge</code> (0→1), <code>Falling edge</code> (1→0), atau <code>Both edges</code>.</li>
+<li>Isi payload seperti pada <a href="../can-output/">CAN Output periodik</a>.</li>
 </ol>
+<hr />
+<h2 id="menguji-frame">Menguji Frame<a class="headerlink" href="#menguji-frame" title="Permanent link">&para;</a></h2>
+<p>Setiap slot punya tombol <strong>Send frame 1</strong> sampai <strong>Send frame 8</strong>. Tombol ini langsung mengirim frame yang sudah dikonfigurasi, tanpa menunggu perubahan pin, sehingga isi frame bisa dicek di perangkat penerima atau di CAN analyzer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tombol Send frame membutuhkan firmware Nightly 2026-11-04 atau yang lebih baru. Pada firmware sebelumnya tombol ini tidak melakukan apa-apa.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Mode Triggered dan Periodic dapat dikonfigurasi pada slot yang berbeda secara bersamaan.</p>
