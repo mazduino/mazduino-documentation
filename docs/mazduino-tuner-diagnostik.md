@@ -62,10 +62,20 @@ tampil sebagai batang tinggi berwarna oranye.
 
 Centang **CKP teeth only (tooth logger)** untuk merekam gigi CKP saja.
 
+ECU mengirim rekaman per buffer. Jeda waktu di antara dua buffer tidak terekam, jadi digambar pendek
+dengan garis tipis vertikal sebagai penanda. Garis itu bukan berarti sinyal hilang.
+
 ## Trigger Sniffer
+
+![Trigger sniffer](img/mazduino-tuner/trigger-sniffer.png)
 
 Menampilkan tepi sinyal CKP dan CMP serta titik TDC seperti yang dilihat firmware (engine sniffer),
 dengan RPM setiap siklus. Bisa dipakai di semua board Mazduino.
+
+1. Klik **Start**. Setiap siklus mesin yang diterima menambah **Charts received**.
+2. Garis oranye **TDC** menandai titik mati atas silinder 1 beserta RPM saat itu.
+3. Batang di bawah adalah waktu antar gigi; batang oranye adalah gigi yang hilang.
+4. Bandingkan **Detected wheel** dengan **Trigger setting**, dan perhatikan **Trigger errors**.
 
 Firmware hanya merekam di bawah batas RPM engine sniffer. Jika RPM di atas batas itu, halaman ini
 memberi tahu Anda.
