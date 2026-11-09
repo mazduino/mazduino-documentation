@@ -42,6 +42,14 @@ nav:
   - Sensor dan Wiring: 
     - Persiapan: persiapan-sensor-wiring.md
     - Rekomendasi Ukuran Kabel: rekomendasi-ukuran-kabel.md
+  - Manual Mazduino Tuner:
+    - Ringkasan dan Instalasi: mazduino-tuner-manual.md
+    - Koneksi dan Tampilan: mazduino-tuner-interface.md
+    - Mengubah Tune: mazduino-tuner-tuning.md
+    - Proyek dan File Tune: mazduino-tuner-proyek.md
+    - Update Firmware: mazduino-tuner-update-firmware.md
+    - Logger dan Real Time: mazduino-tuner-logger.md
+    - Diagnostik: mazduino-tuner-diagnostik.md
   - Manual TunerStudio:
     - Manual Lengkap: tunerstudio-manual.md
     - Instalasi: tunerstudio-instalasi.md

@@ -142,6 +142,10 @@ Yang sudah benar-benar diuji jalan dengan Speeduino hanya **Compact v1**, **Mini
 
 ### Software yang Dibutuhkan
 
+- **Mazduino Tuner** (alpha): [github.com/mazduino/mazduino-tuner/releases][mazduino-tuner] —
+  software tuning Mazduino, termasuk update firmware lewat USB. Lihat
+  [Manual Mazduino Tuner](mazduino-tuner-manual.md).
+
 - **TunerStudio MS**: [tunerstudio.com][tunerstudio] — software tuning dan konfigurasi ECU
 
 - **STM32CubeProgrammer**: [st.com][stm32cubeprog] — untuk flashing firmware via ST-Link atau DFU
@@ -251,6 +255,7 @@ Setelah firmware ECU ter-flash:
 [rusefi-build]: https://rusefi.com/build_server/
 [speeduino-releases]: https://github.com/mazduino/speeduino-fw/releases
 [tunerstudio]: https://www.tunerstudio.com
+[mazduino-tuner]: https://github.com/mazduino/mazduino-tuner/releases
 [stm32cubeprog]: https://www.st.com/en/development-tools/stm32cubeprog.html
 [rusefi]: https://rusefi.com
 [iox-releases]: https://github.com/mazduino/can-io-extender/releases
