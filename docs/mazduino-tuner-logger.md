@@ -73,7 +73,7 @@ Tab **Shortcuts** berisi daftar tombol keyboard. Klik baris halaman untuk langsu
 
 | Tombol | Fungsi |
 |---|---|
-| F5 / F6 / F7 / F11 | Fuel table (VE) / tabel target AFR / Ignition table / Trigger |
+| F5 / F6 / F7 / F11 (bawaan) | Fuel table (VE) / tabel target AFR / Ignition table / Trigger. Bisa diganti dan ditambah (F2 sampai F12) lewat klik kanan halaman di menu. |
 | W atau + / Q atau − | Naikkan / turunkan sel terpilih (Shift: 10 langkah) |
 | = atau Enter | Isi semua sel terpilih |
 | H / V | Interpolasi horizontal / vertikal |

@@ -83,6 +83,28 @@ Ikon kecil di depan nama halaman menunjukkan jenisnya:
 Di kanan atas setiap halaman ada **ID halaman** (misalnya `veTableDialog`) yang juga bisa dicari,
 dan label mode tulis: **local edits** (perubahan hanya di aplikasi) atau **writes allowed**.
 
+### Klik Kanan pada Halaman
+
+Klik kanan sebuah halaman di menu (di layar sentuh: tekan lama):
+
+![Menu klik kanan](img/mazduino-tuner/page-menu.png)
+
+| Pilihan | Fungsi |
+|---|---|
+| **Load this page from another file...** | Memuat pengaturan halaman ini saja dari file `.mdt` atau `.msq`. Lihat [Memuat Satu Halaman dari File](mazduino-tuner-proyek.md#memuat-satu-halaman-dari-file). |
+| **Keyboard shortcut...** | Memberi halaman ini tombol F2 sampai F12, atau menghapusnya (**No shortcut**). Daftar tombol menunjukkan halaman mana yang sudah memakai tiap tombol; tombol yang dipilih pindah ke halaman ini. |
+| **Add to Shortcuts / Remove from Shortcuts** | Menambah atau menghapus halaman dari tab **SHORTCUTS** |
+
+Tombol yang dipakai halaman tertulis di samping namanya, misalnya **Fuel priming (F8)**. Bawaan:
+F5 Fuel table, F6 target AFR/Lambda, F7 Ignition table, F11 Trigger. Semua bisa diganti.
+
+### Tab SHORTCUTS
+
+Tab **SHORTCUTS** di atas menu berisi halaman yang Anda tambahkan, sesuai urutan ditambahkan.
+Klik untuk membuka, klik kanan untuk menu yang sama seperti di atas.
+
+![Tab SHORTCUTS](img/mazduino-tuner/shortcuts-tab.png)
+
 ### Panel Bawah
 
 Panel bawah berisi tiga tab: **Logger**, **Real Time**, dan **Shortcuts**. Garis pembatas di atas

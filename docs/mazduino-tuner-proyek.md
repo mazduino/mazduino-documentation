@@ -103,3 +103,16 @@ Hasil **Compare** memakai tampilan yang sama dengan dialog di atas:
 
 Untuk file dari firmware lain, **Import** ditolak dengan peringatan, sedangkan **Compare** tetap
 bisa dipakai sebagai panduan (tanpa tombol Apply).
+
+## Memuat Satu Halaman dari File
+
+Untuk mengambil pengaturan **satu halaman saja** dari tune lain (misalnya cranking dari tune mobil
+lain), klik kanan halaman itu di menu, lalu pilih **Load this page from another file...** dan pilih
+file `.mdt` atau `.msq`.
+
+![Memuat satu halaman dari file](img/mazduino-tuner/load-page.png)
+
+- Hanya pengaturan di halaman itu yang dibandingkan, dengan tampilan yang sama seperti di atas.
+- **Apply to this page** menerapkan nilai dari file ke tune lokal. Belum dikirim ke ECU: kirim
+  dengan **Send to ECU** dan simpan dengan **Burn**, atau batalkan dengan **Ctrl+Z**.
+- Aturan firmware yang sama berlaku: file dari firmware lain hanya ditampilkan sebagai panduan.

@@ -104,12 +104,13 @@ enrichment**:
 
 ## Shortcut Halaman
 
-| Tombol | Halaman |
+| Tombol (bawaan) | Halaman |
 |---|---|
 | F5 | Fuel table (VE) |
 | F6 | Tabel target AFR / Lambda |
 | F7 | Ignition table |
 | F11 | Trigger |
 
-Daftar lengkap ada di tab **Shortcuts** di panel bawah. Lihat
-[Logger dan Real Time](mazduino-tuner-logger.md#shortcuts).
+Tombol F2 sampai F12 bisa diberikan ke halaman mana pun lewat klik kanan di menu. Lihat
+[Klik Kanan pada Halaman](mazduino-tuner-interface.md#klik-kanan-pada-halaman). Daftar lengkap
+ada di tab **Shortcuts** di panel bawah ([Logger dan Real Time](mazduino-tuner-logger.md#shortcuts)).
