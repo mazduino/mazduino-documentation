@@ -82,13 +82,13 @@ Klik **Settings** di kanan atas.
 | **Auto-connect** | Langsung connect ke port terakhir saat ECU dicolok |
 | **Import / Export / Compare .msq** | Bertukar tune dengan TunerStudio. Lihat [Proyek dan File Tune](mazduino-tuner-proyek.md#file-tunerstudio-msq). |
 | **Save when disconnecting** | Simpan data log otomatis saat disconnect |
-| **Log folder / Data folders** | Membuka folder log dan folder data aplikasi |
+| **Log folder** | Membuka folder data log |
 
 ## Lokasi File
 
 | Isi | Lokasi |
 |---|---|
-| Pengaturan, cache INI, log koneksi dan update firmware, backup tune sebelum update | `%APPDATA%\MazduinoTuner` |
+| Pengaturan aplikasi, log koneksi dan update firmware, backup tune sebelum update | `%APPDATA%\MazduinoTuner` |
 | Data log | `Documents\Mazduino Tuner\Logs`, atau folder `Logs` di samping proyek `.mdt` |
 
 Uninstall tidak menghapus folder-folder ini.
