@@ -281,10 +281,11 @@ DashTune adalah aplikasi Android untuk mengatur dash dari HP. Untuk Racedash
 Pro M4/M5/M7, sambungannya lewat **Bluetooth** — tidak perlu WiFi dan tidak
 perlu mencabut apa pun.
 
-> **Mendapatkan aplikasinya:** buka **[www.mazduino.com](https://www.mazduino.com/)**
-> dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
-> tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
-> Play Anda di sana, dan undangan akan dikirim lewat email.
+> **Mendapatkan aplikasinya:** DashTune masih dalam tahap uji. Buka
+> **[www.mazduino.com/dashtune/tester](https://www.mazduino.com/dashtune/tester)**
+> dari HP Android dan ikuti tiga langkahnya dengan akun Google yang sama dengan
+> yang aktif di Play Store: bergabung ke grup tester, tekan **Become a tester**,
+> lalu pasang DashTune dari Play Store.
 
 #### Kalau Play Store menampilkan "Can't download DashTune"
 

@@ -171,9 +171,9 @@ mobil dapat dibaca — lihat
 
 **Cara mengaturnya berbeda antar varian:**
 
-- **Racedash 3.5" & 4"** — lewat browser di
-  [mazduino.com/display-control](https://www.mazduino.com/display-control) atau
-  lewat aplikasi **DashTune**, keduanya melalui WiFi yang dipancarkan dash.
+- **Racedash 3.5" & 4"** — lewat aplikasi **DashTune** melalui WiFi yang
+  dipancarkan dash ([panduannya](mazduino-racedash.md#pengaturan-lewat-dashtune)).
+  Cara lama lewat browser masih ada untuk yang belum bisa memakai DashTune.
 - **Racedash Pro M4 / M5 / M7** — lewat aplikasi **DashTune** melalui Bluetooth,
   atau dari layar sentuh dash itu sendiri. Varian ini **tidak** dapat diatur
   lewat browser.
@@ -192,8 +192,9 @@ mobil dapat dibaca — lihat
 ### Kalau Anda memakai Racedash
 
 1. **Pasang dash** — Sambungkan ke ECU lewat CAN Bus atau Serial sesuai pinout di halaman varian Anda
-2. **Pilih protokol ECU** — Sesuaikan dengan ECU yang dipakai; tidak perlu ganti firmware
-3. **Atur tampilan** — Pilih template, data tiap panel, dan lampu peringatan lewat browser atau aplikasi DashTune
+2. **Pilih protokol ECU** — Sesuaikan dengan ECU yang dipakai
+3. **Pasang DashTune** — Daftar sebagai tester di [www.mazduino.com/dashtune/tester](https://www.mazduino.com/dashtune/tester), lalu pasang dari Play Store
+4. **Atur tampilan** — Pilih template, data tiap panel, lampu peringatan, dan splash screen dari DashTune
 
 ---
 

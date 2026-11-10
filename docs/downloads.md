@@ -196,9 +196,17 @@ sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.
 
 | Varian | Cara update | Perlu buka case? |
 | :---- | :---- | :---- |
-| Racedash 3.5" & 4" (M1, M2, M3, C1) | **Mazduino Flasher** — OTA lewat WiFi | Tidak |
+| Racedash 3.5" & 4" (M1, M2, M3, C1) | Aplikasi **DashTune** — lewat WiFi dash | Tidak |
+| Racedash 3.5" & 4" (M1, M2, M3, C1) | **Mazduino Flasher** dari laptop — lewat WiFi dash | Tidak |
 | Racedash 3.5" & 4" | USB TTL internal | Ya |
 | Racedash Pro M4, M5, M7 | Aplikasi **DashTune** | Tidak |
+
+### Lewat DashTune (Racedash 3.5" & 4")
+
+Sambungkan HP ke WiFi dash, buka DashTune, lalu pilih **Update Firmware** di
+Beranda. Aplikasi memilih firmware yang cocok untuk dash Anda dan mengunduhnya
+lewat data seluler. Langkah lengkapnya ada di
+[Update Firmware di DashTune](mazduino-racedash.md#7-update-firmware).
 
 ### Lewat Mazduino Flasher (OTA)
 
@@ -211,7 +219,7 @@ Hubungkan HP/laptop ke WiFi yang dipancarkan dash, pilih model yang benar pada
 > Anda, dan firmware model lain akan membuat dash gagal menyala.
 
 Langkah lengkapnya ada di
-[Update Firmware Racedash](mazduino-racedash.md#update-firmware-usb-atau-ota).
+[Update Firmware Racedash](mazduino-racedash.md#update-firmware).
 
 ### Lewat DashTune (Racedash Pro M4 / M5 / M7)
 
