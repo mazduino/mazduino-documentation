@@ -322,6 +322,11 @@ sendiri saat dibuka berikutnya.
 
 ### Isi menu DashTune
 
+![Beranda DashTune dan layar Racedash Pro M7](img/dash/dashtune-pro-home.png)
+
+*Kiri: beranda DashTune saat tersambung ke Racedash Pro M7. Kanan: layar dash
+dengan tema Apex.*
+
 Urutan menu di beranda DashTune:
 
 | Menu | Fungsi |
@@ -329,16 +334,39 @@ Urutan menu di beranda DashTune:
 | **Tema** | Memilih tema yang tampil di dash dan memasang tema baru dari Theme Store. Pada firmware lama menu ini bernama **Dashboard** dan mengatur data yang tampil pada tiap template |
 | **CAN Buttons** | Membuat dan mengatur tombol CAN yang tampil di layar dash |
 | **General Setting** | Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash |
+| **Data log** | Merekam data perjalanan ke memori dash. Saat memori penuh, log terlama dihapus. Untuk mengambil log, HP tersambung sebentar ke WiFi dash |
 | **Lampu LED** | Shift light dan indikator, hanya pada dash yang memiliki strip LED |
 | **Splash** | Membuat gambar pembuka sendiri (lihat di bawah) |
 | **Update Firmware** | Memperbarui firmware dash. Di bagian bawahnya ada **Mode WiFi OTA** untuk menyalakan WiFi dash agar bisa dijangkau dari komputer |
 | **Info** | Versi firmware dan kondisi perangkat |
+
+#### Tema dan Theme Store
+
+![Menu Tema dan Theme Store di DashTune](img/dash/dashtune-pro-themes.png)
+
+Buka **Tema** untuk melihat tema yang ada di dash dan memilih yang ditampilkan.
+Tema **Apex** selalu terpasang bawaan. Tekan **Theme Store** untuk melihat
+tema lain beserta preview-nya, lalu pilih tema dan tekan **Pasang**. Selama
+pemasangan HP masuk sebentar ke WiFi dash **Mazduino-Dash**; dashboard tetap
+berjalan seperti biasa.
+
+#### General Setting dan CAN Buttons
+
+![General Setting dan CAN Buttons di DashTune](img/dash/dashtune-pro-general.png)
+
+Di **General Setting**, protokol ECU diganti langsung tanpa flash ulang
+firmware. Di sini juga ada satuan tekanan dan suhu, mode MAP, kecerahan layar,
+Max RPM, rentang tiap data, Custom Channels, sumber fuel level, dan sumber tiap
+indikator. **CAN Buttons** berisi tombol yang tampil di layar dash; tekan ikon
+pensil untuk mengubah tombol, atau **+** untuk menambah tombol baru.
 
 **Riwayat Pengaturan** ada di tab **Lainnya → Akun**. Di sana tersimpan
 pengaturan dash dari waktu ke waktu. Periksa dulu isinya, lalu pilih yang
 ingin dikembalikan ke dash.
 
 ### Membuat splash screen sendiri
+
+![Editor Splash di DashTune](img/dash/dashtune-pro-splash.png)
 
 Masuk ke menu **Splash**. Di sana bisa menambahkan gambar dari galeri,
 menambah tulisan, menggeser dan memperbesar-kecilkan, lalu memilih warna latar.
@@ -386,6 +414,8 @@ Kalau masih gagal, hubungi support@mazduino.com dengan menyebut model dash,
 versi firmware (Setting > About), dan pesan error yang muncul.
 
 ### Update firmware
+
+![Menu Update Firmware di DashTune](img/dash/dashtune-pro-update.png)
 
 Masuk ke menu **Update Firmware**, aplikasi akan memeriksa versi terbaru dan
 menampilkan versi yang terpasang sekarang. Kalau ada versi baru, tekan tombol
