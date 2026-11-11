@@ -188,6 +188,23 @@
                   <li class="toctree-l1"><a class="reference internal" href="rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="tunerstudio-manual/">Manual Lengkap</a>
@@ -271,7 +288,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 September 2026 08:00:54 UTC">13 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 November 2026 07:17:42 UTC">11 November 2026</span></em></p>
   <h1 id="dokumentasi-mazduino">Dokumentasi Mazduino<a class="headerlink" href="#dokumentasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Selamat datang di dokumentasi resmi Mazduino. Mazduino membuat perangkat
 manajemen mesin standalone open-source berbasis mikrokontroler ARM Cortex beserta
@@ -459,9 +476,9 @@ mobil dapat dibaca — lihat
 <a href="mazduino-racedash-pro/#batasan-obd-ii">batasannya</a>.</p>
 <p><strong>Cara mengaturnya berbeda antar varian:</strong></p>
 <ul>
-<li><strong>Racedash 3.5" &amp; 4"</strong> — lewat browser di
-  <a href="https://www.mazduino.com/display-control">mazduino.com/display-control</a> atau
-  lewat aplikasi <strong>DashTune</strong>, keduanya melalui WiFi yang dipancarkan dash.</li>
+<li><strong>Racedash 3.5" &amp; 4"</strong> — lewat aplikasi <strong>DashTune</strong> melalui WiFi yang
+  dipancarkan dash (<a href="mazduino-racedash/#pengaturan-lewat-dashtune">panduannya</a>).
+  Cara lama lewat browser masih ada untuk yang belum bisa memakai DashTune.</li>
 <li><strong>Racedash Pro M4 / M5 / M7</strong> — lewat aplikasi <strong>DashTune</strong> melalui Bluetooth,
   atau dari layar sentuh dash itu sendiri. Varian ini <strong>tidak</strong> dapat diatur
   lewat browser.</li>
@@ -478,8 +495,9 @@ mobil dapat dibaca — lihat
 <h3 id="kalau-anda-memakai-racedash">Kalau Anda memakai Racedash<a class="headerlink" href="#kalau-anda-memakai-racedash" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Pasang dash</strong> — Sambungkan ke ECU lewat CAN Bus atau Serial sesuai pinout di halaman varian Anda</li>
-<li><strong>Pilih protokol ECU</strong> — Sesuaikan dengan ECU yang dipakai; tidak perlu ganti firmware</li>
-<li><strong>Atur tampilan</strong> — Pilih template, data tiap panel, dan lampu peringatan lewat browser atau aplikasi DashTune</li>
+<li><strong>Pilih protokol ECU</strong> — Racedash Pro (M4, M5, M7, M7 Pro): pilih di setting dash atau DashTune. Racedash 3.5" &amp; 4" (M1, M2, M3, C1): protokol sudah mengikuti firmware pesanan; kalau ganti ECU, pakai <strong>Flash protokol lain</strong> di menu Update Firmware DashTune</li>
+<li><strong>Pasang DashTune</strong> — Daftar sebagai tester di <a href="https://www.mazduino.com/dashtune/tester">www.mazduino.com/dashtune/tester</a>, lalu pasang dari Play Store</li>
+<li><strong>Atur tampilan</strong> — Pilih template, data tiap panel, lampu peringatan, dan splash screen dari DashTune</li>
 </ol>
 <hr />
 <h2 id="dokumentasi">Dokumentasi<a class="headerlink" href="#dokumentasi" title="Permanent link">&para;</a></h2>
@@ -580,5 +598,5 @@ mobil dapat dibaca — lihat
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-11-08 14:19:41.985527+00:00
+Build Date UTC : 2026-11-11 15:26:25.327659+00:00
 -->

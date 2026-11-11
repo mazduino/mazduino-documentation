@@ -115,8 +115,6 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#fitur-utama">Fitur Utama</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#custom-splash-screen">Custom Splash Screen</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)</a>
@@ -129,15 +127,33 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#konfigurasi">Konfigurasi</a>
+    <li class="toctree-l3"><a class="reference internal" href="#pengaturan-lewat-dashtune">Pengaturan lewat DashTune</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#lewat-browser-mazduinocom">Lewat Browser (mazduino.com)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#1-pasang-dashtune">1. Pasang DashTune</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#lewat-aplikasi-dashtune-android">Lewat Aplikasi DashTune (Android)</a>
+    <li class="toctree-l4"><a class="reference internal" href="#2-sambungkan-ke-dash">2. Sambungkan ke dash</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-kontrol-tampilan">3. Kontrol Tampilan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-sumber-data">4. Sumber Data</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#5-protokol-can">5. Protokol CAN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#6-splash-screen">6. Splash Screen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#7-update-firmware">7. Update Firmware</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tanya-dina">Tanya Dina</a>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#update-firmware">Update Firmware</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#lewat-mazduino-flasher">Lewat Mazduino Flasher</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cara-lama-browser-dan-halaman-19216841">Cara lama: browser dan halaman 192.168.4.1</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#referensi">Referensi</a>
     </li>
@@ -166,6 +182,23 @@
                   <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostik</a>
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
@@ -253,7 +286,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 September 2026 17:03:37 UTC">20 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 November 2026 07:17:42 UTC">11 November 2026</span></em></p>
   <h1 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Racedash adalah dash display digital yang menampilkan data real-time dari ECU, seperti RPM, gear indicator, kecepatan, dan berbagai data sensor lainnya. Halaman ini membahas varian layar <strong>3.5"</strong> dan <strong>4"</strong>. Untuk varian layar lebih besar (4.3", 5", dan 7"), lihat <strong><a href="../mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong>.</p>
@@ -278,28 +311,28 @@
 </tr>
 </tbody>
 </table>
-<p>Kedua varian menggunakan cara konfigurasi yang sama melalui WiFi dan browser, seperti dijelaskan pada bagian <a href="#konfigurasi">Konfigurasi</a> di bawah.</p>
+<p>Kedua varian diatur dari HP dengan aplikasi <strong>DashTune</strong>, lewat WiFi yang
+dipancarkan dash. Langsung ke <a href="#pengaturan-lewat-dashtune">Pengaturan lewat DashTune</a>.</p>
+<p><img alt="DashTune dan layar Racedash" src="../img/dash/dashtune-home.png" /></p>
+<p><em>Kiri: halaman utama DashTune saat tersambung ke dash. Kanan: layar dash dengan
+template Klasik.</em></p>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Layar digital menampilkan RPM, gear indicator, kecepatan, dan data sensor lain secara real-time</li>
-<li>Konfigurasi tampilan dashboard via WiFi langsung dari browser HP/laptop, tanpa aplikasi tambahan</li>
+<li>Diatur dari aplikasi Android <strong>DashTune</strong>: template layar, data tiap panel, lampu indikator, protokol ECU, splash screen, dan update firmware, semuanya dari HP</li>
+<li>Dua template layar: <strong>Klasik</strong> (bar RPM, gear, speed, dan panel kotak) dan <strong>Grid</strong> (satu layar penuh berisi panel data)</li>
 <li>Mendukung komunikasi ke ECU melalui <strong>CAN Bus</strong> atau <strong>Serial</strong>, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis <strong>Speeduino</strong> wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> menggunakan mode CAN Bus</li>
 </ul>
+<p><img alt="Template Klasik dan Grid" src="../img/dash/racedash-templates.png" /></p>
+<p><em>Template Klasik (kiri) dan Grid (kanan)</em></p>
 <blockquote>
 <p><strong>Sisi ECU juga harus diatur.</strong> Dash hanya mendengarkan — ECU yang harus
 menyiarkan datanya, pada kecepatan CAN yang tepat. Lihat
 <a href="../setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a>.</p>
 </blockquote>
-<h2 id="custom-splash-screen">Custom Splash Screen<a class="headerlink" href="#custom-splash-screen" title="Permanent link">&para;</a></h2>
-<p>Racedash mendukung splash screen (gambar/logo) custom yang tampil saat perangkat baru menyala. Splash screen dibuat melalui <strong>Splash Screen Generator</strong> dan diunggah ke Racedash melalui WiFi.</p>
-<ol>
-<li>Buka <strong><a href="https://www.mazduino.com/splash-generator">mazduino.com/splash-generator</a></strong> melalui browser HP/laptop.</li>
-<li>Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.</li>
-<li>Unggah hasilnya ke Racedash melalui koneksi WiFi <strong>"Mazduino_Display"</strong>.</li>
-</ol>
 <h2 id="racedash-35-konektor-jst-4-pin">Racedash 3.5" (Konektor JST 4 Pin)<a class="headerlink" href="#racedash-35-konektor-jst-4-pin" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash 3.5 inch JST 4 Pin" src="../img/dash/racedash-jst4-product.png" /></p>
-<p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan secara <strong>OTA (Over-The-Air)</strong> melalui WiFi, lihat bagian <a href="#update-firmware-usb-atau-ota">Update Firmware</a>.</p>
+<p>Varian ini menggunakan konektor <strong>JST 4 Pin</strong> yang ringkas untuk instalasi cepat. Tidak ada port USB yang terekspos di luar case — update firmware dilakukan lewat WiFi, lihat bagian <a href="#update-firmware">Update Firmware</a>.</p>
 <h3 id="konektor-jst-4-pin-wiring-ke-kendaraan">Konektor JST 4 Pin (Wiring ke Kendaraan)<a class="headerlink" href="#konektor-jst-4-pin-wiring-ke-kendaraan" title="Permanent link">&para;</a></h3>
 <p>Konektor eksternal yang digunakan untuk menghubungkan Racedash ke kendaraan/ECU.</p>
 <p><img alt="Wiring Konektor JST 4 Pin" src="../img/dash/racedash-jst4-wiring.png" /></p>
@@ -370,32 +403,146 @@ peringatan di bawah layar</em></p>
 <li>Pin 3 dan 4 berfungsi sebagai <strong>CAN High/CAN Low</strong> untuk ECU <strong>rusEFI</strong>, <strong>Haltech</strong>, dan <strong>MaxxECU</strong> (mode CAN Bus).</li>
 <li>Khusus untuk ECU <strong>Speeduino</strong>, pin 3 dan 4 berfungsi sebagai <strong>TX/RX Serial</strong> — Speeduino tidak memiliki CAN Bus native, sehingga data diambil melalui <strong>secondary serial (Serial3) Arduino Mega</strong>.</li>
 </ul>
-<h2 id="update-firmware-usb-atau-ota">Update Firmware (USB atau OTA)<a class="headerlink" href="#update-firmware-usb-atau-ota" title="Permanent link">&para;</a></h2>
-<p>Update firmware Racedash dapat dilakukan dengan dua cara:</p>
+<h2 id="pengaturan-lewat-dashtune">Pengaturan lewat DashTune<a class="headerlink" href="#pengaturan-lewat-dashtune" title="Permanent link">&para;</a></h2>
+<p><strong>DashTune</strong> adalah aplikasi Android resmi untuk mengatur Racedash. Semua yang
+dulu diatur lewat browser (Display Control) dan Splash Screen Generator
+sekarang ada di satu aplikasi, dan bisa dipakai tanpa koneksi internet selama
+HP tersambung ke WiFi dash.</p>
+<p>Racedash 3.5" dan 4" tersambung ke DashTune lewat <strong>WiFi</strong>. Racedash Pro
+(M4/M5/M7) memakai Bluetooth — panduannya ada di halaman
+<a href="../mazduino-racedash-pro/#panduan-aplikasi-dashtune">Racedash Pro</a>.</p>
+<h3 id="1-pasang-dashtune">1. Pasang DashTune<a class="headerlink" href="#1-pasang-dashtune" title="Permanent link">&para;</a></h3>
+<p>DashTune masih dalam tahap uji, jadi dipasang lewat program tester Google Play.
+Buka <strong><a href="https://www.mazduino.com/dashtune/tester">www.mazduino.com/dashtune/tester</a></strong>
+dari HP Android, lalu ikuti tiga langkah di sana dengan <strong>akun Google yang sama</strong>
+dengan yang aktif di Play Store:</p>
 <ol>
-<li><strong>USB</strong> — membuka case Racedash, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.</li>
-<li><strong>OTA (Over-The-Air)</strong> — melalui WiFi menggunakan <strong>Mazduino Flasher</strong>, tanpa perlu membuka case.</li>
+<li>Bergabung ke grup tester DashTune.</li>
+<li>Tekan <strong>Become a tester</strong> di halaman tester Google Play.</li>
+<li>Pasang DashTune dari Play Store.</li>
 </ol>
+<p>Kalau Play Store menampilkan <strong>"Can't download DashTune"</strong>, lihat
+<a href="../mazduino-racedash-pro/#kalau-play-store-menampilkan-cant-download-dashtune">langkah perbaikannya</a>.</p>
+<h3 id="2-sambungkan-ke-dash">2. Sambungkan ke dash<a class="headerlink" href="#2-sambungkan-ke-dash" title="Permanent link">&para;</a></h3>
+<p><img alt="Tambah Dash dan sambungan WiFi di DashTune" src="../img/dash/dashtune-connect.png" /></p>
+<ol>
+<li>Nyalakan dash, lalu sambungkan WiFi HP ke <strong>"MAZDUINO_Display"</strong> dengan
+   password <strong>"12345678"</strong>. Kalau Android bertanya karena WiFi ini tidak punya
+   internet, pilih tetap tersambung.</li>
+<li>Buka DashTune, masuk ke tab <strong>Perangkat</strong>, lalu tekan <strong>Tambah Dash</strong>.</li>
+<li>Tekan <strong>Pindai</strong>. Dash akan ditemukan di jaringan WiFi yang sedang dipakai
+   HP.</li>
+<li>Kalau tidak ditemukan, pilih model Racedash Anda di bagian <strong>Model Dash</strong>,
+   isi <strong>Alamat IP</strong> <code>192.168.4.1</code> (port <code>80</code>), lalu tekan <strong>Sambungkan</strong>.</li>
+</ol>
+<p>Setelah tersambung, dash muncul di tab <strong>Beranda</strong> dalam bentuk kartu-kartu
+menu: Kontrol Tampilan, Sumber Data, Protokol CAN, Splash, Update Firmware, dan
+Info.</p>
+<h3 id="3-kontrol-tampilan">3. Kontrol Tampilan<a class="headerlink" href="#3-kontrol-tampilan" title="Permanent link">&para;</a></h3>
+<p><img alt="Menu Kontrol Tampilan di DashTune" src="../img/dash/dashtune-display-control.png" /></p>
+<p>Semua yang tampil di layar diatur di sini, dan langsung dikirim ke dash.</p>
+<ul>
+<li><strong>Kecerahan layar</strong> — 0 = mati, 255 = paling terang.</li>
+<li><strong>Template layar utama</strong> — <strong>Klasik</strong> (bar RPM, gear, speed, panel kotak)
+  atau <strong>Grid</strong> (satu layar penuh, satu sel tiap panel data).</li>
+<li><strong>Baris indikator</strong> (Klasik) — <strong>Selalu tampil</strong>: delapan lampu status selalu
+  terlihat. <strong>Notifikasi + fuel bar</strong>: lampu muncul beberapa detik saat
+  berubah, dan separuh baris lainnya menjadi fuel level bar.</li>
+<li><strong>Indikator</strong> — nyalakan atau matikan tiap lampu: SYNC, FAN, ASE, WUE, REV,
+  LCH, AC, DFCO, FPMP, CEL, FAN2, KNOCK, TC, ANTL, SCUT. Mematikan lampu hanya
+  menyembunyikannya di layar, terlepas apakah ECU mengirimnya.</li>
+<li><strong>Skala bar RPM</strong> — RPM maksimum bar di layar, 1000–20000.</li>
+<li><strong>RPM shift light</strong> — strip LED di atas layar: RPM mulai menyala,
+  <strong>Kecerahan LED</strong>, pola <strong>Bar RPM</strong> (Mode 1–4), dan tombol <strong>Tes LED</strong> untuk
+  mencobanya tanpa menggeber mesin.</li>
+</ul>
+<p>Pengaturan RPM shift light hanya muncul pada dash yang memang memiliki strip
+LED-nya.</p>
+<h3 id="4-sumber-data">4. Sumber Data<a class="headerlink" href="#4-sumber-data" title="Permanent link">&para;</a></h3>
+<p><img alt="Menu Sumber Data di DashTune" src="../img/dash/dashtune-data-source.png" /></p>
+<p>Racedash punya <strong>8 panel data</strong>. Ketuk panel untuk memilih data yang
+ditampilkan, misalnya AFR, TPS, IAT, MAP, Coolant, Voltage, atau ADV. Pilih
+<strong>Nonaktif</strong> untuk mengosongkan panel.</p>
+<h3 id="5-protokol-can">5. Protokol CAN<a class="headerlink" href="#5-protokol-can" title="Permanent link">&para;</a></h3>
+<p>Menu ini menunjukkan protokol ECU yang dibaca dash dan bitrate CAN-nya. Firmware
+Racedash 3.5" dan 4" (M1, M2, M3, C1) dibuat untuk satu ECU sesuai pesanan, jadi
+di sini hanya protokol ECU itu dan <strong>Custom</strong> yang bisa dipilih. Ini berbeda
+dengan <a href="../mazduino-racedash-pro/">Racedash Pro</a> (M4, M5, M7, M7 Pro), yang
+protokolnya bisa diganti langsung dari setting. <strong>Custom</strong> dipakai untuk ECU yang tidak
+ada di daftar, dengan peta data CAN yang diatur sendiri.</p>
+<p>Kalau ECU di mobil diganti merek, dash tidak perlu dikirim balik: buka
+<a href="#7-update-firmware">Update Firmware</a> dan pilih <strong>Flash protokol lain</strong>.
+DashTune akan meminta konfirmasi sebelum mem-flash. Pilihan ini hanya ada di
+dash mode CAN Bus; dash mode Serial untuk Speeduino tidak memakai menu ini.</p>
+<p>Pastikan juga ECU sudah menyiarkan data CAN-nya — lihat
+<a href="../setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a>.</p>
+<h3 id="6-splash-screen">6. Splash Screen<a class="headerlink" href="#6-splash-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Editor Splash di DashTune dan hasilnya di dash" src="../img/dash/dashtune-splash.png" /></p>
+<p>Splash adalah gambar pembuka yang tampil saat dash baru menyala. Splash dibuat
+langsung di DashTune, tidak perlu lagi membuka Splash Screen Generator di web.</p>
+<ol>
+<li>Buka kartu <strong>Splash</strong> di Beranda.</li>
+<li>Tekan <strong>+ Gambar</strong> untuk memasang foto atau logo dari galeri HP, dan
+   <strong>+ Teks</strong> untuk menulis teks. Bisa lebih dari satu layer, misalnya gambar
+   background lalu logo di atasnya.</li>
+<li>Ketuk layer untuk memilihnya, geser untuk memindahkan, dan cubit untuk
+   memperbesar atau memperkecil. Untuk teks, atur isi, ukuran, dan font-nya.
+   Warna background dipilih dari deretan warna di bawah preview.</li>
+<li>Tekan <strong>Kirim ke Dash</strong>.</li>
+<li>Matikan lalu nyalakan lagi dash (cabut daya) untuk melihat splash barunya.</li>
+</ol>
+<p>Untuk kembali ke splash bawaan, tekan <strong>Hapus splash (kembali default)</strong>.</p>
+<h3 id="7-update-firmware">7. Update Firmware<a class="headerlink" href="#7-update-firmware" title="Permanent link">&para;</a></h3>
+<p>Buka kartu <strong>Update Firmware</strong>. DashTune memeriksa versi terbaru untuk dash
+Anda dan menampilkan versi yang terpasang sekarang.</p>
+<ul>
+<li><strong>Update dari Server</strong> — mengunduh dan memasang versi terbaru. Karena WiFi
+  dash tidak punya internet, DashTune mengunduh lewat <strong>data seluler</strong>, jadi
+  nyalakan data seluler sebelum mulai.</li>
+<li><strong>Pilih File Firmware</strong> — memasang file firmware yang sudah ada di HP,
+  misalnya file yang dikirim tim support.</li>
+<li><strong>Flash protokol lain</strong> — mengganti firmware ke ECU lain (lihat
+  <a href="#5-protokol-can">Protokol CAN</a>).</li>
+</ul>
+<p>Kalau data seluler tidak ada, unduh firmware-nya dulu selagi HP punya internet:
+keluar dari WiFi dash, buka tab <strong>Perangkat</strong>, tekan menu <strong>⋮</strong> pada dash, lalu
+<strong>Unduh firmware</strong>. Setelah itu sambungkan lagi ke WiFi dash dan buka <strong>Update
+Firmware</strong> untuk mem-flash file yang sudah tersimpan.</p>
+<blockquote>
+<p><strong>Peringatan</strong>: Jangan lakukan update sambil berkendara. Pastikan listrik
+dash tidak terputus dan aplikasi tidak ditutup sampai proses selesai. Update
+yang terputus di tengah jalan bisa membuat dash gagal menyala.</p>
+</blockquote>
+<h3 id="tanya-dina">Tanya Dina<a class="headerlink" href="#tanya-dina" title="Permanent link">&para;</a></h3>
+<p>Tombol <strong>Tanya Dina</strong> di Beranda membuka asisten di dalam DashTune. Tanyakan
+apa saja seputar pemasangan dan pengaturan dash, misalnya "kenapa RPM tidak
+muncul?".</p>
+<h2 id="update-firmware">Update Firmware<a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h2>
+<p>Cara yang disarankan adalah lewat DashTune, lihat
+<a href="#7-update-firmware">Update Firmware di DashTune</a>. Dua cara lain tetap bisa
+dipakai:</p>
+<ol>
+<li><strong>Mazduino Flasher (laptop, lewat WiFi)</strong> — tanpa perlu membuka case.</li>
+<li><strong>USB</strong> — membuka case Racedash, lalu menghubungkan port/pin USB TTL internal ke komputer secara langsung.</li>
+</ol>
+<h3 id="lewat-mazduino-flasher">Lewat Mazduino Flasher<a class="headerlink" href="#lewat-mazduino-flasher" title="Permanent link">&para;</a></h3>
 <p><img alt="Halaman Mazduino Flasher" src="../img/dash/mazduino-flasher.png" /></p>
 <ol>
 <li>Login terlebih dahulu ke akun Mazduino di <a href="https://www.mazduino.com/">mazduino.com</a>, lalu buka <strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>.</li>
 <li>Pilih tab <strong>OTA (WiFi)</strong>.</li>
-<li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> yang dipancarkan oleh Racedash, atau pastikan Racedash berada di jaringan WiFi yang sama.</li>
+<li>Hubungkan laptop ke WiFi <strong>"MAZDUINO_Display"</strong> yang dipancarkan oleh Racedash, atau pastikan Racedash berada di jaringan WiFi yang sama.</li>
 <li>Pilih model Racedash yang sesuai pada <strong>Select Device</strong> — <strong>pastikan device dipilih dengan benar</strong> — lalu klik <strong>Start Flashing</strong>.</li>
 <li>Tunggu proses flashing selesai. Riwayat proses dapat dilihat pada <strong>Flash History</strong>.</li>
 </ol>
-<h2 id="konfigurasi">Konfigurasi<a class="headerlink" href="#konfigurasi" title="Permanent link">&para;</a></h2>
-<p>Pada firmware terbaru ada dua cara mengatur tampilan dashboard: lewat <strong>browser</strong> di
-mazduino.com, atau lewat aplikasi Android <strong>DashTune</strong>. Keduanya mengatur hal yang sama
-dan berlaku untuk kedua varian di halaman ini, 3.5" dan 4" — pilih mana yang
-lebih praktis. Untuk <a href="../mazduino-racedash-pro/">Racedash Pro</a> caranya berbeda:
-pengaturannya lewat DashTune atau layar sentuh, bukan lewat browser.</p>
-<p>Halaman konfigurasi lokal <code>192.168.4.1</code> hanya dipakai oleh firmware lama, dan ada di
-bagian paling bawah halaman ini.</p>
-<h3 id="lewat-browser-mazduinocom">Lewat Browser (mazduino.com)<a class="headerlink" href="#lewat-browser-mazduinocom" title="Permanent link">&para;</a></h3>
+<h2 id="cara-lama-browser-dan-halaman-19216841">Cara lama: browser dan halaman 192.168.4.1<a class="headerlink" href="#cara-lama-browser-dan-halaman-19216841" title="Permanent link">&para;</a></h2>
+<p>Sebelum ada DashTune, Racedash diatur lewat browser. Cara ini masih ada untuk
+yang belum bisa memakai DashTune (misalnya hanya punya iPhone atau laptop),
+tapi fitur barunya hanya ditambahkan di DashTune.</p>
+<details>
+<summary><strong>Display Control di mazduino.com</strong> (klik untuk membuka)</summary>
 <ol>
 <li>Sebelum berpindah WiFi, buka browser dan akses <strong><a href="https://www.mazduino.com/display-control">https://www.mazduino.com/display-control</a></strong> terlebih dahulu selagi HP/laptop masih terhubung internet.</li>
-<li>Setelah halaman terbuka, hubungkan WiFi HP/laptop ke <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong> yang dipancarkan oleh Racedash. Koneksi internet akan terputus, namun halaman yang sudah terbuka tetap dapat digunakan.</li>
+<li>Setelah halaman terbuka, hubungkan WiFi HP/laptop ke <strong>"MAZDUINO_Display"</strong> dengan password <strong>"12345678"</strong> yang dipancarkan oleh Racedash. Koneksi internet akan terputus, namun halaman yang sudah terbuka tetap dapat digunakan.</li>
 <li>Tunggu hingga Racedash terdeteksi otomatis pada <strong>Network Scanner</strong>. Jika tidak terdeteksi otomatis, masukkan IP Racedash secara manual pada kolom <strong>Manual IP Address</strong>: <strong>192.168.4.1</strong>, lalu klik <strong>Test Connection</strong>.</li>
 </ol>
 <p><img alt="Network Scanner Mazduino Display Control" src="../img/dash/mazduino-display-control-1.png" /></p>
@@ -407,35 +554,22 @@ bagian paling bawah halaman ini.</p>
 <li>Atur data yang ditampilkan pada tiap posisi panel, template layar, brightness, dan mode komunikasi (CAN Bus/Serial) sesuai kebutuhan pada bagian <strong>Display Configuration</strong>.</li>
 </ol>
 <p><img alt="Display Configuration pada Mazduino Display Control" src="../img/dash/mazduino-display-control-3.png" /></p>
-<h3 id="lewat-aplikasi-dashtune-android">Lewat Aplikasi DashTune (Android)<a class="headerlink" href="#lewat-aplikasi-dashtune-android" title="Permanent link">&para;</a></h3>
-<p>DashTune dapat mengatur Racedash lewat WiFi, tanpa membuka browser. Racedash
-M1/M2/M3/C1 tersambung lewat <strong>WiFi</strong> (berbeda dengan Racedash Pro M4/M5/M7
-yang lewat Bluetooth).</p>
-<blockquote>
-<p><strong>Mendapatkan aplikasinya:</strong> buka <strong><a href="https://www.mazduino.com/">www.mazduino.com</a></strong>
-dan cari bagian DashTune di halaman depan. Aplikasi ini masih dalam tahap uji
-tertutup, jadi aksesnya diberikan per akun — masukkan alamat email akun Google
-Play Anda di sana, dan undangan akan dikirim lewat email.</p>
-</blockquote>
-<ol>
-<li>Pasang DashTune di HP Android, lalu hubungkan WiFi HP ke <strong>"Mazduino_Display"</strong>
-   dengan password <strong>"12345678"</strong>.</li>
-<li>Buka DashTune. Dash akan terdeteksi sendiri dan muncul sebagai kartu di
-   halaman <strong>Home</strong>.</li>
-<li>Pilih <strong>Display Control</strong> untuk mengatur brightness, template layar, RPM
-   maksimum, data tiap panel, serta indikator mana saja yang ditampilkan.</li>
-<li>Menu <strong>Splash</strong> dan <strong>Background</strong> dipakai untuk mengganti gambar pembuka dan
-   latar template.</li>
-</ol>
-<p>Pengaturan lampu RPM (RGB) hanya muncul pada dash yang memang memiliki strip
-LED-nya, sehingga menu ini tidak akan tampil di unit tanpa LED.</p>
+</details>
 <details>
-<summary><strong>Firmware lama / legacy — konfigurasi lewat 192.168.4.1</strong> (klik untuk membuka)</summary>
+<summary><strong>Splash Screen Generator di mazduino.com</strong> (klik untuk membuka)</summary>
+<ol>
+<li>Buka <strong><a href="https://www.mazduino.com/splash-generator">mazduino.com/splash-generator</a></strong> melalui browser HP/laptop.</li>
+<li>Buat splash screen sesuai keinginan mengikuti instruksi pada halaman tersebut.</li>
+<li>Unggah hasilnya ke Racedash melalui koneksi WiFi <strong>"MAZDUINO_Display"</strong>.</li>
+</ol>
+</details>
+<details>
+<summary><strong>Firmware lama — konfigurasi lewat 192.168.4.1</strong> (klik untuk membuka)</summary>
 <p>Bagian ini hanya berlaku untuk firmware versi lama, yang masih memakai halaman
 konfigurasi lokal di <code>192.168.4.1</code>. Kalau Racedash Anda sudah menjalankan
-firmware terbaru, pakai salah satu cara di atas dan lewati bagian ini.</p>
+firmware terbaru, pakai DashTune dan lewati bagian ini.</p>
 <ol>
-<li>Hubungkan HP/laptop ke WiFi <strong>"Mazduino_Display"</strong> dengan password <strong>"12345678"</strong>.</li>
+<li>Hubungkan HP/laptop ke WiFi <strong>"MAZDUINO_Display"</strong> dengan password <strong>"12345678"</strong>.</li>
 </ol>
 <p><img alt="Hubungkan ke WiFi Mazduino Display" src="../img/dash/racedash-jst4-wifi-connect.png" /></p>
 <ol>

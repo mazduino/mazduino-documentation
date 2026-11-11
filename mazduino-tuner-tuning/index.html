@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/mazduino-tuner-tuning/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Mengubah Tune - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Mengubah Tune";
+        var mkdocs_page_input_path = "mazduino-tuner-tuning.md";
+        var mkdocs_page_url = "/mazduino-tuner-tuning/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Mengubah Tune</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#alur-perubahan-lokal-ram-ecu-flash">Alur Perubahan: Lokal, RAM ECU, Flash</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#allow-writes">Allow writes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#halaman-pengaturan">Halaman Pengaturan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tabel">Tabel</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ve-autotune">VE Autotune</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kurva">Kurva</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#shortcut-halaman">Shortcut Halaman</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Manual Mazduino Tuner</li>
+      <li class="breadcrumb-item active">Mengubah Tune</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 November 2026 01:04:44 UTC">9 November 2026</span></em></p>
+  <h1 id="mengubah-tune-di-mazduino-tuner">Mengubah Tune di Mazduino Tuner<a class="headerlink" href="#mengubah-tune-di-mazduino-tuner" title="Permanent link">&para;</a></h1>
+<p>Halaman ini menjelaskan cara mengubah pengaturan, tabel, dan kurva, lalu mengirim dan menyimpan
+perubahan ke ECU.</p>
+<h2 id="alur-perubahan-lokal-ram-ecu-flash">Alur Perubahan: Lokal, RAM ECU, Flash<a class="headerlink" href="#alur-perubahan-lokal-ram-ecu-flash" title="Permanent link">&para;</a></h2>
+<p>Setiap perubahan melewati tiga tahap:</p>
+<ol>
+<li><strong>Lokal</strong> — perubahan baru ada di aplikasi. Sel yang berubah diberi <strong>garis putus-putus</strong>, dan
+   tertulis jumlah sel yang belum dikirim.</li>
+<li><strong>RAM ECU</strong> — perubahan dikirim ke ECU dan langsung dipakai mesin, tetapi hilang jika ECU mati.</li>
+<li><strong>Flash</strong> — perubahan disimpan permanen dengan <strong>Burn</strong>.</li>
+</ol>
+<p>Secara default aplikasi <strong>tidak boleh menulis</strong> ke ECU. Selama itu, semua edit hanya lokal dan
+aman untuk dicoba.</p>
+<p><img alt="Edit lokal yang belum dikirim" src="../img/mazduino-tuner/ve-edit.png" /></p>
+<p>Pada contoh di atas sembilan sel dinaikkan. Sel-selnya bergaris putus-putus, tertulis
+<strong>9 cells not sent</strong>, dan tombol <strong>Send to ECU (15 B)</strong> menyala. Klik <strong>Undo</strong> (Ctrl+Z) untuk
+membatalkan.</p>
+<h3 id="allow-writes">Allow writes<a class="headerlink" href="#allow-writes" title="Permanent link">&para;</a></h3>
+<p>Klik <strong>Allow writes</strong> di toolbar untuk mengizinkan aplikasi menulis ke ECU. Aplikasi meminta
+konfirmasi:</p>
+<p><img alt="Konfirmasi Allow writes" src="../img/mazduino-tuner/allow-writes-dialog.png" /></p>
+<p>Setelah diizinkan, tombol berwarna oranye dan label halaman berubah menjadi <strong>writes allowed</strong>:</p>
+<p><img alt="Toolbar saat menulis diizinkan" src="../img/mazduino-tuner/toolbar-writes-on.png" /></p>
+<p>Selama Allow writes aktif:</p>
+<ul>
+<li>Setiap edit langsung dikirim ke <strong>RAM ECU</strong> dan langsung dipakai mesin.</li>
+<li><strong>Send to ECU</strong> mengirim perubahan yang tertunda (misalnya yang dibuat sebelum Allow writes
+  dinyalakan).</li>
+<li><strong>Burn</strong> (Ctrl+B) menyimpan ke flash. Status bar menampilkan <strong>Saved to flash</strong> jika semua sudah
+  tersimpan.</li>
+</ul>
+<p>Izin ini hanya berlaku sampai disconnect. Klik <strong>Allow writes</strong> lagi untuk mematikannya.</p>
+<div class="admonition warning">
+<p class="admonition-title">Perhatikan kondisi mesin</p>
+<p>Dengan Allow writes aktif, perubahan langsung dipakai mesin. Pastikan Anda memahami nilai yang
+diubah, terutama saat mesin menyala.</p>
+</div>
+<h2 id="halaman-pengaturan">Halaman Pengaturan<a class="headerlink" href="#halaman-pengaturan" title="Permanent link">&para;</a></h2>
+<p>Halaman pengaturan (ikon <strong>D</strong> di menu) berisi kolom isian, pilihan, dan catatan dari firmware.
+Contoh halaman <strong>Trigger</strong> (tombol F11):</p>
+<p><img alt="Halaman Trigger" src="../img/mazduino-tuner/trigger-page.png" /></p>
+<ul>
+<li>Kolom angka menampilkan satuan dan batas nilai, misalnya <code>deg btdc [-720 – 720]</code>.</li>
+<li>Teks oranye adalah catatan penting dari firmware.</li>
+<li>Kolom abu-abu sedang tidak berlaku untuk pengaturan saat ini (misalnya Secondary channel saat
+  tidak ada sensor kedua).</li>
+<li>Tombol <strong>Help</strong> membuka penjelasan halaman.</li>
+</ul>
+<h2 id="tabel">Tabel<a class="headerlink" href="#tabel" title="Permanent link">&para;</a></h2>
+<p>Contoh halaman <strong>Fuel table</strong> (F5) dengan <strong>VE Table</strong>:</p>
+<p><img alt="Tabel VE" src="../img/mazduino-tuner/ve-table.png" /></p>
+<p>Sumbu X di atas (biasanya RPM) dan sumbu Y di kiri (beban: MAP, TPS, dan lain-lain, sesuai mode).
+Warna sel menunjukkan besar kecilnya nilai.</p>
+<p><strong>Memilih sel</strong>: klik sel, atau klik lalu tarik untuk memilih blok.</p>
+<table>
+<thead>
+<tr>
+<th>Tombol</th>
+<th>Keyboard</th>
+<th>Fungsi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>−</strong> / <strong>+</strong></td>
+<td>Q / W (atau − / +)</td>
+<td>Turunkan / naikkan sel terpilih satu langkah. Dengan Shift: 10 langkah.</td>
+</tr>
+<tr>
+<td><strong>H</strong> / <strong>V</strong></td>
+<td>H / V</td>
+<td>Interpolasi horizontal / vertikal di antara sel tepi</td>
+</tr>
+<tr>
+<td><strong>S</strong></td>
+<td>S</td>
+<td>Smooth (haluskan) blok terpilih</td>
+</tr>
+<tr>
+<td><strong>=</strong></td>
+<td>= / Enter</td>
+<td>Isi semua sel terpilih dengan satu nilai</td>
+</tr>
+<tr>
+<td><strong>×</strong></td>
+<td>M</td>
+<td>Kalikan sel terpilih (misalnya <code>*1.05</code> = +5%)</td>
+</tr>
+<tr>
+<td>angka</td>
+<td>ketik angka</td>
+<td>Ketik nilai untuk sel terpilih</td>
+</tr>
+<tr>
+<td><strong>Follow</strong></td>
+<td>Space</td>
+<td>Pilihan mengikuti sel yang sedang dipakai mesin (RPM × beban)</td>
+</tr>
+<tr>
+<td><strong>AT</strong></td>
+<td></td>
+<td>Panel VE autotune</td>
+</tr>
+<tr>
+<td><strong>Undo / Redo</strong></td>
+<td>Ctrl+Z / Ctrl+Y</td>
+<td>Batalkan / ulangi perubahan</td>
+</tr>
+<tr>
+<td><strong>i</strong></td>
+<td></td>
+<td>Tampilkan ringkasan tombol dan shortcut tabel</td>
+</tr>
+</tbody>
+</table>
+<p>Saat ECU terhubung, sel yang sedang dipakai mesin ditandai di tabel.</p>
+<h3 id="ve-autotune">VE Autotune<a class="headerlink" href="#ve-autotune" title="Permanent link">&para;</a></h3>
+<p>Tombol <strong>AT</strong> di tabel VE membuka panel autotune. Panel ini mengusulkan koreksi VE dari lambda
+terukur dibanding target, sel per sel. <strong>Ctrl+T</strong> menerapkan koreksi pada sel di posisi mesin.
+Jika Allow writes mati, koreksi hanya mengubah tune lokal dan bisa dikirim ke ECU nanti. Saat
+autotune berjalan, status bar menampilkan penandanya.</p>
+<h2 id="kurva">Kurva<a class="headerlink" href="#kurva" title="Permanent link">&para;</a></h2>
+<p>Kurva (ikon <strong>C</strong> di menu) berupa satu baris nilai dengan sumbunya di bawah. Contoh <strong>Warmup
+enrichment</strong>:</p>
+<p><img alt="Kurva warmup enrichment" src="../img/mazduino-tuner/curve-page.png" /></p>
+<ul>
+<li>Klik atau tarik untuk memilih titik, lalu pakai <strong>−</strong>, <strong>+</strong>, atau <strong>=</strong> seperti pada tabel.</li>
+<li><strong>Klik dua kali</strong> angka sumbu untuk mengubah titik sumbu.</li>
+</ul>
+<h2 id="shortcut-halaman">Shortcut Halaman<a class="headerlink" href="#shortcut-halaman" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Tombol (bawaan)</th>
+<th>Halaman</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F5</td>
+<td>Fuel table (VE)</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Tabel target AFR / Lambda</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>Ignition table</td>
+</tr>
+<tr>
+<td>F11</td>
+<td>Trigger</td>
+</tr>
+</tbody>
+</table>
+<p>Tombol F2 sampai F12 bisa diberikan ke halaman mana pun lewat klik kanan di menu. Lihat
+<a href="../mazduino-tuner-interface/#klik-kanan-pada-halaman">Klik Kanan pada Halaman</a>. Daftar lengkap
+ada di tab <strong>Shortcuts</strong> di panel bawah (<a href="../mazduino-tuner-logger/#shortcuts">Logger dan Real Time</a>).</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-tuner-interface/" class="btn btn-neutral float-left" title="Koneksi dan Tampilan"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-tuner-proyek/" class="btn btn-neutral float-right" title="Proyek dan File Tune">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-tuner-interface/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-tuner-proyek/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -75,6 +75,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#firmware-racedash">Firmware Racedash</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#lewat-dashtune-racedash-35-4">Lewat DashTune (Racedash 3.5" &amp; 4")</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#lewat-mazduino-flasher-ota">Lewat Mazduino Flasher (OTA)</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#lewat-dashtune-racedash-pro-m4-m5-m7">Lewat DashTune (Racedash Pro M4 / M5 / M7)</a>
@@ -180,6 +182,23 @@
                   <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
                   </li>
               </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
               <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Manual Lengkap</a>
@@ -263,7 +282,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 Oktober 2026 15:41:39 UTC">30 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 November 2026 18:45:33 UTC">10 November 2026</span></em></p>
   <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
 <ul>
@@ -466,6 +485,11 @@ board yang lebih baru hanya ada di sana.</p>
 <h3 id="software-yang-dibutuhkan">Software yang Dibutuhkan<a class="headerlink" href="#software-yang-dibutuhkan" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
+<p><strong>Mazduino Tuner</strong> (alpha): <a href="https://github.com/mazduino/mazduino-tuner/releases">github.com/mazduino/mazduino-tuner/releases</a> —
+  software tuning Mazduino, termasuk update firmware lewat USB. Lihat
+  <a href="../mazduino-tuner-manual/">Manual Mazduino Tuner</a>.</p>
+</li>
+<li>
 <p><strong>TunerStudio MS</strong>: <a href="https://www.tunerstudio.com">tunerstudio.com</a> — software tuning dan konfigurasi ECU</p>
 </li>
 <li>
@@ -519,7 +543,12 @@ sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.</p>
 <tbody>
 <tr>
 <td style="text-align: left;">Racedash 3.5" &amp; 4" (M1, M2, M3, C1)</td>
-<td style="text-align: left;"><strong>Mazduino Flasher</strong> — OTA lewat WiFi</td>
+<td style="text-align: left;">Aplikasi <strong>DashTune</strong> — lewat WiFi dash</td>
+<td style="text-align: left;">Tidak</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash 3.5" &amp; 4" (M1, M2, M3, C1)</td>
+<td style="text-align: left;"><strong>Mazduino Flasher</strong> dari laptop — lewat WiFi dash</td>
 <td style="text-align: left;">Tidak</td>
 </tr>
 <tr>
@@ -534,6 +563,11 @@ sendiri versi terbarunya, lewat alat yang berbeda tergantung varian.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="lewat-dashtune-racedash-35-4">Lewat DashTune (Racedash 3.5" &amp; 4")<a class="headerlink" href="#lewat-dashtune-racedash-35-4" title="Permanent link">&para;</a></h3>
+<p>Sambungkan HP ke WiFi dash, buka DashTune, lalu pilih <strong>Update Firmware</strong> di
+Beranda. Aplikasi memilih firmware yang cocok untuk dash Anda dan mengunduhnya
+lewat data seluler. Langkah lengkapnya ada di
+<a href="../mazduino-racedash/#7-update-firmware">Update Firmware di DashTune</a>.</p>
 <h3 id="lewat-mazduino-flasher-ota">Lewat Mazduino Flasher (OTA)<a class="headerlink" href="#lewat-mazduino-flasher-ota" title="Permanent link">&para;</a></h3>
 <p>Perlu login ke akun Mazduino terlebih dahulu, lalu buka
 <strong><a href="https://www.mazduino.com/dashboard/flasher">mazduino.com/dashboard/flasher</a></strong>.
@@ -544,7 +578,7 @@ Hubungkan HP/laptop ke WiFi yang dipancarkan dash, pilih model yang benar pada
 Anda, dan firmware model lain akan membuat dash gagal menyala.</p>
 </blockquote>
 <p>Langkah lengkapnya ada di
-<a href="../mazduino-racedash/#update-firmware-usb-atau-ota">Update Firmware Racedash</a>.</p>
+<a href="../mazduino-racedash/#update-firmware">Update Firmware Racedash</a>.</p>
 <h3 id="lewat-dashtune-racedash-pro-m4-m5-m7">Lewat DashTune (Racedash Pro M4 / M5 / M7)<a class="headerlink" href="#lewat-dashtune-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h3>
 <p>Racedash Pro M4/M5/M7 diperbarui dari aplikasi Android <strong>DashTune</strong>: menu <strong>Update
 Firmware</strong> memeriksa versi terbaru dan memasangnya sendiri, tanpa kabel maupun
