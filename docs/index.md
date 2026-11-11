@@ -192,7 +192,7 @@ mobil dapat dibaca — lihat
 ### Kalau Anda memakai Racedash
 
 1. **Pasang dash** — Sambungkan ke ECU lewat CAN Bus atau Serial sesuai pinout di halaman varian Anda
-2. **Pilih protokol ECU** — Sesuaikan dengan ECU yang dipakai
+2. **Pilih protokol ECU** — Racedash Pro (M4, M5, M7, M7 Pro): pilih di setting dash atau DashTune. Racedash 3.5" & 4" (M1, M2, M3, C1): protokol sudah mengikuti firmware pesanan; kalau ganti ECU, pakai **Flash protokol lain** di menu Update Firmware DashTune
 3. **Pasang DashTune** — Daftar sebagai tester di [www.mazduino.com/dashtune/tester](https://www.mazduino.com/dashtune/tester), lalu pasang dari Play Store
 4. **Atur tampilan** — Pilih template, data tiap panel, lampu peringatan, dan splash screen dari DashTune
 

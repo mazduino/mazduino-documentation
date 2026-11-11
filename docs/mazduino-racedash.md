@@ -158,8 +158,10 @@ ditampilkan, misalnya AFR, TPS, IAT, MAP, Coolant, Voltage, atau ADV. Pilih
 ### 5. Protokol CAN
 
 Menu ini menunjukkan protokol ECU yang dibaca dash dan bitrate CAN-nya. Firmware
-Racedash dibuat untuk satu ECU sesuai pesanan, jadi di sini hanya protokol ECU
-itu dan **Custom** yang bisa dipilih. **Custom** dipakai untuk ECU yang tidak
+Racedash 3.5" dan 4" (M1, M2, M3, C1) dibuat untuk satu ECU sesuai pesanan, jadi
+di sini hanya protokol ECU itu dan **Custom** yang bisa dipilih. Ini berbeda
+dengan [Racedash Pro](mazduino-racedash-pro.md) (M4, M5, M7, M7 Pro), yang
+protokolnya bisa diganti langsung dari setting. **Custom** dipakai untuk ECU yang tidak
 ada di daftar, dengan peta data CAN yang diatur sendiri.
 
 Kalau ECU di mobil diganti merek, dash tidak perlu dikirim balik: buka
