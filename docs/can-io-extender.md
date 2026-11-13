@@ -199,7 +199,7 @@ sedang aktif**.
     desimal: `0x643` = `1603`.
 
     Di DashTune, pilih tampilannya di **Settings → Format CAN ID**. Pilihan ini
-    juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
+    juga berlaku di editor Switch Panel pada layar dash. Di bawah setiap kolom CAN
     ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
     diawali `0x` selalu dibaca sebagai heksadesimal, apa pun pilihannya.
 
@@ -295,11 +295,18 @@ posisi byte, dan skalanya.
 
 ### Menyalakan output
 
-Output dinyalakan lewat **CAN Buttons**: satu tombol untuk satu output, diatur
-di DashTune atau langsung di layar dash. Semua tombol memakai CAN ID yang sama,
-`0x648` (desimal **1608**), dan harus dalam mode **Toggle**. Selama tombol
-menyala, dash mengirim ulang perintahnya terus-menerus. Tombol mode Momentary
-hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.
+Output dinyalakan lewat **Switch Panel** (dulu bernama CAN Buttons): satu
+switch untuk satu output, diatur di DashTune atau langsung di layar dash. Semua
+switch memakai CAN ID yang sama, `0x648` (desimal **1608**), dan harus berjenis
+**SWITCH** (dulu Toggle). Selama switch ON, dash mengirim ulang perintahnya
+terus-menerus. Switch jenis PUSH (dulu Momentary) hanya mengirim sekali, jadi
+outputnya akan mati lagi setelah 500 ms.
+
+Pada firmware Racedash Pro terbaru, setiap switch mulai dalam keadaan OFF tiap
+kali dash dinyalakan, jadi output juga mati sampai switch-nya ditekan lagi.
+Kalau sebuah output harus langsung menyala setiap dash hidup, nyalakan **Tetap
+ON setelah dash mati** pada switch-nya di DashTune (lihat
+[Switch Panel](mazduino-racedash-pro.md#switch-panel)).
 
 | Output | Byte | Nilai ON |
 | :--- | :---: | :---: |
@@ -315,19 +322,19 @@ hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.
 | LOGIC1 | 1 | 4 |
 | LOGIC2 | 1 | 8 |
 
-Isi **nilai OFF dengan 0** untuk semua tombol. Beberapa tombol boleh berada di
+Isi **nilai OFF dengan 0** untuk semua switch. Beberapa switch boleh berada di
 byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.
 
-HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol
-Toggle lagi di byte **2** (HS1), **3** (HS2), **4** (LS1) atau **5** (LS2),
+HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu switch
+jenis SWITCH lagi di byte **2** (HS1), **3** (HS2), **4** (LS1) atau **5** (LS2),
 dengan nilai ON 1–254 sebagai
-duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
+duty, misalnya 128 untuk sekitar 50%. Selama switch duty itu OFF, outputnya
 kembali menyala penuh.
 
 !!! note "Butuh firmware terbaru"
     Cara di atas memerlukan firmware Racedash dan firmware CAN IO Extender
-    versi terbaru. Pada firmware lama, tombol-tombol yang berada di byte yang
-    sama saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
+    versi terbaru. Pada firmware lama, switch yang berada di byte yang sama
+    saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
     4 byte.
 
 ## Memakai dengan Racedash 3.5" dan 4"
@@ -550,8 +557,9 @@ dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.
 | :--- | :--- |
 | Modul tidak pernah mengunci bitrate | CAN H dan CAN L tertukar, terminasi kurang, atau tidak ada perangkat lain yang mengirim di bus — modul mengunci pada frame valid pertama, jadi bus yang sepi tidak akan pernah terkunci |
 | Bus terkunci, tetapi dash tidak menampilkan apa-apa | CAN ID di dash tidak sama dengan blok node modul, atau CAN ID diketik dalam notasi yang salah (`643` dibaca desimal padahal yang dimaksud `0x643`) — cek **Settings → Format CAN ID** di DashTune |
-| Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan tombolnya memakai CAN ID `0x648` (1608) dan mode **Toggle** |
-| Output menyala sebentar lalu mati | Tombolnya dalam mode Momentary. Ganti ke **Toggle** |
+| Output tidak mau menyala | Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan switch-nya memakai CAN ID `0x648` (1608) dan berjenis **SWITCH** |
+| Output menyala sebentar lalu mati | Switch-nya berjenis PUSH. Ganti ke **SWITCH** |
+| Output mati lagi setiap dash dinyalakan | Normal pada firmware Racedash Pro terbaru: setiap switch mulai OFF. Nyalakan **Tetap ON setelah dash mati** pada switch-nya di DashTune bila output harus langsung menyala |
 | LC4 atau LC5 tidak bekerja | Pin itu sedang difungsikan sebagai logic output — satu pin hanya bisa satu fungsi |
 | Tegangan aki terbaca meleset | Rail 5 V board tidak tepat 5,000 V. Hubungi support@mazduino.com untuk firmware yang dikalibrasi ke board Anda |
 | Switch input tidak terbaca | Pin itu masih difungsikan sebagai analog input, bukan switch input |

@@ -5,7 +5,7 @@
 ![Mazduino Racedash Pro M4](img/dash/racedash-pro-m4.jpeg)
 
 *Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
-Template 1 dan sebuah CAN button "Start Engine"*
+Template 1 dan sebuah switch "Start Engine" dari Switch Panel*
 
 Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan **4.3", 5", dan 7"**. Berbeda dengan varian [Mazduino Racedash](mazduino-racedash.md) (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur **langsung dari layar (touchscreen)** tanpa perlu terhubung ke HP/laptop. Tersedia juga aplikasi Android **DashTune** lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.
 
@@ -126,7 +126,7 @@ broadcast berkala.
 
 Dash menyediakan beberapa tampilan dashboard. Untuk berpindah, **geser kiri
 atau kanan di bagian atas layar** (di area bar RPM). Bagian bawah layar sengaja
-tidak menerima geseran supaya tombol CAN tidak ikut tersentuh.
+tidak menerima geseran supaya switch di sana tidak ikut tersentuh.
 
 Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
 langsung membuka tampilan yang sama.
@@ -153,33 +153,33 @@ berbeda dari contoh di atas.
 | Gerakan | Hasil |
 | :---- | :---- |
 | Geser kiri / kanan **di bar RPM (bagian atas layar)** | Ganti tampilan dashboard |
-| Geser ke atas | Buka halaman tombol CAN |
+| Geser ke atas | Buka **Switch Panel** |
 | **Cubit dua jari** (pinch) | Buka menu utama |
 
 Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
-bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
+bebas supaya switch yang diletakkan di sana tidak ikut tersentuh saat
 berpindah tampilan.
 
 ![Menu utama Racedash Pro M7](img/dash/racedash-pro-m7-menu.jpeg)
 
 *Menu utama, dibuka dengan cubit dua jari*
 
-![Halaman tombol CAN](img/dash/racedash-pro-m7-can-buttons.jpeg)
+![Switch Panel](img/dash/racedash-pro-m7-can-buttons.jpeg)
 
-*Halaman tombol CAN, dibuka dengan geser ke atas*
+*Switch Panel, dibuka dengan geser ke atas*
 
 #### Susunan menu
 
 ```
 Menu
-├── Dash      → kembali ke dashboard terakhir
-├── CAN       → halaman tombol CAN
+├── Dash          → kembali ke dashboard terakhir
+├── Switch Panel  → halaman Switch Panel
 └── Setting
     ├── Display Setting   → pilih template, lalu atur isi tiap panelnya
     ├── General Setting   → satuan, RPM maksimum, rentang tiap data
     └── CAN
         ├── Protokol      → pilih tipe ECU
-        └── CAN Button    → buat dan ubah tombol CAN
+        └── Switch Panel  → buat dan ubah switch
 ```
 
 #### Display Setting — mengatur isi tiap template
@@ -210,7 +210,7 @@ tersimpan di dash dan tidak hilang saat mesin dimatikan.
 
 Perubahan satuan dan RPM maksimum langsung terlihat di semua template.
 
-#### CAN — tipe ECU dan tombol
+#### CAN — tipe ECU dan Switch Panel
 
 **Menu → Setting → CAN** berisi dua hal:
 
@@ -218,20 +218,48 @@ Perubahan satuan dan RPM maksimum langsung terlihat di semua template.
   Kecepatan CAN ikut menyesuaikan sendiri. **Tidak perlu ganti firmware dan
   tidak perlu restart** — begitu disimpan, dash langsung membaca dengan
   protokol yang baru.
-- **CAN Button** — membuat dan mengubah tombol CAN: nama, ID, dan data yang
-  dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.
+- **Switch Panel** — membuat dan mengubah switch: nama, CAN ID, dan data yang
+  dikirim. Switch yang sudah dibuat muncul di halaman Switch Panel.
 
 ![Pengaturan protokol ECU di layar dash](img/dash/racedash-pro-m7-ecu-protocol.jpeg)
 
 *Menu → Setting → CAN → Protokol*
 
-#### Tombol CAN
+#### Switch Panel
 
-Geser ke atas dari dashboard untuk membukanya. Halaman ini dipakai untuk
-mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
-menyalakan kipas atau memicu launch control — cukup dengan menekan tombol di
-layar. Tombolnya bisa diatur dari layar (Setting → CAN → CAN Button) maupun
-dari aplikasi DashTune.
+Geser ke atas dari dashboard untuk membuka **Switch Panel**. Halaman ini dipakai
+untuk mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
+menyalakan fan atau nitrous, atau memicu launch control — cukup dengan menekan
+switch di layar. Tekan **DASHBOARD** untuk kembali ke dashboard. Switch Panel
+juga bisa dijadikan tile di menu utama lewat **Setting → Menu**.
+
+Switch bisa diatur dari layar (Setting → CAN → Switch Panel) maupun dari
+aplikasi DashTune. Ada dua jenis switch:
+
+- **SWITCH** — tekan sekali untuk ON, tekan lagi untuk OFF. Selama ON, dash
+  terus mengirim perintah ON. Dulu bernama Toggle.
+- **PUSH** — mengirim perintah sekali setiap ditekan. Dulu bernama Momentary.
+
+Pada Racedash Pro dengan firmware terbaru, setiap switch punya tiga pengaturan
+tambahan. Ketiganya diatur di DashTune: **Switch Panel**, lalu edit switch-nya.
+
+- **Ikon** — pilih dari daftar ikon otomotif, misalnya engine, fan, nitrous,
+  launch, anti-lag, turbo, lampu, horn, A/C, dan wiper. Ikonnya tampil di kartu
+  switch di dash dan di aplikasi.
+- **Tahan untuk aktif** (*Hold to activate*) — mati, 0,5, 1, 2, atau 3 detik.
+  Switch baru bekerja setelah ditekan selama waktu itu; selama ditahan, sebuah
+  bar terisi di bagian bawah kartu. Pengaturan ini mencegah switch tertekan
+  tanpa sengaja di jalan bergelombang. Mematikan switch yang sedang ON tidak
+  perlu ditahan.
+- **Tetap ON setelah dash mati** (*Stay ON after power-off*, khusus jenis
+  SWITCH) — bawaannya mati, artinya setiap switch mulai dalam keadaan OFF tiap
+  kali dash dinyalakan. Ini lebih aman untuk nitrous, anti-lag, dan launch.
+  Nyalakan pengaturan ini per switch kalau switch itu memang harus kembali ON.
+
+> **Perubahan untuk pemilik lama**: sebelum update ini, switch yang dibiarkan ON
+> akan kembali ON setelah dash dimatikan dan dinyalakan lagi. Sekarang setiap
+> switch mulai OFF, kecuali switch yang pengaturan **Tetap ON setelah dash
+> mati**-nya dinyalakan.
 
 ### Pengaturan lain yang hanya ada di DashTune
 
@@ -332,7 +360,7 @@ Urutan menu di beranda DashTune:
 | Menu | Fungsi |
 | :---- | :---- |
 | **Tema** | Memilih tema yang tampil di dash dan memasang tema baru dari Theme Store. Pada firmware lama menu ini bernama **Dashboard** dan mengatur data yang tampil pada tiap template |
-| **CAN Buttons** | Membuat dan mengatur tombol CAN yang tampil di layar dash |
+| **Switch Panel** | Membuat dan mengatur switch yang tampil di Switch Panel dash. Pada firmware lama menu ini bernama **CAN Buttons** |
 | **General Setting** | Satuan, mode MAP, RPM maksimum, rentang tiap data — sama dengan menu di layar dash |
 | **Data log** | Merekam data perjalanan ke memori dash. Saat memori penuh, log terlama dihapus. Untuk mengambil log, HP tersambung sebentar ke WiFi dash |
 | **Lampu LED** | Shift light dan indikator, hanya pada dash yang memiliki strip LED |
@@ -350,15 +378,17 @@ tema lain beserta preview-nya, lalu pilih tema dan tekan **Pasang**. Selama
 pemasangan HP masuk sebentar ke WiFi dash **Mazduino-Dash**; dashboard tetap
 berjalan seperti biasa.
 
-#### General Setting dan CAN Buttons
+#### General Setting dan Switch Panel
 
-![General Setting dan CAN Buttons di DashTune](img/dash/dashtune-pro-general.png)
+![General Setting dan Switch Panel di DashTune](img/dash/dashtune-pro-general.png)
 
 Di **General Setting**, protokol ECU diganti langsung tanpa flash ulang
 firmware. Di sini juga ada satuan tekanan dan suhu, mode MAP, kecerahan layar,
 Max RPM, rentang tiap data, Custom Channels, sumber fuel level, dan sumber tiap
-indikator. **CAN Buttons** berisi tombol yang tampil di layar dash; tekan ikon
-pensil untuk mengubah tombol, atau **+** untuk menambah tombol baru.
+indikator. **Switch Panel** berisi switch yang tampil di layar dash; tekan ikon
+pensil untuk mengubah switch, atau **+** untuk menambah switch baru. Ikon,
+**Tahan untuk aktif**, dan **Tetap ON setelah dash mati** diatur di sini (lihat
+[Switch Panel](#switch-panel)).
 
 **Riwayat Pengaturan** ada di tab **Lainnya → Akun**. Di sana tersimpan
 pengaturan dash dari waktu ke waktu. Periksa dulu isinya, lalu pilih yang
