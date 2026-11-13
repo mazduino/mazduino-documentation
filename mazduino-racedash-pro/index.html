@@ -278,12 +278,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="11 November 2026 07:37:32 UTC">11 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 November 2026 19:43:34 UTC">13 November 2026</span></em></p>
   <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></p>
 <p><em>Racedash Pro M4 (4.3") — delapan LED shift light di atas layar, dengan
-Template 1 dan sebuah CAN button "Start Engine"</em></p>
+Template 1 dan sebuah switch "Start Engine" dari Switch Panel</em></p>
 <p>Mazduino Racedash Pro adalah varian dash display digital dengan layar berukuran lebih besar, tersedia dalam pilihan <strong>4.3", 5", dan 7"</strong>. Berbeda dengan varian <a href="../mazduino-racedash/">Mazduino Racedash</a> (3.5" dan 4") yang dikonfigurasi melalui WiFi dan browser, Racedash Pro dapat diatur <strong>langsung dari layar (touchscreen)</strong> tanpa perlu terhubung ke HP/laptop. Tersedia juga aplikasi Android <strong>DashTune</strong> lewat Bluetooth untuk pengaturan yang tidak ada di menu layar.</p>
 <table>
 <thead>
@@ -467,7 +467,7 @@ broadcast berkala.</p>
 <h3 id="mengganti-tampilan-template">Mengganti tampilan (template)<a class="headerlink" href="#mengganti-tampilan-template" title="Permanent link">&para;</a></h3>
 <p>Dash menyediakan beberapa tampilan dashboard. Untuk berpindah, <strong>geser kiri
 atau kanan di bagian atas layar</strong> (di area bar RPM). Bagian bawah layar sengaja
-tidak menerima geseran supaya tombol CAN tidak ikut tersentuh.</p>
+tidak menerima geseran supaya switch di sana tidak ikut tersentuh.</p>
 <p>Tampilan terakhir yang dipakai akan diingat, jadi saat dinyalakan lagi dash
 langsung membuka tampilan yang sama.</p>
 <p>Beberapa contoh tampilan pada Racedash Pro M7:</p>
@@ -499,7 +499,7 @@ berbeda dari contoh di atas.</p>
 </tr>
 <tr>
 <td style="text-align: left;">Geser ke atas</td>
-<td style="text-align: left;">Buka halaman tombol CAN</td>
+<td style="text-align: left;">Buka <strong>Switch Panel</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Cubit dua jari</strong> (pinch)</td>
@@ -508,22 +508,22 @@ berbeda dari contoh di atas.</p>
 </tbody>
 </table>
 <p>Geseran hanya ditangkap di bagian atas layar. Bagian bawah sengaja dibiarkan
-bebas supaya tombol CAN yang diletakkan di sana tidak ikut tersentuh saat
+bebas supaya switch yang diletakkan di sana tidak ikut tersentuh saat
 berpindah tampilan.</p>
 <p><img alt="Menu utama Racedash Pro M7" src="../img/dash/racedash-pro-m7-menu.jpeg" /></p>
 <p><em>Menu utama, dibuka dengan cubit dua jari</em></p>
-<p><img alt="Halaman tombol CAN" src="../img/dash/racedash-pro-m7-can-buttons.jpeg" /></p>
-<p><em>Halaman tombol CAN, dibuka dengan geser ke atas</em></p>
+<p><img alt="Switch Panel" src="../img/dash/racedash-pro-m7-can-buttons.jpeg" /></p>
+<p><em>Switch Panel, dibuka dengan geser ke atas</em></p>
 <h4 id="susunan-menu">Susunan menu<a class="headerlink" href="#susunan-menu" title="Permanent link">&para;</a></h4>
 <pre><code>Menu
-├── Dash      → kembali ke dashboard terakhir
-├── CAN       → halaman tombol CAN
+├── Dash          → kembali ke dashboard terakhir
+├── Switch Panel  → halaman Switch Panel
 └── Setting
     ├── Display Setting   → pilih template, lalu atur isi tiap panelnya
     ├── General Setting   → satuan, RPM maksimum, rentang tiap data
     └── CAN
         ├── Protokol      → pilih tipe ECU
-        └── CAN Button    → buat dan ubah tombol CAN
+        └── Switch Panel  → buat dan ubah switch
 </code></pre>
 <h4 id="display-setting-mengatur-isi-tiap-template">Display Setting — mengatur isi tiap template<a class="headerlink" href="#display-setting-mengatur-isi-tiap-template" title="Permanent link">&para;</a></h4>
 <p><strong>Menu → Setting → Display Setting</strong>, lalu pilih template yang ingin diubah
@@ -549,24 +549,53 @@ halaman pengaturan.</p>
   min/max yang tercetak di layar</li>
 </ul>
 <p>Perubahan satuan dan RPM maksimum langsung terlihat di semua template.</p>
-<h4 id="can-tipe-ecu-dan-tombol">CAN — tipe ECU dan tombol<a class="headerlink" href="#can-tipe-ecu-dan-tombol" title="Permanent link">&para;</a></h4>
+<h4 id="can-tipe-ecu-dan-switch-panel">CAN — tipe ECU dan Switch Panel<a class="headerlink" href="#can-tipe-ecu-dan-switch-panel" title="Permanent link">&para;</a></h4>
 <p><strong>Menu → Setting → CAN</strong> berisi dua hal:</p>
 <ul>
 <li><strong>Protokol</strong> — memilih tipe ECU (rusEFI, Haltech, MaxxECU, Speeduino, OBD-II).
   Kecepatan CAN ikut menyesuaikan sendiri. <strong>Tidak perlu ganti firmware dan
   tidak perlu restart</strong> — begitu disimpan, dash langsung membaca dengan
   protokol yang baru.</li>
-<li><strong>CAN Button</strong> — membuat dan mengubah tombol CAN: nama, ID, dan data yang
-  dikirim. Tombol yang sudah dibuat muncul di halaman tombol CAN.</li>
+<li><strong>Switch Panel</strong> — membuat dan mengubah switch: nama, CAN ID, dan data yang
+  dikirim. Switch yang sudah dibuat muncul di halaman Switch Panel.</li>
 </ul>
 <p><img alt="Pengaturan protokol ECU di layar dash" src="../img/dash/racedash-pro-m7-ecu-protocol.jpeg" /></p>
 <p><em>Menu → Setting → CAN → Protokol</em></p>
-<h4 id="tombol-can">Tombol CAN<a class="headerlink" href="#tombol-can" title="Permanent link">&para;</a></h4>
-<p>Geser ke atas dari dashboard untuk membukanya. Halaman ini dipakai untuk
-mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
-menyalakan kipas atau memicu launch control — cukup dengan menekan tombol di
-layar. Tombolnya bisa diatur dari layar (Setting → CAN → CAN Button) maupun
-dari aplikasi DashTune.</p>
+<h4 id="switch-panel">Switch Panel<a class="headerlink" href="#switch-panel" title="Permanent link">&para;</a></h4>
+<p>Geser ke atas dari dashboard untuk membuka <strong>Switch Panel</strong>. Halaman ini dipakai
+untuk mengirim perintah ke ECU atau perangkat lain di jaringan CAN — misalnya
+menyalakan fan atau nitrous, atau memicu launch control — cukup dengan menekan
+switch di layar. Tekan <strong>DASHBOARD</strong> untuk kembali ke dashboard. Switch Panel
+juga bisa dijadikan tile di menu utama lewat <strong>Setting → Menu</strong>.</p>
+<p>Switch bisa diatur dari layar (Setting → CAN → Switch Panel) maupun dari
+aplikasi DashTune. Ada dua jenis switch:</p>
+<ul>
+<li><strong>SWITCH</strong> — tekan sekali untuk ON, tekan lagi untuk OFF. Selama ON, dash
+  terus mengirim perintah ON. Dulu bernama Toggle.</li>
+<li><strong>PUSH</strong> — mengirim perintah sekali setiap ditekan. Dulu bernama Momentary.</li>
+</ul>
+<p>Pada Racedash Pro dengan firmware terbaru, setiap switch punya tiga pengaturan
+tambahan. Ketiganya diatur di DashTune: <strong>Switch Panel</strong>, lalu edit switch-nya.</p>
+<ul>
+<li><strong>Ikon</strong> — pilih dari daftar ikon otomotif, misalnya engine, fan, nitrous,
+  launch, anti-lag, turbo, lampu, horn, A/C, dan wiper. Ikonnya tampil di kartu
+  switch di dash dan di aplikasi.</li>
+<li><strong>Tahan untuk aktif</strong> (<em>Hold to activate</em>) — mati, 0,5, 1, 2, atau 3 detik.
+  Switch baru bekerja setelah ditekan selama waktu itu; selama ditahan, sebuah
+  bar terisi di bagian bawah kartu. Pengaturan ini mencegah switch tertekan
+  tanpa sengaja di jalan bergelombang. Mematikan switch yang sedang ON tidak
+  perlu ditahan.</li>
+<li><strong>Tetap ON setelah dash mati</strong> (<em>Stay ON after power-off</em>, khusus jenis
+  SWITCH) — bawaannya mati, artinya setiap switch mulai dalam keadaan OFF tiap
+  kali dash dinyalakan. Ini lebih aman untuk nitrous, anti-lag, dan launch.
+  Nyalakan pengaturan ini per switch kalau switch itu memang harus kembali ON.</li>
+</ul>
+<blockquote>
+<p><strong>Perubahan untuk pemilik lama</strong>: sebelum update ini, switch yang dibiarkan ON
+akan kembali ON setelah dash dimatikan dan dinyalakan lagi. Sekarang setiap
+switch mulai OFF, kecuali switch yang pengaturan <strong>Tetap ON setelah dash
+mati</strong>-nya dinyalakan.</p>
+</blockquote>
 <h3 id="pengaturan-lain-yang-hanya-ada-di-dashtune">Pengaturan lain yang hanya ada di DashTune<a class="headerlink" href="#pengaturan-lain-yang-hanya-ada-di-dashtune" title="Permanent link">&para;</a></h3>
 <p>Beberapa pengaturan tidak tersedia di menu layar dan hanya bisa diubah dari
 aplikasi:</p>
@@ -686,8 +715,8 @@ dengan tema Apex.</em></p>
 <td style="text-align: left;">Memilih tema yang tampil di dash dan memasang tema baru dari Theme Store. Pada firmware lama menu ini bernama <strong>Dashboard</strong> dan mengatur data yang tampil pada tiap template</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>CAN Buttons</strong></td>
-<td style="text-align: left;">Membuat dan mengatur tombol CAN yang tampil di layar dash</td>
+<td style="text-align: left;"><strong>Switch Panel</strong></td>
+<td style="text-align: left;">Membuat dan mengatur switch yang tampil di Switch Panel dash. Pada firmware lama menu ini bernama <strong>CAN Buttons</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>General Setting</strong></td>
@@ -722,13 +751,15 @@ Tema <strong>Apex</strong> selalu terpasang bawaan. Tekan <strong>Theme Store</s
 tema lain beserta preview-nya, lalu pilih tema dan tekan <strong>Pasang</strong>. Selama
 pemasangan HP masuk sebentar ke WiFi dash <strong>Mazduino-Dash</strong>; dashboard tetap
 berjalan seperti biasa.</p>
-<h4 id="general-setting-dan-can-buttons">General Setting dan CAN Buttons<a class="headerlink" href="#general-setting-dan-can-buttons" title="Permanent link">&para;</a></h4>
-<p><img alt="General Setting dan CAN Buttons di DashTune" src="../img/dash/dashtune-pro-general.png" /></p>
+<h4 id="general-setting-dan-switch-panel">General Setting dan Switch Panel<a class="headerlink" href="#general-setting-dan-switch-panel" title="Permanent link">&para;</a></h4>
+<p><img alt="General Setting dan Switch Panel di DashTune" src="../img/dash/dashtune-pro-general.png" /></p>
 <p>Di <strong>General Setting</strong>, protokol ECU diganti langsung tanpa flash ulang
 firmware. Di sini juga ada satuan tekanan dan suhu, mode MAP, kecerahan layar,
 Max RPM, rentang tiap data, Custom Channels, sumber fuel level, dan sumber tiap
-indikator. <strong>CAN Buttons</strong> berisi tombol yang tampil di layar dash; tekan ikon
-pensil untuk mengubah tombol, atau <strong>+</strong> untuk menambah tombol baru.</p>
+indikator. <strong>Switch Panel</strong> berisi switch yang tampil di layar dash; tekan ikon
+pensil untuk mengubah switch, atau <strong>+</strong> untuk menambah switch baru. Ikon,
+<strong>Tahan untuk aktif</strong>, dan <strong>Tetap ON setelah dash mati</strong> diatur di sini (lihat
+<a href="#switch-panel">Switch Panel</a>).</p>
 <p><strong>Riwayat Pengaturan</strong> ada di tab <strong>Lainnya → Akun</strong>. Di sana tersimpan
 pengaturan dash dari waktu ke waktu. Periksa dulu isinya, lalu pilih yang
 ingin dikembalikan ke dash.</p>
@@ -784,8 +815,13 @@ dalam keadaan aman, listrik tidak terputus, dan aplikasi tidak ditutup sampai
 selesai. Update yang terputus di tengah jalan bisa membuat dash gagal menyala.</p>
 </blockquote>
 <h3 id="fitur-relay-google-maps-dan-musik">Fitur relay: Google Maps dan musik<a class="headerlink" href="#fitur-relay-google-maps-dan-musik" title="Permanent link">&para;</a></h3>
-<p>DashTune bisa meneruskan <strong>petunjuk arah Google Maps</strong> dan <strong>judul lagu yang
-sedang diputar</strong> ke layar dash. Pengaturannya ada di tab <strong>Lainnya → Relay</strong>.</p>
+<p>DashTune bisa meneruskan <strong>petunjuk arah Google Maps</strong> dan <strong>lagu yang sedang
+diputar di HP</strong> ke layar dash. Pengaturannya ada di tab <strong>Lainnya → Relay</strong>.</p>
+<p>Dash tidak memutar musik. Musik tetap diputar dari HP,
+atau dari head unit yang tersambung ke HP. Halaman <strong>Phone music</strong> di dash hanya
+menampilkan judul lagu, artis, dan cover, serta tombol play, jeda, dan lompat
+lagu untuk mengontrol HP. Tile <strong>PHONE MUSIC</strong> bisa dimunculkan lewat
+<strong>Setting → Menu</strong>.</p>
 <p>Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
 halaman pengaturannya saat pertama kali diaktifkan.</p>
 <h2 id="referensi">Referensi<a class="headerlink" href="#referensi" title="Permanent link">&para;</a></h2>

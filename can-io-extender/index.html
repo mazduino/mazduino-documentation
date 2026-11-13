@@ -279,7 +279,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 13:24:07 UTC">6 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="13 November 2026 19:43:34 UTC">13 November 2026</span></em></p>
   <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p><img alt="Mazduino CAN IO Extender dengan konektor kabel Molex 24 pin" src="../img/can-io/can-io-extender.jpeg" /></p>
@@ -697,7 +697,7 @@ sedang aktif</strong>.</p>
 software, seperti rusEFI dan TunerStudio, menampilkan angka yang sama dalam
 desimal: <code>0x643</code> = <code>1603</code>.</p>
 <p>Di DashTune, pilih tampilannya di <strong>Settings → Format CAN ID</strong>. Pilihan ini
-juga berlaku di editor CAN Button pada layar dash. Di bawah setiap kolom CAN
+juga berlaku di editor Switch Panel pada layar dash. Di bawah setiap kolom CAN
 ID, DashTune menampilkan padanannya, misalnya "= 1603 (desimal)". Angka yang
 diawali <code>0x</code> selalu dibaca sebagai heksadesimal, apa pun pilihannya.</p>
 </div>
@@ -852,11 +852,17 @@ baru.</p>
 <a href="#data-yang-dikirim-modul">Data yang Dikirim Modul</a> sebagai acuan CAN ID,
 posisi byte, dan skalanya.</p>
 <h3 id="menyalakan-output">Menyalakan output<a class="headerlink" href="#menyalakan-output" title="Permanent link">&para;</a></h3>
-<p>Output dinyalakan lewat <strong>CAN Buttons</strong>: satu tombol untuk satu output, diatur
-di DashTune atau langsung di layar dash. Semua tombol memakai CAN ID yang sama,
-<code>0x648</code> (desimal <strong>1608</strong>), dan harus dalam mode <strong>Toggle</strong>. Selama tombol
-menyala, dash mengirim ulang perintahnya terus-menerus. Tombol mode Momentary
-hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.</p>
+<p>Output dinyalakan lewat <strong>Switch Panel</strong> (dulu bernama CAN Buttons): satu
+switch untuk satu output, diatur di DashTune atau langsung di layar dash. Semua
+switch memakai CAN ID yang sama, <code>0x648</code> (desimal <strong>1608</strong>), dan harus berjenis
+<strong>SWITCH</strong> (dulu Toggle). Selama switch ON, dash mengirim ulang perintahnya
+terus-menerus. Switch jenis PUSH (dulu Momentary) hanya mengirim sekali, jadi
+outputnya akan mati lagi setelah 500 ms.</p>
+<p>Pada firmware Racedash Pro terbaru, setiap switch mulai dalam keadaan OFF tiap
+kali dash dinyalakan, jadi output juga mati sampai switch-nya ditekan lagi.
+Kalau sebuah output harus langsung menyala setiap dash hidup, nyalakan <strong>Tetap
+ON setelah dash mati</strong> pada switch-nya di DashTune (lihat
+<a href="../mazduino-racedash-pro/#switch-panel">Switch Panel</a>).</p>
 <table>
 <thead>
 <tr>
@@ -923,18 +929,18 @@ hanya mengirim sekali, jadi outputnya akan mati lagi setelah 500 ms.</p>
 </tr>
 </tbody>
 </table>
-<p>Isi <strong>nilai OFF dengan 0</strong> untuk semua tombol. Beberapa tombol boleh berada di
+<p>Isi <strong>nilai OFF dengan 0</strong> untuk semua switch. Beberapa switch boleh berada di
 byte yang sama; dash menggabungkannya, jadi LC1 dan LS1 bisa menyala bersamaan.</p>
-<p>HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu tombol
-Toggle lagi di byte <strong>2</strong> (HS1), <strong>3</strong> (HS2), <strong>4</strong> (LS1) atau <strong>5</strong> (LS2),
+<p>HS1, HS2, LS1 dan LS2 langsung menyala penuh. Untuk PWM, tambahkan satu switch
+jenis SWITCH lagi di byte <strong>2</strong> (HS1), <strong>3</strong> (HS2), <strong>4</strong> (LS1) atau <strong>5</strong> (LS2),
 dengan nilai ON 1–254 sebagai
-duty, misalnya 128 untuk sekitar 50%. Selama tombol duty itu mati, outputnya
+duty, misalnya 128 untuk sekitar 50%. Selama switch duty itu OFF, outputnya
 kembali menyala penuh.</p>
 <div class="admonition note">
 <p class="admonition-title">Butuh firmware terbaru</p>
 <p>Cara di atas memerlukan firmware Racedash dan firmware CAN IO Extender
-versi terbaru. Pada firmware lama, tombol-tombol yang berada di byte yang
-sama saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
+versi terbaru. Pada firmware lama, switch yang berada di byte yang sama
+saling menimpa, dan modul mengabaikan perintah yang lebih pendek dari
 4 byte.</p>
 </div>
 <h2 id="memakai-dengan-racedash-35-dan-4">Memakai dengan Racedash 3.5" dan 4"<a class="headerlink" href="#memakai-dengan-racedash-35-dan-4" title="Permanent link">&para;</a></h2>
@@ -1266,11 +1272,15 @@ dash mengirim perintah; itu kondisi normal (failsafe), bukan tanda flash gagal.<
 </tr>
 <tr>
 <td style="text-align: left;">Output tidak mau menyala</td>
-<td style="text-align: left;">Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan tombolnya memakai CAN ID <code>0x648</code> (1608) dan mode <strong>Toggle</strong></td>
+<td style="text-align: left;">Dash belum mengirim perintah output, sehingga modul tetap dalam kondisi failsafe. Pastikan switch-nya memakai CAN ID <code>0x648</code> (1608) dan berjenis <strong>SWITCH</strong></td>
 </tr>
 <tr>
 <td style="text-align: left;">Output menyala sebentar lalu mati</td>
-<td style="text-align: left;">Tombolnya dalam mode Momentary. Ganti ke <strong>Toggle</strong></td>
+<td style="text-align: left;">Switch-nya berjenis PUSH. Ganti ke <strong>SWITCH</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Output mati lagi setiap dash dinyalakan</td>
+<td style="text-align: left;">Normal pada firmware Racedash Pro terbaru: setiap switch mulai OFF. Nyalakan <strong>Tetap ON setelah dash mati</strong> pada switch-nya di DashTune bila output harus langsung menyala</td>
 </tr>
 <tr>
 <td style="text-align: left;">LC4 atau LC5 tidak bekerja</td>
