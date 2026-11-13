@@ -428,8 +428,14 @@ update.
 
 ### Fitur relay: Google Maps dan musik
 
-DashTune bisa meneruskan **petunjuk arah Google Maps** dan **judul lagu yang
-sedang diputar** ke layar dash. Pengaturannya ada di tab **Lainnya → Relay**.
+DashTune bisa meneruskan **petunjuk arah Google Maps** dan **lagu yang sedang
+diputar di HP** ke layar dash. Pengaturannya ada di tab **Lainnya → Relay**.
+
+Dash tidak memutar musik. Musik tetap diputar dari HP,
+atau dari head unit yang tersambung ke HP. Halaman **Phone music** di dash hanya
+menampilkan judul lagu, artis, dan cover, serta tombol play, jeda, dan lompat
+lagu untuk mengontrol HP. Tile **PHONE MUSIC** bisa dimunculkan lewat
+**Setting → Menu**.
 
 Fitur ini perlu izin akses notifikasi di HP, dan aplikasi akan mengarahkan ke
 halaman pengaturannya saat pertama kali diaktifkan.
