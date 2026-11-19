@@ -236,6 +236,10 @@
     </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -267,7 +271,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:35:15 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="rotational-idle">Rotational Idle<a class="headerlink" href="#rotational-idle" title="Permanent link">&para;</a></h1>
 <p>Rotational idle memotong spark, fuel, atau keduanya pada sebagian siklus secara bergiliran antar silinder. Hasilnya suara idle yang "lumpy" seperti mesin dengan cam besar.</p>
 <p>Fitur ini masih <strong>experimental</strong> dan bukan fitur yang dipakai semua orang.</p>
@@ -277,8 +281,8 @@
 <li>Mazduino Tuner: <strong>Expert → Rotational Idle</strong></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Firmware 19 November 2026 atau lebih baru</p>
-<p>Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware 19 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.</p>
+<p class="admonition-title">Firmware Nightly 20 November 2026 atau lebih baru</p>
+<p>Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware Nightly 20 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.</p>
 <p>Tune dari firmware lama tetap terbaca tanpa perubahan. Field baru terisi 0: Minimum CLT 0 °C, Maximum TPS/PPS tanpa batas, timing normal, STFT dan idle air tidak diubah.</p>
 </div>
 <hr />
@@ -503,14 +507,14 @@
 <li><strong>Accumulator Max</strong> tidak semuanya 0.</li>
 <li><strong>Pemicu</strong>: switch ON, atau salah satu auto enable aktif. Kalau memakai auto TPS/PPS, "Engage at or below this TPS/PPS" tidak 0.</li>
 <li><strong>Batas</strong>: cek indikator live data di atas untuk melihat batas mana yang menahan.</li>
-<li><strong>Switch</strong>: pin mode sesuai rangkaian, dan firmware 19 November 2026 atau lebih baru.</li>
+<li><strong>Switch</strong>: pin mode sesuai rangkaian, dan firmware Nightly 20 November 2026 atau lebih baru.</li>
 </ol>
 
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../fuel-spark-cut/" class="btn btn-neutral float-left" title="Spark Cut & Fuel Cut"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../fuel-consumption/" class="btn btn-neutral float-right" title="Konsumsi Bahan Bakar">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../bluetooth/" class="btn btn-neutral float-right" title="TunerStudio lewat Bluetooth">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -536,7 +540,7 @@
       <span><a href="../fuel-spark-cut/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../fuel-consumption/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../bluetooth/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

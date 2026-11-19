@@ -227,6 +227,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#basic-settings">Basic Settings</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-switch-stft-opsional">Enable Switch STFT (Opsional)</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#region-configuration">Region Configuration</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#region-specific-parameters">Region-Specific Parameters</a>
@@ -308,6 +310,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -339,7 +345,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:35:15 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="fuel-system-configuration-tunerstudio">Fuel System Configuration - TunerStudio<a class="headerlink" href="#fuel-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Konfigurasi komprehensif untuk sistem bahan bakar ECU Mazduino. Menu <strong>Fuel</strong> berisi berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel.</p>
 <p><img alt="Fuel Menu" src="#" title="Fuel Menu Overview" /></p>
@@ -512,6 +518,20 @@
 <p><strong>Minimum/Maximum AFR for correction</strong>: Range AFR di mana corrections akan diaplikasikan</p>
 <p><strong>Adjustment deadband</strong>: Threshold di mana tidak ada corrections yang dibuat untuk menghindari fluktuasi minor</p>
 <p><strong>Ignore error magnitude</strong>: Mengontrol berapa AFR error yang diabaikan sebelum corrections diterapkan</p>
+<h3 id="enable-switch-stft-opsional">Enable Switch STFT (Opsional)<a class="headerlink" href="#enable-switch-stft-opsional" title="Permanent link">&para;</a></h3>
+<p>Switch untuk menyalakan atau mematikan short term fuel trim (STFT) dari kabin, misalnya saat setting VE atau saat memakai bahan bakar lain.</p>
+<ul>
+<li><strong>Switch ON</strong>: STFT bekerja mengikuti semua pengaturan closed loop</li>
+<li><strong>Switch OFF</strong>: STFT berhenti, dan long term fuel trim (LTFT) juga berhenti belajar</li>
+<li><strong>Pin tidak diisi (unassigned)</strong>: STFT bekerja tanpa switch</li>
+</ul>
+<p><strong>Enable switch pin</strong>: Pin input untuk switch.</p>
+<p><strong>Enable switch pin mode</strong>: Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin switch STFT hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru, atau kosongkan pin switch.</p>
+</div>
+<p>STFT juga berhenti sementara dengan sendirinya saat setting VE (kalau <strong>Detect Tuning and Suspend</strong> aktif) dan saat <a href="../firmware/rotational-idle/">Rotational Idle</a> aktif dengan <strong>Stop short term fuel trim while active</strong>. Alasan STFT tidak aktif tampil di panel status closed loop.</p>
 <h3 id="region-configuration">Region Configuration<a class="headerlink" href="#region-configuration" title="Permanent link">&para;</a></h3>
 <p><strong>Region Configuration</strong> memungkinkan kustomisasi RPM dan load thresholds:</p>
 <ul>
@@ -568,8 +588,8 @@
 <p><strong>Enable switch pin</strong>: Pin input untuk switch.</p>
 <p><strong>Enable switch pin mode</strong>: Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>: pull-up internal aktif, dan pin yang terhubung ke ground terbaca ON.</p>
 <div class="admonition note">
-<p class="admonition-title">Firmware sebelum 19 November 2026</p>
-<p>Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware 19 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.</p>
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.</p>
 </div>
 <h3 id="dfco-tidak-aktif-cek-ini">DFCO Tidak Aktif? Cek Ini<a class="headerlink" href="#dfco-tidak-aktif-cek-ini" title="Permanent link">&para;</a></h3>
 <p>Tambahkan indikator <strong><code>dfcoActive</code></strong> ke dashboard, lalu cek satu per satu saat engine brake:</p>

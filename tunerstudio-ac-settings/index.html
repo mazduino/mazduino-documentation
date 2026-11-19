@@ -208,6 +208,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -238,7 +242,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 18:17:33 UTC">6 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="pengaturan-air-conditioning-ac-tunerstudio">Pengaturan Air Conditioning (AC) - TunerStudio<a class="headerlink" href="#pengaturan-air-conditioning-ac-tunerstudio" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian AC Settings memungkinkan konfigurasi kontrol air conditioning dalam ECU, mencakup fitur seperti compressor delay, kompensasi idle, dan kontrol berbasis tekanan untuk mengoptimalkan performa dan mengelola beban mesin. Untuk unit Plug and Play, pengaturan AC mungkin sudah dikonfigurasi dalam basemap, meskipun penyesuaian masih dapat dilakukan untuk memenuhi kebutuhan spesifik. Unit Kit/DIY mungkin memerlukan konfigurasi lengkap pengaturan ini berdasarkan setup kendaraan.</p>
@@ -309,6 +313,7 @@
 <p><strong>Aplikasi</strong>: Mencegah engine stalling saat AC aktif</p>
 </li>
 </ul>
+<p><strong>A/C Idle fuel adder (%)</strong>: Tambahan bahan bakar saat idle selama tombol AC menyala. Hanya tampil kalau Fuel strategy = Alpha-N. Lihat <a href="#mesin-alpha-n-tanpa-sensor-map">Mesin Alpha-N</a>.</p>
 <h3 id="rpm-protection">RPM Protection<a class="headerlink" href="#rpm-protection" title="Permanent link">&para;</a></h3>
 <p><strong>RPM Low Threshold (RPM)</strong>: Ambang batas RPM minimum di bawah mana AC secara otomatis dinonaktifkan untuk mencegah mesin mati.</p>
 <ul>
@@ -376,7 +381,7 @@
 <h3 id="kenapa-rpm-turun-saat-ac-menyala">Kenapa RPM Turun Saat AC Menyala<a class="headerlink" href="#kenapa-rpm-turun-saat-ac-menyala" title="Permanent link">&para;</a></h3>
 <p>Pada mode Alpha-N, ECU menghitung udara yang masuk hanya dari TPS dan RPM. Saat AC menyala, katup idle (stepper atau solenoid) membuka lebih lebar untuk menambah udara. Udara ini lewat jalur bypass, bukan lewat throttle, jadi TPS tidak berubah dan ECU tidak menambah bahan bakar.</p>
 <p>Akibatnya campuran menjadi kurus tepat saat kompresor masuk, RPM turun tajam, dan katup idle membuka lebih lebar lagi sehingga campuran makin kurus. Gejala yang sama bisa muncul saat kipas radiator menyala atau setir diputar.</p>
-<p>ECU tidak memiliki penambahan bahan bakar khusus untuk AC. Semua pengaturan AC di atas berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.</p>
+<p>Mulai firmware Nightly 9 November 2026 ada <strong>A/C Idle fuel adder</strong> untuk masalah ini (langkah 3). Pengaturan AC lainnya berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.</p>
 <p>Pengecualian: jika idle diatur lewat throttle elektronik (ETB), throttle utama yang membuka sehingga TPS ikut naik dan bahan bakar bertambah dengan sendirinya.</p>
 <h3 id="langkah-mengatasi">Langkah Mengatasi<a class="headerlink" href="#langkah-mengatasi" title="Permanent link">&para;</a></h3>
 <p>Kerjakan berurutan, dan rekam log setiap selesai satu langkah.</p>
@@ -409,8 +414,27 @@
 </li>
 </ul>
 <p>Lalu aktifkan <strong>Separate idle ignition table</strong> dan isi <strong>Idle Ignition advance</strong> sedikit mundur, misalnya 10-14°, agar PID punya ruang untuk memajukan timing.</p>
-<p><strong>3. Tambah bahan bakar mengikuti bukaan katup idle</strong></p>
-<p>Langkah ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.</p>
+<p><strong>3. Tambah bahan bakar saat AC menyala</strong></p>
+<p>Buka <strong>Setup → Air Conditioning → A/C Idle fuel adder</strong> (firmware Nightly 9 November 2026 atau lebih baru, semua board):</p>
+<ul>
+<li>
+<p>Bahan bakar ditambah sebesar nilai ini (%) tepat saat ECU menambah udara dari A/C Idle adder: saat idle, saat taper setelah start, dan saat coasting kalau tabel coasting dipakai.</p>
+</li>
+<li>
+<p>Mulai bersamaan dengan tombol AC, jadi bahan bakar sudah bertambah sebelum kompresor masuk.</p>
+</li>
+<li>
+<p>Saat gas dibuka, ECU tidak menambah udara AC, jadi bahan bakar juga tidak ditambah. Tambahan beban saat jalan sudah tertutup tabel VE karena pengemudi membuka gas lebih dalam.</p>
+</li>
+<li>
+<p>Mulai dari 5-10%. Rekam log saat AC menyala setelah STFT stabil, lalu pindahkan sisa koreksi STFT idle ke nilai ini. Targetnya, STFT idle hampir sama saat AC menyala maupun mati.</p>
+</li>
+<li>
+<p>Biarkan 0 kalau idle diatur lewat throttle elektronik (ETB), karena TPS sudah melihat udara itu.</p>
+</li>
+</ul>
+<p>Fuel adder ini hanya untuk AC. Untuk beban lain seperti kipas radiator atau power steering, atau pada firmware lama, pakai cara di bawah: bahan bakar mengikuti bukaan katup idle lewat Lua.</p>
+<p>Cara ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.</p>
 <p>Script Lua dimasukkan lewat <code>rusefi_console.jar</code> (ada di setiap bundle firmware) pada tab Lua, lalu burn. TunerStudio tidak memiliki editor script Lua.</p>
 <pre><code class="language-lua">setTickRate(50)
 function onTick()

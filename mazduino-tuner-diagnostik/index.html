@@ -224,6 +224,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -255,7 +259,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:45:36 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="diagnostik-di-mazduino-tuner">Diagnostik di Mazduino Tuner<a class="headerlink" href="#diagnostik-di-mazduino-tuner" title="Permanent link">&para;</a></h1>
 <p>Alat diagnostik ada di grup <strong>Diagnostics</strong> pada menu. Ketik namanya di pencarian menu untuk
 membukanya dengan cepat.</p>
@@ -345,7 +349,7 @@ ada di Mazduino Tuner.</p>
 <li>Mesin menyala.</li>
 <li><strong>Injection mode = Sequential</strong>. Pada mode batch atau simultaneous, satu injektor juga mengisi
   silinder lain, jadi fitur ini ditolak.</li>
-<li>Firmware Mazduino 1 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
+<li>Firmware Mazduino Nightly 4 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
   aktif.</li>
 </ul>
 <h2 id="trigger-logger">Trigger Logger<a class="headerlink" href="#trigger-logger" title="Permanent link">&para;</a></h2>
@@ -365,7 +369,8 @@ dengan garis tipis vertikal sebagai penanda. Garis itu bukan berarti sinyal hila
 <h2 id="trigger-sniffer">Trigger Sniffer<a class="headerlink" href="#trigger-sniffer" title="Permanent link">&para;</a></h2>
 <p><img alt="Trigger sniffer" src="../img/mazduino-tuner/trigger-sniffer.png" /></p>
 <p>Menampilkan tepi sinyal CKP dan CMP serta titik TDC seperti yang dilihat firmware (engine sniffer),
-dengan RPM setiap siklus. Bisa dipakai di semua board Mazduino.</p>
+dengan RPM setiap siklus. Bisa dipakai di semua board Mazduino kecuali varian
+<a href="../firmware/bigfuel/">BIGFUEL</a>, yang tidak punya engine sniffer.</p>
 <ol>
 <li>Klik <strong>Start</strong>. Setiap siklus mesin yang diterima menambah <strong>Charts received</strong>.</li>
 <li>Garis oranye <strong>TDC</strong> menandai titik mati atas silinder 1 beserta RPM saat itu.</li>

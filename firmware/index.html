@@ -200,6 +200,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar">Konsumsi Bahan Bakar</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#board-dan-koneksi">Board dan Koneksi</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#fuel">Fuel</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#diagnostik">Diagnostik</a>
@@ -232,6 +234,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="rotational-idle/">Rotational Idle</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -263,7 +269,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:47:12 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="custom-firmware-mazduino">Custom Firmware Mazduino<a class="headerlink" href="#custom-firmware-mazduino" title="Permanent link">&para;</a></h1>
 <p>Firmware Mazduino adalah fork dari <strong>rusEFI</strong> yang dikembangkan khusus untuk hardware Mazduino. Meskipun berbasis rusEFI, ada sejumlah perbedaan dan tambahan fitur yang tidak ada di firmware rusEFI resmi.</p>
 <hr />
@@ -280,6 +286,10 @@
 <li><strong><a href="#komputasi-tabel">User Tables</a></strong> — tabel lookup yang dapat dikonfigurasi bebas</li>
 <li><strong><a href="#output-logika">Logic Outputs</a></strong> — output digital yang aktif berdasarkan kondisi yang dapat dikonfigurasi</li>
 <li><strong><a href="#konsumsi-bahan-bakar">Konsumsi Bahan Bakar</a></strong> — perhitungan L/100km dan L/jam</li>
+<li><strong><a href="bigfuel/">Varian BIGFUEL</a></strong> — tabel VE dan ignition 32x32 dengan hardware yang sama</li>
+<li><strong><a href="bluetooth/">TunerStudio lewat Bluetooth</a></strong> — modul HC-05/HC-06 di semua board</li>
+<li><strong><a href="../tunerstudio-ac-settings/#mesin-alpha-n-tanpa-sensor-map">AC Idle fuel adder</a></strong> — tambahan bahan bakar saat AC menyala untuk mesin Alpha-N</li>
+<li><strong><a href="../tunerstudio-fuel-system/#enable-switch-stft-opsional">STFT enable switch</a></strong> — short term fuel trim bisa dimatikan dari switch</li>
 <li><strong><a href="../tunerstudio-fuel-system/#enable-switch-opsional">DFCO enable switch</a></strong> — DFCO bisa dinyalakan dan dimatikan dari switch di kabin</li>
 <li><strong><a href="../mazduino-tuner-diagnostik/#temporary-cylinder-shutoff">Temporary Cylinder Shutoff</a></strong> — mematikan silinder sementara untuk mencari silinder yang lemah (dari Mazduino Tuner)</li>
 <li><strong><a href="rotational-idle/">Rotational Idle</a></strong> — batas CLT dan TPS yang juga berlaku saat switch ON, stop STFT, tambahan udara idle, dan timing khusus selama aktif</li>
@@ -375,6 +385,25 @@
 </tr>
 </tbody>
 </table>
+<h3 id="board-dan-koneksi">Board dan Koneksi<a class="headerlink" href="#board-dan-koneksi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fitur</th>
+<th>Kegunaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="bigfuel/">Varian BIGFUEL</a></td>
+<td>Tabel VE dan ignition 32x32 untuk resolusi tuning lebih rapat, hardware sama dengan board dasar</td>
+</tr>
+<tr>
+<td><a href="bluetooth/">TunerStudio lewat Bluetooth</a></td>
+<td>Tuning tanpa kabel USB lewat modul HC-05/HC-06</td>
+</tr>
+</tbody>
+</table>
 <h3 id="fuel">Fuel<a class="headerlink" href="#fuel" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -384,6 +413,14 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><a href="../tunerstudio-ac-settings/#mesin-alpha-n-tanpa-sensor-map">AC Idle fuel adder</a></td>
+<td>Tambahan bahan bakar saat AC menyala, untuk mesin Alpha-N dengan katup idle bypass</td>
+</tr>
+<tr>
+<td><a href="../tunerstudio-fuel-system/#enable-switch-stft-opsional">STFT enable switch</a></td>
+<td>Switch untuk menyalakan atau mematikan short term fuel trim</td>
+</tr>
 <tr>
 <td><a href="../tunerstudio-fuel-system/#enable-switch-opsional">DFCO enable switch</a></td>
 <td>Switch untuk menyalakan atau mematikan DFCO dari kabin</td>

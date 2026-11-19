@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/bluetooth/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>TunerStudio lewat Bluetooth - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "TunerStudio lewat Bluetooth";
+        var mkdocs_page_input_path = "firmware/bluetooth.md";
+        var mkdocs_page_url = "/firmware/bluetooth/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">TunerStudio lewat Bluetooth</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pin-per-board">Pin per Board</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring">Wiring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#baud-rate">Baud Rate</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#menghubungkan">Menghubungkan</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bigfuel/">Varian BIGFUEL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Custom Firmware</li>
+      <li class="breadcrumb-item active">TunerStudio lewat Bluetooth</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 15:14:52 UTC">19 November 2026</span></em></p>
+  <h1 id="tunerstudio-lewat-bluetooth">TunerStudio lewat Bluetooth<a class="headerlink" href="#tunerstudio-lewat-bluetooth" title="Permanent link">&para;</a></h1>
+<p>Semua board Mazduino bisa terhubung ke TunerStudio tanpa kabel USB, lewat modul Bluetooth serial seperti <strong>HC-05</strong> atau <strong>HC-06</strong>. Port USB tetap bisa dipakai seperti biasa.</p>
+<p>Butuh firmware Mazduino <strong>Nightly 4 November 2026</strong> atau lebih baru. Board varian BIGFUEL memakai pin yang sama dengan board dasarnya.</p>
+<hr />
+<h2 id="pin-per-board">Pin per Board<a class="headerlink" href="#pin-per-board" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>ECU TX → RX modul</th>
+<th>ECU RX ← TX modul</th>
+<th>Baud rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mazduino Compact</td>
+<td>PB10 (TXD3)</td>
+<td>PB11 (RXD3)</td>
+<td><code>tunerStudioSerialSpeed</code>, default 38400</td>
+</tr>
+<tr>
+<td>Mazduino Mini 6CH</td>
+<td>PB10 (TXD3)</td>
+<td>PB11 (RXD3)</td>
+<td><code>tunerStudioSerialSpeed</code>, default 38400</td>
+</tr>
+<tr>
+<td>Mazduino Mega100 / Mega100-512</td>
+<td>PB10 (TXD3, D16)</td>
+<td>PB11 (RXD3, D17)</td>
+<td><code>tunerStudioSerialSpeed</code>, default 38400</td>
+</tr>
+<tr>
+<td>Mazduino Lite</td>
+<td>PA9 (TXD1)</td>
+<td>PA10 (RXD1)</td>
+<td><code>tunerStudioSerialSpeed</code>, default 38400</td>
+</tr>
+<tr>
+<td>Mazduino Core</td>
+<td>PD5</td>
+<td>PD6</td>
+<td><code>uartConsoleSerialSpeed</code>, default 115200</td>
+</tr>
+</tbody>
+</table>
+<p>Mazduino Lite memakai PA9/PA10 karena PB10/PB11 dipakai sensor baro.</p>
+<div class="admonition warning">
+<p class="admonition-title">Tune dari firmware lama</p>
+<p>Firmware sebelum Nightly 4 November 2026 tidak punya port Bluetooth di Lite, Compact, Mega100, dan Mega100-512. Field TX pin dan RX pin tetap tampil di TunerStudio, tapi ECU tidak mengirim data apa pun ke modul.</p>
+<p>Setelah update firmware, tune lama tetap menyimpan pin lama, biasanya PC10/PC11. Pin itu bukan port Bluetooth, dan di board Mazduino dipakai SD card. Isi <strong>TX pin</strong> dan <strong>RX pin</strong> sesuai tabel di atas, burn, lalu restart ECU.</p>
+<p>Pin lain tidak bisa dipakai. Port Bluetooth terikat ke USART tertentu, jadi hanya pin di tabel ini yang bekerja. Contoh: PA0 di Lite adalah pin sensor MAP dan bukan pin USART1.</p>
+</div>
+<p>Pada Mega100 dengan preset Speeduino yang memakai D16/D17 untuk driver stepper, port Bluetooth otomatis dimatikan supaya tidak bentrok.</p>
+<hr />
+<h2 id="wiring">Wiring<a class="headerlink" href="#wiring" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>TX ECU</strong> ke <strong>RXD modul</strong>, dan <strong>RX ECU</strong> ke <strong>TXD modul</strong>. TX dan RX disilang.</li>
+<li><strong>GND</strong> modul ke ground ECU.</li>
+<li><strong>VCC</strong> modul ke 5V. Kebanyakan board HC-05/HC-06 punya regulator sendiri dan level logika 3,3V, sesuai dengan pin ECU.</li>
+</ol>
+<p>Lokasi pin TXD/RXD ada di halaman pinout tiap board.</p>
+<hr />
+<h2 id="baud-rate">Baud Rate<a class="headerlink" href="#baud-rate" title="Permanent link">&para;</a></h2>
+<p>Baud rate ECU dan modul <strong>harus sama</strong>.</p>
+<ul>
+<li>Di TunerStudio: <strong>Controller → Connection</strong>. Di Mazduino Tuner: <strong>Configuration → Connection settings</strong>.</li>
+<li>Default ECU 38400 (Core: 115200).</li>
+<li>Modul HC-05/HC-06 baru biasanya 9600. Ubah baud modul ke 38400 lewat AT command, atau ubah <code>tunerStudioSerialSpeed</code> ECU ke 9600.</li>
+<li>Setelah mengubah baud rate di ECU, burn lalu <strong>restart ECU</strong>. Port Bluetooth hanya dibuka sekali saat ECU menyala.</li>
+</ul>
+<p>Field <strong>TX pin</strong> dan <strong>RX pin</strong> di dialog yang sama sebaiknya dibiarkan sesuai default board.</p>
+<hr />
+<h2 id="menghubungkan">Menghubungkan<a class="headerlink" href="#menghubungkan" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Pair modul Bluetooth dengan laptop (PIN HC-05/HC-06 biasanya <code>1234</code> atau <code>0000</code>).</li>
+<li>Setelah pairing, laptop membuat port serial baru (COM di Windows, <code>/dev/tty.*</code> di macOS).</li>
+<li>Di TunerStudio, buka <strong>Communications → Settings</strong>, pilih port itu dengan baud rate yang sama dengan ECU.</li>
+</ol>
+<p>Bluetooth lebih lambat dari USB. Untuk datalog cepat atau update firmware, tetap pakai USB.</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../rotational-idle/" class="btn btn-neutral float-left" title="Rotational Idle"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bigfuel/" class="btn btn-neutral float-right" title="Varian BIGFUEL">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../rotational-idle/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../bigfuel/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

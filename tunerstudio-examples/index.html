@@ -215,6 +215,18 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#second-ve-table-dan-second-ignition-table">Second VE Table dan Second Ignition Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-switch-onoff">Mode Switch (ON/OFF)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-blend">Mode Blend</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cek-tabel-yang-aktif">Cek Tabel yang Aktif</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#catatan-saat-idle">Catatan Saat Idle</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#advanced-map-switching-techniques">Advanced Map Switching Techniques</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#1-multi-parameter-switching">1. Multi-Parameter Switching</a>
@@ -292,6 +304,10 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">Varian BIGFUEL</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -323,7 +339,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
   <h1 id="examples-map-switching-tunerstudio">Examples &amp; Map Switching TunerStudio<a class="headerlink" href="#examples-map-switching-tunerstudio" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian ini menyediakan contoh praktis implementasi fitur TunerStudio Mazduino, dengan fokus khusus pada Map Switching yang memungkinkan pergantian tune secara real-time untuk kondisi operasi yang berbeda.</p>
@@ -471,6 +487,39 @@ Boost Blend: +0.2 bar additional boost untuk race fuel
 <li>Testing berbagai setting tanpa reflash ECU</li>
 <li>Gradual transition antara tune yang berbeda</li>
 </ul>
+<h2 id="second-ve-table-dan-second-ignition-table">Second VE Table dan Second Ignition Table<a class="headerlink" href="#second-ve-table-dan-second-ignition-table" title="Permanent link">&para;</a></h2>
+<p>Selain blend table yang menambah atau mengurangi tabel utama, ECU punya tabel kedua yang <strong>menggantikan</strong> tabel utama sepenuhnya: <strong>Second VE Table</strong> untuk bahan bakar dan <strong>Second Ignition Table</strong> untuk timing. Cocok untuk dua map yang benar-benar berbeda, misalnya bensin dan E85, atau map harian dan map balap.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Fuel → Second VE Table</strong> dan <strong>Ignition → Second Ignition Table</strong></li>
+<li>Mazduino Tuner: <strong>Tuning → Extra fuel tables → Second fuel table</strong> dan <strong>Tuning → Extra ignition tables → Second ignition table</strong></li>
+</ul>
+<p>Setiap tabel kedua punya sumbu RPM dan load sendiri, dengan ukuran sama seperti tabel utama (16x16, atau 32x32 pada board BIGFUEL).</p>
+<h3 id="mode-switch-onoff">Mode Switch (ON/OFF)<a class="headerlink" href="#mode-switch-onoff" title="Permanent link">&para;</a></h3>
+<p>Switch digital memilih tabel mana yang dipakai:</p>
+<ul>
+<li><strong>Second VE table input pin</strong> / <strong>Second Ignition table input pin</strong>: pin input switch.</li>
+<li><strong>Second VE table input mode</strong> / <strong>Second Ignition table input mode</strong>: untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</li>
+<li><strong>Switch ON</strong>: tabel kedua dipakai penuh, tabel utama diabaikan.</li>
+<li><strong>Switch OFF</strong>: tabel utama dipakai.</li>
+</ul>
+<p>Pin bisa diisi untuk VE saja, timing saja, atau keduanya dengan pin yang sama.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin tabel kedua hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar: tabel tidak berpindah walaupun switch ON. Update ke firmware Nightly 20 November 2026 atau lebih baru.</p>
+</div>
+<h3 id="mode-blend">Mode Blend<a class="headerlink" href="#mode-blend" title="Permanent link">&para;</a></h3>
+<p>Kalau pin tidak diisi, tabel kedua bisa dicampur bertahap dengan tabel utama:</p>
+<ul>
+<li><strong>Blend parameter</strong>: sumber pencampuran, misalnya <strong>Ethanol (Flex) %</strong> dari sensor flex fuel. <strong>Zero</strong> = blend tidak dipakai.</li>
+<li><strong>Blend bias</strong>: kurva persentase tabel kedua terhadap nilai blend parameter. Bias 0% = tabel utama saja, 100% = tabel kedua saja, 50% = nilai tengah keduanya.</li>
+</ul>
+<p>Saat pin diisi dan switch ON, mode switch yang dipakai dan blend diabaikan.</p>
+<h3 id="cek-tabel-yang-aktif">Cek Tabel yang Aktif<a class="headerlink" href="#cek-tabel-yang-aktif" title="Permanent link">&para;</a></h3>
+<p>Indikator di dialog menunjukkan tabel yang sedang dipakai: <strong>Primary VE table</strong> atau <strong>Second VE table</strong>, dan <strong>Primary Ignition table</strong> atau <strong>Second Ignition table</strong>. Tabel kedua juga dihitung aktif saat blend bias lebih dari 0%.</p>
+<p>Tabel kedua tersimpan di halaman tune terpisah. Pastikan perubahan di-burn.</p>
+<h3 id="catatan-saat-idle">Catatan Saat Idle<a class="headerlink" href="#catatan-saat-idle" title="Permanent link">&para;</a></h3>
+<p>Kalau <strong>Separate idle VE table</strong> atau <strong>Separate idle ignition table</strong> (menu Idle) aktif, tabel idle tetap dipakai di area idle (TPS di bawah batas idle), baik dengan tabel utama maupun tabel kedua. Perbedaan dua map baru terasa saat gas dibuka.</p>
 <h2 id="advanced-map-switching-techniques">Advanced Map Switching Techniques<a class="headerlink" href="#advanced-map-switching-techniques" title="Permanent link">&para;</a></h2>
 <h3 id="1-multi-parameter-switching">1. Multi-Parameter Switching<a class="headerlink" href="#1-multi-parameter-switching" title="Permanent link">&para;</a></h3>
 <p><img alt="Multi-Parameter Switching" src="images/multi-parameter-switching.png" /></p>
