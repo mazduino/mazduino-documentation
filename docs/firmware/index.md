@@ -18,6 +18,8 @@ Berikut fitur yang ditambahkan pada custom firmware Mazduino:
 - **[User Tables](#komputasi-tabel)** — tabel lookup yang dapat dikonfigurasi bebas
 - **[Logic Outputs](#output-logika)** — output digital yang aktif berdasarkan kondisi yang dapat dikonfigurasi
 - **[Konsumsi Bahan Bakar](#konsumsi-bahan-bakar)** — perhitungan L/100km dan L/jam
+- **[DFCO enable switch](../tunerstudio-fuel-system.md#enable-switch-opsional)** — DFCO bisa dinyalakan dan dimatikan dari switch di kabin
+- **[Temporary Cylinder Shutoff](../mazduino-tuner-diagnostik.md#temporary-cylinder-shutoff)** — mematikan silinder sementara untuk mencari silinder yang lemah (dari Mazduino Tuner)
 - **[Rotational Idle](rotational-idle.md)** — batas CLT dan TPS yang juga berlaku saat switch ON, stop STFT, tambahan udara idle, dan timing khusus selama aktif
 
 Download firmware ada di **[halaman Downloads](../downloads.md)**.
@@ -60,6 +62,18 @@ ECU dapat menerima data dari bus CAN dan menggunakannya sebagai input sensor ata
 | Fitur | Kegunaan |
 |---|---|
 | [Konsumsi Bahan Bakar](fuel-consumption.md) | Perhitungan konsumsi real-time dalam L/100km dan L/jam berdasarkan data injeksi dan VSS |
+
+### Fuel
+
+| Fitur | Kegunaan |
+|---|---|
+| [DFCO enable switch](../tunerstudio-fuel-system.md#enable-switch-opsional) | Switch untuk menyalakan atau mematikan DFCO dari kabin |
+
+### Diagnostik
+
+| Fitur | Kegunaan |
+|---|---|
+| [Temporary Cylinder Shutoff](../mazduino-tuner-diagnostik.md#temporary-cylinder-shutoff) | Mematikan bahan bakar dan pengapian silinder sementara untuk mencari silinder yang lemah. Hanya ada di Mazduino Tuner |
 
 ### Idle
 
