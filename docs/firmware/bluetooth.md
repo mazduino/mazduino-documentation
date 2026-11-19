@@ -18,6 +18,13 @@ Butuh firmware Mazduino **Nightly 4 November 2026** atau lebih baru. Board varia
 
 Mazduino Lite memakai PA9/PA10 karena PB10/PB11 dipakai sensor baro.
 
+!!! warning "Tune dari firmware lama"
+    Firmware sebelum Nightly 4 November 2026 tidak punya port Bluetooth di Lite, Compact, Mega100, dan Mega100-512. Field TX pin dan RX pin tetap tampil di TunerStudio, tapi ECU tidak mengirim data apa pun ke modul.
+
+    Setelah update firmware, tune lama tetap menyimpan pin lama, biasanya PC10/PC11. Pin itu bukan port Bluetooth, dan di board Mazduino dipakai SD card. Isi **TX pin** dan **RX pin** sesuai tabel di atas, burn, lalu restart ECU.
+
+    Pin lain tidak bisa dipakai. Port Bluetooth terikat ke USART tertentu, jadi hanya pin di tabel ini yang bekerja. Contoh: PA0 di Lite adalah pin sensor MAP dan bukan pin USART1.
+
 Pada Mega100 dengan preset Speeduino yang memakai D16/D17 untuk driver stepper, port Bluetooth otomatis dimatikan supaya tidak bentrok.
 
 ---
