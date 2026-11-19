@@ -9,8 +9,8 @@ Lokasi menu:
 - TunerStudio: **Idle → Rotational Idle**
 - Mazduino Tuner: **Expert → Rotational Idle**
 
-!!! note "Firmware 19 November 2026 atau lebih baru"
-    Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware 19 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.
+!!! note "Firmware Nightly 20 November 2026 atau lebih baru"
+    Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware Nightly 20 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.
 
     Tune dari firmware lama tetap terbaca tanpa perubahan. Field baru terisi 0: Minimum CLT 0 °C, Maximum TPS/PPS tanpa batas, timing normal, STFT dan idle air tidak diubah.
 
@@ -139,4 +139,4 @@ Panel live data ada di sebelah kanan dialog Rotational Idle:
 2. **Accumulator Max** tidak semuanya 0.
 3. **Pemicu**: switch ON, atau salah satu auto enable aktif. Kalau memakai auto TPS/PPS, "Engage at or below this TPS/PPS" tidak 0.
 4. **Batas**: cek indikator live data di atas untuk melihat batas mana yang menahan.
-5. **Switch**: pin mode sesuai rangkaian, dan firmware 19 November 2026 atau lebih baru.
+5. **Switch**: pin mode sesuai rangkaian, dan firmware Nightly 20 November 2026 atau lebih baru.

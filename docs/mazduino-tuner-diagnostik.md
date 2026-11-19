@@ -64,7 +64,7 @@ Syarat:
 - Mesin menyala.
 - **Injection mode = Sequential**. Pada mode batch atau simultaneous, satu injektor juga mengisi
   silinder lain, jadi fitur ini ditolak.
-- Firmware Mazduino 1 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
+- Firmware Mazduino Nightly 4 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
   aktif.
 
 ## Trigger Logger
@@ -90,7 +90,8 @@ dengan garis tipis vertikal sebagai penanda. Garis itu bukan berarti sinyal hila
 ![Trigger sniffer](img/mazduino-tuner/trigger-sniffer.png)
 
 Menampilkan tepi sinyal CKP dan CMP serta titik TDC seperti yang dilihat firmware (engine sniffer),
-dengan RPM setiap siklus. Bisa dipakai di semua board Mazduino.
+dengan RPM setiap siklus. Bisa dipakai di semua board Mazduino kecuali varian
+[BIGFUEL](firmware/bigfuel.md), yang tidak punya engine sniffer.
 
 1. Klik **Start**. Setiap siklus mesin yang diterima menambah **Charts received**.
 2. Garis oranye **TDC** menandai titik mati atas silinder 1 beserta RPM saat itu.

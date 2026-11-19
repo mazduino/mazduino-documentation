@@ -171,6 +171,23 @@ Table contoh ini di-setup untuk turbocharged, cammed engine:
 
 **Ignore error magnitude**: Mengontrol berapa AFR error yang diabaikan sebelum corrections diterapkan
 
+### Enable Switch STFT (Opsional)
+
+Switch untuk menyalakan atau mematikan short term fuel trim (STFT) dari kabin, misalnya saat setting VE atau saat memakai bahan bakar lain.
+
+- **Switch ON**: STFT bekerja mengikuti semua pengaturan closed loop
+- **Switch OFF**: STFT berhenti, dan long term fuel trim (LTFT) juga berhenti belajar
+- **Pin tidak diisi (unassigned)**: STFT bekerja tanpa switch
+
+**Enable switch pin**: Pin input untuk switch.
+
+**Enable switch pin mode**: Untuk switch yang menghubungkan pin ke ground, pilih **INVERTED PULLUP**.
+
+!!! note "Firmware sebelum Nightly 20 November 2026"
+    Pada firmware lama, pin switch STFT hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru, atau kosongkan pin switch.
+
+STFT juga berhenti sementara dengan sendirinya saat setting VE (kalau **Detect Tuning and Suspend** aktif) dan saat [Rotational Idle](firmware/rotational-idle.md) aktif dengan **Stop short term fuel trim while active**. Alasan STFT tidak aktif tampil di panel status closed loop.
+
 ### Region Configuration
 
 **Region Configuration** memungkinkan kustomisasi RPM dan load thresholds:
@@ -242,8 +259,8 @@ Switch untuk menyalakan atau mematikan DFCO dari kabin, misalnya saat balap atau
 
 **Enable switch pin mode**: Untuk switch yang menghubungkan pin ke ground, pilih **INVERTED PULLUP**: pull-up internal aktif, dan pin yang terhubung ke ground terbaca ON.
 
-!!! note "Firmware sebelum 19 November 2026"
-    Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware 19 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.
+!!! note "Firmware sebelum Nightly 20 November 2026"
+    Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.
 
 ### DFCO Tidak Aktif? Cek Ini
 

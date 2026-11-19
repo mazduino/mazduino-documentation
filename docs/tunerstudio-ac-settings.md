@@ -64,6 +64,8 @@ Bagian AC Settings memungkinkan konfigurasi kontrol air conditioning dalam ECU, 
 
 - **Aplikasi**: Mencegah engine stalling saat AC aktif
 
+**A/C Idle fuel adder (%)**: Tambahan bahan bakar saat idle selama tombol AC menyala. Hanya tampil kalau Fuel strategy = Alpha-N. Lihat [Mesin Alpha-N](#mesin-alpha-n-tanpa-sensor-map).
+
 ### RPM Protection
 **RPM Low Threshold (RPM)**: Ambang batas RPM minimum di bawah mana AC secara otomatis dinonaktifkan untuk mencegah mesin mati.
 
@@ -119,7 +121,7 @@ Pada mode Alpha-N, ECU menghitung udara yang masuk hanya dari TPS dan RPM. Saat 
 
 Akibatnya campuran menjadi kurus tepat saat kompresor masuk, RPM turun tajam, dan katup idle membuka lebih lebar lagi sehingga campuran makin kurus. Gejala yang sama bisa muncul saat kipas radiator menyala atau setir diputar.
 
-ECU tidak memiliki penambahan bahan bakar khusus untuk AC. Semua pengaturan AC di atas berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.
+Mulai firmware Nightly 9 November 2026 ada **A/C Idle fuel adder** untuk masalah ini (langkah 3). Pengaturan AC lainnya berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.
 
 Pengecualian: jika idle diatur lewat throttle elektronik (ETB), throttle utama yang membuka sehingga TPS ikut naik dan bahan bakar bertambah dengan sendirinya.
 
@@ -149,9 +151,23 @@ Timing pengapian bereaksi jauh lebih cepat dari katup idle, sehingga paling efek
 
 Lalu aktifkan **Separate idle ignition table** dan isi **Idle Ignition advance** sedikit mundur, misalnya 10-14°, agar PID punya ruang untuk memajukan timing.
 
-**3. Tambah bahan bakar mengikuti bukaan katup idle**
+**3. Tambah bahan bakar saat AC menyala**
 
-Langkah ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.
+Buka **Setup → Air Conditioning → A/C Idle fuel adder** (firmware Nightly 9 November 2026 atau lebih baru, semua board):
+
+- Bahan bakar ditambah sebesar nilai ini (%) tepat saat ECU menambah udara dari A/C Idle adder: saat idle, saat taper setelah start, dan saat coasting kalau tabel coasting dipakai.
+
+- Mulai bersamaan dengan tombol AC, jadi bahan bakar sudah bertambah sebelum kompresor masuk.
+
+- Saat gas dibuka, ECU tidak menambah udara AC, jadi bahan bakar juga tidak ditambah. Tambahan beban saat jalan sudah tertutup tabel VE karena pengemudi membuka gas lebih dalam.
+
+- Mulai dari 5-10%. Rekam log saat AC menyala setelah STFT stabil, lalu pindahkan sisa koreksi STFT idle ke nilai ini. Targetnya, STFT idle hampir sama saat AC menyala maupun mati.
+
+- Biarkan 0 kalau idle diatur lewat throttle elektronik (ETB), karena TPS sudah melihat udara itu.
+
+Fuel adder ini hanya untuk AC. Untuk beban lain seperti kipas radiator atau power steering, atau pada firmware lama, pakai cara di bawah: bahan bakar mengikuti bukaan katup idle lewat Lua.
+
+Cara ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.
 
 Script Lua dimasukkan lewat `rusefi_console.jar` (ada di setiap bundle firmware) pada tab Lua, lalu burn. TunerStudio tidak memiliki editor script Lua.
 

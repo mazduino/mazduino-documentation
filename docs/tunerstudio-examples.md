@@ -145,6 +145,50 @@ Gunakan analog input variable (potensiometer) alih-alih switch on/off untuk prog
 - Testing berbagai setting tanpa reflash ECU
 - Gradual transition antara tune yang berbeda
 
+## Second VE Table dan Second Ignition Table
+
+Selain blend table yang menambah atau mengurangi tabel utama, ECU punya tabel kedua yang **menggantikan** tabel utama sepenuhnya: **Second VE Table** untuk bahan bakar dan **Second Ignition Table** untuk timing. Cocok untuk dua map yang benar-benar berbeda, misalnya bensin dan E85, atau map harian dan map balap.
+
+Lokasi menu:
+
+- TunerStudio: **Fuel → Second VE Table** dan **Ignition → Second Ignition Table**
+- Mazduino Tuner: **Tuning → Extra fuel tables → Second fuel table** dan **Tuning → Extra ignition tables → Second ignition table**
+
+Setiap tabel kedua punya sumbu RPM dan load sendiri, dengan ukuran sama seperti tabel utama (16x16, atau 32x32 pada board BIGFUEL).
+
+### Mode Switch (ON/OFF)
+
+Switch digital memilih tabel mana yang dipakai:
+
+- **Second VE table input pin** / **Second Ignition table input pin**: pin input switch.
+- **Second VE table input mode** / **Second Ignition table input mode**: untuk switch yang menghubungkan pin ke ground, pilih **INVERTED PULLUP**.
+- **Switch ON**: tabel kedua dipakai penuh, tabel utama diabaikan.
+- **Switch OFF**: tabel utama dipakai.
+
+Pin bisa diisi untuk VE saja, timing saja, atau keduanya dengan pin yang sama.
+
+!!! note "Firmware sebelum Nightly 20 November 2026"
+    Pada firmware lama, pin tabel kedua hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar: tabel tidak berpindah walaupun switch ON. Update ke firmware Nightly 20 November 2026 atau lebih baru.
+
+### Mode Blend
+
+Kalau pin tidak diisi, tabel kedua bisa dicampur bertahap dengan tabel utama:
+
+- **Blend parameter**: sumber pencampuran, misalnya **Ethanol (Flex) %** dari sensor flex fuel. **Zero** = blend tidak dipakai.
+- **Blend bias**: kurva persentase tabel kedua terhadap nilai blend parameter. Bias 0% = tabel utama saja, 100% = tabel kedua saja, 50% = nilai tengah keduanya.
+
+Saat pin diisi dan switch ON, mode switch yang dipakai dan blend diabaikan.
+
+### Cek Tabel yang Aktif
+
+Indikator di dialog menunjukkan tabel yang sedang dipakai: **Primary VE table** atau **Second VE table**, dan **Primary Ignition table** atau **Second Ignition table**. Tabel kedua juga dihitung aktif saat blend bias lebih dari 0%.
+
+Tabel kedua tersimpan di halaman tune terpisah. Pastikan perubahan di-burn.
+
+### Catatan Saat Idle
+
+Kalau **Separate idle VE table** atau **Separate idle ignition table** (menu Idle) aktif, tabel idle tetap dipakai di area idle (TPS di bawah batas idle), baik dengan tabel utama maupun tabel kedua. Perbedaan dua map baru terasa saat gas dibuka.
+
 ## Advanced Map Switching Techniques
 
 ### 1. Multi-Parameter Switching
