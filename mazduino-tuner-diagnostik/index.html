@@ -222,6 +222,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -253,7 +255,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="9 November 2026 03:03:09 UTC">9 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:45:36 UTC">19 November 2026</span></em></p>
   <h1 id="diagnostik-di-mazduino-tuner">Diagnostik di Mazduino Tuner<a class="headerlink" href="#diagnostik-di-mazduino-tuner" title="Permanent link">&para;</a></h1>
 <p>Alat diagnostik ada di grup <strong>Diagnostics</strong> pada menu. Ketik namanya di pencarian menu untuk
 membukanya dengan cepat.</p>
@@ -316,14 +318,36 @@ menanyakan apakah alat dihentikan.</p>
 <p>Memeriksa tune dan menampilkan pengaturan yang tidak wajar atau saling bertentangan, beserta
 tingkat kepentingannya.</p>
 <h2 id="temporary-cylinder-shutoff">Temporary Cylinder Shutoff<a class="headerlink" href="#temporary-cylinder-shutoff" title="Permanent link">&para;</a></h2>
-<p>Memutus bahan bakar dan pengapian satu silinder untuk mencari silinder yang lemah:</p>
-<ul>
-<li>Saat idle, <strong>RPM turun banyak</strong> = silinder sehat.</li>
+<p>Memutus bahan bakar dan pengapian satu silinder untuk mencari silinder yang lemah. Fitur ini hanya
+ada di Mazduino Tuner.</p>
+<ol>
+<li>Nyalakan mesin dan biarkan idle stabil.</li>
+<li>Klik tombol <strong>Cylinder N</strong>. Tombol berubah menjadi <strong>OFF N</strong> dengan hitungan mundur, dan di
+   bawahnya tampil berapa RPM turun.</li>
+<li>Bandingkan penurunan RPM tiap silinder:<ul>
+<li><strong>RPM turun banyak</strong> = silinder sehat.</li>
 <li><strong>RPM hampir tidak turun</strong> = silinder bermasalah (injektor, busi/koil, kompresi).</li>
-<li>Setiap silinder menyala kembali sendiri setelah 10 detik.</li>
 </ul>
-<p>Syarat: <strong>Allow writes</strong> aktif, mesin menyala, dan injeksi sequential. Firmware lama mungkin belum
-mendukung fitur ini.</p>
+</li>
+<li>Klik lagi tombol yang sama untuk menyalakan silinder itu, atau <strong>Restore all</strong> untuk semua.</li>
+</ol>
+<p>Lebih dari satu silinder bisa dimatikan bersamaan, tapi minimal satu silinder tetap menyala.</p>
+<p>Silinder menyala kembali sendiri:</p>
+<ul>
+<li><strong>10 detik setelah perintah terakhir</strong>. Setiap silinder yang dimatikan memulai ulang hitungan
+  ini, lalu semua silinder menyala lagi bersamaan.</li>
+<li>Saat halaman ditutup.</li>
+<li>Saat injection mode diubah dari sequential.</li>
+</ul>
+<p>Syarat:</p>
+<ul>
+<li><strong>Allow writes</strong> aktif.</li>
+<li>Mesin menyala.</li>
+<li><strong>Injection mode = Sequential</strong>. Pada mode batch atau simultaneous, satu injektor juga mengisi
+  silinder lain, jadi fitur ini ditolak.</li>
+<li>Firmware Mazduino 1 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
+  aktif.</li>
+</ul>
 <h2 id="trigger-logger">Trigger Logger<a class="headerlink" href="#trigger-logger" title="Permanent link">&para;</a></h2>
 <p><img alt="Trigger logger" src="../img/mazduino-tuner/trigger-logger.png" /></p>
 <p>Merekam sinyal <strong>CKP</strong> (primary), <strong>CMP</strong> (cam), <strong>sync</strong>, dan <strong>TDC</strong> saat cranking atau mesin

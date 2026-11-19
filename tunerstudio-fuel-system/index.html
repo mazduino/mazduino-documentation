@@ -241,6 +241,10 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#advanced-settings">Advanced Settings</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-switch-opsional">Enable Switch (Opsional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dfco-tidak-aktif-cek-ini">DFCO Tidak Aktif? Cek Ini</a>
+    </li>
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#acceleration-enrichment">Acceleration Enrichment</a>
@@ -302,6 +306,8 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
                   <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Konsumsi Bahan Bakar</a>
                   </li>
               </ul>
@@ -333,7 +339,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:35:15 UTC">19 November 2026</span></em></p>
   <h1 id="fuel-system-configuration-tunerstudio">Fuel System Configuration - TunerStudio<a class="headerlink" href="#fuel-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
 <p>Konfigurasi komprehensif untuk sistem bahan bakar ECU Mazduino. Menu <strong>Fuel</strong> berisi berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel.</p>
 <p><img alt="Fuel Menu" src="#" title="Fuel Menu Overview" /></p>
@@ -531,18 +537,54 @@
 </ul>
 <h2 id="coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)<a class="headerlink" href="#coasting-fuel-cutoff-dfco" title="Permanent link">&para;</a></h2>
 <p><img alt="Fuel Cutoff Settings" src="#" title="Fuel Cutoff Settings" /></p>
+<p>DFCO memutus injeksi saat engine brake, yaitu gas dilepas pada RPM tinggi. Bahan bakar lebih hemat dan engine brake terasa lebih kuat.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Fuel → Deceleration fuel cutoff (DFCO)</strong></li>
+<li>Mazduino Tuner: <strong>Fuel → Overrun cut</strong></li>
+</ul>
+<p>DFCO hanya aktif kalau <strong>semua</strong> syarat di bawah terpenuhi: CLT, TPS, MAP, RPM, kecepatan kendaraan, dan switch (kalau dipasang).</p>
 <h3 id="enabledisable-settings">Enable/Disable Settings<a class="headerlink" href="#enabledisable-settings" title="Permanent link">&para;</a></h3>
 <p><strong>Enable Coasting Fuel Cutoff</strong>: Mengaktifkan fuel cutoff selama coasting</p>
-<p><strong>No cut below CLT(C)</strong>: Coolant temperature minimum di bawah mana fuel cutoff tidak terjadi</p>
+<p><strong>No cut below CLT(C)</strong>: DFCO hanya aktif di atas suhu coolant ini. Default 60 °C, jadi mesin yang masih dingin tidak kena cut.</p>
 <h3 id="activation-thresholds">Activation Thresholds<a class="headerlink" href="#activation-thresholds" title="Permanent link">&para;</a></h3>
-<p><strong>RPM cut fuel above</strong>: RPM threshold di atas mana fuel cutoff akan engage selama deceleration</p>
-<p><strong>RPM restore fuel below</strong>: RPM di mana fuel di-restore setelah cutoff</p>
-<p><strong>Vehicle speed cut above/restore below</strong>: Speed thresholds untuk mengaktifkan/menonaktifkan fuel cutoff</p>
-<p><strong>Cut fuel below TPS(%)</strong>: Throttle position threshold untuk aktivasi fuel cutoff</p>
-<p><strong>Cut fuel below MAP(kPa)</strong>: Manifold pressure threshold untuk aktivasi fuel cutoff</p>
+<p><strong>RPM cut fuel above</strong>: Fuel di-cut kalau RPM di atas nilai ini. Default 1500 RPM.</p>
+<p><strong>RPM restore fuel below</strong>: Fuel kembali disuntik kalau RPM turun di bawah nilai ini. Default 1300 RPM. Nilai ini harus lebih rendah dari RPM cut, selisihnya mencegah DFCO on-off terus.</p>
+<p><strong>Vehicle speed cut above/restore below</strong>: Batas kecepatan kendaraan untuk cut dan restore. <strong>Kalau tidak ada sensor kecepatan (VSS), isi keduanya 0.</strong> Kalau "cut above" diisi lebih dari 0 tanpa VSS, kecepatan terbaca 0 dan DFCO tidak pernah aktif.</p>
+<p><strong>Cut fuel below TPS(%)</strong>: DFCO hanya aktif kalau TPS (atau pedal, pada ETB) di bawah nilai ini. Default 2%. Cek nilai TPS di gauge saat gas dilepas penuh: TPS yang belum dikalibrasi sering terbaca 3–5% dan DFCO tidak pernah aktif.</p>
+<p><strong>Cut fuel below MAP(kPa)</strong>: DFCO hanya aktif kalau MAP di bawah nilai ini. Default 30 kPa. Saat engine brake MAP biasanya 20–30 kPa. Kalau di mesin anda MAP saat engine brake lebih tinggi, naikkan nilai ini sedikit di atasnya. Tanpa sensor MAP, syarat ini diabaikan.</p>
 <h3 id="advanced-settings">Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permanent link">&para;</a></h3>
-<p><strong>Fuel cut delay</strong>: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi</p>
+<p><strong>Fuel cut delay</strong>: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi. 0 = langsung cut.</p>
 <p><strong>Inhibit closed loop fuel after cut</strong>: Temporarily disable closed-loop fuel correction setelah fuel di-restore</p>
+<p><strong>Ignition retard during cut</strong>: Timing dimundurkan sebanyak ini (maksimal 30°) selama cut, supaya hentakan saat fuel kembali lebih halus.</p>
+<p><strong>After cut timing ramp-in time</strong>: Waktu untuk mengembalikan timing ke normal setelah fuel kembali disuntik.</p>
+<h3 id="enable-switch-opsional">Enable Switch (Opsional)<a class="headerlink" href="#enable-switch-opsional" title="Permanent link">&para;</a></h3>
+<p>Switch untuk menyalakan atau mematikan DFCO dari kabin, misalnya saat balap atau saat setting.</p>
+<ul>
+<li><strong>Switch ON</strong>: DFCO aktif mengikuti semua syarat di atas</li>
+<li><strong>Switch OFF</strong>: DFCO tidak pernah aktif</li>
+<li><strong>Pin tidak diisi (unassigned)</strong>: DFCO hanya mengikuti syarat di atas, tanpa switch</li>
+</ul>
+<p><strong>Enable switch pin</strong>: Pin input untuk switch.</p>
+<p><strong>Enable switch pin mode</strong>: Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>: pull-up internal aktif, dan pin yang terhubung ke ground terbaca ON.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum 19 November 2026</p>
+<p>Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware 19 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.</p>
+</div>
+<h3 id="dfco-tidak-aktif-cek-ini">DFCO Tidak Aktif? Cek Ini<a class="headerlink" href="#dfco-tidak-aktif-cek-ini" title="Permanent link">&para;</a></h3>
+<p>Tambahkan indikator <strong><code>dfcoActive</code></strong> ke dashboard, lalu cek satu per satu saat engine brake:</p>
+<ol>
+<li><strong>Enable Coasting Fuel Cutoff</strong> aktif dan tune sudah di-burn.</li>
+<li><strong>Switch</strong>: kalau pin switch diisi, switch harus ON. Kalau tidak memakai switch, kosongkan pin.</li>
+<li><strong>CLT</strong> di atas "No cut below CLT".</li>
+<li><strong>TPS</strong> saat gas dilepas di bawah "Cut fuel below TPS".</li>
+<li><strong>MAP</strong> saat engine brake di bawah "Cut fuel below MAP".</li>
+<li><strong>RPM</strong> di atas "RPM cut fuel above".</li>
+<li><strong>Kecepatan kendaraan</strong>: tanpa VSS, isi kedua nilai kecepatan 0.</li>
+<li><strong>Sensor</strong>: kalau sensor TPS atau CLT error, DFCO dimatikan. Begitu juga MAP kalau sensor MAP terpasang tapi error.</li>
+<li><strong>Sedang setting VE</strong>: kalau <strong>Detect Tuning and Suspend</strong> aktif (di pengaturan closed loop fuel), DFCO dan STFT berhenti selama 20 detik setelah setiap perubahan tabel VE, termasuk dari autotune. Indikator <code>isTuningNow</code> menyala selama masa itu.</li>
+<li><strong>Fuel cut delay</strong> yang terlalu panjang membuat cut baru terjadi lama setelah gas dilepas.</li>
+</ol>
 <h2 id="acceleration-enrichment">Acceleration Enrichment<a class="headerlink" href="#acceleration-enrichment" title="Permanent link">&para;</a></h2>
 <p><img alt="Acceleration Enrichment" src="#" title="Acceleration Enrichment" /></p>
 <h3 id="tps-based-enrichment">TPS-Based Enrichment<a class="headerlink" href="#tps-based-enrichment" title="Permanent link">&para;</a></h3>

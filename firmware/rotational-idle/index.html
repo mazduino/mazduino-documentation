@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/rotational-idle/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Rotational Idle - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rotational Idle";
+        var mkdocs_page_input_path = "firmware/rotational-idle.md";
+        var mkdocs_page_url = "/firmware/rotational-idle/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Rotational Idle</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cara-kerja">Cara Kerja</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pengaturan">Pengaturan</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#umum">Umum</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pemicu">Pemicu</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#batas">Batas</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accumulator-pola-cut">Accumulator (Pola Cut)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-setup">Contoh Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#hanya-dari-switch">Hanya dari Switch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#otomatis-saat-gas-dilepas">Otomatis Saat Gas Dilepas</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#live-data">Live Data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rotational-idle-tidak-aktif-cek-ini">Rotational Idle Tidak Aktif? Cek Ini</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Custom Firmware</li>
+      <li class="breadcrumb-item active">Rotational Idle</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 13:35:15 UTC">19 November 2026</span></em></p>
+  <h1 id="rotational-idle">Rotational Idle<a class="headerlink" href="#rotational-idle" title="Permanent link">&para;</a></h1>
+<p>Rotational idle memotong spark, fuel, atau keduanya pada sebagian siklus secara bergiliran antar silinder. Hasilnya suara idle yang "lumpy" seperti mesin dengan cam besar.</p>
+<p>Fitur ini masih <strong>experimental</strong> dan bukan fitur yang dipakai semua orang.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Idle → Rotational Idle</strong></li>
+<li>Mazduino Tuner: <strong>Expert → Rotational Idle</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Firmware 19 November 2026 atau lebih baru</p>
+<p>Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware 19 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.</p>
+<p>Tune dari firmware lama tetap terbaca tanpa perubahan. Field baru terisi 0: Minimum CLT 0 °C, Maximum TPS/PPS tanpa batas, timing normal, STFT dan idle air tidak diubah.</p>
+</div>
+<hr />
+<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
+<p>Rotational idle aktif kalau ketiga syarat ini terpenuhi:</p>
+<ol>
+<li><strong>Enable</strong> aktif.</li>
+<li><strong>Semua batas terpenuhi</strong>: RPM di antara Minimum dan Maximum RPM, CLT di atas Minimum CLT, dan TPS/PPS tidak di atas Maximum TPS/PPS.</li>
+<li><strong>Salah satu pemicu aktif</strong>: switch ON, atau auto enable CLT, atau auto enable TPS/PPS.</li>
+</ol>
+<p>Batas di poin 2 berlaku untuk semua pemicu, <strong>termasuk saat switch ON</strong>. Jadi switch ON saat mesin dingin atau saat gas diinjak tidak menyalakan rotational idle.</p>
+<table>
+<thead>
+<tr>
+<th>Pemicu</th>
+<th>Aktif kalau</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Switch</td>
+<td>Pin switch diisi dan switch ON</td>
+</tr>
+<tr>
+<td>Auto enable based on CLT</td>
+<td>CLT di atas "Engage above this CLT"</td>
+</tr>
+<tr>
+<td>Auto enable based on TPS/PPS</td>
+<td>TPS/PPS sama dengan atau di bawah "Engage at or below this TPS/PPS"</td>
+</tr>
+</tbody>
+</table>
+<p>Kalau hanya ingin dinyalakan dari switch, matikan kedua auto enable. Rotational idle tidak akan menyala sendiri selama switch OFF.</p>
+<hr />
+<h2 id="pengaturan">Pengaturan<a class="headerlink" href="#pengaturan" title="Permanent link">&para;</a></h2>
+<h3 id="umum">Umum<a class="headerlink" href="#umum" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable</strong></td>
+<td>Menyalakan fitur. Field lain hanya bisa diubah kalau ini aktif.</td>
+</tr>
+<tr>
+<td><strong>Cut mode</strong></td>
+<td><strong>Spark</strong>: hanya spark di-cut. <strong>Fuel</strong>: hanya injeksi di-cut. <strong>Both</strong>: spark dan fuel.</td>
+</tr>
+<tr>
+<td><strong>Stop short term fuel trim while active</strong></td>
+<td>STFT berhenti selama rotational idle aktif, dan LTFT berhenti belajar. Disarankan <strong>yes</strong> kalau memakai closed loop lambda.</td>
+</tr>
+<tr>
+<td><strong>Add idle air while active</strong></td>
+<td>Menambah udara idle selama aktif, untuk mengganti tenaga silinder yang di-cut.</td>
+</tr>
+<tr>
+<td><strong>Idle air adder</strong></td>
+<td>Persentase yang ditambahkan ke posisi idle valve open loop. Nilai negatif mengurangi udara.</td>
+</tr>
+<tr>
+<td><strong>Timing while active</strong></td>
+<td>Timing pengapian selama aktif, menggantikan timing normal termasuk semua koreksinya. 0 = timing normal. Negatif berarti setelah TDC: -30 = 30° ATDC. Range -40 sampai 10.</td>
+</tr>
+</tbody>
+</table>
+<p>Kenapa STFT perlu dihentikan: silinder yang di-cut memompa udara (dan bahan bakar, pada mode Spark) ke exhaust. Sensor O2 membaca lean, lalu STFT menambah bahan bakar ke silinder yang masih menyala. Saat dihentikan, status STFT di dashboard tampil <strong>Rotational idle</strong>.</p>
+<p>Timing while active tidak berlaku saat <strong>Timing mode</strong> diset fixed (untuk cek timing light). Timing fixed tetap dipakai.</p>
+<h3 id="pemicu">Pemicu<a class="headerlink" href="#pemicu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch pin</strong></td>
+<td>Pin input switch. Kosongkan kalau tidak memakai switch.</td>
+</tr>
+<tr>
+<td><strong>Switch pin mode</strong></td>
+<td>Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</td>
+</tr>
+<tr>
+<td><strong>Auto enable based on CLT</strong></td>
+<td>Menyala otomatis berdasarkan suhu coolant.</td>
+</tr>
+<tr>
+<td><strong>Engage above this CLT</strong></td>
+<td>Menyala kalau CLT di atas nilai ini.</td>
+</tr>
+<tr>
+<td><strong>Auto enable based on TPS/PPS</strong></td>
+<td>Menyala otomatis saat gas dilepas.</td>
+</tr>
+<tr>
+<td><strong>Engage at or below this TPS/PPS</strong></td>
+<td>Menyala kalau TPS/PPS sama dengan atau di bawah nilai ini. <strong>Jangan isi 0</strong>: TPS saat gas lepas jarang terbaca tepat 0%. Isi 1–2%, atau sedikit di atas nilai TPS saat gas dilepas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batas">Batas<a class="headerlink" href="#batas" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimum CLT</strong></td>
+<td>Rotational idle mati di bawah suhu coolant ini.</td>
+</tr>
+<tr>
+<td><strong>Maximum TPS/PPS</strong></td>
+<td>Rotational idle mati di atas TPS/PPS ini. 0 = tanpa batas.</td>
+</tr>
+<tr>
+<td><strong>Minimum RPM</strong></td>
+<td>Mati di bawah RPM ini. 0 = tanpa batas.</td>
+</tr>
+<tr>
+<td><strong>Maximum RPM</strong></td>
+<td>Mati di atas RPM ini. 0 = tanpa batas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accumulator-pola-cut">Accumulator (Pola Cut)<a class="headerlink" href="#accumulator-pola-cut" title="Permanent link">&para;</a></h3>
+<p>Ada 3 accumulator. Masing-masing punya <strong>Max</strong>, <strong>Adder</strong>, dan <strong>Offset</strong>. Setiap event spark (dan setiap event injeksi, dengan hitungan sendiri) menambah counter. Event itu di-cut kalau:</p>
+<pre><code>((counter + Offset) mod Max) + Adder &gt;= Max
+</code></pre>
+<p>Event di-cut kalau salah satu accumulator meminta cut.</p>
+<ul>
+<li><strong>Max</strong> = panjang pola. 0 = accumulator ini tidak dipakai.</li>
+<li><strong>Adder</strong> = berapa event di-cut dalam satu pola. Max 5 dengan Adder 1 berarti 1 dari 5 event di-cut. Adder 2 berarti 2 dari 5.</li>
+<li><strong>Offset</strong> = menggeser pola, berguna kalau memakai lebih dari satu accumulator.</li>
+</ul>
+<p><strong>Kalau semua Max bernilai 0, tidak ada yang di-cut</strong>, walaupun rotational idle aktif.</p>
+<p>Nilai awal yang disarankan:</p>
+<table>
+<thead>
+<tr>
+<th>Mesin</th>
+<th>Max</th>
+<th>Adder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 silinder</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6 silinder</td>
+<td>7</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Rumus umum: Max = (jumlah silinder / 2 × X) ± 1, dengan X pengali untuk variasi pola. Hindari Max yang merupakan kelipatan jumlah silinder: pola tidak bergeser dan silinder yang sama terus di-cut.</p>
+<hr />
+<h2 id="contoh-setup">Contoh Setup<a class="headerlink" href="#contoh-setup" title="Permanent link">&para;</a></h2>
+<h3 id="hanya-dari-switch">Hanya dari Switch<a class="headerlink" href="#hanya-dari-switch" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Enable</strong>: enabled</li>
+<li><strong>Cut mode</strong>: Spark</li>
+<li><strong>Switch pin</strong>: pin input yang dipakai, <strong>Switch pin mode</strong>: INVERTED PULLUP</li>
+<li><strong>Auto enable based on CLT</strong> dan <strong>Auto enable based on TPS/PPS</strong>: disabled</li>
+<li><strong>Minimum CLT</strong>: 60, <strong>Maximum TPS/PPS</strong>: 5</li>
+<li><strong>Maximum RPM</strong>: sedikit di atas RPM idle, misalnya 1500</li>
+<li><strong>Accumulator Max 1</strong>: 5, <strong>Adder 1</strong>: 1 (mesin 4 silinder)</li>
+<li><strong>Stop short term fuel trim while active</strong>: yes</li>
+</ol>
+<h3 id="otomatis-saat-gas-dilepas">Otomatis Saat Gas Dilepas<a class="headerlink" href="#otomatis-saat-gas-dilepas" title="Permanent link">&para;</a></h3>
+<p>Sama seperti di atas, tapi switch pin dikosongkan dan <strong>Auto enable based on TPS/PPS</strong> diaktifkan dengan <strong>Engage at or below this TPS/PPS</strong> 1–2%. Maximum RPM wajib diisi supaya tidak menyala saat engine brake di RPM tinggi.</p>
+<hr />
+<h2 id="live-data">Live Data<a class="headerlink" href="#live-data" title="Permanent link">&para;</a></h2>
+<p>Panel live data ada di sebelah kanan dialog Rotational Idle:</p>
+<table>
+<thead>
+<tr>
+<th>Indikator</th>
+<th>Artinya</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rotationalIdleEngaged</code></td>
+<td>Rotational idle sedang aktif</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooSlow</code></td>
+<td>RPM di bawah Minimum RPM</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooFast</code></td>
+<td>RPM di atas Maximum RPM</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooLowClt</code></td>
+<td>CLT di bawah Minimum CLT, atau di bawah "Engage above this CLT" pada auto enable CLT</td>
+</tr>
+<tr>
+<td><code>rotIdleTpsTooHigh</code></td>
+<td>TPS/PPS di atas Maximum TPS/PPS, atau di atas "Engage at or below this TPS/PPS" pada auto enable TPS/PPS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="rotational-idle-tidak-aktif-cek-ini">Rotational Idle Tidak Aktif? Cek Ini<a class="headerlink" href="#rotational-idle-tidak-aktif-cek-ini" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Enable</strong> aktif dan tune sudah di-burn.</li>
+<li><strong>Accumulator Max</strong> tidak semuanya 0.</li>
+<li><strong>Pemicu</strong>: switch ON, atau salah satu auto enable aktif. Kalau memakai auto TPS/PPS, "Engage at or below this TPS/PPS" tidak 0.</li>
+<li><strong>Batas</strong>: cek indikator live data di atas untuk melihat batas mana yang menahan.</li>
+<li><strong>Switch</strong>: pin mode sesuai rangkaian, dan firmware 19 November 2026 atau lebih baru.</li>
+</ol>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../fuel-spark-cut/" class="btn btn-neutral float-left" title="Spark Cut & Fuel Cut"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../fuel-consumption/" class="btn btn-neutral float-right" title="Konsumsi Bahan Bakar">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../fuel-spark-cut/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../fuel-consumption/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
