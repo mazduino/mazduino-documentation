@@ -38,14 +38,34 @@ tingkat kepentingannya.
 
 ## Temporary Cylinder Shutoff
 
-Memutus bahan bakar dan pengapian satu silinder untuk mencari silinder yang lemah:
+Memutus bahan bakar dan pengapian satu silinder untuk mencari silinder yang lemah. Fitur ini hanya
+ada di Mazduino Tuner.
 
-- Saat idle, **RPM turun banyak** = silinder sehat.
-- **RPM hampir tidak turun** = silinder bermasalah (injektor, busi/koil, kompresi).
-- Setiap silinder menyala kembali sendiri setelah 10 detik.
+1. Nyalakan mesin dan biarkan idle stabil.
+2. Klik tombol **Cylinder N**. Tombol berubah menjadi **OFF N** dengan hitungan mundur, dan di
+   bawahnya tampil berapa RPM turun.
+3. Bandingkan penurunan RPM tiap silinder:
+    - **RPM turun banyak** = silinder sehat.
+    - **RPM hampir tidak turun** = silinder bermasalah (injektor, busi/koil, kompresi).
+4. Klik lagi tombol yang sama untuk menyalakan silinder itu, atau **Restore all** untuk semua.
 
-Syarat: **Allow writes** aktif, mesin menyala, dan injeksi sequential. Firmware lama mungkin belum
-mendukung fitur ini.
+Lebih dari satu silinder bisa dimatikan bersamaan, tapi minimal satu silinder tetap menyala.
+
+Silinder menyala kembali sendiri:
+
+- **10 detik setelah perintah terakhir**. Setiap silinder yang dimatikan memulai ulang hitungan
+  ini, lalu semua silinder menyala lagi bersamaan.
+- Saat halaman ditutup.
+- Saat injection mode diubah dari sequential.
+
+Syarat:
+
+- **Allow writes** aktif.
+- Mesin menyala.
+- **Injection mode = Sequential**. Pada mode batch atau simultaneous, satu injektor juga mengisi
+  silinder lain, jadi fitur ini ditolak.
+- Firmware Mazduino 1 November 2026 atau lebih baru. Pada firmware yang lebih lama, tombol tidak
+  aktif.
 
 ## Trigger Logger
 
