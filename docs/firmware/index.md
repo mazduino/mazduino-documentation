@@ -18,6 +18,7 @@ Berikut fitur yang ditambahkan pada custom firmware Mazduino:
 - **[User Tables](#komputasi-tabel)** — tabel lookup yang dapat dikonfigurasi bebas
 - **[Logic Outputs](#output-logika)** — output digital yang aktif berdasarkan kondisi yang dapat dikonfigurasi
 - **[Konsumsi Bahan Bakar](#konsumsi-bahan-bakar)** — perhitungan L/100km dan L/jam
+- **[Rotational Idle](rotational-idle.md)** — batas CLT dan TPS yang juga berlaku saat switch ON, stop STFT, tambahan udara idle, dan timing khusus selama aktif
 
 Download firmware ada di **[halaman Downloads](../downloads.md)**.
 
@@ -59,3 +60,9 @@ ECU dapat menerima data dari bus CAN dan menggunakannya sebagai input sensor ata
 | Fitur | Kegunaan |
 |---|---|
 | [Konsumsi Bahan Bakar](fuel-consumption.md) | Perhitungan konsumsi real-time dalam L/100km dan L/jam berdasarkan data injeksi dan VSS |
+
+### Idle
+
+| Fitur | Kegunaan |
+|---|---|
+| [Rotational Idle](rotational-idle.md) | Cut spark atau fuel bergiliran antar silinder untuk suara idle "lumpy" |

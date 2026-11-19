@@ -75,6 +75,7 @@ nav:
     - User Tables: firmware/user-tables.md
     - Logic Outputs: firmware/logic-outputs.md
     - Spark Cut & Fuel Cut: firmware/fuel-spark-cut.md
+    - Rotational Idle: firmware/rotational-idle.md
     - Konsumsi Bahan Bakar: firmware/fuel-consumption.md
   - Tentang: about.md
 theme:

@@ -193,29 +193,72 @@ Setiap region (Main, Idle, Power, Overrun) memiliki **time constants** dan **max
 
 ![Fuel Cutoff Settings][image38]
 
+DFCO memutus injeksi saat engine brake, yaitu gas dilepas pada RPM tinggi. Bahan bakar lebih hemat dan engine brake terasa lebih kuat.
+
+Lokasi menu:
+
+- TunerStudio: **Fuel → Deceleration fuel cutoff (DFCO)**
+- Mazduino Tuner: **Fuel → Overrun cut**
+
+DFCO hanya aktif kalau **semua** syarat di bawah terpenuhi: CLT, TPS, MAP, RPM, kecepatan kendaraan, dan switch (kalau dipasang).
+
 ### Enable/Disable Settings
 
 **Enable Coasting Fuel Cutoff**: Mengaktifkan fuel cutoff selama coasting
 
-**No cut below CLT(C)**: Coolant temperature minimum di bawah mana fuel cutoff tidak terjadi
+**No cut below CLT(C)**: DFCO hanya aktif di atas suhu coolant ini. Default 60 °C, jadi mesin yang masih dingin tidak kena cut.
 
 ### Activation Thresholds
 
-**RPM cut fuel above**: RPM threshold di atas mana fuel cutoff akan engage selama deceleration
+**RPM cut fuel above**: Fuel di-cut kalau RPM di atas nilai ini. Default 1500 RPM.
 
-**RPM restore fuel below**: RPM di mana fuel di-restore setelah cutoff
+**RPM restore fuel below**: Fuel kembali disuntik kalau RPM turun di bawah nilai ini. Default 1300 RPM. Nilai ini harus lebih rendah dari RPM cut, selisihnya mencegah DFCO on-off terus.
 
-**Vehicle speed cut above/restore below**: Speed thresholds untuk mengaktifkan/menonaktifkan fuel cutoff
+**Vehicle speed cut above/restore below**: Batas kecepatan kendaraan untuk cut dan restore. **Kalau tidak ada sensor kecepatan (VSS), isi keduanya 0.** Kalau "cut above" diisi lebih dari 0 tanpa VSS, kecepatan terbaca 0 dan DFCO tidak pernah aktif.
 
-**Cut fuel below TPS(%)**: Throttle position threshold untuk aktivasi fuel cutoff
+**Cut fuel below TPS(%)**: DFCO hanya aktif kalau TPS (atau pedal, pada ETB) di bawah nilai ini. Default 2%. Cek nilai TPS di gauge saat gas dilepas penuh: TPS yang belum dikalibrasi sering terbaca 3–5% dan DFCO tidak pernah aktif.
 
-**Cut fuel below MAP(kPa)**: Manifold pressure threshold untuk aktivasi fuel cutoff
+**Cut fuel below MAP(kPa)**: DFCO hanya aktif kalau MAP di bawah nilai ini. Default 30 kPa. Saat engine brake MAP biasanya 20–30 kPa. Kalau di mesin anda MAP saat engine brake lebih tinggi, naikkan nilai ini sedikit di atasnya. Tanpa sensor MAP, syarat ini diabaikan.
 
 ### Advanced Settings
 
-**Fuel cut delay**: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi
+**Fuel cut delay**: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi. 0 = langsung cut.
 
 **Inhibit closed loop fuel after cut**: Temporarily disable closed-loop fuel correction setelah fuel di-restore
+
+**Ignition retard during cut**: Timing dimundurkan sebanyak ini (maksimal 30°) selama cut, supaya hentakan saat fuel kembali lebih halus.
+
+**After cut timing ramp-in time**: Waktu untuk mengembalikan timing ke normal setelah fuel kembali disuntik.
+
+### Enable Switch (Opsional)
+
+Switch untuk menyalakan atau mematikan DFCO dari kabin, misalnya saat balap atau saat setting.
+
+- **Switch ON**: DFCO aktif mengikuti semua syarat di atas
+- **Switch OFF**: DFCO tidak pernah aktif
+- **Pin tidak diisi (unassigned)**: DFCO hanya mengikuti syarat di atas, tanpa switch
+
+**Enable switch pin**: Pin input untuk switch.
+
+**Enable switch pin mode**: Untuk switch yang menghubungkan pin ke ground, pilih **INVERTED PULLUP**: pull-up internal aktif, dan pin yang terhubung ke ground terbaca ON.
+
+!!! note "Firmware sebelum 19 November 2026"
+    Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware 19 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.
+
+### DFCO Tidak Aktif? Cek Ini
+
+Tambahkan indikator **`dfcoActive`** ke dashboard, lalu cek satu per satu saat engine brake:
+
+1. **Enable Coasting Fuel Cutoff** aktif dan tune sudah di-burn.
+2. **Switch**: kalau pin switch diisi, switch harus ON. Kalau tidak memakai switch, kosongkan pin.
+3. **CLT** di atas "No cut below CLT".
+4. **TPS** saat gas dilepas di bawah "Cut fuel below TPS".
+5. **MAP** saat engine brake di bawah "Cut fuel below MAP".
+6. **RPM** di atas "RPM cut fuel above".
+7. **Kecepatan kendaraan**: tanpa VSS, isi kedua nilai kecepatan 0.
+8. **Sensor**: kalau sensor TPS atau CLT error, DFCO dimatikan. Begitu juga MAP kalau sensor MAP terpasang tapi error.
+9. **Sedang setting VE**: kalau **Detect Tuning and Suspend** aktif (di pengaturan closed loop fuel), DFCO dan STFT berhenti selama 20 detik setelah setiap perubahan tabel VE, termasuk dari autotune. Indikator `isTuningNow` menyala selama masa itu.
+10. **Fuel cut delay** yang terlalu panjang membuat cut baru terjadi lama setelah gas dilepas.
 
 ## Acceleration Enrichment
 
