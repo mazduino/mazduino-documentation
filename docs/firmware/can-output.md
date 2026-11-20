@@ -8,9 +8,7 @@ Lokasi menu:
 - Mazduino Tuner: **CAN Bus → CAN outputs** dan **Expert → CAN-bus** (triggered)
 
 !!! warning "Firmware sebelum Nightly 20 November 2026"
-    Pada firmware sebelum Nightly 20 November 2026, channel yang dipilih di **Variable** tidak sama dengan channel yang dikirim ECU, untuk semua pilihan mulai dari "Antilag triggered" ke bawah. Contoh: memilih RPM mengirim Raw oil pressure (V), CLT mengirim CAN switch 1, TPS1 mengirim Spark cut reason. Pilihan di atasnya (AC, pedal, AFR, Ambient temperature) tidak terpengaruh.
-
-    Update ke Nightly 20 November 2026 atau lebih baru. Pengaturan di tune tidak perlu diubah: setelah update, ECU mengirim channel yang tampil di TunerStudio.
+    Nightly 20 November 2026 berisi perbaikan untuk pilihan channel di **Variable**. Update ke firmware ini atau yang lebih baru; pengaturan di tune tidak perlu diubah.
 
 ---
 
