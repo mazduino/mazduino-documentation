@@ -199,20 +199,24 @@
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">CAN Output</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#jenis-can-output">Jenis CAN Output</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#periodic-berkala">Periodic (Berkala)</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#triggered-berdasarkan-trigger">Triggered (Berdasarkan Trigger)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#pengaturan-frame">Pengaturan Frame</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#can-output_1">CAN Output</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#triggered-can-output">Triggered CAN Output</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio</a>
+    <li class="toctree-l2"><a class="reference internal" href="#isi-byte">Isi Byte</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#isi-payload-per-byte">Isi Payload (per Byte)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#channel-yang-bisa-dipilih">Channel yang Bisa Dipilih</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#contoh-kirim-rpm-dan-clt-ke-dashboard">Contoh: Kirim RPM dan CLT ke Dashboard</a>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-rpm-clt-dan-tps-ke-dashboard">Contoh: RPM, CLT, dan TPS ke Dashboard</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tidak-terkirim-cek-ini">Tidak Terkirim? Cek Ini</a>
     </li>
     </ul>
                   </li>
@@ -263,94 +267,211 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 November 2026 04:01:48 UTC">20 November 2026</span></em></p>
   <h1 id="can-output">CAN Output<a class="headerlink" href="#can-output" title="Permanent link">&para;</a></h1>
-<p>CAN Output memungkinkan ECU mengirimkan data engine ke bus CAN secara otomatis — untuk dashboard, datalogger, atau perangkat lain yang terhubung.</p>
+<p>CAN Output membuat ECU mengirim data engine ke bus CAN secara otomatis, untuk dashboard, datalogger, atau perangkat lain yang terhubung. Isi setiap byte frame bisa diatur sendiri.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>CAN-bus → CAN Outputs → CAN Output 1–8</strong> dan <strong>CAN-bus → Triggered CAN Outputs → Triggered CAN Output 1–8</strong></li>
+<li>Mazduino Tuner: <strong>CAN Bus → CAN outputs</strong> dan <strong>Expert → CAN-bus</strong> (triggered)</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware sebelum Nightly 20 November 2026, channel yang dipilih di <strong>Variable</strong> tidak sama dengan channel yang dikirim ECU, untuk semua pilihan mulai dari "Antilag triggered" ke bawah. Contoh: memilih RPM mengirim Raw oil pressure (V), CLT mengirim CAN switch 1, TPS1 mengirim Spark cut reason. Pilihan di atasnya (AC, pedal, AFR, Ambient temperature) tidak terpengaruh.</p>
+<p>Update ke Nightly 20 November 2026 atau lebih baru. Pengaturan di tune tidak perlu diubah: setelah update, ECU mengirim channel yang tampil di TunerStudio.</p>
+</div>
 <hr />
 <h2 id="jenis-can-output">Jenis CAN Output<a class="headerlink" href="#jenis-can-output" title="Permanent link">&para;</a></h2>
-<h3 id="periodic-berkala">Periodic (Berkala)<a class="headerlink" href="#periodic-berkala" title="Permanent link">&para;</a></h3>
-<p>Frame CAN dikirim secara otomatis pada interval waktu yang ditentukan.
-Cocok untuk dashboard yang membutuhkan update data terus-menerus.</p>
-<h3 id="triggered-berdasarkan-trigger">Triggered (Berdasarkan Trigger)<a class="headerlink" href="#triggered-berdasarkan-trigger" title="Permanent link">&para;</a></h3>
-<p>Frame CAN dikirim hanya ketika ada perubahan edge (rising/falling) pada pin digital tertentu.
-Cocok untuk sinyal event atau konfirmasi aksi.</p>
-<hr />
-<h2 id="konfigurasi-di-tunerstudio">Konfigurasi di TunerStudio<a class="headerlink" href="#konfigurasi-di-tunerstudio" title="Permanent link">&para;</a></h2>
-<p>Buka: <strong>CAN Bus → CAN Output</strong></p>
-<p>Tersedia <strong>8 slot output</strong>. Untuk setiap slot:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Keterangan</th>
+<th>Jenis</th>
+<th>Kapan dikirim</th>
+<th>Jumlah slot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>CAN ID</strong></td>
-<td>ID frame CAN yang akan dikirim</td>
+<td><strong>CAN Output</strong></td>
+<td>Terus-menerus pada data rate yang dipilih</td>
+<td>8</td>
 </tr>
 <tr>
-<td><strong>Period</strong></td>
-<td>Interval pengiriman dalam ms (mode Periodic)</td>
-</tr>
-<tr>
-<td><strong>Trigger Pin</strong></td>
-<td>Pin digital pemicu (mode Triggered)</td>
-</tr>
-<tr>
-<td><strong>Trigger Edge</strong></td>
-<td>Rising atau Falling edge</td>
+<td><strong>Triggered CAN Output</strong></td>
+<td>Satu kali setiap ada perubahan pada input pemicu</td>
+<td>8</td>
 </tr>
 </tbody>
 </table>
-<h3 id="isi-payload-per-byte">Isi Payload (per Byte)<a class="headerlink" href="#isi-payload-per-byte" title="Permanent link">&para;</a></h3>
-<p>Setiap frame CAN berisi 8 byte. Untuk setiap byte dapat dipilih:</p>
+<p>CAN Output cocok untuk dashboard yang butuh data terus-menerus. Triggered CAN Output cocok untuk mengirim perintah atau event, misalnya tombol di kabin yang menyalakan sesuatu di modul CAN lain.</p>
+<hr />
+<h2 id="pengaturan-frame">Pengaturan Frame<a class="headerlink" href="#pengaturan-frame" title="Permanent link">&para;</a></h2>
+<h3 id="can-output_1">CAN Output<a class="headerlink" href="#can-output_1" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Field</th>
 <th>Keterangan</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Output Channel</strong></td>
-<td>Data ECU yang dikirim: RPM, MAP, TPS, CLT, IAT, dll.</td>
+<td><strong>Enable mode</strong></td>
+<td><strong>Enabled</strong> untuk mengirim, <strong>Disabled</strong> untuk mematikan slot ini. Pilihan "Enabled via Logic output" belum berfungsi: frame tidak dikirim.</td>
 </tr>
 <tr>
-<td><strong>Scale</strong></td>
-<td>Pengali untuk mengubah satuan</td>
+<td><strong>CAN ID</strong></td>
+<td>ID frame, desimal atau hex dengan awalan <code>0x</code>. ID 0 tidak dikirim. ID di atas <code>0x7FF</code> dikirim sebagai extended ID (29-bit).</td>
+</tr>
+<tr>
+<td><strong>CAN Bus</strong></td>
+<td>CAN 1 atau CAN 2</td>
+</tr>
+<tr>
+<td><strong>Byte order</strong></td>
+<td>Urutan byte untuk nilai 16-bit: Little endian (byte rendah dulu) atau Big endian (byte tinggi dulu)</td>
+</tr>
+<tr>
+<td><strong>DLC</strong></td>
+<td>Panjang frame, 1–8 byte</td>
+</tr>
+<tr>
+<td><strong>Data rate</strong></td>
+<td>1, 2, 4, 5, 10, 20, 50, 100, atau 200 Hz</td>
+</tr>
+</tbody>
+</table>
+<h3 id="triggered-can-output">Triggered CAN Output<a class="headerlink" href="#triggered-can-output" title="Permanent link">&para;</a></h3>
+<p>Field CAN ID, CAN Bus, Byte order, dan DLC sama seperti di atas. Ditambah:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trigger input</strong></td>
+<td>Pin input pemicu. Bisa pin fisik atau CAN Switch dari <a href="../can-virtual-input/">CAN Virtual Input</a>.</td>
+</tr>
+<tr>
+<td><strong>Trigger input mode</strong></td>
+<td>Mode pin. Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</td>
+</tr>
+<tr>
+<td><strong>Trigger edge</strong></td>
+<td><strong>Rising edge</strong>: kirim saat input menjadi aktif. <strong>Falling edge</strong>: kirim saat input berhenti aktif. <strong>Both edges</strong>: kirim pada keduanya.</td>
+</tr>
+</tbody>
+</table>
+<p>Input pemicu di-debounce 150 ms. Tombol <strong>Send frame</strong> di dialog mengirim frame itu sekali secara manual, untuk mengetes tanpa menekan switch.</p>
+<hr />
+<h2 id="isi-byte">Isi Byte<a class="headerlink" href="#isi-byte" title="Permanent link">&para;</a></h2>
+<p>Setiap byte diatur dengan kolom berikut:</p>
+<table>
+<thead>
+<tr>
+<th>Kolom</th>
+<th>Keterangan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type</strong></td>
+<td><strong>Fixed 8-bit</strong> / <strong>Fixed 16-bit</strong>: nilai tetap. <strong>Variable 8-bit</strong> / <strong>Variable 16-bit</strong>: nilai dari channel ECU. Tipe 16-bit memakai dua byte, sehingga byte sesudahnya tidak bisa diisi.</td>
+</tr>
+<tr>
+<td><strong>Variable</strong></td>
+<td>Channel ECU yang dikirim (untuk tipe Variable)</td>
+</tr>
+<tr>
+<td><strong>Fixed value</strong></td>
+<td>Nilai tetap (untuk tipe Fixed)</td>
+</tr>
+<tr>
+<td><strong>Multiplier</strong></td>
+<td>Pengali, bilangan bulat</td>
+</tr>
+<tr>
+<td><strong>Divider</strong></td>
+<td>Pembagi, bilangan bulat</td>
 </tr>
 <tr>
 <td><strong>Offset</strong></td>
-<td>Nilai tambahan</td>
-</tr>
-<tr>
-<td><strong>Data Type</strong></td>
-<td>8-bit atau 16-bit</td>
-</tr>
-<tr>
-<td><strong>Byte Order</strong></td>
-<td>Big Endian atau Little Endian</td>
+<td>Nilai yang ditambahkan, bilangan bulat, boleh negatif</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Pilih channel yang dibutuhkan oleh dashboard atau perangkat penerima.
-Sesuaikan Scale agar satuan data cocok dengan yang diharapkan perangkat tersebut.</p>
-</div>
-<hr />
-<h2 id="contoh-kirim-rpm-dan-clt-ke-dashboard">Contoh: Kirim RPM dan CLT ke Dashboard<a class="headerlink" href="#contoh-kirim-rpm-dan-clt-ke-dashboard" title="Permanent link">&para;</a></h2>
-<p>Frame CAN ID <code>0x600</code>, dikirim setiap 50 ms:</p>
-<pre><code>CAN ID  = 0x600
-Period  = 50 ms
-
-Byte 0–1: RPM        (16-bit, scale=1)
-Byte 2:   CLT        (8-bit, offset=-40, scale=1)
-Byte 3:   TPS        (8-bit, scale=2.55)  → 0–100% menjadi 0–255
+<p>Nilai yang dikirim:</p>
+<pre><code>nilai = channel × Multiplier ÷ Divider + Offset
 </code></pre>
+<p>Hasilnya dibulatkan, lalu dibatasi ke 0–255 untuk 8-bit atau 0–65535 untuk 16-bit. <strong>Nilai negatif dikirim sebagai 0</strong>, jadi untuk data yang bisa negatif (misalnya CLT di bawah 0 °C) tambahkan Offset supaya hasilnya selalu positif. Penerima lalu mengurangi offset yang sama.</p>
+<p>Kalau channel tidak tersedia (sensornya tidak terpasang), nilainya dihitung sebagai 0.</p>
+<h3 id="channel-yang-bisa-dipilih">Channel yang Bisa Dipilih<a class="headerlink" href="#channel-yang-bisa-dipilih" title="Permanent link">&para;</a></h3>
+<p>Daftar di <strong>Variable</strong> berisi channel engine, sensor, tegangan mentah sensor, status AC dan cut, VVT, knock, Lua gauge, CAN switch, dan lainnya.</p>
+<p>Mulai Nightly 20 November 2026, di akhir daftar ada tambahan:</p>
+<ul>
+<li><strong>Analog multi-switch position 1–4</strong> dan <strong>Analog multi-switch voltage 1–4</strong>, dari <a href="../analog-multi-switch/">Analog Multi-Switch</a></li>
+<li><strong>Fuel consumption L/100km</strong> dan <strong>Fuel consumption L/h</strong>, dari <a href="../fuel-consumption/">Konsumsi Bahan Bakar</a></li>
+</ul>
+<p><strong>Vehicle speed front left/right</strong> dan <strong>rear left/right</strong> ada di daftar, tapi firmware Mazduino belum punya sensor kecepatan per roda, jadi nilainya selalu 0. Pakai <strong>Vehicle speed</strong>.</p>
+<hr />
+<h2 id="contoh-rpm-clt-dan-tps-ke-dashboard">Contoh: RPM, CLT, dan TPS ke Dashboard<a class="headerlink" href="#contoh-rpm-clt-dan-tps-ke-dashboard" title="Permanent link">&para;</a></h2>
+<p>CAN Output 1, CAN ID <code>0x600</code>, 20 Hz, DLC 4, Little endian:</p>
+<table>
+<thead>
+<tr>
+<th>Byte</th>
+<th>Type</th>
+<th>Variable</th>
+<th>Multiplier</th>
+<th>Divider</th>
+<th>Offset</th>
+<th>Hasil</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Variable 16-bit</td>
+<td>RPM</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>RPM apa adanya, 0–65535</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Variable 8-bit</td>
+<td>CLT</td>
+<td>1</td>
+<td>1</td>
+<td>40</td>
+<td>CLT + 40: -40 °C terkirim 0, 90 °C terkirim 130</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Variable 8-bit</td>
+<td>TPS1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>TPS dalam %, 0–100</td>
+</tr>
+</tbody>
+</table>
+<p>Di dashboard: RPM = byte 1 + byte 2 × 256, CLT = byte 3 − 40, TPS = byte 4.</p>
+<p>Untuk resolusi lebih halus, misalnya AFR dengan satu angka desimal, pakai Multiplier 10 dengan Variable 16-bit (AFR 14.7 terkirim 147), lalu bagi 10 di penerima.</p>
+<hr />
+<h2 id="tidak-terkirim-cek-ini">Tidak Terkirim? Cek Ini<a class="headerlink" href="#tidak-terkirim-cek-ini" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Enable mode</strong> = Enabled, bukan "Enabled via Logic output".</li>
+<li><strong>CAN ID</strong> tidak 0.</li>
+<li><strong>CAN Bus</strong> sesuai dengan bus yang tersambung ke perangkat penerima, dan bus itu sudah aktif di <strong>CAN Bus Settings</strong>.</li>
+<li>Baud rate CAN ECU sama dengan perangkat penerima.</li>
+<li>Nilai yang diterima tidak sesuai channel? Pastikan firmware Nightly 20 November 2026 atau lebih baru (lihat peringatan di atas).</li>
+</ol>
 
             </div>
           </div><footer>
