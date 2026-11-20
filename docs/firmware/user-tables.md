@@ -1,5 +1,8 @@
 # User Tables
 
+!!! warning "Belum tersedia"
+    Fitur ini belum ada di firmware Mazduino. Halaman ini menjelaskan rencana fiturnya, dan pengaturannya belum bisa dipakai.
+
 User Tables adalah **tabel lookup kustom** yang dapat diisi sendiri oleh pengguna dan digunakan sebagai sumber nilai dalam konfigurasi ECU.
 
 Berguna saat diperlukan koreksi atau pemetaan nilai yang tidak tersedia di tabel bawaan TunerStudio, misalnya konversi tekanan sensor non-standar atau koreksi berbasis RPM.

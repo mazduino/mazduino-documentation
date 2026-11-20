@@ -1,5 +1,8 @@
 # Math Channels
 
+!!! warning "Belum tersedia"
+    Fitur ini belum ada di firmware Mazduino. Halaman ini menjelaskan rencana fiturnya, dan pengaturannya belum bisa dipakai.
+
 Math Channels memungkinkan pembuatan **channel nilai kustom** berdasarkan perhitungan dari channel-channel yang sudah ada di ECU.
 
 Berguna untuk menampilkan nilai turunan di gauge, melakukan logging nilai yang dihitung, atau menggunakan nilai hasil perhitungan sebagai input kondisi lain.

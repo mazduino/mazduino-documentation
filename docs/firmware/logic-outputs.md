@@ -1,5 +1,8 @@
 # Logic Outputs
 
+!!! warning "Belum tersedia"
+    Fitur ini belum ada di firmware Mazduino. Halaman ini menjelaskan rencana fiturnya, dan pengaturannya belum bisa dipakai.
+
 Logic Outputs adalah **output digital yang dikontrol secara otomatis** berdasarkan kondisi logika yang dapat dikonfigurasi — tanpa perlu Lua scripting.
 
 Berguna untuk mengaktifkan relay, lampu indikator, atau sinyal output berdasarkan kondisi engine seperti RPM, suhu, tekanan, atau kombinasi keduanya.
