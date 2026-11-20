@@ -200,6 +200,8 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#konsumsi-bahan-bakar">Konsumsi Bahan Bakar</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#input">Input</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#board-dan-koneksi">Board dan Koneksi</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#fuel">Fuel</a>
@@ -233,6 +235,8 @@
                   <li class="toctree-l1"><a class="reference internal" href="fuel-spark-cut/">Spark Cut & Fuel Cut</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="analog-multi-switch/">Analog Multi-Switch</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="bluetooth/">TunerStudio lewat Bluetooth</a>
                   </li>
@@ -269,7 +273,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 November 2026 03:39:39 UTC">20 November 2026</span></em></p>
   <h1 id="custom-firmware-mazduino">Custom Firmware Mazduino<a class="headerlink" href="#custom-firmware-mazduino" title="Permanent link">&para;</a></h1>
 <p>Firmware Mazduino adalah fork dari <strong>rusEFI</strong> yang dikembangkan khusus untuk hardware Mazduino. Meskipun berbasis rusEFI, ada sejumlah perbedaan dan tambahan fitur yang tidak ada di firmware rusEFI resmi.</p>
 <hr />
@@ -292,6 +296,7 @@
 <li><strong><a href="../tunerstudio-fuel-system/#enable-switch-stft-opsional">STFT enable switch</a></strong> — short term fuel trim bisa dimatikan dari switch</li>
 <li><strong><a href="../tunerstudio-fuel-system/#enable-switch-opsional">DFCO enable switch</a></strong> — DFCO bisa dinyalakan dan dimatikan dari switch di kabin</li>
 <li><strong><a href="../mazduino-tuner-diagnostik/#temporary-cylinder-shutoff">Temporary Cylinder Shutoff</a></strong> — mematikan silinder sementara untuk mencari silinder yang lemah (dari Mazduino Tuner)</li>
+<li><strong><a href="analog-multi-switch/">Analog Multi-Switch</a></strong> — membaca sampai 16 posisi rotary switch dari satu input analog, 4 switch terpisah</li>
 <li><strong><a href="rotational-idle/">Rotational Idle</a></strong> — batas CLT dan TPS yang juga berlaku saat switch ON, stop STFT, tambahan udara idle, dan timing khusus selama aktif</li>
 </ul>
 <p>Download firmware ada di <strong><a href="../downloads/">halaman Downloads</a></strong>.</p>
@@ -382,6 +387,21 @@
 <tr>
 <td><a href="fuel-consumption/">Konsumsi Bahan Bakar</a></td>
 <td>Perhitungan konsumsi real-time dalam L/100km dan L/jam berdasarkan data injeksi dan VSS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Fitur</th>
+<th>Kegunaan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="analog-multi-switch/">Analog Multi-Switch</a></td>
+<td>Rotary switch banyak posisi lewat satu input analog, dibaca dari curve tegangan</td>
 </tr>
 </tbody>
 </table>

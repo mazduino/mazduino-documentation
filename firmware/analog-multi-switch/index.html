@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/firmware/analog-multi-switch/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Analog Multi-Switch - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Analog Multi-Switch";
+        var mkdocs_page_input_path = "firmware/analog-multi-switch.md";
+        var mkdocs_page_url = "/firmware/analog-multi-switch/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../downloads/">Unduhan</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Panduan Cepat</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-dash-r4/">Dash R4 (4" bulat)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../input-tambahan-dash-r4/">Input Tambahan Dash R4</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../setting-ecu-racedash/">Konfigurasi ECU</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Aksesori</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensor dan Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../persiapan-sensor-wiring/">Persiapan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual Mazduino Tuner</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-manual/">Ringkasan dan Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-interface/">Koneksi dan Tampilan</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-tuning/">Mengubah Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-proyek/">Proyek dan File Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-logger/">Logger dan Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-diagnostik/">Diagnostik</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Manual TunerStudio</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-manual/">Manual Lengkap</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-instalasi/">Instalasi</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-konfigurasi/">Konfigurasi Project</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-interface/">Interface Pengguna</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../math-channels/">Math Channels</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-tables/">User Tables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logic-outputs/">Logic Outputs</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Analog Multi-Switch</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#cara-kerja">Cara Kerja</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nilai-awal-curve">Nilai Awal Curve</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#switch-dengan-posisi-kurang-dari-16">Switch dengan Posisi Kurang dari 16</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memakai-posisi-switch">Memakai Posisi Switch</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tidak-terbaca-cek-ini">Tidak Terbaca? Cek Ini</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bluetooth/">TunerStudio lewat Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bigfuel/">Varian BIGFUEL</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Konsumsi Bahan Bakar</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">Tentang</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Custom Firmware</li>
+      <li class="breadcrumb-item active">Analog Multi-Switch</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="20 November 2026 03:39:39 UTC">20 November 2026</span></em></p>
+  <h1 id="analog-multi-switch">Analog Multi-Switch<a class="headerlink" href="#analog-multi-switch" title="Permanent link">&para;</a></h1>
+<p>Analog multi-switch membaca beberapa posisi switch dari <strong>satu input analog</strong>. Contohnya rotary switch untuk memilih map, launch RPM, atau mode traction control. Setiap posisi switch menghasilkan tegangan yang berbeda, lalu ECU mengubah tegangan itu menjadi nomor posisi.</p>
+<p>Ada <strong>4 analog multi-switch</strong> yang berdiri sendiri. Masing-masing memakai satu input analog dan bisa membaca sampai 16 posisi.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Advanced → Analog multi-switch → Analog multi-switch 1–4</strong></li>
+<li>Mazduino Tuner: <strong>Inputs → Multi position switch</strong></li>
+</ul>
+<hr />
+<h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
+<p>Setiap switch punya curve 16 titik:</p>
+<ul>
+<li><strong>Voltage</strong> (sumbu X): tegangan yang terukur di setiap posisi.</li>
+<li><strong>Position</strong> (sumbu Y): nomor posisi yang dilaporkan untuk tegangan itu.</li>
+</ul>
+<p>ECU membaca tegangan, mencari nilainya di curve, lalu membulatkan ke posisi terdekat. Tegangan yang jatuh di antara dua titik dibulatkan ke posisi yang lebih dekat, jadi batas antar posisi ada di tengah-tengah dua tegangan yang diukur.</p>
+<p>Supaya tidak berkedip karena derau, tegangan dirata-rata dengan bacaan sebelumnya, dan posisi baru dipakai setelah terbaca sama dua kali berturut-turut.</p>
+<p>Tidak perlu tahu nilai resistor di dalam switch. Cukup ukur tegangan di setiap posisi, lalu masukkan ke curve.</p>
+<hr />
+<h2 id="nilai-awal-curve">Nilai Awal Curve<a class="headerlink" href="#nilai-awal-curve" title="Permanent link">&para;</a></h2>
+<p>Mulai firmware <strong>Nightly 20 November 2026</strong>, curve sudah terisi nilai awal saat konfigurasi ECU masih default: posisi 0–15 tersebar rata di 0–5 V.</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+<th>15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voltage</td>
+<td>0.00</td>
+<td>0.34</td>
+<td>0.66</td>
+<td>1.00</td>
+<td>1.34</td>
+<td>1.66</td>
+<td>2.00</td>
+<td>2.34</td>
+<td>2.66</td>
+<td>3.00</td>
+<td>3.34</td>
+<td>3.66</td>
+<td>4.00</td>
+<td>4.34</td>
+<td>4.66</td>
+<td>5.00</td>
+</tr>
+</tbody>
+</table>
+<p>Nilai ini hanya titik awal. Ganti dengan tegangan yang terukur dari switch Anda.</p>
+<div class="admonition note">
+<p class="admonition-title">Tune dari firmware lama</p>
+<p>Tune yang dibuat dengan firmware sebelum Nightly 20 November 2026 menyimpan curve berisi 0 semua. Update firmware tidak mengubah tune, jadi curve tetap 0 dan switch tidak akan membaca posisi apa pun. Isi curve secara manual, atau salin nilai dari tabel di atas sebagai awal.</p>
+</div>
+<hr />
+<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Pasang switch ke salah satu input analog yang masih kosong.</li>
+<li>Buka <strong>Analog multi-switch 1</strong>, pilih input itu di <strong>Analog input</strong>, lalu burn.</li>
+<li>Putar switch ke setiap posisi dan catat nilai <strong>Voltage</strong> di dialog.</li>
+<li>Isi curve: kolom <strong>Voltage</strong> dengan tegangan yang dicatat, kolom <strong>Position</strong> dengan nomor posisinya.</li>
+<li>Burn, lalu putar switch lagi dan pastikan <strong>Position</strong> sesuai.</li>
+</ol>
+<h3 id="switch-dengan-posisi-kurang-dari-16">Switch dengan Posisi Kurang dari 16<a class="headerlink" href="#switch-dengan-posisi-kurang-dari-16" title="Permanent link">&para;</a></h3>
+<p>Curve selalu berisi 16 titik, dan <strong>Voltage harus naik dari kiri ke kanan</strong>. Untuk switch dengan posisi lebih sedikit, isi titik pertama sesuai posisi switch. Titik sisanya isi dengan tegangan yang terus naik sampai 5.00 V, dengan Position sama dengan posisi terakhir.</p>
+<p>Contoh switch 4 posisi:</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>4</th>
+<th>4</th>
+<th>...</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voltage</td>
+<td>0.50</td>
+<td>1.70</td>
+<td>2.90</td>
+<td>4.10</td>
+<td>4.30</td>
+<td>4.50</td>
+<td>...</td>
+<td>5.00</td>
+</tr>
+</tbody>
+</table>
+<p>Dengan curve ini, tegangan di bawah 1.10 V terbaca posisi 1, antara 1.10 V dan 2.30 V posisi 2, dan seterusnya.</p>
+<hr />
+<h2 id="memakai-posisi-switch">Memakai Posisi Switch<a class="headerlink" href="#memakai-posisi-switch" title="Permanent link">&para;</a></h2>
+<p>Posisi dan tegangan setiap switch tersedia sebagai channel live data:</p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Isi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>analogMultiSwitchPosition1</code> – <code>4</code></td>
+<td>Nomor posisi switch</td>
+</tr>
+<tr>
+<td><code>analogMultiSwitchVoltage1</code> – <code>4</code></td>
+<td>Tegangan input setelah dirata-rata</td>
+</tr>
+</tbody>
+</table>
+<p>Channel ini bisa ditampilkan sebagai gauge, direkam di datalog, dan dibaca dari Lua:</p>
+<pre><code class="language-lua">function onTick()
+  local pos = getOutput(&quot;analogMultiSwitchPosition1&quot;)
+  if pos == 2 then
+    -- aksi untuk posisi 2
+  end
+end
+</code></pre>
+<p>Kalau <strong>Analog input</strong> diset NONE, posisi dan tegangan terbaca 0.</p>
+<hr />
+<h2 id="tidak-terbaca-cek-ini">Tidak Terbaca? Cek Ini<a class="headerlink" href="#tidak-terbaca-cek-ini" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Analog input</strong> sudah dipilih dan tune sudah di-burn.</li>
+<li><strong>Voltage</strong> di dialog berubah saat switch diputar. Kalau tidak berubah, cek wiring dan input yang dipilih.</li>
+<li>Curve tidak berisi 0 semua (lihat <a href="#nilai-awal-curve">Tune dari firmware lama</a>).</li>
+<li>Kolom Voltage di curve naik dari kiri ke kanan, tanpa nilai yang turun.</li>
+<li>Tegangan antar posisi tidak terlalu rapat. Beri jarak minimal sekitar 0,2 V supaya derau tidak memindahkan posisi.</li>
+</ol>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../rotational-idle/" class="btn btn-neutral float-left" title="Rotational Idle"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../bluetooth/" class="btn btn-neutral float-right" title="TunerStudio lewat Bluetooth">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../rotational-idle/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../bluetooth/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
