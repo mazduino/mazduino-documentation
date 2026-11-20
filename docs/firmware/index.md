@@ -24,6 +24,7 @@ Berikut fitur yang ditambahkan pada custom firmware Mazduino:
 - **[STFT enable switch](../tunerstudio-fuel-system.md#enable-switch-stft-opsional)** — short term fuel trim bisa dimatikan dari switch
 - **[DFCO enable switch](../tunerstudio-fuel-system.md#enable-switch-opsional)** — DFCO bisa dinyalakan dan dimatikan dari switch di kabin
 - **[Temporary Cylinder Shutoff](../mazduino-tuner-diagnostik.md#temporary-cylinder-shutoff)** — mematikan silinder sementara untuk mencari silinder yang lemah (dari Mazduino Tuner)
+- **[Analog Multi-Switch](analog-multi-switch.md)** — membaca sampai 16 posisi rotary switch dari satu input analog, 4 switch terpisah
 - **[Rotational Idle](rotational-idle.md)** — batas CLT dan TPS yang juga berlaku saat switch ON, stop STFT, tambahan udara idle, dan timing khusus selama aktif
 
 Download firmware ada di **[halaman Downloads](../downloads.md)**.
@@ -66,6 +67,12 @@ ECU dapat menerima data dari bus CAN dan menggunakannya sebagai input sensor ata
 | Fitur | Kegunaan |
 |---|---|
 | [Konsumsi Bahan Bakar](fuel-consumption.md) | Perhitungan konsumsi real-time dalam L/100km dan L/jam berdasarkan data injeksi dan VSS |
+
+### Input
+
+| Fitur | Kegunaan |
+|---|---|
+| [Analog Multi-Switch](analog-multi-switch.md) | Rotary switch banyak posisi lewat satu input analog, dibaca dari curve tegangan |
 
 ### Board dan Koneksi
 

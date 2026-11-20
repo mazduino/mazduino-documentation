@@ -76,6 +76,7 @@ nav:
     - Logic Outputs: firmware/logic-outputs.md
     - Spark Cut & Fuel Cut: firmware/fuel-spark-cut.md
     - Rotational Idle: firmware/rotational-idle.md
+    - Analog Multi-Switch: firmware/analog-multi-switch.md
     - TunerStudio lewat Bluetooth: firmware/bluetooth.md
     - Varian BIGFUEL: firmware/bigfuel.md
     - Konsumsi Bahan Bakar: firmware/fuel-consumption.md
