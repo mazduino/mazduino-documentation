@@ -183,6 +183,8 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#konfigurasi-utama">Konfigurasi Utama</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#frame-opsional-rusefi-can-broadcast">Frame Opsional rusEFI CAN Broadcast</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#pengaturan-primary-can">Pengaturan Primary CAN</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#pengaturan-secondary-can">Pengaturan Secondary CAN</a>
@@ -309,7 +311,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:13:16 UTC">21 November 2026</span></em></p>
   <h1 id="konfigurasi-can-bus-tunerstudio">Konfigurasi CAN Bus TunerStudio<a class="headerlink" href="#konfigurasi-can-bus-tunerstudio" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Sistem CAN Bus pada Mazduino memungkinkan komunikasi dengan berbagai perangkat eksternal seperti dashboard, sensor, dan kontroler tambahan. Menu CAN Bus menyediakan konfigurasi lengkap untuk komunikasi data engine management.</p>
@@ -357,6 +359,18 @@
 <p><strong>rusEFI CAN Data Period (ms)</strong> - Menentukan frekuensi broadcasting data rusEFI. Misalnya, pengaturan 50 ms menghasilkan transmisi data setiap 50 milidetik.</p>
 </li>
 </ol>
+<h3 id="frame-opsional-rusefi-can-broadcast">Frame Opsional rusEFI CAN Broadcast<a class="headerlink" href="#frame-opsional-rusefi-can-broadcast" title="Permanent link">&para;</a></h3>
+<p>Tiga frame broadcast jarang dipakai, sehingga bawaannya <strong>mati</strong>. Opsinya muncul setelah <strong>Enable rusEFI CAN Broadcast</strong> dinyalakan. Nyalakan hanya jika perangkat penerima (dash, logger, PDM) memang membaca datanya:</p>
+<ul>
+<li><strong>Send cams frame</strong> - Frame base + 8 (<code>0x208</code> pada base <code>0x200</code>): posisi VVT aktual dan target.</li>
+<li><strong>Send EGT frame</strong> - Frame base + 9 (<code>0x209</code>): suhu gas buang (EGT).</li>
+<li><strong>Send knock frame</strong> - Frame base + 10 (<code>0x20A</code>): level knock per silinder.</li>
+</ul>
+<p>Frame lain tetap dikirim seperti biasa, dan ID-nya tidak bergeser walaupun frame opsional dimatikan. Mematikan frame yang tidak dipakai mengurangi beban bus CAN.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware Nightly 21 November 2026 atau lebih baru</p>
+<p>Opsi ini ada mulai firmware Nightly 21 November 2026. Pada firmware ini ketiga frame mati, termasuk pada tune lama yang di-load ulang. Jika dash atau logger Anda menampilkan VVT, EGT atau knock per silinder dari broadcast rusEFI, nyalakan lagi opsinya lalu burn.</p>
+</div>
 <h3 id="pengaturan-primary-can">Pengaturan Primary CAN<a class="headerlink" href="#pengaturan-primary-can" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
