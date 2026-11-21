@@ -298,7 +298,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:46:23 UTC">21 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:48:14 UTC">21 November 2026</span></em></p>
   <h1 id="mazduino-mega100">Mazduino Mega100<a class="headerlink" href="#mazduino-mega100" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mega100 adalah board MCU <strong>STM32F407</strong> dengan ukuran dan header yang sama dengan Arduino Mega 2560. Board ini dipasang di soket Arduino Mega pada board Speeduino, menggantikan Arduino Mega, sehingga board Speeduino yang sudah ada bisa menjalankan firmware <strong>rusEFI Mazduino</strong>.</p>
@@ -362,16 +362,16 @@
 <p class="admonition-title">MOSFET tidak terbuka penuh</p>
 <p>MOSFET gate 5V yang hanya diberi 3,3V tidak terbuka penuh, sehingga MOSFET bisa panas dan output tidak bekerja dengan benar. Cek datasheet MOSFET di board Speeduino Anda sebelum memakai versi tanpa buffer.</p>
 </div>
-<p>Kata "buffer" di sini mengacu ke output digital. Input analog A0–A15 punya buffer op-amp sendiri (lihat Fitur Hardware).</p>
+<p>Kata "buffer" di sini mengacu ke output digital. Input analog A0–A15 punya buffer sendiri (lihat Fitur Hardware).</p>
 <p>Skematik v1.3 yang dipakai halaman ini adalah versi tanpa buffer.</p>
 <h2 id="fitur-hardware">Fitur Hardware<a class="headerlink" href="#fitur-hardware" title="Permanent link">&para;</a></h2>
 <ul>
 <li>MCU <strong>STM32F407</strong> (ARM Cortex-M4, 168 MHz), kristal 8 MHz dan kristal RTC 32,768 kHz</li>
 <li>Ukuran dan header sama dengan Arduino Mega 2560, langsung masuk soket board Speeduino</li>
-<li><strong>16 input analog</strong> (A0–A15) dengan buffer op-amp MCP6004 dan pembagi tegangan, sehingga sinyal sensor 0–5V aman untuk MCU 3,3V</li>
+<li><strong>16 input analog</strong> (A0–A15) dengan buffer dan pembagi tegangan, sehingga sinyal sensor 0–5V aman untuk MCU 3,3V</li>
 <li><strong>USB Type-B</strong> untuk TunerStudio dan update firmware (DFU), dengan proteksi ESD dan polyfuse</li>
 <li><strong>Slot microSD</strong> untuk data logging (SPI3)</li>
-<li><strong>CAN bus</strong> dengan transceiver TJA1051 di board</li>
+<li><strong>CAN bus</strong> dengan transceiver di board</li>
 <li>Tombol <strong>RESET</strong> dan <strong>BOOT</strong> untuk masuk mode DFU</li>
 <li>Header <strong>SWD</strong> untuk ST-Link</li>
 <li>LED power dan LED status</li>
