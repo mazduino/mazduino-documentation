@@ -23,7 +23,7 @@ Ada dua firmware, dipilih sesuai chip STM32 yang terpasang:
 
 Perbandingan lengkap fitur per board ada di [FEATURES.md](https://github.com/mazduino/mazduino-fw/blob/master/boards/FEATURES.md). Mega100 dan Mega100-512 tidak punya varian [BIGFUEL](firmware/bigfuel.md).
 
-Firmware Speeduino tidak bisa dipakai di Mega100. Gunakan firmware rusEFI Mazduino dari halaman [Unduhan](downloads.md).
+Mazduino menyarankan firmware rusEFI Mazduino dari halaman [Unduhan](downloads.md). Untuk Mega100 1 MB juga tersedia firmware Speeduino, tetapi masih **pre-release dan belum diuji di hardware**. Mega100-512 tidak didukung firmware Speeduino. Lihat [Firmware Speeduino](downloads.md#firmware-speeduino).
 
 ## Versi Dengan Buffer dan Tanpa Buffer
 
