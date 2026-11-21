@@ -58,6 +58,10 @@
     <li class="toctree-l3"><a class="reference internal" href="#firmware-speeduino">Firmware Speeduino</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#tabel-kompatibilitas">Tabel Kompatibilitas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#pin-yang-perlu-diubah-pada-revisi-lama">Pin yang Perlu Diubah pada Revisi Lama</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#software-yang-dibutuhkan">Software yang Dibutuhkan</a>
     </li>
@@ -296,7 +300,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="10 November 2026 18:45:33 UTC">10 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:53:24 UTC">21 November 2026</span></em></p>
   <h1 id="downloads-firmware-dan-konfigurasi-mazduino">Downloads - Firmware dan Konfigurasi Mazduino<a class="headerlink" href="#downloads-firmware-dan-konfigurasi-mazduino" title="Permanent link">&para;</a></h1>
 <p>Halaman ini menyediakan firmware dan file konfigurasi untuk perangkat Mazduino.</p>
 <ul>
@@ -339,15 +343,17 @@ Speeduino masih ada untuk board yang sudah memakainya, tetapi
 <ul>
 <li><code>mazduino-lite</code></li>
 <li><code>mazduino-compact</code></li>
+<li><code>mazduino-mini6ch</code></li>
+<li><code>mazduino-core</code></li>
 <li><code>mazduino-mega100</code></li>
 <li><code>mazduino-mega100-512</code></li>
-<li><code>mazduino-mini6ch</code></li>
+<li>Varian BIGFUEL (tabel VE dan ignition 32x32): <code>mazduino-lite-bigfuel</code>, <code>mazduino-compact-bigfuel</code>, <code>mazduino-mini6ch-bigfuel</code>, <code>mazduino-core-bigfuel</code> — lihat <a href="../firmware/bigfuel/">BIGFUEL</a></li>
 </ul>
+<p>Board target mana yang dipakai untuk tiap revisi ECU ada di <a href="#tabel-kompatibilitas">Tabel Kompatibilitas</a>.</p>
 <p>Keunggulan dibanding firmware resmi:</p>
 <ul>
-<li>Pin mapping sudah pre-configured untuk semua versi Mazduino</li>
+<li>Pin mapping sudah pre-configured untuk revisi terbaru tiap board; revisi lama cukup mengubah beberapa pin (lihat <a href="#tabel-kompatibilitas">Tabel Kompatibilitas</a>)</li>
 <li>File .ini untuk TunerStudio sudah disertakan dan diuji</li>
-<li>Tidak perlu konfigurasi pin manual</li>
 </ul>
 <p><strong>Catatan penting</strong>: Selalu gunakan file .ini dari rilis yang sama dengan firmware yang di-flash. Mencampur versi firmware dan .ini dari rilis berbeda dapat menyebabkan konfigurasi yang tidak sesuai.</p>
 <h4 id="file-ini-per-versi-firmware">File INI per Versi Firmware<a class="headerlink" href="#file-ini-per-versi-firmware" title="Permanent link">&para;</a></h4>
@@ -419,82 +425,156 @@ berjalan dengannya, tetapi tidak lagi mendapat fitur maupun perbaikan baru.
 Untuk pemasangan baru, gunakan <a href="#firmware-rusefi">firmware rusEFI</a> — fitur
 board yang lebih baru hanya ada di sana.</p>
 </blockquote>
-<p>Tersedia firmware Speeduino yang telah dikustomisasi untuk ECU Mazduino Compact, Mini 6CH v1.3/v1.3B, dan LITE. LITE memakai build yang dibuat untuk Compact.</p>
+<p>Tersedia firmware Speeduino yang telah dikustomisasi untuk ECU Mazduino Compact, Mini 6CH v1.3/v1.3B, dan LITE. LITE memakai build yang dibuat untuk Compact. Untuk Mega100 (1 MB) tersedia build pre-release yang belum diuji di hardware.</p>
 <ul>
 <li><strong>Download</strong>: <a href="https://github.com/mazduino/speeduino-fw/releases">github.com/mazduino/speeduino-fw/releases</a></li>
 </ul>
 <p><strong>Peringatan</strong>: ECU Mazduino tidak kompatibel dengan official Speeduino. Gunakan hanya custom version di atas.</p>
 <p>Yang sudah benar-benar diuji jalan dengan Speeduino hanya <strong>Compact v1</strong>, <strong>Mini 6CH v1.3 polos</strong>, dan <strong>LITE</strong> — LITE memakai firmware yang dibuat untuk Compact, bukan build tersendiri.</p>
 <p><strong>Belum diuji</strong> berarti secara hardware mestinya jalan tetapi belum pernah dibuktikan: Compact v2.1 dan v2.2 ke atas masuk kategori ini, jadi siapkan rencana cadangan ke rusEFI kalau ternyata tidak jalan.</p>
-<p><strong>Tidak didukung</strong> berarti memang tidak bisa: Mini 6CH v1.0-v1.2, Mini 6CH v1.3C ke atas, dan Mega100 — gunakan rusEFI.</p>
+<p><strong>Pre-release</strong> berarti build sudah ada tetapi belum diuji di hardware: Mega100 (1 MB). Di TunerStudio, pilih board Speeduino di <strong>Engine Constants → Board Layout</strong> seperti pada Arduino Mega. Detail dan batasannya ada di catatan rilis Mega100 di halaman download di atas.</p>
+<p><strong>Tidak didukung</strong> berarti memang tidak bisa: Mini 6CH v1.0-v1.2, Mini 6CH v1.3C ke atas, Core, dan Mega100-512 — gunakan rusEFI.</p>
 <hr />
 <h3 id="tabel-kompatibilitas">Tabel Kompatibilitas<a class="headerlink" href="#tabel-kompatibilitas" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
 <th>Model ECU</th>
-<th style="text-align: center;">rusEFI Official</th>
+<th>Board target rusEFI Mazduino</th>
 <th style="text-align: center;">rusEFI Mazduino</th>
+<th style="text-align: center;">rusEFI Official</th>
 <th style="text-align: center;">Speeduino Custom</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Compact v1</td>
+<td><code>mazduino-compact</code></td>
+<td style="text-align: center;">Ubah pin TPS</td>
 <td style="text-align: center;">Manual config</td>
-<td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Didukung, teruji</td>
 </tr>
 <tr>
-<td>Compact v2.1</td>
+<td>Compact v2.1, v2.2</td>
+<td><code>mazduino-compact</code></td>
+<td style="text-align: center;">Ubah pin TPS, tanpa knock</td>
 <td style="text-align: center;">Manual config</td>
-<td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Belum diuji</td>
 </tr>
 <tr>
-<td>Compact v2.2+</td>
-<td style="text-align: center;">Manual config</td>
+<td>Compact v2.3, v2.5</td>
+<td><code>mazduino-compact</code></td>
 <td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Belum diuji</td>
 </tr>
 <tr>
 <td>Mini 6CH v1.0-v1.2</td>
+<td><code>mazduino-mini6ch</code></td>
+<td style="text-align: center;">Ubah beberapa pin, tanpa knock</td>
 <td style="text-align: center;">Manual config</td>
-<td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Tidak didukung</td>
 </tr>
 <tr>
 <td>Mini 6CH v1.3 (polos)</td>
+<td><code>mazduino-mini6ch</code></td>
+<td style="text-align: center;">Ubah pin TPS dan baterai, tanpa knock</td>
 <td style="text-align: center;">Manual config</td>
-<td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Didukung, teruji</td>
 </tr>
 <tr>
 <td>Mini 6CH v1.3B</td>
+<td><code>mazduino-mini6ch</code></td>
+<td style="text-align: center;">Ubah pin TPS, tanpa knock</td>
 <td style="text-align: center;">Manual config</td>
-<td style="text-align: center;">Siap pakai</td>
 <td style="text-align: center;">Didukung</td>
 </tr>
 <tr>
-<td>Mini 6CH v1.3C ke atas</td>
-<td style="text-align: center;">Manual config</td>
+<td>Mini 6CH v1.3C, v1.3D</td>
+<td><code>mazduino-mini6ch</code></td>
 <td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Tidak didukung</td>
 </tr>
 <tr>
-<td>LITE</td>
+<td>Mini 6CH v1.4</td>
+<td><code>mazduino-mini6ch</code></td>
 <td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Tidak didukung</td>
+</tr>
+<tr>
+<td>LITE v0.1-v0.3</td>
+<td><code>mazduino-lite</code></td>
 <td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Didukung, teruji — pakai firmware Compact</td>
 </tr>
 <tr>
-<td>Mega100</td>
-<td style="text-align: center;">Manual config</td>
+<td>Core rev0, rev1</td>
+<td><code>mazduino-core</code></td>
 <td style="text-align: center;">Siap pakai</td>
+<td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Tidak didukung</td>
+</tr>
+<tr>
+<td>Mega100 (1 MB)</td>
+<td><code>mazduino-mega100</code></td>
+<td style="text-align: center;">Siap pakai, pilih preset board Speeduino</td>
+<td style="text-align: center;">Manual config</td>
+<td style="text-align: center;">Pre-release, belum diuji</td>
+</tr>
+<tr>
+<td>Mega100-512</td>
+<td><code>mazduino-mega100-512</code></td>
+<td style="text-align: center;">Siap pakai, fitur dikurangi</td>
+<td style="text-align: center;">Manual config</td>
 <td style="text-align: center;">Tidak didukung</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Siap pakai</strong> berarti pin bawaan firmware sudah sesuai dengan board. Firmware Compact mengikuti pin v2.5, Mini 6CH mengikuti v1.3C, dan LITE mengikuti v0.2.</p>
+<h4 id="pin-yang-perlu-diubah-pada-revisi-lama">Pin yang Perlu Diubah pada Revisi Lama<a class="headerlink" href="#pin-yang-perlu-diubah-pada-revisi-lama" title="Permanent link">&para;</a></h4>
+<p>Pada revisi lama, firmware tetap jalan, tetapi beberapa pin harus diubah di TunerStudio sesuai tabel berikut, lalu burn dan restart ECU. Pin lain sudah sesuai.</p>
+<table>
+<thead>
+<tr>
+<th>Model ECU</th>
+<th>Ubah di TunerStudio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compact v1, v2.1, v2.2</td>
+<td>TPS ke <strong>PA3</strong></td>
+</tr>
+<tr>
+<td>Mini 6CH v1.3B</td>
+<td>TPS ke <strong>PA3</strong></td>
+</tr>
+<tr>
+<td>Mini 6CH v1.3 (polos)</td>
+<td>TPS ke <strong>PA3</strong>, tegangan baterai ke <strong>PA2</strong></td>
+</tr>
+<tr>
+<td>Mini 6CH v1.0-v1.2</td>
+<td>TPS ke <strong>PA3</strong>, tegangan baterai ke <strong>PA2</strong>, main relay ke <strong>PC6</strong>, clutch ke <strong>PB10</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tanpa knock:</strong> firmware hanya membaca sensor knock di pin <strong>PA3</strong>. Pada revisi di atas, PA3 dipakai TPS, dan input knock board (jika ada) berada di pin lain, sehingga software knock tidak bisa dipakai. Biarkan knock tetap mati.</p>
+<p>Pada Mini 6CH v1.0-v1.2, clutch di PB10 memakai pin yang sama dengan port Bluetooth (TX), jadi Bluetooth tidak bisa dipakai bersama input clutch.</p>
+<p>Mini 6CH v1.4 punya banyak pin yang berbeda (MAP, TPS, O2, ETB kedua, VVT, boost dan high side), jadi semua pin perlu disesuaikan manual dengan tabel di halaman <a href="../mazduino-mini-6ch-v1.4/">Mini 6CH v1.4</a>.</p>
+<p>-----------|:--------------:|:---------------:|:----------------:|
+| Compact v1 | Manual config | Siap pakai | Didukung, teruji |
+| Compact v2.1 | Manual config | Siap pakai | Belum diuji |
+| Compact v2.2+ | Manual config | Siap pakai | Belum diuji |
+| Mini 6CH v1.0-v1.2 | Manual config | Siap pakai | Tidak didukung |
+| Mini 6CH v1.3 (polos) | Manual config | Siap pakai | Didukung, teruji |
+| Mini 6CH v1.3B | Manual config | Siap pakai | Didukung |
+| Mini 6CH v1.3C ke atas | Manual config | Siap pakai | Tidak didukung |
+| LITE | Manual config | Siap pakai | Didukung, teruji — pakai firmware Compact |
+| Mega100 | Manual config | Siap pakai | Tidak didukung |</p>
 <hr />
 <h3 id="software-yang-dibutuhkan">Software yang Dibutuhkan<a class="headerlink" href="#software-yang-dibutuhkan" title="Permanent link">&para;</a></h3>
 <ul>
