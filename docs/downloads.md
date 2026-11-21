@@ -165,17 +165,6 @@ Pada Mini 6CH v1.0-v1.2, clutch di PB10 memakai pin yang sama dengan port Blueto
 
 Mini 6CH v1.4 punya banyak pin yang berbeda (MAP, TPS, O2, ETB kedua, VVT, boost dan high side), jadi semua pin perlu disesuaikan manual dengan tabel di halaman [Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md).
 
------------|:--------------:|:---------------:|:----------------:|
-| Compact v1 | Manual config | Siap pakai | Didukung, teruji |
-| Compact v2.1 | Manual config | Siap pakai | Belum diuji |
-| Compact v2.2+ | Manual config | Siap pakai | Belum diuji |
-| Mini 6CH v1.0-v1.2 | Manual config | Siap pakai | Tidak didukung |
-| Mini 6CH v1.3 (polos) | Manual config | Siap pakai | Didukung, teruji |
-| Mini 6CH v1.3B | Manual config | Siap pakai | Didukung |
-| Mini 6CH v1.3C ke atas | Manual config | Siap pakai | Tidak didukung |
-| LITE | Manual config | Siap pakai | Didukung, teruji — pakai firmware Compact |
-| Mega100 | Manual config | Siap pakai | Tidak didukung |
-
 ---
 
 ### Software yang Dibutuhkan
