@@ -39,7 +39,7 @@ Arduino Mega mengeluarkan output 5V, dan sebagian board Speeduino memakai MOSFET
 !!! warning "MOSFET tidak terbuka penuh"
     MOSFET gate 5V yang hanya diberi 3,3V tidak terbuka penuh, sehingga MOSFET bisa panas dan output tidak bekerja dengan benar. Cek datasheet MOSFET di board Speeduino Anda sebelum memakai versi tanpa buffer.
 
-Kata "buffer" di sini mengacu ke output digital. Input analog A0–A15 punya buffer op-amp sendiri (lihat Fitur Hardware).
+Kata "buffer" di sini mengacu ke output digital. Input analog A0–A15 punya buffer sendiri (lihat Fitur Hardware).
 
 Skematik v1.3 yang dipakai halaman ini adalah versi tanpa buffer.
 
@@ -47,10 +47,10 @@ Skematik v1.3 yang dipakai halaman ini adalah versi tanpa buffer.
 
 - MCU **STM32F407** (ARM Cortex-M4, 168 MHz), kristal 8 MHz dan kristal RTC 32,768 kHz
 - Ukuran dan header sama dengan Arduino Mega 2560, langsung masuk soket board Speeduino
-- **16 input analog** (A0–A15) dengan buffer op-amp MCP6004 dan pembagi tegangan, sehingga sinyal sensor 0–5V aman untuk MCU 3,3V
+- **16 input analog** (A0–A15) dengan buffer dan pembagi tegangan, sehingga sinyal sensor 0–5V aman untuk MCU 3,3V
 - **USB Type-B** untuk TunerStudio dan update firmware (DFU), dengan proteksi ESD dan polyfuse
 - **Slot microSD** untuk data logging (SPI3)
-- **CAN bus** dengan transceiver TJA1051 di board
+- **CAN bus** dengan transceiver di board
 - Tombol **RESET** dan **BOOT** untuk masuk mode DFU
 - Header **SWD** untuk ST-Link
 - LED power dan LED status
