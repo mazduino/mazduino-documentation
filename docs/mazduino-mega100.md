@@ -124,6 +124,83 @@ Firmware baru memakai preset **Speeduino v0.4** sebagai bawaan.
 !!! note "Board 01-05 MX5 PNP"
     Preset untuk 01-05 MX5 PNP tidak tersedia, karena coil 2 board itu ada di D43 (LED status) dan injektor 2 di D46 (tidak tersambung).
 
+## Contoh Pin Mapping
+
+Dua contoh hasil preset. Pin header adalah nomor pin di header Arduino Mega, dan pin STM32 adalah nama yang tampil di TunerStudio.
+
+### Speeduino v0.4
+
+| Fungsi | Pin header | Pin STM32 |
+|--------|------------|-----------|
+| Injektor 1 | D8 | PD8 |
+| Injektor 2 | D9 | PD9 |
+| Injektor 3 | D10 | PD10 |
+| Injektor 4 | D11 | PD11 |
+| Coil 1 | D40 | PE2 |
+| Coil 2 | D38 | PE3 |
+| Coil 3 | D52 | PC13 |
+| Coil 4 | D50 | PE7 |
+| Trigger (crank) | D19 | PD3 |
+| Cam | D18 | PD4 |
+| TPS | A2 | PA2 |
+| MAP | A3 | PA3 |
+| IAT | A0 | PA0 |
+| CLT | A1 | PA1 |
+| O2 1 | A8 | PB0 |
+| Tegangan baterai | A4 | PA4 |
+| Baro | A5 | PA5 |
+| Fuel pump | D45 | PE11 |
+| Tach | D49 | PE8 |
+| Fan | D47 | PE9 |
+| Idle 1 | D5 | PB13 |
+| Idle 2 | D6 | PB14 |
+| Boost | D7 | PB15 |
+| VVT 1 | D4 | PB12 |
+| Stepper direction | D16 | PB10 |
+| Stepper step | D17 | PB11 |
+| Stepper enable | D24 | PA15 |
+| Flex fuel | D2 | PD7 |
+| Launch | D51 | PB8 |
+
+O2 2 dan VSS tidak diisi preset ini. D16/D17 dipakai driver stepper, jadi port Bluetooth mati. Pin A3 dipakai MAP, jadi software knock tidak bisa dipakai.
+
+### UA4C
+
+| Fungsi | Pin header | Pin STM32 |
+|--------|------------|-----------|
+| Injektor 1 | D8 | PD8 |
+| Injektor 2 | D7 | PB15 |
+| Injektor 3 | D6 | PB14 |
+| Injektor 4 | D5 | PB13 |
+| Coil 1 | D35 | PE15 |
+| Coil 2 | D36 | PE4 |
+| Coil 3 | D33 | PD13 |
+| Coil 4 | D34 | PE5 |
+| Trigger (crank) | D19 | PD3 |
+| Cam | D18 | PD4 |
+| TPS | A3 | PA3 |
+| MAP | A0 | PA0 |
+| IAT | A5 | PA5 |
+| CLT | A4 | PA4 |
+| O2 1 | A1 | PA1 |
+| O2 2 | A9 | PB1 |
+| Tegangan baterai | A2 | PA2 |
+| Baro | A7 | PA7 |
+| Fuel pump | D23 | PC8 |
+| Tach | D22 | PC9 |
+| Fan | D24 | PA15 |
+| Idle 1 | D9 | PD9 |
+| Idle 2 | D10 | PD10 |
+| Boost | D12 | PA8 |
+| VVT 1 | D11 | PD11 |
+| Stepper direction | D32 | PD12 |
+| Stepper step | D31 | PD15 |
+| Stepper enable | D30 | PD14 |
+| VSS | D2 | PD7 |
+| Launch | D37 | PE14 |
+
+Flex fuel tidak diisi preset ini. D16/D17 tidak dipakai, jadi port Bluetooth tetap tersedia. Pin A3 dipakai TPS, jadi software knock tidak bisa dipakai.
+
 ## Catatan Fitur
 
 ### Bluetooth
@@ -132,7 +209,7 @@ Port Bluetooth TunerStudio ada di D16 (TX, PB10) dan D17 (RX, PB11). Banyak boar
 
 ### Software Knock
 
-Software knock membaca pin **PA3**, yaitu **A3** di header Mega. Pada preset yang memakai A3 untuk sensor MAP, misalnya Speeduino v0.4, biarkan knock tetap mati.
+Software knock membaca pin **PA3**, yaitu **A3** di header Mega. Pada preset yang memakai A3 untuk sensor, misalnya MAP di Speeduino v0.4 atau TPS di UA4C, biarkan knock tetap mati.
 
 ### SD Card
 
