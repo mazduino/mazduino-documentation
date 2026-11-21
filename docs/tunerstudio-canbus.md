@@ -39,6 +39,19 @@ Sistem CAN Bus pada Mazduino memungkinkan komunikasi dengan berbagai perangkat e
 
 10. **rusEFI CAN Data Period (ms)** - Menentukan frekuensi broadcasting data rusEFI. Misalnya, pengaturan 50 ms menghasilkan transmisi data setiap 50 milidetik.
 
+### Frame Opsional rusEFI CAN Broadcast
+
+Tiga frame broadcast jarang dipakai, sehingga bawaannya **mati**. Opsinya muncul setelah **Enable rusEFI CAN Broadcast** dinyalakan. Nyalakan hanya jika perangkat penerima (dash, logger, PDM) memang membaca datanya:
+
+- **Send cams frame** - Frame base + 8 (`0x208` pada base `0x200`): posisi VVT aktual dan target.
+- **Send EGT frame** - Frame base + 9 (`0x209`): suhu gas buang (EGT).
+- **Send knock frame** - Frame base + 10 (`0x20A`): level knock per silinder.
+
+Frame lain tetap dikirim seperti biasa, dan ID-nya tidak bergeser walaupun frame opsional dimatikan. Mematikan frame yang tidak dipakai mengurangi beban bus CAN.
+
+!!! note "Firmware Nightly 21 November 2026 atau lebih baru"
+    Opsi ini ada mulai firmware Nightly 21 November 2026. Pada firmware ini ketiga frame mati, termasuk pada tune lama yang di-load ulang. Jika dash atau logger Anda menampilkan VVT, EGT atau knock per silinder dari broadcast rusEFI, nyalakan lagi opsinya lalu burn.
+
 ### Pengaturan Primary CAN
 
 11. **Primary CAN Verbose** - Mengkonfigurasi level pesan debugging untuk Primary CAN bus. Berguna untuk mendiagnosis masalah komunikasi.
