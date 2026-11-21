@@ -341,7 +341,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 01:58:53 UTC">21 November 2026</span></em></p>
   <h1 id="examples-map-switching-tunerstudio">Examples &amp; Map Switching TunerStudio<a class="headerlink" href="#examples-map-switching-tunerstudio" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Bagian ini menyediakan contoh praktis implementasi fitur TunerStudio Mazduino, dengan fokus khusus pada Map Switching yang memungkinkan pergantian tune secara real-time untuk kondisi operasi yang berbeda.</p>
@@ -520,6 +520,11 @@ Boost Blend: +0.2 bar additional boost untuk race fuel
 <h3 id="cek-tabel-yang-aktif">Cek Tabel yang Aktif<a class="headerlink" href="#cek-tabel-yang-aktif" title="Permanent link">&para;</a></h3>
 <p>Indikator di dialog menunjukkan tabel yang sedang dipakai: <strong>Primary VE table</strong> atau <strong>Second VE table</strong>, dan <strong>Primary Ignition table</strong> atau <strong>Second Ignition table</strong>. Tabel kedua juga dihitung aktif saat blend bias lebih dari 0%.</p>
 <p>Tabel kedua tersimpan di halaman tune terpisah. Pastikan perubahan di-burn.</p>
+<p>Perubahan di tabel kedua langsung berlaku saat mesin hidup. Burn saat mesin hidup aman: ECU baru menyimpannya ke flash setelah mesin mati, sama seperti tune utama. Biarkan ECU tetap menyala sebentar setelah mesin mati supaya penyimpanan selesai.</p>
+<div class="admonition warning">
+<p class="admonition-title">Firmware sebelum Nightly 21 November 2026</p>
+<p>Pada firmware lama, burn tabel kedua saat mesin hidup membuat mesin mati dan ECU seperti restart sendiri. Burn hanya saat mesin mati, atau update ke firmware Nightly 21 November 2026 atau lebih baru.</p>
+</div>
 <h3 id="catatan-saat-idle">Catatan Saat Idle<a class="headerlink" href="#catatan-saat-idle" title="Permanent link">&para;</a></h3>
 <p>Kalau <strong>Separate idle VE table</strong> atau <strong>Separate idle ignition table</strong> (menu Idle) aktif, tabel idle tetap dipakai di area idle (TPS di bawah batas idle), baik dengan tabel utama maupun tabel kedua. Perbedaan dua map baru terasa saat gas dibuka.</p>
 <h2 id="advanced-map-switching-techniques">Advanced Map Switching Techniques<a class="headerlink" href="#advanced-map-switching-techniques" title="Permanent link">&para;</a></h2>
