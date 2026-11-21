@@ -8,7 +8,7 @@ Firmware Mazduino adalah fork dari **rusEFI** yang dikembangkan khusus untuk har
 
 Berikut fitur yang ditambahkan pada custom firmware Mazduino:
 
-- **Pin mapping pre-configured** — tidak perlu konfigurasi pin manual, langsung sesuai hardware setiap board
+- **Pin mapping pre-configured** — pin bawaan sudah sesuai revisi terbaru tiap board; revisi lama cukup mengubah beberapa pin (lihat [pin yang perlu diubah](../downloads.md#pin-yang-perlu-diubah-pada-revisi-lama)), dan Mega100 memakai preset board Speeduino
 - **File .ini TunerStudio disertakan** — sudah tersedia dalam setiap release, tidak perlu generate sendiri
 - **[CAN Virtual Input](#can-input)** — bit dalam frame CAN digunakan sebagai digital pin
 - **[CAN Analog Input](#can-input)** — nilai dalam frame CAN digunakan sebagai ADC virtual
