@@ -298,12 +298,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:43:56 UTC">21 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 05:46:23 UTC">21 November 2026</span></em></p>
   <h1 id="mazduino-mega100">Mazduino Mega100<a class="headerlink" href="#mazduino-mega100" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mega100 adalah board MCU <strong>STM32F407</strong> dengan ukuran dan header yang sama dengan Arduino Mega 2560. Board ini dipasang di soket Arduino Mega pada board Speeduino, menggantikan Arduino Mega, sehingga board Speeduino yang sudah ada bisa menjalankan firmware <strong>rusEFI Mazduino</strong>.</p>
 <p>Dengan Mega100, board Speeduino mendapat MCU ARM Cortex-M4 168 MHz, USB, slot microSD, CAN bus, dan fitur firmware rusEFI seperti Lua, boost, VVT, launch control dan data logging. Pin injektor, coil, trigger, sensor dan output diatur dari TunerStudio dengan satu tombol preset sesuai board Speeduino yang dipakai.</p>
 <p>Dokumentasi ini mengikuti hardware <strong>Mega100 v1.3</strong> (Mega converter v1.3).</p>
+<p><img alt="Mazduino Mega100 tampak depan" src="../img/mega100/mega100-front.jpeg" /></p>
+<p><em>Render rev1.2. Tata letak komponen di v1.3 bisa sedikit berbeda.</em></p>
 <h2 id="varian-firmware">Varian Firmware<a class="headerlink" href="#varian-firmware" title="Permanent link">&para;</a></h2>
 <p>Ada dua firmware, dipilih sesuai chip STM32 yang terpasang:</p>
 <table>
@@ -377,6 +379,8 @@
 </ul>
 <h2 id="konektor-dan-header">Konektor dan Header<a class="headerlink" href="#konektor-dan-header" title="Permanent link">&para;</a></h2>
 <h3 id="header-arduino-mega">Header Arduino Mega<a class="headerlink" href="#header-arduino-mega" title="Permanent link">&para;</a></h3>
+<p><img alt="Mazduino Mega100 tampak belakang dengan label pin" src="../img/mega100/mega100-back.jpeg" /></p>
+<p>Label di sisi belakang board menunjukkan nama pin header dan pin STM32-nya.</p>
 <p>Semua header Arduino Mega (D0–D53, A0–A15, power) ada di posisi yang sama dengan Arduino Mega 2560. Beberapa pin berbeda:</p>
 <ul>
 <li><strong>D21</strong> dan <strong>D46</strong> tidak tersambung ke MCU.</li>
