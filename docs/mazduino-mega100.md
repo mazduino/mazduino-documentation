@@ -8,6 +8,10 @@ Dengan Mega100, board Speeduino mendapat MCU ARM Cortex-M4 168 MHz, USB, slot mi
 
 Dokumentasi ini mengikuti hardware **Mega100 v1.3** (Mega converter v1.3).
 
+![Mazduino Mega100 tampak depan](img/mega100/mega100-front.jpeg)
+
+*Render rev1.2. Tata letak komponen di v1.3 bisa sedikit berbeda.*
+
 ## Varian Firmware
 
 Ada dua firmware, dipilih sesuai chip STM32 yang terpasang:
@@ -55,6 +59,10 @@ Skematik v1.3 yang dipakai halaman ini adalah versi tanpa buffer.
 ## Konektor dan Header
 
 ### Header Arduino Mega
+
+![Mazduino Mega100 tampak belakang dengan label pin](img/mega100/mega100-back.jpeg)
+
+Label di sisi belakang board menunjukkan nama pin header dan pin STM32-nya.
 
 Semua header Arduino Mega (D0–D53, A0–A15, power) ada di posisi yang sama dengan Arduino Mega 2560. Beberapa pin berbeda:
 
