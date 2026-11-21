@@ -185,6 +185,11 @@ Indikator di dialog menunjukkan tabel yang sedang dipakai: **Primary VE table** 
 
 Tabel kedua tersimpan di halaman tune terpisah. Pastikan perubahan di-burn.
 
+Perubahan di tabel kedua langsung berlaku saat mesin hidup. Burn saat mesin hidup aman: ECU baru menyimpannya ke flash setelah mesin mati, sama seperti tune utama. Biarkan ECU tetap menyala sebentar setelah mesin mati supaya penyimpanan selesai.
+
+!!! warning "Firmware sebelum Nightly 21 November 2026"
+    Pada firmware lama, burn tabel kedua saat mesin hidup membuat mesin mati dan ECU seperti restart sendiri. Burn hanya saat mesin mati, atau update ke firmware Nightly 21 November 2026 atau lebih baru.
+
 ### Catatan Saat Idle
 
 Kalau **Separate idle VE table** atau **Separate idle ignition table** (menu Idle) aktif, tabel idle tetap dipakai di area idle (TPS di bawah batas idle), baik dengan tabel utama maupun tabel kedua. Perbedaan dua map baru terasa saat gas dibuka.
