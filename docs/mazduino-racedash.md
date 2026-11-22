@@ -12,10 +12,9 @@ Mazduino Racedash adalah dash display digital yang menampilkan data real-time da
 Kedua varian diatur dari HP dengan aplikasi **DashTune**, lewat WiFi yang
 dipancarkan dash. Langsung ke [Pengaturan lewat DashTune](#pengaturan-lewat-dashtune).
 
-![DashTune dan layar Racedash](img/dash/dashtune-home.png)
+![Halaman utama DashTune](img/dash/dashtune-home.png)
 
-*Kiri: halaman utama DashTune saat tersambung ke dash. Kanan: layar dash dengan
-template Klasik.*
+*Halaman utama DashTune saat tersambung ke dash.*
 
 ## Fitur Utama
 
@@ -23,10 +22,6 @@ template Klasik.*
 - Diatur dari aplikasi Android **DashTune**: template layar, data tiap panel, lampu indikator, protokol ECU, splash screen, dan update firmware, semuanya dari HP
 - Dua template layar: **Klasik** (bar RPM, gear, speed, dan panel kotak) dan **Grid** (satu layar penuh berisi panel data)
 - Mendukung komunikasi ke ECU melalui **CAN Bus** atau **Serial**, tergantung permintaan saat order dan ECU yang digunakan. ECU berbasis **Speeduino** wajib menggunakan mode Serial (berlaku untuk varian JST 4 Pin maupun DTM4), sedangkan **rusEFI**, **Haltech**, dan **MaxxECU** menggunakan mode CAN Bus
-
-![Template Klasik dan Grid](img/dash/racedash-templates.png)
-
-*Template Klasik (kiri) dan Grid (kanan)*
 
 > **Sisi ECU juga harus diatur.** Dash hanya mendengarkan — ECU yang harus
 > menyiarkan datanya, pada kecepatan CAN yang tepat. Lihat
