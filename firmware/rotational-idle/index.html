@@ -225,6 +225,22 @@
     <li class="toctree-l3"><a class="reference internal" href="#batas">Batas</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#accumulator-pola-cut">Accumulator (Pola Cut)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#offset">Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#memilih-max">Memilih Max</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#irama-dan-rpm">Irama dan RPM</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preset">Preset</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setelan-pendukung">Setelan Pendukung</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cut-mode-dan-timing">Cut Mode dan Timing</a>
     </li>
         </ul>
     </li>
@@ -279,7 +295,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 November 2026 19:39:18 UTC">23 November 2026</span></em></p>
   <h1 id="rotational-idle">Rotational Idle<a class="headerlink" href="#rotational-idle" title="Permanent link">&para;</a></h1>
 <p>Rotational idle memotong spark, fuel, atau keduanya pada sebagian siklus secara bergiliran antar silinder. Hasilnya suara idle yang "lumpy" seperti mesin dengan cam besar.</p>
 <p>Fitur ini masih <strong>experimental</strong> dan bukan fitur yang dipakai semua orang.</p>
@@ -427,39 +443,193 @@
 </tbody>
 </table>
 <h3 id="accumulator-pola-cut">Accumulator (Pola Cut)<a class="headerlink" href="#accumulator-pola-cut" title="Permanent link">&para;</a></h3>
-<p>Ada 3 accumulator. Masing-masing punya <strong>Max</strong>, <strong>Adder</strong>, dan <strong>Offset</strong>. Setiap event spark (dan setiap event injeksi, dengan hitungan sendiri) menambah counter. Event itu di-cut kalau:</p>
+<p>Ada 3 accumulator. Masing-masing punya <strong>Max</strong>, <strong>Adder</strong>, dan <strong>Offset</strong>. Setiap event spark menambah counter, dan setiap event injeksi menambah counter-nya sendiri. Event itu di-cut kalau:</p>
 <pre><code>((counter + Offset) mod Max) + Adder &gt;= Max
 </code></pre>
-<p>Event di-cut kalau salah satu accumulator meminta cut.</p>
+<p>Event di-cut kalau salah satu accumulator meminta cut. Di contoh pola di halaman ini, <code>x</code> = event menyala dan <code>_</code> = event di-cut.</p>
 <ul>
-<li><strong>Max</strong> = panjang pola. 0 = accumulator ini tidak dipakai.</li>
-<li><strong>Adder</strong> = berapa event di-cut dalam satu pola. Max 5 dengan Adder 1 berarti 1 dari 5 event di-cut. Adder 2 berarti 2 dari 5.</li>
-<li><strong>Offset</strong> = menggeser pola, berguna kalau memakai lebih dari satu accumulator.</li>
+<li><strong>Max</strong> = panjang pola dalam event. 0 = accumulator ini tidak dipakai.</li>
+<li><strong>Adder</strong> = berapa event di-cut dalam satu pola. Yang di-cut selalu event terakhir dalam pola, berurutan. Max 5 Adder 1: <code>xxxx_</code>. Max 5 Adder 2: <code>xxx__</code>.</li>
+<li><strong>Offset</strong> = menggeser posisi cut di dalam pola. Lihat penjelasan di bawah.</li>
 </ul>
 <p><strong>Kalau semua Max bernilai 0, tidak ada yang di-cut</strong>, walaupun rotational idle aktif.</p>
-<p>Nilai awal yang disarankan:</p>
+<h4 id="offset">Offset<a class="headerlink" href="#offset" title="Permanent link">&para;</a></h4>
+<p>Offset memajukan posisi cut sebanyak Offset event. Contoh Max 7 Adder 1:</p>
+<pre><code>Offset 0:  xxxxxx_
+Offset 3:  xxx_xxx
+</code></pre>
+<p>Dengan <strong>satu</strong> accumulator, Offset tidak mengubah suara: counter terus berjalan, jadi yang bergeser hanya titik mulai pola.</p>
+<p>Offset baru berguna kalau beberapa accumulator dipakai dengan <strong>Max yang sama</strong>. Adder yang besar selalu memotong event secara berurutan. Beberapa accumulator dengan Offset berbeda bisa menyebar cut di dalam pola:</p>
+<pre><code>1 accumulator: Max 11, Adder 3                      xxxxxxxx___   cut berurutan, terdengar tersendat
+3 accumulator: Max 11, Adder 1, Offset 0 / 4 / 7    xxx_xx_xxx_   cut tersebar, lope lebih rata
+</code></pre>
+<p>Keduanya sama-sama memotong 3 dari 11 event (27%), tapi iramanya berbeda.</p>
+<p>Kalau Max-nya berbeda (misalnya 5 dan 7), Offset menggeser satu pola terhadap pola lainnya. Persentase cut tetap, tapi jarak antar cut dan iramanya berubah.</p>
+<h4 id="memilih-max">Memilih Max<a class="headerlink" href="#memilih-max" title="Permanent link">&para;</a></h4>
+<p>Max dan jumlah silinder tidak boleh punya faktor yang sama. Kalau punya, cut hanya jatuh di sebagian silinder. Contoh di mesin 4 silinder:</p>
+<ul>
+<li>Max 4: yang di-cut selalu silinder yang sama.</li>
+<li>Max 6: hanya 2 dari 4 silinder yang pernah di-cut.</li>
+</ul>
+<p>Silinder yang terus di-cut lebih dingin, dan businya cepat kotor.</p>
 <table>
 <thead>
 <tr>
-<th>Mesin</th>
-<th>Max</th>
-<th>Adder</th>
+<th>Jumlah silinder</th>
+<th>Max yang cocok</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>4 silinder</td>
-<td>5</td>
-<td>1</td>
+<td>4 atau 8</td>
+<td>Ganjil: 3, 5, 7, 9, 11, 13</td>
 </tr>
 <tr>
-<td>6 silinder</td>
-<td>7</td>
-<td>1</td>
+<td>6</td>
+<td>Tidak habis dibagi 2 atau 3: 5, 7, 11, 13</td>
 </tr>
 </tbody>
 </table>
-<p>Rumus umum: Max = (jumlah silinder / 2 × X) ± 1, dengan X pengali untuk variasi pola. Hindari Max yang merupakan kelipatan jumlah silinder: pola tidak bergeser dan silinder yang sama terus di-cut.</p>
+<p>Aturan ini berlaku untuk setiap accumulator yang dipakai.</p>
+<h4 id="irama-dan-rpm">Irama dan RPM<a class="headerlink" href="#irama-dan-rpm" title="Permanent link">&para;</a></h4>
+<p>Jumlah event per detik = RPM × jumlah silinder / 120. Mesin 4 silinder di 900 RPM punya 30 event per detik, jadi pola Max 5 berulang 6 kali per detik. RPM idle yang lebih rendah atau Max yang lebih besar membuat irama lebih lambat dan lebih berat.</p>
+<hr />
+<h2 id="preset">Preset<a class="headerlink" href="#preset" title="Permanent link">&para;</a></h2>
+<p>Isi accumulator sesuai tabel. Accumulator yang tidak dipakai diisi <strong>Max 0</strong>. Format kolom accumulator: Max / Adder / Offset.</p>
+<p>Semua preset merata di mesin 4, 6 dan 8 silinder, kecuali preset 5.</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Accumulator 1</th>
+<th>Accumulator 2</th>
+<th>Accumulator 3</th>
+<th>Cut</th>
+<th>Pola</th>
+<th>Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>7 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>14%</td>
+<td><code>xxxxxx_</code></td>
+<td>Paling halus, seperti cam sedikit lebih besar dari standar</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>20%</td>
+<td><code>xxxx_</code></td>
+<td>Seperti cam besar. Titik awal yang disarankan</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7 / 1 / 0</td>
+<td>7 / 1 / 3</td>
+<td>0</td>
+<td>29%</td>
+<td><code>xxx_xx_</code></td>
+<td>Dua hentakan dengan jarak tidak sama</td>
+</tr>
+<tr>
+<td>4</td>
+<td>11 / 3 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>27%</td>
+<td><code>xxxxxxxx___</code></td>
+<td>Jalan rata lalu tersendat</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>33%</td>
+<td><code>xx_</code></td>
+<td>Derap teratur seperti langkah kuda. <strong>Hanya 4 dan 8 silinder</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>5 / 2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>40%</td>
+<td><code>xxx__</code></td>
+<td>Sangat kasar, gaya mesin drag</td>
+</tr>
+<tr>
+<td>7</td>
+<td>5 / 1 / 0</td>
+<td>7 / 1 / 2</td>
+<td>0</td>
+<td>31%</td>
+<td><code>xxxx_xxxx_x_xx_xxx__…</code></td>
+<td>Tidak beraturan, mirip idle rotary. Berulang tiap 35 event</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5 / 2 / 0</td>
+<td>7 / 1 / 3</td>
+<td>0</td>
+<td>49%</td>
+<td><code>xxx__xxx___xx__xx___…</code></td>
+<td>Mirip rotary bridgeport. Butuh tambahan udara idle</td>
+</tr>
+<tr>
+<td>9</td>
+<td>5 / 1 / 0</td>
+<td>7 / 1 / 3</td>
+<td>11 / 1 / 5</td>
+<td>38%</td>
+<td><code>xxx___xxx__xxx_x__x_…</code></td>
+<td>Hampir tidak berulang (pola 385 event)</td>
+</tr>
+</tbody>
+</table>
+<p>Untuk mesin 6 silinder, preset 5 hanya memotong 2 dari 6 silinder. Pakai preset 3 atau 6 sebagai gantinya.</p>
+<p>Suara rotary asli berasal dari 2 rotor dan port exhaust yang terbuka lebar, jadi nadanya tidak bisa ditiru mesin piston. Preset 7 dan 8 hanya meniru iramanya. Knalpot sangat menentukan hasil akhirnya.</p>
+<h3 id="setelan-pendukung">Setelan Pendukung<a class="headerlink" href="#setelan-pendukung" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Stop short term fuel trim while active</strong>: yes untuk semua preset.</li>
+<li><strong>Add idle air while active</strong>: makin besar persentase cut, makin banyak udara yang dibutuhkan supaya RPM tidak turun. Sebagai titik awal, isi <strong>Idle air adder</strong> sekitar 5% untuk preset dengan cut 20% atau kurang, dan sekitar 10% untuk yang lebih berat. Lalu sesuaikan sampai RPM idle sama seperti saat rotational idle mati.</li>
+<li><strong>Maximum RPM</strong> dan <strong>Maximum TPS/PPS</strong>: selalu isi, terutama untuk preset dengan cut di atas 30%.</li>
+</ul>
+<h3 id="cut-mode-dan-timing">Cut Mode dan Timing<a class="headerlink" href="#cut-mode-dan-timing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cut mode</th>
+<th>Catatan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fuel</strong></td>
+<td>Paling halus dan bersih. Silinder yang di-cut hanya memompa udara.</td>
+</tr>
+<tr>
+<td><strong>Both</strong></td>
+<td>Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut.</td>
+</tr>
+<tr>
+<td><strong>Spark</strong></td>
+<td>Paling keras, ada letupan di knalpot. Bahan bakar silinder yang di-cut ikut terbuang dan bisa terbakar di exhaust. Exhaust jadi panas, dan catalytic converter serta sensor O2 bisa rusak.</td>
+</tr>
+</tbody>
+</table>
+<p>Pola di tabel preset berlaku untuk spark, dan untuk fuel pada injeksi <strong>sequential</strong>. Pada injeksi batch atau simultaneous, satu event injeksi melayani lebih dari satu silinder, jadi pola fuel tidak sama dengan tabel. Pakai cut mode <strong>Spark</strong> kalau injeksinya batch.</p>
+<p><strong>Timing while active</strong> di 0 memakai timing normal. Timing mundur, misalnya 0 sampai -10 (ATDC), membuat suara lebih berat tapi menaikkan suhu exhaust. Mulai dari nilai kecil, dan pantau EGT kalau ada sensornya.</p>
+<div class="admonition warning">
+<p class="admonition-title">Jangan dipakai terus-menerus</p>
+<p>Preset berat, cut mode Spark, dan timing yang sangat mundur sama-sama menaikkan suhu exhaust. Untuk pemakaian show, nyalakan dari <strong>switch</strong> saja, bukan auto enable.</p>
+</div>
 <hr />
 <h2 id="contoh-setup">Contoh Setup<a class="headerlink" href="#contoh-setup" title="Permanent link">&para;</a></h2>
 <h3 id="hanya-dari-switch">Hanya dari Switch<a class="headerlink" href="#hanya-dari-switch" title="Permanent link">&para;</a></h3>
@@ -470,7 +640,7 @@
 <li><strong>Auto enable based on CLT</strong> dan <strong>Auto enable based on TPS/PPS</strong>: disabled</li>
 <li><strong>Minimum CLT</strong>: 60, <strong>Maximum TPS/PPS</strong>: 5</li>
 <li><strong>Maximum RPM</strong>: sedikit di atas RPM idle, misalnya 1500</li>
-<li><strong>Accumulator Max 1</strong>: 5, <strong>Adder 1</strong>: 1 (mesin 4 silinder)</li>
+<li><strong>Accumulator</strong>: preset 2 (Max 5, Adder 1, Offset 0, accumulator lain Max 0)</li>
 <li><strong>Stop short term fuel trim while active</strong>: yes</li>
 </ol>
 <h3 id="otomatis-saat-gas-dilepas">Otomatis Saat Gas Dilepas<a class="headerlink" href="#otomatis-saat-gas-dilepas" title="Permanent link">&para;</a></h3>
