@@ -14,6 +14,9 @@ Lokasi menu:
 
     Tune dari firmware lama tetap terbaca tanpa perubahan. Field baru terisi 0: Minimum CLT 0 °C, Maximum TPS/PPS tanpa batas, timing normal, STFT dan idle air tidak diubah.
 
+!!! note "Firmware Nightly 24 November 2026 atau lebih baru"
+    **Fuel multiplier while active** dan sinkron spark dengan fuel pada cut mode **Both** ada mulai firmware Nightly 24 November 2026. Nightly 23 November 2026 yang di-build ulang pada malam hari juga sudah memuatnya. Tune lama terbaca dengan Fuel multiplier 1.00.
+
 ---
 
 ## Cara Kerja
@@ -47,6 +50,7 @@ Kalau hanya ingin dinyalakan dari switch, matikan kedua auto enable. Rotational 
 | **Stop short term fuel trim while active** | STFT berhenti selama rotational idle aktif, dan LTFT berhenti belajar. Disarankan **yes** kalau memakai closed loop lambda. |
 | **Add idle air while active** | Menambah udara idle selama aktif, untuk mengganti tenaga silinder yang di-cut. |
 | **Idle air adder** | Persentase yang ditambahkan ke posisi idle valve open loop. Nilai negatif mengurangi udara. |
+| **Fuel multiplier while active** | Pengali bahan bakar selama aktif. 1.00 = normal, 1.20 = 20% lebih banyak, 0.80 = 20% lebih sedikit. Range 0.50 sampai 2.50: di bawah 0.50 mesin misfire atau mati. Tune lama terbaca 1.00. |
 | **Timing while active** | Timing pengapian selama aktif, menggantikan timing normal termasuk semua koreksinya. 0 = timing normal. Negatif berarti setelah TDC: -30 = 30° ATDC. Range -40 sampai 10. |
 
 Kenapa STFT perlu dihentikan: silinder yang di-cut memompa udara (dan bahan bakar, pada mode Spark) ke exhaust. Sensor O2 membaca lean, lalu STFT menambah bahan bakar ke silinder yang masih menyala. Saat dihentikan, status STFT di dashboard tampil **Rotational idle**.
@@ -166,10 +170,12 @@ Suara rotary asli berasal dari 2 rotor dan port exhaust yang terbuka lebar, jadi
 | Cut mode | Catatan |
 |---|---|
 | **Fuel** | Paling halus dan bersih. Silinder yang di-cut hanya memompa udara. |
-| **Both** | Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut. |
+| **Both** | Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut. Dengan injeksi sequential, spark mengikuti fuel per silinder: silinder yang tidak dapat bensin juga tidak dapat spark. |
 | **Spark** | Paling keras, ada letupan di knalpot. Bahan bakar silinder yang di-cut ikut terbuang dan bisa terbakar di exhaust. Exhaust jadi panas, dan catalytic converter serta sensor O2 bisa rusak. |
 
 Pola di tabel preset berlaku untuk spark, dan untuk fuel pada injeksi **sequential**. Pada injeksi batch atau simultaneous, satu event injeksi melayani lebih dari satu silinder, jadi pola fuel tidak sama dengan tabel. Pakai cut mode **Spark** kalau injeksinya batch.
+
+Untuk letupan di knalpot, pakai cut mode **Spark** dengan **Fuel multiplier while active** sedikit di atas 1.00, misalnya 1.10 sampai 1.30. Bensin tambahan dari silinder yang di-cut terbakar di exhaust, jadi suhu exhaust ikut naik.
 
 **Timing while active** di 0 memakai timing normal. Timing mundur, misalnya 0 sampai -10 (ATDC), membuat suara lebih berat tapi menaikkan suhu exhaust. Mulai dari nilai kecil, dan pantau EGT kalau ada sensornya.
 
