@@ -295,7 +295,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 November 2026 19:39:18 UTC">23 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 November 2026 21:34:02 UTC">23 November 2026</span></em></p>
   <h1 id="rotational-idle">Rotational Idle<a class="headerlink" href="#rotational-idle" title="Permanent link">&para;</a></h1>
 <p>Rotational idle memotong spark, fuel, atau keduanya pada sebagian siklus secara bergiliran antar silinder. Hasilnya suara idle yang "lumpy" seperti mesin dengan cam besar.</p>
 <p>Fitur ini masih <strong>experimental</strong> dan bukan fitur yang dipakai semua orang.</p>
@@ -308,6 +308,10 @@
 <p class="admonition-title">Firmware Nightly 20 November 2026 atau lebih baru</p>
 <p>Batas CLT dan TPS, Stop short term fuel trim, Add idle air, dan Timing while active ada mulai firmware Nightly 20 November 2026. Firmware itu juga memperbaiki switch pin rotational idle: pada firmware lama pin hanya dibaca tanpa di-setup sebagai input, sehingga switch tidak terbaca dengan benar.</p>
 <p>Tune dari firmware lama tetap terbaca tanpa perubahan. Field baru terisi 0: Minimum CLT 0 °C, Maximum TPS/PPS tanpa batas, timing normal, STFT dan idle air tidak diubah.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Firmware Nightly 24 November 2026 atau lebih baru</p>
+<p><strong>Fuel multiplier while active</strong> dan sinkron spark dengan fuel pada cut mode <strong>Both</strong> ada mulai firmware Nightly 24 November 2026. Nightly 23 November 2026 yang di-build ulang pada malam hari juga sudah memuatnya. Tune lama terbaca dengan Fuel multiplier 1.00.</p>
 </div>
 <hr />
 <h2 id="cara-kerja">Cara Kerja<a class="headerlink" href="#cara-kerja" title="Permanent link">&para;</a></h2>
@@ -371,6 +375,10 @@
 <tr>
 <td><strong>Idle air adder</strong></td>
 <td>Persentase yang ditambahkan ke posisi idle valve open loop. Nilai negatif mengurangi udara.</td>
+</tr>
+<tr>
+<td><strong>Fuel multiplier while active</strong></td>
+<td>Pengali bahan bakar selama aktif. 1.00 = normal, 1.20 = 20% lebih banyak, 0.80 = 20% lebih sedikit. Range 0.50 sampai 2.50: di bawah 0.50 mesin misfire atau mati. Tune lama terbaca 1.00.</td>
 </tr>
 <tr>
 <td><strong>Timing while active</strong></td>
@@ -616,7 +624,7 @@ Offset 3:  xxx_xxx
 </tr>
 <tr>
 <td><strong>Both</strong></td>
-<td>Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut.</td>
+<td>Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut. Dengan injeksi sequential, spark mengikuti fuel per silinder: silinder yang tidak dapat bensin juga tidak dapat spark.</td>
 </tr>
 <tr>
 <td><strong>Spark</strong></td>
@@ -625,6 +633,7 @@ Offset 3:  xxx_xxx
 </tbody>
 </table>
 <p>Pola di tabel preset berlaku untuk spark, dan untuk fuel pada injeksi <strong>sequential</strong>. Pada injeksi batch atau simultaneous, satu event injeksi melayani lebih dari satu silinder, jadi pola fuel tidak sama dengan tabel. Pakai cut mode <strong>Spark</strong> kalau injeksinya batch.</p>
+<p>Untuk letupan di knalpot, pakai cut mode <strong>Spark</strong> dengan <strong>Fuel multiplier while active</strong> sedikit di atas 1.00, misalnya 1.10 sampai 1.30. Bensin tambahan dari silinder yang di-cut terbakar di exhaust, jadi suhu exhaust ikut naik.</p>
 <p><strong>Timing while active</strong> di 0 memakai timing normal. Timing mundur, misalnya 0 sampai -10 (ATDC), membuat suara lebih berat tapi menaikkan suhu exhaust. Mulai dari nilai kecil, dan pantau EGT kalau ada sensornya.</p>
 <div class="admonition warning">
 <p class="admonition-title">Jangan dipakai terus-menerus</p>
