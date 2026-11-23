@@ -75,28 +75,106 @@ Timing while active tidak berlaku saat **Timing mode** diset fixed (untuk cek ti
 
 ### Accumulator (Pola Cut)
 
-Ada 3 accumulator. Masing-masing punya **Max**, **Adder**, dan **Offset**. Setiap event spark (dan setiap event injeksi, dengan hitungan sendiri) menambah counter. Event itu di-cut kalau:
+Ada 3 accumulator. Masing-masing punya **Max**, **Adder**, dan **Offset**. Setiap event spark menambah counter, dan setiap event injeksi menambah counter-nya sendiri. Event itu di-cut kalau:
 
 ```
 ((counter + Offset) mod Max) + Adder >= Max
 ```
 
-Event di-cut kalau salah satu accumulator meminta cut.
+Event di-cut kalau salah satu accumulator meminta cut. Di contoh pola di halaman ini, `x` = event menyala dan `_` = event di-cut.
 
-- **Max** = panjang pola. 0 = accumulator ini tidak dipakai.
-- **Adder** = berapa event di-cut dalam satu pola. Max 5 dengan Adder 1 berarti 1 dari 5 event di-cut. Adder 2 berarti 2 dari 5.
-- **Offset** = menggeser pola, berguna kalau memakai lebih dari satu accumulator.
+- **Max** = panjang pola dalam event. 0 = accumulator ini tidak dipakai.
+- **Adder** = berapa event di-cut dalam satu pola. Yang di-cut selalu event terakhir dalam pola, berurutan. Max 5 Adder 1: `xxxx_`. Max 5 Adder 2: `xxx__`.
+- **Offset** = menggeser posisi cut di dalam pola. Lihat penjelasan di bawah.
 
 **Kalau semua Max bernilai 0, tidak ada yang di-cut**, walaupun rotational idle aktif.
 
-Nilai awal yang disarankan:
+#### Offset
 
-| Mesin | Max | Adder |
-|---|---|---|
-| 4 silinder | 5 | 1 |
-| 6 silinder | 7 | 1 |
+Offset memajukan posisi cut sebanyak Offset event. Contoh Max 7 Adder 1:
 
-Rumus umum: Max = (jumlah silinder / 2 × X) ± 1, dengan X pengali untuk variasi pola. Hindari Max yang merupakan kelipatan jumlah silinder: pola tidak bergeser dan silinder yang sama terus di-cut.
+```
+Offset 0:  xxxxxx_
+Offset 3:  xxx_xxx
+```
+
+Dengan **satu** accumulator, Offset tidak mengubah suara: counter terus berjalan, jadi yang bergeser hanya titik mulai pola.
+
+Offset baru berguna kalau beberapa accumulator dipakai dengan **Max yang sama**. Adder yang besar selalu memotong event secara berurutan. Beberapa accumulator dengan Offset berbeda bisa menyebar cut di dalam pola:
+
+```
+1 accumulator: Max 11, Adder 3                      xxxxxxxx___   cut berurutan, terdengar tersendat
+3 accumulator: Max 11, Adder 1, Offset 0 / 4 / 7    xxx_xx_xxx_   cut tersebar, lope lebih rata
+```
+
+Keduanya sama-sama memotong 3 dari 11 event (27%), tapi iramanya berbeda.
+
+Kalau Max-nya berbeda (misalnya 5 dan 7), Offset menggeser satu pola terhadap pola lainnya. Persentase cut tetap, tapi jarak antar cut dan iramanya berubah.
+
+#### Memilih Max
+
+Max dan jumlah silinder tidak boleh punya faktor yang sama. Kalau punya, cut hanya jatuh di sebagian silinder. Contoh di mesin 4 silinder:
+
+- Max 4: yang di-cut selalu silinder yang sama.
+- Max 6: hanya 2 dari 4 silinder yang pernah di-cut.
+
+Silinder yang terus di-cut lebih dingin, dan businya cepat kotor.
+
+| Jumlah silinder | Max yang cocok |
+|---|---|
+| 4 atau 8 | Ganjil: 3, 5, 7, 9, 11, 13 |
+| 6 | Tidak habis dibagi 2 atau 3: 5, 7, 11, 13 |
+
+Aturan ini berlaku untuk setiap accumulator yang dipakai.
+
+#### Irama dan RPM
+
+Jumlah event per detik = RPM × jumlah silinder / 120. Mesin 4 silinder di 900 RPM punya 30 event per detik, jadi pola Max 5 berulang 6 kali per detik. RPM idle yang lebih rendah atau Max yang lebih besar membuat irama lebih lambat dan lebih berat.
+
+---
+
+## Preset
+
+Isi accumulator sesuai tabel. Accumulator yang tidak dipakai diisi **Max 0**. Format kolom accumulator: Max / Adder / Offset.
+
+Semua preset merata di mesin 4, 6 dan 8 silinder, kecuali preset 5.
+
+| No | Accumulator 1 | Accumulator 2 | Accumulator 3 | Cut | Pola | Catatan |
+|---|---|---|---|---|---|---|
+| 1 | 7 / 1 / 0 | 0 | 0 | 14% | `xxxxxx_` | Paling halus, seperti cam sedikit lebih besar dari standar |
+| 2 | 5 / 1 / 0 | 0 | 0 | 20% | `xxxx_` | Seperti cam besar. Titik awal yang disarankan |
+| 3 | 7 / 1 / 0 | 7 / 1 / 3 | 0 | 29% | `xxx_xx_` | Dua hentakan dengan jarak tidak sama |
+| 4 | 11 / 3 / 0 | 0 | 0 | 27% | `xxxxxxxx___` | Jalan rata lalu tersendat |
+| 5 | 3 / 1 / 0 | 0 | 0 | 33% | `xx_` | Derap teratur seperti langkah kuda. **Hanya 4 dan 8 silinder** |
+| 6 | 5 / 2 / 0 | 0 | 0 | 40% | `xxx__` | Sangat kasar, gaya mesin drag |
+| 7 | 5 / 1 / 0 | 7 / 1 / 2 | 0 | 31% | `xxxx_xxxx_x_xx_xxx__…` | Tidak beraturan, mirip idle rotary. Berulang tiap 35 event |
+| 8 | 5 / 2 / 0 | 7 / 1 / 3 | 0 | 49% | `xxx__xxx___xx__xx___…` | Mirip rotary bridgeport. Butuh tambahan udara idle |
+| 9 | 5 / 1 / 0 | 7 / 1 / 3 | 11 / 1 / 5 | 38% | `xxx___xxx__xxx_x__x_…` | Hampir tidak berulang (pola 385 event) |
+
+Untuk mesin 6 silinder, preset 5 hanya memotong 2 dari 6 silinder. Pakai preset 3 atau 6 sebagai gantinya.
+
+Suara rotary asli berasal dari 2 rotor dan port exhaust yang terbuka lebar, jadi nadanya tidak bisa ditiru mesin piston. Preset 7 dan 8 hanya meniru iramanya. Knalpot sangat menentukan hasil akhirnya.
+
+### Setelan Pendukung
+
+- **Stop short term fuel trim while active**: yes untuk semua preset.
+- **Add idle air while active**: makin besar persentase cut, makin banyak udara yang dibutuhkan supaya RPM tidak turun. Sebagai titik awal, isi **Idle air adder** sekitar 5% untuk preset dengan cut 20% atau kurang, dan sekitar 10% untuk yang lebih berat. Lalu sesuaikan sampai RPM idle sama seperti saat rotational idle mati.
+- **Maximum RPM** dan **Maximum TPS/PPS**: selalu isi, terutama untuk preset dengan cut di atas 30%.
+
+### Cut Mode dan Timing
+
+| Cut mode | Catatan |
+|---|---|
+| **Fuel** | Paling halus dan bersih. Silinder yang di-cut hanya memompa udara. |
+| **Both** | Sama seperti Fuel, dan spark juga tidak dinyalakan pada event yang di-cut. |
+| **Spark** | Paling keras, ada letupan di knalpot. Bahan bakar silinder yang di-cut ikut terbuang dan bisa terbakar di exhaust. Exhaust jadi panas, dan catalytic converter serta sensor O2 bisa rusak. |
+
+Pola di tabel preset berlaku untuk spark, dan untuk fuel pada injeksi **sequential**. Pada injeksi batch atau simultaneous, satu event injeksi melayani lebih dari satu silinder, jadi pola fuel tidak sama dengan tabel. Pakai cut mode **Spark** kalau injeksinya batch.
+
+**Timing while active** di 0 memakai timing normal. Timing mundur, misalnya 0 sampai -10 (ATDC), membuat suara lebih berat tapi menaikkan suhu exhaust. Mulai dari nilai kecil, dan pantau EGT kalau ada sensornya.
+
+!!! warning "Jangan dipakai terus-menerus"
+    Preset berat, cut mode Spark, dan timing yang sangat mundur sama-sama menaikkan suhu exhaust. Untuk pemakaian show, nyalakan dari **switch** saja, bukan auto enable.
 
 ---
 
@@ -110,7 +188,7 @@ Rumus umum: Max = (jumlah silinder / 2 × X) ± 1, dengan X pengali untuk varias
 4. **Auto enable based on CLT** dan **Auto enable based on TPS/PPS**: disabled
 5. **Minimum CLT**: 60, **Maximum TPS/PPS**: 5
 6. **Maximum RPM**: sedikit di atas RPM idle, misalnya 1500
-7. **Accumulator Max 1**: 5, **Adder 1**: 1 (mesin 4 silinder)
+7. **Accumulator**: preset 2 (Max 5, Adder 1, Offset 0, accumulator lain Max 0)
 8. **Stop short term fuel trim while active**: yes
 
 ### Otomatis Saat Gas Dilepas
