@@ -139,7 +139,7 @@ Yang sudah benar-benar diuji jalan dengan Speeduino hanya **Compact v1**, **Mini
 | Mini 6CH v1.0-v1.2 | `mazduino-mini6ch` | Ubah beberapa pin, tanpa knock | Manual config | Tidak didukung |
 | Mini 6CH v1.3 (polos) | `mazduino-mini6ch` | Ubah pin TPS dan baterai, tanpa knock | Manual config | Didukung, teruji |
 | Mini 6CH v1.3B | `mazduino-mini6ch` | Ubah pin TPS, tanpa knock | Manual config | Didukung |
-| Mini 6CH v1.3C, v1.3D | `mazduino-mini6ch` | Siap pakai | Manual config | Tidak didukung |
+| Mini 6CH v1.3C, v1.3D, v1.3E | `mazduino-mini6ch` | Siap pakai | Manual config | Tidak didukung |
 | Mini 6CH v1.4 | `mazduino-mini6ch` | Manual config | Manual config | Tidak didukung |
 | LITE v0.1-v0.3 | `mazduino-lite` | Siap pakai | Manual config | Didukung, teruji — pakai firmware Compact |
 | Core rev0, rev1 | `mazduino-core` | Siap pakai | Manual config | Tidak didukung |

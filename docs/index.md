@@ -124,7 +124,7 @@ Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential 
 - Kemampuan I/O yang diperluas
 - Firmware rusEFI; Speeduino hanya sampai v1.3B
 
-Firmware rusEFI Mazduino (`mazduino-mini6ch`) mengikuti pin v1.3C dan v1.3D. Pada
+Firmware rusEFI Mazduino (`mazduino-mini6ch`) mengikuti pin v1.3C, v1.3D dan v1.3E. Pada
 revisi sebelumnya, beberapa pin perlu diubah — lihat
 [pin yang perlu diubah](downloads.md#pin-yang-perlu-diubah-pada-revisi-lama).
 
@@ -134,8 +134,9 @@ revisi sebelumnya, beberapa pin perlu diubah — lihat
 - **[v1.3](mazduino-mini-6ch-v1.3.md)** - Dengan Knock Input dan Electronic Throttle Body (ETB)
 - **[v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU lebih cepat, input analog TPS2 tambahan, dan optimisasi hardware
 - **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6
-- **[v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard; pinout sama dengan v1.3C - **versi produksi terakhir**
-- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3D
+- **[v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard; pinout sama dengan v1.3C
+- **[v1.3E](mazduino-mini-6ch-v1.3e.md)** - Pinout sama dengan v1.3D; pull-up IAT/CLT 2.7k, koefisien divider analog 1.56, dan jumper JP13 untuk driver stepper A4988/DRV8825 - **versi produksi terbaru**
+- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terbaru adalah v1.3E
 
 #### Mazduino Core
 
@@ -284,8 +285,9 @@ Modul tambahan yang terhubung ke bus CAN yang sama dengan ECU dan dash.
 - **[Mini 6CH v1.3](mazduino-mini-6ch-v1.3.md)** - Dengan knock input dan ETB support
 - **[Mini 6CH v1.3B](mazduino-mini-6ch-v1.3b.md)** - MCU upgrade, optimisasi hardware dan input analog tambahan
 - **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah
-- **[Mini 6CH v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard - **versi produksi terakhir**
-- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi; versi produksi terakhir adalah v1.3D
+- **[Mini 6CH v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard
+- **[Mini 6CH v1.3E](mazduino-mini-6ch-v1.3e.md)** - Pinout sama dengan v1.3D, koefisien divider analog 1.56 - **versi produksi terbaru**
+- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi; versi produksi terbaru adalah v1.3E
 - **[Mazduino Core rev0](mazduino-core-rev0.md)** - Konektor 48-pin, dual ETB, dual CAN bus
 - **[Mazduino Core rev1](mazduino-core-rev1.md)** - Revisi terbaru lini Core
 - **[Mazduino Mega100](mazduino-mega100.md)** - Pengganti Arduino Mega berbasis STM32F407 untuk board Speeduino

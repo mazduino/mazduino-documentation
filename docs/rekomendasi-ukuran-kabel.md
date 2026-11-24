@@ -11,6 +11,7 @@ Berlaku untuk versi berikut:
 - [Mazduino Compact 4CH v2.5](mazduino-compact-4ch-v2.5.md)
 - [Mazduino Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)
 - [Mazduino Mini 6CH v1.3D](mazduino-mini-6ch-v1.3d.md) — pinout konektornya identik dengan v1.3C
+- [Mazduino Mini 6CH v1.3E](mazduino-mini-6ch-v1.3e.md) — pinout konektornya identik dengan v1.3D
 
 > **Disclaimer**
 >
@@ -194,7 +195,7 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 
 ---
 
-## Mazduino Mini 6CH v1.3C dan v1.3D (Konektor 48-Pin)
+## Mazduino Mini 6CH v1.3C, v1.3D dan v1.3E (Konektor 48-Pin)
 
 | Pin | Fungsi | Ukuran Kabel | Catatan |
 |-----|--------|--------------|---------|
@@ -247,9 +248,9 @@ Tabel berikut memakai mode **Smart Coil** (jumper JP3/JP4). Untuk mode **IGBT in
 | 47 | Injector 1 | 0.5 mm² | — |
 | 48 | Injector 3 | 0.5 mm² | — |
 
-> **Pin 22 (GND)**: Mini 6CH v1.3C/v1.3D hanya punya **satu pin ground power** untuk seluruh output low-side. Sambungkan **langsung ke negatif aki**, jangan ke ground bodi atau blok mesin. Ground sensor (pin 37, 38) tetap dipisah dari pin ini.
+> **Pin 22 (GND)**: Mini 6CH v1.3C/v1.3D/v1.3E hanya punya **satu pin ground power** untuk seluruh output low-side. Sambungkan **langsung ke negatif aki**, jangan ke ground bodi atau blok mesin. Ground sensor (pin 37, 38) tetap dipisah dari pin ini.
 
-### Rekap Jumlah Kabel Mini 6CH v1.3C dan v1.3D
+### Rekap Jumlah Kabel Mini 6CH v1.3C, v1.3D dan v1.3E
 
 | Ukuran | Jumlah | Pin |
 |--------|--------|-----|
