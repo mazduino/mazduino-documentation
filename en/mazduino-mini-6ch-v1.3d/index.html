@@ -107,6 +107,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#left-configuration-zone">Left Configuration Zone</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#launch-pullup">Launch Pullup</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#jumper-configuration-tips">Jumper Configuration Tips</a>
     </li>
         </ul>
@@ -117,23 +119,27 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#mcu-pin-mapping-v13d">MCU Pin Mapping (v1.3D)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#v13d-special-features">v1.3D Special Features</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#installation-guide">Installation Guide</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#v13d-wiring-notes">v1.3D Wiring Notes</a>
     </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#hardware-information">Hardware Information</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#vr-conditioner-module">VR-Conditioner Module</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#idle-control">Idle Control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#more-stable-analog-sensor-readings-new-in-v13d">More Stable Analog Sensor Readings (New in v1.3D)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#onboard-can-termination-new-in-v13d">Onboard CAN Termination (New in v1.3D)</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#software-tuning">Software Tuning</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#download-software">Download Software</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#v13d-specific-configuration">v1.3D-Specific Configuration</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#firmware-support">Firmware Support</a>
+    <li class="toctree-l4"><a class="reference internal" href="#firmware-and-configuration">Firmware and Configuration</a>
     </li>
         </ul>
     </li>
@@ -160,6 +166,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#wiring-harness">Wiring Harness</a>
     </li>
     </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
                 </li>
@@ -331,36 +339,36 @@
     <a href="../../mazduino-mini-6ch-v1.3d/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:46:56 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13d">Mazduino Mini 6CH (v1.3D)<a class="headerlink" href="#mazduino-mini-6ch-v13d" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3D is the <strong>latest production version</strong> of the Mini 6CH line. Functionally this board is exactly the same as v1.3C — what changed is the circuitry around the analog and CAN sections. Built around a powerful 32-bit <strong>ARM Cortex-M4 180 MHz</strong> processor, it provides comprehensive engine management in a compact form factor suited to 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
+<p>Mazduino Mini 6CH v1.3D is the Mini 6CH version before <a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>, the current production version. Functionally this board is exactly the same as v1.3C — what changed are the analog sensor readings and the CAN termination. This compact board uses a 32-bit <strong>ARM Cortex-M4 180 MHz</strong> processor and suits 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
 <p><strong>v1.3D changes from v1.3C:</strong></p>
 <ul>
 <li>
-<p><strong>More Stable Analog Sensor Readings</strong>: The reference voltage for analog readings now has its own source, instead of being derived from the 5V rail as on v1.3C. The analog section is also supplied through a path separate from the digital section</p>
+<p><strong>More Stable Analog Sensor Readings</strong>: All analog inputs read more steadily and consistently than on v1.3C</p>
 </li>
 <li>
 <p><strong>Onboard CAN Termination</strong>: A <strong>fixed 120 Ω</strong> resistor between CANH and CANL (pins 4 and 21). See the <a href="#onboard-can-termination-new-in-v13d">important note on termination</a> before connecting to a bus that already has terminators</p>
 </li>
 <li>
-<p><strong>JP9 Without Factory Bridge</strong>: The Knock/PC13 jumper uses an <strong>open</strong> solder jumper footprint — on v1.3C the Knock side was bridged at the factory; on v1.3D you decide</p>
+<p><strong>JP9 Without Factory Bridge</strong>: The Knock/PC13 jumper ships <strong>open</strong> — on v1.3C the Knock side was bridged at the factory; on v1.3D you decide</p>
 </li>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">Pinout unchanged</p>
-<p>The 48-pin connector pinout and the MCU pin mapping are <strong>identical to v1.3C</strong> (verified pin by pin from the design files). v1.3C tunes and firmware configuration can be used directly without changes.</p>
+<p>The 48-pin connector pinout and the MCU pin mapping are <strong>identical to v1.3C</strong>. v1.3C tunes and firmware configuration can be used directly without changes.</p>
 </div>
 <p><strong>Improvements inherited from v1.3C (relative to v1.3B):</strong></p>
 <ul>
 <li>
-<p><strong>MCU Pin Optimization</strong>: TPS moved to PA6 and Battery/Voltage Reference moved to PA7 for better signal routing</p>
+<p><strong>MCU Pin Optimization</strong>: TPS moved to PA6 and Battery/Voltage Reference moved to PA7</p>
 </li>
 <li>
-<p><strong>Single Knock Input</strong>: Consolidated from 2 knock inputs (PC0, PC1) to 1 more efficient knock input (PA3)</p>
+<p><strong>Single Knock Input</strong>: Consolidated from 2 knock inputs (PC0, PC1) to 1 knock input (PA3)</p>
 </li>
 <li>
-<p><strong>Separate Ignition VDrive</strong>: Two separate VDrive jumpers, one for ignition channels 1-4 and one for ignition channels 5-6, for more flexible voltage configuration</p>
+<p><strong>Separate Ignition VDrive</strong>: Two separate VDrive jumpers, one for ignition channels 1-4 and one for ignition channels 5-6</p>
 </li>
 <li>
 <p><strong>Channel Flexibility</strong>: 6 ignition channels and 6 injection channels, all configurable to suit the application</p>
@@ -377,22 +385,12 @@
 <li>8x 3A high-current low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more</li>
 <li>5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan, and tachometer control</li>
 <li><strong>6x ignition outputs</strong> with separate VDrive for channels 1-4 and channels 5-6 (each configurable for 5V or 12V)</li>
-<li>
-<p><strong>Knock Input</strong>: One optimized knock sensor input (PA3)</p>
-</li>
-<li>
-<p><strong>ETB Support</strong>: Electronic Throttle Body control with TPS1 and TPS2</p>
-</li>
-<li>
-<p>Support for an add-on VR Conditioner Module</p>
-</li>
+<li><strong>Knock Input</strong>: One knock sensor input (PA3)</li>
+<li><strong>ETB Support</strong>: Electronic Throttle Body control with TPS1 and TPS2</li>
+<li>Support for an add-on VR Conditioner Module</li>
 <li>Support for an add-on Idle Stepper Module</li>
-<li>
-<p><strong>180 MHz ARM Cortex-M4 processor</strong></p>
-</li>
-<li>
-<p>Data communication via CANbus</p>
-</li>
+<li><strong>180 MHz ARM Cortex-M4 processor</strong></li>
+<li>Data communication via CANbus</li>
 <li>Data communication via USB Type-C</li>
 <li>Serial RX/TX communication</li>
 <li>48-pin automotive connector</li>
@@ -400,7 +398,6 @@
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mazduino-mini6ch-new-case.jpeg" /></p>
 <h2 id="6ch-channel-configuration">6CH Channel Configuration<a class="headerlink" href="#6ch-channel-configuration" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3D has 6 ignition channels and 6 injection channels, all configurable to suit the application.</p>
 <h3 id="ignition-channel-6x">Ignition Channel (6x)<a class="headerlink" href="#ignition-channel-6x" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -423,7 +420,7 @@
 </tr>
 </tbody>
 </table>
-<p>On 4-cylinder engines, <strong>ignition channels 5 and 6 can be used as switching control outputs</strong> (5V or 12V), depending on the VDrive 5-6 jumper setting on the bottom of the PCB.</p>
+<p>On 4-cylinder engines, <strong>ignition channels 5 and 6 (pins 25 and 24) can be used as switching control outputs</strong> (5V or 12V), depending on the VDrive 5-6 jumper setting on the bottom of the PCB, for example for solenoids, relays, or other loads.</p>
 <h3 id="injection-channel-6x">Injection Channel (6x)<a class="headerlink" href="#injection-channel-6x" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -446,9 +443,9 @@
 </tr>
 </tbody>
 </table>
-<p>On 4-cylinder engines, <strong>injector channels 5 and 6 can be used as low-side outputs</strong> for on/off solenoids, boost control, VVT, water/methanol injection, or other PWM control.</p>
+<p>On 4-cylinder engines, <strong>injector channels 5 and 6 (pins 15 and 16) can be used as 3A low-side outputs</strong> for on/off solenoids, boost control, VVT, water/methanol injection, or other PWM control.</p>
 <h2 id="jumper-configuration">Jumper Configuration<a class="headerlink" href="#jumper-configuration" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3D has a system of solder jumpers that lets you customize functions to suit your application. The jumpers give you configuration flexibility without changing the firmware, so the board works with a wide range of engine setups.</p>
+<p>Solder jumpers on the back of the PCB set the function of several inputs and outputs without changing the firmware.</p>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6232.jpeg" /></p>
 <h3 id="top-configuration-zone-right">Top Configuration Zone (Right)<a class="headerlink" href="#top-configuration-zone-right" title="Permanent link">&para;</a></h3>
 <h4 id="jp11-tachometer-pullup">JP11 - Tachometer Pullup<a class="headerlink" href="#jp11-tachometer-pullup" title="Permanent link">&para;</a></h4>
@@ -466,19 +463,10 @@
 <h4 id="ignition-vdrive-1-4-jumper">Ignition VDrive 1-4 Jumper<a class="headerlink" href="#ignition-vdrive-1-4-jumper" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>Function</strong>: Sets the ignition signal voltage for channels <strong>Ignition 1, 2, 3, 4</strong> — Smart Coil Only</p>
+<p><strong>Function</strong>: Sets the ignition signal voltage for channels <strong>Ignition 1, 2, 3, 4</strong> — only for smart coils with a built-in driver; for dumb coils see <a href="#ignition-system-requirements">Ignition System Requirements</a></p>
 </li>
 <li>
 <p><strong>Options</strong>: 12V or 5V signal</p>
-</li>
-<li>
-<p><strong>Smart Coil Only</strong>: This jumper is only for smart coils with a built-in driver</p>
-</li>
-<li>
-<p><strong>Alternative</strong>: When channels 1-4 are used for 4-cylinder ignition, channels 5-6 stay independent</p>
-</li>
-<li>
-<p><strong>IMPORTANT</strong>: Dump coils require an external IGBT</p>
 </li>
 </ul>
 <h4 id="ignition-vdrive-5-6-jumper-since-v13c">Ignition VDrive 5-6 Jumper <em>(since v1.3C)</em><a class="headerlink" href="#ignition-vdrive-5-6-jumper-since-v13c" title="Permanent link">&para;</a></h4>
@@ -498,9 +486,6 @@
 <li>
 <p><strong>Location</strong>: Bottom of the PCB (see jumper photo)</p>
 </li>
-<li>
-<p><strong>IMPORTANT</strong>: Dump coils require an external IGBT</p>
-</li>
 </ul>
 <h4 id="knockpc13-input-selection">Knock/PC13 Input Selection<a class="headerlink" href="#knockpc13-input-selection" title="Permanent link">&para;</a></h4>
 <ul>
@@ -511,10 +496,10 @@
 <p><strong>PC13 Mode</strong>: Direct access to the MCU pin for custom functions</p>
 </li>
 <li>
-<p><strong>MCU Pin</strong>: One optimized knock input on PA3</p>
+<p><strong>MCU Pin</strong>: Knock input on PA3</p>
 </li>
 <li>
-<p><strong>Changed in v1.3D</strong>: JP9 uses an <strong>open</strong> solder jumper footprint. On v1.3C the Knock side was connected at the factory; on v1.3D pin 8 is not connected to anything until you bridge one side of JP9. <strong>If the knock sensor reads nothing at all on a new board, check JP9 first.</strong></p>
+<p><strong>Changed in v1.3D</strong>: JP9 ships <strong>open</strong>. On v1.3C the Knock side was connected at the factory; on v1.3D pin 8 is not connected to anything until you bridge one side of JP9. <strong>If the knock sensor reads nothing at all on a new board, check JP9 first.</strong></p>
 </li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper.jpeg" /></p>
@@ -527,9 +512,6 @@
 <li>
 <p><strong>JP4</strong>: 5V pullup for the CMP (Camshaft Position) signal</p>
 </li>
-<li>
-<p><strong>Benefit</strong>: Clean, stable trigger signals</p>
-</li>
 </ul>
 <h4 id="jp2-jp3-sensor-type-selection">JP2 &amp; JP3 - Sensor Type Selection<a class="headerlink" href="#jp2-jp3-sensor-type-selection" title="Permanent link">&para;</a></h4>
 <ul>
@@ -539,22 +521,16 @@
 <li>
 <p><strong>JP3</strong>: CMP signal mode (VR or Hall sensor)</p>
 </li>
-<li>
-<p><strong>Flexibility</strong>: Works with many types of position sensors</p>
-</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6230.jpeg" /></p>
 <h3 id="left-configuration-zone">Left Configuration Zone<a class="headerlink" href="#left-configuration-zone" title="Permanent link">&para;</a></h3>
 <h4 id="jp6-stepper-motor-enable">JP6 - Stepper Motor Enable<a class="headerlink" href="#jp6-stepper-motor-enable" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>Function</strong>: Controls enabling of the stepper motor driver</p>
+<p><strong>Function</strong>: Controls enabling of the stepper motor driver (Idle Stepper bypass)</p>
 </li>
 <li>
-<p><strong>Note</strong>: Consult the schematic for the optimal configuration</p>
-</li>
-<li>
-<p><strong>Application</strong>: High-precision Idle Air Control (IAC)</p>
+<p><strong>Application</strong>: Idle Air Control (IAC)</p>
 </li>
 </ul>
 <h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
@@ -573,52 +549,15 @@
 </li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg" /></p>
+<h3 id="launch-pullup">Launch Pullup<a class="headerlink" href="#launch-pullup" title="Permanent link">&para;</a></h3>
+<p>Pullup on the spare input 3 pin, used when that pin serves a launch control activation button or another input that needs a pullup.</p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
-<h4 id="optimal-settings">Optimal Settings:<a class="headerlink" href="#optimal-settings" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Smart Coils 1-4</strong>: Set VDrive 1-4 to match the coil specification (5V or 12V)</p>
-</li>
-<li>
-<p><strong>Smart Coils 5-6</strong>: Set VDrive 5-6 to match the coil specification or the alternative load — <strong>it can differ from 1-4</strong></p>
-</li>
-<li>
-<p><strong>Dump/Conventional Coils</strong>: Require an external IGBT</p>
-</li>
 <li>
 <p><strong>VR Sensors</strong>: Select VR mode (signal goes through the VR Conditioner module) and <strong>remove</strong> the pullup — a pullup loads the VR sensor coil</p>
 </li>
 <li>
 <p><strong>Hall / Optical Sensors</strong>: Select Hall mode and <strong>fit</strong> the pullup (JP5 for CKP, JP4 for CMP). Hall sensors are usually open-collector and cannot drive a HIGH level on their own; without a pullup the trigger pin floats and picks up noise, which causes trigger errors while the engine is running. Remove the pullup only for sensors with a 5V push-pull output</p>
-</li>
-</ul>
-<h4 id="best-practices">Best Practices:<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Pre-Installation</strong>: Configure the jumpers before final installation</li>
-<li><strong>Separate VDrive</strong>: Use the independent VDrive 5-6 for mixed-voltage applications</li>
-<li><strong>Documentation</strong>: Write down your jumper configuration for future reference</li>
-<li><strong>Testing</strong>: Verify the signals after changing any jumper</li>
-<li><strong>Compatibility</strong>: Make sure the jumpers match the hardware you are using</li>
-</ol>
-<h4 id="special-attention">Special Attention:<a class="headerlink" href="#special-attention" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Coil Type Is Critical</strong>: VDrive is only for smart coils - dump coils need an external IGBT</p>
-</li>
-<li>
-<p><strong>Separate VDrive</strong>: VDrive 1-4 and VDrive 5-6 are <strong>different</strong> jumpers on the bottom of the PCB</p>
-</li>
-<li>
-<p><strong>Solder Carefully</strong>: Use the correct soldering temperature</p>
-</li>
-<li>
-<p><strong>Verify Connections</strong>: Make sure the solder joints are solid</p>
-</li>
-<li>
-<p><strong>Consult the Schematic</strong>: Refer to the diagrams for advanced configuration</p>
-</li>
-<li>
-<p><strong>Power Off</strong>: Always switch off power when changing jumpers</p>
 </li>
 </ul>
 <h2 id="wiring-and-installation">Wiring and Installation<a class="headerlink" href="#wiring-and-installation" title="Permanent link">&para;</a></h2>
@@ -1145,90 +1084,25 @@
 </tr>
 </tbody>
 </table>
-<h3 id="v13d-special-features">v1.3D Special Features<a class="headerlink" href="#v13d-special-features" title="Permanent link">&para;</a></h3>
-<h4 id="flexible-channel-configuration">Flexible Channel Configuration<a class="headerlink" href="#flexible-channel-configuration" title="Permanent link">&para;</a></h4>
-<p><strong>Ignition 6-Channel:</strong></p>
+<h3 id="v13d-wiring-notes">v1.3D Wiring Notes<a class="headerlink" href="#v13d-wiring-notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>6-cylinder</strong>: Use all channels 1-6 for engine ignition</p>
-</li>
-<li>
-<p><strong>4-cylinder</strong>: Channels 1-4 for ignition, channels 5-6 available as <strong>switching control</strong></p>
-</li>
-<li>
-<p><strong>Channels 5-6 Alternative</strong>: 5V or 12V switching output per VDrive 5-6, usable for controlling solenoids, relays, or other loads</p>
-</li>
-<li>
-<p><strong>Separate VDrive</strong>: Channels 1-4 and 5-6 have <strong>independent</strong> voltage settings</p>
-</li>
+<li><strong>CAN Termination</strong>: A 120 Ω termination resistor is permanently fitted on the board. Make sure the whole CAN bus still has exactly two terminators — see <a href="#onboard-can-termination-new-in-v13d">Onboard CAN Termination</a></li>
+<li><strong>AC Switch Logic</strong>: Pin 20 accepts GROUND only as the ON signal — do not connect 12V directly. Also make sure the AC switch configuration in the firmware uses GROUND logic for ON</li>
+<li><strong>ETB</strong>: Connect the ETB to pins 33 (ETB-) and 34 (ETB+), TPS2 to pin 40, and the Pedal Position Sensors PPS1/PPS2 to pins 18/35</li>
+<li><strong>Reference</strong>: More sensor wiring information on the <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
 </ul>
-<p><strong>Injection 6-Channel:</strong></p>
+<h2 id="hardware-information">Hardware Information<a class="headerlink" href="#hardware-information" title="Permanent link">&para;</a></h2>
+<h3 id="vr-conditioner-module">VR-Conditioner Module<a class="headerlink" href="#vr-conditioner-module" title="Permanent link">&para;</a></h3>
+<p>By default, Mazduino Mini 6CH v1.3D only supports digital CKP and CMP signals, such as hall and optical sensors. Vehicles that still use VR sensors need the VR conditioner module (DIP 8) added, or the sensor can be converted to hall. VR sensors connect to VR1+/VR2+ (pins 41, 42) and VR1-/VR2- (pins 9, 10).</p>
+<p><img alt="VR Module" src="../../img/mini6ch/vr-conditioner-module.jpeg" /></p>
+<h3 id="idle-control">Idle Control<a class="headerlink" href="#idle-control" title="Permanent link">&para;</a></h3>
+<p>Mazduino Mini 6CH v1.3D supports Idle PWM, with 2 low-side outputs that can be used for IDLE PWM control.</p>
+<p>Idle Control with a stepper motor requires an add-on module, the Idle Stepper Motor Module, with a DRV8825 driver. The A1/A2 and B1/B2 phase outputs are on pins 11-14.</p>
+<p><img alt="Stepper Module" src="../../img/mini6ch/drv8825-stepper.jpeg" /></p>
+<h3 id="more-stable-analog-sensor-readings-new-in-v13d">More Stable Analog Sensor Readings (New in v1.3D)<a class="headerlink" href="#more-stable-analog-sensor-readings-new-in-v13d" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><strong>6-cylinder</strong>: Use all channels 1-6 for engine injectors</p>
-</li>
-<li>
-<p><strong>4-cylinder</strong>: Channels 1-4 for injectors, channels 5-6 available as <strong>spare low-side outputs</strong></p>
-</li>
-<li>
-<p><strong>Channels 5-6 Alternative</strong>: 3A low-side outputs for boost control, VVT, on/off solenoids, water/methanol injection, or other PWM applications</p>
-</li>
-</ul>
-<h4 id="knock-input-since-v13c">Knock Input (since v1.3C)<a class="headerlink" href="#knock-input-since-v13c" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Pin 8 (Knock/PC13)</strong>: Knock sensor input, selected with solder jumper JP9 — on v1.3D this jumper ships open from the factory, so it must be bridged first</p>
-</li>
-<li>
-<p><strong>Single Knock Input</strong>: One knock input (<strong>PA3</strong>), consolidated from the two inputs (PC0 + PC1) on v1.3B</p>
-</li>
-<li>
-<p><strong>Application</strong>: Engine knock detection for engine protection and ignition timing optimization</p>
-</li>
-</ul>
-<h4 id="electronic-throttle-body-etb">Electronic Throttle Body (ETB)<a class="headerlink" href="#electronic-throttle-body-etb" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Pin 33 (ETB-)</strong>: Negative output for ETB control</p>
-</li>
-<li>
-<p><strong>Pin 34 (ETB+)</strong>: Positive output for ETB control</p>
-</li>
-<li>
-<p><strong>Pin 40 (TPS2)</strong>: Dedicated analog input for the ETB's TPS2 sensor</p>
-</li>
-<li>
-<p><strong>Pin 18/35 (PPS1/PPS2)</strong>: Dual Pedal Position Sensor for ETB control</p>
-</li>
-<li>
-<p><strong>ETB Control</strong>: PWM (PA8), Direction (PB8), Disable (PB9)</p>
-</li>
-</ul>
-<h4 id="separate-ignition-vdrive-since-v13c">Separate Ignition VDrive (since v1.3C)<a class="headerlink" href="#separate-ignition-vdrive-since-v13c" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VDrive 1-4</strong>: Solder jumper for the signal voltage of ignition channels 1, 2, 3, 4 (5V or 12V)</p>
-</li>
-<li>
-<p><strong>VDrive 5-6</strong>: <strong>Separate</strong> solder jumper for the signal voltage of ignition channels 5 and 6 (5V or 12V)</p>
-</li>
-<li>
-<p><strong>Location</strong>: Both are on the <strong>bottom of the PCB</strong></p>
-</li>
-<li>
-<p><strong>Flexibility</strong>: Lets channels 5-6 be set to a different voltage than channels 1-4, as the application requires</p>
-</li>
-</ul>
-<h4 id="more-stable-analog-sensor-readings-new-in-v13d">More Stable Analog Sensor Readings (New in v1.3D)<a class="headerlink" href="#more-stable-analog-sensor-readings-new-in-v13d" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>What changed</strong>: The reference voltage for all analog readings now has its own source. On v1.3C that reference was derived from the 5V rail, so it moved with sensor load, battery voltage, and temperature</p>
-</li>
-<li>
-<p><strong>Separate Supply</strong>: The analog section is supplied through its own path, filtered from the digital section, so noise from the digital side does not get into the readings</p>
-</li>
-<li>
-<p><strong>Effect</strong>: MAP, TPS, IAT, CLT, O2, Battery, and the spare analog inputs are more stable and consistent — most noticeable on the readings used for fueling decisions</p>
+<p><strong>What changed</strong>: MAP, TPS, IAT, CLT, O2, Battery, and the spare analog inputs read more steadily and consistently, and no longer shift with sensor load, battery voltage, and temperature as on v1.3C</p>
 </li>
 <li>
 <p><strong>No Setup Needed</strong>: Everything is on the board; there is no jumper or firmware setting that goes with it</p>
@@ -1237,166 +1111,34 @@
 <p><strong>Calibration Note</strong>: Analog sensor calibrations carried over from a v1.3C board should be rechecked — not necessarily changed, but small offsets that were "compensated" in the calibration tables may no longer be needed</p>
 </li>
 </ul>
-<h4 id="onboard-can-termination-new-in-v13d">Onboard CAN Termination (New in v1.3D)<a class="headerlink" href="#onboard-can-termination-new-in-v13d" title="Permanent link">&para;</a></h4>
+<h3 id="onboard-can-termination-new-in-v13d">Onboard CAN Termination (New in v1.3D)<a class="headerlink" href="#onboard-can-termination-new-in-v13d" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p><strong>R13 (120 Ω)</strong>: <strong>Permanently</strong> fitted between CANH (pin 4) and CANL (pin 21). There is no jumper to disconnect it</p>
+<p><strong>120 Ω termination resistor</strong>: <strong>Permanently</strong> fitted between CANH (pin 4) and CANL (pin 21). There is no jumper to disconnect it</p>
 </li>
 <li>
 <p><strong>When this is correct</strong>: The ECU is at an <strong>end</strong> of the CAN bus. A healthy CAN bus has exactly <strong>two</strong> 120 Ω terminators, one at each end</p>
 </li>
 <li>
-<p><strong>CAUTION</strong>: If the ECU is installed in the <strong>middle</strong> of a bus whose two ends are already terminated, the total resistance drops to 40 Ω and the bus may fail to communicate. In that case <strong>remove one of the other terminators</strong>, or lift R13 off the board</p>
+<p><strong>CAUTION</strong>: If the ECU is installed in the <strong>middle</strong> of a bus whose two ends are already terminated, the total resistance drops to 40 Ω and the bus may fail to communicate. In that case <strong>remove one of the other terminators</strong>, or remove the termination resistor (R13) from the board</p>
 </li>
 <li>
 <p><strong>Other Mazduino devices</strong>: Racedash and the WBO CAN Controller may also carry their own terminators — count the terminators across the whole network, not per device</p>
-</li>
-</ul>
-<h4 id="vr-conditioner-support">VR Conditioner Support<a class="headerlink" href="#vr-conditioner-support" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VR1- &amp; VR2-</strong>: Input pins for the VR conditioner module (DIP 8) - negative</p>
-</li>
-<li>
-<p><strong>VR1+ &amp; VR2+</strong>: Positive VR sensor inputs</p>
-</li>
-</ul>
-<h4 id="stepper-motor-control">Stepper Motor Control<a class="headerlink" href="#stepper-motor-control" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Stepper A1/A2</strong>: Phase A outputs for the stepper motor (DRV8825)</p>
-</li>
-<li>
-<p><strong>Stepper B1/B2</strong>: Phase B outputs for the stepper motor</p>
-</li>
-<li>
-<p><strong>Direction/Enable/Step</strong>: Control signals for the stepper driver</p>
-</li>
-</ul>
-<h3 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Mounting</strong>: Mount the ECU in a suitable location with adequate cooling</li>
-<li><strong>Power Connection</strong>: Connect 12V power (pin 1) and ground (pin 22)</li>
-<li><strong>Sensor Ground</strong>: Use the multiple sensor ground pins (37, 38) for clean signals</li>
-<li><strong>Engine Position Sensors</strong>: Connect the CKP/CMP sensors, or use the VR inputs as needed</li>
-<li><strong>Knock Sensor</strong>: First bridge JP9 to the Knock side (v1.3D ships open), then connect the knock sensor to pin 8</li>
-<li><strong>ETB Setup</strong>: Connect the ETB to pins 33/34 and TPS2 to pin 40 if using an electronic throttle</li>
-<li><strong>AC Switch</strong>: Make sure the AC switch only provides a GROUND signal for the ON state</li>
-<li><strong>VDrive Configuration</strong>: Set the VDrive 1-4 and VDrive 5-6 jumpers separately on the bottom of the PCB to match the coil type or load</li>
-<li><strong>Spare Channels</strong>: Configure injector channels 5-6 and/or ignition channels 5-6 as the application requires</li>
-<li><strong>Module Installation</strong>: Fit the VR-Conditioner and/or Stepper modules if needed</li>
-<li><strong>Verification</strong>: Test all connections before the first startup</li>
-</ol>
-<h3 id="v13d-wiring-notes">v1.3D Wiring Notes<a class="headerlink" href="#v13d-wiring-notes" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>CAN Termination</strong>: R13 (120 Ω) is permanently fitted on the board. Make sure the whole CAN bus still has exactly two terminators — see <a href="#onboard-can-termination-new-in-v13d">Onboard CAN Termination</a></p>
-</li>
-<li>
-<p><strong>JP9 Open</strong>: Pin 8 is connected to neither the Knock circuit nor PC13 until JP9 is bridged</p>
-</li>
-<li>
-<p><strong>Separate VDrive</strong>: The VDrive 1-4 and VDrive 5-6 jumpers are on the <strong>bottom of the PCB</strong> — configure them before final installation</p>
-</li>
-<li>
-<p><strong>AC Switch Logic</strong>: Pin 20 accepts GROUND only as the ON signal — do not connect 12V directly</p>
-</li>
-<li>
-<p><strong>TPS MCU Pin</strong>: TPS uses PA6 (not PA3 as on v1.3B) — make sure the firmware configuration is correct</p>
-</li>
-<li>
-<p><strong>Spare Channels</strong>: Pins 15-16 (Injector 5-6) and Pins 24-25 (Ignition 5-6) are available for alternative use on 4-cylinder engines</p>
-</li>
-<li>
-<p><strong>Reference</strong>: More sensor wiring information on the <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
-</li>
-</ul>
-<h2 id="hardware-information">Hardware Information<a class="headerlink" href="#hardware-information" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3D is designed around an <strong>ARM Cortex-M4 180 MHz</strong> as the main MCU, delivering high performance at a 180MHz clock. It supports several add-on modules such as the VR Conditioner Module and the Idle Stepper Module. By default, Mazduino Mini 6CH v1.3D only supports digital CKP and CMP signals, such as hall and optical sensors. Vehicles that still use VR sensors need the VR Module added (or the sensor can be converted to hall).</p>
-<p><img alt="VR Module" src="../../img/mini6ch/vr-conditioner-module.jpeg" /></p>
-<p>For idle, Mazduino Mini 6CH v1.3D supports Idle PWM, with 2 low-side MOSFET outputs that can be used for IDLE PWM control.</p>
-<p>Idle Control with a stepper motor requires an add-on module, the Idle Stepper Motor Module. A DRV8825 driver can be used here.</p>
-<p><img alt="Stepper Module" src="../../img/mini6ch/drv8825-stepper.jpeg" /></p>
-<p>On v1.3D, the analog section uses its own reference voltage and a supply path separate from the digital section — both are on the board and need no user configuration. The board also carries a 120 Ω CAN termination resistor.</p>
-<p>There are solder jumpers on the back of the PCB:</p>
-<p><strong>v1.3D Solder Jumpers:</strong></p>
-<ul>
-<li>
-<p><strong>Tach Pullup:</strong> Pullup for the tachometer/RPM Speedometer, using 12V or 5V</p>
-</li>
-<li>
-<p><strong>Ignition VDrive 1-4:</strong> Signal voltage for Ignition channels 1, 2, 3, 4 (12V or 5V)</p>
-</li>
-<li>
-<p><strong>Ignition VDrive 5-6:</strong> Signal voltage for Ignition channels 5 and 6 (12V or 5V) — <strong>separate from the 1-4 jumper</strong></p>
-</li>
-<li>
-<p><strong>Knock/MCU PC13 (JP9):</strong> Selects the Knock sensor input or a direct connection to MCU pin PC13. <strong>On v1.3D this jumper ships open</strong> — neither side is connected at the factory, unlike v1.3C, where the default is Knock</p>
-</li>
-<li>
-<p><strong>JP5:</strong> CKP/Primary trigger pullup</p>
-</li>
-<li>
-<p><strong>JP4:</strong> CMP/Secondary trigger pullup</p>
-</li>
-<li>
-<p><strong>JP2:</strong> VR or Hall option for CKP/Primary</p>
-</li>
-<li>
-<p><strong>JP3:</strong> VR or Hall option for CMP/Secondary</p>
-</li>
-<li>
-<p><strong>JP6:</strong> Idle Stepper bypass</p>
-</li>
-<li>
-<p><strong>JP7 &amp; JP8:</strong> Knock filter bypass</p>
-</li>
-<li>
-<p><strong>Pullup Launch:</strong> Pullup on the spare input 3 pin when it is used for a launch control activation button or another input that needs a pullup</p>
 </li>
 </ul>
 <h2 id="software-tuning">Software Tuning<a class="headerlink" href="#software-tuning" title="Permanent link">&para;</a></h2>
 <h3 id="download-software">Download Software<a class="headerlink" href="#download-software" title="Permanent link">&para;</a></h3>
 <p>Download TunerStudio: <a href="https://www.tunerstudio.com/index.php/downloads">TunerStudio Downloads</a></p>
 <p><img alt="TunerStudio" src="../../img/manual/ts-download-page-overview.png" /></p>
-<h3 id="v13d-specific-configuration">v1.3D-Specific Configuration<a class="headerlink" href="#v13d-specific-configuration" title="Permanent link">&para;</a></h3>
-<p>v1.3C configuration files can be used as they are — the two boards have identical pinouts.</p>
+<h3 id="firmware-and-configuration">Firmware and Configuration<a class="headerlink" href="#firmware-and-configuration" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>TPS Pin</strong>: Make sure the TPS configuration uses <strong>PA6</strong> (not PA3 as on v1.3B)</p>
-</li>
-<li>
-<p><strong>Battery/VRef Pin</strong>: Make sure the Battery/Voltage Reference configuration uses <strong>PA7</strong></p>
-</li>
-<li>
-<p><strong>Knock Detection</strong>: Use <strong>PA3</strong> for the single knock sensor configuration</p>
-</li>
-<li>
-<p><strong>ETB Setup</strong>: Configure TPS2 on pin 40</p>
-</li>
-<li>
-<p><strong>AC Switch Logic</strong>: Make sure the AC switch configuration uses GROUND logic for ON</p>
-</li>
-<li>
-<p><strong>Pin Mapping</strong>: Use the v1.3D-specific pin mapping configuration file</p>
-</li>
-</ul>
-<h3 id="firmware-support">Firmware Support<a class="headerlink" href="#firmware-support" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>rusEFI</strong>: Full support for v1.3D with the updated pin mapping</p>
-</li>
-<li>
-<p><strong>Speeduino</strong>: Not supported on v1.3D — use rusEFI</p>
-</li>
-<li>
-<p><strong>Configuration Files</strong>: Available on the <a href="../downloads/">downloads page</a></p>
-</li>
+<li><strong>rusEFI</strong>: Supported, using the same <code>mazduino-mini6ch</code> firmware as v1.3C</li>
+<li><strong>Speeduino</strong>: Not supported on v1.3D — use rusEFI</li>
+<li><strong>Download</strong>: Firmware and configuration files are on the <a href="../downloads/">downloads page</a></li>
 </ul>
 <h2 id="wiring-diagram">Wiring Diagram<a class="headerlink" href="#wiring-diagram" title="Permanent link">&para;</a></h2>
 <h3 id="sensor-wiring">Sensor Wiring<a class="headerlink" href="#sensor-wiring" title="Permanent link">&para;</a></h3>
 <p><img alt="Sensor Wiring" src="../../img/sensor-wiring.png" /></p>
-<p><em>Note: Make sure the AC Switch only uses a GROUND signal for the ON state</em></p>
 <h3 id="injector-wiring">Injector Wiring<a class="headerlink" href="#injector-wiring" title="Permanent link">&para;</a></h3>
 <p><img alt="Injector Wiring" src="../../img/injector-wiring.png" /></p>
 <h3 id="ignition-wiring">Ignition Wiring<a class="headerlink" href="#ignition-wiring" title="Permanent link">&para;</a></h3>
@@ -1408,7 +1150,7 @@
 <p><strong>Smart Coils</strong>: Direct connection supported — VDrive 1-4 and VDrive 5-6 can be set to different voltages (5V or 12V per group)</p>
 </li>
 <li>
-<p><strong>Dump Coils</strong>: External IGBT required; the VDrive jumpers are <strong>not</strong> used for dump coils</p>
+<p><strong>Dumb Coils</strong>: External IGBT required; the VDrive jumpers are <strong>not</strong> used for dumb coils</p>
 </li>
 </ul>
 <h3 id="migrating-from-v13c">Migrating from v1.3C<a class="headerlink" href="#migrating-from-v13c" title="Permanent link">&para;</a></h3>
@@ -1423,7 +1165,7 @@
 <p><strong>CAN</strong>: Check the number of terminators on the network before connecting — this board carries its own 120 Ω</p>
 </li>
 <li>
-<p><strong>Analog Calibration</strong>: Recheck the analog sensor calibrations; the ADC reference is now a precision reference, not a resistor divider</p>
+<p><strong>Analog Calibration</strong>: Recheck the analog sensor calibrations, because the readings are now more stable</p>
 </li>
 </ul>
 <h3 id="migrating-from-v13b">Migrating from v1.3B<a class="headerlink" href="#migrating-from-v13b" title="Permanent link">&para;</a></h3>
@@ -1441,7 +1183,6 @@
 <p><strong>VDrive</strong>: Reconfigure the VDrive 1-4 and VDrive 5-6 jumpers separately on the bottom of the PCB</p>
 </li>
 </ul>
-<p><strong><a href="../downloads/">Download firmware and configuration files</a></strong></p>
 <h2 id="wiring-harness">Wiring Harness<a class="headerlink" href="#wiring-harness" title="Permanent link">&para;</a></h2>
 <p>Per-pin wire size recommendations for Mazduino Mini 6CH v1.3D, with a count of wires for each size, are in <a href="../rekomendasi-ukuran-kabel/">Harness Wire Size Recommendations</a>.</p>
 
@@ -1449,7 +1190,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../mazduino-mini-6ch-v1.3c/" class="btn btn-neutral float-left" title="v1.3C"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../mazduino-mini-6ch-v1.4/" class="btn btn-neutral float-right" title="v1.4">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../mazduino-mini-6ch-v1.3e/" class="btn btn-neutral float-right" title="v1.3E">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -1475,7 +1216,7 @@
       <span><a href="../mazduino-mini-6ch-v1.3c/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../mazduino-mini-6ch-v1.4/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../mazduino-mini-6ch-v1.3e/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

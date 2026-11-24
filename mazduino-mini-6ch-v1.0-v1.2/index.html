@@ -89,19 +89,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#pin-mapping-mcu">Pin Mapping MCU</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fitur-khusus">Fitur Khusus</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#panduan-instalasi">Panduan Instalasi</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#catatan-wiring">Catatan Wiring</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dukungan-dan-sumber-daya">Dukungan dan Sumber Daya</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#dokumentasi">Dokumentasi</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</a>
     </li>
         </ul>
     </li>
@@ -113,13 +101,11 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#catatan-penting">Catatan Penting</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</a>
+    <li class="toctree-l3"><a class="reference internal" href="#konfigurasi-injector-fleksibel">Konfigurasi Injector Fleksibel</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#file-firmware-konfigurasi_1">File Firmware &amp; Konfigurasi</a>
+    <li class="toctree-l3"><a class="reference internal" href="#persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</a>
     </li>
     </ul>
                 </li>
@@ -130,6 +116,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
                 </li>
@@ -301,7 +289,7 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-mini-6ch-v1.0-v1.2/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:31:36 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 11:25:29 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v10-v12">Mazduino Mini 6CH (v1.0 - v1.2)<a class="headerlink" href="#mazduino-mini-6ch-v10-v12" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.0-v1.2 adalah Engine Control Unit 6-channel yang kompak dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor ARM Cortex-M4 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
@@ -782,148 +770,29 @@
 </tr>
 </tbody>
 </table>
-<h3 id="fitur-khusus">Fitur Khusus<a class="headerlink" href="#fitur-khusus" title="Permanent link">&para;</a></h3>
-<h4 id="dukungan-vr-conditioner">Dukungan VR Conditioner<a class="headerlink" href="#dukungan-vr-conditioner" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VR-1 &amp; VR-2</strong>: Pin input untuk modul VR conditioner (DIP 8)</p>
-</li>
-<li>
-<p><strong>VR1+ &amp; VR2+</strong>: Input sensor VR positif</p>
-</li>
-</ul>
-<h4 id="kontrol-stepper-motor">Kontrol Stepper Motor<a class="headerlink" href="#kontrol-stepper-motor" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Stepper A1/A2</strong>: Output fase A untuk stepper motor (DRV8825)</p>
-</li>
-<li>
-<p><strong>Stepper B1/B2</strong>: Output fase B untuk stepper motor</p>
-</li>
-<li>
-<p><strong>Direction/Enable/Step</strong>: Sinyal kontrol untuk driver stepper</p>
-</li>
-</ul>
-<h4 id="konfigurasi-injector-fleksibel">Konfigurasi Injector Fleksibel<a class="headerlink" href="#konfigurasi-injector-fleksibel" title="Permanent link">&para;</a></h4>
-<p>Untuk mesin 4-silinder:</p>
-<ul>
-<li>
-<p><strong>Injector 5 &amp; 6</strong>: Dapat digunakan sebagai output arus tinggi cadangan</p>
-</li>
-<li>
-<p><strong>Aplikasi</strong>: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.</p>
-</li>
-</ul>
-<h3 id="panduan-instalasi">Panduan Instalasi<a class="headerlink" href="#panduan-instalasi" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Pemasangan</strong>: Pasang ECU di lokasi yang tepat dengan pendinginan yang memadai</li>
-<li><strong>Koneksi Daya</strong>: Hubungkan daya 12V (pin 1) dan ground (pin 17)</li>
-<li><strong>Ground Sensor</strong>: Gunakan beberapa pin ground sensor (22, 34, 37, 38) untuk sinyal yang bersih</li>
-<li><strong>Sensor Posisi Mesin</strong>: Hubungkan sensor CKP/CMP atau gunakan input VR sesuai kebutuhan</li>
-<li><strong>Instalasi Modul</strong>: Pasang modul VR-Conditioner dan/atau Stepper jika diperlukan</li>
-<li><strong>Verifikasi</strong>: Test semua koneksi sebelum startup awal</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Clutch dan TXD3</p>
+<p>Input Clutch (pin 36) memakai PB10, pin yang sama dengan TXD3. Karena itu, saat input Clutch dipakai, port serial TXD3/RXD3 tidak bisa dipakai pada saat yang sama.</p>
+</div>
 <h3 id="catatan-wiring">Catatan Wiring<a class="headerlink" href="#catatan-wiring" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>Multiple Ground</strong>: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal</p>
-</li>
-<li>
-<p><strong>Referensi 5V</strong>: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya</p>
-</li>
-<li>
-<p><strong>Sensor O2</strong>: Pin 43 menerima sinyal 1-5V dari output analog kontroler wideband</p>
-</li>
-<li>
-<p><strong>Sensor VR</strong>: Dapat menggunakan input digital atau input modul VR conditioner</p>
-</li>
-<li>
-<p><strong>Konektor Yamaha</strong>: Konektor 48-pin grade otomotif profesional</p>
-</li>
-<li>
-<p><strong>Kompatibilitas Wiring</strong>: Kompatibel dengan standar wiring Speeduino</p>
-</li>
-<li>
-<p><strong>Referensi</strong>: Informasi wiring sensor tambahan di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
-</li>
-</ul>
-<h2 id="dukungan-dan-sumber-daya">Dukungan dan Sumber Daya<a class="headerlink" href="#dukungan-dan-sumber-daya" title="Permanent link">&para;</a></h2>
-<h3 id="dokumentasi">Dokumentasi<a class="headerlink" href="#dokumentasi" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Datasheet STM32F407VGT6</strong>: Informasi lengkap tentang MCU</p>
-</li>
-<li>
-<p><strong>Manual Referensi</strong>: Dokumentasi pin mapping dan konfigurasi khusus</p>
-</li>
-<li>
-<p><strong>Wiring Diagram</strong>: Diagram lengkap untuk instalasi</p>
-</li>
-<li>
-<p><strong>TunerStudio Configuration</strong>: File konfigurasi siap pakai untuk Speeduino</p>
-</li>
-</ul>
-<h3 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi<a class="headerlink" href="#file-firmware-konfigurasi" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><a href="../downloads/">Halaman Download</a></strong> - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio</li>
-<li>Dukungan penuh 6-channel dengan fitur-fitur canggih</li>
-<li>Konfigurasi pin mapping khusus sudah disertakan</li>
-<li>Kompatibel dengan firmware rusEFI dan Speeduino</li>
+<li>Wiring kompatibel dengan standar wiring Speeduino</li>
+<li>Informasi wiring sensor tambahan ada di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
 </ul>
 <h2 id="dukungan-modul">Dukungan Modul<a class="headerlink" href="#dukungan-modul" title="Permanent link">&para;</a></h2>
 <h3 id="modul-vr-conditioner">Modul VR-Conditioner<a class="headerlink" href="#modul-vr-conditioner" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Package DIP 8</strong>: Instalasi dan penggantian yang mudah</p>
-</li>
-<li>
-<p><strong>Dukungan Sensor VR</strong>: Mengkonversi sinyal VR ke digital (pin 9, 10)</p>
-</li>
-<li>
-<p><strong>Signal Conditioning</strong>: Sinyal trigger yang bersih dan andal</p>
-</li>
-<li>
-<p><strong>Kompatibilitas</strong>: Bekerja dengan berbagai jenis sensor VR</p>
-</li>
-</ul>
+<p>Modul VR conditioner (DIP 8) mengubah sinyal sensor VR menjadi sinyal digital. Sensor VR dihubungkan ke VR1+/VR2+ (pin 41, 42) dan VR-1/VR-2 (pin 9, 10).</p>
 <h3 id="modul-stepper-motor">Modul Stepper Motor<a class="headerlink" href="#modul-stepper-motor" title="Permanent link">&para;</a></h3>
+<p>Modul driver stepper DRV8825 untuk idle air control. Output fase A1/A2 dan B1/B2 ada di pin 11-14.</p>
+<h2 id="konfigurasi-injector-fleksibel">Konfigurasi Injector Fleksibel<a class="headerlink" href="#konfigurasi-injector-fleksibel" title="Permanent link">&para;</a></h2>
+<p>Pada mesin 4-silinder, Injector 5 dan 6 dapat dipakai sebagai output arus tinggi cadangan untuk kontrol boost, kontrol VVT, injeksi air/methanol, dll.</p>
+<h2 id="persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian<a class="headerlink" href="#persyaratan-sistem-pengapian" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>Driver DRV8825</strong>: Kontrol stepper berperforma tinggi</p>
-</li>
-<li>
-<p><strong>Idle Air Control</strong>: Manajemen kecepatan idle yang presisi (pin 11-14)</p>
-</li>
-<li>
-<p><strong>Integrasi Mudah</strong>: Desain modul plug-and-play</p>
-</li>
-<li>
-<p><strong>Operasi Andal</strong>: Komponen grade otomotif</p>
-</li>
+<li><strong>Smart coil</strong>: dapat dihubungkan langsung</li>
+<li><strong>Dumb coil</strong>: memerlukan IGBT eksternal</li>
 </ul>
-<h2 id="catatan-penting">Catatan Penting<a class="headerlink" href="#catatan-penting" title="Permanent link">&para;</a></h2>
-<h3 id="persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian<a class="headerlink" href="#persyaratan-sistem-pengapian" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Smart Coils</strong>: Koneksi langsung didukung</p>
-</li>
-<li>
-<p><strong>Dump Coils</strong>: IGBT eksternal diperlukan untuk operasi yang tepat</p>
-</li>
-<li>
-<p><strong>Pemilihan Coil</strong>: Pilih jenis coil yang sesuai untuk aplikasi Anda</p>
-</li>
-<li>
-<p><strong>Keamanan</strong>: Driver eksternal yang tepat penting untuk sistem dump coil</p>
-</li>
-</ul>
-<h3 id="file-firmware-konfigurasi_1">File Firmware &amp; Konfigurasi<a class="headerlink" href="#file-firmware-konfigurasi_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><a href="../downloads/">Halaman Download</a></strong> - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio</li>
-<li>Dukungan penuh 6-channel dengan fitur-fitur canggih</li>
-<li>Konfigurasi pin mapping khusus sudah disertakan</li>
-<li>Kompatibel dengan firmware rusEFI</li>
-</ul>
+<h2 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi<a class="headerlink" href="#file-firmware-konfigurasi" title="Permanent link">&para;</a></h2>
+<p>Firmware rusEFI terbaru dan file konfigurasi TunerStudio tersedia di <a href="../downloads/">Halaman Download</a>.</p>
 
             </div>
           </div><footer>

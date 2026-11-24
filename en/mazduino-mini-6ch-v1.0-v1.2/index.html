@@ -89,19 +89,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#mcu-pin-mapping">MCU Pin Mapping</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#special-features">Special Features</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#installation-guide">Installation Guide</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#wiring-notes">Wiring Notes</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#support-and-resources">Support and Resources</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#documentation">Documentation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#firmware-configuration-files">Firmware &amp; Configuration Files</a>
     </li>
         </ul>
     </li>
@@ -113,13 +101,11 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#important-notes">Important Notes</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ignition-system-requirements">Ignition System Requirements</a>
+    <li class="toctree-l3"><a class="reference internal" href="#flexible-injector-configuration">Flexible Injector Configuration</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#firmware-configuration-files_1">Firmware &amp; Configuration Files</a>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-system-requirements">Ignition System Requirements</a>
     </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-configuration-files">Firmware &amp; Configuration Files</a>
     </li>
     </ul>
                 </li>
@@ -130,6 +116,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
                 </li>
@@ -301,7 +289,7 @@
     <a href="../../mazduino-mini-6ch-v1.0-v1.2/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:25:29 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v10-v12">Mazduino Mini 6CH (v1.0 - v1.2)<a class="headerlink" href="#mazduino-mini-6ch-v10-v12" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.0-v1.2 is a compact 6-channel Engine Control Unit designed for use with rusEFI and Speeduino firmware. Built around a powerful 32-bit ARM Cortex-M4 processor, it provides comprehensive engine management in a compact form factor suited to 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
@@ -782,148 +770,29 @@
 </tr>
 </tbody>
 </table>
-<h3 id="special-features">Special Features<a class="headerlink" href="#special-features" title="Permanent link">&para;</a></h3>
-<h4 id="vr-conditioner-support">VR Conditioner Support<a class="headerlink" href="#vr-conditioner-support" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VR-1 &amp; VR-2</strong>: Input pins for the VR conditioner module (DIP 8)</p>
-</li>
-<li>
-<p><strong>VR1+ &amp; VR2+</strong>: VR sensor positive inputs</p>
-</li>
-</ul>
-<h4 id="stepper-motor-control">Stepper Motor Control<a class="headerlink" href="#stepper-motor-control" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Stepper A1/A2</strong>: Phase A outputs for the stepper motor (DRV8825)</p>
-</li>
-<li>
-<p><strong>Stepper B1/B2</strong>: Phase B outputs for the stepper motor</p>
-</li>
-<li>
-<p><strong>Direction/Enable/Step</strong>: Control signals for the stepper driver</p>
-</li>
-</ul>
-<h4 id="flexible-injector-configuration">Flexible Injector Configuration<a class="headerlink" href="#flexible-injector-configuration" title="Permanent link">&para;</a></h4>
-<p>For 4-cylinder engines:</p>
-<ul>
-<li>
-<p><strong>Injector 5 &amp; 6</strong>: Can be used as spare high-current outputs</p>
-</li>
-<li>
-<p><strong>Application</strong>: Boost control, VVT control, water/methanol injection, etc.</p>
-</li>
-</ul>
-<h3 id="installation-guide">Installation Guide<a class="headerlink" href="#installation-guide" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Mounting</strong>: Mount the ECU in a suitable location with adequate cooling</li>
-<li><strong>Power Connection</strong>: Connect 12V power (pin 1) and ground (pin 17)</li>
-<li><strong>Sensor Ground</strong>: Use several sensor ground pins (22, 34, 37, 38) for clean signals</li>
-<li><strong>Engine Position Sensors</strong>: Connect the CKP/CMP sensors or use the VR inputs as needed</li>
-<li><strong>Module Installation</strong>: Install the VR-Conditioner and/or Stepper module if needed</li>
-<li><strong>Verification</strong>: Test all connections before the first startup</li>
-</ol>
+<div class="admonition note">
+<p class="admonition-title">Clutch and TXD3</p>
+<p>The Clutch input (pin 36) uses PB10, the same pin as TXD3. So while the Clutch input is in use, the TXD3/RXD3 serial port cannot be used at the same time.</p>
+</div>
 <h3 id="wiring-notes">Wiring Notes<a class="headerlink" href="#wiring-notes" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>Multiple Ground</strong>: Use all available ground pins for optimal signal integrity</p>
-</li>
-<li>
-<p><strong>5V Reference</strong>: Pin 5 provides a 5V reference for sensors that need it</p>
-</li>
-<li>
-<p><strong>O2 Sensor</strong>: Pin 43 accepts a 1-5V signal from the analog output of a wideband controller</p>
-</li>
-<li>
-<p><strong>VR Sensors</strong>: Can use the digital input or the VR conditioner module input</p>
-</li>
-<li>
-<p><strong>Yamaha Connector</strong>: Professional automotive-grade 48-pin connector</p>
-</li>
-<li>
-<p><strong>Wiring Compatibility</strong>: Compatible with the Speeduino wiring standard</p>
-</li>
-<li>
-<p><strong>References</strong>: More sensor wiring information on the <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
-</li>
-</ul>
-<h2 id="support-and-resources">Support and Resources<a class="headerlink" href="#support-and-resources" title="Permanent link">&para;</a></h2>
-<h3 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>STM32F407VGT6 Datasheet</strong>: Full information about the MCU</p>
-</li>
-<li>
-<p><strong>Reference Manual</strong>: Documentation of the pin mapping and special configuration</p>
-</li>
-<li>
-<p><strong>Wiring Diagram</strong>: Complete diagrams for installation</p>
-</li>
-<li>
-<p><strong>TunerStudio Configuration</strong>: Ready-to-use configuration files for Speeduino</p>
-</li>
-</ul>
-<h3 id="firmware-configuration-files">Firmware &amp; Configuration Files<a class="headerlink" href="#firmware-configuration-files" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><a href="../downloads/">Download Page</a></strong> - Get the latest rusEFI firmware and TunerStudio configuration files</li>
-<li>Full 6-channel support with advanced features</li>
-<li>Custom pin mapping configuration included</li>
-<li>Compatible with rusEFI and Speeduino firmware</li>
+<li>Wiring is compatible with the Speeduino wiring standard</li>
+<li>More sensor wiring information is on the <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
 </ul>
 <h2 id="module-support">Module Support<a class="headerlink" href="#module-support" title="Permanent link">&para;</a></h2>
 <h3 id="vr-conditioner-module">VR-Conditioner Module<a class="headerlink" href="#vr-conditioner-module" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>DIP 8 Package</strong>: Easy to install and replace</p>
-</li>
-<li>
-<p><strong>VR Sensor Support</strong>: Converts VR signals to digital (pins 9, 10)</p>
-</li>
-<li>
-<p><strong>Signal Conditioning</strong>: Clean, reliable trigger signals</p>
-</li>
-<li>
-<p><strong>Compatibility</strong>: Works with many types of VR sensors</p>
-</li>
-</ul>
+<p>The VR conditioner module (DIP 8) converts VR sensor signals to digital. VR sensors connect to VR1+/VR2+ (pins 41, 42) and VR-1/VR-2 (pins 9, 10).</p>
 <h3 id="stepper-motor-module">Stepper Motor Module<a class="headerlink" href="#stepper-motor-module" title="Permanent link">&para;</a></h3>
+<p>DRV8825 stepper driver module for idle air control. The phase A1/A2 and B1/B2 outputs are on pins 11-14.</p>
+<h2 id="flexible-injector-configuration">Flexible Injector Configuration<a class="headerlink" href="#flexible-injector-configuration" title="Permanent link">&para;</a></h2>
+<p>On 4-cylinder engines, Injector 5 and 6 can be used as spare high-current outputs for boost control, VVT control, water/methanol injection, etc.</p>
+<h2 id="ignition-system-requirements">Ignition System Requirements<a class="headerlink" href="#ignition-system-requirements" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>DRV8825 Driver</strong>: High-performance stepper control</p>
-</li>
-<li>
-<p><strong>Idle Air Control</strong>: Precise idle speed management (pins 11-14)</p>
-</li>
-<li>
-<p><strong>Easy Integration</strong>: Plug-and-play module design</p>
-</li>
-<li>
-<p><strong>Reliable Operation</strong>: Automotive-grade components</p>
-</li>
+<li><strong>Smart coils</strong>: can be connected directly</li>
+<li><strong>Dumb coils</strong>: need an external IGBT</li>
 </ul>
-<h2 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h2>
-<h3 id="ignition-system-requirements">Ignition System Requirements<a class="headerlink" href="#ignition-system-requirements" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Smart Coils</strong>: Direct connection supported</p>
-</li>
-<li>
-<p><strong>Dump Coils</strong>: External IGBT required for correct operation</p>
-</li>
-<li>
-<p><strong>Coil Selection</strong>: Choose the coil type that suits your application</p>
-</li>
-<li>
-<p><strong>Safety</strong>: A proper external driver is essential for dump coil systems</p>
-</li>
-</ul>
-<h3 id="firmware-configuration-files_1">Firmware &amp; Configuration Files<a class="headerlink" href="#firmware-configuration-files_1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong><a href="../downloads/">Download Page</a></strong> - Get the latest rusEFI firmware and TunerStudio configuration files</li>
-<li>Full 6-channel support with advanced features</li>
-<li>Custom pin mapping configuration included</li>
-<li>Compatible with rusEFI firmware</li>
-</ul>
+<h2 id="firmware-configuration-files">Firmware &amp; Configuration Files<a class="headerlink" href="#firmware-configuration-files" title="Permanent link">&para;</a></h2>
+<p>The latest rusEFI firmware and TunerStudio configuration files are on the <a href="../downloads/">Download Page</a>.</p>
 
             </div>
           </div><footer>

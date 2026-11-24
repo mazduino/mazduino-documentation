@@ -87,6 +87,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
                 </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>
+                </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="#">v1.4</a>
     <ul class="current">
     <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
@@ -113,8 +115,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#v14-special-features">v1.4 Special Features</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#installation-guide-v14">Installation Guide v1.4</a>
-    </li>
         </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#technical-specifications-v14">Technical Specifications v1.4</a>
@@ -126,18 +126,6 @@
     <li class="toctree-l4"><a class="reference internal" href="#output-specifications">Output Specifications</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#input-specifications">Input Specifications</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#important-notes-v14">Important Notes v1.4</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#ignition-system-requirements">Ignition System Requirements</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#variable-valve-timing-vvt">Variable Valve Timing (VVT)</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#boost-control-system">Boost Control System</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#dual-etb-system">Dual ETB System</a>
     </li>
         </ul>
     </li>
@@ -311,27 +299,19 @@
     <a href="../../mazduino-mini-6ch-v1.4/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:43:12 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v14">Mazduino Mini 6CH (v1.4)<a class="headerlink" href="#mazduino-mini-6ch-v14" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Note</strong>: v1.4 is <strong>not a production version</strong>. The last production version of the Mini 6CH line is <strong><a href="../mazduino-mini-6ch-v1.3d/">v1.3D</a></strong>. This page is kept as reference documentation.</p>
+<p><strong>Note</strong>: v1.4 is <strong>not a production version</strong>. The current production version of the Mini 6CH line is <strong><a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a></strong>. This page is kept as reference documentation.</p>
 </blockquote>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>The Mazduino Mini 6CH v1.4 is a 6-channel Engine Control Unit with advanced features, designed for use with rusEFI firmware. Built around a powerful 32-bit ARM Cortex-M4 processor, it provides comprehensive engine management with full support for current technologies such as Variable Valve Timing (VVT), Boost Control, and dual Electronic Throttle Body (ETB).</p>
+<p>The Mazduino Mini 6CH v1.4 is a 6-channel Engine Control Unit for rusEFI firmware, with a 32-bit ARM Cortex-M4 processor.</p>
 <p><strong>New in v1.4:</strong></p>
 <ul>
-<li>
-<p><strong>VVT (Variable Valve Timing)</strong>: Variable valve timing control for optimal performance and efficiency</p>
-</li>
-<li>
-<p><strong>BOOST Control</strong>: Integrated boost pressure control for forced induction applications</p>
-</li>
-<li>
-<p><strong>Dual ETB IC</strong>: Dual Electronic Throttle Body support with integrated driver ICs</p>
-</li>
-<li>
-<p><strong>Enhanced Idle Control</strong>: Dedicated driver for an Electronic Throttle Body or an Idle Stepper Motor</p>
-</li>
+<li><strong>VVT (Variable Valve Timing)</strong>: Variable valve timing control output</li>
+<li><strong>BOOST Control</strong>: Boost pressure control output for forced induction applications</li>
+<li><strong>Dual ETB IC</strong>: Dual Electronic Throttle Body support with integrated driver ICs</li>
+<li><strong>Enhanced Idle Control</strong>: Dedicated driver for an Electronic Throttle Body or an Idle Stepper Motor</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="img/mazduino-mini-6ch-v1.4.jpeg" /></p>
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
@@ -345,21 +325,7 @@
 <li>5x low-current low-side drivers for the main relay, fuel pump, AC compressor, fan, and tachometer control</li>
 <li>6x 12V or 5V outputs for ignition coil signals</li>
 <li>Knock Input for engine knock detection</li>
-<li>
-<p><strong>VVT Control (v1.4)</strong>: Variable Valve Timing control for performance optimization</p>
-</li>
-<li>
-<p><strong>Boost Control (v1.4)</strong>: Boost pressure control with precise PWM</p>
-</li>
-<li>
-<p><strong>Dual ETB Support (v1.4)</strong>: Dual Electronic Throttle Body support with integrated driver ICs</p>
-</li>
-<li>
-<p><strong>ETB/Stepper Compatibility (v1.4)</strong>: The driver can be used for an ETB or an Idle Stepper Motor</p>
-</li>
-<li>
-<p>Support for an add-on VR Conditioner Module</p>
-</li>
+<li>Support for an add-on VR Conditioner Module</li>
 <li>168 MHz ARM Cortex-M4 processor</li>
 <li>Data communication via CANbus</li>
 <li>Data communication via USB Type-C</li>
@@ -368,7 +334,7 @@
 <li>SD card for data logging</li>
 </ul>
 <h2 id="jumper-configuration">Jumper Configuration<a class="headerlink" href="#jumper-configuration" title="Permanent link">&para;</a></h2>
-<p>The Mazduino Mini 6CH v1.4 has a system of solder jumpers that lets you customize functions to suit your application. These jumpers give configuration flexibility without changing the firmware, ensuring good compatibility with a wide range of engine setups.</p>
+<p>Board functions are set with solder jumpers, without changing the firmware.</p>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6232.jpeg" /></p>
 <h3 id="top-configuration-zone-right">Top Configuration Zone (Right)<a class="headerlink" href="#top-configuration-zone-right" title="Permanent link">&para;</a></h3>
 <h4 id="jp11-tachometer-pullup">JP11 - Tachometer Pullup<a class="headerlink" href="#jp11-tachometer-pullup" title="Permanent link">&para;</a></h4>
@@ -386,16 +352,13 @@
 <h4 id="ignition-vdrive-jumper">Ignition VDrive Jumper<a class="headerlink" href="#ignition-vdrive-jumper" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
-<p><strong>Function</strong>: Sets the ignition signal voltage for <strong>Smart Coil Only</strong></p>
+<p><strong>Function</strong>: Sets the ignition signal voltage for <strong>Smart Coil Only</strong> (smart coils with an internal driver, which connect directly)</p>
 </li>
 <li>
-<p><strong>Options</strong>: 12V or 5V signal</p>
+<p><strong>Options</strong>: 12V or 5V signal. Use 5V for coils with a 5V signal and 12V for coils with a 12V signal</p>
 </li>
 <li>
-<p><strong>Smart Coil only</strong>: This jumper is only for smart coils with an internal driver</p>
-</li>
-<li>
-<p><strong>IMPORTANT</strong>: Dump coils require an external IGBT</p>
+<p><strong>IMPORTANT</strong>: Dumb coils (conventional coils) require an external IGBT</p>
 </li>
 </ul>
 <h4 id="knockpc13-input-selection">Knock/PC13 Input Selection<a class="headerlink" href="#knockpc13-input-selection" title="Permanent link">&para;</a></h4>
@@ -420,9 +383,6 @@
 <li>
 <p><strong>JP4</strong>: 5V pullup for the CMP (Camshaft Position) signal</p>
 </li>
-<li>
-<p><strong>Benefit</strong>: Clean, stable trigger signals</p>
-</li>
 </ul>
 <h4 id="jp2-jp3-sensor-type-selection">JP2 &amp; JP3 - Sensor Type Selection<a class="headerlink" href="#jp2-jp3-sensor-type-selection" title="Permanent link">&para;</a></h4>
 <ul>
@@ -431,9 +391,6 @@
 </li>
 <li>
 <p><strong>JP3</strong>: CMP signal mode (VR or Hall sensor)</p>
-</li>
-<li>
-<p><strong>Flexibility</strong>: Compatible with many types of position sensors</p>
 </li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6230.jpeg" /></p>
@@ -482,63 +439,17 @@
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6231.jpeg" /></p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
-<h4 id="optimal-settings-v14">Optimal Settings v1.4:<a class="headerlink" href="#optimal-settings-v14" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Smart Coils</strong>: Use 5V VDrive for coils with a 5V signal and 12V for coils with a 12V signal</p>
-</li>
-<li>
-<p><strong>Dump/Conventional Coils</strong>: Require an external IGBT</p>
-</li>
 <li>
 <p><strong>VR Sensors</strong>: Select VR mode (the signal goes through the VR Conditioner module) and <strong>remove</strong> the pullup. The pullup loads the VR sensor coil</p>
 </li>
 <li>
 <p><strong>Hall / Optical Sensors</strong>: Select Hall mode and <strong>fit</strong> the pullup (JP5 for CKP, JP4 for CMP). Hall sensors are usually open-collector and cannot produce a HIGH level on their own; without a pullup the trigger pin floats and picks up noise, which causes trigger errors while the engine is running. Remove the pullup only for sensors with a 5V push-pull output</p>
 </li>
-<li>
-<p><strong>ETB Mode</strong>: Select ETB mode for modern electronic throttle applications</p>
-</li>
-<li>
-<p><strong>Stepper Mode</strong>: Select stepper mode for conventional idle control</p>
-</li>
-</ul>
-<h4 id="best-practices">Best Practices:<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Pre-Installation</strong>: Configure the jumpers before final installation</li>
-<li><strong>Documentation</strong>: Write down the jumper configuration for future reference</li>
-<li><strong>Testing</strong>: Verify the signals after changing the jumper configuration</li>
-<li><strong>Compatibility</strong>: Make sure the jumpers match the hardware you are using</li>
-<li><strong>ETB Testing</strong>: Test the ETB driver before connecting the actual throttle body</li>
-<li><strong>VVT Calibration</strong>: Calibrate the VVT system carefully</li>
-</ol>
-<h4 id="special-attention">Special Attention:<a class="headerlink" href="#special-attention" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Coil Type Is Critical</strong>: VDrive is only for smart coils; dump coils need an external IGBT</p>
-</li>
-<li>
-<p><strong>ETB Safety</strong>: Dual ETB requires a correct failsafe configuration</p>
-</li>
-<li>
-<p><strong>High Current</strong>: The VVT and Boost outputs can handle high current; make sure the wiring is adequate</p>
-</li>
-<li>
-<p><strong>Solder Carefully</strong>: Use the correct soldering temperature</p>
-</li>
-<li>
-<p><strong>Verify Connections</strong>: Make sure the solder joints are solid</p>
-</li>
-<li>
-<p><strong>Consult the Schematic</strong>: Refer to the diagram for advanced configuration</p>
-</li>
-<li>
-<p><strong>Power Off</strong>: Always switch the power off when changing jumpers</p>
-</li>
 </ul>
 <h2 id="wiring-and-installation">Wiring and Installation<a class="headerlink" href="#wiring-and-installation" title="Permanent link">&para;</a></h2>
 <h3 id="connector-pin-mapping">Connector Pin Mapping<a class="headerlink" href="#connector-pin-mapping" title="Permanent link">&para;</a></h3>
-<p>The Mazduino Mini 6CH v1.4 uses a 48-pin Yamaha ECU connector with a pin assignment updated to support the new features:</p>
+<p>The Mazduino Mini 6CH v1.4 uses a 48-pin Yamaha ECU connector with the following pin assignment:</p>
 <p><img alt="Mazduino Mini 48-pin Connector" src="../../img/mazduino-48p-connector.jpeg" /></p>
 <h4 id="connector-layout">Connector Layout<a class="headerlink" href="#connector-layout" title="Permanent link">&para;</a></h4>
 <pre><code> 1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16
@@ -1086,182 +997,31 @@
 </tbody>
 </table>
 <h3 id="v14-special-features">v1.4 Special Features<a class="headerlink" href="#v14-special-features" title="Permanent link">&para;</a></h3>
-<h4 id="variable-valve-timing-vvt-new-in-v14">Variable Valve Timing (VVT) - New in v1.4<a class="headerlink" href="#variable-valve-timing-vvt-new-in-v14" title="Permanent link">&para;</a></h4>
+<h4 id="variable-valve-timing-vvt">Variable Valve Timing (VVT)<a class="headerlink" href="#variable-valve-timing-vvt" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Pin 4 (VVT)</strong>: VVT control output with precise PWM</p>
-</li>
-<li>
-<p><strong>MCU Pin</strong>: PB6 for variable valve timing control</p>
-</li>
-<li>
-<p><strong>Application</strong>:</p>
-</li>
-<li>Torque and power optimization across the RPM range</li>
-<li>Lower emissions and fuel consumption</li>
-<li>Valve overlap control for maximum performance</li>
-<li><strong>Configuration</strong>: PWM duty cycle to control the VVT actuator position</li>
-</ul>
-<h4 id="boost-control-system-new-in-v14">Boost Control System - New in v1.4<a class="headerlink" href="#boost-control-system-new-in-v14" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Pin 6 (BOOST)</strong>: Boost pressure control output</p>
-</li>
-<li>
-<p><strong>MCU Pin</strong>: PB4 for wastegate or blow-off valve control</p>
-</li>
-<li>
-<p><strong>Application</strong>:</p>
-</li>
-<li>Boost pressure control on turbocharged applications</li>
-<li>Overboost protection management</li>
-<li>Electronic boost controller with MAP sensor feedback</li>
-<li><strong>Configuration</strong>: PWM control for the wastegate actuator</li>
-</ul>
-<h4 id="dual-electronic-throttle-body-etb-new-in-v14">Dual Electronic Throttle Body (ETB) - New in v1.4<a class="headerlink" href="#dual-electronic-throttle-body-etb-new-in-v14" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>ETB1</strong>: Pins 33/34 (ETB-/ETB+) controlled by PB8, PB9, PA8</p>
-</li>
-<li>
-<p><strong>ETB2</strong>: Pins 11/12 (ETB2-/ETB2+) controlled by PD12, PD11, PD14 <strong>[NEW]</strong></p>
-</li>
-<li>
-<p><strong>Dual TPS Support</strong>: TPS1 (pin 30) and TPS2 (pin 43)</p>
-</li>
-<li>
-<p><strong>Dual PPS Support</strong>: PPS1 (pin 18) and PPS2 (pin 35)</p>
-</li>
-<li>
-<p><strong>Integrated Driver IC</strong>: H-bridge driver with overcurrent protection</p>
-</li>
-<li>
-<p><strong>Application</strong>:</p>
-</li>
-<li>Redundant throttle system for critical applications</li>
-<li>Dual throttle for V-configuration engines</li>
-<li>Primary and secondary throttle control</li>
-</ul>
-<h4 id="enhanced-idle-control-v14">Enhanced Idle Control - v1.4<a class="headerlink" href="#enhanced-idle-control-v14" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Dual Mode Operation</strong>: ETB or Stepper Motor control</p>
-</li>
-<li>
-<p><strong>ETB Mode</strong>: Uses the ETB driver for precise throttle control</p>
-</li>
-<li>
-<p><strong>Stepper Mode</strong>: Traditional control with a stepper motor driver</p>
-</li>
-<li>
-<p><strong>Pin Assignment</strong>:</p>
-</li>
-<li>IDLE1 (pin 2): PD10 for idle control 1</li>
-<li>
-<p>IDLE2 (pin 3): PE9 for idle control 2</p>
-</li>
-<li>
-<p><strong>Flexibility</strong>: Configurable with jumper JP6</p>
-</li>
-</ul>
-<h4 id="high-current-low-side-outputs-enhanced-v14">High Current Low Side Outputs - Enhanced v1.4<a class="headerlink" href="#high-current-low-side-outputs-enhanced-v14" title="Permanent link">&para;</a></h4>
-<ul>
-<li><strong>Injector 5 &amp; 6</strong>: Can be used for:</li>
-<li>VVT control (high current)</li>
-<li>Boost control (high current)</li>
-<li>Additional PWM control output</li>
-<li>Water injection control</li>
-<li>Methanol injection control</li>
-<li><strong>Current Rating</strong>: 3A continuous per channel</li>
-</ul>
-<h3 id="installation-guide-v14">Installation Guide v1.4<a class="headerlink" href="#installation-guide-v14" title="Permanent link">&para;</a></h3>
-<h4 id="1-system-preparation">1. System Preparation<a class="headerlink" href="#1-system-preparation" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Power Supply</strong>: Make sure the 12V electrical system is stable</p>
-</li>
-<li>
-<p><strong>Grounding</strong>: Use multiple ground points to reduce noise</p>
-</li>
-<li>
-<p><strong>Cooling</strong>: Mount the ECU with adequate ventilation</p>
-</li>
-</ul>
-<h4 id="2-basic-installation">2. Basic Installation<a class="headerlink" href="#2-basic-installation" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Mounting</strong>: Mount the ECU in a location protected from heat and vibration</li>
-<li><strong>Power Connection</strong>:</li>
-<li>Pin 1: 12V switched power</li>
-<li>Pin 22: Main ground</li>
-<li>Pin 37, 38: Sensor ground</li>
-<li><strong>Engine Position Sensors</strong>:</li>
-<li>CKP sensor to pin 41/42 or pin 9/10 (VR)</li>
-<li>CMP sensor according to the jumper configuration</li>
-</ol>
-<h4 id="3-installing-the-new-v14-features">3. Installing the New v1.4 Features<a class="headerlink" href="#3-installing-the-new-v14-features" title="Permanent link">&para;</a></h4>
-<h5 id="vvt-installation">VVT Installation<a class="headerlink" href="#vvt-installation" title="Permanent link">&para;</a></h5>
-<ol>
-<li><strong>VVT Actuator Wiring</strong>:</li>
-<li>Connect the VVT solenoid to pin 4 (VVT)</li>
+<li>Pin 4 (VVT), MCU PB6: PWM output for the VVT solenoid; the duty cycle sets the VVT actuator position</li>
 <li>Ground the VVT actuator to the chassis</li>
-<li>Make sure the wiring withstands engine bay heat</li>
-<li><strong>VVT Position Sensor</strong>:</li>
-<li>Use a spare analog input for position feedback</li>
-<li>Calibrate the sensor range in TunerStudio</li>
-</ol>
-<h5 id="boost-control-installation">Boost Control Installation<a class="headerlink" href="#boost-control-installation" title="Permanent link">&para;</a></h5>
-<ol>
-<li><strong>Boost Actuator Wiring</strong>:</li>
-<li>Connect the wastegate actuator to pin 6 (BOOST)</li>
-<li>Make sure the actuator is compatible with PWM control</li>
-<li><strong>Boost Pressure Sensor</strong>:</li>
-<li>Use the MAP sensor or a separate boost sensor</li>
-<li>Configure the boost target and limit in the firmware</li>
-</ol>
-<h5 id="dual-etb-installation">Dual ETB Installation<a class="headerlink" href="#dual-etb-installation" title="Permanent link">&para;</a></h5>
-<ol>
-<li><strong>ETB1 (Primary)</strong>:</li>
-<li>ETB motor to pins 33/34 (ETB-/ETB+)</li>
-<li>TPS1 to pin 30</li>
-<li>TPS2 to pin 43 for redundancy</li>
-<li><strong>ETB2 (Secondary)</strong> - <strong>[NEW v1.4]</strong>:</li>
-<li>ETB motor to pins 11/12 (ETB2-/ETB2+)</li>
-<li>Use an additional analog input for TPS feedback</li>
-<li><strong>Pedal Position</strong>:</li>
-<li>PPS1 to pin 18</li>
-<li>PPS2 to pin 35 for redundancy</li>
-<li><strong>Safety Configuration</strong>:</li>
-<li>Configure failsafe values</li>
-<li>Set limp-home mode parameters</li>
-<li>Test emergency shutdown</li>
-</ol>
-<h4 id="4-advanced-configuration">4. Advanced Configuration<a class="headerlink" href="#4-advanced-configuration" title="Permanent link">&para;</a></h4>
-<h5 id="idle-control-setup-v14">Idle Control Setup (v1.4)<a class="headerlink" href="#idle-control-setup-v14" title="Permanent link">&para;</a></h5>
-<ul>
-<li>
-<p><strong>ETB Mode</strong>: Set jumper JP6 to ETB mode</p>
-</li>
-<li>
-<p><strong>Stepper Mode</strong>: Set jumper JP6 to stepper mode</p>
-</li>
-<li>
-<p><strong>Pin Assignment</strong>:</p>
-</li>
-<li>IDLE1 (pin 2) for primary idle control</li>
-<li>IDLE2 (pin 3) for secondary or backup</li>
+<li>VVT position feedback uses a spare analog input; calibrate the sensor range in TunerStudio</li>
+<li>Incorrect VVT timing can cause valve interference. VVT needs a minimum oil pressure to operate</li>
 </ul>
-<h5 id="high-current-outputs-injector-56">High Current Outputs (Injector 5&amp;6)<a class="headerlink" href="#high-current-outputs-injector-56" title="Permanent link">&para;</a></h5>
+<h4 id="boost-control">Boost Control<a class="headerlink" href="#boost-control" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>VVT Control</strong>: Use injector 5/6 for additional VVT</p>
-</li>
-<li>
-<p><strong>Boost Control</strong>: Alternative boost control output</p>
-</li>
-<li>
-<p><strong>Water/Meth Injection</strong>: Control of an additional injection system</p>
-</li>
+<li>Pin 6 (BOOST), MCU PB4: PWM output for a wastegate or blow-off valve actuator; the actuator must support PWM control</li>
+<li>Supports pneumatic and electronic wastegates</li>
+<li>Boost pressure is read from the MAP sensor or a separate boost sensor</li>
+<li>Set the boost target, overboost limit and PID parameters in the firmware</li>
 </ul>
+<h4 id="dual-electronic-throttle-body-etb">Dual Electronic Throttle Body (ETB)<a class="headerlink" href="#dual-electronic-throttle-body-etb" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>ETB1</strong>: Pins 33/34 (ETB-/ETB+) controlled by PB8, PB9, PA8; TPS1 on pin 30 and TPS2 on pin 43</li>
+<li><strong>ETB2</strong>: Pins 11/12 (ETB2-/ETB2+) controlled by PD12, PD11, PD14; TPS feedback uses an additional analog input</li>
+<li><strong>Pedal</strong>: PPS1 on pin 18 and PPS2 on pin 35</li>
+<li><strong>Integrated Driver IC</strong>: H-bridge driver with overcurrent protection</li>
+<li><strong>Application</strong>: Redundant throttle, dual throttle for V-configuration engines, or primary and secondary throttle</li>
+<li><strong>Safety</strong>: Configure the failsafe values and limp-home mode parameters, then test the emergency shutdown before use</li>
+</ul>
+<h4 id="injector-5-6-as-high-current-outputs">Injector 5 &amp; 6 as High-Current Outputs<a class="headerlink" href="#injector-5-6-as-high-current-outputs" title="Permanent link">&para;</a></h4>
+<p>Injectors 5 and 6 (pins 15, 16) can be used as spare high-current outputs (3A continuous per channel) for additional VVT or boost, another PWM control output, or water/methanol injection.</p>
 <h2 id="technical-specifications-v14">Technical Specifications v1.4<a class="headerlink" href="#technical-specifications-v14" title="Permanent link">&para;</a></h2>
 <h3 id="hardware-specifications">Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1359,70 +1119,12 @@
 <p><strong>Serial</strong>: 2x UART (USB + dedicated)</p>
 </li>
 </ul>
-<h2 id="important-notes-v14">Important Notes v1.4<a class="headerlink" href="#important-notes-v14" title="Permanent link">&para;</a></h2>
-<h3 id="ignition-system-requirements">Ignition System Requirements<a class="headerlink" href="#ignition-system-requirements" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Smart Coils</strong>: Direct connection supported, with voltage selection</p>
-</li>
-<li>
-<p><strong>Dump Coils</strong>: An external IGBT is required for correct operation</p>
-</li>
-<li>
-<p><strong>Coil Selection</strong>: Critical for system reliability and performance</p>
-</li>
-</ul>
-<h3 id="variable-valve-timing-vvt">Variable Valve Timing (VVT)<a class="headerlink" href="#variable-valve-timing-vvt" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Engine Compatibility</strong>: Make sure the engine has a VVT mechanism</p>
-</li>
-<li>
-<p><strong>Actuator Selection</strong>: Use a VVT actuator that suits the engine</p>
-</li>
-<li>
-<p><strong>Timing Safety</strong>: Incorrect VVT timing can cause valve interference</p>
-</li>
-<li>
-<p><strong>Oil Pressure</strong>: VVT needs a minimum oil pressure to operate</p>
-</li>
-</ul>
-<h3 id="boost-control-system">Boost Control System<a class="headerlink" href="#boost-control-system" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Turbo/Supercharger</strong>: Compatible with many types of forced induction</p>
-</li>
-<li>
-<p><strong>Wastegate Type</strong>: Supports pneumatic and electronic wastegates</p>
-</li>
-<li>
-<p><strong>Safety Limits</strong>: Set overboost protection to protect the engine</p>
-</li>
-<li>
-<p><strong>Response Tuning</strong>: Tune the PID parameters for optimal response</p>
-</li>
-</ul>
-<h3 id="dual-etb-system">Dual ETB System<a class="headerlink" href="#dual-etb-system" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Failsafe Critical</strong>: Dual ETB must have a robust failsafe system</p>
-</li>
-<li>
-<p><strong>TPS Redundancy</strong>: Dual TPS for safety and accuracy</p>
-</li>
-<li>
-<p><strong>PPS Redundancy</strong>: Dual PPS for pedal input validation</p>
-</li>
-<li>
-<p><strong>Emergency Mode</strong>: Configure limp-home mode for emergency conditions</p>
-</li>
-</ul>
 <p><strong><a href="../downloads/">Download firmware and configuration files</a></strong></p>
 
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../mazduino-mini-6ch-v1.3d/" class="btn btn-neutral float-left" title="v1.3D"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-mini-6ch-v1.3e/" class="btn btn-neutral float-left" title="v1.3E"><span class="icon icon-circle-arrow-left"></span> Previous</a>
         <a href="../mazduino-core-rev0/" class="btn btn-neutral float-right" title="rev0">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
@@ -1446,7 +1148,7 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../mazduino-mini-6ch-v1.3d/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../mazduino-mini-6ch-v1.3e/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
       <span><a href="../mazduino-core-rev0/" style="color: #fcfcfc">Next &raquo;</a></span>

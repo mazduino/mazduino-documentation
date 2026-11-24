@@ -162,6 +162,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3d/"/>
     </url>
     <url>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3e/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3e/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3e/"/>
+    </url>
+    <url>
         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.4/</loc>
         <lastmod>2026-11-24</lastmod>
         <changefreq>daily</changefreq>
@@ -636,6 +643,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3d/"/>
         <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3d/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3e/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3e/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3e/"/>
     </url>
     <url>
         <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.4/</loc>

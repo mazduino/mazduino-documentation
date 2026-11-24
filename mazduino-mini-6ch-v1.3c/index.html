@@ -105,6 +105,8 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#zona-konfigurasi-kiri">Zona Konfigurasi Kiri</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pullup-launch">Pullup Launch</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#tips-konfigurasi-jumper">Tips Konfigurasi Jumper</a>
     </li>
         </ul>
@@ -115,11 +117,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#pin-mapping-mcu-v13c">Pin Mapping MCU (v1.3C)</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#fitur-khusus-v13c">Fitur Khusus v1.3C</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#panduan-instalasi">Panduan Instalasi</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#catatan-wiring-v13c">Catatan Wiring v1.3C</a>
+    <li class="toctree-l4"><a class="reference internal" href="#catatan-wiring">Catatan Wiring</a>
     </li>
         </ul>
     </li>
@@ -145,19 +143,17 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#catatan-penting-v13c">Catatan Penting v1.3C</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</a>
+    <li class="toctree-l3"><a class="reference internal" href="#persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#migrasi-dari-v13b">Migrasi dari v1.3B</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#migrasi-dari-v13b">Migrasi dari v1.3B</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#wiring-harness">Wiring Harness</a>
     </li>
     </ul>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3e/">v1.3E</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
                 </li>
@@ -329,24 +325,16 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-mini-6ch-v1.3c/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="31 Oktober 2026 14:58:52 UTC">31 Oktober 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 11:46:56 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13c">Mazduino Mini 6CH (v1.3C)<a class="headerlink" href="#mazduino-mini-6ch-v13c" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C adalah <strong>versi produksi terakhir</strong> dari lini Mini 6CH, merupakan perbaikan dan peningkatan dari versi v1.3B sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor <strong>ARM Cortex-M4 180 MHz</strong> 32-bit yang powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
+<p>Mazduino Mini 6CH v1.3C adalah versi Mini 6CH yang merupakan perbaikan dari versi v1.3B. Dibangun di sekitar prosesor 32-bit <strong>ARM Cortex-M4 180 MHz</strong>, cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
 <p><strong>Perbaikan v1.3C dari v1.3B:</strong></p>
 <ul>
-<li>
-<p><strong>Optimisasi Pin MCU</strong>: Pemindahan pin TPS ke PA6 dan Battery/Voltage Reference ke PA7 untuk routing sinyal yang lebih baik</p>
-</li>
-<li>
-<p><strong>Knock Input Tunggal</strong>: Konsolidasi dari 2 input knock (PC0, PC1) menjadi 1 input knock (PA3) yang lebih efisien</p>
-</li>
-<li>
-<p><strong>VDrive Ignition Terpisah</strong>: Dua jumper VDrive terpisah — satu untuk channel ignition 1-4 dan satu untuk channel ignition 5-6, memberikan fleksibilitas konfigurasi tegangan yang lebih baik</p>
-</li>
-<li>
-<p><strong>Fleksibilitas Channel</strong>: 6 channel ignition dan 6 channel injection yang semuanya dapat dikonfigurasi sesuai kebutuhan aplikasi</p>
-</li>
+<li><strong>Optimisasi Pin MCU</strong>: Pemindahan pin TPS ke PA6 dan Battery/Voltage Reference ke PA7</li>
+<li><strong>Knock Input Tunggal</strong>: Konsolidasi dari 2 input knock (PC0, PC1) menjadi 1 input knock (PA3)</li>
+<li><strong>VDrive Ignition Terpisah</strong>: Dua jumper VDrive terpisah — satu untuk channel ignition 1-4 dan satu untuk channel ignition 5-6, sehingga kedua grup dapat diatur ke tegangan berbeda</li>
+<li><strong>Fleksibilitas Channel</strong>: 6 channel ignition dan 6 channel injection yang semuanya dapat dikonfigurasi sesuai kebutuhan aplikasi</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mazduino-mini-6ch-v1.3B.jpeg" /></p>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
@@ -359,22 +347,12 @@
 <li>8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya</li>
 <li>5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer</li>
 <li><strong>6x output ignition</strong> dengan VDrive terpisah untuk channel 1-4 dan channel 5-6 (masing-masing dapat dikonfigurasi 5V atau 12V)</li>
-<li>
-<p><strong>Knock Input (v1.3C)</strong>: Satu input sensor knock yang dioptimalkan (PA3)</p>
-</li>
-<li>
-<p><strong>ETB Support</strong>: Kontrol Electronic Throttle Body dengan TPS1 dan TPS2</p>
-</li>
-<li>
-<p>Dukungan untuk Modul VR Conditioner tambahan</p>
-</li>
+<li>Satu input sensor knock (PA3)</li>
+<li><strong>ETB Support</strong>: Kontrol Electronic Throttle Body dengan TPS1 dan TPS2</li>
+<li>Dukungan untuk Modul VR Conditioner tambahan</li>
 <li>Dukungan untuk Modul Stepper Idle tambahan</li>
-<li>
-<p><strong>Prosesor 180 MHz ARM Cortex-M4</strong></p>
-</li>
-<li>
-<p>Komunikasi data via CANbus</p>
-</li>
+<li>Prosesor 180 MHz ARM Cortex-M4</li>
+<li>Komunikasi data via CANbus</li>
 <li>Komunikasi data via USB Type-C</li>
 <li>Komunikasi Serial RX/TX</li>
 <li>Konektor otomotif 48-pin</li>
@@ -382,7 +360,6 @@
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mazduino-mini6ch-new-case.jpeg" /></p>
 <h2 id="konfigurasi-channel-6ch">Konfigurasi Channel 6CH<a class="headerlink" href="#konfigurasi-channel-6ch" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C memiliki 6 channel ignition dan 6 channel injection yang seluruhnya dapat dikonfigurasi sesuai kebutuhan aplikasi.</p>
 <h3 id="ignition-channel-6x">Ignition Channel (6x)<a class="headerlink" href="#ignition-channel-6x" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -405,7 +382,7 @@
 </tr>
 </tbody>
 </table>
-<p>Untuk mesin 4-silinder, <strong>channel ignition 5 dan 6 dapat digunakan sebagai output switching control</strong> (5V atau 12V) sesuai konfigurasi jumper VDrive 5-6 di bagian bawah PCB.</p>
+<p>Untuk mesin 4-silinder, <strong>channel ignition 5 dan 6 (pin 25, 24) dapat digunakan sebagai output switching control</strong> 5V atau 12V sesuai jumper VDrive 5-6, untuk kontrol selenoid, relay, atau beban lainnya.</p>
 <h3 id="injection-channel-6x">Injection Channel (6x)<a class="headerlink" href="#injection-channel-6x" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -428,177 +405,65 @@
 </tr>
 </tbody>
 </table>
-<p>Untuk mesin 4-silinder, <strong>channel injector 5 dan 6 dapat digunakan sebagai output low-side</strong> untuk selenoid on/off, kontrol boost, VVT, injeksi air/methanol, atau kontrol PWM lainnya.</p>
+<p>Untuk mesin 4-silinder, <strong>channel injector 5 dan 6 (pin 15, 16) dapat digunakan sebagai output low-side 3A</strong> untuk selenoid on/off, kontrol boost, VVT, injeksi air/methanol, atau kontrol PWM lainnya.</p>
 <h2 id="konfigurasi-jumper">Konfigurasi Jumper<a class="headerlink" href="#konfigurasi-jumper" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C dilengkapi dengan sistem jumper solder yang memungkinkan kustomisasi fungsi sesuai kebutuhan aplikasi Anda. Jumper ini memberikan fleksibilitas konfigurasi tanpa perlu mengubah firmware, memastikan kompatibilitas optimal dengan berbagai setup mesin.</p>
+<p>Beberapa fungsi input dan output diatur dengan jumper solder di bagian belakang PCB, tanpa perlu mengubah firmware.</p>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/IMG_6232.jpeg" /></p>
 <h3 id="zona-konfigurasi-atas-kanan">Zona Konfigurasi Atas (Kanan)<a class="headerlink" href="#zona-konfigurasi-atas-kanan" title="Permanent link">&para;</a></h3>
 <h4 id="jp11-tachometer-pullup">JP11 - Tachometer Pullup<a class="headerlink" href="#jp11-tachometer-pullup" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Menentukan tegangan sinyal output tachometer</p>
-</li>
-<li>
-<p><strong>Pilihan</strong>: 12V atau 5V</p>
-</li>
-<li>
-<p><strong>Aplikasi</strong>: Sesuaikan dengan kompatibilitas dashboard kendaraan Anda</p>
-</li>
+<li><strong>Fungsi</strong>: Menentukan tegangan sinyal output tachometer</li>
+<li><strong>Pilihan</strong>: 12V atau 5V, sesuaikan dengan kompatibilitas dashboard kendaraan Anda</li>
 </ul>
 <h4 id="ignition-vdrive-1-4-jumper">Ignition VDrive 1-4 Jumper<a class="headerlink" href="#ignition-vdrive-1-4-jumper" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Mengatur tegangan sinyal pengapian untuk channel <strong>Ignition 1, 2, 3, 4</strong> — Smart Coil Only</p>
-</li>
-<li>
-<p><strong>Pilihan</strong>: Sinyal 12V atau 5V</p>
-</li>
-<li>
-<p><strong>Khusus Smart Coil</strong>: Jumper ini hanya untuk smart coil dengan driver internal</p>
-</li>
-<li>
-<p><strong>Alternatif</strong>: Ketika channel 1-4 digunakan untuk pengapian 4-silinder, channel 5-6 tetap independen</p>
-</li>
-<li>
-<p><strong>PENTING</strong>: Dump coil memerlukan IGBT eksternal</p>
-</li>
+<li><strong>Fungsi</strong>: Mengatur tegangan sinyal pengapian untuk channel <strong>Ignition 1, 2, 3, 4</strong> — khusus smart coil dengan driver internal</li>
+<li><strong>Pilihan</strong>: Sinyal 12V atau 5V, sesuai spesifikasi coil</li>
 </ul>
 <h4 id="ignition-vdrive-5-6-jumper-baru-di-v13c">Ignition VDrive 5-6 Jumper <em>(Baru di v1.3C)</em><a class="headerlink" href="#ignition-vdrive-5-6-jumper-baru-di-v13c" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Mengatur tegangan sinyal untuk channel <strong>Ignition 5 dan 6</strong> secara <strong>terpisah</strong> dari channel 1-4</p>
-</li>
-<li>
-<p><strong>Pilihan</strong>: Sinyal 12V atau 5V</p>
-</li>
-<li>
-<p><strong>Fleksibilitas</strong>: Channel 5-6 dapat dikonfigurasi tegangan berbeda dari channel 1-4</p>
-</li>
-<li>
-<p><strong>Penggunaan Alternatif</strong>: Saat digunakan sebagai switching control, sesuaikan tegangan (5V atau 12V) dengan kebutuhan beban</p>
-</li>
-<li>
-<p><strong>Lokasi</strong>: Bagian bawah PCB (lihat foto jumper)</p>
-</li>
-<li>
-<p><strong>PENTING</strong>: Dump coil memerlukan IGBT eksternal</p>
-</li>
+<li><strong>Fungsi</strong>: Mengatur tegangan sinyal untuk channel <strong>Ignition 5 dan 6</strong> secara <strong>terpisah</strong> dari channel 1-4, sehingga tegangannya dapat berbeda dari channel 1-4</li>
+<li><strong>Pilihan</strong>: Sinyal 12V atau 5V, sesuai spesifikasi coil; saat digunakan sebagai switching control, sesuaikan tegangan dengan kebutuhan beban</li>
+<li><strong>Lokasi</strong>: VDrive 1-4 dan VDrive 5-6 adalah jumper yang <strong>berbeda</strong>, keduanya di bagian bawah PCB (lihat foto jumper). Atur sebelum instalasi final</li>
 </ul>
 <h4 id="knockpc13-input-selection">Knock/PC13 Input Selection<a class="headerlink" href="#knockpc13-input-selection" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Mode Knock</strong>: Input sensor knock untuk deteksi ketukan mesin (default)</p>
-</li>
-<li>
-<p><strong>Mode PC13</strong>: Akses langsung ke pin MCU untuk fungsi custom</p>
-</li>
-<li>
-<p><strong>v1.3C</strong>: Satu input knock yang dioptimalkan pada pin MCU PA3</p>
-</li>
+<li><strong>Mode Knock</strong>: Input sensor knock untuk deteksi ketukan mesin (default)</li>
+<li><strong>Mode PC13</strong>: Akses langsung ke pin MCU untuk fungsi custom</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper.jpeg" /></p>
 <h3 id="zona-konfigurasi-tengah">Zona Konfigurasi Tengah<a class="headerlink" href="#zona-konfigurasi-tengah" title="Permanent link">&para;</a></h3>
 <h4 id="jp5-jp4-sensor-pullup-configuration">JP5 &amp; JP4 - Sensor Pullup Configuration<a class="headerlink" href="#jp5-jp4-sensor-pullup-configuration" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>JP5</strong>: Pullup 5V untuk sinyal CKP (Crankshaft Position)</p>
-</li>
-<li>
-<p><strong>JP4</strong>: Pullup 5V untuk sinyal CMP (Camshaft Position)</p>
-</li>
-<li>
-<p><strong>Manfaat</strong>: Sinyal trigger yang bersih dan stabil</p>
-</li>
+<li><strong>JP5</strong>: Pullup 5V untuk sinyal CKP (Crankshaft Position)</li>
+<li><strong>JP4</strong>: Pullup 5V untuk sinyal CMP (Camshaft Position)</li>
 </ul>
 <h4 id="jp2-jp3-sensor-type-selection">JP2 &amp; JP3 - Sensor Type Selection<a class="headerlink" href="#jp2-jp3-sensor-type-selection" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>JP2</strong>: Mode sinyal CKP (VR atau Hall sensor)</p>
-</li>
-<li>
-<p><strong>JP3</strong>: Mode sinyal CMP (VR atau Hall sensor)</p>
-</li>
-<li>
-<p><strong>Fleksibilitas</strong>: Kompatibel dengan berbagai jenis sensor posisi</p>
-</li>
+<li><strong>JP2</strong>: Mode sinyal CKP (VR atau Hall sensor)</li>
+<li><strong>JP3</strong>: Mode sinyal CMP (VR atau Hall sensor)</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/IMG_6230.jpeg" /></p>
 <h3 id="zona-konfigurasi-kiri">Zona Konfigurasi Kiri<a class="headerlink" href="#zona-konfigurasi-kiri" title="Permanent link">&para;</a></h3>
 <h4 id="jp6-stepper-motor-enable">JP6 - Stepper Motor Enable<a class="headerlink" href="#jp6-stepper-motor-enable" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Kontrol aktivasi driver stepper motor</p>
-</li>
-<li>
-<p><strong>Note</strong>: Konsultasi skematik untuk konfigurasi optimal</p>
-</li>
-<li>
-<p><strong>Aplikasi</strong>: Idle Air Control (IAC) dengan presisi tinggi</p>
-</li>
+<li><strong>Fungsi</strong>: Kontrol aktivasi driver stepper motor (bypass Idle Stepper)</li>
+<li><strong>Aplikasi</strong>: Idle Air Control (IAC)</li>
 </ul>
 <h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Bypass filter internal untuk sensor knock</p>
-</li>
-<li>
-<p><strong>JP7</strong>: Bypass filter internal knock stage 1</p>
-</li>
-<li>
-<p><strong>JP8</strong>: Bypass filter internal knock stage 2</p>
-</li>
-<li>
-<p><strong>Note</strong>: Untuk satu input knock di konektor ECU (pin 8)</p>
-</li>
+<li><strong>Fungsi</strong>: Bypass filter internal untuk sensor knock</li>
+<li><strong>JP7</strong>: Bypass filter internal knock stage 1</li>
+<li><strong>JP8</strong>: Bypass filter internal knock stage 2</li>
+<li><strong>Note</strong>: Untuk satu input knock di konektor ECU (pin 8)</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg" /></p>
+<h3 id="pullup-launch">Pullup Launch<a class="headerlink" href="#pullup-launch" title="Permanent link">&para;</a></h3>
+<p>Pullup pada pin spare input 3 (pin 40), dipakai jika pin ini digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup.</p>
 <h3 id="tips-konfigurasi-jumper">Tips Konfigurasi Jumper<a class="headerlink" href="#tips-konfigurasi-jumper" title="Permanent link">&para;</a></h3>
-<h4 id="pengaturan-optimal">Pengaturan Optimal:<a class="headerlink" href="#pengaturan-optimal" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Smart Coils 1-4</strong>: Gunakan VDrive 1-4 sesuai spesifikasi coil (5V atau 12V)</p>
-</li>
-<li>
-<p><strong>Smart Coils 5-6</strong>: Gunakan VDrive 5-6 sesuai spesifikasi coil atau beban alternatif — <strong>dapat berbeda dari 1-4</strong></p>
-</li>
-<li>
-<p><strong>Dump/Conventional Coils</strong>: Memerlukan IGBT eksternal</p>
-</li>
-<li>
-<p><strong>VR Sensors</strong>: Pilih mode VR (sinyal lewat modul VR Conditioner) dan <strong>lepas</strong> pullup — pullup akan membebani kumparan sensor VR</p>
-</li>
-<li>
-<p><strong>Hall / Optical Sensors</strong>: Pilih mode Hall dan <strong>pasang</strong> pullup (JP5 untuk CKP, JP4 untuk CMP). Sensor hall umumnya open-collector dan tidak bisa menghasilkan level HIGH sendiri; tanpa pullup, pin trigger mengambang dan terkena noise sehingga muncul trigger error saat mesin hidup. Pullup hanya boleh dilepas untuk sensor yang outputnya push-pull 5V</p>
-</li>
-</ul>
-<h4 id="best-practices">Best Practices:<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h4>
-<ol>
-<li><strong>Pre-Installation</strong>: Konfigurasi jumper sebelum instalasi final</li>
-<li><strong>VDrive Terpisah</strong>: Manfaatkan VDrive 5-6 yang independen untuk aplikasi mixed-voltage</li>
-<li><strong>Documentation</strong>: Catat konfigurasi jumper untuk referensi masa depan</li>
-<li><strong>Testing</strong>: Verifikasi sinyal setelah perubahan konfigurasi jumper</li>
-<li><strong>Compatibility</strong>: Pastikan jumper sesuai dengan hardware yang digunakan</li>
-</ol>
-<h4 id="perhatian-khusus">Perhatian Khusus:<a class="headerlink" href="#perhatian-khusus" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Jenis Coil Kritis</strong>: VDrive hanya untuk smart coil - dump coil butuh IGBT eksternal</p>
-</li>
-<li>
-<p><strong>VDrive Terpisah</strong>: VDrive 1-4 dan VDrive 5-6 adalah jumper yang <strong>berbeda</strong> di bawah PCB</p>
-</li>
-<li>
-<p><strong>Solder dengan Hati-hati</strong>: Gunakan suhu solder yang tepat</p>
-</li>
-<li>
-<p><strong>Verifikasi Koneksi</strong>: Pastikan sambungan solder yang solid</p>
-</li>
-<li>
-<p><strong>Konsultasi Skematik</strong>: Rujuk diagram untuk konfigurasi lanjutan</p>
-</li>
-<li>
-<p><strong>Power Off</strong>: Selalu matikan power saat mengubah jumper</p>
-</li>
+<li><strong>VR Sensors</strong>: Pilih mode VR (sinyal lewat modul VR Conditioner) dan <strong>lepas</strong> pullup — pullup akan membebani kumparan sensor VR</li>
+<li><strong>Hall / Optical Sensors</strong>: Pilih mode Hall dan <strong>pasang</strong> pullup (JP5 untuk CKP, JP4 untuk CMP). Sensor hall umumnya open-collector dan tidak bisa menghasilkan level HIGH sendiri; tanpa pullup, pin trigger mengambang dan terkena noise sehingga muncul trigger error saat mesin hidup. Pullup hanya boleh dilepas untuk sensor yang outputnya push-pull 5V</li>
 </ul>
 <h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
 <h3 id="pin-mapping-konektor">Pin Mapping Konektor<a class="headerlink" href="#pin-mapping-konektor" title="Permanent link">&para;</a></h3>
@@ -1124,247 +989,53 @@
 </tr>
 </tbody>
 </table>
-<h3 id="fitur-khusus-v13c">Fitur Khusus v1.3C<a class="headerlink" href="#fitur-khusus-v13c" title="Permanent link">&para;</a></h3>
-<h4 id="konfigurasi-channel-fleksibel">Konfigurasi Channel Fleksibel<a class="headerlink" href="#konfigurasi-channel-fleksibel" title="Permanent link">&para;</a></h4>
-<p><strong>Ignition 6-Channel:</strong></p>
+<h3 id="catatan-wiring">Catatan Wiring<a class="headerlink" href="#catatan-wiring" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>6-silinder</strong>: Gunakan semua channel 1-6 untuk pengapian mesin</p>
-</li>
-<li>
-<p><strong>4-silinder</strong>: Channel 1-4 untuk pengapian, channel 5-6 tersedia sebagai <strong>switching control</strong></p>
-</li>
-<li>
-<p><strong>Channel 5-6 Alternatif</strong>: Output switching 5V atau 12V sesuai VDrive 5-6, dapat digunakan untuk kontrol selenoid, relay, atau beban lainnya</p>
-</li>
-<li>
-<p><strong>VDrive Terpisah</strong>: Channel 1-4 dan 5-6 memiliki konfigurasi tegangan yang <strong>independen</strong></p>
-</li>
-</ul>
-<p><strong>Injection 6-Channel:</strong></p>
-<ul>
-<li>
-<p><strong>6-silinder</strong>: Gunakan semua channel 1-6 untuk injektor mesin</p>
-</li>
-<li>
-<p><strong>4-silinder</strong>: Channel 1-4 untuk injektor, channel 5-6 tersedia sebagai <strong>output low-side cadangan</strong></p>
-</li>
-<li>
-<p><strong>Channel 5-6 Alternatif</strong>: Output low-side 3A untuk kontrol boost, VVT, selenoid on/off, injeksi air/methanol, atau aplikasi PWM lainnya</p>
-</li>
-</ul>
-<h4 id="knock-input-dioptimalkan-di-v13c">Knock Input (Dioptimalkan di v1.3C)<a class="headerlink" href="#knock-input-dioptimalkan-di-v13c" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Pin 8 (Knock/PC13)</strong>: Input sensor knock dengan solder jumper default</p>
-</li>
-<li>
-<p><strong>Single Knock Input</strong>: Satu input knock (<strong>PA3</strong>) — dikonsolidasi dari dua input (PC0 + PC1) pada v1.3B</p>
-</li>
-<li>
-<p><strong>Aplikasi</strong>: Deteksi ketukan mesin untuk perlindungan dan optimasi timing pengapian</p>
-</li>
-</ul>
-<h4 id="electronic-throttle-body-etb">Electronic Throttle Body (ETB)<a class="headerlink" href="#electronic-throttle-body-etb" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Pin 33 (ETB-)</strong>: Output negatif untuk kontrol ETB</p>
-</li>
-<li>
-<p><strong>Pin 34 (ETB+)</strong>: Output positif untuk kontrol ETB</p>
-</li>
-<li>
-<p><strong>Pin 40 (TPS2)</strong>: Input analog khusus untuk sensor TPS2 yang dedicated untuk ETB</p>
-</li>
-<li>
-<p><strong>Pin 18/35 (PPS1/PPS2)</strong>: Dual Pedal Position Sensor untuk kontrol ETB</p>
-</li>
-<li>
-<p><strong>ETB Control</strong>: PWM (PA8), Direction (PB8), Disable (PB9)</p>
-</li>
-</ul>
-<h4 id="ignition-vdrive-terpisah-baru-di-v13c">Ignition VDrive Terpisah (Baru di v1.3C)<a class="headerlink" href="#ignition-vdrive-terpisah-baru-di-v13c" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VDrive 1-4</strong>: Jumper solder untuk tegangan sinyal ignition channel 1, 2, 3, 4 (5V atau 12V)</p>
-</li>
-<li>
-<p><strong>VDrive 5-6</strong>: Jumper solder <strong>terpisah</strong> untuk tegangan sinyal ignition channel 5 dan 6 (5V atau 12V)</p>
-</li>
-<li>
-<p><strong>Lokasi</strong>: Keduanya terdapat di bagian <strong>bawah PCB</strong></p>
-</li>
-<li>
-<p><strong>Fleksibilitas</strong>: Memungkinkan channel 5-6 dikonfigurasi tegangan berbeda dari channel 1-4 sesuai kebutuhan aplikasi</p>
-</li>
-</ul>
-<h4 id="dukungan-vr-conditioner">Dukungan VR Conditioner<a class="headerlink" href="#dukungan-vr-conditioner" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>VR1- &amp; VR2-</strong>: Pin input untuk modul VR conditioner (DIP 8) - negatif</p>
-</li>
-<li>
-<p><strong>VR1+ &amp; VR2+</strong>: Input sensor VR positif</p>
-</li>
-</ul>
-<h4 id="kontrol-stepper-motor">Kontrol Stepper Motor<a class="headerlink" href="#kontrol-stepper-motor" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Stepper A1/A2</strong>: Output fase A untuk stepper motor (DRV8825)</p>
-</li>
-<li>
-<p><strong>Stepper B1/B2</strong>: Output fase B untuk stepper motor</p>
-</li>
-<li>
-<p><strong>Direction/Enable/Step</strong>: Sinyal kontrol untuk driver stepper</p>
-</li>
-</ul>
-<h3 id="panduan-instalasi">Panduan Instalasi<a class="headerlink" href="#panduan-instalasi" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Pemasangan</strong>: Pasang ECU di lokasi yang tepat dengan pendinginan yang memadai</li>
-<li><strong>Koneksi Daya</strong>: Hubungkan daya 12V (pin 1) dan ground (pin 22)</li>
-<li><strong>Ground Sensor</strong>: Gunakan beberapa pin ground sensor (37, 38) untuk sinyal yang bersih</li>
-<li><strong>Sensor Posisi Mesin</strong>: Hubungkan sensor CKP/CMP atau gunakan input VR sesuai kebutuhan</li>
-<li><strong>Knock Sensor</strong>: Hubungkan sensor knock ke pin 8 (default konfigurasi)</li>
-<li><strong>ETB Setup</strong>: Hubungkan ETB ke pin 33/34 dan TPS2 ke pin 40 jika menggunakan throttle elektronik</li>
-<li><strong>AC Switch</strong>: Pastikan switch AC hanya memberikan sinyal GROUND untuk kondisi ON</li>
-<li><strong>Konfigurasi VDrive</strong>: Atur jumper VDrive 1-4 dan VDrive 5-6 secara terpisah di bagian bawah PCB sesuai jenis coil atau beban</li>
-<li><strong>Channel Spare</strong>: Konfigurasi channel injector 5-6 dan/atau ignition 5-6 sesuai kebutuhan aplikasi</li>
-<li><strong>Instalasi Modul</strong>: Pasang modul VR-Conditioner dan/atau Stepper jika diperlukan</li>
-<li><strong>Verifikasi</strong>: Test semua koneksi sebelum startup awal</li>
-</ol>
-<h3 id="catatan-wiring-v13c">Catatan Wiring v1.3C<a class="headerlink" href="#catatan-wiring-v13c" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>VDrive Terpisah</strong>: Jumper VDrive 1-4 dan VDrive 5-6 berada di bagian <strong>bawah PCB</strong> — konfigurasi sebelum instalasi final</p>
-</li>
-<li>
-<p><strong>AC Switch Logic</strong>: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung</p>
-</li>
-<li>
-<p><strong>TPS Pin MCU</strong>: TPS menggunakan PA6 (bukan PA3 seperti v1.3B) — pastikan konfigurasi firmware benar</p>
-</li>
-<li>
-<p><strong>Channel Spare</strong>: Pin 15-16 (Injector 5-6) dan Pin 24-25 (Ignition 5-6) tersedia untuk penggunaan alternatif pada mesin 4-silinder</p>
-</li>
-<li>
-<p><strong>Referensi</strong>: Informasi wiring sensor tambahan di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></p>
-</li>
+<li><strong>AC Switch Logic</strong>: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung</li>
+<li>Informasi wiring sensor tambahan ada di <a href="https://wiki.speeduino.com/en/wiring/system">Speeduino Wiki</a></li>
 </ul>
 <h2 id="informasi-hardware">Informasi Hardware<a class="headerlink" href="#informasi-hardware" title="Permanent link">&para;</a></h2>
-<p>Mazduino Mini 6CH v1.3C didesain dengan <strong>ARM Cortex-M4 180 MHz</strong> sebagai MCU utama, memberikan performa tinggi dengan clock 180MHz. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3C hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).</p>
+<p>Secara bawaan Mazduino Mini 6CH v1.3C hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall). Modul VR conditioner (DIP 8) dihubungkan ke VR1+/VR2+ (pin 41, 42) dan VR1-/VR2- (pin 9, 10).</p>
 <p><img alt="VR Module" src="../img/mini6ch/vr-conditioner-module.jpeg" /></p>
-<p>Kemudian untuk bagian Idle, Mazduino Mini 6CH v1.3C sudah support Idle PWM, terdapat 2 output dari low side mosfet yang dapat digunakan untuk kontrol IDLE PWM.</p>
-<p>Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module. Disini bisa menggunakan driver DRV8825.</p>
+<p>Untuk Idle, Mazduino Mini 6CH v1.3C sudah support Idle PWM, terdapat 2 output low-side yang dapat digunakan untuk kontrol IDLE PWM.</p>
+<p>Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module dengan driver DRV8825. Output fase A1/A2 dan B1/B2 ada di pin 11-14; sinyal kontrol driver adalah Direction, Enable dan Step.</p>
 <p><img alt="Stepper Module" src="../img/mini6ch/drv8825-stepper.jpeg" /></p>
-<p>Terdapat solder jumper di bagian belakang PCB:</p>
-<p><strong>Solder Jumper v1.3C:</strong></p>
-<ul>
-<li>
-<p><strong>Tach Pullup:</strong> Pullup untuk tachometer/RPM Speedometer menggunakan 12V atau 5V</p>
-</li>
-<li>
-<p><strong>Ignition VDrive 1-4:</strong> Tegangan sinyal untuk Ignition channel 1, 2, 3, 4 (12V atau 5V)</p>
-</li>
-<li>
-<p><strong>Ignition VDrive 5-6:</strong> Tegangan sinyal untuk Ignition channel 5 dan 6 (12V atau 5V) — <strong>terpisah dari jumper 1-4</strong></p>
-</li>
-<li>
-<p><strong>Knock/MCU PC13:</strong> Opsi input Knock sensor atau langsung ke pin MCU PC13 (default untuk Knock)</p>
-</li>
-<li>
-<p><strong>JP5:</strong> Pullup trigger CKP/Primary</p>
-</li>
-<li>
-<p><strong>JP4:</strong> Pullup trigger CMP/Secondary</p>
-</li>
-<li>
-<p><strong>JP2:</strong> Opsi VR atau Hall untuk CKP/Primary</p>
-</li>
-<li>
-<p><strong>JP3:</strong> Opsi VR atau Hall untuk CMP/Secondary</p>
-</li>
-<li>
-<p><strong>JP6:</strong> Bypass Idle Stepper</p>
-</li>
-<li>
-<p><strong>JP7 &amp; JP8:</strong> Bypass filter knock</p>
-</li>
-<li>
-<p><strong>Pullup Launch:</strong> Digunakan untuk pullup pada pin spare input 3 jika digunakan untuk tombol aktivasi launch control/input lainnya yang membutuhkan pullup</p>
-</li>
-</ul>
 <h2 id="software-tuning">Software Tuning<a class="headerlink" href="#software-tuning" title="Permanent link">&para;</a></h2>
 <h3 id="download-software">Download Software<a class="headerlink" href="#download-software" title="Permanent link">&para;</a></h3>
 <p>Download software TunerStudio: <a href="https://www.tunerstudio.com/index.php/downloads">TunerStudio Downloads</a></p>
 <p><img alt="TunerStudio" src="../img/manual/ts-download-page-overview.png" /></p>
 <h3 id="konfigurasi-khusus-v13c">Konfigurasi Khusus v1.3C<a class="headerlink" href="#konfigurasi-khusus-v13c" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>TPS Pin</strong>: Pastikan konfigurasi TPS menggunakan <strong>PA6</strong> (bukan PA3 seperti v1.3B)</p>
-</li>
-<li>
-<p><strong>Battery/VRef Pin</strong>: Pastikan konfigurasi Battery/Voltage Reference menggunakan <strong>PA7</strong></p>
-</li>
-<li>
-<p><strong>Knock Detection</strong>: Gunakan <strong>PA3</strong> untuk konfigurasi knock sensor tunggal</p>
-</li>
-<li>
-<p><strong>ETB Setup</strong>: Konfigurasi TPS2 pada pin 40</p>
-</li>
-<li>
-<p><strong>AC Switch Logic</strong>: Pastikan konfigurasi AC switch menggunakan logic GROUND untuk ON</p>
-</li>
-<li>
-<p><strong>Pin Mapping</strong>: Gunakan file konfigurasi pin mapping khusus v1.3C</p>
-</li>
+<li><strong>Pin MCU</strong>: TPS di <strong>PA6</strong>, Battery/Voltage Reference di <strong>PA7</strong>, knock sensor tunggal di <strong>PA3</strong> (lihat <a href="#migrasi-dari-v13b">Migrasi dari v1.3B</a>)</li>
+<li><strong>ETB Setup</strong>: Konfigurasi TPS2 pada pin 40</li>
+<li><strong>AC Switch Logic</strong>: Pastikan konfigurasi AC switch menggunakan logic GROUND untuk ON</li>
+<li><strong>Pin Mapping</strong>: Gunakan file konfigurasi pin mapping khusus v1.3C</li>
 </ul>
 <h3 id="firmware-support">Firmware Support<a class="headerlink" href="#firmware-support" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p><strong>rusEFI</strong>: Dukungan penuh untuk v1.3C dengan pin mapping yang diperbarui</p>
-</li>
-<li>
-<p><strong>Speeduino</strong>: Tidak didukung pada v1.3C — gunakan rusEFI</p>
-</li>
-<li>
-<p><strong>File Konfigurasi</strong>: Tersedia di <a href="../downloads/">halaman download</a></p>
-</li>
+<li><strong>rusEFI</strong>: Dukungan penuh untuk v1.3C dengan pin mapping yang diperbarui</li>
+<li><strong>Speeduino</strong>: Tidak didukung pada v1.3C — gunakan rusEFI</li>
+<li><strong>Firmware dan file konfigurasi</strong>: Tersedia di <a href="../downloads/">halaman download</a></li>
 </ul>
 <h2 id="wiring-diagram">Wiring Diagram<a class="headerlink" href="#wiring-diagram" title="Permanent link">&para;</a></h2>
 <h3 id="wiring-sensor">Wiring Sensor<a class="headerlink" href="#wiring-sensor" title="Permanent link">&para;</a></h3>
 <p><img alt="Sensor Wiring" src="../img/sensor-wiring.png" /></p>
-<p><em>Catatan: Pastikan AC Switch hanya menggunakan sinyal GROUND untuk kondisi ON</em></p>
 <h3 id="injector-wiring">Injector Wiring<a class="headerlink" href="#injector-wiring" title="Permanent link">&para;</a></h3>
 <p><img alt="Injector Wiring" src="../img/injector-wiring.png" /></p>
 <h3 id="ignition-wiring">Ignition Wiring<a class="headerlink" href="#ignition-wiring" title="Permanent link">&para;</a></h3>
 <p><img alt="Ignition Wiring" src="../img/ignition-wiring.png" /></p>
-<h2 id="catatan-penting-v13c">Catatan Penting v1.3C<a class="headerlink" href="#catatan-penting-v13c" title="Permanent link">&para;</a></h2>
-<h3 id="persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian<a class="headerlink" href="#persyaratan-sistem-pengapian" title="Permanent link">&para;</a></h3>
+<h2 id="persyaratan-sistem-pengapian">Persyaratan Sistem Pengapian<a class="headerlink" href="#persyaratan-sistem-pengapian" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>Smart Coils</strong>: Koneksi langsung didukung — VDrive 1-4 dan VDrive 5-6 dapat dikonfigurasi tegangan berbeda (5V atau 12V per grup)</p>
-</li>
-<li>
-<p><strong>Dump Coils</strong>: IGBT eksternal diperlukan; VDrive jumper <strong>tidak</strong> digunakan untuk dump coil</p>
-</li>
+<li><strong>Smart coil</strong>: dapat dihubungkan langsung — VDrive 1-4 dan VDrive 5-6 dapat dikonfigurasi tegangan berbeda (5V atau 12V per grup)</li>
+<li><strong>Dumb coil / coil konvensional</strong>: memerlukan IGBT eksternal; jumper VDrive <strong>tidak</strong> digunakan untuk dumb coil</li>
 </ul>
-<h3 id="migrasi-dari-v13b">Migrasi dari v1.3B<a class="headerlink" href="#migrasi-dari-v13b" title="Permanent link">&para;</a></h3>
+<h2 id="migrasi-dari-v13b">Migrasi dari v1.3B<a class="headerlink" href="#migrasi-dari-v13b" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p><strong>TPS</strong>: Update ke <strong>PA6</strong> (dari PA3) — wajib diubah di konfigurasi firmware</p>
-</li>
-<li>
-<p><strong>Battery/VRef</strong>: Update ke <strong>PA7</strong> (dari PA6) — mengikuti perubahan TPS</p>
-</li>
-<li>
-<p><strong>Knock</strong>: Hanya satu input (<strong>PA3</strong>) — hapus konfigurasi knock kedua jika ada</p>
-</li>
-<li>
-<p><strong>VDrive</strong>: Konfigurasi ulang jumper VDrive 1-4 dan VDrive 5-6 di bagian bawah PCB secara terpisah</p>
-</li>
+<li><strong>TPS</strong>: Update ke <strong>PA6</strong> (dari PA3) — wajib diubah di konfigurasi firmware</li>
+<li><strong>Battery/VRef</strong>: Update ke <strong>PA7</strong> (dari PA6) — mengikuti perubahan TPS</li>
+<li><strong>Knock</strong>: Hanya satu input (<strong>PA3</strong>) — hapus konfigurasi knock kedua jika ada</li>
+<li><strong>VDrive</strong>: Konfigurasi ulang jumper VDrive 1-4 dan VDrive 5-6 di bagian bawah PCB secara terpisah</li>
 </ul>
-<p><strong><a href="../downloads/">Download firmware dan file konfigurasi</a></strong></p>
 <h2 id="wiring-harness">Wiring Harness<a class="headerlink" href="#wiring-harness" title="Permanent link">&para;</a></h2>
 <p>Rekomendasi ukuran kabel per pin untuk Mazduino Mini 6CH v1.3C, lengkap dengan rekap jumlah kabel tiap ukuran, tersedia di <a href="../rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel Harness</a>.</p>
 
