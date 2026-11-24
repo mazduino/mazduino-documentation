@@ -2,22 +2,22 @@
 
 ## Overview
 
-Mazduino Mini 6CH v1.3D is the Mini 6CH version before [v1.3E](mazduino-mini-6ch-v1.3e.md), the current production version. Functionally this board is exactly the same as v1.3C — what changed is the circuitry around the analog and CAN sections. This compact board uses a 32-bit **ARM Cortex-M4 180 MHz** processor and suits 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.
+Mazduino Mini 6CH v1.3D is the Mini 6CH version before [v1.3E](mazduino-mini-6ch-v1.3e.md), the current production version. Functionally this board is exactly the same as v1.3C — what changed are the analog sensor readings and the CAN termination. This compact board uses a 32-bit **ARM Cortex-M4 180 MHz** processor and suits 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.
 
 **v1.3D changes from v1.3C:**
 
-- **More Stable Analog Sensor Readings**: The reference voltage for analog readings now has its own source, instead of being derived from the 5V rail as on v1.3C. The analog section is also supplied through a path separate from the digital section
+- **More Stable Analog Sensor Readings**: All analog inputs read more steadily and consistently than on v1.3C
 
 - **Onboard CAN Termination**: A **fixed 120 Ω** resistor between CANH and CANL (pins 4 and 21). See the [important note on termination](#onboard-can-termination-new-in-v13d) before connecting to a bus that already has terminators
 
-- **JP9 Without Factory Bridge**: The Knock/PC13 jumper uses an **open** solder jumper footprint — on v1.3C the Knock side was bridged at the factory; on v1.3D you decide
+- **JP9 Without Factory Bridge**: The Knock/PC13 jumper ships **open** — on v1.3C the Knock side was bridged at the factory; on v1.3D you decide
 
 !!! info "Pinout unchanged"
-    The 48-pin connector pinout and the MCU pin mapping are **identical to v1.3C** (verified pin by pin from the design files). v1.3C tunes and firmware configuration can be used directly without changes.
+    The 48-pin connector pinout and the MCU pin mapping are **identical to v1.3C**. v1.3C tunes and firmware configuration can be used directly without changes.
 
 **Improvements inherited from v1.3C (relative to v1.3B):**
 
-- **MCU Pin Optimization**: TPS moved to PA6 and Battery/Voltage Reference moved to PA7 for better signal routing
+- **MCU Pin Optimization**: TPS moved to PA6 and Battery/Voltage Reference moved to PA7
 
 - **Single Knock Input**: Consolidated from 2 knock inputs (PC0, PC1) to 1 knock input (PA3)
 
@@ -107,7 +107,7 @@ Solder jumpers on the back of the PCB set the function of several inputs and out
 
 - **MCU Pin**: Knock input on PA3
 
-- **Changed in v1.3D**: JP9 uses an **open** solder jumper footprint. On v1.3C the Knock side was connected at the factory; on v1.3D pin 8 is not connected to anything until you bridge one side of JP9. **If the knock sensor reads nothing at all on a new board, check JP9 first.**
+- **Changed in v1.3D**: JP9 ships **open**. On v1.3C the Knock side was connected at the factory; on v1.3D pin 8 is not connected to anything until you bridge one side of JP9. **If the knock sensor reads nothing at all on a new board, check JP9 first.**
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper.jpeg)
 
@@ -278,7 +278,7 @@ Mazduino Mini 6CH v1.3D uses a 48-pin Yamaha ECU connector with the following pi
 | SPI3 MOSI | PC12 | — |
 
 ### v1.3D Wiring Notes
-- **CAN Termination**: R13 (120 Ω) is permanently fitted on the board. Make sure the whole CAN bus still has exactly two terminators — see [Onboard CAN Termination](#onboard-can-termination-new-in-v13d)
+- **CAN Termination**: A 120 Ω termination resistor is permanently fitted on the board. Make sure the whole CAN bus still has exactly two terminators — see [Onboard CAN Termination](#onboard-can-termination-new-in-v13d)
 - **AC Switch Logic**: Pin 20 accepts GROUND only as the ON signal — do not connect 12V directly. Also make sure the AC switch configuration in the firmware uses GROUND logic for ON
 - **ETB**: Connect the ETB to pins 33 (ETB-) and 34 (ETB+), TPS2 to pin 40, and the Pedal Position Sensors PPS1/PPS2 to pins 18/35
 - **Reference**: More sensor wiring information on the [Speeduino Wiki][speeduino-wiring]
@@ -293,29 +293,25 @@ By default, Mazduino Mini 6CH v1.3D only supports digital CKP and CMP signals, s
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
 ### Idle Control
-Mazduino Mini 6CH v1.3D supports Idle PWM, with 2 low-side MOSFET outputs that can be used for IDLE PWM control.
+Mazduino Mini 6CH v1.3D supports Idle PWM, with 2 low-side outputs that can be used for IDLE PWM control.
 
 Idle Control with a stepper motor requires an add-on module, the Idle Stepper Motor Module, with a DRV8825 driver. The A1/A2 and B1/B2 phase outputs are on pins 11-14.
 
 ![Stepper Module](img/mini6ch/drv8825-stepper.jpeg)
 
 ### More Stable Analog Sensor Readings (New in v1.3D)
-- **What changed**: The reference voltage for all analog readings now has its own source. On v1.3C that reference was derived from the 5V rail, so it moved with sensor load, battery voltage, and temperature
-
-- **Separate Supply**: The analog section is supplied through its own path, filtered from the digital section, so noise from the digital side does not get into the readings
-
-- **Effect**: MAP, TPS, IAT, CLT, O2, Battery, and the spare analog inputs are more stable and consistent — most noticeable on the readings used for fueling decisions
+- **What changed**: MAP, TPS, IAT, CLT, O2, Battery, and the spare analog inputs read more steadily and consistently, and no longer shift with sensor load, battery voltage, and temperature as on v1.3C
 
 - **No Setup Needed**: Everything is on the board; there is no jumper or firmware setting that goes with it
 
 - **Calibration Note**: Analog sensor calibrations carried over from a v1.3C board should be rechecked — not necessarily changed, but small offsets that were "compensated" in the calibration tables may no longer be needed
 
 ### Onboard CAN Termination (New in v1.3D)
-- **R13 (120 Ω)**: **Permanently** fitted between CANH (pin 4) and CANL (pin 21). There is no jumper to disconnect it
+- **120 Ω termination resistor**: **Permanently** fitted between CANH (pin 4) and CANL (pin 21). There is no jumper to disconnect it
 
 - **When this is correct**: The ECU is at an **end** of the CAN bus. A healthy CAN bus has exactly **two** 120 Ω terminators, one at each end
 
-- **CAUTION**: If the ECU is installed in the **middle** of a bus whose two ends are already terminated, the total resistance drops to 40 Ω and the bus may fail to communicate. In that case **remove one of the other terminators**, or lift R13 off the board
+- **CAUTION**: If the ECU is installed in the **middle** of a bus whose two ends are already terminated, the total resistance drops to 40 Ω and the bus may fail to communicate. In that case **remove one of the other terminators**, or remove the termination resistor (R13) from the board
 
 - **Other Mazduino devices**: Racedash and the WBO CAN Controller may also carry their own terminators — count the terminators across the whole network, not per device
 
@@ -358,7 +354,7 @@ Download TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 - **CAN**: Check the number of terminators on the network before connecting — this board carries its own 120 Ω
 
-- **Analog Calibration**: Recheck the analog sensor calibrations; the ADC reference is now a precision reference, not a resistor divider
+- **Analog Calibration**: Recheck the analog sensor calibrations, because the readings are now more stable
 
 ### Migrating from v1.3B
 - **TPS**: Update to **PA6** (from PA3) — must be changed in the firmware configuration

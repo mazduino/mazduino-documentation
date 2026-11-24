@@ -6,7 +6,7 @@ Mazduino Mini 6CH v1.3C is the Mini 6CH version that improves on v1.3B. Built ar
 
 **v1.3C improvements over v1.3B:**
 
-- **MCU Pin Optimization**: TPS moved to PA6 and Battery/Voltage Reference moved to PA7 for better signal routing
+- **MCU Pin Optimization**: TPS moved to PA6 and Battery/Voltage Reference moved to PA7
 - **Single Knock Input**: Consolidated from 2 knock inputs (PC0, PC1) to 1 knock input (PA3)
 - **Separate Ignition VDrive**: Two separate VDrive jumpers, one for ignition channels 1-4 and one for ignition channels 5-6, so the two groups can be set to different voltages
 - **Channel Flexibility**: 6 ignition channels and 6 injection channels, all configurable to suit the application
@@ -252,7 +252,7 @@ By default, Mazduino Mini 6CH v1.3C only supports digital CKP and CMP signals, s
 
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
-For idle, Mazduino Mini 6CH v1.3C supports Idle PWM, with 2 low-side MOSFET outputs that can be used for IDLE PWM control.
+For idle, Mazduino Mini 6CH v1.3C supports Idle PWM, with 2 low-side outputs that can be used for IDLE PWM control.
 
 Idle Control with a stepper motor requires an add-on module, the Idle Stepper Motor Module with a DRV8825 driver. The phase A1/A2 and B1/B2 outputs are on pins 11-14; the driver control signals are Direction, Enable and Step.
 

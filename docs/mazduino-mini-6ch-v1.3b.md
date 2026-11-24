@@ -258,7 +258,7 @@ Modul VR conditioner (DIP 8): sensor VR dihubungkan ke VR1+/VR2+ (pin 41, 42) da
 
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
-Kemudian untuk bagian Idle, Mazduino Mini 6CH v1.3B sudah support Idle PWM, terdapat 2 output dari low side mosfet yang dapat digunakan untuk kontrol IDLE PWM.
+Kemudian untuk bagian Idle, Mazduino Mini 6CH v1.3B sudah support Idle PWM, terdapat 2 output low-side yang dapat digunakan untuk kontrol IDLE PWM.
 
 Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module. Disini bisa menggunakan driver DRV8825. Output fase A1/A2 dan B1/B2 ada di pin 11-14.
 

@@ -258,7 +258,7 @@ VR conditioner module (DIP 8): VR sensors connect to VR1+/VR2+ (pins 41, 42) and
 
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
-For idle, Mazduino Mini 6CH v1.3B already supports Idle PWM: there are 2 low-side MOSFET outputs that can be used for IDLE PWM control.
+For idle, Mazduino Mini 6CH v1.3B already supports Idle PWM: there are 2 low-side outputs that can be used for IDLE PWM control.
 
 Idle Control that uses a stepper motor needs an add-on module, the Idle Stepper Motor Module. A DRV8825 driver can be used here. The phase A1/A2 and B1/B2 outputs are on pins 11-14.
 

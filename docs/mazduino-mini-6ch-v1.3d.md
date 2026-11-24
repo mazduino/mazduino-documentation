@@ -2,22 +2,22 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.3D adalah versi Mini 6CH sebelum [v1.3E](mazduino-mini-6ch-v1.3e.md), versi produksi terbaru. Secara fungsi board ini sama persis dengan v1.3C — yang berubah adalah rangkaian di sekitar bagian analog dan CAN. Board kompak ini memakai prosesor 32-bit **ARM Cortex-M4 180 MHz** dan cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
+Mazduino Mini 6CH v1.3D adalah versi Mini 6CH sebelum [v1.3E](mazduino-mini-6ch-v1.3e.md), versi produksi terbaru. Secara fungsi board ini sama persis dengan v1.3C — yang berubah adalah pembacaan sensor analog dan terminasi CAN. Board kompak ini memakai prosesor 32-bit **ARM Cortex-M4 180 MHz** dan cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Perubahan v1.3D dari v1.3C:**
 
-- **Pembacaan Sensor Analog Lebih Stabil**: Tegangan acuan untuk pembacaan analog kini punya sumber sendiri, tidak lagi diturunkan dari rail 5V seperti pada v1.3C. Bagian analog juga disuplai lewat jalur terpisah dari bagian digital
+- **Pembacaan Sensor Analog Lebih Stabil**: Pembacaan semua input analog lebih stabil dan konsisten dibanding v1.3C
 
 - **Terminasi CAN Onboard**: Resistor **120 Ω terpasang tetap** antara CANH dan CANL (pin 4 dan 21). Lihat [catatan penting soal terminasi](#terminasi-can-onboard-baru-di-v13d) sebelum menyambung ke bus yang sudah punya terminator
 
-- **JP9 Tanpa Bridge Pabrik**: Jumper Knock/PC13 memakai footprint solder jumper **terbuka** — pada v1.3C sisi Knock sudah tersambung dari pabrik, di v1.3D Anda yang menentukan
+- **JP9 Tanpa Bridge Pabrik**: Jumper Knock/PC13 datang **terbuka** — pada v1.3C sisi Knock sudah tersambung dari pabrik, di v1.3D Anda yang menentukan
 
 !!! info "Pinout tidak berubah"
-    Pinout konektor 48-pin dan pemetaan pin MCU **identik dengan v1.3C** (diverifikasi pin per pin dari file desain). Tune dan konfigurasi firmware v1.3C dapat dipakai langsung tanpa perubahan.
+    Pinout konektor 48-pin dan pemetaan pin MCU **identik dengan v1.3C**. Tune dan konfigurasi firmware v1.3C dapat dipakai langsung tanpa perubahan.
 
 **Perbaikan yang diwarisi dari v1.3C (relatif terhadap v1.3B):**
 
-- **Optimisasi Pin MCU**: Pemindahan pin TPS ke PA6 dan Battery/Voltage Reference ke PA7 untuk routing sinyal yang lebih baik
+- **Optimisasi Pin MCU**: Pemindahan pin TPS ke PA6 dan Battery/Voltage Reference ke PA7
 
 - **Knock Input Tunggal**: Konsolidasi dari 2 input knock (PC0, PC1) menjadi 1 input knock (PA3)
 
@@ -107,7 +107,7 @@ Solder jumper di bagian belakang PCB menentukan fungsi beberapa input dan output
 
 - **Pin MCU**: Input knock pada PA3
 
-- **Berubah di v1.3D**: JP9 memakai footprint solder jumper **terbuka**. Pada v1.3C sisi Knock sudah terhubung dari pabrik; di v1.3D pin 8 tidak tersambung ke mana pun sampai Anda menjembatani salah satu sisi JP9. **Jika sensor knock tidak terbaca sama sekali pada board baru, periksa JP9 lebih dulu.**
+- **Berubah di v1.3D**: JP9 datang **terbuka**. Pada v1.3C sisi Knock sudah terhubung dari pabrik; di v1.3D pin 8 tidak tersambung ke mana pun sampai Anda menjembatani salah satu sisi JP9. **Jika sensor knock tidak terbaca sama sekali pada board baru, periksa JP9 lebih dulu.**
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper.jpeg)
 
@@ -278,7 +278,7 @@ Pin assignment **STM32F427VGT6** untuk v1.3D. **Tidak ada satu pun pin yang berp
 | SPI3 MOSI | PC12 | — |
 
 ### Catatan Wiring v1.3D
-- **Terminasi CAN**: R13 (120 Ω) terpasang tetap di board. Pastikan seluruh bus CAN tetap punya tepat dua terminator — lihat [Terminasi CAN Onboard](#terminasi-can-onboard-baru-di-v13d)
+- **Terminasi CAN**: Resistor terminasi 120 Ω terpasang tetap di board. Pastikan seluruh bus CAN tetap punya tepat dua terminator — lihat [Terminasi CAN Onboard](#terminasi-can-onboard-baru-di-v13d)
 - **AC Switch Logic**: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung. Pastikan juga konfigurasi AC switch di firmware memakai logic GROUND untuk ON
 - **ETB**: Hubungkan ETB ke pin 33 (ETB-) dan 34 (ETB+), TPS2 ke pin 40, dan Pedal Position Sensor PPS1/PPS2 ke pin 18/35
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
@@ -293,29 +293,25 @@ Secara bawaan Mazduino Mini 6CH v1.3D hanya mendukung sinyal CKP dan CMP dalam b
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
 ### Kontrol Idle
-Mazduino Mini 6CH v1.3D sudah mendukung Idle PWM: terdapat 2 output dari low side mosfet yang dapat digunakan untuk kontrol IDLE PWM.
+Mazduino Mini 6CH v1.3D sudah mendukung Idle PWM: terdapat 2 output low-side yang dapat digunakan untuk kontrol IDLE PWM.
 
 Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module dengan driver DRV8825. Output fase A1/A2 dan B1/B2 ada di pin 11-14.
 
 ![Stepper Module](img/mini6ch/drv8825-stepper.jpeg)
 
 ### Pembacaan Sensor Analog Lebih Stabil (Baru di v1.3D)
-- **Yang berubah**: Tegangan acuan untuk seluruh pembacaan analog kini punya sumber sendiri. Pada v1.3C acuan itu diturunkan dari rail 5V, sehingga ikut bergerak mengikuti beban sensor, tegangan aki, dan suhu
-
-- **Suplai Terpisah**: Bagian analog disuplai lewat jalur tersendiri dan difilter dari bagian digital, jadi derau dari sisi digital tidak masuk ke pembacaan
-
-- **Dampak**: MAP, TPS, IAT, CLT, O2, Battery, dan input analog cadangan lebih stabil dan konsisten — paling terasa pada pembacaan yang dipakai untuk keputusan fueling
+- **Yang berubah**: Pembacaan MAP, TPS, IAT, CLT, O2, Battery, dan input analog cadangan lebih stabil dan konsisten, tidak lagi ikut bergeser mengikuti beban sensor, tegangan aki, dan suhu seperti pada v1.3C
 
 - **Tidak Perlu Diatur**: Semuanya berada di sisi board, tidak ada jumper atau setelan firmware yang menyertainya
 
 - **Catatan Kalibrasi**: Kalibrasi sensor analog dari board v1.3C sebaiknya diperiksa ulang — bukan wajib diubah, tetapi selisih kecil yang selama ini "dikompensasi" di tabel kalibrasi bisa jadi tidak lagi diperlukan
 
 ### Terminasi CAN Onboard (Baru di v1.3D)
-- **R13 (120 Ω)**: Terpasang **tetap** antara CANH (pin 4) dan CANL (pin 21). Tidak ada jumper untuk melepasnya
+- **Resistor terminasi 120 Ω**: Terpasang **tetap** antara CANH (pin 4) dan CANL (pin 21). Tidak ada jumper untuk melepasnya
 
 - **Kapan ini benar**: ECU berada di **ujung** bus CAN. Bus CAN yang sehat punya tepat **dua** terminator 120 Ω, satu di tiap ujung
 
-- **PERHATIAN**: Jika ECU dipasang di **tengah** bus yang kedua ujungnya sudah diterminasi, total resistansi turun ke 40 Ω dan bus bisa gagal berkomunikasi. Pada kasus itu **lepas salah satu terminator lain**, atau angkat R13 dari board
+- **PERHATIAN**: Jika ECU dipasang di **tengah** bus yang kedua ujungnya sudah diterminasi, total resistansi turun ke 40 Ω dan bus bisa gagal berkomunikasi. Pada kasus itu **lepas salah satu terminator lain**, atau lepas resistor terminasi (R13) dari board
 
 - **Perangkat Mazduino lain**: Racedash dan WBO CAN Controller juga bisa membawa terminatornya sendiri — hitung total terminator di seluruh jaringan, bukan per perangkat
 
@@ -358,7 +354,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 - **CAN**: Periksa jumlah terminator di jaringan sebelum menyambung — board ini membawa 120 Ω sendiri
 
-- **Kalibrasi Analog**: Periksa ulang kalibrasi sensor analog; referensi ADC-nya kini presisi, bukan pembagi resistor
+- **Kalibrasi Analog**: Periksa ulang kalibrasi sensor analog, karena pembacaannya kini lebih stabil
 
 ### Migrasi dari v1.3B
 - **TPS**: Update ke **PA6** (dari PA3) — wajib diubah di konfigurasi firmware

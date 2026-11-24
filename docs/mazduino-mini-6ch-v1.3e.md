@@ -2,30 +2,26 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.3E adalah **versi produksi terbaru** dari lini Mini 6CH. Pinout konektor dan pemetaan pin MCU sama dengan v1.3D; yang berubah adalah rangkaian input analog, pull-up sensor suhu, output idle, dan soket driver stepper. Board kompak ini memakai prosesor 32-bit **ARM Cortex-M4 180 MHz** dan cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
+Mazduino Mini 6CH v1.3E adalah **versi produksi terbaru** dari lini Mini 6CH. Pinout konektor dan pemetaan pin MCU sama dengan v1.3D; yang berubah adalah setelan input analog dan sensor suhu, serta soket driver stepper. Board kompak ini memakai prosesor 32-bit **ARM Cortex-M4 180 MHz** dan cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Perubahan v1.3E dari v1.3D:**
 
-- **Divider Input Analog 5.6k/10k**: Koefisien divider input analog kini **1.56** (v1.3D: 1.516). Nilai ini **wajib** diatur di firmware — lihat [Setelan Firmware v1.3E](#setelan-firmware-v13e)
+- **Analog Divider Ratio 1.56**: Nilai **Analog divider ratio** untuk v1.3E adalah **1.56** (v1.3D: 1.516) dan **wajib** diatur di firmware — lihat [Setelan Firmware v1.3E](#setelan-firmware-v13e)
 
-- **Pull-up IAT dan CLT 2.7k**: Sesuai dengan nilai **Pullup resistor** 2700 Ω pada setelan sensor CLT dan IAT
-
-- **Output Idle**: IDLE1 dan IDLE2 kini memakai driver NCV8406A, sama dengan driver injektor
+- **Sensor IAT dan CLT**: Nilai **Pullup resistor** pada setelan sensor CLT dan IAT adalah 2700 Ω
 
 - **Soket Stepper untuk A4988 atau DRV8825**: Solder jumper baru **JP13** memilih jenis driver stepper
 
 - **JP8 Dihapus**: Bypass filter knock tinggal satu jumper, JP7
 
-- **Test Point PC2 dan PC3**: Pad solder TP3 dan TP4 untuk akses langsung ke pin MCU PC2 dan PC3
-
-- **Board Revision ID**: PC4 membaca kode revisi board dari pembagi resistor (v1.3E = kode 1)
+- **Test Point PC2 dan PC3**: Titik solder untuk akses langsung ke pin MCU PC2 dan PC3
 
 !!! info "Pinout tidak berubah"
-    Pinout konektor 48-pin dan pemetaan pin MCU **identik dengan v1.3D** (diverifikasi pin per pin dari file desain). Tune v1.3D dapat dipakai, dengan satu perubahan wajib: **Analog divider ratio** diatur ke **1.56**.
+    Pinout konektor 48-pin dan pemetaan pin MCU **identik dengan v1.3D**. Tune v1.3D dapat dipakai, dengan satu perubahan wajib: **Analog divider ratio** diatur ke **1.56**.
 
 **Sudah ada sejak v1.3D:**
 
-- **Tegangan Acuan Analog Tersendiri**: Tegangan acuan pembacaan analog punya sumber sendiri, dan bagian analog disuplai lewat jalur terpisah dari bagian digital
+- **Pembacaan Sensor Analog Lebih Stabil**: Pembacaan semua input analog stabil dan konsisten, tanpa setelan tambahan
 
 - **Terminasi CAN Onboard**: Resistor **120 Ω terpasang tetap** antara CANH dan CANL (pin 4 dan 21). Lihat [catatan soal terminasi](#terminasi-can-onboard) sebelum menyambung ke bus yang sudah punya terminator
 
@@ -282,12 +278,12 @@ Pin assignment **STM32F427VGT6** untuk v1.3E. **Tidak ada satu pun pin yang berp
 | SPI3 MISO | PC11 | — |
 | SPI3 MOSI | PC12 | — |
 | Trigger scope (CKP) | PC1 | Baru di v1.3E; firmware belum tersedia |
-| Test point TP3 | PC2 | Baru di v1.3E |
-| Test point TP4 | PC3 | Baru di v1.3E |
-| Board revision ID | PC4 | Baru di v1.3E (kode 1) |
+| Test point | PC2 | Baru di v1.3E |
+| Test point | PC3 | Baru di v1.3E |
+| Board revision ID | PC4 | Baru di v1.3E |
 
 ### Catatan Wiring
-- **Terminasi CAN**: R13 (120 Ω) terpasang tetap di board. Pastikan seluruh bus CAN tetap punya tepat dua terminator — lihat [Terminasi CAN Onboard](#terminasi-can-onboard)
+- **Terminasi CAN**: Resistor terminasi 120 Ω terpasang tetap di board. Pastikan seluruh bus CAN tetap punya tepat dua terminator — lihat [Terminasi CAN Onboard](#terminasi-can-onboard)
 - **AC Switch Logic**: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung. Pastikan juga konfigurasi AC switch di firmware memakai logic GROUND untuk ON
 - **ETB**: Hubungkan ETB ke pin 33 (ETB-) dan 34 (ETB+), TPS2 ke pin 40, dan Pedal Position Sensor PPS1/PPS2 ke pin 18/35
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
@@ -302,32 +298,20 @@ Secara bawaan Mazduino Mini 6CH v1.3E hanya mendukung sinyal CKP dan CMP dalam b
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
 ### Kontrol Idle
-Mazduino Mini 6CH v1.3E mendukung Idle PWM lewat 2 output low-side (IDLE1 dan IDLE2, pin 2 dan 3). Pada v1.3E kedua output ini memakai driver NCV8406A, sama dengan driver injektor.
+Mazduino Mini 6CH v1.3E mendukung Idle PWM lewat 2 output low-side (IDLE1 dan IDLE2, pin 2 dan 3).
 
 Untuk Idle Control yang memakai stepper motor diperlukan modul tambahan, yaitu Idle Stepper Motor Module dengan driver **A4988** atau **DRV8825**. Atur JP13 sesuai driver yang dipasang: **tutup untuk A4988, buka untuk DRV8825**. Output fase A1/A2 dan B1/B2 ada di pin 11-14.
 
 ![Stepper Module](img/mini6ch/drv8825-stepper.jpeg)
 
-### Input Analog
-- **Divider 5.6k/10k**: Input analog memakai pembagi tegangan 5.6k/10k, sehingga koefisiennya **1.56**. Atur nilai ini di firmware — lihat [Setelan Firmware v1.3E](#setelan-firmware-v13e)
-
-- **Pull-up IAT dan CLT**: 2.7k (2700 Ω)
-
-- **Tegangan Acuan Tersendiri** *(sejak v1.3D)*: Tegangan acuan untuk seluruh pembacaan analog punya sumber sendiri, dan bagian analog disuplai lewat jalur tersendiri yang difilter dari bagian digital, sehingga MAP, TPS, IAT, CLT, O2, Battery, dan input analog cadangan terbaca stabil
-
 ### Terminasi CAN Onboard
-- **R13 (120 Ω)**: Terpasang **tetap** antara CANH (pin 4) dan CANL (pin 21). Tidak ada jumper untuk melepasnya
+- **Resistor terminasi 120 Ω**: Terpasang **tetap** antara CANH (pin 4) dan CANL (pin 21). Tidak ada jumper untuk melepasnya
 
 - **Kapan ini benar**: ECU berada di **ujung** bus CAN. Bus CAN yang sehat punya tepat **dua** terminator 120 Ω, satu di tiap ujung
 
-- **PERHATIAN**: Jika ECU dipasang di **tengah** bus yang kedua ujungnya sudah diterminasi, total resistansi turun ke 40 Ω dan bus bisa gagal berkomunikasi. Pada kasus itu **lepas salah satu terminator lain**, atau angkat R13 dari board
+- **PERHATIAN**: Jika ECU dipasang di **tengah** bus yang kedua ujungnya sudah diterminasi, total resistansi turun ke 40 Ω dan bus bisa gagal berkomunikasi. Pada kasus itu **lepas salah satu terminator lain**, atau lepas resistor terminasi (R13) dari board
 
 - **Perangkat Mazduino lain**: Racedash dan WBO CAN Controller juga bisa membawa terminatornya sendiri — hitung total terminator di seluruh jaringan, bukan per perangkat
-
-### Test Point dan Board Revision ID
-- **TP3 dan TP4**: Pad solder 1.5 mm di bagian bawah PCB untuk pin MCU **PC2** dan **PC3**, dengan tanda "PC2" dan "PC3" di silkscreen
-
-- **Board Revision ID**: Pembagi resistor pada **PC4** memberi kode revisi board. v1.3E memakai **kode 1**
 
 ## Software Tuning
 
