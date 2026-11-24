@@ -7,7 +7,7 @@ Mazduino Mini 6CH v1.3B adalah perbaikan dari v1.3: Engine Control Unit 6-channe
 **Perbaikan v1.3B dari v1.3:**
 
 - **Upgrade MCU**: Menggunakan ARM Cortex-M4 180 MHz, naik dari 168 MHz pada v1.3
-- **Penambahan Input Analog**: Menambahkan 1 spare input analog khusus (pin 40) untuk sensor TPS2 yang dibutuhkan untuk ETB
+- **Penambahan Input Analog**: Pin 40 kini spare input analog (Spare Input 3) untuk sensor TPS2 yang dibutuhkan untuk ETB. Di v1.3 pin ini input digital launch control; di v1.3B tombol launch tetap memakai pin 40, dengan [Pullup Launch](#pullup-launch)
 - **Optimisasi Hardware**: Menghapus komponen yang tidak digunakan
 - **Layout Komponen**: Menata ulang layout komponen untuk kinerja dan manufaktur yang lebih optimal
 
@@ -18,11 +18,11 @@ Mazduino Mini 6CH v1.3B adalah perbaikan dari v1.3: Engine Control Unit 6-channe
 - Input trigger kedua untuk sensor CMP VR, hall atau optical
 - 8 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan termasuk input analog khusus untuk TPS2/ETB yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
-- 4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control
+- 3 input digital pullup untuk AC Switch, VSS dan Clutch; tombol launch control memakai Spare Input 3 (pin 40) dengan Pullup Launch
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - 6x output 12V atau 5V untuk sinyal koil pengapian
-- Input sensor knock, diperbaiki di v1.3B
+- Satu input sensor knock (pin 8), diperbaiki di v1.3B
 - Kontrol Electronic Throttle Body (ETB) dengan TPS1 dan TPS2
 - Dukungan untuk Modul VR Conditioner tambahan
 - Dukungan untuk Modul Stepper Idle tambahan
@@ -91,21 +91,19 @@ Mazduino Mini 6CH v1.3B memakai solder jumper untuk mengatur fungsi hardware tan
 
 - **Aplikasi**: Idle Air Control (IAC) dengan presisi tinggi
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
+#### JP7 - Knock Sensor Filter Bypass
 - **Fungsi**: Bypass filter internal untuk sensor knock
 
-- **JP7**: Bypass filter internal knock stage 1
+- **JP7**: Bypass filter internal untuk input knock di konektor ECU (pin 8)
 
-- **JP8**: Bypass filter internal knock stage 2
+- **JP8**: Tidak dipakai; board ini hanya punya satu input knock
 
 - **v1.3B Improvement**: Filter yang dioptimalkan untuk sensitivitas deteksi knock
-
-- **Note**: Untuk satu input knock di konektor ECU (pin 8)
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
 ### Pullup Launch
-Digunakan untuk pullup pada pin spare input 3 jika digunakan untuk tombol aktivasi launch control/input lainnya yang membutuhkan pullup.
+Pullup pada pin spare input 3 (pin 40), dipakai jika pin ini digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup. Di board tertulis **PULLUP LNCH**. Jembatani jumper ini jika tombol launch menyambung ke ground.
 
 ### Tips Konfigurasi Jumper
 
@@ -223,8 +221,7 @@ Pin assignment **STM32F427VGT6** yang telah diperbaiki untuk v1.3B:
 | Stepper DIR | PD12 |
 | Stepper ENBL | PD14 |
 | Stepper STEP | PD15 |
-| **Knock1** | **PC0** |
-| **Knock2** | **PC1** |
+| **Knock** | **PC0** |
 | **ETB-DIR** | **PB8** |
 | **ETB-DIS** | **PB9** |
 | **ETB-PWM** | **PA8** |

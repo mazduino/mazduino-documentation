@@ -96,12 +96,8 @@ Fungsi board disesuaikan dengan jumper solder, tanpa mengubah firmware.
 
 - **Default**: Mode ETB untuk aplikasi throttle control modern
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
-- **Fungsi**: Bypass filter untuk sensor knock
-
-- **JP7**: Bypass filter knock channel 1
-
-- **JP8**: Bypass filter knock channel 2
+#### JP7 - Knock Sensor Filter Bypass
+- **Fungsi**: Bypass filter untuk input knock di konektor ECU (pin 8)
 
 - **Advanced Feature**: Fine-tuning sensitivitas deteksi knock
 
@@ -231,7 +227,7 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 | **ETB2-PWM** | **PD14** | **[BARU v1.4]** ETB2 PWM control |
 | **VVT** | **PB6** | **[BARU v1.4]** Variable valve timing |
 | **BOOST** | **PB4** | **[BARU v1.4]** Boost control PWM |
-| Knock1 | PA3 | Input sensor knock 1 |
+| Knock | PA3 | Input sensor knock |
 | TXD1 | PA9 | UART1 transmit |
 | RXD1 | PA10 | UART1 receive |
 | TXD3 | PB10 | UART3 transmit |

@@ -34,7 +34,7 @@ Mazduino Mini 6CH v1.3E adalah **versi produksi terbaru** dari lini Mini 6CH. Pi
 - Input trigger kedua untuk sensor CMP VR, hall atau optical
 - 8 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan termasuk input analog khusus untuk TPS2/ETB yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
-- 4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control
+- 3 input digital pullup untuk AC Switch, VSS dan Clutch; tombol launch control memakai Spare Input 3 (pin 40) dengan Pullup Launch
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - **6x output ignition** dengan VDrive terpisah untuk channel 1-4 dan channel 5-6 (masing-masing dapat dikonfigurasi 5V atau 12V)
@@ -145,7 +145,7 @@ Solder jumper di bagian belakang PCB menentukan fungsi beberapa input dan output
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
 ### Pullup Launch
-Pullup untuk pin spare input 3, dipakai jika pin itu digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup.
+Pullup untuk pin spare input 3 (pin 40), dipakai jika pin itu digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup. Di board tertulis **PULLUP LNCH**. Jembatani jumper ini jika tombol launch menyambung ke ground.
 
 ### Tips Konfigurasi Jumper
 
@@ -244,7 +244,7 @@ Pin assignment **STM32F427VGT6** untuk v1.3E. **Tidak ada satu pun pin yang berp
 | IAT Sensor | PA5 | — |
 | CLT Sensor | PA4 | — |
 | O2 Sensor | PA1 | — |
-| **Battery/Voltage Reff** | **PA7** | **Dipindah dari PA6** |
+| Battery/Voltage Reff | PA7 | — |
 | Analog Spare Input 1 | PB0 | — |
 | Analog Spare Input 2 | PB1 | — |
 | Analog Spare Input 3 | PA2 | — |
@@ -263,7 +263,7 @@ Pin assignment **STM32F427VGT6** untuk v1.3E. **Tidak ada satu pun pin yang berp
 | Stepper DIR | PD12 | — |
 | Stepper ENBL | PD14 | — |
 | Stepper STEP | PD15 | — |
-| **Knock** | **PA3** | **Dari PC0+PC1 ke satu input PA3** |
+| **Knock** | **PA3** | **Dipindah dari PC0** |
 | ETB-DIR | PB8 | — |
 | ETB-DIS | PB9 | — |
 | ETB-PWM | PA8 | — |

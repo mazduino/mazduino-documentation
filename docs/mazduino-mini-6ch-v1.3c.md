@@ -6,8 +6,8 @@ Mazduino Mini 6CH v1.3C adalah versi Mini 6CH yang merupakan perbaikan dari vers
 
 **Perbaikan v1.3C dari v1.3B:**
 
-- **Optimisasi Pin MCU**: Pemindahan pin TPS ke PA6 dan Battery/Voltage Reference ke PA7
-- **Knock Input Tunggal**: Konsolidasi dari 2 input knock (PC0, PC1) menjadi 1 input knock (PA3)
+- **Optimisasi Pin MCU**: Pin TPS dipindah dari PA3 ke PA6; Battery/Voltage Reference tetap di PA7
+- **Pin Knock**: Input knock dipindah dari PC0 ke PA3
 - **VDrive Ignition Terpisah**: Dua jumper VDrive terpisah — satu untuk channel ignition 1-4 dan satu untuk channel ignition 5-6, sehingga kedua grup dapat diatur ke tegangan berbeda
 - **Fleksibilitas Channel**: 6 channel ignition dan 6 channel injection yang semuanya dapat dikonfigurasi sesuai kebutuhan aplikasi
 
@@ -18,7 +18,7 @@ Mazduino Mini 6CH v1.3C adalah versi Mini 6CH yang merupakan perbaikan dari vers
 - Input trigger kedua untuk sensor CMP VR, hall atau optical
 - 8 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan termasuk input analog khusus untuk TPS2/ETB yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
-- 4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control
+- 3 input digital pullup untuk AC Switch, VSS dan Clutch; tombol launch control memakai Spare Input 3 (pin 40) dengan Pullup Launch
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - **6x output ignition** dengan VDrive terpisah untuk channel 1-4 dan channel 5-6 (masing-masing dapat dikonfigurasi 5V atau 12V)
@@ -100,16 +100,15 @@ Beberapa fungsi input dan output diatur dengan jumper solder di bagian belakang 
 - **Fungsi**: Kontrol aktivasi driver stepper motor (bypass Idle Stepper)
 - **Aplikasi**: Idle Air Control (IAC)
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
+#### JP7 - Knock Sensor Filter Bypass
 - **Fungsi**: Bypass filter internal untuk sensor knock
-- **JP7**: Bypass filter internal knock stage 1
-- **JP8**: Bypass filter internal knock stage 2
-- **Note**: Untuk satu input knock di konektor ECU (pin 8)
+- **JP7**: Bypass filter internal untuk input knock di konektor ECU (pin 8)
+- **JP8**: Tidak dipakai; board ini hanya punya satu input knock
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
 ### Pullup Launch
-Pullup pada pin spare input 3 (pin 40), dipakai jika pin ini digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup.
+Pullup pada pin spare input 3 (pin 40), dipakai jika pin ini digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup. Di board tertulis **PULLUP LNCH**. Jembatani jumper ini jika tombol launch menyambung ke ground.
 
 ### Tips Konfigurasi Jumper
 - **VR Sensors**: Pilih mode VR (sinyal lewat modul VR Conditioner) dan **lepas** pullup — pullup akan membebani kumparan sensor VR
@@ -206,7 +205,7 @@ Pin assignment **STM32F427VGT6** yang telah dioptimalkan untuk v1.3C:
 | IAT Sensor | PA5 | — |
 | CLT Sensor | PA4 | — |
 | O2 Sensor | PA1 | — |
-| **Battery/Voltage Reff** | **PA7** | **Dipindah dari PA6** |
+| Battery/Voltage Reff | PA7 | — |
 | Analog Spare Input 1 | PB0 | — |
 | Analog Spare Input 2 | PB1 | — |
 | Analog Spare Input 3 | PA2 | — |
@@ -225,7 +224,7 @@ Pin assignment **STM32F427VGT6** yang telah dioptimalkan untuk v1.3C:
 | Stepper DIR | PD12 | — |
 | Stepper ENBL | PD14 | — |
 | Stepper STEP | PD15 | — |
-| **Knock** | **PA3** | **Dari PC0+PC1 ke satu input PA3** |
+| **Knock** | **PA3** | **Dipindah dari PC0** |
 | ETB-DIR | PB8 | — |
 | ETB-DIS | PB9 | — |
 | ETB-PWM | PA8 | — |
@@ -268,7 +267,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 ![TunerStudio](img/manual/ts-download-page-overview.png)
 
 ### Konfigurasi Khusus v1.3C
-- **Pin MCU**: TPS di **PA6**, Battery/Voltage Reference di **PA7**, knock sensor tunggal di **PA3** (lihat [Migrasi dari v1.3B](#migrasi-dari-v13b))
+- **Pin MCU**: TPS di **PA6**, Battery/Voltage Reference di **PA7**, knock sensor di **PA3** (lihat [Migrasi dari v1.3B](#migrasi-dari-v13b))
 - **ETB Setup**: Konfigurasi TPS2 pada pin 40
 - **AC Switch Logic**: Pastikan konfigurasi AC switch menggunakan logic GROUND untuk ON
 - **Pin Mapping**: Gunakan file konfigurasi pin mapping khusus v1.3C
@@ -295,8 +294,7 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 ## Migrasi dari v1.3B
 - **TPS**: Update ke **PA6** (dari PA3) — wajib diubah di konfigurasi firmware
-- **Battery/VRef**: Update ke **PA7** (dari PA6) — mengikuti perubahan TPS
-- **Knock**: Hanya satu input (**PA3**) — hapus konfigurasi knock kedua jika ada
+- **Knock**: Update ke **PA3** (dari PC0)
 - **VDrive**: Konfigurasi ulang jumper VDrive 1-4 dan VDrive 5-6 di bagian bawah PCB secara terpisah
 
 ## Wiring Harness

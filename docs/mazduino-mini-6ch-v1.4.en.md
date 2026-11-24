@@ -96,12 +96,8 @@ Board functions are set with solder jumpers, without changing the firmware.
 
 - **Default**: ETB mode, for modern throttle control applications
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
-- **Function**: Filter bypass for the knock sensor
-
-- **JP7**: Bypasses the knock channel 1 filter
-
-- **JP8**: Bypasses the knock channel 2 filter
+#### JP7 - Knock Sensor Filter Bypass
+- **Function**: Filter bypass for the knock input on the ECU connector (pin 8)
 
 - **Advanced Feature**: Fine-tuning of knock detection sensitivity
 
@@ -231,7 +227,7 @@ For advanced users and firmware development, here is the STM32F407VGT6 pin assig
 | **ETB2-PWM** | **PD14** | **[NEW v1.4]** ETB2 PWM control |
 | **VVT** | **PB6** | **[NEW v1.4]** Variable valve timing |
 | **BOOST** | **PB4** | **[NEW v1.4]** Boost control PWM |
-| Knock1 | PA3 | Knock sensor input 1 |
+| Knock | PA3 | Knock sensor input |
 | TXD1 | PA9 | UART1 transmit |
 | RXD1 | PA10 | UART1 receive |
 | TXD3 | PB10 | UART3 transmit |

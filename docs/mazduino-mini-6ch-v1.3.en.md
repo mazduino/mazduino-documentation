@@ -69,10 +69,9 @@ Several functions of the Mazduino Mini 6CH v1.3 are selected with solder jumpers
 #### JP6 - Stepper Motor Enable
 - **Function**: Controls activation of the stepper motor driver for Idle Air Control (IAC)
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
-- **Function**: Filter bypass for the knock sensor, to adjust knock detection sensitivity
-- **JP7**: Knock channel 1 filter bypass
-- **JP8**: Knock channel 2 filter bypass
+#### JP7 - Knock Sensor Filter Bypass
+- **Function**: Filter bypass for the knock input on the ECU connector (pin 8), to adjust knock detection sensitivity
+- **JP8**: Not used; this board has a single knock input
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6231.jpeg)
 
@@ -181,8 +180,7 @@ For advanced users and firmware development, this is the STM32F407VGT6 pin assig
 | VSS | PD7 |
 | CKP | PD3 |
 | CMP | PD4 |
-| **Knock1** | **PC0** |
-| **Knock2** | **PC1** |
+| **Knock** | **PC0** |
 | **ETB-DIR** | **PB8** |
 | **ETB-DIS** | **PB9** |
 | **ETB-PWM** | **PA8** |

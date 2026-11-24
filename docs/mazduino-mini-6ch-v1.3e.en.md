@@ -34,7 +34,7 @@ Mazduino Mini 6CH v1.3E is the **current production version** of the Mini 6CH li
 - Secondary trigger input for VR, hall or optical CMP sensors
 - 8 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 3 spares, including a dedicated analog input for TPS2/ETB that can be used for a fuel pressure sensor or other sensors
 - 5V sensor power supply with internal fuse protection
-- 4 pullup digital inputs for AC Switch, VSS, Clutch, Launch Control
+- 3 pullup digital inputs for AC Switch, VSS and Clutch; a launch control button uses Spare Input 3 (pin 40) with the launch pullup
 - 8x 3A high-current low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more
 - 5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan, and tachometer control
 - **6x ignition outputs** with separate VDrive for channels 1-4 and channels 5-6 (each configurable for 5V or 12V)
@@ -145,7 +145,7 @@ Solder jumpers on the back of the PCB set the function of several inputs and out
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
 ### Launch Pullup
-Pullup on the spare input 3 pin, used when that pin serves a launch control activation button or another input that needs a pullup.
+Pullup on the spare input 3 pin (pin 40), used when that pin serves a launch control activation button or another input that needs a pullup. It is marked **PULLUP LNCH** on the board. Bridge this jumper if the launch button switches to ground.
 
 ### Jumper Configuration Tips
 
@@ -244,7 +244,7 @@ Mazduino Mini 6CH v1.3E uses a 48-pin Yamaha ECU connector with the following pi
 | IAT Sensor | PA5 | — |
 | CLT Sensor | PA4 | — |
 | O2 Sensor | PA1 | — |
-| **Battery/Voltage Reff** | **PA7** | **Moved from PA6** |
+| Battery/Voltage Reff | PA7 | — |
 | Analog Spare Input 1 | PB0 | — |
 | Analog Spare Input 2 | PB1 | — |
 | Analog Spare Input 3 | PA2 | — |
@@ -263,7 +263,7 @@ Mazduino Mini 6CH v1.3E uses a 48-pin Yamaha ECU connector with the following pi
 | Stepper DIR | PD12 | — |
 | Stepper ENBL | PD14 | — |
 | Stepper STEP | PD15 | — |
-| **Knock** | **PA3** | **From PC0+PC1 to a single PA3 input** |
+| **Knock** | **PA3** | **Moved from PC0** |
 | ETB-DIR | PB8 | — |
 | ETB-DIS | PB9 | — |
 | ETB-PWM | PA8 | — |

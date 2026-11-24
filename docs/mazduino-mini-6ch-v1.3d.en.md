@@ -17,9 +17,9 @@ Mazduino Mini 6CH v1.3D is the Mini 6CH version before [v1.3E](mazduino-mini-6ch
 
 **Improvements inherited from v1.3C (relative to v1.3B):**
 
-- **MCU Pin Optimization**: TPS moved to PA6 and Battery/Voltage Reference moved to PA7
+- **MCU Pin Optimization**: TPS moved from PA3 to PA6; Battery/Voltage Reference stays on PA7
 
-- **Single Knock Input**: Consolidated from 2 knock inputs (PC0, PC1) to 1 knock input (PA3)
+- **Knock Pin**: Knock input moved from PC0 to PA3
 
 - **Separate Ignition VDrive**: Two separate VDrive jumpers, one for ignition channels 1-4 and one for ignition channels 5-6
 
@@ -32,7 +32,7 @@ Mazduino Mini 6CH v1.3D is the Mini 6CH version before [v1.3E](mazduino-mini-6ch
 - Secondary trigger input for VR, hall or optical CMP sensors
 - 8 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 3 spares, including a dedicated analog input for TPS2/ETB that can be used for a fuel pressure sensor or other sensors
 - 5V sensor power supply with internal fuse protection
-- 4 pullup digital inputs for AC Switch, VSS, Clutch, Launch Control
+- 3 pullup digital inputs for AC Switch, VSS and Clutch; a launch control button uses Spare Input 3 (pin 40) with the launch pullup
 - 8x 3A high-current low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more
 - 5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan, and tachometer control
 - **6x ignition outputs** with separate VDrive for channels 1-4 and channels 5-6 (each configurable for 5V or 12V)
@@ -132,19 +132,17 @@ Solder jumpers on the back of the PCB set the function of several inputs and out
 
 - **Application**: Idle Air Control (IAC)
 
-#### JP7 & JP8 - Knock Sensor Filter Bypass
+#### JP7 - Knock Sensor Filter Bypass
 - **Function**: Bypasses the internal filter for the knock sensor
 
-- **JP7**: Bypasses internal knock filter stage 1
+- **JP7**: Bypasses the internal filter for the knock input on the ECU connector (pin 8)
 
-- **JP8**: Bypasses internal knock filter stage 2
-
-- **Note**: For the single knock input on the ECU connector (pin 8)
+- **JP8**: Not used; this board has a single knock input
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
 ### Launch Pullup
-Pullup on the spare input 3 pin, used when that pin serves a launch control activation button or another input that needs a pullup.
+Pullup on the spare input 3 pin (pin 40), used when that pin serves a launch control activation button or another input that needs a pullup. It is marked **PULLUP LNCH** on the board. Bridge this jumper if the launch button switches to ground.
 
 ### Jumper Configuration Tips
 
@@ -243,7 +241,7 @@ Mazduino Mini 6CH v1.3D uses a 48-pin Yamaha ECU connector with the following pi
 | IAT Sensor | PA5 | — |
 | CLT Sensor | PA4 | — |
 | O2 Sensor | PA1 | — |
-| **Battery/Voltage Reff** | **PA7** | **Moved from PA6** |
+| Battery/Voltage Reff | PA7 | — |
 | Analog Spare Input 1 | PB0 | — |
 | Analog Spare Input 2 | PB1 | — |
 | Analog Spare Input 3 | PA2 | — |
@@ -262,7 +260,7 @@ Mazduino Mini 6CH v1.3D uses a 48-pin Yamaha ECU connector with the following pi
 | Stepper DIR | PD12 | — |
 | Stepper ENBL | PD14 | — |
 | Stepper STEP | PD15 | — |
-| **Knock** | **PA3** | **From PC0+PC1 to a single PA3 input** |
+| **Knock** | **PA3** | **Moved from PC0** |
 | ETB-DIR | PB8 | — |
 | ETB-DIS | PB9 | — |
 | ETB-PWM | PA8 | — |
@@ -359,9 +357,7 @@ Download TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 ### Migrating from v1.3B
 - **TPS**: Update to **PA6** (from PA3) — must be changed in the firmware configuration
 
-- **Battery/VRef**: Update to **PA7** (from PA6) — follows the TPS change
-
-- **Knock**: Only one input (**PA3**) — remove the second knock configuration if present
+- **Knock**: Update to **PA3** (from PC0)
 
 - **VDrive**: Reconfigure the VDrive 1-4 and VDrive 5-6 jumpers separately on the bottom of the PCB
 
