@@ -132,7 +132,7 @@ STM32F407VGT6 MCU pin mapping on v2.5:
 | Battery/Voltage Ref | PA2 | Input circuit optimized |
 | Knock Input | PA3 | - |
 | Analog Spare Input 1 | PB1 | Input circuit optimized |
-| Analog Spare Input 2 | PA7 | Input circuit optimized; on the board only, not wired to the 33-pin connector |
+| Analog Spare Input 2 | PA7 | Input circuit optimized; only on header J4 on the board, not wired to the 33-pin connector |
 | AC Input | PB0 | - |
 | Clutch Input | PE13 | - |
 | VSS | PD7 | - |
@@ -167,8 +167,8 @@ STM32F407VGT6 MCU pin mapping on v2.5:
 | Clock Speed | 168 MHz |
 | Flash Memory | 1MB |
 | RAM | 192KB |
-| Analog Inputs | 6 channels on the 33-pin connector (0-5V), plus 1 spare on the board that is not wired to the connector |
-| Digital Inputs | 4 channels |
+| Analog Inputs | 6 channels on the 33-pin connector (0-5V), plus 1 spare on header J4 on the board (PA7) that is not wired to the connector |
+| Digital Inputs | 5 channels: CKP and CMP (hall/optical trigger), AC Switch, Clutch, VSS |
 | Ignition Outputs | 4 channels (12V/5V) |
 | Low Side MOSFET Outputs | 6 channels (4 Injector + Idle 1 + Idle 2, 3A max) |
 | Auxiliary Outputs | 7 channels |

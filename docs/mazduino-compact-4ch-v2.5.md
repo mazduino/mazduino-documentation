@@ -132,7 +132,7 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Battery/Voltage Ref | PA2 | Optimasi rangkaian input |
 | Knock Input | PA3 | - |
 | Analog Spare Input 1 | PB1 | Optimasi rangkaian input |
-| Analog Spare Input 2 | PA7 | Optimasi rangkaian input; hanya di board, tidak tersambung ke konektor 33-pin |
+| Analog Spare Input 2 | PA7 | Optimasi rangkaian input; hanya di header J4 pada board, tidak tersambung ke konektor 33-pin |
 | AC Input | PB0 | - |
 | Clutch Input | PE13 | - |
 | VSS | PD7 | - |
@@ -167,8 +167,8 @@ Pin mapping MCU untuk STM32F407VGT6 pada v2.5:
 | Clock Speed | 168 MHz |
 | Flash Memory | 1MB |
 | RAM | 192KB |
-| Analog Inputs | 6 channels di konektor 33-pin (0-5V), ditambah 1 spare di board yang tidak tersambung ke konektor |
-| Digital Inputs | 4 channels |
+| Analog Inputs | 6 channels di konektor 33-pin (0-5V), ditambah 1 spare di header J4 pada board (PA7) yang tidak tersambung ke konektor |
+| Digital Inputs | 5 channels: CKP dan CMP (trigger hall/optical), AC Switch, Clutch, VSS |
 | Ignition Outputs | 4 channels (12V/5V) |
 | Low Side MOSFET Outputs | 6 channels (4 Injector + Idle 1 + Idle 2, 3A max) |
 | Auxiliary Outputs | 7 channels |
