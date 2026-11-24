@@ -145,6 +145,9 @@ For advanced users and firmware development, this is the STM32F407VGT6 pin assig
 | SPI3 MISO | PC11 |
 | SPI3 MOSI | PC12 |
 
+!!! note "Clutch and TXD3"
+    The Clutch input (pin 36) uses PB10, the same pin as TXD3. So while the Clutch input is in use, the TXD3/RXD3 serial port cannot be used at the same time.
+
 ### Special Features
 
 #### VR Conditioner Support

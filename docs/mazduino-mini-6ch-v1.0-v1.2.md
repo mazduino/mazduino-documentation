@@ -145,6 +145,9 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 | SPI3 MISO | PC11 |
 | SPI3 MOSI | PC12 |
 
+!!! note "Clutch dan TXD3"
+    Input Clutch (pin 36) memakai PB10, pin yang sama dengan TXD3. Karena itu, saat input Clutch dipakai, port serial TXD3/RXD3 tidak bisa dipakai pada saat yang sama.
+
 ### Fitur Khusus
 
 #### Dukungan VR Conditioner
