@@ -277,7 +277,6 @@ Pin assignment **STM32F427VGT6** untuk v1.3E. **Tidak ada satu pun pin yang berp
 | SPI3 CLK | PC10 | — |
 | SPI3 MISO | PC11 | — |
 | SPI3 MOSI | PC12 | — |
-| Trigger scope (CKP) | PC1 | Baru di v1.3E; firmware belum tersedia |
 | Test point | PC2 | Baru di v1.3E |
 | Test point | PC3 | Baru di v1.3E |
 | Board revision ID | PC4 | Baru di v1.3E |

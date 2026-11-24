@@ -277,7 +277,6 @@ Mazduino Mini 6CH v1.3E uses a 48-pin Yamaha ECU connector with the following pi
 | SPI3 CLK | PC10 | — |
 | SPI3 MISO | PC11 | — |
 | SPI3 MOSI | PC12 | — |
-| Trigger scope (CKP) | PC1 | New in v1.3E; firmware not available yet |
 | Test point | PC2 | New in v1.3E |
 | Test point | PC3 | New in v1.3E |
 | Board revision ID | PC4 | New in v1.3E |
