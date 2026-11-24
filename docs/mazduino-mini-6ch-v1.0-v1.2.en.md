@@ -148,102 +148,26 @@ For advanced users and firmware development, this is the STM32F407VGT6 pin assig
 !!! note "Clutch and TXD3"
     The Clutch input (pin 36) uses PB10, the same pin as TXD3. So while the Clutch input is in use, the TXD3/RXD3 serial port cannot be used at the same time.
 
-### Special Features
-
-#### VR Conditioner Support
-- **VR-1 & VR-2**: Input pins for the VR conditioner module (DIP 8)
-
-- **VR1+ & VR2+**: VR sensor positive inputs
-
-#### Stepper Motor Control
-- **Stepper A1/A2**: Phase A outputs for the stepper motor (DRV8825)
-
-- **Stepper B1/B2**: Phase B outputs for the stepper motor
-
-- **Direction/Enable/Step**: Control signals for the stepper driver
-
-#### Flexible Injector Configuration
-For 4-cylinder engines:
-
-- **Injector 5 & 6**: Can be used as spare high-current outputs
-
-- **Application**: Boost control, VVT control, water/methanol injection, etc.
-
-### Installation Guide
-1. **Mounting**: Mount the ECU in a suitable location with adequate cooling
-2. **Power Connection**: Connect 12V power (pin 1) and ground (pin 17)
-3. **Sensor Ground**: Use several sensor ground pins (22, 34, 37, 38) for clean signals
-4. **Engine Position Sensors**: Connect the CKP/CMP sensors or use the VR inputs as needed
-5. **Module Installation**: Install the VR-Conditioner and/or Stepper module if needed
-6. **Verification**: Test all connections before the first startup
-
 ### Wiring Notes
-- **Multiple Ground**: Use all available ground pins for optimal signal integrity
-
-- **5V Reference**: Pin 5 provides a 5V reference for sensors that need it
-
-- **O2 Sensor**: Pin 43 accepts a 1-5V signal from the analog output of a wideband controller
-
-- **VR Sensors**: Can use the digital input or the VR conditioner module input
-
-- **Yamaha Connector**: Professional automotive-grade 48-pin connector
-
-- **Wiring Compatibility**: Compatible with the Speeduino wiring standard
-
-- **References**: More sensor wiring information on the [Speeduino Wiki][speeduino-wiring]
+- Wiring is compatible with the Speeduino wiring standard
+- More sensor wiring information is on the [Speeduino Wiki][speeduino-wiring]
 
 [speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
-
-## Support and Resources
-
-### Documentation
-- **STM32F407VGT6 Datasheet**: Full information about the MCU
-
-- **Reference Manual**: Documentation of the pin mapping and special configuration
-
-- **Wiring Diagram**: Complete diagrams for installation
-
-- **TunerStudio Configuration**: Ready-to-use configuration files for Speeduino
-
-### Firmware & Configuration Files
-- **[Download Page](downloads.md)** - Get the latest rusEFI firmware and TunerStudio configuration files
-- Full 6-channel support with advanced features
-- Custom pin mapping configuration included
-- Compatible with rusEFI and Speeduino firmware
 
 ## Module Support
 
 ### VR-Conditioner Module
-- **DIP 8 Package**: Easy to install and replace
-
-- **VR Sensor Support**: Converts VR signals to digital (pins 9, 10)
-
-- **Signal Conditioning**: Clean, reliable trigger signals
-
-- **Compatibility**: Works with many types of VR sensors
+The VR conditioner module (DIP 8) converts VR sensor signals to digital. VR sensors connect to VR1+/VR2+ (pins 41, 42) and VR-1/VR-2 (pins 9, 10).
 
 ### Stepper Motor Module
-- **DRV8825 Driver**: High-performance stepper control
+DRV8825 stepper driver module for idle air control. The phase A1/A2 and B1/B2 outputs are on pins 11-14.
 
-- **Idle Air Control**: Precise idle speed management (pins 11-14)
+## Flexible Injector Configuration
+On 4-cylinder engines, Injector 5 and 6 can be used as spare high-current outputs for boost control, VVT control, water/methanol injection, etc.
 
-- **Easy Integration**: Plug-and-play module design
+## Ignition System Requirements
+- **Smart coils**: can be connected directly
+- **Dumb coils**: need an external IGBT
 
-- **Reliable Operation**: Automotive-grade components
-
-## Important Notes
-
-### Ignition System Requirements
-- **Smart Coils**: Direct connection supported
-
-- **Dump Coils**: External IGBT required for correct operation
-
-- **Coil Selection**: Choose the coil type that suits your application
-
-- **Safety**: A proper external driver is essential for dump coil systems
-
-### Firmware & Configuration Files
-- **[Download Page](downloads.md)** - Get the latest rusEFI firmware and TunerStudio configuration files
-- Full 6-channel support with advanced features
-- Custom pin mapping configuration included
-- Compatible with rusEFI firmware
+## Firmware & Configuration Files
+The latest rusEFI firmware and TunerStudio configuration files are on the [Download Page](downloads.md).

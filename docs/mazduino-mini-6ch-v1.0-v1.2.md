@@ -148,103 +148,26 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 !!! note "Clutch dan TXD3"
     Input Clutch (pin 36) memakai PB10, pin yang sama dengan TXD3. Karena itu, saat input Clutch dipakai, port serial TXD3/RXD3 tidak bisa dipakai pada saat yang sama.
 
-### Fitur Khusus
-
-#### Dukungan VR Conditioner
-- **VR-1 & VR-2**: Pin input untuk modul VR conditioner (DIP 8)
-
-- **VR1+ & VR2+**: Input sensor VR positif
-
-#### Kontrol Stepper Motor
-- **Stepper A1/A2**: Output fase A untuk stepper motor (DRV8825)
-
-- **Stepper B1/B2**: Output fase B untuk stepper motor
-
-- **Direction/Enable/Step**: Sinyal kontrol untuk driver stepper
-
-#### Konfigurasi Injector Fleksibel
-Untuk mesin 4-silinder:
-
-- **Injector 5 & 6**: Dapat digunakan sebagai output arus tinggi cadangan
-
-- **Aplikasi**: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.
-
-### Panduan Instalasi
-1. **Pemasangan**: Pasang ECU di lokasi yang tepat dengan pendinginan yang memadai
-2. **Koneksi Daya**: Hubungkan daya 12V (pin 1) dan ground (pin 17)
-3. **Ground Sensor**: Gunakan beberapa pin ground sensor (22, 34, 37, 38) untuk sinyal yang bersih
-4. **Sensor Posisi Mesin**: Hubungkan sensor CKP/CMP atau gunakan input VR sesuai kebutuhan
-5. **Instalasi Modul**: Pasang modul VR-Conditioner dan/atau Stepper jika diperlukan
-6. **Verifikasi**: Test semua koneksi sebelum startup awal
-
 ### Catatan Wiring
-- **Multiple Ground**: Gunakan semua pin ground yang tersedia untuk integritas sinyal optimal
-
-- **Referensi 5V**: Pin 5 menyediakan referensi 5V untuk sensor yang memerlukannya
-
-- **Sensor O2**: Pin 43 menerima sinyal 1-5V dari output analog kontroler wideband
-
-- **Sensor VR**: Dapat menggunakan input digital atau input modul VR conditioner
-
-- **Konektor Yamaha**: Konektor 48-pin grade otomotif profesional
-
-- **Kompatibilitas Wiring**: Kompatibel dengan standar wiring Speeduino
-
-- **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
+- Wiring kompatibel dengan standar wiring Speeduino
+- Informasi wiring sensor tambahan ada di [Speeduino Wiki][speeduino-wiring]
 
 [speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
-
-## Dukungan dan Sumber Daya
-
-### Dokumentasi
-- **Datasheet STM32F407VGT6**: Informasi lengkap tentang MCU
-
-- **Manual Referensi**: Dokumentasi pin mapping dan konfigurasi khusus
-
-- **Wiring Diagram**: Diagram lengkap untuk instalasi
-
-- **TunerStudio Configuration**: File konfigurasi siap pakai untuk Speeduino
-
-### File Firmware & Konfigurasi
-- **[Halaman Download](downloads.md)** - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio
-- Dukungan penuh 6-channel dengan fitur-fitur canggih
-- Konfigurasi pin mapping khusus sudah disertakan
-- Kompatibel dengan firmware rusEFI dan Speeduino
 
 ## Dukungan Modul
 
 ### Modul VR-Conditioner
-- **Package DIP 8**: Instalasi dan penggantian yang mudah
-
-- **Dukungan Sensor VR**: Mengkonversi sinyal VR ke digital (pin 9, 10)
-
-- **Signal Conditioning**: Sinyal trigger yang bersih dan andal
-
-- **Kompatibilitas**: Bekerja dengan berbagai jenis sensor VR
+Modul VR conditioner (DIP 8) mengubah sinyal sensor VR menjadi sinyal digital. Sensor VR dihubungkan ke VR1+/VR2+ (pin 41, 42) dan VR-1/VR-2 (pin 9, 10).
 
 ### Modul Stepper Motor
-- **Driver DRV8825**: Kontrol stepper berperforma tinggi
+Modul driver stepper DRV8825 untuk idle air control. Output fase A1/A2 dan B1/B2 ada di pin 11-14.
 
-- **Idle Air Control**: Manajemen kecepatan idle yang presisi (pin 11-14)
+## Konfigurasi Injector Fleksibel
+Pada mesin 4-silinder, Injector 5 dan 6 dapat dipakai sebagai output arus tinggi cadangan untuk kontrol boost, kontrol VVT, injeksi air/methanol, dll.
 
-- **Integrasi Mudah**: Desain modul plug-and-play
+## Persyaratan Sistem Pengapian
+- **Smart coil**: dapat dihubungkan langsung
+- **Dumb coil**: memerlukan IGBT eksternal
 
-- **Operasi Andal**: Komponen grade otomotif
-
-## Catatan Penting
-
-### Persyaratan Sistem Pengapian
-- **Smart Coils**: Koneksi langsung didukung
-
-- **Dump Coils**: IGBT eksternal diperlukan untuk operasi yang tepat
-
-- **Pemilihan Coil**: Pilih jenis coil yang sesuai untuk aplikasi Anda
-
-- **Keamanan**: Driver eksternal yang tepat penting untuk sistem dump coil
-
-### File Firmware & Konfigurasi
-- **[Halaman Download](downloads.md)** - Dapatkan firmware rusEFI terbaru dan file konfigurasi TunerStudio
-- Dukungan penuh 6-channel dengan fitur-fitur canggih
-- Konfigurasi pin mapping khusus sudah disertakan
-- Kompatibel dengan firmware rusEFI
-
+## File Firmware & Konfigurasi
+Firmware rusEFI terbaru dan file konfigurasi TunerStudio tersedia di [Halaman Download](downloads.md).
