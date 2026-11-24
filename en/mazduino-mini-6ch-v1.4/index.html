@@ -117,17 +117,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#technical-specifications-v14">Technical Specifications v1.4</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#hardware-specifications">Hardware Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#performance-specifications">Performance Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#output-specifications">Output Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#input-specifications">Input Specifications</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#firmware-configuration-files">Firmware &amp; Configuration Files</a>
     </li>
     </ul>
                 </li>
@@ -299,10 +289,10 @@
     <a href="../../mazduino-mini-6ch-v1.4/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:43:12 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 14:05:03 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v14">Mazduino Mini 6CH (v1.4)<a class="headerlink" href="#mazduino-mini-6ch-v14" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Note</strong>: v1.4 is <strong>not a production version</strong>. The current production version of the Mini 6CH line is <strong><a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a></strong>. This page is kept as reference documentation.</p>
+<p><strong>Note</strong>: v1.4 was produced. After it, the Mini 6CH line went back to the v1.3 series, because that series supports the DRV8825 stepper module, and its revisions continued up to <strong><a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a></strong>, the current production version.</p>
 </blockquote>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The Mazduino Mini 6CH v1.4 is a 6-channel Engine Control Unit for rusEFI firmware, with a 32-bit ARM Cortex-M4 processor.</p>
@@ -311,14 +301,14 @@
 <li><strong>VVT (Variable Valve Timing)</strong>: Variable valve timing control output</li>
 <li><strong>BOOST Control</strong>: Boost pressure control output for forced induction applications</li>
 <li><strong>Dual ETB IC</strong>: Dual Electronic Throttle Body support with integrated driver ICs</li>
-<li><strong>Enhanced Idle Control</strong>: Dedicated driver for an Electronic Throttle Body or an Idle Stepper Motor</li>
+<li><strong>Idle Stepper via Dual H-Bridge</strong>: The idle stepper motor is driven by the two ETB driver ICs, with no add-on stepper module — see <a href="#idle-stepper-via-dual-h-bridge">Idle Stepper via Dual H-Bridge</a></li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="img/mazduino-mini-6ch-v1.4.jpeg" /></p>
 <h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Primary trigger input for VR, hall or optical CKP sensors</li>
 <li>Secondary trigger input for VR, hall or optical CMP sensors</li>
-<li>9 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 4 spares that can be used for a fuel pressure sensor or other sensors</li>
+<li>8 analog inputs (0-5V) on the 48-pin connector for MAP, TPS, IAT, CLT, O2, and 3 spares (pins 18, 35, 13), plus 1 spare analog input (IN4) on the 6-pin header on the board; the spares can be used for a fuel pressure sensor or other sensors</li>
 <li>5V sensor power supply with internal fuse protection</li>
 <li>4 digital pullup inputs for AC Switch, VSS, Clutch, Launch Control</li>
 <li>8x high-current 3A low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more</li>
@@ -369,9 +359,6 @@
 <li>
 <p><strong>PC13 Mode</strong>: Direct access to the MCU pin for custom functions</p>
 </li>
-<li>
-<p><strong>Enhanced v1.4</strong>: Improved knock detection sensitivity</p>
-</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6229.jpeg" /></p>
 <h3 id="middle-configuration-zone">Middle Configuration Zone<a class="headerlink" href="#middle-configuration-zone" title="Permanent link">&para;</a></h3>
@@ -397,45 +384,11 @@
 <h3 id="left-configuration-zone">Left Configuration Zone<a class="headerlink" href="#left-configuration-zone" title="Permanent link">&para;</a></h3>
 <h4 id="jp10-can-bus-controller">JP10 - CAN Bus Controller<a class="headerlink" href="#jp10-can-bus-controller" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Function</strong>: Enables the TJA1051T/3 CAN bus IC</p>
-</li>
-<li>
-<p><strong>Application</strong>: High-speed data communication with other devices</p>
-</li>
-<li>
-<p><strong>Protocol</strong>: Supports the automotive CAN 2.0 standard</p>
-</li>
+<li><strong>Function</strong>: Enables the CAN bus IC</li>
 </ul>
-<h4 id="jp6-etbstepper-motor-mode-selection-new-in-v14">JP6 - ETB/Stepper Motor Mode Selection (New in v1.4)<a class="headerlink" href="#jp6-etbstepper-motor-mode-selection-new-in-v14" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>ETB Mode</strong>: Configuration for an Electronic Throttle Body with the integrated driver IC</p>
-</li>
-<li>
-<p><strong>Stepper Mode</strong>: Configuration for Idle Stepper Motor control</p>
-</li>
-<li>
-<p><strong>Flexibility</strong>: The function can be changed without changing the hardware</p>
-</li>
-<li>
-<p><strong>Default</strong>: ETB mode, for modern throttle control applications</p>
-</li>
-</ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Function</strong>: Filter bypass for the knock sensor</p>
-</li>
-<li>
-<p><strong>JP7</strong>: Bypasses the knock channel 1 filter</p>
-</li>
-<li>
-<p><strong>JP8</strong>: Bypasses the knock channel 2 filter</p>
-</li>
-<li>
-<p><strong>Advanced Feature</strong>: Fine-tuning of knock detection sensitivity</p>
-</li>
+<li><strong>Function</strong>: Filter bypass for the knock input on the ECU connector (pin 8)</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6231.jpeg" /></p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
@@ -473,13 +426,13 @@
 </tr>
 <tr>
 <td>2</td>
-<td><strong>IDLE1</strong></td>
-<td>Idle control output 1 or ETB driver 1</td>
+<td><strong>IDLE2</strong></td>
+<td>Idle control output 2</td>
 </tr>
 <tr>
 <td>3</td>
-<td><strong>IDLE2</strong></td>
-<td>Idle control output 2 or ETB driver 2</td>
+<td><strong>IDLE1</strong></td>
+<td>Idle control output 1</td>
 </tr>
 <tr>
 <td>4</td>
@@ -827,7 +780,7 @@
 <tr>
 <td>Analog Spare Input 4</td>
 <td>PC1</td>
-<td>Spare analog input 4</td>
+<td>Spare analog input 4 (IN4, 6-pin header)</td>
 </tr>
 <tr>
 <td>AC Input</td>
@@ -887,12 +840,12 @@
 <tr>
 <td>Idle 1</td>
 <td>PD10</td>
-<td>Idle control output 1</td>
+<td>Idle control output 1 (pin 3)</td>
 </tr>
 <tr>
 <td>Idle 2</td>
 <td>PE9</td>
-<td>Idle control output 2</td>
+<td>Idle control output 2 (pin 2)</td>
 </tr>
 <tr>
 <td>High Side</td>
@@ -940,9 +893,9 @@
 <td><strong>[NEW v1.4]</strong> Boost control PWM</td>
 </tr>
 <tr>
-<td>Knock1</td>
+<td>Knock</td>
 <td>PA3</td>
-<td>Knock sensor input 1</td>
+<td>Knock sensor input</td>
 </tr>
 <tr>
 <td>TXD1</td>
@@ -999,126 +952,29 @@
 <h3 id="v14-special-features">v1.4 Special Features<a class="headerlink" href="#v14-special-features" title="Permanent link">&para;</a></h3>
 <h4 id="variable-valve-timing-vvt">Variable Valve Timing (VVT)<a class="headerlink" href="#variable-valve-timing-vvt" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Pin 4 (VVT), MCU PB6: PWM output for the VVT solenoid; the duty cycle sets the VVT actuator position</li>
-<li>Ground the VVT actuator to the chassis</li>
-<li>VVT position feedback uses a spare analog input; calibrate the sensor range in TunerStudio</li>
-<li>Incorrect VVT timing can cause valve interference. VVT needs a minimum oil pressure to operate</li>
+<li>Pin 4 (VVT), MCU PB6: low-side PWM output for the VVT solenoid; connect the other side of the solenoid to 12V</li>
 </ul>
 <h4 id="boost-control">Boost Control<a class="headerlink" href="#boost-control" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Pin 6 (BOOST), MCU PB4: PWM output for a wastegate or blow-off valve actuator; the actuator must support PWM control</li>
-<li>Supports pneumatic and electronic wastegates</li>
-<li>Boost pressure is read from the MAP sensor or a separate boost sensor</li>
-<li>Set the boost target, overboost limit and PID parameters in the firmware</li>
+<li>Pin 6 (BOOST), MCU PB4: low-side PWM output for a boost control solenoid; connect the other side of the solenoid to 12V</li>
 </ul>
 <h4 id="dual-electronic-throttle-body-etb">Dual Electronic Throttle Body (ETB)<a class="headerlink" href="#dual-electronic-throttle-body-etb" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>ETB1</strong>: Pins 33/34 (ETB-/ETB+) controlled by PB8, PB9, PA8; TPS1 on pin 30 and TPS2 on pin 43</li>
 <li><strong>ETB2</strong>: Pins 11/12 (ETB2-/ETB2+) controlled by PD12, PD11, PD14; TPS feedback uses an additional analog input</li>
 <li><strong>Pedal</strong>: PPS1 on pin 18 and PPS2 on pin 35</li>
-<li><strong>Integrated Driver IC</strong>: H-bridge driver with overcurrent protection</li>
-<li><strong>Application</strong>: Redundant throttle, dual throttle for V-configuration engines, or primary and secondary throttle</li>
-<li><strong>Safety</strong>: Configure the failsafe values and limp-home mode parameters, then test the emergency shutdown before use</li>
+</ul>
+<h4 id="idle-stepper-via-dual-h-bridge">Idle Stepper via Dual H-Bridge<a class="headerlink" href="#idle-stepper-via-dual-h-bridge" title="Permanent link">&para;</a></h4>
+<p>v1.4 does not use the DRV8825 stepper module. The idle stepper motor (bipolar, 4 wires) is driven by the two ETB H-bridge drivers:</p>
+<ul>
+<li><strong>Coil A</strong>: pins 33/34 (ETB-/ETB+)</li>
+<li><strong>Coil B</strong>: pins 11/12 (ETB2-/ETB2+)</li>
+<li><strong>Firmware</strong>: enable <strong>Drive stepper with dual H bridges</strong> in the Idle Stepper settings, then fill <strong>H-Bridge Hardware No1</strong> and <strong>No2</strong> with the ETB and ETB2 pins from the <a href="#mcu-pin-mapping-v14">MCU pin table</a></li>
+<li>While both H-bridges drive the stepper, ETB cannot be used</li>
 </ul>
 <h4 id="injector-5-6-as-high-current-outputs">Injector 5 &amp; 6 as High-Current Outputs<a class="headerlink" href="#injector-5-6-as-high-current-outputs" title="Permanent link">&para;</a></h4>
 <p>Injectors 5 and 6 (pins 15, 16) can be used as spare high-current outputs (3A continuous per channel) for additional VVT or boost, another PWM control output, or water/methanol injection.</p>
-<h2 id="technical-specifications-v14">Technical Specifications v1.4<a class="headerlink" href="#technical-specifications-v14" title="Permanent link">&para;</a></h2>
-<h3 id="hardware-specifications">Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>MCU</strong>: ARM Cortex-M4 @ 168MHz</p>
-</li>
-<li>
-<p><strong>Flash Memory</strong>: 1MB for firmware and configuration</p>
-</li>
-<li>
-<p><strong>RAM</strong>: 192KB for real-time operation</p>
-</li>
-<li>
-<p><strong>ADC</strong>: 12-bit resolution, 1µs sampling time</p>
-</li>
-<li>
-<p><strong>PWM Resolution</strong>: 16-bit for precise control</p>
-</li>
-<li>
-<p><strong>Operating Temperature</strong>: -40°C to +85°C</p>
-</li>
-<li>
-<p><strong>Input Voltage</strong>: 9V - 16V (12V nominal)</p>
-</li>
-<li>
-<p><strong>Current Consumption</strong>: &lt;200mA @ 12V</p>
-</li>
-<li>
-<p><strong>Dimensions</strong>: Compatible with existing mounting brackets</p>
-</li>
-</ul>
-<h3 id="performance-specifications">Performance Specifications<a class="headerlink" href="#performance-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Maximum RPM</strong>: 20,000 RPM (configurable)</p>
-</li>
-<li>
-<p><strong>Injection Timing Resolution</strong>: 0.1ms</p>
-</li>
-<li>
-<p><strong>Ignition Timing Resolution</strong>: 0.1° crank angle</p>
-</li>
-<li>
-<p><strong>VVT Response Time</strong>: &lt;100ms typical</p>
-</li>
-<li>
-<p><strong>ETB Response Time</strong>: &lt;50ms typical</p>
-</li>
-<li>
-<p><strong>Boost Control Response</strong>: &lt;200ms typical</p>
-</li>
-<li>
-<p><strong>Data Logging Rate</strong>: Up to 100Hz per channel</p>
-</li>
-</ul>
-<h3 id="output-specifications">Output Specifications<a class="headerlink" href="#output-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>High Current Outputs</strong>: 8x @ 3A continuous (injectors, VVT, boost)</p>
-</li>
-<li>
-<p><strong>Low Current Outputs</strong>: 5x @ 500mA (relays, tacho)</p>
-</li>
-<li>
-<p><strong>Ignition Outputs</strong>: 6x @ 12V/5V selectable</p>
-</li>
-<li>
-<p><strong>ETB Outputs</strong>: 2x H-bridge @ 10A peak</p>
-</li>
-<li>
-<p><strong>VVT Output</strong>: PWM @ 1kHz, 3A continuous</p>
-</li>
-<li>
-<p><strong>Boost Output</strong>: PWM @ 100Hz, 3A continuous</p>
-</li>
-</ul>
-<h3 id="input-specifications">Input Specifications<a class="headerlink" href="#input-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Analog Inputs</strong>: 7x 0-5V, 12-bit resolution</p>
-</li>
-<li>
-<p><strong>Digital Inputs</strong>: 4x with internal pullup</p>
-</li>
-<li>
-<p><strong>VR Inputs</strong>: 2x with conditioning circuit</p>
-</li>
-<li>
-<p><strong>Knock Inputs</strong>: 1x with integrated amplifier and filter</p>
-</li>
-<li>
-<p><strong>CAN Bus</strong>: ISO 11898 compliant</p>
-</li>
-<li>
-<p><strong>Serial</strong>: 2x UART (USB + dedicated)</p>
-</li>
-</ul>
+<h2 id="firmware-configuration-files">Firmware &amp; Configuration Files<a class="headerlink" href="#firmware-configuration-files" title="Permanent link">&para;</a></h2>
 <p><strong><a href="../downloads/">Download firmware and configuration files</a></strong></p>
 
             </div>

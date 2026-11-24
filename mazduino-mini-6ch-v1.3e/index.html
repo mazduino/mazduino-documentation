@@ -337,7 +337,7 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-mini-6ch-v1.3e/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 11:49:11 UTC">24 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 13:56:53 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13e">Mazduino Mini 6CH (v1.3E)<a class="headerlink" href="#mazduino-mini-6ch-v13e" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.3E adalah <strong>versi produksi terbaru</strong> dari lini Mini 6CH. Pinout konektor dan pemetaan pin MCU sama dengan v1.3D; yang berubah adalah setelan input analog dan sensor suhu, serta soket driver stepper. Board kompak ini memakai prosesor 32-bit <strong>ARM Cortex-M4 180 MHz</strong> dan cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
@@ -382,7 +382,7 @@
 <li>Input trigger kedua untuk sensor CMP VR, hall atau optical</li>
 <li>8 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan termasuk input analog khusus untuk TPS2/ETB yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya</li>
 <li>Catu daya 5V untuk sensor dengan perlindungan fuse internal</li>
-<li>4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control</li>
+<li>3 input digital pullup untuk AC Switch, VSS dan Clutch; tombol launch control memakai Spare Input 3 (pin 40) dengan Pullup Launch</li>
 <li>8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya</li>
 <li>5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer</li>
 <li><strong>6x output ignition</strong> dengan VDrive terpisah untuk channel 1-4 dan channel 5-6 (masing-masing dapat dikonfigurasi 5V atau 12V)</li>
@@ -551,7 +551,7 @@
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg" /></p>
 <h3 id="pullup-launch">Pullup Launch<a class="headerlink" href="#pullup-launch" title="Permanent link">&para;</a></h3>
-<p>Pullup untuk pin spare input 3, dipakai jika pin itu digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup.</p>
+<p>Pullup untuk pin spare input 3 (pin 40), dipakai jika pin itu digunakan untuk tombol aktivasi launch control atau input lain yang membutuhkan pullup. Di board tertulis <strong>PULLUP LNCH</strong>. Jembatani jumper ini jika tombol launch menyambung ke ground.</p>
 <h3 id="tips-konfigurasi-jumper">Tips Konfigurasi Jumper<a class="headerlink" href="#tips-konfigurasi-jumper" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -919,9 +919,9 @@
 <td>—</td>
 </tr>
 <tr>
-<td><strong>Battery/Voltage Reff</strong></td>
-<td><strong>PA7</strong></td>
-<td><strong>Dipindah dari PA6</strong></td>
+<td>Battery/Voltage Reff</td>
+<td>PA7</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Analog Spare Input 1</td>
@@ -1016,7 +1016,7 @@
 <tr>
 <td><strong>Knock</strong></td>
 <td><strong>PA3</strong></td>
-<td><strong>Dari PC0+PC1 ke satu input PA3</strong></td>
+<td><strong>Dipindah dari PC0</strong></td>
 </tr>
 <tr>
 <td>ETB-DIR</td>

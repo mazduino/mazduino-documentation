@@ -301,7 +301,7 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-mini-6ch-v1.3/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 11:43:12 UTC">24 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 13:56:53 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13">Mazduino Mini 6CH (v1.3)<a class="headerlink" href="#mazduino-mini-6ch-v13" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.3 adalah Engine Control Unit 6-channel yang kompak dirancang untuk digunakan dengan firmware rusEFI dan Speeduino. Dibangun di sekitar prosesor ARM Cortex-M4 32-bit, dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.</p>
@@ -369,11 +369,10 @@
 <ul>
 <li><strong>Fungsi</strong>: Kontrol aktivasi driver stepper motor untuk Idle Air Control (IAC)</li>
 </ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Fungsi</strong>: Bypass filter untuk sensor knock, untuk menyesuaikan sensitivitas deteksi knock</li>
-<li><strong>JP7</strong>: Bypass filter knock channel 1</li>
-<li><strong>JP8</strong>: Bypass filter knock channel 2</li>
+<li><strong>Fungsi</strong>: Bypass filter untuk input knock di konektor ECU (pin 8), untuk menyesuaikan sensitivitas deteksi knock</li>
+<li><strong>JP8</strong>: Tidak dipakai; board ini hanya punya satu input knock</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/IMG_6231.jpeg" /></p>
 <h3 id="tips-konfigurasi-jumper">Tips Konfigurasi Jumper<a class="headerlink" href="#tips-konfigurasi-jumper" title="Permanent link">&para;</a></h3>
@@ -757,12 +756,8 @@
 <td>PD4</td>
 </tr>
 <tr>
-<td><strong>Knock1</strong></td>
+<td><strong>Knock</strong></td>
 <td><strong>PC0</strong></td>
-</tr>
-<tr>
-<td><strong>Knock2</strong></td>
-<td><strong>PC1</strong></td>
 </tr>
 <tr>
 <td><strong>ETB-DIR</strong></td>

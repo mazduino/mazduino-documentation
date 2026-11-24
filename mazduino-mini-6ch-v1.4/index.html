@@ -117,17 +117,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#spesifikasi-teknis-v14">Spesifikasi Teknis v1.4</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#hardware-specifications">Hardware Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#performance-specifications">Performance Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#output-specifications">Output Specifications</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#input-specifications">Input Specifications</a>
-    </li>
-        </ul>
+    <li class="toctree-l3"><a class="reference internal" href="#file-firmware-konfigurasi">File Firmware &amp; Konfigurasi</a>
     </li>
     </ul>
                 </li>
@@ -299,10 +289,10 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-mini-6ch-v1.4/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 11:43:12 UTC">24 November 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 14:05:03 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v14">Mazduino Mini 6CH (v1.4)<a class="headerlink" href="#mazduino-mini-6ch-v14" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Catatan</strong>: v1.4 <strong>bukan versi produksi</strong>. Versi produksi terbaru dari lini Mini 6CH adalah <strong><a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a></strong>. Halaman ini disimpan sebagai dokumentasi referensi.</p>
+<p><strong>Catatan</strong>: v1.4 sempat diproduksi. Setelah itu lini Mini 6CH kembali ke seri v1.3, karena seri tersebut mendukung modul stepper DRV8825, dan revisinya berlanjut hingga <strong><a href="../mazduino-mini-6ch-v1.3e/">v1.3E</a></strong>, versi produksi terbaru.</p>
 </blockquote>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel untuk firmware rusEFI, dengan prosesor ARM Cortex-M4 32-bit.</p>
@@ -311,14 +301,14 @@
 <li><strong>VVT (Variable Valve Timing)</strong>: Output kontrol timing katup variabel</li>
 <li><strong>BOOST Control</strong>: Output kontrol boost pressure untuk aplikasi forced induction</li>
 <li><strong>Dual ETB IC</strong>: Dukungan dual Electronic Throttle Body dengan IC driver terintegrasi</li>
-<li><strong>Enhanced Idle Control</strong>: Driver khusus untuk Electronic Throttle Body atau Idle Stepper Motor</li>
+<li><strong>Idle Stepper lewat Dual H-Bridge</strong>: Motor stepper idle digerakkan oleh dua IC driver ETB, tanpa modul stepper tambahan — lihat <a href="#idle-stepper-lewat-dual-h-bridge">Idle Stepper lewat Dual H-Bridge</a></li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="img/mazduino-mini-6ch-v1.4.jpeg" /></p>
 <h2 id="fitur-utama">Fitur Utama<a class="headerlink" href="#fitur-utama" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Input trigger utama untuk sensor CKP VR, hall atau optical</li>
 <li>Input trigger kedua untuk sensor CMP VR, hall atau optical</li>
-<li>9 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 4 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya</li>
+<li>8 input analog (0-5V) di konektor 48-pin untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan (pin 18, 35, 13), ditambah 1 input analog cadangan (IN4) di header 6-pin pada board; input cadangan dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya</li>
 <li>Catu daya 5V untuk sensor dengan perlindungan fuse internal</li>
 <li>4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control</li>
 <li>8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya</li>
@@ -369,9 +359,6 @@
 <li>
 <p><strong>Mode PC13</strong>: Akses langsung ke pin MCU untuk fungsi custom</p>
 </li>
-<li>
-<p><strong>Enhanced v1.4</strong>: Sensitivitas knock detection yang ditingkatkan</p>
-</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/IMG_6229.jpeg" /></p>
 <h3 id="zona-konfigurasi-tengah">Zona Konfigurasi Tengah<a class="headerlink" href="#zona-konfigurasi-tengah" title="Permanent link">&para;</a></h3>
@@ -397,45 +384,11 @@
 <h3 id="zona-konfigurasi-kiri">Zona Konfigurasi Kiri<a class="headerlink" href="#zona-konfigurasi-kiri" title="Permanent link">&para;</a></h3>
 <h4 id="jp10-can-bus-controller">JP10 - CAN Bus Controller<a class="headerlink" href="#jp10-can-bus-controller" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Fungsi</strong>: Mengaktifkan IC CAN bus TJA1051T/3</p>
-</li>
-<li>
-<p><strong>Aplikasi</strong>: Komunikasi data high-speed dengan perangkat lain</p>
-</li>
-<li>
-<p><strong>Protocol</strong>: Mendukung standar automotive CAN 2.0</p>
-</li>
+<li><strong>Fungsi</strong>: Mengaktifkan IC CAN bus</li>
 </ul>
-<h4 id="jp6-etbstepper-motor-mode-selection-baru-di-v14">JP6 - ETB/Stepper Motor Mode Selection (Baru di v1.4)<a class="headerlink" href="#jp6-etbstepper-motor-mode-selection-baru-di-v14" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
-<li>
-<p><strong>Mode ETB</strong>: Konfigurasi untuk Electronic Throttle Body dengan IC driver terintegrasi</p>
-</li>
-<li>
-<p><strong>Mode Stepper</strong>: Konfigurasi untuk Idle Stepper Motor control</p>
-</li>
-<li>
-<p><strong>Fleksibilitas</strong>: Dapat mengganti fungsi tanpa mengubah hardware</p>
-</li>
-<li>
-<p><strong>Default</strong>: Mode ETB untuk aplikasi throttle control modern</p>
-</li>
-</ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
-<ul>
-<li>
-<p><strong>Fungsi</strong>: Bypass filter untuk sensor knock</p>
-</li>
-<li>
-<p><strong>JP7</strong>: Bypass filter knock channel 1</p>
-</li>
-<li>
-<p><strong>JP8</strong>: Bypass filter knock channel 2</p>
-</li>
-<li>
-<p><strong>Advanced Feature</strong>: Fine-tuning sensitivitas deteksi knock</p>
-</li>
+<li><strong>Fungsi</strong>: Bypass filter untuk input knock di konektor ECU (pin 8)</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../img/mini6ch/IMG_6231.jpeg" /></p>
 <h3 id="tips-konfigurasi-jumper">Tips Konfigurasi Jumper<a class="headerlink" href="#tips-konfigurasi-jumper" title="Permanent link">&para;</a></h3>
@@ -473,13 +426,13 @@
 </tr>
 <tr>
 <td>2</td>
-<td><strong>IDLE1</strong></td>
-<td>Output kontrol idle 1 atau ETB driver 1</td>
+<td><strong>IDLE2</strong></td>
+<td>Output kontrol idle 2</td>
 </tr>
 <tr>
 <td>3</td>
-<td><strong>IDLE2</strong></td>
-<td>Output kontrol idle 2 atau ETB driver 2</td>
+<td><strong>IDLE1</strong></td>
+<td>Output kontrol idle 1</td>
 </tr>
 <tr>
 <td>4</td>
@@ -827,7 +780,7 @@
 <tr>
 <td>Analog Spare Input 4</td>
 <td>PC1</td>
-<td>Input analog cadangan 4</td>
+<td>Input analog cadangan 4 (IN4, header 6-pin)</td>
 </tr>
 <tr>
 <td>AC Input</td>
@@ -887,12 +840,12 @@
 <tr>
 <td>Idle 1</td>
 <td>PD10</td>
-<td>Output idle control 1</td>
+<td>Output idle control 1 (pin 3)</td>
 </tr>
 <tr>
 <td>Idle 2</td>
 <td>PE9</td>
-<td>Output idle control 2</td>
+<td>Output idle control 2 (pin 2)</td>
 </tr>
 <tr>
 <td>High Side</td>
@@ -940,9 +893,9 @@
 <td><strong>[BARU v1.4]</strong> Boost control PWM</td>
 </tr>
 <tr>
-<td>Knock1</td>
+<td>Knock</td>
 <td>PA3</td>
-<td>Input sensor knock 1</td>
+<td>Input sensor knock</td>
 </tr>
 <tr>
 <td>TXD1</td>
@@ -999,126 +952,29 @@
 <h3 id="fitur-khusus-v14">Fitur Khusus v1.4<a class="headerlink" href="#fitur-khusus-v14" title="Permanent link">&para;</a></h3>
 <h4 id="variable-valve-timing-vvt">Variable Valve Timing (VVT)<a class="headerlink" href="#variable-valve-timing-vvt" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Pin 4 (VVT), MCU PB6: output PWM untuk solenoid VVT; duty cycle mengatur posisi aktuator VVT</li>
-<li>Ground aktuator VVT ke chassis</li>
-<li>Feedback posisi VVT memakai input analog cadangan; kalibrasi range sensor di TunerStudio</li>
-<li>Timing VVT yang salah dapat menyebabkan valve interference. VVT memerlukan tekanan oli minimal untuk bekerja</li>
+<li>Pin 4 (VVT), MCU PB6: output PWM low-side untuk solenoid VVT; sisi lain solenoid dihubungkan ke 12V</li>
 </ul>
 <h4 id="boost-control">Boost Control<a class="headerlink" href="#boost-control" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Pin 6 (BOOST), MCU PB4: output PWM untuk aktuator wastegate atau blow-off valve; aktuator harus mendukung kontrol PWM</li>
-<li>Mendukung wastegate pneumatic dan electronic</li>
-<li>Tekanan boost dibaca dari sensor MAP atau sensor boost terpisah</li>
-<li>Atur target boost, batas overboost dan parameter PID di firmware</li>
+<li>Pin 6 (BOOST), MCU PB4: output PWM low-side untuk solenoid boost control; sisi lain solenoid dihubungkan ke 12V</li>
 </ul>
 <h4 id="dual-electronic-throttle-body-etb">Dual Electronic Throttle Body (ETB)<a class="headerlink" href="#dual-electronic-throttle-body-etb" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>ETB1</strong>: Pin 33/34 (ETB-/ETB+) dengan kontrol PB8, PB9, PA8; TPS1 di pin 30 dan TPS2 di pin 43</li>
 <li><strong>ETB2</strong>: Pin 11/12 (ETB2-/ETB2+) dengan kontrol PD12, PD11, PD14; feedback TPS memakai input analog tambahan</li>
 <li><strong>Pedal</strong>: PPS1 di pin 18 dan PPS2 di pin 35</li>
-<li><strong>IC Driver Terintegrasi</strong>: Driver H-bridge dengan proteksi overcurrent</li>
-<li><strong>Aplikasi</strong>: Throttle redundant, dual throttle untuk mesin V-configuration, atau throttle primer dan sekunder</li>
-<li><strong>Keamanan</strong>: Konfigurasi nilai failsafe dan parameter mode limp-home, lalu uji emergency shutdown sebelum dipakai</li>
+</ul>
+<h4 id="idle-stepper-lewat-dual-h-bridge">Idle Stepper lewat Dual H-Bridge<a class="headerlink" href="#idle-stepper-lewat-dual-h-bridge" title="Permanent link">&para;</a></h4>
+<p>v1.4 tidak memakai modul stepper DRV8825. Motor stepper idle (bipolar, 4 kabel) digerakkan oleh dua driver H-bridge ETB:</p>
+<ul>
+<li><strong>Kumparan A</strong>: pin 33/34 (ETB-/ETB+)</li>
+<li><strong>Kumparan B</strong>: pin 11/12 (ETB2-/ETB2+)</li>
+<li><strong>Firmware</strong>: aktifkan <strong>Drive stepper with dual H bridges</strong> di pengaturan Idle Stepper, lalu isi <strong>H-Bridge Hardware No1</strong> dan <strong>No2</strong> dengan pin ETB dan ETB2 dari <a href="#pin-mapping-mcu-v14">tabel pin MCU</a></li>
+<li>Saat kedua H-bridge dipakai untuk stepper, ETB tidak dapat dipakai</li>
 </ul>
 <h4 id="injector-5-6-sebagai-output-arus-tinggi">Injector 5 &amp; 6 sebagai Output Arus Tinggi<a class="headerlink" href="#injector-5-6-sebagai-output-arus-tinggi" title="Permanent link">&para;</a></h4>
 <p>Injector 5 dan 6 (pin 15, 16) dapat dipakai sebagai output arus tinggi cadangan (3A kontinu per channel) untuk VVT atau boost tambahan, output kontrol PWM lain, atau injeksi air/methanol.</p>
-<h2 id="spesifikasi-teknis-v14">Spesifikasi Teknis v1.4<a class="headerlink" href="#spesifikasi-teknis-v14" title="Permanent link">&para;</a></h2>
-<h3 id="hardware-specifications">Hardware Specifications<a class="headerlink" href="#hardware-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>MCU</strong>: ARM Cortex-M4 @ 168MHz</p>
-</li>
-<li>
-<p><strong>Flash Memory</strong>: 1MB untuk firmware dan konfigurasi</p>
-</li>
-<li>
-<p><strong>RAM</strong>: 192KB untuk operasi real-time</p>
-</li>
-<li>
-<p><strong>ADC</strong>: 12-bit resolution, 1µs sampling time</p>
-</li>
-<li>
-<p><strong>PWM Resolution</strong>: 16-bit untuk kontrol presisi</p>
-</li>
-<li>
-<p><strong>Operating Temperature</strong>: -40°C to +85°C</p>
-</li>
-<li>
-<p><strong>Input Voltage</strong>: 9V - 16V (12V nominal)</p>
-</li>
-<li>
-<p><strong>Current Consumption</strong>: &lt;200mA @ 12V</p>
-</li>
-<li>
-<p><strong>Dimensions</strong>: Compatible dengan mounting bracket existing</p>
-</li>
-</ul>
-<h3 id="performance-specifications">Performance Specifications<a class="headerlink" href="#performance-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Maximum RPM</strong>: 20,000 RPM (configurable)</p>
-</li>
-<li>
-<p><strong>Injection Timing Resolution</strong>: 0.1ms</p>
-</li>
-<li>
-<p><strong>Ignition Timing Resolution</strong>: 0.1° crank angle</p>
-</li>
-<li>
-<p><strong>VVT Response Time</strong>: &lt;100ms typical</p>
-</li>
-<li>
-<p><strong>ETB Response Time</strong>: &lt;50ms typical</p>
-</li>
-<li>
-<p><strong>Boost Control Response</strong>: &lt;200ms typical</p>
-</li>
-<li>
-<p><strong>Data Logging Rate</strong>: Up to 100Hz per channel</p>
-</li>
-</ul>
-<h3 id="output-specifications">Output Specifications<a class="headerlink" href="#output-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>High Current Outputs</strong>: 8x @ 3A continuous (injectors, VVT, boost)</p>
-</li>
-<li>
-<p><strong>Low Current Outputs</strong>: 5x @ 500mA (relays, tacho)</p>
-</li>
-<li>
-<p><strong>Ignition Outputs</strong>: 6x @ 12V/5V selectable</p>
-</li>
-<li>
-<p><strong>ETB Outputs</strong>: 2x H-bridge @ 10A peak</p>
-</li>
-<li>
-<p><strong>VVT Output</strong>: PWM @ 1kHz, 3A continuous</p>
-</li>
-<li>
-<p><strong>Boost Output</strong>: PWM @ 100Hz, 3A continuous</p>
-</li>
-</ul>
-<h3 id="input-specifications">Input Specifications<a class="headerlink" href="#input-specifications" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p><strong>Analog Inputs</strong>: 7x 0-5V, 12-bit resolution</p>
-</li>
-<li>
-<p><strong>Digital Inputs</strong>: 4x with internal pullup</p>
-</li>
-<li>
-<p><strong>VR Inputs</strong>: 2x with conditioning circuit</p>
-</li>
-<li>
-<p><strong>Knock Inputs</strong>: 1x with integrated amplifier and filter</p>
-</li>
-<li>
-<p><strong>CAN Bus</strong>: ISO 11898 compliant</p>
-</li>
-<li>
-<p><strong>Serial</strong>: 2x UART (USB + dedicated)</p>
-</li>
-</ul>
+<h2 id="file-firmware-konfigurasi">File Firmware &amp; Konfigurasi<a class="headerlink" href="#file-firmware-konfigurasi" title="Permanent link">&para;</a></h2>
 <p><strong><a href="../downloads/">Download firmware dan file konfigurasi</a></strong></p>
 
             </div>

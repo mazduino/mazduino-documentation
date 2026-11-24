@@ -301,7 +301,7 @@
     <a href="../../mazduino-mini-6ch-v1.3/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:43:12 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 13:56:53 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13">Mazduino Mini 6CH (v1.3)<a class="headerlink" href="#mazduino-mini-6ch-v13" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.3 is a compact 6-channel Engine Control Unit designed for use with rusEFI and Speeduino firmware. Built around a 32-bit ARM Cortex-M4 processor, it comes in a compact form factor suited to 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
@@ -369,11 +369,10 @@
 <ul>
 <li><strong>Function</strong>: Controls activation of the stepper motor driver for Idle Air Control (IAC)</li>
 </ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>Function</strong>: Filter bypass for the knock sensor, to adjust knock detection sensitivity</li>
-<li><strong>JP7</strong>: Knock channel 1 filter bypass</li>
-<li><strong>JP8</strong>: Knock channel 2 filter bypass</li>
+<li><strong>Function</strong>: Filter bypass for the knock input on the ECU connector (pin 8), to adjust knock detection sensitivity</li>
+<li><strong>JP8</strong>: Not used; this board has a single knock input</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/IMG_6231.jpeg" /></p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
@@ -757,12 +756,8 @@
 <td>PD4</td>
 </tr>
 <tr>
-<td><strong>Knock1</strong></td>
+<td><strong>Knock</strong></td>
 <td><strong>PC0</strong></td>
-</tr>
-<tr>
-<td><strong>Knock2</strong></td>
-<td><strong>PC1</strong></td>
 </tr>
 <tr>
 <td><strong>ETB-DIR</strong></td>

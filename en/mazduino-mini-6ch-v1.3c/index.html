@@ -325,14 +325,14 @@
     <a href="../../mazduino-mini-6ch-v1.3c/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:46:56 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 13:56:53 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13c">Mazduino Mini 6CH (v1.3C)<a class="headerlink" href="#mazduino-mini-6ch-v13c" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.3C is the Mini 6CH version that improves on v1.3B. Built around a 32-bit <strong>ARM Cortex-M4 180 MHz</strong> processor, it suits 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
 <p><strong>v1.3C improvements over v1.3B:</strong></p>
 <ul>
-<li><strong>MCU Pin Optimization</strong>: TPS moved to PA6 and Battery/Voltage Reference moved to PA7</li>
-<li><strong>Single Knock Input</strong>: Consolidated from 2 knock inputs (PC0, PC1) to 1 knock input (PA3)</li>
+<li><strong>MCU Pin Optimization</strong>: TPS moved from PA3 to PA6; Battery/Voltage Reference stays on PA7</li>
+<li><strong>Knock Pin</strong>: Knock input moved from PC0 to PA3</li>
 <li><strong>Separate Ignition VDrive</strong>: Two separate VDrive jumpers, one for ignition channels 1-4 and one for ignition channels 5-6, so the two groups can be set to different voltages</li>
 <li><strong>Channel Flexibility</strong>: 6 ignition channels and 6 injection channels, all configurable to suit the application</li>
 </ul>
@@ -343,7 +343,7 @@
 <li>Secondary trigger input for VR, hall or optical CMP sensors</li>
 <li>8 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 3 spares, including a dedicated analog input for TPS2/ETB that can be used for a fuel pressure sensor or other sensors</li>
 <li>5V sensor power supply with internal fuse protection</li>
-<li>4 pullup digital inputs for AC Switch, VSS, Clutch, Launch Control</li>
+<li>3 pullup digital inputs for AC Switch, VSS and Clutch; a launch control button uses Spare Input 3 (pin 40) with the launch pullup</li>
 <li>8x 3A high-current low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more</li>
 <li>5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan, and tachometer control</li>
 <li><strong>6x ignition outputs</strong> with separate VDrive for channels 1-4 and channels 5-6 (each configurable for 5V or 12V)</li>
@@ -450,16 +450,15 @@
 <li><strong>Function</strong>: Controls enabling of the stepper motor driver (Idle Stepper bypass)</li>
 <li><strong>Application</strong>: Idle Air Control (IAC)</li>
 </ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>Function</strong>: Bypasses the internal filter for the knock sensor</li>
-<li><strong>JP7</strong>: Bypasses internal knock filter stage 1</li>
-<li><strong>JP8</strong>: Bypasses internal knock filter stage 2</li>
-<li><strong>Note</strong>: For the single knock input on the ECU connector (pin 8)</li>
+<li><strong>JP7</strong>: Bypasses the internal filter for the knock input on the ECU connector (pin 8)</li>
+<li><strong>JP8</strong>: Not used; this board has a single knock input</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg" /></p>
 <h3 id="launch-pullup">Launch Pullup<a class="headerlink" href="#launch-pullup" title="Permanent link">&para;</a></h3>
-<p>Pullup on the spare input 3 pin (pin 40), used when this pin serves a launch control activation button or another input that needs a pullup.</p>
+<p>Pullup on the spare input 3 pin (pin 40), used when this pin serves a launch control activation button or another input that needs a pullup. It is marked <strong>PULLUP LNCH</strong> on the board. Bridge this jumper if the launch button switches to ground.</p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>VR Sensors</strong>: Select VR mode (signal goes through the VR Conditioner module) and <strong>remove</strong> the pullup — a pullup loads the VR sensor coil</li>
@@ -823,9 +822,9 @@
 <td>—</td>
 </tr>
 <tr>
-<td><strong>Battery/Voltage Reff</strong></td>
-<td><strong>PA7</strong></td>
-<td><strong>Moved from PA6</strong></td>
+<td>Battery/Voltage Reff</td>
+<td>PA7</td>
+<td>—</td>
 </tr>
 <tr>
 <td>Analog Spare Input 1</td>
@@ -920,7 +919,7 @@
 <tr>
 <td><strong>Knock</strong></td>
 <td><strong>PA3</strong></td>
-<td><strong>From PC0+PC1 to a single PA3 input</strong></td>
+<td><strong>Moved from PC0</strong></td>
 </tr>
 <tr>
 <td>ETB-DIR</td>
@@ -1006,7 +1005,7 @@
 <p><img alt="TunerStudio" src="../../img/manual/ts-download-page-overview.png" /></p>
 <h3 id="v13c-specific-configuration">v1.3C-Specific Configuration<a class="headerlink" href="#v13c-specific-configuration" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>MCU Pins</strong>: TPS on <strong>PA6</strong>, Battery/Voltage Reference on <strong>PA7</strong>, single knock sensor on <strong>PA3</strong> (see <a href="#migrating-from-v13b">Migrating from v1.3B</a>)</li>
+<li><strong>MCU Pins</strong>: TPS on <strong>PA6</strong>, Battery/Voltage Reference on <strong>PA7</strong>, knock sensor on <strong>PA3</strong> (see <a href="#migrating-from-v13b">Migrating from v1.3B</a>)</li>
 <li><strong>ETB Setup</strong>: Configure TPS2 on pin 40</li>
 <li><strong>AC Switch Logic</strong>: Make sure the AC switch configuration uses GROUND logic for ON</li>
 <li><strong>Pin Mapping</strong>: Use the v1.3C-specific pin mapping configuration file</li>
@@ -1032,8 +1031,7 @@
 <h2 id="migrating-from-v13b">Migrating from v1.3B<a class="headerlink" href="#migrating-from-v13b" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>TPS</strong>: Update to <strong>PA6</strong> (from PA3) — must be changed in the firmware configuration</li>
-<li><strong>Battery/VRef</strong>: Update to <strong>PA7</strong> (from PA6) — follows the TPS change</li>
-<li><strong>Knock</strong>: Only one input (<strong>PA3</strong>) — remove the second knock configuration if present</li>
+<li><strong>Knock</strong>: Update to <strong>PA3</strong> (from PC0)</li>
 <li><strong>VDrive</strong>: Reconfigure the VDrive 1-4 and VDrive 5-6 jumpers separately on the bottom of the PCB</li>
 </ul>
 <h2 id="wiring-harness">Wiring Harness<a class="headerlink" href="#wiring-harness" title="Permanent link">&para;</a></h2>

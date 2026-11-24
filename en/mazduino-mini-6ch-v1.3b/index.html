@@ -315,14 +315,14 @@
     <a href="../../mazduino-mini-6ch-v1.3b/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 11:46:56 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 13:56:53 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-mini-6ch-v13b">Mazduino Mini 6CH (v1.3B)<a class="headerlink" href="#mazduino-mini-6ch-v13b" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>Mazduino Mini 6CH v1.3B is a revised version of v1.3: a 6-channel Engine Control Unit with a 32-bit <strong>180 MHz ARM Cortex-M4</strong> processor, in a compact form factor suited to 6-cylinder engines, or 4-cylinder engines with additional high-current outputs.</p>
 <p><strong>Improvements in v1.3B over v1.3:</strong></p>
 <ul>
 <li><strong>MCU Upgrade</strong>: Uses a 180 MHz ARM Cortex-M4, up from 168 MHz on v1.3</li>
-<li><strong>Additional Analog Input</strong>: Adds 1 spare analog input (pin 40) dedicated to the TPS2 sensor needed for ETB</li>
+<li><strong>Additional Analog Input</strong>: Pin 40 is now a spare analog input (Spare Input 3) for the TPS2 sensor needed for ETB. On v1.3 this pin was the digital launch control input; on v1.3B a launch button still uses pin 40, with the <a href="#pullup-launch">launch pullup</a></li>
 <li><strong>Hardware Optimization</strong>: Unused components removed</li>
 <li><strong>Component Layout</strong>: Component layout rearranged for better performance and manufacturing</li>
 </ul>
@@ -333,11 +333,11 @@
 <li>Secondary trigger input for VR, hall or optical CMP sensors</li>
 <li>8 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 3 spares, including an analog input dedicated to TPS2/ETB, that can be used for a fuel pressure sensor or other sensors</li>
 <li>5V sensor power supply with internal fuse protection</li>
-<li>4 pullup digital inputs for AC Switch, VSS, Clutch, Launch Control</li>
+<li>3 pullup digital inputs for AC Switch, VSS and Clutch; a launch control button uses Spare Input 3 (pin 40) with the launch pullup</li>
 <li>8x 3A high-current low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more</li>
 <li>5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan, and tachometer control</li>
 <li>6x 12V or 5V outputs for ignition coil signals</li>
-<li>Knock sensor input, improved in v1.3B</li>
+<li>One knock sensor input (pin 8), improved in v1.3B</li>
 <li>Electronic Throttle Body (ETB) control with TPS1 and TPS2</li>
 <li>Support for an add-on VR Conditioner Module</li>
 <li>Support for an add-on Idle Stepper Module</li>
@@ -426,27 +426,24 @@
 <p><strong>Application</strong>: High-precision Idle Air Control (IAC)</p>
 </li>
 </ul>
-<h4 id="jp7-jp8-knock-sensor-filter-bypass">JP7 &amp; JP8 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-jp8-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
+<h4 id="jp7-knock-sensor-filter-bypass">JP7 - Knock Sensor Filter Bypass<a class="headerlink" href="#jp7-knock-sensor-filter-bypass" title="Permanent link">&para;</a></h4>
 <ul>
 <li>
 <p><strong>Function</strong>: Bypass of the internal knock sensor filter</p>
 </li>
 <li>
-<p><strong>JP7</strong>: Bypass of internal knock filter stage 1</p>
+<p><strong>JP7</strong>: Bypass of the internal filter for the knock input on the ECU connector (pin 8)</p>
 </li>
 <li>
-<p><strong>JP8</strong>: Bypass of internal knock filter stage 2</p>
+<p><strong>JP8</strong>: Not used; this board has a single knock input</p>
 </li>
 <li>
 <p><strong>v1.3B Improvement</strong>: Filter optimized for knock detection sensitivity</p>
 </li>
-<li>
-<p><strong>Note</strong>: For the single knock input on the ECU connector (pin 8)</p>
-</li>
 </ul>
 <p><img alt="Mazduino Mini 6ch" src="../../img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg" /></p>
 <h3 id="pullup-launch">Pullup Launch<a class="headerlink" href="#pullup-launch" title="Permanent link">&para;</a></h3>
-<p>Used as the pullup for the spare input 3 pin when it is used for a launch control activation button or another input that needs a pullup.</p>
+<p>Pullup on the spare input 3 pin (pin 40), used when this pin serves a launch control activation button or another input that needs a pullup. It is marked <strong>PULLUP LNCH</strong> on the board. Bridge this jumper if the launch button switches to ground.</p>
 <h3 id="jumper-configuration-tips">Jumper Configuration Tips<a class="headerlink" href="#jumper-configuration-tips" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -872,12 +869,8 @@
 <td>PD15</td>
 </tr>
 <tr>
-<td><strong>Knock1</strong></td>
+<td><strong>Knock</strong></td>
 <td><strong>PC0</strong></td>
-</tr>
-<tr>
-<td><strong>Knock2</strong></td>
-<td><strong>PC1</strong></td>
 </tr>
 <tr>
 <td><strong>ETB-DIR</strong></td>
