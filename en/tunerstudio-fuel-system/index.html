@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-fuel-system/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Fuel System - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Fuel System";
+        var mkdocs_page_input_path = "tunerstudio-fuel-system.md";
+        var mkdocs_page_url = "/en/tunerstudio-fuel-system/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Fuel System</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#fuel-menu-overview">Fuel Menu Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#submenu-yang-tersedia">Submenu yang Tersedia:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#injection-configuration">Injection Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#injection-settings">Injection Settings</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-injection-parameters">Basic Injection Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#injector-settings">Injector Settings</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#flow-and-characterization">Flow and Characterization</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fuel-characteristics">Fuel Characteristics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#injector-dead-time">Injector Dead Time</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ve-volumetric-efficiency-table">VE (Volumetric Efficiency) Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#typical-ve-values">Typical VE Values</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#idle-conditions">Idle Conditions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#high-load-conditions">High Load Conditions</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-ve-values">Troubleshooting VE Values</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#target-afr-table">Target AFR Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-breakdown-turbocharged-engine">Example Breakdown - Turbocharged Engine</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#idle-afr-140-afr">Idle AFR (14.0 AFR)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#boost-conditions-150-250-kpa">Boost Conditions (150-250 kPa)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mid-range-conditions">Mid-Range Conditions</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#closed-loop-fuel-correction">Closed Loop Fuel Correction</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#basic-settings">Basic Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-switch-stft-opsional">Enable Switch STFT (Opsional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#region-configuration">Region Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#region-specific-parameters">Region-Specific Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#enabledisable-settings">Enable/Disable Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#activation-thresholds">Activation Thresholds</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#advanced-settings">Advanced Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#enable-switch-opsional">Enable Switch (Opsional)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dfco-tidak-aktif-cek-ini">DFCO Tidak Aktif? Cek Ini</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#acceleration-enrichment">Acceleration Enrichment</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#tps-based-enrichment">TPS-Based Enrichment</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accelerator-pump-model">Accelerator Pump Model</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wall-wetting-compensation">Wall Wetting Compensation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rekomendasi-tuning">Rekomendasi Tuning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#plug-and-play-units">Plug and Play Units</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metal-series-wire-in-units">Metal-series Wire In Units</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Fuel System</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-fuel-system/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
+  <h1 id="fuel-system-configuration-tunerstudio">Fuel System Configuration - TunerStudio<a class="headerlink" href="#fuel-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
+<p>Konfigurasi komprehensif untuk sistem bahan bakar ECU Mazduino. Menu <strong>Fuel</strong> berisi berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel.</p>
+<p><img alt="Fuel Menu" src="#" title="Fuel Menu Overview" /></p>
+<h2 id="fuel-menu-overview">Fuel Menu Overview<a class="headerlink" href="#fuel-menu-overview" title="Permanent link">&para;</a></h2>
+<p>Menu <strong>Fuel</strong> menyediakan akses ke berbagai pengaturan yang mengontrol fuel injection, enrichment, correction factors, dan kompensasi terkait fuel. Untuk unit <strong>Plug and Play</strong>, banyak pengaturan ini sudah dikonfigurasi dalam basemap yang disertakan, tetapi penyesuaian masih dapat dilakukan. Untuk unit <strong>Metal-series Wire In</strong>, kalibrasi penuh diperlukan berdasarkan setup kendaraan.</p>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Injection Configuration</strong>: Setup parameter injection dasar seperti injection timing dan fuel injector configuration</p>
+</li>
+<li>
+<p><strong>Injection Hardware</strong>: Konfigurasi aspek fisik fuel injectors, termasuk flow rate dan injector characterization</p>
+</li>
+<li>
+<p><strong>Cylinder Bank Selection</strong>: Untuk engine dengan multiple injector banks, mengatur assignment silinder ke bank untuk optimal fuel delivery</p>
+</li>
+<li>
+<p><strong>Injector Small-Pulse Correction</strong>: Adjustment untuk injector behavior pada low pulse widths untuk smooth fuel delivery</p>
+</li>
+<li>
+<p><strong>Staged Injection</strong>: Untuk secondary injectors dalam aplikasi high-performance</p>
+</li>
+<li>
+<p><strong>Cylinder Fuel Trims</strong>: Individual fuel trim adjustments per cylinder</p>
+</li>
+<li>
+<p><strong>VE (Volumetric Efficiency) Table</strong>: Primary fuel table untuk mengatur VE values</p>
+</li>
+<li>
+<p><strong>VE 3D View</strong>: Representasi visual VE table dalam 3D</p>
+</li>
+<li>
+<p><strong>VE Blend Tables</strong>: Setup secondary VE tables untuk blending purposes</p>
+</li>
+<li>
+<p><strong>Target AFR</strong>: Menentukan target air-fuel ratio untuk berbagai kondisi operasi</p>
+</li>
+<li>
+<p><strong>Charge Temperature Estimation</strong>: Kompensasi untuk perubahan air density karena temperature</p>
+</li>
+<li>
+<p><strong>CLT (Coolant Temperature) Multiplier</strong>: Adjustment fuel delivery berdasarkan coolant temperature</p>
+</li>
+<li>
+<p><strong>IAT (Intake Air Temperature) Multiplier</strong>: Kompensasi untuk intake air temperature</p>
+</li>
+<li>
+<p><strong>Closed Loop Fuel Correction</strong>: Closed-loop control menggunakan feedback dari oxygen sensor</p>
+</li>
+<li>
+<p><strong>Deceleration Fuel Cutoff (DFCO)</strong>: Memotong fuel selama deceleration</p>
+</li>
+<li>
+<p><strong>Injection Phase</strong>: Adjustment timing injection event relatif terhadap intake stroke</p>
+</li>
+<li>
+<p><strong>Acceleration Enrichment</strong>: Tambahan fuel saat throttle dibuka dengan cepat</p>
+</li>
+</ol>
+<h2 id="injection-configuration">Injection Configuration<a class="headerlink" href="#injection-configuration" title="Permanent link">&para;</a></h2>
+<p><img alt="Injection Configuration" src="#" title="Injection Configuration" /></p>
+<h3 id="injection-settings">Injection Settings<a class="headerlink" href="#injection-settings" title="Permanent link">&para;</a></h3>
+<h4 id="basic-injection-parameters">Basic Injection Parameters<a class="headerlink" href="#basic-injection-parameters" title="Permanent link">&para;</a></h4>
+<p><strong>Enabled</strong>: Set ke <code>true</code> untuk mengaktifkan fuel injection</p>
+<p><strong>Mode</strong>: Opsi meliputi:</p>
+<ul>
+<li>
+<p><strong>Sequential</strong>: Individual injector timing - setiap injector fire sesuai firing order</p>
+</li>
+<li>
+<p><strong>Batch</strong>: Semua injectors fire bersamaan</p>
+</li>
+<li>
+<p><strong>Batch Injection with Individual Wiring</strong>: Injectors diwiring terpisah tapi beroperasi dalam batch mode</p>
+</li>
+</ul>
+<p><strong>Alpha-N Uses IAT Density Correction</strong>: Saat set ke <code>true</code>, mengaktifkan koreksi berbasis intake air temperature untuk strategi tuning Alpha-N</p>
+<p><strong>Override VE Table Load Axis</strong>: Memungkinkan mengubah default load axis yang digunakan untuk VE table (biasanya MAP)</p>
+<p><strong>Override AFR Table Load Axis</strong>: Override default load axis untuk target AFR table</p>
+<p><strong>Injection Phase Control Mode</strong>: Menentukan kapan fuel disuntikkan relatif terhadap intake valve opening</p>
+<h3 id="injector-settings">Injector Settings<a class="headerlink" href="#injector-settings" title="Permanent link">&para;</a></h3>
+<h4 id="flow-and-characterization">Flow and Characterization<a class="headerlink" href="#flow-and-characterization" title="Permanent link">&para;</a></h4>
+<p><strong>Injector Flow</strong>: Specifies flow rate injector, biasanya dalam cc/min atau lbs/hr</p>
+<p><strong>Injector Flow Units</strong>: Pilih antara <strong>Volumetric Flow</strong> (cc/min) atau unit lainnya</p>
+<p><strong>Injector Flow Compensation Mode</strong>:</p>
+<ul>
+<li>
+<p><strong>None</strong>: Untuk setup dengan MAP-referenced fuel pressure regulator</p>
+</li>
+<li>
+<p><strong>Fixed Rail Pressure</strong>: Untuk sistem dengan atmosphere-referenced fuel pressure regulator</p>
+</li>
+<li>
+<p><strong>Sensed Rail Pressure</strong>: Untuk sistem dengan fuel pressure sensor</p>
+</li>
+</ul>
+<p><strong>Fuel Rail Pressure Sensor</strong>: Hanya digunakan saat "Sensed Rail Pressure" dipilih</p>
+<h3 id="fuel-characteristics">Fuel Characteristics<a class="headerlink" href="#fuel-characteristics" title="Permanent link">&para;</a></h3>
+<p><strong>Stoichiometric Ratio</strong>: Menentukan stoichiometric air-fuel ratio (AFR) untuk tipe fuel yang digunakan</p>
+<p><strong>E100 Stoichiometric Ratio</strong>: Menentukan stoichiometric AFR untuk E100 (pure ethanol) untuk ethanol blends</p>
+<h3 id="injector-dead-time">Injector Dead Time<a class="headerlink" href="#injector-dead-time" title="Permanent link">&para;</a></h3>
+<p>Menampilkan graph yang menunjukkan injector dead time (dalam milliseconds) sebagai fungsi battery voltage. Dead time menurun saat voltage naik, memastikan kontrol injector yang presisi di bawah kondisi elektrik yang bervariasi.</p>
+<h2 id="ve-volumetric-efficiency-table">VE (Volumetric Efficiency) Table<a class="headerlink" href="#ve-volumetric-efficiency-table" title="Permanent link">&para;</a></h2>
+<p><img alt="VE Table" src="#" title="VE Table" /></p>
+<p>VE Table menampilkan nilai volumetric efficiency engine sebagai fungsi <strong>load (kPa)</strong> dan <strong>RPM</strong>. Values ini menentukan seberapa banyak fuel yang dibutuhkan berdasarkan karakteristik airflow engine pada operating points yang berbeda.</p>
+<h3 id="typical-ve-values">Typical VE Values<a class="headerlink" href="#typical-ve-values" title="Permanent link">&para;</a></h3>
+<h4 id="idle-conditions">Idle Conditions<a class="headerlink" href="#idle-conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Load</strong>: 30-50 kPa, <strong>RPM</strong>: 500-1000</p>
+</li>
+<li>
+<p><strong>VE Values</strong>: 30-40%</p>
+</li>
+<li>
+<p>Merepresentasikan airflow yang relatif rendah saat engine running pada low RPM dan tanpa load</p>
+</li>
+</ul>
+<h4 id="high-load-conditions">High Load Conditions<a class="headerlink" href="#high-load-conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Load</strong>: 100-250 kPa, <strong>RPM</strong>: 4000-7000</p>
+</li>
+<li>
+<p><strong>VE Values</strong>: 80-100% atau lebih</p>
+</li>
+<li>
+<p>Engines dengan forced induction dapat memiliki values melebihi 100%</p>
+</li>
+</ul>
+<h4 id="troubleshooting-ve-values">Troubleshooting VE Values<a class="headerlink" href="#troubleshooting-ve-values" title="Permanent link">&para;</a></h4>
+<p>Jika VE values signifikan berbeda dari ranges ini, mungkin mengindikasikan <strong>injectors belum correctly modeled</strong>:</p>
+<ul>
+<li>Incorrect injector flow rates</li>
+<li>Dead time settings salah</li>
+<li>Kesalahan kalibrasi lainnya</li>
+</ul>
+<h2 id="target-afr-table">Target AFR Table<a class="headerlink" href="#target-afr-table" title="Permanent link">&para;</a></h2>
+<p><img alt="Target AFR" src="#" title="Target AFR Table" /></p>
+<p>Target AFR Table mengatur air-fuel mixture yang diinginkan untuk berbagai kondisi <strong>RPM</strong> dan <strong>load (kPa)</strong>. Values dalam table ini mempengaruhi seberapa rich atau lean mixture akan di berbagai operating conditions.</p>
+<h3 id="example-breakdown-turbocharged-engine">Example Breakdown - Turbocharged Engine<a class="headerlink" href="#example-breakdown-turbocharged-engine" title="Permanent link">&para;</a></h3>
+<p>Table contoh ini di-setup untuk turbocharged, cammed engine:</p>
+<h4 id="idle-afr-140-afr">Idle AFR (14.0 AFR)<a class="headerlink" href="#idle-afr-140-afr" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Target untuk idle AFR yang lebih smooth, praktek umum untuk cammed engines</li>
+<li>Memberikan idle yang lebih stabil</li>
+</ul>
+<h4 id="boost-conditions-150-250-kpa">Boost Conditions (150-250 kPa)<a class="headerlink" href="#boost-conditions-150-250-kpa" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>AFR targets lebih rich: 10.7-11.0 AFR</p>
+</li>
+<li>
+<p>Mengurangi risiko detonation </p>
+</li>
+<li>Menjaga combustion temperatures aman</li>
+<li>Memastikan reliable performance di bawah high load</li>
+</ul>
+<h4 id="mid-range-conditions">Mid-Range Conditions<a class="headerlink" href="#mid-range-conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Balance antara performance dan efficiency</li>
+<li>Typical values: 12.5-13.5 AFR untuk partial load</li>
+</ul>
+<h2 id="closed-loop-fuel-correction">Closed Loop Fuel Correction<a class="headerlink" href="#closed-loop-fuel-correction" title="Permanent link">&para;</a></h2>
+<p><img alt="Closed Loop Correction" src="#" title="Closed Loop Correction" /></p>
+<h3 id="basic-settings">Basic Settings<a class="headerlink" href="#basic-settings" title="Permanent link">&para;</a></h3>
+<p><strong>Enabled</strong>: Mengaktifkan closed-loop correction system</p>
+<p><strong>Startup delay</strong>: Delay (dalam seconds) setelah startup sebelum koreksi dimulai</p>
+<p><strong>Minimum CLT for correction</strong>: Coolant temperature minimum untuk mulai corrections</p>
+<p><strong>Minimum/Maximum AFR for correction</strong>: Range AFR di mana corrections akan diaplikasikan</p>
+<p><strong>Adjustment deadband</strong>: Threshold di mana tidak ada corrections yang dibuat untuk menghindari fluktuasi minor</p>
+<p><strong>Ignore error magnitude</strong>: Mengontrol berapa AFR error yang diabaikan sebelum corrections diterapkan</p>
+<h3 id="enable-switch-stft-opsional">Enable Switch STFT (Opsional)<a class="headerlink" href="#enable-switch-stft-opsional" title="Permanent link">&para;</a></h3>
+<p>Switch untuk menyalakan atau mematikan short term fuel trim (STFT) dari kabin, misalnya saat setting VE atau saat memakai bahan bakar lain.</p>
+<ul>
+<li><strong>Switch ON</strong>: STFT bekerja mengikuti semua pengaturan closed loop</li>
+<li><strong>Switch OFF</strong>: STFT berhenti, dan long term fuel trim (LTFT) juga berhenti belajar</li>
+<li><strong>Pin tidak diisi (unassigned)</strong>: STFT bekerja tanpa switch</li>
+</ul>
+<p><strong>Enable switch pin</strong>: Pin input untuk switch.</p>
+<p><strong>Enable switch pin mode</strong>: Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin switch STFT hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru, atau kosongkan pin switch.</p>
+</div>
+<p>STFT juga berhenti sementara dengan sendirinya saat setting VE (kalau <strong>Detect Tuning and Suspend</strong> aktif) dan saat <a href="../firmware/rotational-idle/">Rotational Idle</a> aktif dengan <strong>Stop short term fuel trim while active</strong>. Alasan STFT tidak aktif tampil di panel status closed loop.</p>
+<h3 id="region-configuration">Region Configuration<a class="headerlink" href="#region-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Region Configuration</strong> memungkinkan kustomisasi RPM dan load thresholds:</p>
+<ul>
+<li>
+<p><strong>Idle region RPM</strong>: RPM yang dianggap sebagai idle threshold</p>
+</li>
+<li>
+<p><strong>Overrun region load</strong>: Load limit untuk membedakan deceleration</p>
+</li>
+<li>
+<p><strong>Power region load</strong>: Load limit untuk high load conditions</p>
+</li>
+</ul>
+<h3 id="region-specific-parameters">Region-Specific Parameters<a class="headerlink" href="#region-specific-parameters" title="Permanent link">&para;</a></h3>
+<p>Setiap region (Main, Idle, Power, Overrun) memiliki <strong>time constants</strong> dan <strong>maximum add/remove percentages</strong>:</p>
+<ul>
+<li>
+<p><strong>Time constant</strong>: Mengontrol responsiveness corrections</p>
+</li>
+<li>
+<p><strong>Max add/remove</strong>: Membatasi maximum fuel adjustment</p>
+</li>
+</ul>
+<h2 id="coasting-fuel-cutoff-dfco">Coasting Fuel Cutoff (DFCO)<a class="headerlink" href="#coasting-fuel-cutoff-dfco" title="Permanent link">&para;</a></h2>
+<p><img alt="Fuel Cutoff Settings" src="#" title="Fuel Cutoff Settings" /></p>
+<p>DFCO memutus injeksi saat engine brake, yaitu gas dilepas pada RPM tinggi. Bahan bakar lebih hemat dan engine brake terasa lebih kuat.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Fuel → Deceleration fuel cutoff (DFCO)</strong></li>
+<li>Mazduino Tuner: <strong>Fuel → Overrun cut</strong></li>
+</ul>
+<p>DFCO hanya aktif kalau <strong>semua</strong> syarat di bawah terpenuhi: CLT, TPS, MAP, RPM, kecepatan kendaraan, dan switch (kalau dipasang).</p>
+<h3 id="enabledisable-settings">Enable/Disable Settings<a class="headerlink" href="#enabledisable-settings" title="Permanent link">&para;</a></h3>
+<p><strong>Enable Coasting Fuel Cutoff</strong>: Mengaktifkan fuel cutoff selama coasting</p>
+<p><strong>No cut below CLT(C)</strong>: DFCO hanya aktif di atas suhu coolant ini. Default 60 °C, jadi mesin yang masih dingin tidak kena cut.</p>
+<h3 id="activation-thresholds">Activation Thresholds<a class="headerlink" href="#activation-thresholds" title="Permanent link">&para;</a></h3>
+<p><strong>RPM cut fuel above</strong>: Fuel di-cut kalau RPM di atas nilai ini. Default 1500 RPM.</p>
+<p><strong>RPM restore fuel below</strong>: Fuel kembali disuntik kalau RPM turun di bawah nilai ini. Default 1300 RPM. Nilai ini harus lebih rendah dari RPM cut, selisihnya mencegah DFCO on-off terus.</p>
+<p><strong>Vehicle speed cut above/restore below</strong>: Batas kecepatan kendaraan untuk cut dan restore. <strong>Kalau tidak ada sensor kecepatan (VSS), isi keduanya 0.</strong> Kalau "cut above" diisi lebih dari 0 tanpa VSS, kecepatan terbaca 0 dan DFCO tidak pernah aktif.</p>
+<p><strong>Cut fuel below TPS(%)</strong>: DFCO hanya aktif kalau TPS (atau pedal, pada ETB) di bawah nilai ini. Default 2%. Cek nilai TPS di gauge saat gas dilepas penuh: TPS yang belum dikalibrasi sering terbaca 3–5% dan DFCO tidak pernah aktif.</p>
+<p><strong>Cut fuel below MAP(kPa)</strong>: DFCO hanya aktif kalau MAP di bawah nilai ini. Default 30 kPa. Saat engine brake MAP biasanya 20–30 kPa. Kalau di mesin anda MAP saat engine brake lebih tinggi, naikkan nilai ini sedikit di atasnya. Tanpa sensor MAP, syarat ini diabaikan.</p>
+<h3 id="advanced-settings">Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permanent link">&para;</a></h3>
+<p><strong>Fuel cut delay</strong>: Delay sebelum fuel cutoff engage setelah kondisi terpenuhi. 0 = langsung cut.</p>
+<p><strong>Inhibit closed loop fuel after cut</strong>: Temporarily disable closed-loop fuel correction setelah fuel di-restore</p>
+<p><strong>Ignition retard during cut</strong>: Timing dimundurkan sebanyak ini (maksimal 30°) selama cut, supaya hentakan saat fuel kembali lebih halus.</p>
+<p><strong>After cut timing ramp-in time</strong>: Waktu untuk mengembalikan timing ke normal setelah fuel kembali disuntik.</p>
+<h3 id="enable-switch-opsional">Enable Switch (Opsional)<a class="headerlink" href="#enable-switch-opsional" title="Permanent link">&para;</a></h3>
+<p>Switch untuk menyalakan atau mematikan DFCO dari kabin, misalnya saat balap atau saat setting.</p>
+<ul>
+<li><strong>Switch ON</strong>: DFCO aktif mengikuti semua syarat di atas</li>
+<li><strong>Switch OFF</strong>: DFCO tidak pernah aktif</li>
+<li><strong>Pin tidak diisi (unassigned)</strong>: DFCO hanya mengikuti syarat di atas, tanpa switch</li>
+</ul>
+<p><strong>Enable switch pin</strong>: Pin input untuk switch.</p>
+<p><strong>Enable switch pin mode</strong>: Untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>: pull-up internal aktif, dan pin yang terhubung ke ground terbaca ON.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin switch DFCO hanya dibaca tanpa di-setup sebagai input, jadi pull-up atau pull-down dari pin mode tidak aktif dan switch tidak terbaca dengan benar. Update ke firmware Nightly 20 November 2026 atau lebih baru. Kalau belum bisa update, kosongkan pin switch supaya DFCO mengikuti syarat saja.</p>
+</div>
+<h3 id="dfco-tidak-aktif-cek-ini">DFCO Tidak Aktif? Cek Ini<a class="headerlink" href="#dfco-tidak-aktif-cek-ini" title="Permanent link">&para;</a></h3>
+<p>Tambahkan indikator <strong><code>dfcoActive</code></strong> ke dashboard, lalu cek satu per satu saat engine brake:</p>
+<ol>
+<li><strong>Enable Coasting Fuel Cutoff</strong> aktif dan tune sudah di-burn.</li>
+<li><strong>Switch</strong>: kalau pin switch diisi, switch harus ON. Kalau tidak memakai switch, kosongkan pin.</li>
+<li><strong>CLT</strong> di atas "No cut below CLT".</li>
+<li><strong>TPS</strong> saat gas dilepas di bawah "Cut fuel below TPS".</li>
+<li><strong>MAP</strong> saat engine brake di bawah "Cut fuel below MAP".</li>
+<li><strong>RPM</strong> di atas "RPM cut fuel above".</li>
+<li><strong>Kecepatan kendaraan</strong>: tanpa VSS, isi kedua nilai kecepatan 0.</li>
+<li><strong>Sensor</strong>: kalau sensor TPS atau CLT error, DFCO dimatikan. Begitu juga MAP kalau sensor MAP terpasang tapi error.</li>
+<li><strong>Sedang setting VE</strong>: kalau <strong>Detect Tuning and Suspend</strong> aktif (di pengaturan closed loop fuel), DFCO dan STFT berhenti selama 20 detik setelah setiap perubahan tabel VE, termasuk dari autotune. Indikator <code>isTuningNow</code> menyala selama masa itu.</li>
+<li><strong>Fuel cut delay</strong> yang terlalu panjang membuat cut baru terjadi lama setelah gas dilepas.</li>
+</ol>
+<h2 id="acceleration-enrichment">Acceleration Enrichment<a class="headerlink" href="#acceleration-enrichment" title="Permanent link">&para;</a></h2>
+<p><img alt="Acceleration Enrichment" src="#" title="Acceleration Enrichment" /></p>
+<h3 id="tps-based-enrichment">TPS-Based Enrichment<a class="headerlink" href="#tps-based-enrichment" title="Permanent link">&para;</a></h3>
+<p><strong>Length (sec)</strong>: Durasi enrichment pulse saat throttle movement terdeteksi</p>
+<p><strong>Accel Threshold (roc)</strong>: Rate of change threshold untuk trigger acceleration enrichment</p>
+<p><strong>Decel Threshold (roc)</strong>: ROC threshold untuk trigger deceleration enrichment</p>
+<h3 id="accelerator-pump-model">Accelerator Pump Model<a class="headerlink" href="#accelerator-pump-model" title="Permanent link">&para;</a></h3>
+<p><strong>Fraction Period (cycles)</strong> dan <strong>Fraction Divisor (coef)</strong>: Mengontrol bagaimana enrichment dikirimkan selama rapid throttle changes</p>
+<h3 id="wall-wetting-compensation">Wall Wetting Compensation<a class="headerlink" href="#wall-wetting-compensation" title="Permanent link">&para;</a></h3>
+<p><strong>Wall fueling model type</strong>: Model untuk calculating wall wetting fuel adjustments</p>
+<p><strong>Evaporation time constant / tau</strong>: Time constant untuk fuel evaporation dari intake walls</p>
+<p><strong>Added to wall coef / beta</strong>: Proporsi fuel yang menempel ke intake walls</p>
+<h2 id="rekomendasi-tuning">Rekomendasi Tuning<a class="headerlink" href="#rekomendasi-tuning" title="Permanent link">&para;</a></h2>
+<h3 id="plug-and-play-units">Plug and Play Units<a class="headerlink" href="#plug-and-play-units" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sebagian besar settings sudah optimal dalam basemap</li>
+<li>Focus pada adjustment engine-specific parameters</li>
+<li>Monitor AFR dan performance untuk fine-tuning</li>
+</ul>
+<h3 id="metal-series-wire-in-units">Metal-series Wire In Units<a class="headerlink" href="#metal-series-wire-in-units" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Semua parameters perlu dikonfigurasi dari awal</li>
+<li>Start dengan conservative values</li>
+<li>Incremental tuning dengan data logging</li>
+</ul>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Start conservative</strong> dengan fuel delivery</li>
+<li><strong>Monitor AFR constantly</strong> selama tuning</li>
+<li><strong>Use data logging</strong> untuk track performance</li>
+<li><strong>Test incrementally</strong> setiap perubahan</li>
+</ol>
+<hr />
+<p><strong>Selanjutnya</strong>: <a href="../tunerstudio-ignition/">Ignition System Configuration</a></p>
+<!-- Image References -->
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tunerstudio-limits-protection/" class="btn btn-neutral float-left" title="Limits & Protection"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-ignition/" class="btn btn-neutral float-right" title="Ignition System">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tunerstudio-limits-protection/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-ignition/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

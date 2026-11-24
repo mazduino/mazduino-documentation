@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-base-engine/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Base Engine Settings - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Base Engine Settings";
+        var mkdocs_page_input_path = "tunerstudio-base-engine.md";
+        var mkdocs_page_url = "/en/tunerstudio-base-engine/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Base Engine Settings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#menu-base-engine-overview">Menu Base Engine Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#submenu-yang-tersedia">Submenu yang Tersedia:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#base-engine-settings-window">Base Engine Settings Window</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#layout-selection">Layout Selection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#engine-configuration">Engine Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basic-engine-parameters">Basic Engine Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#engine-metadata">Engine Metadata</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fuel-strategy">Fuel Strategy</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#1-speed-density">1. Speed Density</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-maf-air-charge">2. MAF Air Charge</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-alpha-n">3. Alpha-N</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-lua">4. Lua</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rekomendasi-berdasarkan-tipe-unit">Rekomendasi Berdasarkan Tipe Unit</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#plug-and-play-units">Plug and Play Units</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#metal-series-wire-in-units">Metal-series Wire In Units</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tips-konfigurasi">Tips Konfigurasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#common-mistakes">Common Mistakes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Base Engine Settings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-base-engine/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 18:17:33 UTC">6 November 2026</span></em></p>
+  <h1 id="base-engine-settings-tunerstudio">Base Engine Settings - TunerStudio<a class="headerlink" href="#base-engine-settings-tunerstudio" title="Permanent link">&para;</a></h1>
+<p>Konfigurasi dasar mesin untuk ECU Mazduino menggunakan TunerStudio. Pengaturan ini mencakup parameter fundamental engine yang crucial untuk operasi ECU yang tepat.</p>
+<h2 id="menu-base-engine-overview">Menu Base Engine Overview<a class="headerlink" href="#menu-base-engine-overview" title="Permanent link">&para;</a></h2>
+<p>Menu <strong>Base Engine</strong> dalam TunerStudio berisi pengaturan esensial yang berkaitan dengan konfigurasi fundamental engine. Untuk unit <strong>Plug and Play</strong>, sebagian besar pengaturan ini sudah dikonfigurasi dalam basemap yang disertakan, tetapi penyesuaian masih dapat dilakukan sesuai kebutuhan spesifik. Untuk unit <strong>Metal-series Wire In</strong>, semua pengaturan ini perlu dikonfigurasi dengan hati-hati.</p>
+<p><img alt="Base Engine Menu" src="#" title="Base Engine Menu" /></p>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Base Engine</strong>: Konfigurasi engine dasar seperti displacement, firing order, dan parameter crucial lainnya untuk operasi ECU yang tepat</p>
+</li>
+<li>
+<p><strong>Limits and Protection</strong>: Memungkinkan pengaturan batas keselamatan untuk parameter engine seperti RPM, coolant temperature, dan oil pressure</p>
+</li>
+<li>
+<p><strong>Trigger</strong>: Berisi pengaturan untuk konfigurasi crankshaft atau camshaft position sensor (trigger) yang essential untuk sinkronisasi ECU dengan rotasi engine</p>
+</li>
+<li>
+<p><strong>Advanced Trigger</strong>: Menyediakan konfigurasi lebih detail untuk trigger system, termasuk pengaturan untuk advanced triggering modes</p>
+</li>
+<li>
+<p><strong>Trigger Gap Override</strong>: Memungkinkan pengaturan manual gap override untuk trigger signal</p>
+</li>
+<li>
+<p><strong>Battery and Alternator</strong>: Mengelola pengaturan yang berkaitan dengan battery charging dan alternator functionality</p>
+</li>
+<li>
+<p><strong>Outputs</strong>: Mengkonfigurasi berbagai ECU output yang mengontrol komponen engine</p>
+</li>
+<li>
+<p><strong>Air Conditioning</strong>: Mengontrol pengaturan untuk interface dengan sistem AC kendaraan</p>
+</li>
+<li>
+<p><strong>Status LEDs</strong>: Memungkinkan konfigurasi status LED pada ECU (jika applicable)</p>
+</li>
+</ol>
+<h2 id="base-engine-settings-window">Base Engine Settings Window<a class="headerlink" href="#base-engine-settings-window" title="Permanent link">&para;</a></h2>
+<h3 id="layout-selection">Layout Selection<a class="headerlink" href="#layout-selection" title="Permanent link">&para;</a></h3>
+<p><strong>Layout</strong> dropdown memungkinkan Anda memilih kompleksitas tampilan pengaturan:</p>
+<ul>
+<li>
+<p><strong>Tuning Layout</strong>: Direkomendasikan untuk sebagian besar pengguna, terutama yang menggunakan Mazduino Plug and Play. Layout ini menyembunyikan beberapa tombol yang jarang digunakan, menciptakan interface yang lebih bersih</p>
+</li>
+<li>
+<p><strong>Full Layout</strong>: Menampilkan semua opsi untuk konfigurasi lengkap. Manual ini menggunakan Full layout untuk memastikan kejelasan</p>
+</li>
+</ul>
+<p><img alt="Base Engine Settings" src="#" title="Base Engine Settings Window" /></p>
+<h3 id="engine-configuration">Engine Configuration<a class="headerlink" href="#engine-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="basic-engine-parameters">Basic Engine Parameters<a class="headerlink" href="#basic-engine-parameters" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Number of Cylinders</strong>: Atur jumlah silinder engine Anda (misalnya 4, 6, 8)</li>
+<li>Pengaturan ini mempengaruhi kalkulasi timing dan fuel delivery</li>
+<li>
+<p>Pastikan sesuai dengan spesifikasi engine aktual</p>
+</li>
+<li>
+<p><strong>Displacement (L)</strong>: Masukkan displacement engine dalam liter</p>
+</li>
+<li>Input essential untuk menghitung air-fuel ratio dan parameter tuning lainnya</li>
+<li>
+<p>Digunakan untuk kalkulasi volumetric efficiency</p>
+</li>
+<li>
+<p><strong>Firing Order</strong>: Tentukan firing order engine Anda</p>
+</li>
+<li>Asumsi bahwa wiring kendaraan di-map langsung</li>
+<li>Setiap silinder terhubung ke output number yang sesuai (Silinder 1 ke Output 1, dll.)</li>
+<li>Memastikan sinkronisasi yang tepat antara ECU dan engine</li>
+</ol>
+<h4 id="engine-metadata">Engine Metadata<a class="headerlink" href="#engine-metadata" title="Permanent link">&para;</a></h4>
+<p>Field-field ini digunakan terutama oleh rusEFI Online dan memberikan konteks tambahan:</p>
+<ol>
+<li><strong>Engine Make</strong>: Masukkan manufacturer atau brand engine (contoh: Toyota)</li>
+<li><strong>Manufacturer Engine Code</strong>: Masukkan kode engine (contoh: 22R)</li>
+<li><strong>Vehicle Name</strong>: Nama custom untuk kendaraan (contoh: "ProjectCar")</li>
+<li><strong>Forced Induction</strong>: Toggle opsi ini jika engine memiliki forced induction (turbo/supercharger)</li>
+</ol>
+<h3 id="fuel-strategy">Fuel Strategy<a class="headerlink" href="#fuel-strategy" title="Permanent link">&para;</a></h3>
+<p>Menentukan metode yang digunakan untuk menghitung fuel delivery. Opsi yang tersedia:</p>
+<h4 id="1-speed-density">1. Speed Density<a class="headerlink" href="#1-speed-density" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Prinsip</strong>: Menggunakan intake manifold pressure (MAP) dan intake air temperature (IAT) untuk menghitung air density dan fuel requirements</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Strategi umum, terutama untuk naturally aspirated atau turbocharged engines</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Reliable dan well-tested untuk sebagian besar aplikasi</p>
+</li>
+</ul>
+<h4 id="2-maf-air-charge">2. MAF Air Charge<a class="headerlink" href="#2-maf-air-charge" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Prinsip</strong>: Bergantung pada Mass Air Flow (MAF) sensor untuk mengukur jumlah udara yang masuk engine secara langsung</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Efektif untuk engine yang dilengkapi dengan MAF sensor</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Direct measurement dari airflow</p>
+</li>
+</ul>
+<h4 id="3-alpha-n">3. Alpha-N<a class="headerlink" href="#3-alpha-n" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Prinsip</strong>: Menggunakan throttle position sebagai load input utama untuk kalkulasi fuel</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Digunakan pada engine dengan individual throttle bodies atau yang tidak memiliki MAP signal yang reliable</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Cocok untuk ITB setups dan modified intake systems</p>
+</li>
+</ul>
+<h4 id="4-lua">4. Lua<a class="headerlink" href="#4-lua" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Prinsip</strong>: Memungkinkan kalkulasi fuel custom menggunakan Lua scripting</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Aplikasi tuning yang highly specific di mana strategi lain tidak applicable</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Fleksibilitas maksimum untuk custom applications</p>
+</li>
+</ul>
+<h2 id="rekomendasi-berdasarkan-tipe-unit">Rekomendasi Berdasarkan Tipe Unit<a class="headerlink" href="#rekomendasi-berdasarkan-tipe-unit" title="Permanent link">&para;</a></h2>
+<h3 id="plug-and-play-units">Plug and Play Units<a class="headerlink" href="#plug-and-play-units" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sebagian besar pengaturan sudah dikonfigurasi optimal dalam basemap</li>
+<li>Fokus pada penyesuaian engine-specific parameters:</li>
+<li>Engine displacement jika berbeda dari default</li>
+<li>Firing order jika custom</li>
+<li>Fuel strategy jika menggunakan setup khusus</li>
+</ul>
+<h3 id="metal-series-wire-in-units">Metal-series Wire In Units<a class="headerlink" href="#metal-series-wire-in-units" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Semua pengaturan perlu dikonfigurasi dari awal</li>
+<li>Mulai dengan basic engine parameters</li>
+<li>Verifikasi fuel strategy sesuai dengan sensor setup</li>
+<li>Test dan validasi semua pengaturan sebelum first start</li>
+</ul>
+<h2 id="tips-konfigurasi">Tips Konfigurasi<a class="headerlink" href="#tips-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Double-check engine specifications</strong> sebelum input parameters</li>
+<li><strong>Start conservative</strong> dengan pengaturan dasar</li>
+<li><strong>Verify wiring</strong> sesuai dengan firing order yang dipilih</li>
+<li><strong>Test incrementally</strong> setiap perubahan configuration</li>
+</ol>
+<h3 id="common-mistakes">Common Mistakes<a class="headerlink" href="#common-mistakes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Salah firing order</strong> - dapat menyebabkan rough idle atau misfire</li>
+<li><strong>Displacement tidak akurat</strong> - mempengaruhi fuel calculations</li>
+<li><strong>Fuel strategy tidak sesuai</strong> dengan sensor setup yang ada</li>
+<li><strong>Forced induction setting</strong> yang salah untuk NA engines</li>
+</ol>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Engine tidak start</strong>: Periksa firing order dan trigger settings</p>
+</li>
+<li>
+<p><strong>Rough idle</strong>: Verifikasi number of cylinders dan displacement</p>
+</li>
+<li>
+<p><strong>Poor fuel economy</strong>: Review fuel strategy selection</p>
+</li>
+<li>
+<p><strong>Inconsistent performance</strong>: Check engine metadata untuk akurasi</p>
+</li>
+</ul>
+<hr />
+<p><strong>Selanjutnya</strong>: <a href="../tunerstudio-limits-protection/">Limits and Protection</a></p>
+<!-- Image References -->
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tunerstudio-interface/" class="btn btn-neutral float-left" title="User Interface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-limits-protection/" class="btn btn-neutral float-right" title="Limits & Protection">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tunerstudio-interface/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-limits-protection/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

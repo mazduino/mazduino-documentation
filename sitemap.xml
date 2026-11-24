@@ -1,275 +1,955 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-         <loc>https://wiki.mazduino.com/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/about/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/about/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/about/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/about/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/acknowledgments/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/acknowledgments/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/acknowledgments/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/acknowledgments/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/can-io-extender/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/can-io-extender/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/can-io-extender/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/can-io-extender/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/downloads/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/downloads/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/downloads/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/downloads/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/input-tambahan-dash-r4/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/input-tambahan-dash-r4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/input-tambahan-dash-r4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/input-tambahan-dash-r4/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v1/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v1/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.1/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.1/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.2/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.2/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.3/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.3/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.5/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-compact-4ch-v2.5/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.5/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.5/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-core-rev0/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-core-rev0/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-core-rev0/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-core-rev0/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-core-rev1/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-core-rev1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-core-rev1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-core-rev1/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-dash-r4/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-dash-r4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-dash-r4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-dash-r4/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-lite-v0.1/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-lite-v0.1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.1/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.1/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-lite-v0.2/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-lite-v0.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.2/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-lite-v0.3/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-lite-v0.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.3/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mega100/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mega100/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mega100/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mega100/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.0-v1.2/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.0-v1.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.0-v1.2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.0-v1.2/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3b/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3b/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3b/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3b/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3c/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3c/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3c/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3c/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3d/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.3d/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3d/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3d/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.4/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-mini-6ch-v1.4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.4/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.4/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-racedash-pro/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-racedash-pro/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-racedash-pro/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-racedash-pro/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-racedash/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-racedash/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-racedash/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-racedash/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-diagnostik/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-diagnostik/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-diagnostik/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-diagnostik/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-interface/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-interface/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-interface/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-interface/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-logger/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-logger/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-logger/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-logger/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-manual/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-manual/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-manual/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-proyek/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-proyek/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-proyek/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-proyek/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-tuning/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-tuning/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-tuning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-tuning/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-tuner-update-firmware/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-tuner-update-firmware/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-update-firmware/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-update-firmware/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/mazduino-x600/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/mazduino-x600/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-x600/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-x600/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/persiapan-sensor-wiring/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/persiapan-sensor-wiring/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/persiapan-sensor-wiring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/persiapan-sensor-wiring/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/rekomendasi-ukuran-kabel/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/rekomendasi-ukuran-kabel/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/rekomendasi-ukuran-kabel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/rekomendasi-ukuran-kabel/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/setting-ecu-racedash/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/setting-ecu-racedash/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/setting-ecu-racedash/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/setting-ecu-racedash/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-ac-settings/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-ac-settings/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-ac-settings/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-ac-settings/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-base-engine/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-base-engine/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-base-engine/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-base-engine/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-canbus/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-canbus/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-canbus/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-canbus/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-controller/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-controller/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-controller/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-controller/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-examples/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-examples/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-examples/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-fuel-system/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-fuel-system/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-fuel-system/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-fuel-system/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-ignition/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-ignition/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-ignition/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-ignition/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-instalasi/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-instalasi/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-instalasi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-instalasi/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-interface/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-interface/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-interface/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-interface/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-konfigurasi/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-konfigurasi/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-konfigurasi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-konfigurasi/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-limits-protection/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-limits-protection/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-limits-protection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-limits-protection/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-manual/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-manual/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-manual/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-manual/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-output-controls/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-output-controls/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-output-controls/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-output-controls/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-sensors/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-sensors/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-sensors/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-sensors/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/tunerstudio-troubleshooting/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/tunerstudio-troubleshooting/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-troubleshooting/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/wbo-can-controller/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/wbo-can-controller/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/wbo-can-controller/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/wbo-can-controller/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/analog-multi-switch/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/analog-multi-switch/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/analog-multi-switch/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/analog-multi-switch/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/bigfuel/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/bigfuel/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/bigfuel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/bigfuel/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/bluetooth/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/bluetooth/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/bluetooth/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/bluetooth/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/can-analog-input/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/can-analog-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-analog-input/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-analog-input/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/can-output-triggered/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/can-output-triggered/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-output-triggered/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-output-triggered/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/can-output/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/can-output/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-output/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-output/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/can-sensor-input/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/can-sensor-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-sensor-input/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-sensor-input/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/can-virtual-input/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/can-virtual-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-virtual-input/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-virtual-input/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/fuel-consumption/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/fuel-consumption/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/fuel-consumption/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/fuel-consumption/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/fuel-spark-cut/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/fuel-spark-cut/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/fuel-spark-cut/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/fuel-spark-cut/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/logic-outputs/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/logic-outputs/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/logic-outputs/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/logic-outputs/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/math-channels/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/math-channels/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/math-channels/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/math-channels/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/rotational-idle/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/rotational-idle/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/rotational-idle/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/rotational-idle/"/>
     </url>
     <url>
-         <loc>https://wiki.mazduino.com/firmware/user-tables/</loc>
-         <lastmod>2026-11-23</lastmod>
+        <loc>https://wiki.mazduino.com/firmware/user-tables/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/user-tables/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/user-tables/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/about/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/about/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/about/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/acknowledgments/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/acknowledgments/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/acknowledgments/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/can-io-extender/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/can-io-extender/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/can-io-extender/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/downloads/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/downloads/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/downloads/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/input-tambahan-dash-r4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/input-tambahan-dash-r4/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/input-tambahan-dash-r4/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-compact-4ch-v1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v1/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v1/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.1/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.1/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.2/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.2/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.3/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.3/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.5/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.5/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-compact-4ch-v2.5/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-core-rev0/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-core-rev0/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-core-rev0/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-core-rev1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-core-rev1/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-core-rev1/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-dash-r4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-dash-r4/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-dash-r4/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-lite-v0.1/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.1/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.1/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-lite-v0.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.2/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.2/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-lite-v0.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-lite-v0.3/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-lite-v0.3/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mega100/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mega100/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mega100/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.0-v1.2/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.0-v1.2/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.0-v1.2/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3b/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3b/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3b/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3c/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3c/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3c/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3d/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.3d/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.3d/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.4/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-mini-6ch-v1.4/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-mini-6ch-v1.4/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-racedash-pro/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-racedash-pro/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-racedash-pro/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-racedash/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-racedash/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-racedash/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-diagnostik/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-diagnostik/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-diagnostik/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-interface/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-interface/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-interface/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-logger/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-logger/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-logger/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-manual/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-manual/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-manual/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-proyek/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-proyek/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-proyek/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-tuning/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-tuning/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-tuning/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-tuner-update-firmware/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-tuner-update-firmware/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-tuner-update-firmware/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/mazduino-x600/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/mazduino-x600/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/mazduino-x600/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/persiapan-sensor-wiring/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/persiapan-sensor-wiring/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/persiapan-sensor-wiring/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/rekomendasi-ukuran-kabel/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/rekomendasi-ukuran-kabel/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/rekomendasi-ukuran-kabel/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/setting-ecu-racedash/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/setting-ecu-racedash/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/setting-ecu-racedash/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-ac-settings/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-ac-settings/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-ac-settings/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-base-engine/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-base-engine/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-base-engine/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-canbus/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-canbus/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-canbus/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-controller/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-controller/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-controller/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-examples/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-examples/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-examples/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-fuel-system/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-fuel-system/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-fuel-system/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-ignition/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-ignition/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-ignition/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-instalasi/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-instalasi/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-instalasi/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-interface/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-interface/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-interface/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-konfigurasi/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-konfigurasi/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-konfigurasi/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-limits-protection/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-limits-protection/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-limits-protection/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-manual/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-manual/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-manual/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-output-controls/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-output-controls/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-output-controls/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-sensors/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-sensors/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-sensors/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/tunerstudio-troubleshooting/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/tunerstudio-troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/tunerstudio-troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/wbo-can-controller/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/wbo-can-controller/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/wbo-can-controller/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/analog-multi-switch/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/analog-multi-switch/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/analog-multi-switch/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/bigfuel/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/bigfuel/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/bigfuel/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/bluetooth/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/bluetooth/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/bluetooth/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/can-analog-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-analog-input/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-analog-input/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/can-output-triggered/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-output-triggered/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-output-triggered/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/can-output/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-output/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-output/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/can-sensor-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-sensor-input/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-sensor-input/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/can-virtual-input/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/can-virtual-input/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/can-virtual-input/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/fuel-consumption/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/fuel-consumption/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/fuel-consumption/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/fuel-spark-cut/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/fuel-spark-cut/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/fuel-spark-cut/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/logic-outputs/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/logic-outputs/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/logic-outputs/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/math-channels/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/math-channels/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/math-channels/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/rotational-idle/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/rotational-idle/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/rotational-idle/"/>
+    </url>
+    <url>
+        <loc>https://wiki.mazduino.com/en/firmware/user-tables/</loc>
+        <lastmod>2026-11-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wiki.mazduino.com/en/firmware/user-tables/"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://wiki.mazduino.com/firmware/user-tables/"/>
     </url>
 </urlset>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-manual/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Full Manual - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Full Manual";
+        var mkdocs_page_input_path = "tunerstudio-manual.md";
+        var mkdocs_page_url = "/en/tunerstudio-manual/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Full Manual</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#kebutuhan-sistem">Kebutuhan Sistem</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wiring-dan-instalasi">Wiring dan Instalasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mengapa-output-untuk-beban-berat-membutuhkan-relay">Mengapa Output untuk Beban Berat Membutuhkan Relay</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rekomendasi-untuk-wiring-crimping-vs-soldering">Rekomendasi untuk Wiring: Crimping vs. Soldering</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#crimping-kabel">Crimping Kabel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#soldering-kabel">Soldering Kabel</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tips-instalasi-ecu-aftermarket-umum">Tips Instalasi ECU Aftermarket Umum</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#persiapan">Persiapan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#power-dan-grounding">Power dan Grounding</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pentingnya-grounding-yang-tepat-dalam-sistem-ecu">Pentingnya Grounding yang Tepat dalam Sistem ECU</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mengapa-grounding-yang-tepat-sangat-penting">Mengapa Grounding yang Tepat Sangat Penting</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mengapa-power-ground-dan-sensor-ground-terpisah">Mengapa Power Ground dan Sensor Ground Terpisah</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practice-untuk-grounding-dalam-sistem-otomotif">Best Practice untuk Grounding dalam Sistem Otomotif</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pengantar-tunerstudio">Pengantar TunerStudio</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#daftar-menu-konfigurasi">Daftar Menu Konfigurasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#instalasi-tunerstudio">Instalasi TunerStudio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#konfigurasi-project-tunerstudio">Konfigurasi Project TunerStudio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interface-dan-menu-tunerstudio">Interface dan Menu TunerStudio</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#base-engine-settings">Base Engine Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limits-and-protection">Limits and Protection</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#fuel-system-configuration">Fuel System Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-system-configuration">Ignition System Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sensor-configuration">Sensor Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#can-bus-configuration">CAN Bus Configuration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#controller-diagnostics">Controller &amp; Diagnostics</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples-map-switching">Examples &amp; Map Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pengaturan-output-controls">Pengaturan Output Controls</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pengaturan-air-conditioning">Pengaturan Air Conditioning</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Full Manual</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-manual/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="6 November 2026 18:17:33 UTC">6 November 2026</span></em></p>
+  <h1 id="manual-tuning-tunerstudio-untuk-ecu-mazduino">Manual Tuning TunerStudio untuk ECU Mazduino<a class="headerlink" href="#manual-tuning-tunerstudio-untuk-ecu-mazduino" title="Permanent link">&para;</a></h1>
+<p>Manual ini berlaku untuk semua ECU Mazduino (Compact dan Mini 6CH) yang menggunakan firmware rusEFI dengan TunerStudio sebagai software tuning. Panduan ini mencakup kebutuhan sistem, instalasi hardware, wiring, dan navigasi ke semua halaman konfigurasi TunerStudio.</p>
+<h2 id="kebutuhan-sistem">Kebutuhan Sistem<a class="headerlink" href="#kebutuhan-sistem" title="Permanent link">&para;</a></h2>
+<p>Untuk menggunakan TunerStudio dengan Mazduino, pastikan perangkat Anda memenuhi persyaratan minimum berikut:</p>
+<ul>
+<li>
+<p><strong>Sistem Operasi</strong>: Windows 10 atau yang lebih baru, macOS, atau Linux</p>
+</li>
+<li>
+<p><strong>Hardware</strong>: Minimum RAM 4GB, processor 2GHz, dan storage tersedia 500MB</p>
+</li>
+<li>
+<p><strong>Koneksi</strong>: Port USB untuk komunikasi langsung dengan Mazduino</p>
+</li>
+</ul>
+<h2 id="wiring-dan-instalasi">Wiring dan Instalasi<a class="headerlink" href="#wiring-dan-instalasi" title="Permanent link">&para;</a></h2>
+<h3 id="mengapa-output-untuk-beban-berat-membutuhkan-relay">Mengapa Output untuk Beban Berat Membutuhkan Relay<a class="headerlink" href="#mengapa-output-untuk-beban-berat-membutuhkan-relay" title="Permanent link">&para;</a></h3>
+<p>ECU, termasuk Mazduino, menyediakan <strong>output tingkat logika arus rendah</strong> untuk mengontrol perangkat seperti fan, fuel pump, atau solenoid. Output ini tidak dirancang untuk menangani arus tinggi yang dibutuhkan oleh perangkat tersebut. Menggunakan relay memungkinkan ECU untuk mengontrol perangkat bertenaga tinggi dengan aman:</p>
+<ol>
+<li><strong>Mengisolasi Arus Tinggi dari ECU</strong>:</li>
+<li>ECU hanya perlu mengirim sinyal kecil ke relay, yang menangani aliran arus tinggi ke perangkat</li>
+<li>
+<p>Ini mencegah kerusakan pada rangkaian output ECU</p>
+</li>
+<li>
+<p><strong>Mencegah Kelebihan Beban</strong>:</p>
+</li>
+<li>
+<p>Menghubungkan perangkat beban tinggi langsung ke ECU dapat menyebabkan panas berlebih atau kerusakan permanen karena tarikan arus yang berlebihan</p>
+</li>
+<li>
+<p><strong>Menyediakan Operasi yang Aman</strong>:</p>
+</li>
+<li>Relay melindungi wiring dan komponen elektrik dengan bertindak sebagai switch, mengurangi risiko hubung singkat atau panas berlebih</li>
+</ol>
+<h3 id="rekomendasi-untuk-wiring-crimping-vs-soldering">Rekomendasi untuk Wiring: Crimping vs. Soldering<a class="headerlink" href="#rekomendasi-untuk-wiring-crimping-vs-soldering" title="Permanent link">&para;</a></h3>
+<h4 id="crimping-kabel">Crimping Kabel<a class="headerlink" href="#crimping-kabel" title="Permanent link">&para;</a></h4>
+<p>Crimping lebih disukai untuk wiring otomotif karena lebih cepat, tahan lama, dan tahan getaran jika dilakukan dengan benar:</p>
+<ol>
+<li><strong>Alat yang Dibutuhkan</strong>:</li>
+<li>Gunakan <strong>ratcheting crimp tool</strong> yang dirancang untuk konektor otomotif</li>
+<li>
+<p>Sesuaikan mata crimp tool dengan jenis terminal (open barrel, insulated, dll.)</p>
+</li>
+<li>
+<p><strong>Teknik</strong>:</p>
+</li>
+<li>Kupas kabel sepanjang yang benar (biasanya 4-6mm) tanpa merusak untaian kawat</li>
+<li>Masukkan kabel ke dalam terminal dan crimp dengan kuat</li>
+<li>
+<p>Periksa hasil crimp untuk memastikan kencang dan aman, tanpa untaian kawat yang lepas</p>
+</li>
+<li>
+<p><strong>Heat Shrink</strong>:</p>
+</li>
+<li>Gunakan heat shrink tubing di atas sambungan untuk melindungi dari kelembaban dan korosi</li>
+</ol>
+<h4 id="soldering-kabel">Soldering Kabel<a class="headerlink" href="#soldering-kabel" title="Permanent link">&para;</a></h4>
+<p>Soldering memberikan konektivitas elektrik yang sangat baik tetapi kurang tahan getaran:</p>
+<ol>
+<li><strong>Alat yang Dibutuhkan</strong>:</li>
+<li>
+<p>Gunakan <strong>soldering iron berkualitas tinggi</strong> dan <strong>solder grade otomotif</strong> (rosin-core, leaded solder ideal)</p>
+</li>
+<li>
+<p><strong>Teknik</strong>:</p>
+</li>
+<li>Kupas kabel, puntir untaian kawat bersama, dan aplikasikan flux</li>
+<li>Panaskan sambungan dengan soldering iron dan aplikasikan solder hingga mengalir dengan halus ke dalam sambungan</li>
+<li>
+<p>Biarkan dingin tanpa mengganggu sambungan</p>
+</li>
+<li>
+<p><strong>Isolasi</strong>:</p>
+</li>
+<li>Tutupi sambungan yang di-solder dengan heat shrink atau electrical tape untuk perlindungan</li>
+</ol>
+<h3 id="tips-instalasi-ecu-aftermarket-umum">Tips Instalasi ECU Aftermarket Umum<a class="headerlink" href="#tips-instalasi-ecu-aftermarket-umum" title="Permanent link">&para;</a></h3>
+<h4 id="persiapan">Persiapan<a class="headerlink" href="#persiapan" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Merencanakan Wiring</strong>:</li>
+<li>Gunakan diagram wiring yang spesifik untuk ECU dan kendaraan Anda</li>
+<li>
+<p>Beri label pada kabel dan rencanakan jalur untuk menghindari kebingungan selama instalasi</p>
+</li>
+<li>
+<p><strong>Tes Sensor dan Perangkat</strong>:</p>
+</li>
+<li>Verifikasi kesehatan dan kompatibilitas sensor (misalnya TPS, MAP, IAT) sebelum menghubungkannya ke ECU</li>
+</ol>
+<h4 id="power-dan-grounding">Power dan Grounding<a class="headerlink" href="#power-dan-grounding" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Suplai Daya Khusus</strong>:</li>
+<li>Hubungkan ECU ke sumber daya +12V yang bersih dan menggunakan fuse</li>
+<li>
+<p>Gunakan rangkaian daya yang dikontrol relay untuk ECU agar memastikan mati saat ignition dimatikan</p>
+</li>
+<li>
+<p><strong>Grounding</strong>:</p>
+</li>
+<li>Pastikan semua ground (ECU, sensor, dan mesin) terhubung ke <strong>titik ground bersama</strong></li>
+<li>Gunakan kabel ground yang tebal dan berkualitas tinggi untuk meminimalkan voltage drop</li>
+</ol>
+<h3 id="pentingnya-grounding-yang-tepat-dalam-sistem-ecu">Pentingnya Grounding yang Tepat dalam Sistem ECU<a class="headerlink" href="#pentingnya-grounding-yang-tepat-dalam-sistem-ecu" title="Permanent link">&para;</a></h3>
+<p>Grounding adalah aspek kritis dari sistem elektrik apapun, terutama dalam aplikasi otomotif. Untuk ECU seperti Mazduino, grounding yang tepat memastikan operasi yang stabil, pembacaan sensor yang akurat, dan mencegah kerusakan pada komponen sensitif.</p>
+<h4 id="mengapa-grounding-yang-tepat-sangat-penting">Mengapa Grounding yang Tepat Sangat Penting<a class="headerlink" href="#mengapa-grounding-yang-tepat-sangat-penting" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Melengkapi Rangkaian</strong>:</li>
+<li>Ground adalah jalur kembali untuk arus listrik, melengkapi rangkaian untuk semua perangkat</li>
+<li>
+<p>Ground yang buruk dapat menyebabkan koneksi listrik yang terputus-putus, mengakibatkan perilaku sistem yang tidak stabil</p>
+</li>
+<li>
+<p><strong>Mencegah Noise Elektrik</strong>:</p>
+</li>
+<li>
+<p>Grounding yang baik meminimalkan interferensi elektrik, atau "noise," yang dapat mengganggu sinyal dalam rangkaian sensitif</p>
+</li>
+<li>
+<p><strong>Memastikan Pengukuran yang Akurat</strong>:</p>
+</li>
+<li>
+<p>Banyak sensor bergantung pada referensi ground yang konsisten. Variasi dalam potensial ground dapat mengakibatkan pembacaan sensor yang tidak akurat</p>
+</li>
+<li>
+<p><strong>Melindungi Komponen</strong>:</p>
+</li>
+<li>Grounding yang tepat membantu membuang kelebihan arus dengan aman, melindungi ECU dan perangkat yang terhubung dari kerusakan</li>
+</ol>
+<h4 id="mengapa-power-ground-dan-sensor-ground-terpisah">Mengapa Power Ground dan Sensor Ground Terpisah<a class="headerlink" href="#mengapa-power-ground-dan-sensor-ground-terpisah" title="Permanent link">&para;</a></h4>
+<p>ECU memiliki <strong>power ground</strong> dan <strong>sensor ground</strong> yang khusus karena rangkaian ini melayani tujuan yang berbeda dan memiliki persyaratan yang unik:</p>
+<p><strong>1. Power Ground</strong>
+- <strong>Tujuan</strong>: Menangani arus balik dari perangkat bertenaga tinggi seperti injector, ignition coil, fuel pump, dan relay</p>
+<ul>
+<li>
+<p><strong>Karakteristik</strong>: Arus ini seringkali besar dan dapat berfluktuasi dengan cepat saat perangkat menyala dan mati</p>
+</li>
+<li>
+<p><strong>Dampak Koneksi yang Salah</strong>: Jika arus power ground mengalir melalui rangkaian sensor ground, mereka dapat menimbulkan noise dan fluktuasi voltase</p>
+</li>
+</ul>
+<p><strong>2. Sensor Ground</strong>
+- <strong>Tujuan</strong>: Menyediakan titik referensi yang stabil dan bebas noise untuk sensor bertenaga rendah seperti TPS, MAP, dan IAT</p>
+<ul>
+<li>
+<p><strong>Karakteristik</strong>: Ground ini membawa arus yang sangat kecil, dan gangguan apapun dapat secara signifikan mempengaruhi integritas sinyal</p>
+</li>
+<li>
+<p><strong>Dampak Koneksi yang Salah</strong>: Jika sensor ground tidak diisolasi, noise arus tinggi dari perangkat power dapat menyebabkan pembacaan sensor yang tidak menentu atau bahkan salah interpretasi ECU</p>
+</li>
+</ul>
+<h3 id="best-practice-untuk-grounding-dalam-sistem-otomotif">Best Practice untuk Grounding dalam Sistem Otomotif<a class="headerlink" href="#best-practice-untuk-grounding-dalam-sistem-otomotif" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Gunakan Titik Ground Bersama</strong>:</li>
+<li>Hubungkan semua power ground ECU ke satu titik ground yang bersih (misalnya terminal negatif aki)</li>
+<li>
+<p>Pastikan sensor ground kembali langsung ke ECU tanpa melewati chassis</p>
+</li>
+<li>
+<p><strong>Isolasi Sensor Ground</strong>:</p>
+</li>
+<li>
+<p>Jangan pernah hubungkan sensor ground langsung ke chassis. Gunakan pin sensor ground khusus ECU untuk semua sensor</p>
+</li>
+<li>
+<p><strong>Pastikan Koneksi yang Aman</strong>:</p>
+</li>
+<li>
+<p>Gunakan teknik crimping atau soldering yang tepat dan bersihkan titik kontak untuk meminimalkan resistansi dan mencegah voltage drop</p>
+</li>
+<li>
+<p><strong>Gunakan Kabel Berpelindung</strong>:</p>
+</li>
+<li>
+<p>Untuk sinyal sensitif (misalnya sensor crank dan cam), gunakan kabel berpelindung yang di-ground di satu ujung untuk mengurangi interferensi elektromagnetik</p>
+</li>
+<li>
+<p><strong>Periksa Integritas Grounding</strong>:</p>
+</li>
+<li>Secara berkala periksa koneksi ground untuk korosi, sambungan yang kendor, atau kabel yang rusak</li>
+</ol>
+<p><strong>Pengingat Keselamatan</strong>: Sebelum menginstal atau menangani wiring apapun, putuskan aki kendaraan untuk mencegah hubung singkat atau kerusakan pada komponen.</p>
+<p><strong>Catatan Penting</strong>:</p>
+<ul>
+<li>Pastikan semua koneksi wiring mengikuti spesifikasi yang direkomendasikan untuk performa dan keselamatan terbaik</li>
+<li>Gunakan hanya konektor berkualitas tinggi dan isolasi yang tepat untuk semua sambungan</li>
+</ul>
+<h2 id="pengantar-tunerstudio">Pengantar TunerStudio<a class="headerlink" href="#pengantar-tunerstudio" title="Permanent link">&para;</a></h2>
+<p>TunerStudio adalah software tuning yang digunakan untuk mengkonfigurasi dan memonitor ECU Mazduino. Software ini memungkinkan Anda untuk mengatur parameter mesin, melihat data sensor real-time, dan melakukan tuning untuk performa optimal.</p>
+<p>Dokumentasi ini telah dibagi menjadi bagian-bagian terpisah untuk memudahkan navigasi dan pemahaman. Setiap menu konfigurasi memiliki panduan lengkap dengan contoh praktis dan rekomendasi untuk unit Plug &amp; Play maupun Kit/DIY.</p>
+<h2 id="daftar-menu-konfigurasi">Daftar Menu Konfigurasi<a class="headerlink" href="#daftar-menu-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="instalasi-tunerstudio"><a href="../tunerstudio-instalasi/">Instalasi TunerStudio</a><a class="headerlink" href="#instalasi-tunerstudio" title="Permanent link">&para;</a></h3>
+<p>Panduan lengkap instalasi TunerStudio untuk ECU Mazduino, meliputi:</p>
+<ul>
+<li>Download dan instalasi step-by-step</li>
+<li>Konfigurasi system requirements</li>
+<li>Troubleshooting masalah instalasi</li>
+<li>Setup driver dan koneksi USB</li>
+</ul>
+<h3 id="konfigurasi-project-tunerstudio"><a href="../tunerstudio-konfigurasi/">Konfigurasi Project TunerStudio</a><a class="headerlink" href="#konfigurasi-project-tunerstudio" title="Permanent link">&para;</a></h3>
+<p>Setup project baru dan konfigurasi ECU connection, mencakup:</p>
+<ul>
+<li>Membuat project baru dari awal</li>
+<li>Deteksi dan koneksi ECU Mazduino</li>
+<li>Konfigurasi communication settings</li>
+<li>Verifikasi koneksi dan troubleshooting</li>
+</ul>
+<h3 id="interface-dan-menu-tunerstudio"><a href="../tunerstudio-interface/">Interface dan Menu TunerStudio</a><a class="headerlink" href="#interface-dan-menu-tunerstudio" title="Permanent link">&para;</a></h3>
+<p>Panduan navigasi dan penggunaan interface TunerStudio, meliputi:</p>
+<ul>
+<li>Overview interface dan dashboard</li>
+<li>File menu (project dan tune management)</li>
+<li>Options menu (pengaturan interface)</li>
+<li>Data logging, communications, dan tools menu</li>
+</ul>
+<h3 id="base-engine-settings"><a href="../tunerstudio-base-engine/">Base Engine Settings</a><a class="headerlink" href="#base-engine-settings" title="Permanent link">&para;</a></h3>
+<p>Konfigurasi dasar engine untuk operasi ECU yang tepat, mencakup:</p>
+<ul>
+<li>Engine configuration (cylinders, displacement, firing order)</li>
+<li>Fuel strategy selection (Speed Density, MAF, Alpha-N, Lua)</li>
+<li>Engine metadata dan forced induction settings</li>
+<li>Layout selection dan best practices</li>
+</ul>
+<h3 id="limits-and-protection"><a href="../tunerstudio-limits-protection/">Limits and Protection</a><a class="headerlink" href="#limits-and-protection" title="Permanent link">&para;</a></h3>
+<p>Sistem proteksi untuk melindungi engine dari kerusakan, meliputi:</p>
+<ul>
+<li>Limits and Fallbacks (RPM, boost, injector duty cycle)</li>
+<li>Oil Pressure Protection</li>
+<li>Lambda Protection (AFR monitoring)</li>
+<li>Soft RPM limits dan electronic throttle limiting</li>
+</ul>
+<h3 id="fuel-system-configuration"><a href="../tunerstudio-fuel-system/">Fuel System Configuration</a><a class="headerlink" href="#fuel-system-configuration" title="Permanent link">&para;</a></h3>
+<p>Konfigurasi komprehensif sistem bahan bakar, mencakup:</p>
+<ul>
+<li>Injection configuration dan hardware settings</li>
+<li>VE (Volumetric Efficiency) table tuning</li>
+<li>Target AFR table dan closed loop correction</li>
+<li>Acceleration enrichment dan fuel cutoff (DFCO)</li>
+</ul>
+<h3 id="ignition-system-configuration"><a href="../tunerstudio-ignition/">Ignition System Configuration</a><a class="headerlink" href="#ignition-system-configuration" title="Permanent link">&para;</a></h3>
+<p>Setup sistem ignition untuk performance optimal, meliputi:</p>
+<ul>
+<li>Ignition mode selection (single coil, individual coils, wasted spark)</li>
+<li>Ignition timing table dan dwell configuration</li>
+<li>CLT/IAT timing corrections</li>
+<li>Multispark, knock control, dan cylinder trims</li>
+</ul>
+<h3 id="sensor-configuration"><a href="../tunerstudio-sensors/">Sensor Configuration</a><a class="headerlink" href="#sensor-configuration" title="Permanent link">&para;</a></h3>
+<p>Konfigurasi lengkap semua jenis sensor untuk monitoring dan kontrol engine, mencakup:</p>
+<ul>
+<li>Setup sensor analog dan digital</li>
+<li>Kalibrasi TPS, MAP, CLT, IAT dan sensor lainnya</li>
+<li>Konfigurasi O2 sensor dan wideband controller</li>
+<li>VR sensor threshold dan speed sensor setup</li>
+</ul>
+<h3 id="can-bus-configuration"><a href="../tunerstudio-canbus/">CAN Bus Configuration</a><a class="headerlink" href="#can-bus-configuration" title="Permanent link">&para;</a></h3>
+<p>Setup komunikasi CAN Bus untuk integrasi dengan perangkat eksternal, meliputi:</p>
+<ul>
+<li>Konfigurasi CAN Bus communication settings</li>
+<li>Setup CAN O2 sensors dan EGT sensors</li>
+<li>CAN vehicle speed sensor configuration</li>
+<li>Integration dengan dashboard dan IO box</li>
+</ul>
+<h3 id="controller-diagnostics"><a href="../tunerstudio-controller/">Controller &amp; Diagnostics</a><a class="headerlink" href="#controller-diagnostics" title="Permanent link">&para;</a></h3>
+<p>Tool diagnostik dan testing untuk troubleshooting sistem, mencakup:</p>
+<ul>
+<li>Bench testing injector dan ignition outputs</li>
+<li>Fancy Board configuration untuk ECU wire-in</li>
+<li>Traction control tables dan tuning</li>
+<li>SD Card logging dan rusEFI console</li>
+</ul>
+<h3 id="troubleshooting"><a href="../tunerstudio-troubleshooting/">Troubleshooting</a><a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<p>Panduan komprehensif untuk mengatasi masalah sistem Mazduino, meliputi:</p>
+<ul>
+<li>Diagnosis masalah umum (no RPM signal, sensor errors)</li>
+<li>Tool diagnostik dan raw sensor monitoring</li>
+<li>Error codes dan prosedur reset</li>
+<li>Best practices untuk maintenance preventif</li>
+</ul>
+<h3 id="examples-map-switching"><a href="../tunerstudio-examples/">Examples &amp; Map Switching</a><a class="headerlink" href="#examples-map-switching" title="Permanent link">&para;</a></h3>
+<p>Contoh implementasi praktis dan fitur advanced, mencakup:</p>
+<ul>
+<li>Setup map switching untuk kondisi operasi berbeda</li>
+<li>Progressive tuning dan automatic switching</li>
+<li>Integration dengan launch control dan traction control</li>
+<li>Safety considerations dan best practices</li>
+</ul>
+<h3 id="pengaturan-output-controls"><a href="../tunerstudio-output-controls/">Pengaturan Output Controls</a><a class="headerlink" href="#pengaturan-output-controls" title="Permanent link">&para;</a></h3>
+<p>Konfigurasi komprehensif untuk semua kontrol output ECU, meliputi:</p>
+<ul>
+<li>Main Relay dan Fuel Pump Control</li>
+<li>Tachometer dan Speedometer Output</li>
+<li>Fan Cooling (Dual Fan Support)</li>
+<li>Starter Control dan Safety Features</li>
+<li>Check Engine Light Configuration</li>
+</ul>
+<h3 id="pengaturan-air-conditioning"><a href="../tunerstudio-ac-settings/">Pengaturan Air Conditioning</a><a class="headerlink" href="#pengaturan-air-conditioning" title="Permanent link">&para;</a></h3>
+<p>Kontrol sistem AC yang terintegrasi dengan ECU, mencakup:</p>
+<ul>
+<li>Input dan Output Controls AC</li>
+<li>Timing dan Protection Settings</li>
+<li>Kompensasi Idle Speed</li>
+<li>Kontrol Tekanan Sistem</li>
+<li>Status Monitoring dan Indikator</li>
+</ul>
+<hr />
+<p><em>Manual ini akan terus diperbarui dengan penambahan menu konfigurasi baru. Pastikan Anda menggunakan versi terbaru untuk informasi yang akurat.</em></p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-tuner-diagnostik/" class="btn btn-neutral float-left" title="Diagnostics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-instalasi/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-tuner-diagnostik/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-instalasi/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

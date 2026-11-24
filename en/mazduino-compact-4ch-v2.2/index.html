@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/mazduino-compact-4ch-v2.2/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>v2.2 - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "v2.2";
+        var mkdocs_page_input_path = "mazduino-compact-4ch-v2.2.en.md";
+        var mkdocs_page_url = "/en/mazduino-compact-4ch-v2.2/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" >Compact 4 Channel</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">v2.2</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#core-features">Core Features</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#high-side-switching-v22">High Side Switching (v2.2)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#wiring-and-installation">Wiring and Installation</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#connector-pin-mapping">Connector Pin Mapping</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mcu-pin-mapping">MCU Pin Mapping</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#high-side-switching">High Side Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#notes">Notes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#version-comparison">Version Comparison</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">ECU</li>
+          <li class="breadcrumb-item">Compact 4 Channel</li>
+      <li class="breadcrumb-item active">v2.2</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../mazduino-compact-4ch-v2.2/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <h1 id="ecu-mazduino-compact-v22">ECU Mazduino Compact (v2.2)<a class="headerlink" href="#ecu-mazduino-compact-v22" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The Mazduino Compact v2.2 ECU is the latest evolution of the 4-channel standalone Engine Control Unit, designed for versatile engine management applications. Built specifically for rusEFI and Speeduino firmware, it provides comprehensive engine control in a compact package suited to fully sequential 4-cylinder or paired 8-cylinder operation.</p>
+<p><strong>New in v2.2:</strong></p>
+<ul>
+<li>
+<p><strong>High Side Switching</strong>: High-side MOSFET output for alternator control, VVT and other 12V switching</p>
+</li>
+<li>
+<p><strong>Enhanced Pin Mapping</strong>: Connector pin 22 is assigned to the High Side output</p>
+</li>
+<li>
+<p><strong>PA8 MCU Support</strong>: High-side control through MCU pin PA8</p>
+</li>
+</ul>
+<p><img alt="Mazduino Compact 4ch v2.2" src="../../img/mazduino-compact-4ch-v2.2.jpeg" /></p>
+<h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<h3 id="core-features">Core Features<a class="headerlink" href="#core-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Primary trigger input for hall or optical CKP sensors only</li>
+<li>Secondary trigger input for hall or optical CMP sensors only  </li>
+<li>6 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2 and 1 spare</li>
+<li>
+<p><strong>Knock Sensor Input</strong>: Dedicated knock sensor input with a conditioning IC</p>
+</li>
+<li>
+<p>5V sensor power supply with internal fuse protection</p>
+</li>
+<li>3 pullup digital inputs for AC Switch, VSS, Clutch (AC or VSS can be used for a Launch Control button if not needed)</li>
+<li>
+<p><strong>6x high-current 3A low-side drivers</strong>: 4 injectors + Idle 1 + Idle 2 for high-impedance injectors, idle PWM, boost control, VVT</p>
+</li>
+<li>
+<p>5x low-current low-side drivers for main relay, fuel pump, AC compressor, fan and tachometer control</p>
+</li>
+<li>4x 12V or 5V outputs for ignition coil signals</li>
+<li>
+<p><strong>NEW: 1x High Side Switching</strong> for alternator/VVT/12V switching control</p>
+</li>
+<li>
+<p>168 MHz ARM Cortex-M4 processor</p>
+</li>
+<li>Data communication via CANbus</li>
+<li>Data communication via USB Type-C</li>
+<li>Serial RX/TX communication</li>
+<li>
+<p><strong>Yamaha 33-pin connector</strong>: Professional-grade automotive connector with an optimized pin assignment</p>
+</li>
+<li>
+<p>SD card for data logging</p>
+</li>
+</ul>
+<h3 id="high-side-switching-v22">High Side Switching (v2.2)<a class="headerlink" href="#high-side-switching-v22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Output Type</strong>: High-side MOSFET switching</p>
+</li>
+<li>
+<p><strong>Voltage</strong>: 12V switching capability</p>
+</li>
+<li>
+<p><strong>Current Rating</strong>: High current handling for heavy loads</p>
+</li>
+<li>
+<p><strong>Applications</strong>: </p>
+</li>
+<li>Alternator field control</li>
+<li>Variable Valve Timing (VVT) solenoid</li>
+<li>High current 12V loads</li>
+<li>Auxiliary systems control</li>
+<li><strong>MCU Control</strong>: Pin PA8 for PWM control and digital switching</li>
+</ul>
+<h2 id="wiring-and-installation">Wiring and Installation<a class="headerlink" href="#wiring-and-installation" title="Permanent link">&para;</a></h2>
+<h3 id="connector-pin-mapping">Connector Pin Mapping<a class="headerlink" href="#connector-pin-mapping" title="Permanent link">&para;</a></h3>
+<p>The Mazduino Compact v2.2 ECU uses a Yamaha 33-pin connector with the following pin assignment:</p>
+<p><img alt="Mazduino Compact 33-pin Connector" src="../../img/connector-33p.jpeg" /></p>
+<h4 id="connector-layout">Connector Layout<a class="headerlink" href="#connector-layout" title="Permanent link">&para;</a></h4>
+<pre><code>11  10   9   8   7   6   5   4   3   2   1
+22  21  20  19  18  17  16  15  14  13  12
+33  32  31  30  29  28  27  26  25  24  23
+</code></pre>
+<h4 id="pin-assignment">Pin Assignment<a class="headerlink" href="#pin-assignment" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Injector 1</td>
+<td>Injector channel 1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Injector 2</td>
+<td>Injector channel 2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Injector 3</td>
+<td>Injector channel 3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Injector 4</td>
+<td>Injector channel 4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Idle 1</td>
+<td>Idle control output 1 (high current 3A)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tacho</td>
+<td>Tachometer output</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Fan</td>
+<td>Fan relay control</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5V</td>
+<td>5V reference output</td>
+</tr>
+<tr>
+<td>9</td>
+<td>12V</td>
+<td>Main power supply</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Main Relay</td>
+<td>Main relay control</td>
+</tr>
+<tr>
+<td>11</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Idle 2</td>
+<td>Idle control output 2 (high current 3A) - can be used for boost/VVT</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Ignition 4</td>
+<td>Ignition channel 4</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Ignition 3</td>
+<td>Ignition channel 3</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Ignition 2</td>
+<td>Ignition channel 2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Ignition 1</td>
+<td>Ignition channel 1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Fuel Pump</td>
+<td>Fuel pump relay control</td>
+</tr>
+<tr>
+<td>18</td>
+<td>AC Compressor</td>
+<td>AC compressor relay</td>
+</tr>
+<tr>
+<td>19</td>
+<td>CKP</td>
+<td>Crankshaft position sensor (Trigger 1)</td>
+</tr>
+<tr>
+<td>20</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>21</td>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td><strong>22</strong></td>
+<td><strong>High Side Out</strong></td>
+<td><strong>High Side MOSFET output</strong></td>
+</tr>
+<tr>
+<td>23</td>
+<td>CLT</td>
+<td>Coolant temperature</td>
+</tr>
+<tr>
+<td>24</td>
+<td>TPS</td>
+<td>Throttle position sensor</td>
+</tr>
+<tr>
+<td>25</td>
+<td>O2</td>
+<td>Oxygen sensor</td>
+</tr>
+<tr>
+<td>26</td>
+<td>MAP</td>
+<td>Manifold absolute pressure</td>
+</tr>
+<tr>
+<td>27</td>
+<td>IAT</td>
+<td>Intake air temperature</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Spare Analog</td>
+<td>Spare analog input</td>
+</tr>
+<tr>
+<td>29</td>
+<td>CMP</td>
+<td>Camshaft position sensor (Trigger 2)</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Knock Sensor</td>
+<td>Knock sensor input with conditioning IC</td>
+</tr>
+<tr>
+<td>31</td>
+<td>AC Switch</td>
+<td>AC switch input (active ground)</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Clutch</td>
+<td>Clutch position input</td>
+</tr>
+<tr>
+<td>33</td>
+<td>VSS</td>
+<td>Vehicle speed sensor</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mcu-pin-mapping">MCU Pin Mapping<a class="headerlink" href="#mcu-pin-mapping" title="Permanent link">&para;</a></h3>
+<p>For advanced users and firmware development, here is the STM32F407VGT6 pin assignment for v2.2:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>MCU Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ignition Output 1</td>
+<td>PE15</td>
+</tr>
+<tr>
+<td>Ignition Output 2</td>
+<td>PE14</td>
+</tr>
+<tr>
+<td>Ignition Output 3</td>
+<td>PD13</td>
+</tr>
+<tr>
+<td>Ignition Output 4</td>
+<td>PE5</td>
+</tr>
+<tr>
+<td>Injection Output 1</td>
+<td>PD8</td>
+</tr>
+<tr>
+<td>Injection Output 2</td>
+<td>PB15</td>
+</tr>
+<tr>
+<td>Injection Output 3</td>
+<td>PB14</td>
+</tr>
+<tr>
+<td>Injection Output 4</td>
+<td>PB13</td>
+</tr>
+<tr>
+<td><strong>High Side Output</strong></td>
+<td><strong>PA8</strong></td>
+</tr>
+<tr>
+<td>MAP Sensor</td>
+<td>PA0</td>
+</tr>
+<tr>
+<td>TPS</td>
+<td>PA3</td>
+</tr>
+<tr>
+<td>IAT Sensor</td>
+<td>PA5</td>
+</tr>
+<tr>
+<td>CLT Sensor</td>
+<td>PA4</td>
+</tr>
+<tr>
+<td>O2 Sensor</td>
+<td>PA1</td>
+</tr>
+<tr>
+<td>Battery/Voltage Ref</td>
+<td>PA2</td>
+</tr>
+<tr>
+<td>Spare Analog Input 1</td>
+<td>PB1</td>
+</tr>
+<tr>
+<td><strong>Knock Sensor</strong></td>
+<td><strong>PA6</strong></td>
+</tr>
+<tr>
+<td>AC Input</td>
+<td>PB0</td>
+</tr>
+<tr>
+<td>Clutch Input</td>
+<td>PE13</td>
+</tr>
+<tr>
+<td>VSS</td>
+<td>PD7</td>
+</tr>
+<tr>
+<td>CKP</td>
+<td>PD3</td>
+</tr>
+<tr>
+<td>CMP</td>
+<td>PD4</td>
+</tr>
+<tr>
+<td>Tacho</td>
+<td>PC9</td>
+</tr>
+<tr>
+<td>Fuel Pump Relay</td>
+<td>PC8</td>
+</tr>
+<tr>
+<td>FAN Relay</td>
+<td>PA15</td>
+</tr>
+<tr>
+<td>AC Compressor Relay</td>
+<td>PC7</td>
+</tr>
+<tr>
+<td>Main Relay</td>
+<td>PE8</td>
+</tr>
+<tr>
+<td>Idle 1</td>
+<td>PD9</td>
+</tr>
+<tr>
+<td>Idle 2</td>
+<td>PD10</td>
+</tr>
+<tr>
+<td>TXD1</td>
+<td>PA9</td>
+</tr>
+<tr>
+<td>RXD1</td>
+<td>PA10</td>
+</tr>
+<tr>
+<td>TXD3</td>
+<td>PB10</td>
+</tr>
+<tr>
+<td>RXD3</td>
+<td>PB11</td>
+</tr>
+<tr>
+<td>TXCAN</td>
+<td>PD1</td>
+</tr>
+<tr>
+<td>RXCAN</td>
+<td>PD0</td>
+</tr>
+<tr>
+<td>SD CS</td>
+<td>PD2</td>
+</tr>
+<tr>
+<td>SPI3 CLK</td>
+<td>PC10</td>
+</tr>
+<tr>
+<td>SPI3 MISO</td>
+<td>PC11</td>
+</tr>
+<tr>
+<td>SPI3 MOSI</td>
+<td>PC12</td>
+</tr>
+</tbody>
+</table>
+<h2 id="high-side-switching">High Side Switching<a class="headerlink" href="#high-side-switching" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>MCU Pin</strong>: PA8, <strong>Connector Pin</strong>: Pin 22</p>
+</li>
+<li>
+<p><strong>Output Type</strong>: High-side P-channel MOSFET, 12V, PWM/digital support</p>
+</li>
+<li>
+<p><strong>Applications</strong>: Alternator field control, VVT solenoid, or other 12V loads</p>
+</li>
+</ul>
+<p>Wiring example:</p>
+<pre><code>Pin 22 (High Side) → VVT Solenoid (+)
+VVT Solenoid (-) → Vehicle Ground
+</code></pre>
+<blockquote>
+<p>Always use a fuse that matches the load rating. Turn off power before wiring.</p>
+</blockquote>
+<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>Smart Coils</strong>: Direct connection supported. <strong>Dump Coils</strong>: Require an external IGBT.</p>
+</li>
+<li>
+<p><strong>Upgrading from v2.1</strong>: Pin 22 changes to High Side Output. Adjust your wiring if you upgrade.</p>
+</li>
+<li>
+<p>Solder jumpers on the back of the PCB set the ignition voltage and knock sensor enable.</p>
+</li>
+</ul>
+<p><strong><a href="../downloads/">Download firmware and configuration files</a></strong></p>
+<h2 id="version-comparison">Version Comparison<a class="headerlink" href="#version-comparison" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>v2.1</th>
+<th>v2.2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core MCU</td>
+<td>ARM Cortex-M4 168 MHz</td>
+<td>ARM Cortex-M4 168 MHz</td>
+</tr>
+<tr>
+<td>Ignition Outputs</td>
+<td>4x</td>
+<td>4x</td>
+</tr>
+<tr>
+<td>Injection Outputs</td>
+<td>4x</td>
+<td>4x</td>
+</tr>
+<tr>
+<td>Low Side Outputs</td>
+<td>5x</td>
+<td>5x</td>
+</tr>
+<tr>
+<td><strong>High Side Output</strong></td>
+<td><strong>No</strong></td>
+<td><strong>Yes (Pin 22)</strong></td>
+</tr>
+<tr>
+<td><strong>MCU Pin PA8</strong></td>
+<td><strong>Unused</strong></td>
+<td><strong>High Side Control</strong></td>
+</tr>
+<tr>
+<td>CAN Bus</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>USB Type-C</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>SD Card</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Knock Sensor</td>
+<td>Yes (Pin 30)</td>
+<td>Yes (Pin 30)</td>
+</tr>
+<tr>
+<td>High Current MOSFET</td>
+<td>6 (4 injectors + 2 idle)</td>
+<td>6 (4 injectors + 2 idle)</td>
+</tr>
+<tr>
+<td>Stepper Support</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>v2.2 Update</strong>: Adds High Side Switching for alternator control, VVT and other 12V switching applications through connector pin 22 and MCU pin PA8.</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-compact-4ch-v2.1/" class="btn btn-neutral float-left" title="v2.1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-compact-4ch-v2.3/" class="btn btn-neutral float-right" title="v2.3">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-compact-4ch-v2.1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-compact-4ch-v2.3/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

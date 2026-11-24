@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/mazduino-racedash-pro/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Pro / M4, M5, M7 (4.3", 5" & 7") - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pro / M4, M5, M7 (4.3\", 5\" \u0026 7\")";
+        var mkdocs_page_input_path = "mazduino-racedash-pro.en.md";
+        var mkdocs_page_url = "/en/mazduino-racedash-pro/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Mazduino Dash</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dtm4-4-pin-connector">DTM4 / 4 Pin Connector</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#racedash-pro-m4-m5-m7">Racedash Pro M4 / M5 / M7</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#supported-ecus">Supported ECUs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#changing-the-display-template">Changing the display (template)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#on-screen-menu-m4-m5-m7">On-screen menu (M4 / M5 / M7)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#other-settings-only-in-dashtune">Other settings only in DashTune</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#indicator-lights">Indicator lights</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dashtune-app-guide">DashTune App Guide</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#if-the-play-store-shows-cant-download-dashtune">If the Play Store shows "Can't download DashTune"</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#connecting-for-the-first-time">Connecting for the first time</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dashtune-menu-contents">DashTune menu contents</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#making-your-own-splash-screen">Making your own splash screen</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#update-firmware">Update firmware</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#relay-features-google-maps-and-music">Relay features: Google Maps and music</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#references">References</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Dash Display</li>
+          <li class="breadcrumb-item">Mazduino Dash</li>
+      <li class="breadcrumb-item active">Pro / M4, M5, M7 (4.3", 5" & 7")</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../mazduino-racedash-pro/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <h1 id="mazduino-racedash-pro">Mazduino Racedash Pro<a class="headerlink" href="#mazduino-racedash-pro" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><img alt="Mazduino Racedash Pro M4" src="../../img/dash/racedash-pro-m4.jpeg" /></p>
+<p><em>Racedash Pro M4 (4.3"): eight shift light LEDs above the screen, with
+Template 1 and a "Start Engine" switch from the Switch Panel</em></p>
+<p>Mazduino Racedash Pro is the digital dash display variant with a larger screen, available in <strong>4.3", 5" and 7"</strong>. Unlike the <a href="../mazduino-racedash/">Mazduino Racedash</a> variants (3.5" and 4"), which are configured over WiFi and a browser, the Racedash Pro can be set up <strong>directly on the screen (touchscreen)</strong> without connecting to a phone/laptop. The <strong>DashTune</strong> Android app is also available over Bluetooth for settings that are not in the on-screen menu.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variant</th>
+<th style="text-align: left;">Screen Size</th>
+<th style="text-align: left;">Connector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Racedash Pro 4.3" (M4)</td>
+<td style="text-align: left;">4.3 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash Pro 5" (M5)</td>
+<td style="text-align: left;">5 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Racedash Pro 7" (M7)</td>
+<td style="text-align: left;">7 inch</td>
+<td style="text-align: left;">DTM4 (Deutsch DTM 4 Pin)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-features">Key Features<a class="headerlink" href="#key-features" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Touchscreen, so the dashboard can be set up directly on the screen, with no extra app or WiFi connection</li>
+<li>Shows RPM, gear indicator, speed and other sensor data in real time</li>
+<li>Communicates with the ECU over <strong>CAN Bus</strong> or <strong>Serial</strong>, depending on the ECU used. <strong>Speeduino</strong>-based ECUs use Serial mode, while <strong>rusEFI</strong>, <strong>Haltech</strong> and <strong>MaxxECU</strong> use CAN Bus mode</li>
+<li>Vehicles without a CAN bus can use the <strong>M-Link</strong> protocol together with the <a href="../can-io-extender/#vehicles-without-a-can-bus-m-link-protocol">CAN IO Extender</a>, which reads sensors, switches and RPM and sends them to the dash</li>
+</ul>
+<h2 id="dtm4-4-pin-connector">DTM4 / 4 Pin Connector<a class="headerlink" href="#dtm4-4-pin-connector" title="Permanent link">&para;</a></h2>
+<p>The Racedash Pro uses the same <strong>DTM4 (Deutsch DTM 4 Pin)</strong> connector as the <a href="../mazduino-racedash/#racedash-4-cabus-dtm4-connector">Racedash 4"</a> variant, in both the physical connector and the pin functions.</p>
+<p><img alt="Racedash connector side" src="../../img/dash/racedash-dtm4-connector-side.png" /></p>
+<p><em>Dash connector side</em></p>
+<p><img alt="Cable connector side" src="../../img/dash/racedash-dtm4-cable-connector.png" /></p>
+<p><em>Cable connector side</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pin No.</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">12V Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">CAN High / TX</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">CAN Low / RX</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Pins 3 and 4 work as <strong>CAN High/CAN Low</strong> for <strong>rusEFI</strong>, <strong>Haltech</strong> and <strong>MaxxECU</strong> ECUs (CAN Bus mode).</li>
+<li>For <strong>Speeduino</strong> ECUs only, pins 3 and 4 work as <strong>Serial TX/RX</strong>, because Speeduino has no native CAN Bus.</li>
+</ul>
+<h2 id="racedash-pro-m4-m5-m7">Racedash Pro M4 / M5 / M7<a class="headerlink" href="#racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
+<p>This section covers the M4 (4.3"), M5 (5") and M7 (7"). The connector and
+wiring are exactly the same as described in
+<a href="#dtm4-4-pin-connector">DTM4 / 4 Pin Connector</a> above.</p>
+<p><img alt="Mazduino Racedash Pro M7" src="../../img/dash/racedash-pro-m7.jpeg" /></p>
+<p><em>Racedash Pro M7 (7"): front view powered on, front view, rear side
+with its mount, and side view</em></p>
+<p><img alt="Rear side of the Racedash Pro M7" src="../../img/dash/racedash-pro-m7-belakang.jpeg" /></p>
+<p><em>Rear side with the connector fitted</em></p>
+<h3 id="supported-ecus">Supported ECUs<a class="headerlink" href="#supported-ecus" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ECU</th>
+<th style="text-align: left;">Connection</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">rusEFI</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+<td style="text-align: left;">Most complete data</td>
+</tr>
+<tr>
+<td style="text-align: left;">Haltech</td>
+<td style="text-align: left;">CAN Bus 1 Mbps</td>
+<td style="text-align: left;">The only one that sends turn signal, handbrake and tire pressure data</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxxECU</td>
+<td style="text-align: left;">CAN Bus 500 kbps</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Speeduino</td>
+<td style="text-align: left;">Serial</td>
+<td style="text-align: left;">Speeduino has no CAN, so pins 3 and 4 are used as TX/RX</td>
+</tr>
+<tr>
+<td style="text-align: left;">OBD-II</td>
+<td style="text-align: left;">CAN Bus (ISO 15765-4)</td>
+<td style="text-align: left;">For the car's stock factory ECU, <a href="#obd-ii-limitations">read the limitations</a></td>
+</tr>
+</tbody>
+</table>
+<p>The ECU type is selected in the DashTune app or in the on-screen menu, and <strong>no
+firmware change is needed</strong>. The CAN speed follows the selected ECU
+automatically.</p>
+<p>Besides rusEFI, Haltech, MaxxECU, Speeduino and OBD-II in this table, the Racedash
+Pro also supports <strong>ECUMASTER EMU Black</strong> and <strong>Link Generic Dash</strong>. What
+has to be enabled on each ECU is covered in
+<a href="../setting-ecu-racedash/">ECU Configuration for Racedash</a>.</p>
+<p>Data shown for all ECUs: RPM, MAP, TPS, ignition timing, injector duty,
+AFR/lambda, pressures and temperatures (coolant, oil, fuel, intake air), EGT 1–4,
+gear, ethanol content and battery voltage.</p>
+<blockquote>
+<p><strong>Note</strong>: The <strong>turn signal</strong>, <strong>handbrake</strong> and <strong>tire pressure</strong> lights only
+come on with <strong>Haltech</strong>, because only Haltech sends that
+data. On rusEFI and MaxxECU these three lights will never come on;
+this is not a fault.</p>
+</blockquote>
+<h4 id="obd-ii-limitations">OBD-II Limitations<a class="headerlink" href="#obd-ii-limitations" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p><strong>Not every OBD-II car can be read by this dash, and we do not guarantee
+that your car is one that can.</strong> Check the following before buying for
+OBD-II use.</p>
+</blockquote>
+<p>Only <strong>OBD-II over CAN Bus</strong> is supported, that is <strong>ISO 15765-4</strong> with
+<strong>11-bit identifiers</strong>, at <strong>500 kbps</strong>.</p>
+<p><strong>Not</strong> supported:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Protocol</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ISO 9141-2</td>
+<td style="text-align: left;">K-line, common on older cars</td>
+</tr>
+<tr>
+<td style="text-align: left;">ISO 14230-4 (KWP2000)</td>
+<td style="text-align: left;">K-line</td>
+</tr>
+<tr>
+<td style="text-align: left;">SAE J1850 PWM / VPW</td>
+<td style="text-align: left;">Common on older American cars</td>
+</tr>
+<tr>
+<td style="text-align: left;">ISO 15765-4 29-bit identifier</td>
+<td style="text-align: left;">CAN variant used by some vehicles</td>
+</tr>
+</tbody>
+</table>
+<p>In general, cars built from <strong>2008 onward</strong> in many markets already use
+OBD-II over CAN, but this is not a guarantee: the changeover year differs
+between brands and countries.</p>
+<p>Even when the protocol matches, the data shown <strong>depends on what your car
+responds to</strong>. The dash first asks which PIDs are supported, then only reads
+the ones that are answered. The PIDs read are: RPM, speed, TPS, MAP, coolant temperature, intake air
+temperature, voltage and oil temperature. Many
+cars do not answer some of these; oil temperature is among the ones most
+often unavailable.</p>
+<p>OBD-II is also slower than the dedicated CAN protocols of standalone ECUs, because
+the dash has to ask and then wait for an answer for each value, instead of receiving
+periodic broadcasts.</p>
+<h3 id="changing-the-display-template">Changing the display (template)<a class="headerlink" href="#changing-the-display-template" title="Permanent link">&para;</a></h3>
+<p>The dash offers several dashboard displays. To switch, <strong>swipe left
+or right on the top part of the screen</strong> (in the RPM bar area). The bottom part of the screen
+deliberately ignores swipes so that the switches there are not touched by accident.</p>
+<p>The last display used is remembered, so when powered on again the dash
+opens the same display straight away.</p>
+<p>Some example displays on the Racedash Pro M7:</p>
+<!-- A flex row rather than a table: a two-column table gives each cell a fixed
+     share of the width and the images do not shrink to fit it, so the second
+     column was being cut off. These wrap and scale instead. -->
+<div style="display:flex;flex-wrap:wrap;gap:12px;margin:16px 0">
+  <img src="../../img/dash/racedash-pro-m7-template-1.jpeg" alt="Racedash Pro dashboard display" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../../img/dash/racedash-pro-m7-template-2.jpeg" alt="Racedash Pro dashboard display" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../../img/dash/racedash-pro-m7-template-3.jpeg" alt="Racedash Pro dashboard display" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+  <img src="../../img/dash/racedash-pro-m7-template-4.jpeg" alt="Racedash Pro dashboard display" style="flex:1 1 280px;min-width:0;max-width:100%;height:auto;border-radius:6px">
+</div>
+
+<p>The gauge colors and the content of each panel can be changed, so the display on your dash may
+differ from the examples above.</p>
+<h3 id="on-screen-menu-m4-m5-m7">On-screen menu (M4 / M5 / M7)<a class="headerlink" href="#on-screen-menu-m4-m5-m7" title="Permanent link">&para;</a></h3>
+<h4 id="screen-gestures">Screen gestures<a class="headerlink" href="#screen-gestures" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Gesture</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Swipe left / right <strong>on the RPM bar (top part of the screen)</strong></td>
+<td style="text-align: left;">Change the dashboard display</td>
+</tr>
+<tr>
+<td style="text-align: left;">Swipe up</td>
+<td style="text-align: left;">Open the <strong>Switch Panel</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Two-finger pinch</strong></td>
+<td style="text-align: left;">Open the main menu</td>
+</tr>
+</tbody>
+</table>
+<p>Swipes are only picked up on the top part of the screen. The bottom part is deliberately left
+free so that switches placed there are not touched by accident when
+changing displays.</p>
+<p><img alt="Racedash Pro M7 main menu" src="../../img/dash/racedash-pro-m7-menu.jpeg" /></p>
+<p><em>Main menu, opened with a two-finger pinch</em></p>
+<p><img alt="Switch Panel" src="../../img/dash/racedash-pro-m7-can-buttons.jpeg" /></p>
+<p><em>Switch Panel, opened by swiping up</em></p>
+<h4 id="menu-structure">Menu structure<a class="headerlink" href="#menu-structure" title="Permanent link">&para;</a></h4>
+<pre><code>Menu
+├── Dash          → back to the last dashboard
+├── Switch Panel  → Switch Panel page
+└── Setting
+    ├── Display Setting   → choose a template, then set the content of each panel
+    ├── General Setting   → units, maximum RPM, range of each data item
+    └── CAN
+        ├── Protocol      → choose the ECU type
+        └── Switch Panel  → create and edit switches
+</code></pre>
+<h4 id="display-setting-setting-the-content-of-each-template">Display Setting: setting the content of each template<a class="headerlink" href="#display-setting-setting-the-content-of-each-template" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → Display Setting</strong>, then choose the template you want to change
+(Template 1 to Template 5). The content of each data box on the template can be changed,
+for example from oil pressure to gearbox temperature, with the
+left/right arrow buttons.</p>
+<p>Press <strong>Save</strong> to save, or <strong>Discard</strong> to cancel. The settings are
+stored on the dash and are not lost when the engine is switched off.</p>
+<blockquote>
+<p><strong>Note for the M7</strong>: <strong>Template 3</strong> on the M7 has fixed content, so
+choosing it in Display Setting opens its display directly, not the
+settings page.</p>
+</blockquote>
+<h4 id="general-setting-units-and-data-ranges">General Setting: units and data ranges<a class="headerlink" href="#general-setting-units-and-data-ranges" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → General Setting</strong>:</p>
+<ul>
+<li><strong>Pressure unit</strong>: kPa or PSI</li>
+<li><strong>Temperature unit</strong>: °C or °F</li>
+<li><strong>Maximum RPM</strong>: the full scale of every RPM gauge, adjusted up and down in 250 RPM steps;
+  the redline is set automatically at about 5/6 of this number</li>
+<li><strong>Data Source</strong>: a list of all data sources. Choose one to set its
+  <strong>minimum and maximum values</strong>, which set the gauge range and the min/max
+  numbers printed on the screen</li>
+</ul>
+<p>Changes to the units and maximum RPM show up right away on every template.</p>
+<h4 id="can-ecu-type-and-switch-panel">CAN: ECU type and Switch Panel<a class="headerlink" href="#can-ecu-type-and-switch-panel" title="Permanent link">&para;</a></h4>
+<p><strong>Menu → Setting → CAN</strong> contains two things:</p>
+<ul>
+<li><strong>Protocol</strong>: selects the ECU type (rusEFI, Haltech, MaxxECU, Speeduino, OBD-II).
+  The CAN speed adjusts itself. <strong>No firmware change and
+  no restart needed</strong>: once saved, the dash reads with the
+  new protocol right away.</li>
+<li><strong>Switch Panel</strong>: create and edit switches: name, CAN ID and the data that is
+  sent. Switches you create appear on the Switch Panel page.</li>
+</ul>
+<p><img alt="ECU protocol setting on the dash screen" src="../../img/dash/racedash-pro-m7-ecu-protocol.jpeg" /></p>
+<p><em>Menu → Setting → CAN → Protocol</em></p>
+<h4 id="switch-panel">Switch Panel<a class="headerlink" href="#switch-panel" title="Permanent link">&para;</a></h4>
+<p>Swipe up from the dashboard to open the <strong>Switch Panel</strong>. This page is used
+to send commands to the ECU or other devices on the CAN network, for example
+turning on a fan or nitrous, or triggering launch control, just by pressing a
+switch on the screen. Press <strong>DASHBOARD</strong> to go back to the dashboard. The Switch Panel
+can also be made a tile on the main menu through <strong>Setting → Menu</strong>.</p>
+<p>Switches can be set up on the screen (Setting → CAN → Switch Panel) or in the
+DashTune app. There are two kinds of switch:</p>
+<ul>
+<li><strong>SWITCH</strong>: press once for ON, press again for OFF. While ON, the dash
+  keeps sending the ON command. Formerly called Toggle.</li>
+<li><strong>PUSH</strong>: sends the command once each time it is pressed. Formerly called Momentary.</li>
+</ul>
+<p>On a Racedash Pro with the latest firmware, each switch has three extra
+settings. All three are set in DashTune: <strong>Switch Panel</strong>, then edit the switch.</p>
+<ul>
+<li><strong>Icon</strong>: choose from a list of automotive icons, for example engine, fan, nitrous,
+  launch, anti-lag, turbo, lights, horn, A/C and wiper. The icon is shown on the switch
+  card on the dash and in the app.</li>
+<li><strong>Hold to activate</strong>: off, 0.5, 1, 2 or 3 seconds.
+  The switch only acts after being pressed for that long; while it is held, a
+  bar fills along the bottom of the card. This setting prevents a switch from being pressed
+  by accident on bumpy roads. Turning off a switch that is ON does not
+  need to be held.</li>
+<li><strong>Stay ON after power-off</strong> (SWITCH type only): off by
+  default, meaning every switch starts OFF each
+  time the dash powers on. This is safer for nitrous, anti-lag and launch.
+  Turn this setting on per switch if that switch really should come back ON.</li>
+</ul>
+<blockquote>
+<p><strong>Change for existing owners</strong>: before this update, a switch left ON
+would come back ON after the dash was switched off and on again. Now every
+switch starts OFF, except switches whose <strong>Stay ON after power-off</strong>
+setting is turned on.</p>
+</blockquote>
+<h3 id="other-settings-only-in-dashtune">Other settings only in DashTune<a class="headerlink" href="#other-settings-only-in-dashtune" title="Permanent link">&para;</a></h3>
+<p>Some settings are not available in the on-screen menu and can only be changed in the
+app:</p>
+<ul>
+<li><strong>MAP display</strong>: <em>Absolute</em> (the number as is, about 101 kPa at idle) or
+  <em>Boost</em> (calculated from the outside air pressure, so under vacuum the number is negative and
+  0 means no boost yet)</li>
+<li><strong>Splash duration</strong> at power-on</li>
+<li><strong>GPS module</strong>: only for units that actually have a GPS module fitted</li>
+</ul>
+<blockquote>
+<p><strong>The GPS module is optional and is not included in the unit as sold.</strong>
+The Racedash Pro ships without a GPS module, so this setting does not need to be
+turned on for a standard unit. The GPS module is only fitted on special request
+when ordering. Without that module, speed data is still read from the ECU
+as usual.</p>
+</blockquote>
+<p>The splash and GPS settings only take effect after the dash is switched off and on
+again.</p>
+<h3 id="indicator-lights">Indicator lights<a class="headerlink" href="#indicator-lights" title="Permanent link">&para;</a></h3>
+<p>The warning lights come on automatically:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Light</th>
+<th style="text-align: left;">Comes on when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Check engine</td>
+<td style="text-align: left;">The ECU reports a fault code</td>
+</tr>
+<tr>
+<td style="text-align: left;">Battery</td>
+<td style="text-align: left;">Voltage outside 11.5–15.5 V</td>
+</tr>
+<tr>
+<td style="text-align: left;">Coolant temperature</td>
+<td style="text-align: left;">Above 105 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oil temperature</td>
+<td style="text-align: left;">Above 130 °C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Oil pressure</td>
+<td style="text-align: left;">Engine running (above 800 RPM) but pressure below 100 kPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">Left/right turn signal, handbrake, tire pressure</td>
+<td style="text-align: left;">Haltech only</td>
+</tr>
+</tbody>
+</table>
+<p>All lights go out if the connection to the ECU is lost, so no light
+stays on after the ignition key is switched off.</p>
+<p>For ECUs other than Haltech, the turn signal, handbrake, high beam and parking light
+indicators can still be driven from the vehicle's switches by adding the
+<a href="../can-io-extender/">CAN IO Extender</a>.</p>
+<hr />
+<h2 id="dashtune-app-guide">DashTune App Guide<a class="headerlink" href="#dashtune-app-guide" title="Permanent link">&para;</a></h2>
+<p>DashTune is an Android app for setting up the dash from your phone. For the Racedash
+Pro M4/M5/M7, it connects over <strong>Bluetooth</strong>: no WiFi needed and nothing
+to unplug.</p>
+<blockquote>
+<p><strong>Getting the app:</strong> DashTune is still in testing. Open
+<strong><a href="https://www.mazduino.com/dashtune/tester">www.mazduino.com/dashtune/tester</a></strong>
+on your Android phone and follow the three steps with the same Google account
+that is active in the Play Store: join the tester group, tap <strong>Become a tester</strong>,
+then install DashTune from the Play Store.</p>
+</blockquote>
+<h4 id="if-the-play-store-shows-cant-download-dashtune">If the Play Store shows "Can't download DashTune"<a class="headerlink" href="#if-the-play-store-shows-cant-download-dashtune" title="Permanent link">&para;</a></h4>
+<p>This message usually appears right after tapping <strong>Install</strong> or <strong>Update</strong>,
+before the download has started. The cause is in the Play Store on the phone, not in
+the app.</p>
+<ol>
+<li>Open <strong>Settings → Apps → Google Play Store → Storage</strong>, then tap
+   <strong>Clear cache</strong> (not Clear storage).</li>
+<li>Open the Play Store again, find DashTune, and tap <strong>Install</strong> once more.</li>
+<li>If it still fails, make sure the Google account active in the Play Store (the profile picture
+   at the top right) is the account whose email was registered for DashTune testing.
+   If the phone has several accounts, switch to that one.</li>
+<li>A newly released version is sometimes not ready to download for a few minutes.
+   If the steps above have not worked, wait a moment and try again.</li>
+</ol>
+<p>If it still fails, contact <strong>support@mazduino.com</strong> with your phone model
+and the email of the Play Store account you are using.</p>
+<h3 id="connecting-for-the-first-time">Connecting for the first time<a class="headerlink" href="#connecting-for-the-first-time" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Turn the ignition key on until the dash powers up.</li>
+<li>Open DashTune, go to the <strong>Device</strong> tab, tap <strong>Add Dash</strong>.</li>
+<li>Tap <strong>Scan</strong>. The dash will appear by itself.</li>
+<li>Select that dash. Once connected, the app opens the menu page
+   straight away.</li>
+</ol>
+<p>If it is not found: make sure the phone's Bluetooth is on, the dash is powered on,
+and the dash is not connected to another phone. You can also choose the model
+manually under <strong>Dash model</strong> on the same screen.</p>
+<p>A dash that has been connected before is remembered, and the app connects
+by itself the next time it is opened.</p>
+<h3 id="dashtune-menu-contents">DashTune menu contents<a class="headerlink" href="#dashtune-menu-contents" title="Permanent link">&para;</a></h3>
+<p><img alt="DashTune home and the Racedash Pro M7 screen" src="../../img/dash/dashtune-pro-home.png" /></p>
+<p><em>Left: the DashTune home screen while connected to a Racedash Pro M7. Right: the dash screen
+with the Apex theme.</em></p>
+<p>Order of the menus on the DashTune home screen:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Menu</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Themes</strong></td>
+<td style="text-align: left;">Choose the theme shown on the dash and install new themes from the Theme Store. On old firmware this menu is called <strong>Dashboard</strong> and sets the data shown on each template</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Switch Panel</strong></td>
+<td style="text-align: left;">Create and set up the switches shown on the dash's Switch Panel. On old firmware this menu is called <strong>CAN Buttons</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>General Setting</strong></td>
+<td style="text-align: left;">Units, MAP mode, maximum RPM, range of each data item: the same as the menu on the dash screen</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Data log</strong></td>
+<td style="text-align: left;">Records trip data to the dash's memory. When the memory is full, the oldest log is deleted. To retrieve logs, the phone connects briefly to the dash's WiFi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LED lights</strong></td>
+<td style="text-align: left;">Shift light and indicators, only on dashes that have an LED strip</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Splash</strong></td>
+<td style="text-align: left;">Create your own opening image (see below)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Update Firmware</strong></td>
+<td style="text-align: left;">Updates the dash firmware. At the bottom is <strong>WiFi OTA Mode</strong>, which turns on the dash's WiFi so it can be reached from a computer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Info</strong></td>
+<td style="text-align: left;">Firmware version and device status</td>
+</tr>
+</tbody>
+</table>
+<h4 id="themes-and-theme-store">Themes and Theme Store<a class="headerlink" href="#themes-and-theme-store" title="Permanent link">&para;</a></h4>
+<p><img alt="Themes menu and Theme Store in DashTune" src="../../img/dash/dashtune-pro-themes.png" /></p>
+<p>Open <strong>Themes</strong> to see the themes on the dash and choose the one to show.
+The <strong>Apex</strong> theme is always installed by default. Tap <strong>Theme Store</strong> to see
+other themes with their previews, then choose a theme and tap <strong>Install</strong>. During
+installation the phone briefly joins the dash's <strong>Mazduino-Dash</strong> WiFi; the dashboard keeps
+running as usual.</p>
+<h4 id="general-setting-and-switch-panel">General Setting and Switch Panel<a class="headerlink" href="#general-setting-and-switch-panel" title="Permanent link">&para;</a></h4>
+<p><img alt="General Setting and Switch Panel in DashTune" src="../../img/dash/dashtune-pro-general.png" /></p>
+<p>In <strong>General Setting</strong>, the ECU protocol is changed directly without reflashing
+the firmware. This is also where you find the pressure and temperature units, MAP mode, screen brightness,
+Max RPM, the range of each data item, Custom Channels, the fuel level source and the source of each
+indicator. <strong>Switch Panel</strong> holds the switches shown on the dash screen; tap the pencil
+icon to edit a switch, or <strong>+</strong> to add a new switch. Icon,
+<strong>Hold to activate</strong> and <strong>Stay ON after power-off</strong> are set here (see
+<a href="#switch-panel">Switch Panel</a>).</p>
+<p><strong>Settings history</strong> is in the <strong>More → Account</strong> tab. It stores the
+dash settings over time. Check its contents first, then choose the one you
+want to restore to the dash.</p>
+<h3 id="making-your-own-splash-screen">Making your own splash screen<a class="headerlink" href="#making-your-own-splash-screen" title="Permanent link">&para;</a></h3>
+<p><img alt="Splash editor in DashTune" src="../../img/dash/dashtune-pro-splash.png" /></p>
+<p>Go to the <strong>Splash</strong> menu. There you can add images from the gallery,
+add text, move and resize, then choose the background color.
+When finished, tap send.</p>
+<p>Because the image is sent over WiFi, the dash automatically turns on its own WiFi
+for a moment, the phone switches to it, the image is sent, then the phone returns to the
+original network. The process runs by itself: just <strong>keep the phone screen on
+and do not close the app</strong> until it finishes.</p>
+<p>There is also a splash <strong>display duration</strong> setting, and a button to delete it and
+go back to the default image.</p>
+<h4 id="if-sending-the-splash-fails-or-the-splash-disappears">If sending the splash fails or the splash disappears<a class="headerlink" href="#if-sending-the-splash-fails-or-the-splash-disappears" title="Permanent link">&para;</a></h4>
+<p>On the Racedash Pro M4, M4.1, M5, M5.1, M5.2 and M7 with firmware before
+6 November 2026, the dash storage could jam after the splash, template or
+animation was changed a few times. The M7 Pro is not affected by this problem. Symptoms:</p>
+<ul>
+<li>Sending the splash fails, for example with <strong>"connection reset by peer"</strong> or
+  <strong>"The dash could not save the file"</strong>.</li>
+<li>The old splash is lost as well, so the dash powers on without an opening image.</li>
+</ul>
+<p>How to fix it:</p>
+<ol>
+<li>Update the DashTune app to version <strong>1.2.11</strong> or newer.</li>
+<li>Update the dash firmware through the <strong>Update Firmware</strong> menu to version
+   <strong>2026-11-06</strong> or newer. The firmware update still works
+   even when sending the splash fails.</li>
+<li>Send the splash again. The first send after the update can take about
+   one minute longer, because the dash tidies up its storage first. Keep
+   the phone screen on and the app open until it finishes.</li>
+</ol>
+<p>From that firmware on, the old splash is no longer deleted if sending
+fails. If the file really is too large, DashTune shows <strong>"Not enough room on
+the dash"</strong>; delete unused themes or animations, or shorten the
+splash, then try again.</p>
+<p>If the phone is already on the <strong>Mazduino-Dash</strong> WiFi but you get <strong>"connection timed
+out"</strong> or a message that the dash cannot be reached, first turn off any VPN or
+ad-blocking app on the phone. Apps like these redirect the connection so it does not
+reach the dash.</p>
+<p>If it still fails, contact support@mazduino.com with the dash model,
+the firmware version (Setting &gt; About) and the error message shown.</p>
+<h3 id="update-firmware">Update firmware<a class="headerlink" href="#update-firmware" title="Permanent link">&para;</a></h3>
+<p><img alt="Update Firmware menu in DashTune" src="../../img/dash/dashtune-pro-update.png" /></p>
+<p>Go to the <strong>Update Firmware</strong> menu; the app checks for the latest version and
+shows the version currently installed. If there is a new version, tap the
+update button.</p>
+<blockquote>
+<p><strong>Warning</strong>: Do not update while driving. During the update the dash
+screen goes off for a while, then comes back on by itself. Make sure the vehicle
+is in a safe state, the power is not cut, and the app is not closed until it
+finishes. An update that is interrupted partway can leave the dash unable to start.</p>
+</blockquote>
+<h3 id="relay-features-google-maps-and-music">Relay features: Google Maps and music<a class="headerlink" href="#relay-features-google-maps-and-music" title="Permanent link">&para;</a></h3>
+<p>DashTune can forward <strong>Google Maps directions</strong> and <strong>the song currently
+playing on the phone</strong> to the dash screen. The settings are in the <strong>More → Relay</strong> tab.</p>
+<p>The dash does not play music. Music is still played from the phone,
+or from a head unit connected to the phone. The <strong>Phone music</strong> page on the dash only
+shows the song title, artist and cover, plus play, pause and skip
+buttons to control the phone. The <strong>PHONE MUSIC</strong> tile can be shown through
+<strong>Setting → Menu</strong>.</p>
+<p>This feature needs notification access permission on the phone, and the app will take you to
+its settings page the first time it is enabled.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Mazduino website - <a href="https://www.mazduino.com/">https://www.mazduino.com/</a></li>
+<li>Mazduino Wiki - <a href="https://wiki.mazduino.com/">https://wiki.mazduino.com/</a></li>
+<li>Mazduino Github - <a href="https://github.com/mazduino/mazduino">https://github.com/mazduino/mazduino</a></li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../mazduino-racedash/" class="btn btn-neutral float-left" title="3.5" & 4""><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../mazduino-dash-r4/" class="btn btn-neutral float-right" title="Dash R4 (4" round)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../mazduino-racedash/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../mazduino-dash-r4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

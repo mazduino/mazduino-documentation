@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/wbo-can-controller/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>WBO CAN Controller - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "WBO CAN Controller";
+        var mkdocs_page_input_path = "wbo-can-controller.en.md";
+        var mkdocs_page_url = "/en/wbo-can-controller/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">WBO CAN Controller</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connector-pinout">Connector Pinout</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#lsu-49-sensor-wiring">LSU 4.9 Sensor Wiring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#power-and-can-wiring">Power and CAN Wiring</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#connecting-to-the-ecu-and-dash">Connecting to the ECU and Dash</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ecu-settings">ECU settings</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#wideband-sensor-important-notes">Wideband Sensor Important Notes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Accessories</li>
+      <li class="breadcrumb-item active">WBO CAN Controller</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../wbo-can-controller/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <h1 id="wbo-can-controller">WBO CAN Controller<a class="headerlink" href="#wbo-can-controller" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><img alt="Mazduino WBO CAN Controller" src="../../img/wbo/wbo-can-controller.png" /></p>
+<p>The WBO CAN Controller is a <strong>wideband oxygen controller</strong> for the Bosch
+<strong>LSU 4.9</strong> sensor. The module reads the sensor, calculates the lambda/AFR
+value, then sends it onto the CAN bus, so the ECU reads it without needing a
+dedicated analog input.</p>
+<p>The module uses the <strong>rusEFI wideband protocol</strong>, so it can only be paired with
+<strong>rusEFI-based ECUs</strong>, including the entire Mazduino line.</p>
+<p>It has two uses:</p>
+<ul>
+<li><strong>Saving ECU pins.</strong> A wideband sensor needs six wires and its own heater
+  control circuit. With this module, the ECU only needs to be connected to the
+  CAN bus, which may already be installed.</li>
+<li><strong>Adding a second sensor.</strong> For engines with two banks, two modules can be
+  installed on the same bus.</li>
+</ul>
+<p>The module uses a <strong>Molex 2x6 (12 pin)</strong> connector that carries power, CAN, and
+all six sensor wires in one connector.</p>
+<hr />
+<h2 id="connector-pinout">Connector Pinout<a class="headerlink" href="#connector-pinout" title="Permanent link">&para;</a></h2>
+<p>Molex 2x6 connector, viewed from the wire side:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Row</th>
+<th style="text-align: left;">Pin 1</th>
+<th style="text-align: left;">Pin 2</th>
+<th style="text-align: left;">Pin 3</th>
+<th style="text-align: left;">Pin 4</th>
+<th style="text-align: left;">Pin 5</th>
+<th style="text-align: left;">Pin 6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Row 1 (top)</strong></td>
+<td style="text-align: left;">Heater+</td>
+<td style="text-align: left;">CANH</td>
+<td style="text-align: left;">LSU_Un</td>
+<td style="text-align: left;">LSU_Rtrim</td>
+<td style="text-align: left;">LSU_Vm</td>
+<td style="text-align: left;"><em>empty</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Row 2 (bottom)</strong></td>
+<td style="text-align: left;">+12V</td>
+<td style="text-align: left;">CANL</td>
+<td style="text-align: left;"><em>empty</em></td>
+<td style="text-align: left;">Heater-</td>
+<td style="text-align: left;">LSU_Ip</td>
+<td style="text-align: left;">GND</td>
+</tr>
+</tbody>
+</table>
+<p>In short, by function:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Power</td>
+<td style="text-align: left;">+12V (Row 2, Pin 1) and GND (Row 2, Pin 6)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CAN</td>
+<td style="text-align: left;">CANH (Row 1, Pin 2) and CANL (Row 2, Pin 2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sensor heater</td>
+<td style="text-align: left;">Heater+ (Row 1, Pin 1) and Heater- (Row 2, Pin 4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sensor signal</td>
+<td style="text-align: left;">LSU_Un, LSU_Rtrim, LSU_Vm, LSU_Ip</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Watch Heater+ and +12V.</strong> Both are Pin 1, only on different rows. Swapping
+them connects the sensor heater straight to 12V without the module's control,
+and the sensor will be destroyed by overheating. Make sure the connector rows
+are right before turning on power.</p>
+</blockquote>
+<hr />
+<h2 id="lsu-49-sensor-wiring">LSU 4.9 Sensor Wiring<a class="headerlink" href="#lsu-49-sensor-wiring" title="Permanent link">&para;</a></h2>
+<p><img alt="LSU 4.9 connector" src="../../img/wbo/lsu49-connector.png" /></p>
+<p>The wire colors below are the standard Bosch LSU 4.9 colors, so they apply to
+the original sensor as well as replacement connectors.</p>
+<p>This table connects two different connectors, so pay attention to the columns:
+<strong>Sensor Pin</strong> is the pin number on the sensor's LSU 4.9 connector, while
+<strong>Position on Module Connector</strong> is where it goes on the WBO CAN Controller's
+Molex 2x6 connector.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sensor Pin (LSU)</th>
+<th style="text-align: left;">Wire Color</th>
+<th style="text-align: left;">Signal</th>
+<th style="text-align: left;">Position on Module Connector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;">LSU_Ip</td>
+<td style="text-align: left;">Row 2, Pin 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Yellow</td>
+<td style="text-align: left;">LSU_Vm</td>
+<td style="text-align: left;">Row 1, Pin 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">Heater-</td>
+<td style="text-align: left;">Row 2, Pin 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Gray</td>
+<td style="text-align: left;">Heater+</td>
+<td style="text-align: left;">Row 1, Pin 1</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: left;">LSU_Rtrim</td>
+<td style="text-align: left;">Row 1, Pin 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Black</td>
+<td style="text-align: left;">LSU_Un</td>
+<td style="text-align: left;">Row 1, Pin 3</td>
+</tr>
+</tbody>
+</table>
+<p>The pin numbers on the two sides do not line up with each other: sensor Pin 1
+does not go to module Pin 1. Follow the <strong>wire colors</strong>, do not match pin
+numbers.</p>
+<hr />
+<h2 id="power-and-can-wiring">Power and CAN Wiring<a class="headerlink" href="#power-and-can-wiring" title="Permanent link">&para;</a></h2>
+<p><strong>Power.</strong> Take +12V from a circuit that <strong>switches off when the ignition key
+is off</strong>, not directly from the battery. The sensor heater draws a fair amount
+of current and will drain the battery if the module stays on while the engine
+is off.</p>
+<p><strong>Ground.</strong> Connect GND to the same ground point as the ECU. A ground
+difference between the module and the ECU shifts the reading and can disturb
+CAN communication.</p>
+<p><strong>CAN.</strong> CANH and CANL must be a <strong>twisted pair</strong>, and the bus needs a
+<strong>120 Ω</strong> termination resistor <strong>at both ends</strong>, not at every device. If this
+module is at an end of the bus, one of the terminations is here; if it is in
+the middle, it needs no termination at all.</p>
+<p>The most common mistake: fitting termination at every device. Three 120 Ω
+resistors in parallel make the bus impedance too low and communication stops
+completely.</p>
+<hr />
+<h2 id="connecting-to-the-ecu-and-dash">Connecting to the ECU and Dash<a class="headerlink" href="#connecting-to-the-ecu-and-dash" title="Permanent link">&para;</a></h2>
+<p>The data flows in stages, in one direction:</p>
+<pre><code>LSU 4.9 sensor  →  WBO CAN Controller  →  CAN bus  →  Mazduino ECU  →  Dash
+</code></pre>
+<p><strong>The dash does not read this module directly.</strong> What the dash shows is the AFR
+value already processed by the ECU, sent through the ECU protocol like other
+engine data. So nothing needs to be configured on the dash side: once the ECU
+reads lambda correctly, the number shows up as well.</p>
+<h3 id="ecu-settings">ECU settings<a class="headerlink" href="#ecu-settings" title="Permanent link">&para;</a></h3>
+<p><strong>This module's CAN bus bitrate is 500 kbps</strong>, and the bus on the ECU side must
+be set the same. A different bitrate does not give "partial data"; nothing at
+all is read.</p>
+<p>Then in the lambda sensor configuration section:</p>
+<ul>
+<li><strong>Wideband mode</strong>: choose the rusEFI internal wideband mode, not <em>Analog</em> and
+  not <em>AEM X-Series</em></li>
+<li><strong>Sensor index</strong>: <code>0</code> for the first module, <code>1</code> for the second module</li>
+</ul>
+<p>Two modules on one bus must use different indexes. If the index is the same,
+they overwrite each other and the reading is garbage.</p>
+<hr />
+<h2 id="wideband-sensor-important-notes">Wideband Sensor Important Notes<a class="headerlink" href="#wideband-sensor-important-notes" title="Permanent link">&para;</a></h2>
+<p>The LSU 4.9 sensor is a consumable part, and most failures come from the
+installation, not from age.</p>
+<p><strong>Mounting position.</strong> Mount the sensor <strong>at least 10° above horizontal</strong>,
+with the sensor tip pointing slightly upward. If it is mounted flat or facing
+down, condensation water from the exhaust collects at the sensor tip. When the
+heater turns on, that water boils instantly and cracks the ceramic inside.</p>
+<p><strong>Do not power the module without the sensor installed in the exhaust.</strong> A
+heater running in open air makes the sensor overheat because there is no gas
+flow to cool it.</p>
+<p><strong>Leaded fuel destroys the sensor.</strong> Lead coats the sensor element
+permanently. For race engines running avgas or leaded gasoline, this sensor is
+not suitable for permanent use.</p>
+<p><strong>Avoid silicone.</strong> Vapor from RTV sealant, some cleaning fluids, and certain
+sprays can poison the sensor. If you use sealant in the exhaust or intake
+system, make sure it is a <em>sensor-safe</em> type.</p>
+<p><strong>Readings are only valid once the sensor is hot.</strong> For the first few seconds
+after the module turns on, the number cannot be trusted yet. This is normal and
+not a sign of damage.</p>
+<hr />
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p><strong>No data on the CAN bus</strong></p>
+<ul>
+<li>Check that CANH and CANL are not swapped</li>
+<li>Make sure 120 Ω termination is at <strong>both ends</strong> of the bus, not at every device</li>
+<li>Make sure the CAN bus on the ECU is set to <strong>500 kbps</strong></li>
+<li>Make sure the ECU uses the rusEFI wideband mode, and its sensor index matches</li>
+<li>Measure the voltage at the +12V and GND pins directly at the module connector</li>
+</ul>
+<p><strong>AFR is read but the numbers make no sense</strong></p>
+<ul>
+<li>Check that all six sensor wires are in the right positions</li>
+<li>Check that the module and ECU grounds are at the same point</li>
+<li>Check for exhaust leaks before the sensor position; outside air getting in
+  makes the reading look much leaner than it really is</li>
+</ul>
+<p><strong>AFR always shows very lean</strong></p>
+<ul>
+<li>An exhaust leak between the engine and the sensor is the most common cause</li>
+<li>On an engine that has just been started, wait until the sensor reaches
+  operating temperature</li>
+</ul>
+<p><strong>Sensor keeps failing quickly</strong></p>
+<ul>
+<li>Check the mounting angle; condensation is the most frequent cause</li>
+<li>Check the type of fuel used</li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../setting-ecu-racedash/" class="btn btn-neutral float-left" title="ECU Configuration"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../can-io-extender/" class="btn btn-neutral float-right" title="CAN IO Extender">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../setting-ecu-racedash/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../can-io-extender/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

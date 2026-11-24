@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/firmware/rotational-idle/" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Rotational Idle - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../css/print.css" rel="stylesheet" />
+        <link href="../../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Rotational Idle";
+        var mkdocs_page_input_path = "firmware/rotational-idle.en.md";
+        var mkdocs_page_url = "/en/firmware/rotational-idle/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Rotational Idle</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#how-it-works">How It Works</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#general">General</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#triggers">Triggers</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#limits">Limits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accumulator-cut-pattern">Accumulator (Cut Pattern)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#offset">Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#choosing-max">Choosing Max</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rhythm-and-rpm">Rhythm and RPM</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#presets">Presets</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#supporting-settings">Supporting Settings</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cut-mode-and-timing">Cut Mode and Timing</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#setup-examples">Setup Examples</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#switch-only">Switch Only</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#automatic-when-the-throttle-is-released">Automatic When the Throttle Is Released</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#live-data">Live Data</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rotational-idle-not-active-check-this">Rotational Idle Not Active? Check This</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Custom Firmware</li>
+      <li class="breadcrumb-item active">Rotational Idle</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../../firmware/rotational-idle/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <h1 id="rotational-idle">Rotational Idle<a class="headerlink" href="#rotational-idle" title="Permanent link">&para;</a></h1>
+<p>Rotational idle cuts spark, fuel, or both on part of the cycles, rotating between cylinders. The result is a "lumpy" idle sound like an engine with a big cam.</p>
+<p>This feature is still <strong>experimental</strong> and is not a feature everyone uses.</p>
+<p>Menu location:</p>
+<ul>
+<li>TunerStudio: <strong>Idle → Rotational Idle</strong></li>
+<li>Mazduino Tuner: <strong>Expert → Rotational Idle</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Firmware Nightly 20 November 2026 or newer</p>
+<p>The CLT and TPS limits, Stop short term fuel trim, Add idle air, and Timing while active are available starting with firmware Nightly 20 November 2026. That firmware also fixes the rotational idle switch pin: on older firmware the pin was only read without being set up as an input, so the switch was not read correctly.</p>
+<p>Tunes from older firmware still load without changes. The new fields are set to 0: Minimum CLT 0 °C, Maximum TPS/PPS no limit, normal timing, STFT and idle air unchanged.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Firmware Nightly 24 November 2026 or newer</p>
+<p><strong>Fuel multiplier while active</strong> and syncing spark with fuel in cut mode <strong>Both</strong> are available starting with firmware Nightly 24 November 2026. The Nightly 23 November 2026 that was rebuilt in the evening also includes them. Older tunes load with Fuel multiplier 1.00.</p>
+</div>
+<hr />
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>Rotational idle is active when all three of these conditions are met:</p>
+<ol>
+<li><strong>Enable</strong> is on.</li>
+<li><strong>All limits are met</strong>: RPM is between Minimum and Maximum RPM, CLT is above Minimum CLT, and TPS/PPS is not above Maximum TPS/PPS.</li>
+<li><strong>One of the triggers is active</strong>: switch ON, or auto enable CLT, or auto enable TPS/PPS.</li>
+</ol>
+<p>The limits in point 2 apply to all triggers, <strong>including when the switch is ON</strong>. So turning the switch ON while the engine is cold or while the throttle is pressed does not turn rotational idle on.</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Active when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Switch</td>
+<td>The switch pin is set and the switch is ON</td>
+</tr>
+<tr>
+<td>Auto enable based on CLT</td>
+<td>CLT is above "Engage above this CLT"</td>
+</tr>
+<tr>
+<td>Auto enable based on TPS/PPS</td>
+<td>TPS/PPS is equal to or below "Engage at or below this TPS/PPS"</td>
+</tr>
+</tbody>
+</table>
+<p>If you only want to turn it on from the switch, disable both auto enables. Rotational idle will not turn on by itself while the switch is OFF.</p>
+<hr />
+<h2 id="settings">Settings<a class="headerlink" href="#settings" title="Permanent link">&para;</a></h2>
+<h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable</strong></td>
+<td>Turns the feature on. The other fields can only be changed when this is on.</td>
+</tr>
+<tr>
+<td><strong>Cut mode</strong></td>
+<td><strong>Spark</strong>: only spark is cut. <strong>Fuel</strong>: only injection is cut. <strong>Both</strong>: spark and fuel.</td>
+</tr>
+<tr>
+<td><strong>Stop short term fuel trim while active</strong></td>
+<td>STFT stops while rotational idle is active, and LTFT stops learning. <strong>yes</strong> is recommended if you use closed loop lambda.</td>
+</tr>
+<tr>
+<td><strong>Add idle air while active</strong></td>
+<td>Adds idle air while active, to make up for the power of the cut cylinders.</td>
+</tr>
+<tr>
+<td><strong>Idle air adder</strong></td>
+<td>Percentage added to the open loop idle valve position. A negative value reduces air.</td>
+</tr>
+<tr>
+<td><strong>Fuel multiplier while active</strong></td>
+<td>Fuel multiplier while active. 1.00 = normal, 1.20 = 20% more, 0.80 = 20% less. Range 0.50 to 2.50: below 0.50 the engine misfires or stalls. Older tunes load as 1.00.</td>
+</tr>
+<tr>
+<td><strong>Timing while active</strong></td>
+<td>Ignition timing while active, replacing normal timing including all its corrections. 0 = normal timing. Negative means after TDC: -30 = 30° ATDC. Range -40 to 10.</td>
+</tr>
+</tbody>
+</table>
+<p>Why STFT needs to be stopped: the cut cylinders pump air (and fuel, in Spark mode) into the exhaust. The O2 sensor reads lean, and STFT then adds fuel to the cylinders that are still firing. When it is stopped, the STFT status on the dashboard shows <strong>Rotational idle</strong>.</p>
+<p>Timing while active does not apply when <strong>Timing mode</strong> is set to fixed (for checking with a timing light). The fixed timing is still used.</p>
+<h3 id="triggers">Triggers<a class="headerlink" href="#triggers" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch pin</strong></td>
+<td>Switch input pin. Leave empty if you do not use a switch.</td>
+</tr>
+<tr>
+<td><strong>Switch pin mode</strong></td>
+<td>For a switch that connects the pin to ground, select <strong>INVERTED PULLUP</strong>.</td>
+</tr>
+<tr>
+<td><strong>Auto enable based on CLT</strong></td>
+<td>Turns on automatically based on coolant temperature.</td>
+</tr>
+<tr>
+<td><strong>Engage above this CLT</strong></td>
+<td>Turns on when CLT is above this value.</td>
+</tr>
+<tr>
+<td><strong>Auto enable based on TPS/PPS</strong></td>
+<td>Turns on automatically when the throttle is released.</td>
+</tr>
+<tr>
+<td><strong>Engage at or below this TPS/PPS</strong></td>
+<td>Turns on when TPS/PPS is equal to or below this value. <strong>Do not set it to 0</strong>: TPS with the throttle released rarely reads exactly 0%. Set 1–2%, or slightly above the TPS value with the throttle released.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limits">Limits<a class="headerlink" href="#limits" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Minimum CLT</strong></td>
+<td>Rotational idle turns off below this coolant temperature.</td>
+</tr>
+<tr>
+<td><strong>Maximum TPS/PPS</strong></td>
+<td>Rotational idle turns off above this TPS/PPS. 0 = no limit.</td>
+</tr>
+<tr>
+<td><strong>Minimum RPM</strong></td>
+<td>Turns off below this RPM. 0 = no limit.</td>
+</tr>
+<tr>
+<td><strong>Maximum RPM</strong></td>
+<td>Turns off above this RPM. 0 = no limit.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accumulator-cut-pattern">Accumulator (Cut Pattern)<a class="headerlink" href="#accumulator-cut-pattern" title="Permanent link">&para;</a></h3>
+<p>There are 3 accumulators. Each has a <strong>Max</strong>, <strong>Adder</strong>, and <strong>Offset</strong>. Every spark event increments a counter, and every injection event increments its own counter. The event is cut when:</p>
+<pre><code>((counter + Offset) mod Max) + Adder &gt;= Max
+</code></pre>
+<p>An event is cut when any accumulator requests a cut. In the pattern examples on this page, <code>x</code> = event fires and <code>_</code> = event is cut.</p>
+<ul>
+<li><strong>Max</strong> = pattern length in events. 0 = this accumulator is not used.</li>
+<li><strong>Adder</strong> = how many events are cut in one pattern. The cut events are always the last events in the pattern, in a row. Max 5 Adder 1: <code>xxxx_</code>. Max 5 Adder 2: <code>xxx__</code>.</li>
+<li><strong>Offset</strong> = shifts the cut position within the pattern. See the explanation below.</li>
+</ul>
+<p><strong>If every Max is 0, nothing is cut</strong>, even when rotational idle is active.</p>
+<h4 id="offset">Offset<a class="headerlink" href="#offset" title="Permanent link">&para;</a></h4>
+<p>Offset moves the cut position forward by Offset events. Example Max 7 Adder 1:</p>
+<pre><code>Offset 0:  xxxxxx_
+Offset 3:  xxx_xxx
+</code></pre>
+<p>With <strong>one</strong> accumulator, Offset does not change the sound: the counter keeps running, so only the starting point of the pattern shifts.</p>
+<p>Offset only becomes useful when several accumulators are used with the <strong>same Max</strong>. A large Adder always cuts events in a row. Several accumulators with different Offsets can spread the cuts through the pattern:</p>
+<pre><code>1 accumulator: Max 11, Adder 3                      xxxxxxxx___   cuts in a row, sounds stuttering
+3 accumulator: Max 11, Adder 1, Offset 0 / 4 / 7    xxx_xx_xxx_   cuts spread out, more even lope
+</code></pre>
+<p>Both cut 3 of 11 events (27%), but the rhythm is different.</p>
+<p>If the Max values are different (for example 5 and 7), Offset shifts one pattern relative to the other. The cut percentage stays the same, but the spacing between cuts and the rhythm change.</p>
+<h4 id="choosing-max">Choosing Max<a class="headerlink" href="#choosing-max" title="Permanent link">&para;</a></h4>
+<p>Max and the number of cylinders must not share a common factor. If they do, the cuts only fall on some of the cylinders. Example on a 4-cylinder engine:</p>
+<ul>
+<li>Max 4: the same cylinder is always cut.</li>
+<li>Max 6: only 2 of the 4 cylinders are ever cut.</li>
+</ul>
+<p>A cylinder that is cut all the time runs colder, and its spark plug fouls quickly.</p>
+<table>
+<thead>
+<tr>
+<th>Number of cylinders</th>
+<th>Suitable Max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 or 8</td>
+<td>Odd: 3, 5, 7, 9, 11, 13</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Not divisible by 2 or 3: 5, 7, 11, 13</td>
+</tr>
+</tbody>
+</table>
+<p>This rule applies to every accumulator in use.</p>
+<h4 id="rhythm-and-rpm">Rhythm and RPM<a class="headerlink" href="#rhythm-and-rpm" title="Permanent link">&para;</a></h4>
+<p>Events per second = RPM × number of cylinders / 120. A 4-cylinder engine at 900 RPM has 30 events per second, so a Max 5 pattern repeats 6 times per second. A lower idle RPM or a larger Max makes the rhythm slower and heavier.</p>
+<hr />
+<h2 id="presets">Presets<a class="headerlink" href="#presets" title="Permanent link">&para;</a></h2>
+<p>Fill in the accumulators as in the table. Set unused accumulators to <strong>Max 0</strong>. Accumulator column format: Max / Adder / Offset.</p>
+<p>All presets are even on 4, 6 and 8-cylinder engines, except preset 5.</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Accumulator 1</th>
+<th>Accumulator 2</th>
+<th>Accumulator 3</th>
+<th>Cut</th>
+<th>Pattern</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>7 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>14%</td>
+<td><code>xxxxxx_</code></td>
+<td>Smoothest, like a cam slightly bigger than stock</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>20%</td>
+<td><code>xxxx_</code></td>
+<td>Like a big cam. Recommended starting point</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7 / 1 / 0</td>
+<td>7 / 1 / 3</td>
+<td>0</td>
+<td>29%</td>
+<td><code>xxx_xx_</code></td>
+<td>Two hits with unequal spacing</td>
+</tr>
+<tr>
+<td>4</td>
+<td>11 / 3 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>27%</td>
+<td><code>xxxxxxxx___</code></td>
+<td>Runs smooth, then stutters</td>
+</tr>
+<tr>
+<td>5</td>
+<td>3 / 1 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>33%</td>
+<td><code>xx_</code></td>
+<td>Regular beat like a horse's gallop. <strong>4 and 8 cylinders only</strong></td>
+</tr>
+<tr>
+<td>6</td>
+<td>5 / 2 / 0</td>
+<td>0</td>
+<td>0</td>
+<td>40%</td>
+<td><code>xxx__</code></td>
+<td>Very rough, drag engine style</td>
+</tr>
+<tr>
+<td>7</td>
+<td>5 / 1 / 0</td>
+<td>7 / 1 / 2</td>
+<td>0</td>
+<td>31%</td>
+<td><code>xxxx_xxxx_x_xx_xxx__…</code></td>
+<td>Irregular, similar to a rotary idle. Repeats every 35 events</td>
+</tr>
+<tr>
+<td>8</td>
+<td>5 / 2 / 0</td>
+<td>7 / 1 / 3</td>
+<td>0</td>
+<td>49%</td>
+<td><code>xxx__xxx___xx__xx___…</code></td>
+<td>Similar to a bridgeport rotary. Needs extra idle air</td>
+</tr>
+<tr>
+<td>9</td>
+<td>5 / 1 / 0</td>
+<td>7 / 1 / 3</td>
+<td>11 / 1 / 5</td>
+<td>38%</td>
+<td><code>xxx___xxx__xxx_x__x_…</code></td>
+<td>Almost never repeats (385-event pattern)</td>
+</tr>
+</tbody>
+</table>
+<p>For a 6-cylinder engine, preset 5 only cuts 2 of the 6 cylinders. Use preset 3 or 6 instead.</p>
+<p>A real rotary sound comes from 2 rotors and wide-open exhaust ports, so its tone cannot be copied by a piston engine. Presets 7 and 8 only copy its rhythm. The exhaust has a big effect on the final result.</p>
+<h3 id="supporting-settings">Supporting Settings<a class="headerlink" href="#supporting-settings" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Stop short term fuel trim while active</strong>: yes for all presets.</li>
+<li><strong>Add idle air while active</strong>: the larger the cut percentage, the more air is needed to keep the RPM from dropping. As a starting point, set <strong>Idle air adder</strong> to about 5% for presets with 20% cut or less, and about 10% for heavier ones. Then adjust until the idle RPM is the same as when rotational idle is off.</li>
+<li><strong>Maximum RPM</strong> and <strong>Maximum TPS/PPS</strong>: always set them, especially for presets with more than 30% cut.</li>
+</ul>
+<h3 id="cut-mode-and-timing">Cut Mode and Timing<a class="headerlink" href="#cut-mode-and-timing" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Cut mode</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fuel</strong></td>
+<td>Smoothest and cleanest. The cut cylinders only pump air.</td>
+</tr>
+<tr>
+<td><strong>Both</strong></td>
+<td>Same as Fuel, and spark is also not fired on the cut events. With sequential injection, spark follows fuel per cylinder: a cylinder that gets no fuel also gets no spark.</td>
+</tr>
+<tr>
+<td><strong>Spark</strong></td>
+<td>Loudest, with pops in the exhaust. The fuel of the cut cylinders is wasted and can burn in the exhaust. The exhaust gets hot, and the catalytic converter and O2 sensor can be damaged.</td>
+</tr>
+</tbody>
+</table>
+<p>The patterns in the preset table apply to spark, and to fuel with <strong>sequential</strong> injection. With batch or simultaneous injection, one injection event serves more than one cylinder, so the fuel pattern is not the same as the table. Use cut mode <strong>Spark</strong> if the injection is batch.</p>
+<p>For exhaust pops, use cut mode <strong>Spark</strong> with <strong>Fuel multiplier while active</strong> slightly above 1.00, for example 1.10 to 1.30. The extra fuel from the cut cylinders burns in the exhaust, so the exhaust temperature also rises.</p>
+<p><strong>Timing while active</strong> at 0 uses normal timing. Retarded timing, for example 0 to -10 (ATDC), makes the sound heavier but raises the exhaust temperature. Start with a small value, and watch EGT if you have a sensor for it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Do not use it continuously</p>
+<p>Heavy presets, cut mode Spark, and heavily retarded timing all raise the exhaust temperature. For show use, turn it on from the <strong>switch</strong> only, not auto enable.</p>
+</div>
+<hr />
+<h2 id="setup-examples">Setup Examples<a class="headerlink" href="#setup-examples" title="Permanent link">&para;</a></h2>
+<h3 id="switch-only">Switch Only<a class="headerlink" href="#switch-only" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Enable</strong>: enabled</li>
+<li><strong>Cut mode</strong>: Spark</li>
+<li><strong>Switch pin</strong>: the input pin you use, <strong>Switch pin mode</strong>: INVERTED PULLUP</li>
+<li><strong>Auto enable based on CLT</strong> and <strong>Auto enable based on TPS/PPS</strong>: disabled</li>
+<li><strong>Minimum CLT</strong>: 60, <strong>Maximum TPS/PPS</strong>: 5</li>
+<li><strong>Maximum RPM</strong>: slightly above idle RPM, for example 1500</li>
+<li><strong>Accumulator</strong>: preset 2 (Max 5, Adder 1, Offset 0, other accumulators Max 0)</li>
+<li><strong>Stop short term fuel trim while active</strong>: yes</li>
+</ol>
+<h3 id="automatic-when-the-throttle-is-released">Automatic When the Throttle Is Released<a class="headerlink" href="#automatic-when-the-throttle-is-released" title="Permanent link">&para;</a></h3>
+<p>Same as above, but leave the switch pin empty and enable <strong>Auto enable based on TPS/PPS</strong> with <strong>Engage at or below this TPS/PPS</strong> at 1–2%. Maximum RPM must be set so it does not turn on during engine braking at high RPM.</p>
+<hr />
+<h2 id="live-data">Live Data<a class="headerlink" href="#live-data" title="Permanent link">&para;</a></h2>
+<p>The live data panel is on the right side of the Rotational Idle dialog:</p>
+<table>
+<thead>
+<tr>
+<th>Indicator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rotationalIdleEngaged</code></td>
+<td>Rotational idle is active</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooSlow</code></td>
+<td>RPM is below Minimum RPM</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooFast</code></td>
+<td>RPM is above Maximum RPM</td>
+</tr>
+<tr>
+<td><code>rotIdleEngineTooLowClt</code></td>
+<td>CLT is below Minimum CLT, or below "Engage above this CLT" with auto enable CLT</td>
+</tr>
+<tr>
+<td><code>rotIdleTpsTooHigh</code></td>
+<td>TPS/PPS is above Maximum TPS/PPS, or above "Engage at or below this TPS/PPS" with auto enable TPS/PPS</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="rotational-idle-not-active-check-this">Rotational Idle Not Active? Check This<a class="headerlink" href="#rotational-idle-not-active-check-this" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Enable</strong> is on and the tune has been burned.</li>
+<li><strong>Accumulator Max</strong> values are not all 0.</li>
+<li><strong>Trigger</strong>: switch ON, or one of the auto enables is on. If you use auto TPS/PPS, "Engage at or below this TPS/PPS" is not 0.</li>
+<li><strong>Limits</strong>: check the live data indicators above to see which limit is holding it back.</li>
+<li><strong>Switch</strong>: pin mode matches the circuit, and firmware is Nightly 20 November 2026 or newer.</li>
+</ol>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../fuel-spark-cut/" class="btn btn-neutral float-left" title="Spark Cut & Fuel Cut"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../analog-multi-switch/" class="btn btn-neutral float-right" title="Analog Multi-Switch">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../fuel-spark-cut/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../analog-multi-switch/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../js/external-links.js"></script>
+      <script src="../../../js/print-details.js"></script>
+      <script src="../../../js/print-source.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

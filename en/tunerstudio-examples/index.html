@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-examples/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Examples & Map Switching - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Examples \u0026 Map Switching";
+        var mkdocs_page_input_path = "tunerstudio-examples.md";
+        var mkdocs_page_url = "/en/tunerstudio-examples/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Examples & Map Switching</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pengantar">Pengantar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#map-switching">Map Switching</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#konsep-dasar-map-switching">Konsep Dasar Map Switching</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#implementasi-map-switching">Implementasi Map Switching</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-wiring-switch">1. Wiring Switch</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-konfigurasi-blend-table">2. Konfigurasi Blend Table</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#memilih-blend-table">Memilih Blend Table</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pengaturan-blend-parameter-source">Pengaturan Blend Parameter Source</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-cara-kerja-bias-table">3. Cara Kerja Bias Table</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contoh-aplikasi-map-switching">Contoh Aplikasi Map Switching</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-street-vs-track-mode">1. Street vs Track Mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-fuel-quality-switching">2. Fuel Quality Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-progressive-tuning">3. Progressive Tuning</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#second-ve-table-dan-second-ignition-table">Second VE Table dan Second Ignition Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-switch-onoff">Mode Switch (ON/OFF)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mode-blend">Mode Blend</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cek-tabel-yang-aktif">Cek Tabel yang Aktif</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#catatan-saat-idle">Catatan Saat Idle</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-map-switching-techniques">Advanced Map Switching Techniques</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-multi-parameter-switching">1. Multi-Parameter Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-automatic-switching">2. Automatic Switching</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-safety-switching">3. Safety Switching</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting-map-switching">Troubleshooting Map Switching</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#common-issues">Common Issues</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diagnostic-steps">Diagnostic Steps</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#best-practices">Best Practices</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#design-guidelines">Design Guidelines</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tuning-recommendations">Tuning Recommendations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maintenance">Maintenance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#integration-dengan-fitur-lain">Integration dengan Fitur Lain</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#launch-control-integration">Launch Control Integration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#traction-control-integration">Traction Control Integration</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#boost-control-integration">Boost Control Integration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#warranty-considerations">Warranty Considerations</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#approved-uses">Approved Uses</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#restricted-uses">Restricted Uses</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#kesimpulan">Kesimpulan</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Examples & Map Switching</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-examples/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 01:58:53 UTC">21 November 2026</span></em></p>
+  <h1 id="examples-map-switching-tunerstudio">Examples &amp; Map Switching TunerStudio<a class="headerlink" href="#examples-map-switching-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
+<p>Bagian ini menyediakan contoh praktis implementasi fitur TunerStudio Mazduino, dengan fokus khusus pada Map Switching yang memungkinkan pergantian tune secara real-time untuk kondisi operasi yang berbeda.</p>
+<h2 id="map-switching">Map Switching<a class="headerlink" href="#map-switching" title="Permanent link">&para;</a></h2>
+<p><img alt="Map Switching Overview" src="images/map-switching-overview.png" /></p>
+<p>Map Switching adalah fitur powerful yang memungkinkan ECU untuk beralih antara konfigurasi tune yang berbeda berdasarkan input eksternal seperti switch, sensor, atau kondisi operasi tertentu.</p>
+<h3 id="konsep-dasar-map-switching">Konsep Dasar Map Switching<a class="headerlink" href="#konsep-dasar-map-switching" title="Permanent link">&para;</a></h3>
+<p>Map Switching bekerja dengan cara "blending" atau mencampur table utama (base table) dengan table tambahan (blend table) berdasarkan parameter tertentu. Hasil akhir adalah interpolasi antara kedua table sesuai dengan kondisi yang diinginkan.</p>
+<p><strong>Keuntungan Map Switching</strong>:</p>
+<ul>
+<li>Optimasi untuk kondisi operasi berbeda (street vs track)</li>
+<li>Adaptasi untuk kualitas bahan bakar berbeda (octane rating)</li>
+<li>Penyesuaian untuk kondisi cuaca atau ketinggian</li>
+<li>Tuning progressive untuk performa bertahap</li>
+</ul>
+<h2 id="implementasi-map-switching">Implementasi Map Switching<a class="headerlink" href="#implementasi-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="1-wiring-switch">1. Wiring Switch<a class="headerlink" href="#1-wiring-switch" title="Permanent link">&para;</a></h3>
+<p><img alt="Switch Wiring" src="images/switch-wiring.png" /></p>
+<p>Untuk mengaktifkan map switching, Anda perlu menghubungkan switch fisik antara pin +5V ECU dan pin analog input yang tersedia (misalnya salah satu Aux Linear Sensor).</p>
+<p><strong>Konfigurasi Wiring</strong>:</p>
+<ul>
+<li>
+<p><strong>Switch OFF</strong>: Analog input membaca 0V</p>
+</li>
+<li>
+<p><strong>Switch ON</strong>: Analog input membaca +5V</p>
+</li>
+<li>
+<p><strong>Threshold</strong>: Kalibrasi seperti gambar berikut, dimana nilai di bawah 3V dianggap sebagai 0, dan nilai di atas 3.5V dianggap sebagai 1</p>
+</li>
+</ul>
+<p><strong>Langkah Wiring</strong>:</p>
+<ol>
+<li>Identifikasi pin analog input yang tidak digunakan</li>
+<li>Hubungkan satu terminal switch ke pin +5V ECU</li>
+<li>Hubungkan terminal lain switch ke analog input terpilih</li>
+<li>Tambahkan pull-down resistor (10kΩ) dari analog input ke ground</li>
+<li>Test kontinuitas dan isolasi dengan multimeter</li>
+</ol>
+<h3 id="2-konfigurasi-blend-table">2. Konfigurasi Blend Table<a class="headerlink" href="#2-konfigurasi-blend-table" title="Permanent link">&para;</a></h3>
+<p><img alt="Blend Table Configuration" src="images/blend-table-config.png" /></p>
+<p>Setelah wiring selesai, konfigurasikan blend table yang diinginkan di TunerStudio:</p>
+<h4 id="memilih-blend-table">Memilih Blend Table<a class="headerlink" href="#memilih-blend-table" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>VE Blend Table</strong>: Untuk modifikasi fuel mapping</li>
+<li><strong>Ignition Blend Table</strong>: Untuk adjustment timing</li>
+<li><strong>Boost Blend Table</strong>: Untuk kontrol turbo yang berbeda</li>
+<li><strong>Lambda Target Blend</strong>: Untuk AFR target yang berbeda</li>
+</ol>
+<h4 id="pengaturan-blend-parameter-source">Pengaturan Blend Parameter Source<a class="headerlink" href="#pengaturan-blend-parameter-source" title="Permanent link">&para;</a></h4>
+<p><strong>Blend Parameter</strong> diatur ke analog input (misalnya <strong>Aux Linear 1</strong>) dimana switch dihubungkan. Input ini menentukan seberapa banyak blend table yang dicampur ke base table.</p>
+<ul>
+<li>
+<p><strong>Switch OFF (0V)</strong>: Parameter value minimum (0), ECU menggunakan nilai "Bias" yang didefinisikan dalam table (misalnya 0% blend)</p>
+</li>
+<li>
+<p><strong>Switch ON (5V)</strong>: Parameter value maksimum (misalnya 1.0), ECU menggunakan <strong>100% dari blend table</strong></p>
+</li>
+</ul>
+<h3 id="3-cara-kerja-bias-table">3. Cara Kerja Bias Table<a class="headerlink" href="#3-cara-kerja-bias-table" title="Permanent link">&para;</a></h3>
+<p><img alt="Bias Table Function" src="images/bias-table-function.png" /></p>
+<p><strong>Bias Table</strong> mendefinisikan persentase blend table yang akan diterapkan:</p>
+<ul>
+<li>
+<p><strong>Param = 0</strong>: Bias value <strong>0%</strong>, tidak ada blend yang diterapkan, base table tetap aktif</p>
+</li>
+<li>
+<p><strong>Param = 1.0</strong>: Bias value <strong>100%</strong>, ECU sepenuhnya menggunakan blend table</p>
+</li>
+</ul>
+<p><strong>Contoh Praktis VE Blend</strong>:</p>
+<ul>
+<li>
+<p><strong>Switch OFF (0V)</strong>: Blend table diabaikan (0% bias)</p>
+</li>
+<li>
+<p><strong>Switch ON (5V)</strong>: Blend table sepenuhnya diterapkan (100% bias)</p>
+</li>
+<li>
+<p>Dalam VE blend ini, ketika switch tidak diaktifkan, table diabaikan. Setelah switch diaktifkan, table ini secara langsung menambah ke base VE table, artinya jika switch diaktifkan dan kita berada di 4000RPM dengan 80% load, kita akan menambahkan 10% VE ke kalkulasi fueling utama.</p>
+</li>
+</ul>
+<h2 id="contoh-aplikasi-map-switching">Contoh Aplikasi Map Switching<a class="headerlink" href="#contoh-aplikasi-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="1-street-vs-track-mode">1. Street vs Track Mode<a class="headerlink" href="#1-street-vs-track-mode" title="Permanent link">&para;</a></h3>
+<p><img alt="Street vs Track Mode" src="images/street-track-mode.png" /></p>
+<p><strong>Setup</strong>:</p>
+<ul>
+<li>
+<p><strong>Base Map</strong>: Tune conservative untuk penggunaan harian</p>
+</li>
+<li>
+<p><strong>Blend Map</strong>: Modifikasi aggressive untuk track day</p>
+</li>
+</ul>
+<p><strong>Konfigurasi</strong>:</p>
+<pre><code>Base VE Table: Conservative fueling untuk reliability
+Blend VE Table: +5% VE di high load areas untuk power
+Ignition Base: Safe timing untuk pump gas
+Ignition Blend: +3° advance untuk race fuel
+</code></pre>
+<p><strong>Operasi</strong>:</p>
+<ul>
+<li>
+<p>Switch OFF: Street mode dengan fueling conservative dan timing safe</p>
+</li>
+<li>
+<p>Switch ON: Track mode dengan fueling enriched dan timing advanced</p>
+</li>
+</ul>
+<h3 id="2-fuel-quality-switching">2. Fuel Quality Switching<a class="headerlink" href="#2-fuel-quality-switching" title="Permanent link">&para;</a></h3>
+<p><img alt="Fuel Quality Switching" src="images/fuel-quality-switch.png" /></p>
+<p><strong>Setup</strong>:</p>
+<ul>
+<li>
+<p><strong>Base Map</strong>: Tune untuk premium fuel (RON 92-95)</p>
+</li>
+<li>
+<p><strong>Blend Map</strong>: Adjustment untuk race fuel (RON 98+)</p>
+</li>
+</ul>
+<p><strong>Konfigurasi</strong>:</p>
+<pre><code>Base Tables: Optimized untuk pump gas
+Ignition Blend: +4-6° timing advance untuk high octane
+Lambda Target Blend: Leaner targets untuk better power
+Boost Blend: +0.2 bar additional boost untuk race fuel
+</code></pre>
+<h3 id="3-progressive-tuning">3. Progressive Tuning<a class="headerlink" href="#3-progressive-tuning" title="Permanent link">&para;</a></h3>
+<p><img alt="Progressive Tuning" src="images/progressive-tuning.png" /></p>
+<p>Gunakan analog input variable (potensiometer) alih-alih switch on/off untuk progressive blending:</p>
+<p><strong>Setup Potensiometer</strong>:</p>
+<ul>
+<li>
+<p><strong>0V</strong>: 0% blend (full base map)</p>
+</li>
+<li>
+<p><strong>2.5V</strong>: 50% blend (mixture of base and blend)</p>
+</li>
+<li>
+<p><strong>5V</strong>: 100% blend (full blend map)</p>
+</li>
+</ul>
+<p><strong>Aplikasi</strong>:</p>
+<ul>
+<li>Driver dapat adjust level aggressiveness secara real-time</li>
+<li>Testing berbagai setting tanpa reflash ECU</li>
+<li>Gradual transition antara tune yang berbeda</li>
+</ul>
+<h2 id="second-ve-table-dan-second-ignition-table">Second VE Table dan Second Ignition Table<a class="headerlink" href="#second-ve-table-dan-second-ignition-table" title="Permanent link">&para;</a></h2>
+<p>Selain blend table yang menambah atau mengurangi tabel utama, ECU punya tabel kedua yang <strong>menggantikan</strong> tabel utama sepenuhnya: <strong>Second VE Table</strong> untuk bahan bakar dan <strong>Second Ignition Table</strong> untuk timing. Cocok untuk dua map yang benar-benar berbeda, misalnya bensin dan E85, atau map harian dan map balap.</p>
+<p>Lokasi menu:</p>
+<ul>
+<li>TunerStudio: <strong>Fuel → Second VE Table</strong> dan <strong>Ignition → Second Ignition Table</strong></li>
+<li>Mazduino Tuner: <strong>Tuning → Extra fuel tables → Second fuel table</strong> dan <strong>Tuning → Extra ignition tables → Second ignition table</strong></li>
+</ul>
+<p>Setiap tabel kedua punya sumbu RPM dan load sendiri, dengan ukuran sama seperti tabel utama (16x16, atau 32x32 pada board BIGFUEL).</p>
+<h3 id="mode-switch-onoff">Mode Switch (ON/OFF)<a class="headerlink" href="#mode-switch-onoff" title="Permanent link">&para;</a></h3>
+<p>Switch digital memilih tabel mana yang dipakai:</p>
+<ul>
+<li><strong>Second VE table input pin</strong> / <strong>Second Ignition table input pin</strong>: pin input switch.</li>
+<li><strong>Second VE table input mode</strong> / <strong>Second Ignition table input mode</strong>: untuk switch yang menghubungkan pin ke ground, pilih <strong>INVERTED PULLUP</strong>.</li>
+<li><strong>Switch ON</strong>: tabel kedua dipakai penuh, tabel utama diabaikan.</li>
+<li><strong>Switch OFF</strong>: tabel utama dipakai.</li>
+</ul>
+<p>Pin bisa diisi untuk VE saja, timing saja, atau keduanya dengan pin yang sama.</p>
+<div class="admonition note">
+<p class="admonition-title">Firmware sebelum Nightly 20 November 2026</p>
+<p>Pada firmware lama, pin tabel kedua hanya dibaca tanpa di-setup sebagai input, jadi pin mode tidak berlaku dan switch tidak terbaca dengan benar: tabel tidak berpindah walaupun switch ON. Update ke firmware Nightly 20 November 2026 atau lebih baru.</p>
+</div>
+<h3 id="mode-blend">Mode Blend<a class="headerlink" href="#mode-blend" title="Permanent link">&para;</a></h3>
+<p>Kalau pin tidak diisi, tabel kedua bisa dicampur bertahap dengan tabel utama:</p>
+<ul>
+<li><strong>Blend parameter</strong>: sumber pencampuran, misalnya <strong>Ethanol (Flex) %</strong> dari sensor flex fuel. <strong>Zero</strong> = blend tidak dipakai.</li>
+<li><strong>Blend bias</strong>: kurva persentase tabel kedua terhadap nilai blend parameter. Bias 0% = tabel utama saja, 100% = tabel kedua saja, 50% = nilai tengah keduanya.</li>
+</ul>
+<p>Saat pin diisi dan switch ON, mode switch yang dipakai dan blend diabaikan.</p>
+<h3 id="cek-tabel-yang-aktif">Cek Tabel yang Aktif<a class="headerlink" href="#cek-tabel-yang-aktif" title="Permanent link">&para;</a></h3>
+<p>Indikator di dialog menunjukkan tabel yang sedang dipakai: <strong>Primary VE table</strong> atau <strong>Second VE table</strong>, dan <strong>Primary Ignition table</strong> atau <strong>Second Ignition table</strong>. Tabel kedua juga dihitung aktif saat blend bias lebih dari 0%.</p>
+<p>Tabel kedua tersimpan di halaman tune terpisah. Pastikan perubahan di-burn.</p>
+<p>Perubahan di tabel kedua langsung berlaku saat mesin hidup. Burn saat mesin hidup aman: ECU baru menyimpannya ke flash setelah mesin mati, sama seperti tune utama. Biarkan ECU tetap menyala sebentar setelah mesin mati supaya penyimpanan selesai.</p>
+<div class="admonition warning">
+<p class="admonition-title">Firmware sebelum Nightly 21 November 2026</p>
+<p>Pada firmware lama, burn tabel kedua saat mesin hidup membuat mesin mati dan ECU seperti restart sendiri. Burn hanya saat mesin mati, atau update ke firmware Nightly 21 November 2026 atau lebih baru.</p>
+</div>
+<h3 id="catatan-saat-idle">Catatan Saat Idle<a class="headerlink" href="#catatan-saat-idle" title="Permanent link">&para;</a></h3>
+<p>Kalau <strong>Separate idle VE table</strong> atau <strong>Separate idle ignition table</strong> (menu Idle) aktif, tabel idle tetap dipakai di area idle (TPS di bawah batas idle), baik dengan tabel utama maupun tabel kedua. Perbedaan dua map baru terasa saat gas dibuka.</p>
+<h2 id="advanced-map-switching-techniques">Advanced Map Switching Techniques<a class="headerlink" href="#advanced-map-switching-techniques" title="Permanent link">&para;</a></h2>
+<h3 id="1-multi-parameter-switching">1. Multi-Parameter Switching<a class="headerlink" href="#1-multi-parameter-switching" title="Permanent link">&para;</a></h3>
+<p><img alt="Multi-Parameter Switching" src="images/multi-parameter-switching.png" /></p>
+<p>Gunakan multiple inputs untuk switching yang lebih kompleks:</p>
+<p><strong>Contoh Setup</strong>:</p>
+<pre><code>Aux Linear 1: Fuel quality switch (91/95/98 octane)
+Aux Linear 2: Weather conditions (hot/cold/humid)
+Aux Linear 3: Load condition (street/highway/track)
+</code></pre>
+<p><strong>Table Configuration</strong>:</p>
+<ul>
+<li>Base table untuk kondisi normal</li>
+<li>Multiple blend tables untuk kombinasi kondisi</li>
+<li>Advanced blending logic menggunakan multiple parameters</li>
+</ul>
+<h3 id="2-automatic-switching">2. Automatic Switching<a class="headerlink" href="#2-automatic-switching" title="Permanent link">&para;</a></h3>
+<p><img alt="Automatic Switching" src="images/auto-switching.png" /></p>
+<p>Implementasi switching otomatis berdasarkan kondisi operasi:</p>
+<p><strong>Trigger Conditions</strong>:</p>
+<ul>
+<li>
+<p><strong>RPM Range</strong>: Switch ke high-RPM tune di atas 6000 RPM</p>
+</li>
+<li>
+<p><strong>Load Based</strong>: Aggressive tune hanya pada high load (&gt;80% TPS)</p>
+</li>
+<li>
+<p><strong>Temperature</strong>: Cold start enrichment automatic switching</p>
+</li>
+<li>
+<p><strong>Speed Based</strong>: Highway vs city driving modes</p>
+</li>
+</ul>
+<p><strong>Configuration Example</strong>:</p>
+<pre><code>Blend Parameter: RPM
+Bias Table:
+
+- RPM &lt; 4000: 0% blend (base tune)
+
+- RPM 4000-6000: Progressive blend 0-50%
+
+- RPM &gt; 6000: 100% blend (performance tune)
+</code></pre>
+<h3 id="3-safety-switching">3. Safety Switching<a class="headerlink" href="#3-safety-switching" title="Permanent link">&para;</a></h3>
+<p><img alt="Safety Switching" src="images/safety-switching.png" /></p>
+<p>Implementasi safety features dengan map switching:</p>
+<p><strong>Limp Mode</strong>:</p>
+<ul>
+<li>Automatic switch ke safe tune jika sensor error</li>
+<li>Reduced power dan conservative timing</li>
+<li>Enable basic engine operation untuk safely reach service</li>
+</ul>
+<p><strong>Example Safety Configuration</strong>:</p>
+<pre><code>Error Condition: MAP sensor fault
+Action: Switch to Speed Density backup tune
+Limitations: Max 3000 RPM, conservative timing
+Duration: Until error cleared and ECU reset
+</code></pre>
+<h2 id="troubleshooting-map-switching">Troubleshooting Map Switching<a class="headerlink" href="#troubleshooting-map-switching" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues">Common Issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Switch Not Responding</strong>:</li>
+<li>Verify wiring continuity dan voltage levels</li>
+<li>Check analog input calibration</li>
+<li>
+<p>Ensure proper pull-up/pull-down resistor values</p>
+</li>
+<li>
+<p><strong>Erratic Switching</strong>:</p>
+</li>
+<li>Add filtering atau hysteresis ke switching logic</li>
+<li>Check for electrical noise di switching signal</li>
+<li>
+<p>Verify stable power supply</p>
+</li>
+<li>
+<p><strong>Unexpected Behavior</strong>:</p>
+</li>
+<li>Verify blend table values dan scaling</li>
+<li>Check bias table configuration</li>
+<li>Ensure parameter source assignment correct</li>
+</ol>
+<h3 id="diagnostic-steps">Diagnostic Steps<a class="headerlink" href="#diagnostic-steps" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Monitor Raw Input</strong>: Gunakan TunerStudio untuk monitor raw voltage dari switching input</li>
+<li><strong>Test Tables</strong>: Verify base dan blend table values masuk akal</li>
+<li><strong>Log Data</strong>: Record switching events dan resulting behavior</li>
+<li><strong>Incremental Testing</strong>: Test switching dengan engine off terlebih dahulu</li>
+</ol>
+<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="design-guidelines">Design Guidelines<a class="headerlink" href="#design-guidelines" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Start Simple</strong>: Mulai dengan simple on/off switching sebelum advanced blending</li>
+<li><strong>Safety First</strong>: Selalu include safety limits di blend tables</li>
+<li><strong>Documentation</strong>: Document semua switching logic dan table purposes</li>
+<li><strong>Testing</strong>: Comprehensive testing di controlled environment</li>
+</ol>
+<h3 id="tuning-recommendations">Tuning Recommendations<a class="headerlink" href="#tuning-recommendations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Conservative Base</strong>: Base map harus safe untuk semua kondisi</li>
+<li><strong>Gradual Changes</strong>: Blend table harus smooth transitions</li>
+<li><strong>Limit Extremes</strong>: Avoid extreme values di blend tables</li>
+<li><strong>Monitor Results</strong>: Always monitor AFR dan timing saat switching</li>
+</ol>
+<h3 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Regular Inspection</strong>: Periksa switch mechanical condition</li>
+<li><strong>Electrical Check</strong>: Monitor input signal stability</li>
+<li><strong>Table Review</strong>: Periodic review table accuracy</li>
+<li><strong>Update Documentation</strong>: Keep switching logic documented</li>
+</ol>
+<h2 id="integration-dengan-fitur-lain">Integration dengan Fitur Lain<a class="headerlink" href="#integration-dengan-fitur-lain" title="Permanent link">&para;</a></h2>
+<h3 id="launch-control-integration">Launch Control Integration<a class="headerlink" href="#launch-control-integration" title="Permanent link">&para;</a></h3>
+<p>Map switching dapat diintegrasikan dengan launch control:</p>
+<pre><code>Launch Active: Switch to launch timing map
+Normal Operation: Return to selected tune map
+</code></pre>
+<h3 id="traction-control-integration">Traction Control Integration<a class="headerlink" href="#traction-control-integration" title="Permanent link">&para;</a></h3>
+<p>Different maps untuk kondisi traction:</p>
+<pre><code>Good Traction: Full performance map
+Slip Detected: Reduced torque map dengan timing retard
+</code></pre>
+<h3 id="boost-control-integration">Boost Control Integration<a class="headerlink" href="#boost-control-integration" title="Permanent link">&para;</a></h3>
+<p>Coordinate map switching dengan boost control:</p>
+<pre><code>Base Map: Conservative boost targets
+Blend Map: Increased boost dengan supporting fuel/timing
+</code></pre>
+<h2 id="warranty-considerations">Warranty Considerations<a class="headerlink" href="#warranty-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="approved-uses">Approved Uses<a class="headerlink" href="#approved-uses" title="Permanent link">&para;</a></h3>
+<p>Map switching untuk approved applications tidak void warranty:</p>
+<ul>
+<li>Different fuel grades switching</li>
+<li>Weather condition adaptation</li>
+<li>Conservative vs performance modes</li>
+</ul>
+<h3 id="restricted-uses">Restricted Uses<a class="headerlink" href="#restricted-uses" title="Permanent link">&para;</a></h3>
+<p>Certain extreme applications dapat void warranty:</p>
+<ul>
+<li>Nitrous oxide switching (requires approval)</li>
+<li>Extreme boost level switching</li>
+<li>Racing-only applications tanpa safety limits</li>
+</ul>
+<h2 id="kesimpulan">Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permanent link">&para;</a></h2>
+<p>Map switching adalah tool powerful yang memberikan fleksibilitas tremendous untuk adaptasi tune terhadap berbagai kondisi operasi. Dengan implementasi yang tepat, fitur ini dapat significantly improve drivability, performance, dan safety dari engine management system.</p>
+<p>Key points untuk successful map switching:</p>
+<ul>
+<li>Proper electrical installation dan calibration</li>
+<li>Conservative base maps dengan well-designed blend tables</li>
+<li>Thorough testing dan documentation</li>
+<li>Regular maintenance dan monitoring</li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tunerstudio-troubleshooting/" class="btn btn-neutral float-left" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../firmware/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tunerstudio-troubleshooting/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../firmware/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

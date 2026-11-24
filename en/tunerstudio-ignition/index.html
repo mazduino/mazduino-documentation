@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-ignition/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Ignition System - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Ignition System";
+        var mkdocs_page_input_path = "tunerstudio-ignition.md";
+        var mkdocs_page_url = "/en/tunerstudio-ignition/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Ignition System</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ignition-menu-overview">Ignition Menu Overview</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#submenu-yang-tersedia">Submenu yang Tersedia:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ignition-settings">Ignition Settings</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-mode-configuration">Ignition Mode Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#single-coil">Single Coil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#individual-coils">Individual Coils</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wasted-spark">Wasted Spark</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#two-distributors">Two Distributors</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#timing-parameters">Timing Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#maximumminimum-limits">Maximum/Minimum Limits</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#validation-and-override">Validation and Override</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#timing-mode">Timing Mode</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ignition-outputs">Ignition Outputs</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#wiring-configuration">Wiring Configuration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#important-notes">Important Notes</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ignition-timing-table">Ignition Timing Table</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#example-analysis-high-compression-turbocharged-engine">Example Analysis - High-Compression Turbocharged Engine</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#high-compression-and-turbocharged-timing">High Compression and Turbocharged Timing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deceleration-burble">Deceleration Burble</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mid-range-efficiency">Mid-Range Efficiency</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#high-rpms">High RPMs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tuning-guidelines">Tuning Guidelines</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#turbocharged-engines">Turbocharged Engines</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deceleration-effects">Deceleration Effects</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#engine-specific-considerations">Engine-Specific Considerations</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dwell-configuration">Dwell Configuration</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#dwell-time-base-top-graph">Dwell Time Base (Top Graph)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#purpose-dan-function">Purpose dan Function</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tuning-considerations">Tuning Considerations</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dwell-voltage-correction-bottom-graph">Dwell Voltage Correction (Bottom Graph)</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#voltage-compensation">Voltage Compensation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation-notes">Implementation Notes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#general-guidelines">General Guidelines</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rpm-table-values">RPM Table Values</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#battery-voltage-considerations">Battery Voltage Considerations</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#advanced-ignition-features">Advanced Ignition Features</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#multispark-configuration">Multispark Configuration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#purpose-dan-benefits">Purpose dan Benefits</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration-parameters">Configuration Parameters</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#knock-control-system">Knock Control System</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#knock-detection">Knock Detection</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#knock-response">Knock Response</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cylinder-individual-trims">Cylinder Individual Trims</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#purpose">Purpose</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#implementation">Implementation</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting-ignition-issues">Troubleshooting Ignition Issues</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#common-problems">Common Problems</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#poor-ignition-performance">Poor Ignition Performance</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#knock-detection-issues">Knock Detection Issues</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#coil-overheating">Coil Overheating</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#diagnostic-procedures">Diagnostic Procedures</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rekomendasi-berdasarkan-application">Rekomendasi Berdasarkan Application</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#streetdaily-driving">Street/Daily Driving</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#performanceracing">Performance/Racing</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forced-induction">Forced Induction</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Ignition System</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-ignition/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="23 Juni 2026 06:34:51 UTC">23 Juni 2026</span></em></p>
+  <h1 id="ignition-system-configuration-tunerstudio">Ignition System Configuration - TunerStudio<a class="headerlink" href="#ignition-system-configuration-tunerstudio" title="Permanent link">&para;</a></h1>
+<p>Konfigurasi komprehensif untuk sistem ignition ECU Mazduino. Menu <strong>Ignition</strong> menyediakan kontrol detail atas berbagai aspek ignition system untuk performance, efficiency, dan safety requirements.</p>
+<p><img alt="Ignition Menu" src="#" title="Ignition Menu Overview" /></p>
+<h2 id="ignition-menu-overview">Ignition Menu Overview<a class="headerlink" href="#ignition-menu-overview" title="Permanent link">&para;</a></h2>
+<p>Menu <strong>Ignition</strong> menawarkan multiple opsi konfigurasi untuk tuning berbagai pengaturan terkait ignition dalam ECU. Sistem ignition yang dikonfigurasi dengan benar essential untuk performance engine yang optimal.</p>
+<h3 id="submenu-yang-tersedia">Submenu yang Tersedia:<a class="headerlink" href="#submenu-yang-tersedia" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Ignition Settings</strong>: Primary configuration settings untuk ignition, termasuk tipe ignition system dan timing control</p>
+</li>
+<li>
+<p><strong>Ignition Advance</strong>: Adjustment ignition timing advance table berdasarkan engine load dan RPM</p>
+</li>
+<li>
+<p><strong>Ign CLT Correction</strong>: Timing adjustments berdasarkan Coolant Temperature (CLT)</p>
+</li>
+<li>
+<p><strong>Ign IAT Correction</strong>: Adjustments timing berdasarkan Intake Air Temperature (IAT)</p>
+</li>
+<li>
+<p><strong>Dwell</strong>: Kontrol dwell time - waktu ignition coil di-energize sebelum firing</p>
+</li>
+<li>
+<p><strong>Ignition Blend Tables</strong>: Custom tables untuk blend ignition timing values</p>
+</li>
+<li>
+<p><strong>Cylinder Ign Trims</strong>: Individual cylinder ignition timing adjustments</p>
+</li>
+<li>
+<p><strong>Multispark</strong>: Multiple sparks per cycle pada lower RPMs untuk improved combustion</p>
+</li>
+<li>
+<p><strong>Knock Control</strong>: Konfigurasi knock detection dan response</p>
+</li>
+<li>
+<p><strong>Max Knock Retard</strong>: Maximum degree timing retardation untuk knock response</p>
+</li>
+</ol>
+<h2 id="ignition-settings">Ignition Settings<a class="headerlink" href="#ignition-settings" title="Permanent link">&para;</a></h2>
+<p><img alt="Ignition Settings" src="#" title="Ignition Settings" /></p>
+<h3 id="ignition-mode-configuration">Ignition Mode Configuration<a class="headerlink" href="#ignition-mode-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>Mode</strong> dropdown untuk memilih tipe konfigurasi ignition system:</p>
+<h4 id="single-coil">Single Coil<a class="headerlink" href="#single-coil" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Aplikasi</strong>: Distributor-based systems</p>
+</li>
+<li>
+<p><strong>Karakteristik</strong>: Single coil melayani semua cylinders</p>
+</li>
+<li>
+<p><strong>Kabel</strong>: One coil output ke distributor</p>
+</li>
+</ul>
+<h4 id="individual-coils">Individual Coils<a class="headerlink" href="#individual-coils" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Aplikasi</strong>: Coil-on-plug atau coil-near-plug setups</p>
+</li>
+<li>
+<p><strong>Requirement</strong>: Sequential injection mode</p>
+</li>
+<li>
+<p><strong>Karakteristik</strong>: One coil per cylinder untuk precise timing</p>
+</li>
+</ul>
+<h4 id="wasted-spark">Wasted Spark<a class="headerlink" href="#wasted-spark" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Aplikasi</strong>: Paired cylinders fire together</p>
+</li>
+<li>
+<p><strong>Konfigurasi</strong>: One coil per pair atau one coil per cylinder</p>
+</li>
+<li>
+<p><strong>Keuntungan</strong>: Simpler ignition system setup</p>
+</li>
+</ul>
+<h4 id="two-distributors">Two Distributors<a class="headerlink" href="#two-distributors" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Aplikasi</strong>: Pair distributors, umum pada certain BMW, Toyota engines</p>
+</li>
+<li>
+<p><strong>Karakteristik</strong>: Dual distributor configuration</p>
+</li>
+</ul>
+<h3 id="timing-parameters">Timing Parameters<a class="headerlink" href="#timing-parameters" title="Permanent link">&para;</a></h3>
+<h4 id="maximumminimum-limits">Maximum/Minimum Limits<a class="headerlink" href="#maximumminimum-limits" title="Permanent link">&para;</a></h4>
+<p><strong>Maximum Timing Advance (deg BTDC)</strong>: Membatasi maximum timing advance untuk safe ignition settings</p>
+<p><strong>Minimum Timing Advance (deg BTDC)</strong>: Mencegah timing retard terlalu jauh, melindungi engine</p>
+<h4 id="validation-and-override">Validation and Override<a class="headerlink" href="#validation-and-override" title="Permanent link">&para;</a></h4>
+<p><strong>Use Fixed Timing While Validating</strong>: Menggunakan fixed timing untuk validasi dengan timing gun</p>
+<p><strong>Override Ignition Table Load Axis</strong>: Override load axis ignition table dengan custom axis</p>
+<h3 id="timing-mode">Timing Mode<a class="headerlink" href="#timing-mode" title="Permanent link">&para;</a></h3>
+<p><strong>Dynamic</strong>: Menggunakan ignition timing map untuk menentukan timing secara dinamis selama engine operation</p>
+<p><strong>Static</strong>: Fix timing ke specified value untuk verifikasi static timing dengan timing light</p>
+<h3 id="ignition-outputs">Ignition Outputs<a class="headerlink" href="#ignition-outputs" title="Permanent link">&para;</a></h3>
+<h4 id="wiring-configuration">Wiring Configuration<a class="headerlink" href="#wiring-configuration" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Wire each output</strong> ke cylinder number secara langsung</li>
+<li><strong>Firmware (rusEFI)</strong> mengelola firing order secara internal</li>
+<li><strong>Ignition Output Mode</strong>: Customization bagaimana outputs berperilaku</li>
+</ul>
+<h4 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Timing Validation</strong>: Gunakan timing gun dengan static timing mode untuk verify alignment</li>
+<li><strong>Sequential Ignition</strong>: Ensure sequential mode untuk <strong>Individual Coils</strong> configuration</li>
+<li><strong>Wasted Spark Mode</strong>: Verify coil pairing dan firing order correct</li>
+</ol>
+<h2 id="ignition-timing-table">Ignition Timing Table<a class="headerlink" href="#ignition-timing-table" title="Permanent link">&para;</a></h2>
+<p><img alt="Ignition Table" src="#" title="Ignition Timing Table" /></p>
+<p>Ignition Table mengkonfigurasi spark timing berdasarkan RPM (horizontal axis) dan engine load (vertical axis). Essential untuk fine-tuning engine performance, efficiency, dan safety.</p>
+<h3 id="example-analysis-high-compression-turbocharged-engine">Example Analysis - High-Compression Turbocharged Engine<a class="headerlink" href="#example-analysis-high-compression-turbocharged-engine" title="Permanent link">&para;</a></h3>
+<h4 id="high-compression-and-turbocharged-timing">High Compression and Turbocharged Timing<a class="headerlink" href="#high-compression-and-turbocharged-timing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Boosted regions</strong>: Ignition timing conservative (lower values) untuk avoid pre-ignition</p>
+</li>
+<li>
+<p><strong>Example</strong>: 200 kPa, 3000 RPM = 7.6 degrees BTDC</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Critical untuk turbocharged engines</p>
+</li>
+</ul>
+<h4 id="deceleration-burble">Deceleration Burble<a class="headerlink" href="#deceleration-burble" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Lower load values</strong>: Negative atau very low timing values</p>
+</li>
+<li>
+<p><strong>Purpose</strong>: Intentionally delayed ignition untuk burble/popping sound</p>
+</li>
+<li>
+<p><strong>Application</strong>: Aesthetic atau performance sound tuning</p>
+</li>
+</ul>
+<h4 id="mid-range-efficiency">Mid-Range Efficiency<a class="headerlink" href="#mid-range-efficiency" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Mid-load/mid-RPM</strong>: 75 kPa, 2500 RPM regions</p>
+</li>
+<li>
+<p><strong>Timing values</strong>: 25-35 degrees BTDC</p>
+</li>
+<li>
+<p><strong>Optimization</strong>: Fuel efficiency dan smooth power delivery</p>
+</li>
+</ul>
+<h4 id="high-rpms">High RPMs<a class="headerlink" href="#high-rpms" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Higher RPMs/moderate loads</strong>: Timing slightly advanced</p>
+</li>
+<li>
+<p><strong>Example</strong>: 37.5 degrees pada 100 kPa dan 7000 RPM</p>
+</li>
+<li>
+<p><strong>Balance</strong>: Maintain performance tanpa knocking</p>
+</li>
+</ul>
+<h3 id="tuning-guidelines">Tuning Guidelines<a class="headerlink" href="#tuning-guidelines" title="Permanent link">&para;</a></h3>
+<h4 id="turbocharged-engines">Turbocharged Engines<a class="headerlink" href="#turbocharged-engines" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Monitor carefully</strong>: Timing dalam high-boost areas untuk safety</p>
+</li>
+<li>
+<p><strong>Use knock sensors</strong>: Data logging untuk detect potential detonation</p>
+</li>
+<li>
+<p><strong>Conservative approach</strong>: Start dengan lower timing values</p>
+</li>
+</ul>
+<h4 id="deceleration-effects">Deceleration Effects<a class="headerlink" href="#deceleration-effects" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Burble effect</strong>: Hanya gunakan di regions dengan fuel cut-off active</p>
+</li>
+<li>
+<p><strong>Prevent fuel waste</strong>: Avoid excessive fuel consumption</p>
+</li>
+</ul>
+<h4 id="engine-specific-considerations">Engine-Specific Considerations<a class="headerlink" href="#engine-specific-considerations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Timing values</strong>: Heavily dependent pada engine design, fuel type, compression ratio</p>
+</li>
+<li>
+<p><strong>Guidelines only</strong>: Table ini reference, mungkin tidak applicable untuk all setups</p>
+</li>
+</ul>
+<h2 id="dwell-configuration">Dwell Configuration<a class="headerlink" href="#dwell-configuration" title="Permanent link">&para;</a></h2>
+<p><img alt="Dwell Settings" src="#" title="Dwell Settings" /></p>
+<p>Dwell Settings menyediakan kontrol critical atas ignition coil charge time, yang mempengaruhi spark energy dan ignition system performance.</p>
+<h3 id="dwell-time-base-top-graph">Dwell Time Base (Top Graph)<a class="headerlink" href="#dwell-time-base-top-graph" title="Permanent link">&para;</a></h3>
+<h4 id="purpose-dan-function">Purpose dan Function<a class="headerlink" href="#purpose-dan-function" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Adjusts</strong>: Base dwell time (ms) relative terhadap engine RPM</p>
+</li>
+<li>
+<p><strong>Lower RPMs</strong>: Higher dwell time (3.60 ms pada 0 RPM) untuk fully charge coil</p>
+</li>
+<li>
+<p><strong>Higher RPMs</strong>: Decreased dwell time (2.60 ms pada 7000 RPM) untuk shorter cycle times</p>
+</li>
+</ul>
+<h4 id="tuning-considerations">Tuning Considerations<a class="headerlink" href="#tuning-considerations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excessive high dwell</strong>: Dapat menyebabkan coil saturation dan heat damage</p>
+</li>
+<li>
+<p><strong>Too low dwell</strong>: Dapat mengakibatkan weak sparks atau misfires</p>
+</li>
+</ul>
+<h3 id="dwell-voltage-correction-bottom-graph">Dwell Voltage Correction (Bottom Graph)<a class="headerlink" href="#dwell-voltage-correction-bottom-graph" title="Permanent link">&para;</a></h3>
+<h4 id="voltage-compensation">Voltage Compensation<a class="headerlink" href="#voltage-compensation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Lower battery voltages</strong>: Increased dwell time (multiplier &gt; 1.0) untuk compensate reduced charging efficiency</p>
+</li>
+<li>
+<p><strong>Higher voltages</strong>: Reduced dwell time (multiplier &lt; 1.0) untuk prevent overheating</p>
+</li>
+<li>
+<p><strong>Example</strong>: 8.0V = 1.40 multiplier, 16.0V = 0.80 multiplier</p>
+</li>
+</ul>
+<h4 id="implementation-notes">Implementation Notes<a class="headerlink" href="#implementation-notes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Voltage table</strong>: Essential untuk engines dengan weak electrical systems</p>
+</li>
+<li>
+<p><strong>Compensation vital</strong>: Untuk vehicles running additional electrical loads</p>
+</li>
+</ul>
+<h3 id="general-guidelines">General Guidelines<a class="headerlink" href="#general-guidelines" title="Permanent link">&para;</a></h3>
+<h4 id="rpm-table-values">RPM Table Values<a class="headerlink" href="#rpm-table-values" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Start values</strong>: 2.0-4.0 ms pada idle</p>
+</li>
+<li>
+<p><strong>Progression</strong>: Reduce as RPM rises</p>
+</li>
+<li>
+<p><strong>Manufacturer specs</strong>: Always refer untuk avoid coil damage</p>
+</li>
+</ul>
+<h4 id="battery-voltage-considerations">Battery Voltage Considerations<a class="headerlink" href="#battery-voltage-considerations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Compensation critical</strong>: Untuk reliable ignition performance</p>
+</li>
+<li>
+<p><strong>System monitoring</strong>: Track voltage levels selama operation</p>
+</li>
+</ul>
+<h2 id="advanced-ignition-features">Advanced Ignition Features<a class="headerlink" href="#advanced-ignition-features" title="Permanent link">&para;</a></h2>
+<h3 id="multispark-configuration">Multispark Configuration<a class="headerlink" href="#multispark-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="purpose-dan-benefits">Purpose dan Benefits<a class="headerlink" href="#purpose-dan-benefits" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Lower RPMs</strong>: Multiple sparks per cycle</p>
+</li>
+<li>
+<p><strong>Improved combustion</strong>: Better idle stability</p>
+</li>
+<li>
+<p><strong>Performance applications</strong>: Enhanced ignition reliability</p>
+</li>
+</ul>
+<h4 id="configuration-parameters">Configuration Parameters<a class="headerlink" href="#configuration-parameters" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>RPM threshold</strong>: Below which multispark activates</p>
+</li>
+<li>
+<p><strong>Number of sparks</strong>: Sparks per combustion cycle</p>
+</li>
+<li>
+<p><strong>Spark spacing</strong>: Time between individual sparks</p>
+</li>
+</ul>
+<h3 id="knock-control-system">Knock Control System<a class="headerlink" href="#knock-control-system" title="Permanent link">&para;</a></h3>
+<h4 id="knock-detection">Knock Detection<a class="headerlink" href="#knock-detection" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Sensitivity adjustment</strong>: Configure knock sensor responsiveness</p>
+</li>
+<li>
+<p><strong>Frequency filtering</strong>: Isolate actual knock dari background noise</p>
+</li>
+<li>
+<p><strong>Threshold setting</strong>: Determine knock detection levels</p>
+</li>
+</ul>
+<h4 id="knock-response">Knock Response<a class="headerlink" href="#knock-response" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Timing retard</strong>: Automatic timing reduction saat knock detected</p>
+</li>
+<li>
+<p><strong>Recovery strategy</strong>: Gradual timing advance restoration</p>
+</li>
+<li>
+<p><strong>Protection limits</strong>: Maximum retard values untuk engine protection</p>
+</li>
+</ul>
+<h3 id="cylinder-individual-trims">Cylinder Individual Trims<a class="headerlink" href="#cylinder-individual-trims" title="Permanent link">&para;</a></h3>
+<h4 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Individual adjustment</strong>: Fine-tune setiap cylinder independently</p>
+</li>
+<li>
+<p><strong>Compensation</strong>: Account untuk cylinder-to-cylinder variations</p>
+</li>
+<li>
+<p><strong>Performance optimization</strong>: Maximize power output per cylinder</p>
+</li>
+</ul>
+<h4 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Trim values</strong>: Degrees of advance/retard per cylinder</p>
+</li>
+<li>
+<p><strong>Monitoring</strong>: Track individual cylinder performance</p>
+</li>
+<li>
+<p><strong>Balancing</strong>: Achieve consistent power delivery</p>
+</li>
+</ul>
+<h2 id="troubleshooting-ignition-issues">Troubleshooting Ignition Issues<a class="headerlink" href="#troubleshooting-ignition-issues" title="Permanent link">&para;</a></h2>
+<h3 id="common-problems">Common Problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
+<h4 id="poor-ignition-performance">Poor Ignition Performance<a class="headerlink" href="#poor-ignition-performance" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms</strong>: Misfires, rough idle, poor acceleration
+<strong>Solutions</strong>:</p>
+<ul>
+<li>Check dwell settings untuk appropriate coil charging</li>
+<li>Verify timing table values reasonable</li>
+<li>Ensure proper ignition mode selection</li>
+</ul>
+<h4 id="knock-detection-issues">Knock Detection Issues<a class="headerlink" href="#knock-detection-issues" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms</strong>: False knock detection atau inability untuk detect real knock
+<strong>Solutions</strong>:</p>
+<ul>
+<li>Adjust knock sensor sensitivity</li>
+<li>Review timing table untuk excessive advance</li>
+<li>Check knock sensor mounting dan wiring</li>
+</ul>
+<h4 id="coil-overheating">Coil Overheating<a class="headerlink" href="#coil-overheating" title="Permanent link">&para;</a></h4>
+<p><strong>Symptoms</strong>: Coil failure, reduced spark energy
+<strong>Solutions</strong>:</p>
+<ul>
+<li>Reduce dwell time pada high RPM</li>
+<li>Check voltage compensation table</li>
+<li>Verify coil specifications match settings</li>
+</ul>
+<h3 id="diagnostic-procedures">Diagnostic Procedures<a class="headerlink" href="#diagnostic-procedures" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Timing light verification</strong>: Check actual vs commanded timing</li>
+<li><strong>Dwell monitoring</strong>: Measure actual dwell time vs settings  </li>
+<li><strong>Knock logging</strong>: Monitor knock events dan responses</li>
+<li><strong>Coil temperature</strong>: Check untuk overheating conditions</li>
+</ol>
+<h2 id="rekomendasi-berdasarkan-application">Rekomendasi Berdasarkan Application<a class="headerlink" href="#rekomendasi-berdasarkan-application" title="Permanent link">&para;</a></h2>
+<h3 id="streetdaily-driving">Street/Daily Driving<a class="headerlink" href="#streetdaily-driving" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Conservative timing</strong>: Prioritize reliability over maximum power</p>
+</li>
+<li>
+<p><strong>Knock protection</strong>: Active knock control essential</p>
+</li>
+<li>
+<p><strong>Smooth operation</strong>: Focus pada idle stability dan drivability</p>
+</li>
+</ul>
+<h3 id="performanceracing">Performance/Racing<a class="headerlink" href="#performanceracing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Aggressive timing</strong>: Extract maximum power dengan careful monitoring</p>
+</li>
+<li>
+<p><strong>Data logging</strong>: Continuous monitoring essential</p>
+</li>
+<li>
+<p><strong>Component quality</strong>: High-performance ignition components required</p>
+</li>
+</ul>
+<h3 id="forced-induction">Forced Induction<a class="headerlink" href="#forced-induction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Conservative boost timing</strong>: Prevent detonation di high boost conditions</p>
+</li>
+<li>
+<p><strong>Temperature compensation</strong>: Active CLT dan IAT corrections</p>
+</li>
+<li>
+<p><strong>Safety margins</strong>: Extra conservative approach untuk reliability</p>
+</li>
+</ul>
+<hr />
+<p><strong>Selanjutnya</strong>: <a href="tunerstudio-cranking.md">Cranking Configuration</a></p>
+<!-- Image References -->
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tunerstudio-fuel-system/" class="btn btn-neutral float-left" title="Fuel System"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-sensors/" class="btn btn-neutral float-right" title="Sensor Configuration">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tunerstudio-fuel-system/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-sensors/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

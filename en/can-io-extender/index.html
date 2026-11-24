@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/can-io-extender/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>CAN IO Extender - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "CAN IO Extender";
+        var mkdocs_page_input_path = "can-io-extender.en.md";
+        var mkdocs_page_url = "/en/can-io-extender/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">CAN IO Extender</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#main-connector-j2">Main Connector (J2)</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#power-can-and-termination">Power, CAN, and Termination</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#outputs">Outputs</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-with-racedash-pro-m4-m5-m7">Using with Racedash Pro (M4, M5, M7)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#vehicles-without-a-can-bus-m-link-protocol">Vehicles without a CAN bus: M-Link protocol</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#indicator-lamps-from-the-vehicles-switches">Indicator lamps from the vehicle's switches</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#additional-sensor-values">Additional sensor values</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#switching-outputs-on">Switching outputs on</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-with-racedash-35-and-4">Using with Racedash 3.5" and 4"</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sensor-calibration-in-tunerstudio">Sensor Calibration in TunerStudio</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data-sent-by-the-module">Data Sent by the Module</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#using-two-modules">Using Two Modules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#firmware">Firmware</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#download">Download</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#flash">Flash</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Accessories</li>
+      <li class="breadcrumb-item active">CAN IO Extender</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../can-io-extender/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <h1 id="can-io-extender">CAN IO Extender<a class="headerlink" href="#can-io-extender" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p><img alt="Mazduino CAN IO Extender with its 24-pin Molex cable connector" src="../../img/can-io/can-io-extender.jpeg" /></p>
+<p>The CAN IO Extender adds <strong>inputs and outputs</strong> to the Racedash over the same CAN
+bus as the ECU. The module reads sensors and switches the ECU does not know about,
+such as turn signals, handbrake, high beam, an extra oil pressure sensor, a clutch
+switch or a wheel speed sensor, and broadcasts them as CAN frames the dash can
+read. In the other direction, the dash can switch the module's outputs on to drive
+relays, pumps, fans or solenoids.</p>
+<p>There are two ways to use it:</p>
+<ul>
+<li><strong>Vehicles with a CAN-equipped ECU</strong>: the module adds inputs and outputs the
+  ECU does not have. ECU data is still read as usual.</li>
+<li><strong>Vehicles without a CAN bus</strong>: for example a carbureted engine or an older ECU
+  without CAN. The module becomes the dash's only data source through the
+  <a href="#vehicles-without-a-can-bus-m-link-protocol">M-Link</a> protocol: it reads
+  analog, digital and RPM signals directly from the vehicle and sends them to the
+  dash over CAN.</li>
+</ul>
+<p>The bus bitrate is detected automatically. The function of each pin is chosen at
+installation to suit the vehicle, and sensor calibration is set in
+<a href="#sensor-calibration-in-tunerstudio">TunerStudio</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Capability</th>
+<th style="text-align: center;">Count</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Analog input</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">One is used for battery voltage; five of them (AV1–AV5) have a 2.7 kΩ pull-up for NTC sensors</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch input 12 V</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">For turn signals and OEM indicator lamps; share pins with some of the analog inputs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Digital input (HALL)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">RPM, VSS, frequency, or active-ground switch (clutch, launch control); share pins with some of the analog inputs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Low-side output</td>
+<td style="text-align: center;">5 + 2</td>
+<td style="text-align: left;">Five low-current for relays, two high-current for solenoids (PWM)</td>
+</tr>
+<tr>
+<td style="text-align: left;">High-side output</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Support PWM and report faults</td>
+</tr>
+<tr>
+<td style="text-align: left;">Logic output</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">5 V or 12 V signal output</td>
+</tr>
+</tbody>
+</table>
+<p>Seven outputs are available at the same time on the main connector; two more share
+pins with the logic outputs.</p>
+<h2 id="main-connector-j2">Main Connector (J2)<a class="headerlink" href="#main-connector-j2" title="Permanent link">&para;</a></h2>
+<p>All vehicle wiring enters through a single <strong>Molex Micro-Fit 3.0, 24-pin
+(2 rows × 12)</strong> connector.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Molex part number</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Header on the board</td>
+<td style="text-align: left;">43045-2400</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cable connector (mating part)</td>
+<td style="text-align: left;">43025-2400, with Micro-Fit 3.0 female crimp terminals</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Connector J2 seen from the front of the module, with pin numbers 1, 12, 13 and 24" src="../../img/can-io/can-io-connector.jpeg" /></p>
+<p>Seen from the front of the module with the <strong>locking latch</strong> (the small tab at the
+top center of the connector) facing up, <strong>pin 1 is at the bottom right</strong>.
+The bottom row holds pins 1–12 from right to left, and the top row holds pins 13–24
+from right to left. The cable connector, seen from the wire entry side with the
+locking latch on top, uses the same layout.</p>
+<table class="pin-grid">
+<tr><th></th><th colspan="12" align="center">▼ locking latch ▼</th></tr>
+<tr><th>Top</th><td align="center"><b>24</b><br>12V</td><td align="center"><b>23</b><br>LC1</td><td align="center"><b>22</b><br>LC2</td><td align="center"><b>21</b><br>HS1</td><td align="center"><b>20</b><br>LC3</td><td align="center"><b>19</b><br>OUT4</td><td align="center"><b>18</b><br>HS2</td><td align="center"><b>17</b><br>OUT5</td><td align="center"><b>16</b><br>LS2</td><td align="center"><b>15</b><br>LS1</td><td align="center"><b>14</b><br>CAN H</td><td align="center"><b>13</b><br>CAN L</td></tr>
+<tr><th>Bottom</th><td align="center"><b>12</b><br>GND</td><td align="center"><b>11</b><br>A1</td><td align="center"><b>10</b><br>A2</td><td align="center"><b>9</b><br>A3</td><td align="center"><b>8</b><br>A4</td><td align="center"><b>7</b><br>A5</td><td align="center"><b>6</b><br>A6</td><td align="center"><b>5</b><br>A7</td><td align="center"><b>4</b><br>A8</td><td align="center"><b>3</b><br>A9</td><td align="center"><b>2</b><br>A10</td><td align="center"><b>1</b><br>—</td></tr>
+</table>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: left;">Function</th>
+<th style="text-align: center;">Pin</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Not used</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">CAN L</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Input: A10 or HALL4</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">CAN H</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Input: A9 or HALL3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: left;">Output LS1 (low-side, high current)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Input: A8 or HALL2</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: left;">Output LS2 (low-side, high current)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Input: A7 or HALL1</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: left;">Output LC5 <strong>or</strong> LOGIC2</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Input: A6 or SW4</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: left;">Output HS2 (high-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Input: A5 (NTC pull-up) or SW3</td>
+<td style="text-align: center;">19</td>
+<td style="text-align: left;">Output LC4 <strong>or</strong> LOGIC1</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Input: A4 (NTC pull-up) or SW2</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Output LC3 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Input: A3 (NTC pull-up) or SW1</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: left;">Output HS1 (high-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Input: A2 (NTC pull-up)</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: left;">Output LC2 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Input: A1 (NTC pull-up)</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: left;">Output LC1 (low-side)</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Ground</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Switched 12 V (ignition)</td>
+</tr>
+</tbody>
+</table>
+<p>Each pin group is explained in the <a href="#power-can-and-termination">Power</a>,
+<a href="#inputs">Inputs</a> and <a href="#outputs">Outputs</a> sections below.</p>
+<h2 id="power-can-and-termination">Power, CAN, and Termination<a class="headerlink" href="#power-can-and-termination" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Connector pin</th>
+<th style="text-align: left;">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">J2-24</td>
+<td style="text-align: left;">Switched 12 V (ignition)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-12</td>
+<td style="text-align: left;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-14</td>
+<td style="text-align: left;">CAN H</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-13</td>
+<td style="text-align: left;">CAN L</td>
+</tr>
+</tbody>
+</table>
+<p>A separate 4-pin CAN + power header (J12) is also available as an alternative.</p>
+<p><strong>Termination:</strong> the module has a 120 Ω resistor that can be enabled on the board.
+Enable it <strong>only if this module sits at one end of the bus</strong>. A CAN bus needs
+exactly two terminators, and adding a third makes communication fail. With all
+power off, the correct resistance between CAN H and CAN L is about 60 Ω (see
+<a href="../setting-ecu-racedash/#checking-can-termination-with-a-multimeter">Check CAN termination with a multimeter</a>).</p>
+<h2 id="inputs">Inputs<a class="headerlink" href="#inputs" title="Permanent link">&para;</a></h2>
+<p>Eight input pins have a selectable function, and two more are analog only.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Connector pin</th>
+<th style="text-align: left;">Can be used as</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">J2-9</td>
+<td style="text-align: left;">Analog input (A3, NTC pull-up) <strong>or</strong> 12 V switch input (SW1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-8</td>
+<td style="text-align: left;">Analog input (A4, NTC pull-up) <strong>or</strong> 12 V switch input (SW2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-7</td>
+<td style="text-align: left;">Analog input (A5, NTC pull-up) <strong>or</strong> 12 V switch input (SW3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-6</td>
+<td style="text-align: left;">Analog input (A6) <strong>or</strong> 12 V switch input (SW4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-5</td>
+<td style="text-align: left;">Analog input (A7) <strong>or</strong> Hall / frequency input (HALL1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-4</td>
+<td style="text-align: left;">Analog input (A8) <strong>or</strong> Hall / frequency input (HALL2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-3</td>
+<td style="text-align: left;">Analog input (A9) <strong>or</strong> Hall / frequency input (HALL3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-2</td>
+<td style="text-align: left;">Analog input (A10) <strong>or</strong> Hall / frequency input (HALL4)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-11</td>
+<td style="text-align: left;">Analog input (A1, NTC pull-up)</td>
+</tr>
+<tr>
+<td style="text-align: left;">J2-10</td>
+<td style="text-align: left;">Analog input (A2, NTC pull-up)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AV1–AV5</strong> (J2-11, J2-10, J2-9, J2-8, J2-7) have a <strong>2.7 kΩ pull-up resistor to
+5 V</strong>, which is the bias NTC temperature sensors need, such as Coolant
+Temperature (CLT), Intake Air Temperature (IAT) or Oil Temperature. When nothing
+is connected, these inputs read close to 5 V.</p>
+<p>To fill in the NTC curve in TunerStudio, calculate the voltage at each point from
+the sensor's resistance table:</p>
+<blockquote>
+<p>volt = 5 × R ÷ (R + 2700), where R = sensor resistance (ohm) at that temperature</p>
+</blockquote>
+<p>Example: a 2,500 Ω sensor at 20 °C → 5 × 2500 ÷ 5200 = <strong>2.40 V</strong>.</p>
+<p>Sensors that output their own 0–5 V voltage, such as an Oil Pressure sensor, are
+best connected to <strong>AV6–AV10</strong>, which have no pull-up, so the signal is not pulled
+up as well.</p>
+<p><strong>SW1–SW4 are 12 V switch inputs</strong> (12 V tolerant), for 12 V signals from the car's
+electrical system: left/right turn signals, high beam, handbrake and other OEM
+indicator lamps.</p>
+<p><strong>Digital Input 1–4 (HALL1–HALL4)</strong> read 5 V logic, tolerate 12 V, and already have
+a 1 kΩ pull-up to 5 V. Their function is chosen in TunerStudio:</p>
+<ul>
+<li><strong>Pulse signal</strong>: RPM from a tachometer or ignition signal, VSS (Vehicle Speed
+  Sensor), wheel speed sensor, or raw frequency (flex fuel sensor,
+  flow meter).</li>
+<li><strong>Switch</strong>: an on/off switch, with <strong>Polarity</strong>:<ul>
+<li><strong>Default</strong>: active when the pin is HIGH, for example a 12 V signal from the
+  head light or park light.</li>
+<li><strong>Inverted</strong>: active when the pin is grounded, for active-ground switches such
+  as a clutch switch or launch control switch. Just connect it to ground, no
+  extra resistor needed.</li>
+</ul>
+</li>
+</ul>
+<h2 id="outputs">Outputs<a class="headerlink" href="#outputs" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: left;">Connector pin</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LC1</td>
+<td style="text-align: left;">J2-23</td>
+<td style="text-align: left;">Low-side, low current</td>
+<td style="text-align: left;">For relays: light relay, engine start relay, fan relay</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC2</td>
+<td style="text-align: left;">J2-22</td>
+<td style="text-align: left;">Low-side, low current</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LC3</td>
+<td style="text-align: left;">J2-20</td>
+<td style="text-align: left;">Low-side, low current</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4</td>
+<td style="text-align: left;">J2-19</td>
+<td style="text-align: left;">Low-side, low current</td>
+<td style="text-align: left;">This pin is used for LC4 <strong>or</strong> LOGIC1</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC5</td>
+<td style="text-align: left;">J2-17</td>
+<td style="text-align: left;">Low-side, low current</td>
+<td style="text-align: left;">This pin is used for LC5 <strong>or</strong> LOGIC2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1</td>
+<td style="text-align: left;">J2-15</td>
+<td style="text-align: left;">Low-side, high current</td>
+<td style="text-align: left;">For solenoids; software PWM</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS2</td>
+<td style="text-align: left;">J2-16</td>
+<td style="text-align: left;">Low-side, high current</td>
+<td style="text-align: left;">For solenoids; software PWM</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS1</td>
+<td style="text-align: left;">J2-21</td>
+<td style="text-align: left;"><strong>High-side</strong></td>
+<td style="text-align: left;">Hardware PWM, reports faults</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS2</td>
+<td style="text-align: left;">J2-18</td>
+<td style="text-align: left;"><strong>High-side</strong></td>
+<td style="text-align: left;">Hardware PWM, reports faults</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This is the most common wiring mistake:</strong> a <strong>low-side</strong> output switches the
+<strong>ground</strong> side, so the other end of the load must go to 12 V. A <strong>high-side</strong>
+output supplies 12 V instead, so the other end of the load must go to ground. Mix
+them up and the load will not work.</p>
+<p><strong>PWM</strong> is available on HS1, HS2, LS1 and LS2; the other outputs are on/off only.
+The frequency is set in TunerStudio, on each output's page:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: left;">PWM type</th>
+<th style="text-align: left;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HS1, HS2</td>
+<td style="text-align: left;">Hardware</td>
+<td style="text-align: left;"><strong>One frequency for both</strong> (one timer): changing it on HS1 also changes HS2. 4–500 Hz, default 490 Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1, LS2</td>
+<td style="text-align: left;">Software</td>
+<td style="text-align: left;"><strong>Each set separately.</strong> 4–500 Hz, default 100 Hz</td>
+</tr>
+</tbody>
+</table>
+<p>The maximum is <strong>500 Hz</strong>. Solenoids are usually run at 15–300 Hz (boost control
+around 15–30 Hz, idle valve and fan around 100–300 Hz). On LS, pulses shorter than
+0.1 ms are rounded to fully off or fully on, so at 500 Hz the usable duty is 5–95%.</p>
+<p><strong>Logic outputs</strong> (LOGIC1 and LOGIC2) are signal outputs, not coil drivers.
+Their voltage can be set to <strong>5 V or 12 V</strong> at installation. Both use the same pins
+as LC4 and LC5, so choose one function per pin.</p>
+<div class="admonition danger">
+<p class="admonition-title">Outputs switch off by themselves when commands stop</p>
+<p>All outputs are switched off if no command from the dash is received for
+<strong>500 ms</strong>, and the module always powers up with all outputs off. So if the
+dash shuts down or the CAN wire comes loose, a pump or solenoid will not stay
+on. This is normal, not a fault.</p>
+</div>
+<h2 id="using-with-racedash-pro-m4-m5-m7">Using with Racedash Pro (M4, M5, M7)<a class="headerlink" href="#using-with-racedash-pro-m4-m5-m7" title="Permanent link">&para;</a></h2>
+<p>Works right away without changing firmware, <strong>alongside the ECU protocol that is
+currently active</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">CAN ID: hexadecimal or decimal</p>
+<p>This page writes CAN IDs in hexadecimal, for example <code>0x643</code>. Some software,
+such as rusEFI and TunerStudio, shows the same number in decimal:
+<code>0x643</code> = <code>1603</code>.</p>
+<p>In DashTune, choose the display format in <strong>Settings → CAN ID format</strong>. This
+choice also applies in the Switch Panel editor on the dash screen. Below every
+CAN ID field, DashTune shows the equivalent, for example "= 1603 (decimal)".
+A number that starts with <code>0x</code> is always read as hexadecimal, whichever option
+is selected.</p>
+</div>
+<h3 id="vehicles-without-a-can-bus-m-link-protocol">Vehicles without a CAN bus: M-Link protocol<a class="headerlink" href="#vehicles-without-a-can-bus-m-link-protocol" title="Permanent link">&para;</a></h3>
+<p>Select the <strong>M-Link</strong> (Mazduino Link) ECU protocol when the vehicle does not use a
+CAN bus yet. M-Link is available on Racedash Pro M4, M5 and M7. The CAN IO Extender
+then replaces the ECU as the dash's data source: the module reads signals from the
+vehicle and sends them to the dash over CAN.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">What the module reads</th>
+<th style="text-align: left;">Examples</th>
+<th style="text-align: left;">Connected to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Analog</strong></td>
+<td style="text-align: left;">Coolant Temperature (CLT), Intake Air Temperature (IAT), Oil Pressure, Fuel Level</td>
+<td style="text-align: left;">AV1–AV10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>12 V switch</strong></td>
+<td style="text-align: left;">Left/right turn signals, high beam, handbrake, OEM indicator lamps</td>
+<td style="text-align: left;">SW1–SW4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pulse signal</strong></td>
+<td style="text-align: left;">RPM from a tachometer or ignition signal, VSS</td>
+<td style="text-align: left;">Digital Input 1–4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Active-ground switch</strong></td>
+<td style="text-align: left;">Clutch switch, launch control switch</td>
+<td style="text-align: left;">Digital Input 1–4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Installation steps:</strong></p>
+<ol>
+<li>Connect the module's CAN H and CAN L to the dash, and make sure the bus has two
+   120 Ω terminators (see <a href="#power-can-and-termination">Power, CAN, and Termination</a>).</li>
+<li>On the dash, open <strong>Setting → CAN → ECU protocol → M-Link</strong>, or in DashTune
+   <strong>General Setting → ECU → M-Link</strong>. The bitrate is 500 kbps and the dash sends
+   an "alive" signal to the module every 100 ms, so the module locks onto the bus
+   right away.</li>
+<li>Calibrate the sensors in <a href="#sensor-calibration-in-tunerstudio">TunerStudio</a>. For
+   RPM, set <strong>Digital Input 1</strong> to Function <strong>RPM</strong> with the engine's number of
+   cylinders. A raw ignition coil signal must go through a tach adapter first.</li>
+<li>In DashTune, run the <strong>CAN IO Extender</strong> preset (see
+   <a href="#additional-sensor-values">Additional sensor values</a>) for the other sensors.</li>
+</ol>
+<p><strong>Read right away with no setup:</strong> RPM from Digital Input 1, battery voltage, and
+the indicator lamps from the table below.</p>
+<p><strong>Other sensors feed the dash's built-in gauges</strong> through the preset: for each
+input, choose <strong>Also fill built-in gauge</strong>, for example AV1 → <strong>CLT</strong>, AV2 → <strong>IAT</strong>,
+Digital Input 2 → <strong>Speed</strong>. The dash's built-in gauges, warnings and shift light
+then read the values from the module just as they would from a regular ECU.</p>
+<div class="admonition warning">
+<p class="admonition-title">Digital Input 1 is used for RPM and head light</p>
+<p>In M-Link, the dash reads <strong>RPM</strong> from Digital Input 1 and the <strong>head light</strong>
+from the same pin (J2-5). If J2-5 is used for the RPM signal, the head light
+indicator on the dash flickers along with it. In DashTune open <strong>General
+Setting → Indicators</strong>, then change the head light source to another input or
+turn it off.</p>
+</div>
+<h3 id="indicator-lamps-from-the-vehicles-switches">Indicator lamps from the vehicle's switches<a class="headerlink" href="#indicator-lamps-from-the-vehicles-switches" title="Permanent link">&para;</a></h3>
+<p>In DashTune, open the indicator settings, select <strong>CAN bit</strong> mode, then fill in:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lamp</th>
+<th style="text-align: left;">CAN ID</th>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: center;">Bit</th>
+<th style="text-align: left;">Connect to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Turn left</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">J2-9</td>
+</tr>
+<tr>
+<td style="text-align: left;">Turn right</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">J2-8</td>
+</tr>
+<tr>
+<td style="text-align: left;">High beam</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">J2-7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Handbrake</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">J2-6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Head light</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">J2-5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Park light</td>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">J2-4</td>
+</tr>
+</tbody>
+</table>
+<p>J2-9 to J2-6 must be set up as <strong>12 V switch inputs</strong> (SW1–SW4).
+J2-5 and J2-4 are Digital Input 1 and 2: in TunerStudio set their Function to
+<strong>Switch</strong>, Polarity <strong>Default</strong>. In DashTune, leave the invert option
+(<strong>Active low</strong>) off, because the module already reports 1 = active.</p>
+<h3 id="additional-sensor-values">Additional sensor values<a class="headerlink" href="#additional-sensor-values" title="Permanent link">&para;</a></h3>
+<p>Sensors on AV1–AV10 are shown through <strong>Custom Channels</strong> in DashTune. Custom
+Channels ride on top of the active ECU protocol, so ECU data is still read as usual.</p>
+<p>The easiest way: in DashTune open <strong>Custom Channels</strong>, tap <strong>CAN IO Extender</strong>,
+select the module's node number, then tick the inputs you want to show. For each
+input choose:</p>
+<ul>
+<li><strong>Calibrated</strong>: the value from the curve set in
+  <a href="#sensor-calibration-in-tunerstudio">TunerStudio</a>, for example fuel % or bar.
+  Choose the same number of decimals as set in TunerStudio.</li>
+<li><strong>Volts</strong>: the raw input voltage, for linear sensors or just to check the
+  wiring.</li>
+</ul>
+<p>Enable <strong>Also set the lamps</strong> to map turn signals, high beam, handbrake, head light
+and park light in one go (table above).</p>
+<p>If the module stops sending (CAN wire loose or module off), the values change to
+<strong>"--"</strong> after about 1.5 seconds, without triggering a warning. The dash will not
+show the last number as if it were still live.</p>
+<div class="admonition note">
+<p class="admonition-title">Custom Channels are saved per ECU protocol</p>
+<p>This setting is tied to the ECU protocol that was active when it was saved. If
+the ECU protocol on the dash is changed, run the CAN IO Extender preset again
+in the new protocol.</p>
+</div>
+<p>To fill in Custom Channels manually, use the frame list in
+<a href="#data-sent-by-the-module">Data Sent by the Module</a> as the reference for CAN ID,
+byte position and scale.</p>
+<h3 id="switching-outputs-on">Switching outputs on<a class="headerlink" href="#switching-outputs-on" title="Permanent link">&para;</a></h3>
+<p>Outputs are switched on through the <strong>Switch Panel</strong> (formerly called CAN Buttons):
+one switch per output, set up in DashTune or directly on the dash screen. All
+switches use the same CAN ID, <code>0x648</code> (decimal <strong>1608</strong>), and must be of type
+<strong>SWITCH</strong> (formerly Toggle). While a switch is ON, the dash keeps resending its
+command. A PUSH switch (formerly Momentary) sends only once, so the output switches
+off again after 500 ms.</p>
+<p>On the latest Racedash Pro firmware, every switch starts OFF each time the dash is
+powered up, so the outputs are also off until their switch is pressed again. If an
+output must come on as soon as the dash powers up, enable <strong>Stay ON after
+power-off</strong> on its switch in DashTune (see
+<a href="../mazduino-racedash-pro/#switch-panel">Switch Panel</a>).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Output</th>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: center;">ON value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LC1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC3</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr>
+<td style="text-align: left;">LS2</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">64</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: left;">HS2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">LOGIC1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">LOGIC2</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
+</tr>
+</tbody>
+</table>
+<p>Set the <strong>OFF value to 0</strong> for every switch. Several switches can share the same
+byte; the dash combines them, so LC1 and LS1 can be on at the same time.</p>
+<p>HS1, HS2, LS1 and LS2 switch fully on right away. For PWM, add one more switch of
+type SWITCH at byte <strong>2</strong> (HS1), <strong>3</strong> (HS2), <strong>4</strong> (LS1) or <strong>5</strong> (LS2),
+with an ON value of 1–254 as the
+duty, for example 128 for about 50%. While that duty switch is OFF, the output
+goes back to fully on.</p>
+<div class="admonition note">
+<p class="admonition-title">Requires the latest firmware</p>
+<p>The method above requires the latest Racedash firmware and CAN IO Extender
+firmware. On older firmware, switches in the same byte overwrite each other,
+and the module ignores commands shorter than 4 bytes.</p>
+</div>
+<h2 id="using-with-racedash-35-and-4">Using with Racedash 3.5" and 4"<a class="headerlink" href="#using-with-racedash-35-and-4" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Cannot be used together with an ECU protocol</p>
+<p>On these variants, the module is only read when the dash protocol is set to
+<strong>Custom</strong>, and Custom mode replaces the built-in ECU decoder. This means the
+dash can read <strong>this module or the ECU</strong>, not both at once. If you need both,
+use the Racedash Pro.</p>
+</div>
+<p>Steps: set the dash protocol to <strong>Custom</strong>, match the bitrate to the bus, then
+build the channels in DashTune. All values are <strong>little-endian</strong>, so leave the
+<strong>MSB first (Motorola)</strong> option off.</p>
+<p>If you use the Custom CAN map for other purposes, do not use CAN IDs
+<code>0x640</code>–<code>0x67F</code> (decimal 1600–1663), to avoid clashing with this module.</p>
+<h2 id="sensor-calibration-in-tunerstudio">Sensor Calibration in TunerStudio<a class="headerlink" href="#sensor-calibration-in-tunerstudio" title="Permanent link">&para;</a></h2>
+<p>The module can be connected to <strong>TunerStudio</strong> over its USB cable, like an ECU.
+From there, each input AV1–AV10 can be given a calibration curve, and the node
+number and CAN bitrate can be changed without reflashing.</p>
+<ol>
+<li>Download the <code>can-io-extender-vX.Y.Z.zip</code> file from the
+   <a href="https://github.com/mazduino/can-io-extender/releases">Releases</a> page, then
+   extract it. The INI file is in the <code>tunerstudio/</code> folder.</li>
+<li>In TunerStudio create a new project, select ECU definition <strong>Other / Browse</strong>,
+   then point it to the <code>mazduino-iox.ini</code> file.</li>
+<li>Select the module's USB port with baud <strong>115200</strong>, then connect.</li>
+</ol>
+<p><strong>Filling in the curve</strong>: open the <strong>Analog Volt Inputs → AV1</strong> menu (and so on):</p>
+<p><img alt="Analog Volt Input 1 dialog in TunerStudio: settings, volt-to-value curve, and Raw AV1 gauge" src="../../img/can-io/ts-analog-volt-input.png" /></p>
+<ul>
+<li><strong>Name</strong>: the input's name, for example "Fuel level". Used as the gauge title.</li>
+<li><strong>Decimals</strong> and <strong>Unit</strong>: how the value is displayed. Decimals also set the
+  scale on the dash: 1 decimal means scale <code>0.1</code>.</li>
+<li><strong>Curve</strong>: enter voltages starting from the lowest, and the value at each voltage.
+  At least two rows; empty rows below them are ignored. A curve that is all zeros
+  means the input is not calibrated.</li>
+<li>The <strong>Raw AV1</strong> gauge next to the curve shows the current voltage, so curve points
+  can be taken directly while changing the sensor's condition (for example filling
+  the tank in steps).</li>
+</ul>
+<p>Press <strong>Burn</strong> to save the curve to the module. The <strong>?</strong> icon on each field holds a
+short explanation.</p>
+<p><strong>Digital Input (RPM, VSS, frequency, switch)</strong>: open the <strong>Digital Inputs →
+Digital Input 1</strong> menu (and so on). Digital Input 1–4 are pins HALL1–HALL4 on the
+connector.</p>
+<p><img alt="Digital Input 1 dialog in TunerStudio set up as RPM from a 4-cylinder tachometer signal" src="../../img/can-io/ts-digital-input.png" /></p>
+<ul>
+<li><strong>Function</strong>: <strong>RPM</strong> (engine speed), <strong>Speed (VSS)</strong> (vehicle speed),
+  <strong>Frequency</strong> (raw frequency, for example a flow meter), or <strong>Switch</strong>.</li>
+<li><strong>Polarity</strong> (Switch only): <strong>Inverted</strong> for a switch to ground such as a
+  clutch switch or launch control switch, or <strong>Default</strong>
+  for a 12 V signal such as the head light. The value is 1 when active.</li>
+<li><strong>Signal</strong> (RPM only): <strong>Tach / ignition (cylinders)</strong> for a tachometer or
+  ignition signal; fill in <strong>Cylinders</strong> and <strong>Engine</strong> (2-stroke or
+  4-stroke). Or <strong>Custom pulses per rev</strong> for a trigger wheel; fill in the number
+  of pulses per revolution.</li>
+<li><strong>Pulses per km</strong> (Speed only): the number of speed sensor pulses per kilometer.</li>
+<li><strong>Noise filter</strong>: ignores false pulses from a ringing signal, for example the
+  output of a tach adapter. <strong>Lite</strong> is enough for most signals.</li>
+<li><strong>Smoothing</strong>: damps jumping numbers; the higher it is, the smoother, but the
+  slower it follows changes.</li>
+</ul>
+<p>The gauge below shows the current value. The result is sent on CAN
+<code>0x649</code> (node 0): RPM as is, speed and frequency multiplied by 10, switch 0
+or 1. Press
+<strong>Burn</strong> to save.</p>
+<p><strong>Node and CAN</strong>: menu <strong>Module → Node and CAN bus</strong>:</p>
+<ul>
+<li><strong>Node number</strong>: see <a href="#using-two-modules">Using Two Modules</a>.</li>
+<li><strong>Bitrate</strong>: <strong>Auto detect</strong> (recommended) or a fixed bitrate. A fixed bitrate
+  starts sending right away without listening to the bus first, so choose it only
+  when you are sure it matches the bus.</li>
+</ul>
+<p>On the TunerStudio front page, the <strong>CAN CHIP NOT FOUND</strong>, <strong>NO CAN BUS</strong>
+and <strong>CAN ERROR PASSIVE</strong> indicators light red when there is a problem on the CAN
+side.</p>
+<h2 id="data-sent-by-the-module">Data Sent by the Module<a class="headerlink" href="#data-sent-by-the-module" title="Permanent link">&para;</a></h2>
+<p>The CAN IDs below apply to the module at node 0. All values are <strong>little-endian</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">CAN ID</th>
+<th style="text-align: left;">Decimal</th>
+<th style="text-align: left;">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0x640</code></td>
+<td style="text-align: left;">1600</td>
+<td style="text-align: left;">Battery voltage, then AV1, AV2, AV3 (mV)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x641</code></td>
+<td style="text-align: left;">1601</td>
+<td style="text-align: left;">AV4, AV5, AV6, AV7 (mV)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x642</code></td>
+<td style="text-align: left;">1602</td>
+<td style="text-align: left;">AV8, AV9, AV10 (mV)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x643</code></td>
+<td style="text-align: left;">1603</td>
+<td style="text-align: left;">Digital input status, diagnostics, output status</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x644</code></td>
+<td style="text-align: left;">1604</td>
+<td style="text-align: left;">Frequency HALL1–HALL4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x645</code></td>
+<td style="text-align: left;">1605</td>
+<td style="text-align: left;">AV1–AV4 calibrated</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x646</code></td>
+<td style="text-align: left;">1606</td>
+<td style="text-align: left;">AV5–AV8 calibrated</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>0x647</code></td>
+<td style="text-align: left;">1607</td>
+<td style="text-align: left;">AV9–AV10 calibrated</td>
+</tr>
+</tbody>
+</table>
+<p>Frames are sent as soon as a value changes (at most every 25 ms) and are still
+repeated at least every 200 ms when nothing changes (the digital frame every
+500 ms, the frequency frame every 50 ms).</p>
+<p><strong>Analog frames</strong> (<code>0x640</code>–<code>0x642</code>) hold four consecutive <code>uint16</code> values, in
+<strong>millivolts</strong>. Battery voltage is already multiplied by its divider factor, so the
+number <code>13800</code> means 13.8 V. To display it in volts, use scale <code>0.001</code>.</p>
+<p><strong>Digital frame</strong> (<code>0x643</code>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Byte</th>
+<th style="text-align: left;">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">bit 0–3 = SW1–SW4, bit 4–7 = HALL1–HALL4</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">bit 0–1 = high-side output fault</td>
+</tr>
+<tr>
+<td style="text-align: center;">2–3</td>
+<td style="text-align: left;">status of the outputs that are actually on</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">bit 0 = failsafe active, bit 1 = bitrate locked</td>
+</tr>
+<tr>
+<td style="text-align: center;">5–6</td>
+<td style="text-align: left;">uptime in seconds</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">firmware version and node number</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Frequency frame</strong> (<code>0x644</code>) holds four <code>uint16</code> values in units of 0.1 Hz;
+multiply by <code>0.1</code> to get Hz.</p>
+<p><strong>Calibrated frames</strong> (<code>0x645</code>–<code>0x647</code>) hold <strong>signed</strong> <code>int16</code> values, two
+bytes per input: <code>0x645</code> byte 0–1 = AV1, byte 2–3 = AV2, byte 4–5 = AV3,
+byte 6–7 = AV4, and so on. The value is the TunerStudio curve result without the
+decimal point: with 1 decimal, the value 62.5 is sent as <code>625</code>, so use scale
+<code>0.1</code>. An input without a curve reads 0.</p>
+<h2 id="using-two-modules">Using Two Modules<a class="headerlink" href="#using-two-modules" title="Permanent link">&para;</a></h2>
+<p>One bus can hold up to <strong>four</strong> modules. Each module must use a different node
+number. Set it in TunerStudio (<strong>Module → Node and CAN bus</strong>, then Burn), or
+flash the <a href="#firmware">firmware file</a> for that node. The node number shifts its
+CAN ID block:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Node</th>
+<th style="text-align: left;">CAN ID block</th>
+<th style="text-align: left;">Decimal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;"><code>0x640</code>–<code>0x64F</code></td>
+<td style="text-align: left;">1600–1615</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><code>0x650</code>–<code>0x65F</code></td>
+<td style="text-align: left;">1616–1631</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><code>0x660</code>–<code>0x66F</code></td>
+<td style="text-align: left;">1632–1647</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><code>0x670</code>–<code>0x67F</code></td>
+<td style="text-align: left;">1648–1663</td>
+</tr>
+</tbody>
+</table>
+<h2 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link">&para;</a></h2>
+<p>The module ships with firmware for <strong>node 0</strong> already installed. Reflashing is only
+needed to update the firmware, or for the second and further modules on the same
+bus (<a href="#using-two-modules">Using Two Modules</a>).</p>
+<h3 id="download">Download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
+<p>Download the <code>can-io-extender-vX.Y.Z.zip</code> file from
+<strong><a href="https://github.com/mazduino/can-io-extender/releases">github.com/mazduino/can-io-extender/releases</a></strong>,
+then extract it. It contains:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Folder</th>
+<th style="text-align: left;">Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>hex/</code></td>
+<td style="text-align: left;"><code>.hex</code> firmware for XLoader / avrdude</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bin/</code></td>
+<td style="text-align: left;">The same firmware in <code>.bin</code> format</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>tunerstudio/</code></td>
+<td style="text-align: left;"><code>mazduino-iox.ini</code>, must come from the same zip as its firmware</td>
+</tr>
+</tbody>
+</table>
+<p>The firmware file name states its node number:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">File</th>
+<th style="text-align: left;">Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node0.hex</code></td>
+<td style="text-align: left;">First module (factory default)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node1.hex</code></td>
+<td style="text-align: left;">Second module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node2.hex</code></td>
+<td style="text-align: left;">Third module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>can-io-extender-8mhz-node3.hex</code></td>
+<td style="text-align: left;">Fourth module</td>
+</tr>
+</tbody>
+</table>
+<p>Use the files ending in <code>8mhz</code>. The <code>16mhz</code> files are only for modified boards,
+and only to be used when the Mazduino team directs you to them.</p>
+<h3 id="flash">Flash<a class="headerlink" href="#flash" title="Permanent link">&para;</a></h3>
+<p>This module is based on the Arduino Mega 2560 and is flashed over its USB cable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Disconnect 12 V before connecting USB</p>
+<p>Unplug the main connector (J2) or turn the ignition off first. The board is
+powered from USB during flashing.</p>
+</div>
+<p><strong>With the flash script (build from source).</strong> The <code>flash.bat</code> (Windows) and
+<code>flash.sh</code> (macOS/Linux) scripts are in the firmware source code. The script builds
+the firmware for the chosen node number, then uploads it straight over USB.</p>
+<ol>
+<li>Download the source code from
+   <a href="https://github.com/mazduino/can-io-extender">github.com/mazduino/can-io-extender</a>
+   (<strong>Code → Download ZIP</strong>), then extract it.</li>
+<li>Install <a href="https://platformio.org/install/cli">PlatformIO</a>:
+   <code>pip install platformio</code>.</li>
+<li>Run it from the extracted folder, with the node number as the argument:<ul>
+<li><strong>Windows:</strong> <code>flash.bat</code> for node 0, or <code>flash.bat 1 COM5</code> for node
+  1 on port COM5.</li>
+<li><strong>macOS / Linux:</strong> <code>./flash.sh</code> for node 0, or <code>./flash.sh 1</code> for
+  node 1. The port is found automatically.</li>
+</ul>
+</li>
+</ol>
+<p>To flash a ready-made <code>.hex</code> file without building:</p>
+<p><strong>Windows</strong>: use <a href="https://github.com/xinabox/xLoader">XLoader</a> or
+<a href="https://github.com/ZakKemble/AVRDUDESS">AVRDUDESS</a>:</p>
+<ol>
+<li>Connect USB, then find its port number in Device Manager (for example <code>COM5</code>).</li>
+<li>In XLoader, select the <code>.hex</code> file, device <strong>Mega(ATMEGA2560)</strong>, the port from
+   the previous step, and baud rate <strong>115200</strong>.</li>
+<li>Click <strong>Upload</strong> and wait until the number of uploaded bytes appears.</li>
+</ol>
+<p><strong>macOS / Linux</strong>: use <code>avrdude</code>:</p>
+<pre><code class="language-sh">avrdude -p m2560 -c wiring -P /dev/ttyUSB0 -b 115200 -D \
+  -U flash:w:can-io-extender-8mhz-node0.hex:i
+</code></pre>
+<p>Replace <code>/dev/ttyUSB0</code> with your board's port (on macOS usually
+<code>/dev/cu.usbserial-…</code> or <code>/dev/cu.usbmodem…</code>).</p>
+<p>When done, unplug USB and reconnect 12 V. The outputs stay off until the dash sends
+a command; this is normal (failsafe), not a sign that flashing failed.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Symptom</th>
+<th style="text-align: left;">Most common cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Module never locks the bitrate</td>
+<td style="text-align: left;">CAN H and CAN L swapped, missing termination, or no other device transmitting on the bus. The module locks on the first valid frame, so a silent bus will never lock</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bus locked, but the dash shows nothing</td>
+<td style="text-align: left;">The CAN ID on the dash does not match the module's node block, or the CAN ID was typed in the wrong notation (<code>643</code> read as decimal when <code>0x643</code> was meant). Check <strong>Settings → CAN ID format</strong> in DashTune</td>
+</tr>
+<tr>
+<td style="text-align: left;">Output will not switch on</td>
+<td style="text-align: left;">The dash has not sent an output command yet, so the module stays in failsafe. Make sure the switch uses CAN ID <code>0x648</code> (1608) and is of type <strong>SWITCH</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Output comes on briefly, then switches off</td>
+<td style="text-align: left;">The switch is of type PUSH. Change it to <strong>SWITCH</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Output switches off again every time the dash powers up</td>
+<td style="text-align: left;">Normal on the latest Racedash Pro firmware: every switch starts OFF. Enable <strong>Stay ON after power-off</strong> on its switch in DashTune if the output must come on right away</td>
+</tr>
+<tr>
+<td style="text-align: left;">LC4 or LC5 does not work</td>
+<td style="text-align: left;">That pin is currently set up as a logic output; one pin can have only one function</td>
+</tr>
+<tr>
+<td style="text-align: left;">Battery voltage reads off</td>
+<td style="text-align: left;">The board's 5 V rail is not exactly 5.000 V. Contact support@mazduino.com for firmware calibrated to your board</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch input not read</td>
+<td style="text-align: left;">That pin is still set up as an analog input, not a switch input</td>
+</tr>
+<tr>
+<td style="text-align: left;">Value on the dash becomes "--"</td>
+<td style="text-align: left;">The dash no longer receives its frame: CAN wire loose, module off, node number changed, or the Custom Channel was created under another ECU protocol</td>
+</tr>
+<tr>
+<td style="text-align: left;">Calibrated value always 0</td>
+<td style="text-align: left;">That input's curve does not yet have at least two rows with rising voltage, or has not been <strong>Burn</strong>ed in TunerStudio</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio shows <strong>CAN CHIP NOT FOUND</strong></td>
+<td style="text-align: left;">The CAN chip on the board does not respond. Contact support@mazduino.com</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio shows <strong>NO CAN BUS</strong></td>
+<td style="text-align: left;">The module has not found the bus yet: check the CAN H/L wiring, termination, and whether the ECU or dash is powered on</td>
+</tr>
+<tr>
+<td style="text-align: left;">TunerStudio cannot connect</td>
+<td style="text-align: left;">The port is in use by another application (serial monitor, flasher), or the baud is not 115200</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../wbo-can-controller/" class="btn btn-neutral float-left" title="WBO CAN Controller"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../persiapan-sensor-wiring/" class="btn btn-neutral float-right" title="Preparation">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../wbo-can-controller/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../persiapan-sensor-wiring/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

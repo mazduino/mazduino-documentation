@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Quick Start - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../css/print.css" rel="stylesheet" />
+        <link href="../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Quick Start";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/en/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="./" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick Start</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#lini-produk">Lini Produk</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ecu">ECU</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#download-firmware-ecu">Download Firmware ECU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#model">Model</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-lite">Mazduino LITE</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-compact-4ch">Mazduino Compact 4ch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-mini-6ch">Mazduino Mini 6ch</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-core">Mazduino Core</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-mega100">Mazduino Mega100</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mazduino-x600">Mazduino X600</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dash-display">Dash Display</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#mazduino-racedash">Mazduino Racedash</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#aksesori">Aksesori</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#software">Software</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#memulai">Memulai</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#kalau-anda-memakai-ecu">Kalau Anda memakai ECU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#kalau-anda-memakai-racedash">Kalau Anda memakai Racedash</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dokumentasi">Dokumentasi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#panduan-umum">Panduan Umum</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dokumentasi-hardware-ecu">Dokumentasi Hardware — ECU</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dokumentasi-hardware-dash-display">Dokumentasi Hardware — Dash Display</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dokumentasi-hardware-aksesori">Dokumentasi Hardware — Aksesori</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dukungan">Dukungan</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pcb-design-dan-technical-resources">PCB Design dan Technical Resources</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="./">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="./" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Quick Start</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="21 November 2026 07:31:31 UTC">21 November 2026</span></em></p>
+  <h1 id="dokumentasi-mazduino">Dokumentasi Mazduino<a class="headerlink" href="#dokumentasi-mazduino" title="Permanent link">&para;</a></h1>
+<p>Selamat datang di dokumentasi resmi Mazduino. Mazduino membuat perangkat
+manajemen mesin standalone open-source berbasis mikrokontroler ARM Cortex beserta
+perangkat pendukungnya.</p>
+<h2 id="lini-produk">Lini Produk<a class="headerlink" href="#lini-produk" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Lini</th>
+<th style="text-align: left;">Isi</th>
+<th style="text-align: left;">Mulai dari</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><a href="#ecu">ECU</a></strong></td>
+<td style="text-align: left;">Engine Control Unit standalone, firmware rusEFI dan Speeduino</td>
+<td style="text-align: left;"><a href="mazduino-lite-v0.3/">Mazduino LITE</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="#dash-display">Dash Display</a></strong></td>
+<td style="text-align: left;">Layar digital yang menampilkan data ECU secara real-time</td>
+<td style="text-align: left;"><a href="mazduino-racedash/">Racedash</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="#aksesori">Aksesori</a></strong></td>
+<td style="text-align: left;">Modul tambahan di bus CAN: wideband dan input/output tambahan</td>
+<td style="text-align: left;"><a href="wbo-can-controller/">WBO CAN Controller</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="#software">Software</a></strong></td>
+<td style="text-align: left;">Software tuning ECU dan aplikasi pengaturan dash</td>
+<td style="text-align: left;"><a href="mazduino-tuner-manual/">Mazduino Tuner</a></td>
+</tr>
+</tbody>
+</table>
+<p>Baru pertama kali? Lihat <strong><a href="#memulai">Memulai</a></strong> di bawah — langkahnya berbeda
+untuk ECU dan untuk dash.</p>
+<hr />
+<h2 id="ecu">ECU<a class="headerlink" href="#ecu" title="Permanent link">&para;</a></h2>
+<p>Engine Control Unit standalone berbasis ARM Cortex, dikonfigurasi lewat
+Mazduino Tuner atau TunerStudio. Mazduino mengembangkan firmware sendiri
+berbasis <strong>rusEFI</strong>, dan itu yang disarankan agar seluruh fitur board terpakai
+optimal. Sebagian board juga dapat menjalankan Speeduino, tetapi
+pengembangannya sudah dihentikan — lihat
+<a href="downloads/#tabel-kompatibilitas">tabel kompatibilitas</a>.</p>
+<h3 id="download-firmware-ecu">Download Firmware ECU<a class="headerlink" href="#download-firmware-ecu" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong><a href="https://github.com/mazduino/mazduino-fw/releases">⬇ Download Firmware Mazduino di GitHub Releases</a></strong></p>
+</blockquote>
+<p>Setiap release berisi satu file <code>.zip</code> per board target, misalnya
+<code>rusefi_bundle_mazduino-mini6ch.zip</code>. Isi tiap bundle:</p>
+<ul>
+<li><code>rusefi.bin</code> — firmware siap flash</li>
+<li>File <code>.ini</code> TunerStudio yang matching — <strong>selalu gunakan dari rilis yang sama dengan firmware</strong></li>
+<li>Script flash (DFU dan ST-Link) dan rusEFI Console</li>
+</ul>
+<p>Catatan rilis di halaman release menjelaskan perubahan dari versi sebelumnya.
+Board target mana yang cocok untuk ECU Anda ada di
+<a href="downloads/#tabel-kompatibilitas">tabel kompatibilitas</a>. Panduan lengkap cara
+flash ada di <strong><a href="downloads/">halaman Downloads</a></strong>, atau update langsung dari
+<a href="mazduino-tuner-update-firmware/">Mazduino Tuner</a>.</p>
+<blockquote>
+<p>Firmware untuk Racedash terpisah dan diperbarui lewat aplikasi DashTune atau
+Mazduino Flasher — lihat halaman dash masing-masing.</p>
+</blockquote>
+<hr />
+<h3 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h3>
+<h4 id="mazduino-lite">Mazduino LITE<a class="headerlink" href="#mazduino-lite" title="Permanent link">&para;</a></h4>
+<p>Solusi ECU compact terbaru untuk engine 4-silinder dengan Wasted Spark builtin IGBT dan fitur modern.</p>
+<p><img alt="Mazduino LITE" src="../img/lite/mazduino-lite-with-case.jpeg" /></p>
+<p><strong>Fitur Unggulan:</strong></p>
+<ul>
+<li>4 channel injector + 2 channel ignition</li>
+<li>168 MHz ARM Cortex-M4 processor</li>
+<li>Support Hall/Optical dan VR sensors</li>
+<li>6 analog inputs + 5 digital inputs</li>
+<li>CAN Bus, USB Type-C, Serial communication</li>
+<li>SD card data logging</li>
+<li>Konektor Yamaha 33-pin</li>
+</ul>
+<p><strong>Ideal untuk:</strong></p>
+<ul>
+<li>Engine 4-silinder (NA, Turbo, Supercharged)</li>
+<li>Street dan track applications</li>
+<li>Motorcycle high-performance</li>
+</ul>
+<p><strong><a href="mazduino-lite-v0.1/">Dokumentasi Mazduino LITE v0.1</a></strong></p>
+<p><strong><a href="mazduino-lite-v0.2/">Dokumentasi Mazduino LITE v0.2</a></strong></p>
+<p><strong><a href="mazduino-lite-v0.3/">Dokumentasi Mazduino LITE v0.3</a></strong> — versi terbaru</p>
+<hr />
+<h4 id="mazduino-compact-4ch">Mazduino Compact 4ch<a class="headerlink" href="#mazduino-compact-4ch" title="Permanent link">&para;</a></h4>
+<p>Engine Control Unit 4-channel yang kompak, dirancang untuk mesin yang lebih kecil dan aplikasi dengan keterbatasan ruang.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mazduino Compact 4ch v1</th>
+<th style="text-align: center;">Mazduino Compact 4ch v2.3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Mazduino Compact 4ch v1" src="../img/mazduino-compact-4ch.jpg" /></td>
+<td style="text-align: center;"><img alt="Mazduino Compact 4ch v2.3" src="../img/mazduino-compact-4ch-v2.3.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fitur Umum:</strong></p>
+<ul>
+<li>4 channel injeksi</li>
+<li>Faktor bentuk kompak</li>
+<li>MCU ARM Cortex-M4 168 MHz</li>
+<li>Firmware rusEFI; Speeduino teruji di v1</li>
+</ul>
+<p>Firmware rusEFI Mazduino (<code>mazduino-compact</code>) mengikuti pin v2.5 dan v2.3. Pada
+v1, v2.1 dan v2.2, pin TPS perlu diubah — lihat
+<a href="downloads/#pin-yang-perlu-diubah-pada-revisi-lama">pin yang perlu diubah</a>.</p>
+<p><strong>Versi yang Tersedia:</strong></p>
+<ul>
+<li><strong><a href="mazduino-compact-4ch-v1/">v1</a></strong> - Konektor Microfit 30-pin (2x12 + 2x3)</li>
+<li><strong><a href="mazduino-compact-4ch-v2.1/">v2.1</a></strong> - Konektor Yamaha 33-pin + Knock Sensor</li>
+<li><strong><a href="mazduino-compact-4ch-v2.2/">v2.2</a></strong> - High Side Switching untuk alternator/VVT control</li>
+<li><strong><a href="mazduino-compact-4ch-v2.3/">v2.3-v2.4</a></strong> - Pin mapping yang dioptimalkan, perbaikan knock sensor, dan RTC battery support</li>
+<li><strong><a href="mazduino-compact-4ch-v2.5/">v2.5</a></strong> - Dual high side output, optimasi Hall Input, dan optimasi Analog Input — versi terbaru</li>
+</ul>
+<h4 id="mazduino-mini-6ch">Mazduino Mini 6ch<a class="headerlink" href="#mazduino-mini-6ch" title="Permanent link">&para;</a></h4>
+<p>Engine Control Unit 6-channel berfitur lengkap untuk kontrol injeksi sequential penuh.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mazduino Mini 6ch</th>
+<th style="text-align: center;">Mazduino Mini 6ch New Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Mazduino Mini 6ch" src="../img/mazduino-mini-6ch.jpg" /></td>
+<td style="text-align: center;"><img alt="Mazduino Mini 6ch New Case" src="../img/mazduino-mini6ch-new-case.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fitur Umum:</strong></p>
+<ul>
+<li>6 channel injeksi</li>
+<li>Operasi sequential penuh</li>
+<li>MCU ARM Cortex-M4: 168 MHz sampai v1.3, 180 MHz mulai v1.3B</li>
+<li>Kemampuan I/O yang diperluas</li>
+<li>Firmware rusEFI; Speeduino hanya sampai v1.3B</li>
+</ul>
+<p>Firmware rusEFI Mazduino (<code>mazduino-mini6ch</code>) mengikuti pin v1.3C dan v1.3D. Pada
+revisi sebelumnya, beberapa pin perlu diubah — lihat
+<a href="downloads/#pin-yang-perlu-diubah-pada-revisi-lama">pin yang perlu diubah</a>.</p>
+<p><strong>Versi yang Tersedia:</strong></p>
+<ul>
+<li><strong><a href="mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a></strong> - Versi standar dengan fitur dasar</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3/">v1.3</a></strong> - Dengan Knock Input dan Electronic Throttle Body (ETB)</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3b/">v1.3B</a></strong> - MCU lebih cepat, input analog TPS2 tambahan, dan optimisasi hardware</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3c/">v1.3C</a></strong> - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3d/">v1.3D</a></strong> - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard; pinout sama dengan v1.3C - <strong>versi produksi terakhir</strong></li>
+<li><strong><a href="mazduino-mini-6ch-v1.4/">v1.4</a></strong> - Bukan versi produksi (dokumentasi referensi); versi produksi terakhir adalah v1.3D</li>
+</ul>
+<h4 id="mazduino-core">Mazduino Core<a class="headerlink" href="#mazduino-core" title="Permanent link">&para;</a></h4>
+<p>ECU generasi baru berbasis konektor otomotif 48-pin dengan arsitektur I/O yang lebih lengkap dari lini Mini 6CH, dilengkapi dual ETB, dual CAN bus, dan kombinasi input Hall + VR.</p>
+<p><img alt="Mazduino Core" src="../img/core/mazduino-core.jpeg" /></p>
+<p><strong>Fitur Umum:</strong></p>
+<ul>
+<li>MCU ARM Cortex-M4 180 MHz</li>
+<li>Dual ETB (ETB1 &amp; ETB2) dan Dual CAN Bus</li>
+<li>Kombinasi input Hall/Digital dan VR</li>
+<li>Konektor otomotif 48-pin</li>
+<li>Firmware rusEFI based (<code>mazduino-core</code>)</li>
+</ul>
+<p><strong>Versi yang Tersedia:</strong></p>
+<ul>
+<li><strong><a href="mazduino-core-rev0/">rev0</a></strong> - Versi pertama</li>
+<li><strong><a href="mazduino-core-rev1/">rev1</a></strong> - 12V sensor supply, 5V supply hingga 3A, dan opsi jumper tambahan — versi terbaru</li>
+</ul>
+<h4 id="mazduino-mega100">Mazduino Mega100<a class="headerlink" href="#mazduino-mega100" title="Permanent link">&para;</a></h4>
+<p>Board MCU STM32F407 berukuran Arduino Mega yang dipasang di board Speeduino
+sebagai pengganti Arduino Mega, sehingga board Speeduino bisa menjalankan
+firmware rusEFI Mazduino.</p>
+<p><img alt="Mazduino Mega100" src="../img/mega100/mega100-front.jpeg" /></p>
+<p><strong>Fitur Umum:</strong></p>
+<ul>
+<li>MCU ARM Cortex-M4 168 MHz, versi 1 MB dan 512 KB</li>
+<li>16 input analog dengan buffer untuk sensor 0–5V</li>
+<li>USB, slot microSD, dan CAN bus</li>
+<li>Preset pin untuk board Speeduino populer, dipilih dari TunerStudio</li>
+</ul>
+<p><strong><a href="mazduino-mega100/">Dokumentasi Mazduino Mega100</a></strong></p>
+<h4 id="mazduino-x600">Mazduino X600<a class="headerlink" href="#mazduino-x600" title="Permanent link">&para;</a></h4>
+<p>ECU dengan layar 4.3 inci terintegrasi — unit dash dan ECU menjadi satu,
+sehingga tidak memerlukan dash display terpisah.</p>
+<p><strong><a href="mazduino-x600/">Dokumentasi Mazduino X600</a></strong></p>
+<hr />
+<h2 id="dash-display">Dash Display<a class="headerlink" href="#dash-display" title="Permanent link">&para;</a></h2>
+<p>Layar digital yang menampilkan data ECU secara real-time — RPM, gigi,
+kecepatan, dan pembacaan sensor. Dash membaca data dari ECU lewat CAN Bus atau
+Serial; ia tidak mengendalikan mesin.</p>
+<h3 id="mazduino-racedash">Mazduino Racedash<a class="headerlink" href="#mazduino-racedash" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Racedash 3.5" / 4"</th>
+<th style="text-align: center;">Racedash Pro</th>
+<th style="text-align: center;">Dash R4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="Mazduino Racedash" src="../img/dash/racedash-jst4-product.png" /></td>
+<td style="text-align: center;"><img alt="Mazduino Racedash Pro M4" src="../img/dash/racedash-pro-m4.jpeg" /></td>
+<td style="text-align: center;"><img alt="Mazduino Dash R4" src="../img/dash/dash-r4-themes.gif" /></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Varian yang Tersedia:</strong></p>
+<ul>
+<li><strong><a href="mazduino-racedash/">Racedash 3.5" &amp; 4"</a></strong> — Konektor JST 4 Pin (3.5") dan DTM4 (4"/Cabus)</li>
+<li><strong><a href="mazduino-racedash-pro/">Racedash Pro — M4, M5, M7 (4.3", 5" &amp; 7")</a></strong> — Layar lebih besar, pengaturan lewat aplikasi DashTune</li>
+<li><strong><a href="mazduino-dash-r4/">Dash R4</a></strong> — Layar bulat 4" dengan layar sentuh dan tema dari Theme Store DashTune</li>
+</ul>
+<p><strong>ECU yang didukung:</strong> rusEFI, Haltech, MaxxECU, Speeduino, OBD-II, dan
+lainnya — daftar lengkap dan cara mengatur ECU ada di
+<a href="setting-ecu-racedash/">Konfigurasi ECU</a>. Untuk OBD-II hanya varian CAN Bus
+(ISO 15765-4) yang didukung dan tidak semua mobil dapat dibaca — lihat
+<a href="mazduino-racedash-pro/#batasan-obd-ii">batasannya</a>.</p>
+<p><strong>Cara mengaturnya berbeda antar varian:</strong></p>
+<ul>
+<li><strong>Racedash 3.5" &amp; 4"</strong> — lewat aplikasi <strong>DashTune</strong> melalui WiFi yang
+  dipancarkan dash (<a href="mazduino-racedash/#pengaturan-lewat-dashtune">panduannya</a>).
+  Cara lama lewat browser masih ada untuk yang belum bisa memakai DashTune.</li>
+<li><strong>Racedash Pro M4 / M5 / M7</strong> — lewat aplikasi <strong>DashTune</strong> melalui Bluetooth,
+  atau dari layar sentuh dash itu sendiri. Varian ini <strong>tidak</strong> dapat diatur
+  lewat browser.</li>
+<li><strong>Dash R4</strong> — lewat aplikasi <strong>DashTune</strong> melalui Bluetooth.</li>
+</ul>
+<hr />
+<h2 id="aksesori">Aksesori<a class="headerlink" href="#aksesori" title="Permanent link">&para;</a></h2>
+<p>Modul tambahan yang terhubung ke bus CAN yang sama dengan ECU dan dash.</p>
+<ul>
+<li><strong><a href="wbo-can-controller/">WBO CAN Controller</a></strong> — wideband oxygen controller
+  untuk sensor LSU 4.9; nilai lambda/AFR dikirim lewat CAN, jadi ECU tidak perlu
+  input analog untuk wideband.</li>
+<li><strong><a href="can-io-extender/">CAN IO Extender</a></strong> — menambah input dan output ke
+  Racedash lewat bus CAN, untuk sensor dan saklar yang tidak dibaca ECU.</li>
+</ul>
+<hr />
+<h2 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><a href="mazduino-tuner-manual/">Mazduino Tuner</a></strong> (alpha) — software tuning resmi
+  untuk ECU Mazduino berbasis rusEFI. Menu dibaca langsung dari firmware di ECU,
+  dan firmware bisa diupdate dari aplikasi.</li>
+<li><strong><a href="tunerstudio-manual/">TunerStudio</a></strong> — software tuning yang juga didukung
+  penuh, memakai file <code>.ini</code> dari bundle firmware.</li>
+<li><strong>DashTune</strong> — aplikasi Android untuk mengatur Racedash dan Dash R4; lihat
+  halaman dash masing-masing.</li>
+</ul>
+<hr />
+<h2 id="memulai">Memulai<a class="headerlink" href="#memulai" title="Permanent link">&para;</a></h2>
+<h3 id="kalau-anda-memakai-ecu">Kalau Anda memakai ECU<a class="headerlink" href="#kalau-anda-memakai-ecu" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Cek model dan revisi</strong> — Lihat versi yang tercetak di PCB, lalu buka halaman dokumentasi revisi tersebut untuk pinout dan wiring</li>
+<li><strong>Siapkan sensor dan wiring</strong> — Ikuti <a href="persiapan-sensor-wiring/">Persiapan Sensor dan Wiring</a> dan <a href="rekomendasi-ukuran-kabel/">Rekomendasi Ukuran Kabel</a></li>
+<li><strong>Install firmware</strong> — Download bundle board target yang sesuai dari <a href="https://github.com/mazduino/mazduino-fw/releases">github.com/mazduino/mazduino-fw</a> (lihat <a href="downloads/#tabel-kompatibilitas">tabel kompatibilitas</a>), lalu flash sesuai <a href="downloads/">halaman Downloads</a></li>
+<li><strong>Hubungkan software tuning</strong> — <a href="mazduino-tuner-manual/">Mazduino Tuner</a>, atau TunerStudio dengan file <code>.ini</code> dari bundle yang sama</li>
+<li><strong>Cek pin</strong> — Pada revisi lama, ubah pin sesuai <a href="downloads/#pin-yang-perlu-diubah-pada-revisi-lama">tabel pin yang perlu diubah</a>. Pada Mega100, pilih preset board Speeduino</li>
+<li><strong>Mulai tuning</strong> — Atur <a href="tunerstudio-base-engine/">Base Engine Settings</a>, lalu gunakan base map sebagai titik awal dan sesuaikan untuk aplikasi spesifik Anda</li>
+</ol>
+<h3 id="kalau-anda-memakai-racedash">Kalau Anda memakai Racedash<a class="headerlink" href="#kalau-anda-memakai-racedash" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Pasang dash</strong> — Sambungkan ke ECU lewat CAN Bus atau Serial sesuai pinout di halaman varian Anda</li>
+<li><strong>Atur ECU</strong> — Aktifkan broadcast data di ECU sesuai <a href="setting-ecu-racedash/">Konfigurasi ECU</a></li>
+<li><strong>Pilih protokol ECU</strong> — Racedash Pro (M4, M5, M7, M7 Pro): pilih di setting dash atau DashTune. Racedash 3.5" &amp; 4" (M1, M2, M3, C1): protokol sudah mengikuti firmware pesanan; kalau ganti ECU, pakai <strong>Flash protokol lain</strong> di menu Update Firmware DashTune</li>
+<li><strong>Pasang DashTune</strong> — Daftar sebagai tester di <a href="https://www.mazduino.com/dashtune/tester">www.mazduino.com/dashtune/tester</a>, lalu pasang dari Play Store</li>
+<li><strong>Atur tampilan</strong> — Pilih template, data tiap panel, lampu peringatan, dan splash screen dari DashTune</li>
+</ol>
+<hr />
+<h2 id="dokumentasi">Dokumentasi<a class="headerlink" href="#dokumentasi" title="Permanent link">&para;</a></h2>
+<h3 id="panduan-umum">Panduan Umum<a class="headerlink" href="#panduan-umum" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="downloads/">Downloads</a></strong> - Firmware Mazduino, file .ini untuk TunerStudio, dan panduan flashing</li>
+<li><strong><a href="mazduino-tuner-manual/">Manual Mazduino Tuner</a></strong> - Instalasi, tuning, logger, diagnostik, dan update firmware</li>
+<li><strong><a href="tunerstudio-manual/">Manual TunerStudio</a></strong> - Panduan lengkap tuning dan konfigurasi ECU</li>
+<li><strong><a href="persiapan-sensor-wiring/">Persiapan Sensor dan Wiring</a></strong> - Sensor dasar dan prinsip wiring sebelum tuning</li>
+<li><strong><a href="firmware/">Custom Firmware</a></strong> - Fitur tambahan firmware Mazduino: CAN input/output, spark cut, rotational idle, dan lainnya</li>
+<li><strong><a href="about/">Tentang</a></strong> - Informasi lengkap tentang proyek Mazduino</li>
+</ul>
+<h3 id="dokumentasi-hardware-ecu">Dokumentasi Hardware — ECU<a class="headerlink" href="#dokumentasi-hardware-ecu" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="mazduino-lite-v0.1/">LITE v0.1</a></strong>, <strong><a href="mazduino-lite-v0.2/">v0.2</a></strong>, <strong><a href="mazduino-lite-v0.3/">v0.3</a></strong> - ECU 4-silinder dengan IGBT builtin dan konektor Yamaha 33-pin</li>
+<li><strong><a href="mazduino-compact-4ch-v1/">Compact 4CH v1</a></strong> - Spesifikasi dan wiring untuk v1</li>
+<li><strong><a href="mazduino-compact-4ch-v2.1/">Compact 4CH v2.1</a></strong> - Dengan knock sensor dan konektor Yamaha</li>
+<li><strong><a href="mazduino-compact-4ch-v2.2/">Compact 4CH v2.2</a></strong> - Dengan high side switching</li>
+<li><strong><a href="mazduino-compact-4ch-v2.3/">Compact 4CH v2.3</a></strong> - Pin mapping dioptimalkan, knock sensor diperbaiki, RTC battery</li>
+<li><strong><a href="mazduino-compact-4ch-v2.5/">Compact 4CH v2.5</a></strong> - Dual high side output, optimasi Hall Input, dan optimasi Analog Input</li>
+<li><strong><a href="mazduino-mini-6ch-v1.0-v1.2/">Mini 6CH v1.0-v1.2</a></strong> - Versi standar dengan fitur dasar</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3/">Mini 6CH v1.3</a></strong> - Dengan knock input dan ETB support</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3b/">Mini 6CH v1.3B</a></strong> - MCU upgrade, optimisasi hardware dan input analog tambahan</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3c/">Mini 6CH v1.3C</a></strong> - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah</li>
+<li><strong><a href="mazduino-mini-6ch-v1.3d/">Mini 6CH v1.3D</a></strong> - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard - <strong>versi produksi terakhir</strong></li>
+<li><strong><a href="mazduino-mini-6ch-v1.4/">Mini 6CH v1.4</a></strong> - Bukan versi produksi; versi produksi terakhir adalah v1.3D</li>
+<li><strong><a href="mazduino-core-rev0/">Mazduino Core rev0</a></strong> - Konektor 48-pin, dual ETB, dual CAN bus</li>
+<li><strong><a href="mazduino-core-rev1/">Mazduino Core rev1</a></strong> - Revisi terbaru lini Core</li>
+<li><strong><a href="mazduino-mega100/">Mazduino Mega100</a></strong> - Pengganti Arduino Mega berbasis STM32F407 untuk board Speeduino</li>
+<li><strong><a href="mazduino-x600/">Mazduino X600</a></strong> - ECU dengan layar 4.3 inci terintegrasi</li>
+</ul>
+<h3 id="dokumentasi-hardware-dash-display">Dokumentasi Hardware — Dash Display<a class="headerlink" href="#dokumentasi-hardware-dash-display" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="mazduino-racedash/">Mazduino Racedash 3.5" &amp; 4"</a></strong> - Dash display konektor JST 4 Pin dan DTM4</li>
+<li><strong><a href="mazduino-racedash-pro/">Mazduino Racedash Pro</a></strong> - Varian layar 4.3", 5", dan 7" (M4, M5, M7)</li>
+<li><strong><a href="mazduino-dash-r4/">Mazduino Dash R4</a></strong> - Dash bulat 4" dengan layar sentuh</li>
+<li><strong><a href="setting-ecu-racedash/">Konfigurasi ECU untuk Racedash</a></strong> - Pengaturan ECU per merek agar data tampil di dash</li>
+</ul>
+<h3 id="dokumentasi-hardware-aksesori">Dokumentasi Hardware — Aksesori<a class="headerlink" href="#dokumentasi-hardware-aksesori" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><a href="wbo-can-controller/">WBO CAN Controller</a></strong> - Wideband controller LSU 4.9 lewat CAN</li>
+<li><strong><a href="can-io-extender/">CAN IO Extender</a></strong> - Input dan output tambahan untuk Racedash lewat CAN</li>
+</ul>
+<hr />
+<h2 id="dukungan">Dukungan<a class="headerlink" href="#dukungan" title="Permanent link">&para;</a></h2>
+<p>Ada dua cara mendapat bantuan:</p>
+<ul>
+<li><strong>Chat di <a href="https://www.mazduino.com">mazduino.com</a></strong> — tombol chat ada di
+  setiap halaman (perlu login). Pertanyaan dijawab dulu oleh asisten AI; kalau
+  butuh orang, tekan tombol untuk dialihkan ke tim Mazduino.</li>
+<li><strong>GitHub <a href="https://github.com/mazduino">github.com/mazduino</a></strong> — source code firmware dan
+  software Mazduino, untuk yang ingin melihat kode atau berkontribusi.</li>
+</ul>
+<h2 id="pcb-design-dan-technical-resources">PCB Design dan Technical Resources<a class="headerlink" href="#pcb-design-dan-technical-resources" title="Permanent link">&para;</a></h2>
+<p>Untuk informasi detail mengenai PCB design, schematic, dan Bill of Materials (BOM) untuk perangkat keras Mazduino, silakan kunjungi:</p>
+<p><strong><a href="https://github.com/mazduino/mazduino/wiki">Mazduino Wiki</a></strong></p>
+<p>Wiki ini berisi:</p>
+<ul>
+<li>Schematic lengkap untuk semua versi</li>
+<li>PCB layout dan routing details</li>
+<li>Bill of Materials (BOM) dengan part numbers</li>
+<li>Assembly notes dan manufacturing guidelines</li>
+<li>Design considerations dan engineering decisions</li>
+<li>Revision history dan changelog detail</li>
+</ul>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="downloads/" class="btn btn-neutral float-left" title="Downloads"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="mazduino-lite-v0.1/" class="btn btn-neutral float-right" title="v0.1">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="downloads/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="mazduino-lite-v0.1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../js/external-links.js"></script>
+      <script src="../js/print-details.js"></script>
+      <script src="../js/print-source.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-ac-settings/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Pengaturan Air Conditioning (AC) - TunerStudio - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Pengaturan Air Conditioning (AC) - TunerStudio";
+        var mkdocs_page_input_path = "tunerstudio-ac-settings.md";
+        var mkdocs_page_url = "/en/tunerstudio-ac-settings/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-troubleshooting/">Troubleshooting</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Pengaturan Air Conditioning (AC) - TunerStudio</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-ac-settings/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="19 November 2026 14:59:46 UTC">19 November 2026</span></em></p>
+  <h1 id="pengaturan-air-conditioning-ac-tunerstudio">Pengaturan Air Conditioning (AC) - TunerStudio<a class="headerlink" href="#pengaturan-air-conditioning-ac-tunerstudio" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
+<p>Bagian AC Settings memungkinkan konfigurasi kontrol air conditioning dalam ECU, mencakup fitur seperti compressor delay, kompensasi idle, dan kontrol berbasis tekanan untuk mengoptimalkan performa dan mengelola beban mesin. Untuk unit Plug and Play, pengaturan AC mungkin sudah dikonfigurasi dalam basemap, meskipun penyesuaian masih dapat dilakukan untuk memenuhi kebutuhan spesifik. Unit Kit/DIY mungkin memerlukan konfigurasi lengkap pengaturan ini berdasarkan setup kendaraan.</p>
+<p><img alt="Air Conditioner Overview" src="../../img/manual/ac-overview.png" /></p>
+<h2 id="pengaturan-utama-ac">Pengaturan Utama AC<a class="headerlink" href="#pengaturan-utama-ac" title="Permanent link">&para;</a></h2>
+<h3 id="input-controls">Input Controls<a class="headerlink" href="#input-controls" title="Permanent link">&para;</a></h3>
+<p><strong>A/C Switch</strong>: Memilih sumber input untuk mengaktifkan sistem AC. Mengatur ini ke NONE akan menonaktifkan kontrol ECU atas switch AC, selama tidak dikontrol oleh metode lain, seperti Lua.</p>
+<p><strong>A/C Switch Mode</strong>: Menentukan mode input switch AC, tergantung pada instalasi dan fungsionalitas yang diinginkan.</p>
+<h3 id="output-controls">Output Controls<a class="headerlink" href="#output-controls" title="Permanent link">&para;</a></h3>
+<p><strong>A/C Relay</strong>: Mengkonfigurasi pin output yang ditugaskan untuk mengontrol relay AC. Misalnya, memilih PC7 memungkinkan kontrol AC melalui pin spesifik tersebut.</p>
+<p><strong>A/C Relay Mode</strong>: Mendefinisikan mode output relay AC. Ini dapat dibiarkan sebagai default untuk sebagian besar aplikasi atau disesuaikan jika diperlukan.</p>
+<h2 id="pengaturan-timing-dan-proteksi">Pengaturan Timing dan Proteksi<a class="headerlink" href="#pengaturan-timing-dan-proteksi" title="Permanent link">&para;</a></h2>
+<h3 id="compressor-delay">Compressor Delay<a class="headerlink" href="#compressor-delay" title="Permanent link">&para;</a></h3>
+<p><strong>A/C Compressor Delay (sec)</strong>: Mengatur penundaan sebelum kompresor AC aktif, mencegah peningkatan beban mendadak pada mesin ketika AC dinyalakan.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 0,3-0,5 detik, cukup agar udara idle bertambah lebih dulu. Jeda yang lebih lama membuat RPM sempat naik sebelum kompresor masuk</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Mengurangi shock load pada mesin</p>
+</li>
+</ul>
+<h3 id="batas-operasi-maximum">Batas Operasi Maximum<a class="headerlink" href="#batas-operasi-maximum" title="Permanent link">&para;</a></h3>
+<p><strong>Max RPM (RPM)</strong>: Mengatur RPM mesin maksimum yang diizinkan untuk operasi AC. Jika RPM melebihi batas ini, AC akan dinonaktifkan untuk melindungi mesin.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 6000-6500 RPM untuk mesin standar</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Melindungi mesin pada RPM tinggi</p>
+</li>
+</ul>
+<p><strong>Max CLT (deg C)</strong>: Mengkonfigurasi suhu coolant maksimum untuk operasi AC. Jika terlampaui, AC akan otomatis mati untuk mencegah overheating.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 100-105°C untuk mesin standar</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Mencegah overheating mesin</p>
+</li>
+</ul>
+<p><strong>Max TPS (%)</strong>: Mendefinisikan posisi throttle maksimum untuk operasi AC. Jika throttle melebihi persentase ini, AC akan mati untuk memprioritaskan performa mesin.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 80-90% untuk performa optimal</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Full throttle performance priority</p>
+</li>
+</ul>
+<h2 id="kompensasi-idle">Kompensasi Idle<a class="headerlink" href="#kompensasi-idle" title="Permanent link">&para;</a></h2>
+<h3 id="idle-speed-compensation">Idle Speed Compensation<a class="headerlink" href="#idle-speed-compensation" title="Permanent link">&para;</a></h3>
+<p><strong>A/C Idle Adder (%)</strong>: Mengatur persentase peningkatan kecepatan idle untuk mengkompensasi beban yang disebabkan oleh kompresor AC.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 10-15% untuk sebagian besar mesin</p>
+</li>
+<li>
+<p><strong>Penyesuaian</strong>: Sesuaikan berdasarkan beban kompresor</p>
+</li>
+</ul>
+<p><strong>A/C Idle RPM</strong>: Menentukan target idle RPM ketika AC aktif, menyesuaikan kecepatan idle mesin untuk memperhitungkan beban kompresor.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: +100-200 RPM dari idle normal</p>
+</li>
+<li>
+<p><strong>Aplikasi</strong>: Mencegah engine stalling saat AC aktif</p>
+</li>
+</ul>
+<p><strong>A/C Idle fuel adder (%)</strong>: Tambahan bahan bakar saat idle selama tombol AC menyala. Hanya tampil kalau Fuel strategy = Alpha-N. Lihat <a href="#mesin-alpha-n-tanpa-sensor-map">Mesin Alpha-N</a>.</p>
+<h3 id="rpm-protection">RPM Protection<a class="headerlink" href="#rpm-protection" title="Permanent link">&para;</a></h3>
+<p><strong>RPM Low Threshold (RPM)</strong>: Ambang batas RPM minimum di bawah mana AC secara otomatis dinonaktifkan untuk mencegah mesin mati.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 400-500 RPM di bawah idle normal</p>
+</li>
+<li>
+<p><strong>Safety</strong>: Mencegah engine stalling</p>
+</li>
+</ul>
+<h2 id="kontrol-tekanan-sistem">Kontrol Tekanan Sistem<a class="headerlink" href="#kontrol-tekanan-sistem" title="Permanent link">&para;</a></h2>
+<h3 id="pressure-limits">Pressure Limits<a class="headerlink" href="#pressure-limits" title="Permanent link">&para;</a></h3>
+<p><strong>Pressure Low Disable (kPa)</strong>: Mengatur batas tekanan rendah; jika tekanan turun di bawah level ini, AC akan dinonaktifkan untuk melindungi kompresor.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem AC kendaraan</p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Perlindungan kompresor dari kerusakan</p>
+</li>
+</ul>
+<p><strong>Pressure High Disable (kPa)</strong>: Mengkonfigurasi batas tekanan tinggi; jika tekanan melebihi level ini, AC akan dinonaktifkan untuk perlindungan sistem.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: Sesuai dengan spesifikasi sistem AC kendaraan  </p>
+</li>
+<li>
+<p><strong>Tujuan</strong>: Perlindungan sistem dari tekanan berlebih</p>
+</li>
+</ul>
+<h3 id="hysteresis-control">Hysteresis Control<a class="headerlink" href="#hysteresis-control" title="Permanent link">&para;</a></h3>
+<p><strong>A/C Pressure Enable Hysteresis (kPa)</strong>: Menyediakan rentang buffer di sekitar batas tekanan untuk mencegah cycling cepat sistem AC.</p>
+<ul>
+<li>
+<p><strong>Rekomendasi</strong>: 50-100 kPa untuk operasi yang stabil</p>
+</li>
+<li>
+<p><strong>Fungsi</strong>: Mencegah on/off yang terlalu sering</p>
+</li>
+</ul>
+<h2 id="indikator-status-ac">Indikator Status AC<a class="headerlink" href="#indikator-status-ac" title="Permanent link">&para;</a></h2>
+<p>Kotak putih di sisi kanan jendela mewakili berbagai pemeriksaan dan status yang terkait dengan sistem AC. Indikator ini berubah merah untuk menunjukkan kondisi aktif, seperti:</p>
+<ul>
+<li>
+<p><strong>A/C Button</strong>: Tombol AC ditekan/aktif</p>
+</li>
+<li>
+<p><strong>Pressure OK</strong>: Tekanan dalam batas yang dapat diterima</p>
+</li>
+<li>
+<p><strong>RPM OK</strong>: RPM dalam rentang operasi AC</p>
+</li>
+<li>
+<p><strong>CLT OK</strong>: Suhu coolant dalam batas normal</p>
+</li>
+<li>
+<p><strong>TPS OK</strong>: Throttle position dalam batas AC</p>
+</li>
+<li>
+<p><strong>System Ready</strong>: Semua kondisi terpenuhi untuk operasi AC</p>
+</li>
+</ul>
+<p>Umpan balik visual ini membantu pengguna dengan cepat menilai apakah semua kondisi terpenuhi untuk operasi AC.</p>
+<h2 id="mesin-alpha-n-tanpa-sensor-map">Mesin Alpha-N (Tanpa Sensor MAP)<a class="headerlink" href="#mesin-alpha-n-tanpa-sensor-map" title="Permanent link">&para;</a></h2>
+<h3 id="kenapa-rpm-turun-saat-ac-menyala">Kenapa RPM Turun Saat AC Menyala<a class="headerlink" href="#kenapa-rpm-turun-saat-ac-menyala" title="Permanent link">&para;</a></h3>
+<p>Pada mode Alpha-N, ECU menghitung udara yang masuk hanya dari TPS dan RPM. Saat AC menyala, katup idle (stepper atau solenoid) membuka lebih lebar untuk menambah udara. Udara ini lewat jalur bypass, bukan lewat throttle, jadi TPS tidak berubah dan ECU tidak menambah bahan bakar.</p>
+<p>Akibatnya campuran menjadi kurus tepat saat kompresor masuk, RPM turun tajam, dan katup idle membuka lebih lebar lagi sehingga campuran makin kurus. Gejala yang sama bisa muncul saat kipas radiator menyala atau setir diputar.</p>
+<p>Mulai firmware Nightly 9 November 2026 ada <strong>A/C Idle fuel adder</strong> untuk masalah ini (langkah 3). Pengaturan AC lainnya berupa tambahan udara, target RPM, dan jeda kompresor. Pada mesin dengan sensor MAP, masalah ini tidak terjadi karena tekanan manifold ikut naik saat ada beban.</p>
+<p>Pengecualian: jika idle diatur lewat throttle elektronik (ETB), throttle utama yang membuka sehingga TPS ikut naik dan bahan bakar bertambah dengan sendirinya.</p>
+<h3 id="langkah-mengatasi">Langkah Mengatasi<a class="headerlink" href="#langkah-mengatasi" title="Permanent link">&para;</a></h3>
+<p>Kerjakan berurutan, dan rekam log setiap selesai satu langkah.</p>
+<p><strong>1. Tambah udara sebelum beban masuk</strong></p>
+<ul>
+<li>
+<p><strong>A/C Idle Adder</strong>: naikkan 3-5% per percobaan sampai RPM hampir tidak turun saat kompresor masuk.</p>
+</li>
+<li>
+<p><strong>A/C Compressor Delay</strong>: 0,3-0,5 detik sudah cukup agar udara bertambah lebih dulu. Jeda yang terlalu lama membuat RPM sempat naik sebelum kompresor masuk.</p>
+</li>
+<li>
+<p><strong>A/C Idle RPM</strong>: nilai ini adalah target mutlak, bukan tambahan. Pastikan lebih tinggi dari target idle berdasarkan suhu mesin, misalnya 50-100 RPM di atas idle saat mesin panas.</p>
+</li>
+<li>
+<p><strong>Fan #1 Adder / Fan #2 Adder</strong> (menu Idle): isi juga jika kipas membuat RPM turun.</p>
+</li>
+</ul>
+<p><strong>2. Aktifkan idle timing PID</strong></p>
+<p>Timing pengapian bereaksi jauh lebih cepat dari katup idle, sehingga paling efektif menahan RPM saat kompresor masuk. Buka menu <strong>Idle → Closed-loop Ignition idle timing</strong>:</p>
+<ul>
+<li>
+<p><strong>Enable closed loop idle ignition timing</strong>: aktifkan.</p>
+</li>
+<li>
+<p><strong>Proportional gain</strong>: mulai dari 0,1 (sekitar 10° per 100 RPM dari target).</p>
+</li>
+<li>
+<p><strong>Min / Max adjustment</strong>: -10° / +10°.</p>
+</li>
+</ul>
+<p>Lalu aktifkan <strong>Separate idle ignition table</strong> dan isi <strong>Idle Ignition advance</strong> sedikit mundur, misalnya 10-14°, agar PID punya ruang untuk memajukan timing.</p>
+<p><strong>3. Tambah bahan bakar saat AC menyala</strong></p>
+<p>Buka <strong>Setup → Air Conditioning → A/C Idle fuel adder</strong> (firmware Nightly 9 November 2026 atau lebih baru, semua board):</p>
+<ul>
+<li>
+<p>Bahan bakar ditambah sebesar nilai ini (%) tepat saat ECU menambah udara dari A/C Idle adder: saat idle, saat taper setelah start, dan saat coasting kalau tabel coasting dipakai.</p>
+</li>
+<li>
+<p>Mulai bersamaan dengan tombol AC, jadi bahan bakar sudah bertambah sebelum kompresor masuk.</p>
+</li>
+<li>
+<p>Saat gas dibuka, ECU tidak menambah udara AC, jadi bahan bakar juga tidak ditambah. Tambahan beban saat jalan sudah tertutup tabel VE karena pengemudi membuka gas lebih dalam.</p>
+</li>
+<li>
+<p>Mulai dari 5-10%. Rekam log saat AC menyala setelah STFT stabil, lalu pindahkan sisa koreksi STFT idle ke nilai ini. Targetnya, STFT idle hampir sama saat AC menyala maupun mati.</p>
+</li>
+<li>
+<p>Biarkan 0 kalau idle diatur lewat throttle elektronik (ETB), karena TPS sudah melihat udara itu.</p>
+</li>
+</ul>
+<p>Fuel adder ini hanya untuk AC. Untuk beban lain seperti kipas radiator atau power steering, atau pada firmware lama, pakai cara di bawah: bahan bakar mengikuti bukaan katup idle lewat Lua.</p>
+<p>Cara ini membutuhkan Lua, yang tersedia di semua board Mazduino kecuali Mega100-512.</p>
+<p>Script Lua dimasukkan lewat <code>rusefi_console.jar</code> (ada di setiap bundle firmware) pada tab Lua, lalu burn. TunerStudio tidak memiliki editor script Lua.</p>
+<pre><code class="language-lua">setTickRate(50)
+function onTick()
+  setLuaGauge(1, getOutput(&quot;currentIdlePosition&quot;))
+end
+</code></pre>
+<p>Setelah itu buka <strong>Fuel → VE blend tables → VE blend 1 settings</strong>:</p>
+<ul>
+<li>
+<p><strong>Blend parameter</strong>: Lua Gauge 1.</p>
+</li>
+<li>
+<p><strong>Blend bins</strong>: posisi katup idle (%). Isi bias 0% pada posisi katup saat idle normal tanpa beban, dan 100% pada posisi katup saat AC menyala. Contoh: katup di 25% saat idle normal dan 40% saat AC menyala, maka isi 25 → 0% dan 40 → 100%.</p>
+</li>
+<li>
+<p><strong>VE blend table 1</strong>: isi +5% sampai +10% di area idle (600-1200 RPM, TPS 0-3%), dan 0 di area lain.</p>
+</li>
+</ul>
+<p>Untuk menyetelnya, rekam log saat AC menyala setelah koreksi STFT stabil. Jika STFT idle masih menambah sekitar 4%, naikkan nilai tabel kira-kira sebesar itu. Targetnya, STFT idle hampir sama saat AC menyala maupun mati.</p>
+<p><strong>4. Percepat STFT di area idle</strong></p>
+<p>Di menu <strong>Fuel → Short term fuel trim/Closed loop</strong>:</p>
+<ul>
+<li>
+<p><strong>Idle region RPM</strong>: sedikit di atas target idle saat AC menyala, misalnya 1100-1200 RPM.</p>
+</li>
+<li>
+<p><strong>Time const</strong> (Idle Region): 3-5 detik.</p>
+</li>
+<li>
+<p><strong>Max add</strong> (Idle Region): 8-10%.</p>
+</li>
+</ul>
+<p>Langkah ini membantu saat AC menyala lama, bukan saat kompresor baru masuk.</p>
+<p><strong>5. Jika memungkinkan, pasang sensor MAP</strong></p>
+<p>Fuel strategy tetap Alpha-N, lalu pakai VE blend dengan Blend parameter <strong>MAP</strong>. Beban apa pun akan menaikkan MAP pada bukaan throttle yang sama, sehingga bahan bakar bertambah otomatis.</p>
+<h3 id="data-yang-perlu-direkam-di-log">Data yang Perlu Direkam di Log<a class="headerlink" href="#data-yang-perlu-direkam-di-log" title="Permanent link">&para;</a></h3>
+<p>Rekam di idle saat mesin panas, nyalakan dan matikan AC beberapa kali dengan jeda sekitar 10 detik:</p>
+<ul>
+<li>
+<p>RPM dan target idle</p>
+</li>
+<li>
+<p>Posisi katup idle (IAC)</p>
+</li>
+<li>
+<p>AFR atau lambda</p>
+</li>
+<li>
+<p>Koreksi timing idle</p>
+</li>
+<li>
+<p>Status tombol AC dan relay kompresor</p>
+</li>
+<li>
+<p>Koreksi STFT</p>
+</li>
+</ul>
+<p>Jika AFR naik (kurus) bersamaan dengan RPM turun, penyebabnya kekurangan bahan bakar (langkah 3). Jika AFR stabil tapi RPM tetap turun, penyebabnya udara atau timing (langkah 1 dan 2).</p>
+<h2 id="rekomendasi-konfigurasi">Rekomendasi Konfigurasi<a class="headerlink" href="#rekomendasi-konfigurasi" title="Permanent link">&para;</a></h2>
+<h3 id="untuk-unit-plug-and-play">Untuk Unit Plug and Play<a class="headerlink" href="#untuk-unit-plug-and-play" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Pengaturan biasanya sudah dioptimalkan dalam basemap</li>
+<li>Fokus pada penyesuaian suhu dan tekanan sesuai sistem kendaraan</li>
+<li>Verifikasi idle compensation sesuai dengan karakteristik mesin</li>
+</ul>
+<h3 id="untuk-unit-kitdiy">Untuk Unit Kit/DIY<a class="headerlink" href="#untuk-unit-kitdiy" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Konfigurasi lengkap diperlukan sesuai spesifikasi kendaraan</li>
+<li>Konsultasi manual kendaraan untuk nilai tekanan yang tepat</li>
+<li>Test semua fungsi proteksi sebelum penggunaan normal</li>
+</ul>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Start Conservative</strong>: Mulai dengan nilai yang aman dan sesuaikan bertahap</li>
+<li><strong>Monitor Temperature</strong>: Selalu monitor suhu coolant saat AC beroperasi</li>
+<li><strong>Test All Limits</strong>: Verifikasi semua batas proteksi berfungsi dengan baik</li>
+<li><strong>Document Changes</strong>: Catat semua perubahan untuk referensi masa depan</li>
+</ol>
+
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

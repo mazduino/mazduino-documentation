@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://wiki.mazduino.com/en/tunerstudio-troubleshooting/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Troubleshooting - Mazduino Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../css/print.css" rel="stylesheet" />
+        <link href="../../css/lang-switch.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Troubleshooting";
+        var mkdocs_page_input_path = "tunerstudio-troubleshooting.md";
+        var mkdocs_page_url = "/en/tunerstudio-troubleshooting/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../" class="icon icon-home"> Mazduino Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../downloads/">Downloads</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../">Quick Start</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ECU</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino LITE</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.1/">v0.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.2/">v0.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-lite-v0.3/">v0.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Compact 4 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v1/">v1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.1/">v2.1</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.2/">v2.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.3/">v2.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-compact-4ch-v2.5/">v2.5</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mini 6 Channel</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.0-v1.2/">v1.0-v1.2</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3/">v1.3</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3b/">v1.3B</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3c/">v1.3C</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.3d/">v1.3D</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mini-6ch-v1.4/">v1.4</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Core</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev0/">rev0</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-core-rev1/">rev1</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Mega100</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-mega100/">v1.3</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino X600</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-x600/">X600 (4.3")</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Dash Display</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Mazduino Dash</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash/">3.5" & 4"</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-racedash-pro/">Pro / M4, M5, M7 (4.3", 5" & 7")</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../mazduino-dash-r4/">Dash R4 (4" round)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../input-tambahan-dash-r4/">Dash R4 Extra Inputs</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../setting-ecu-racedash/">ECU Configuration</a>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Accessories</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../wbo-can-controller/">WBO CAN Controller</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../can-io-extender/">CAN IO Extender</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors and Wiring</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../persiapan-sensor-wiring/">Preparation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../rekomendasi-ukuran-kabel/">Wire Size Guide</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Mazduino Tuner Manual</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-manual/">Overview and Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-interface/">Connection and Layout</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-tuning/">Changing the Tune</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-proyek/">Projects and Tune Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-update-firmware/">Update Firmware</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-logger/">Logger and Real Time</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../mazduino-tuner-diagnostik/">Diagnostics</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">TunerStudio Manual</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-manual/">Full Manual</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-instalasi/">Installation</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-konfigurasi/">Project Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-interface/">User Interface</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-base-engine/">Base Engine Settings</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-limits-protection/">Limits & Protection</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-fuel-system/">Fuel System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-ignition/">Ignition System</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-sensors/">Sensor Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-canbus/">CAN Bus Configuration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-controller/">Controller & Diagnostics</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Troubleshooting</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pengantar">Pengantar</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#masalah-umum-dan-solusi">Masalah Umum dan Solusi</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-tidak-ada-sinyal-rpm">1. Tidak Ada Sinyal RPM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-pembacaan-wideband-o2-sensor-tidak-benar">2. Pembacaan Wideband O2 Sensor Tidak Benar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-engine-misfire-atau-berjalan-kasar">3. Engine Misfire atau Berjalan Kasar</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#4-sensor-voltage-keluar-dari-range">4. Sensor Voltage Keluar dari Range</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#5-fuel-pressure-atau-oil-pressure-alert">5. Fuel Pressure atau Oil Pressure Alert</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#6-throttle-calibration-error">6. Throttle Calibration Error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#7-signature-firmware-tidak-cocok-dengan-ini">7. Signature Firmware Tidak Cocok dengan INI</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tool-diagnostics-dan-fitur">Tool Diagnostics dan Fitur</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#1-raw-sensor-voltage-signals">1. Raw Sensor Voltage Signals</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#2-built-in-hardware-leds">2. Built-In Hardware LEDs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-remote-assistance">3. Remote Assistance</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#error-codes-dan-diagnosis">Error Codes dan Diagnosis</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#common-error-codes">Common Error Codes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#error-code-reset-procedure">Error Code Reset Procedure</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preventive-maintenance">Preventive Maintenance</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#regular-checks">Regular Checks</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#best-practices">Best Practices</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tips-umum">Tips Umum</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#general-guidelines">General Guidelines</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#safety-considerations">Safety Considerations</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tunerstudio-examples/">Examples & Map Switching</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Custom Firmware</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" >CAN Input</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-sensor-input/">CAN Sensor Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-analog-input/">CAN Analog Input</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../firmware/can-virtual-input/">CAN Virtual Input (Digital)</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/can-output/">CAN Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/math-channels/">Math Channels (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/user-tables/">User Tables (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/logic-outputs/">Logic Outputs (not available yet)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-spark-cut/">Spark Cut & Fuel Cut</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/rotational-idle/">Rotational Idle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/analog-multi-switch/">Analog Multi-Switch</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bluetooth/">TunerStudio over Bluetooth</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/bigfuel/">BIGFUEL Variants</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../firmware/fuel-consumption/">Fuel Consumption</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../">Mazduino Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../" class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">TunerStudio Manual</li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    <a href="../../tunerstudio-troubleshooting/" hreflang="id" lang="id">Bahasa Indonesia</a>
+    <span class="lang-current" lang="en">English</span>
+  </div>
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="30 Oktober 2026 15:41:39 UTC">30 Oktober 2026</span></em></p>
+  <h1 id="troubleshooting-tunerstudio-mazduino">Troubleshooting TunerStudio Mazduino<a class="headerlink" href="#troubleshooting-tunerstudio-mazduino" title="Permanent link">&para;</a></h1>
+<h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
+<p>Bagian ini menyediakan panduan komprehensif untuk mengidentifikasi dan mengatasi masalah umum yang ditemui selama operasi Mazduino. Setiap masalah mencakup gejala, penyebab potensial, dan solusi yang direkomendasikan untuk memastikan fungsionalitas yang tepat.</p>
+<h2 id="masalah-umum-dan-solusi">Masalah Umum dan Solusi<a class="headerlink" href="#masalah-umum-dan-solusi" title="Permanent link">&para;</a></h2>
+<h3 id="1-tidak-ada-sinyal-rpm">1. Tidak Ada Sinyal RPM<a class="headerlink" href="#1-tidak-ada-sinyal-rpm" title="Permanent link">&para;</a></h3>
+<p><img alt="No RPM Signal" src="images/no-rpm-signal.png" /></p>
+<p><strong>Gejala</strong>: </p>
+<ul>
+<li>Engine tidak start</li>
+<li>RPM gauge tetap di nol selama cranking</li>
+<li>Tidak ada indikasi aktivitas ignition</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Sensor crankshaft atau camshaft tidak terpasang dengan benar</li>
+<li>Wiring yang rusak atau terputus ke sensor</li>
+<li>Tipe sensor atau konfigurasi salah di software</li>
+<li>Gap sensor tidak sesuai spesifikasi</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Verifikasi Instalasi Sensor</strong>:</li>
+<li>Pastikan instalasi sensor crank dan cam yang tepat</li>
+<li>Periksa alignment dan gap yang benar (biasanya 0.5-1.5mm untuk sensor Hall)</li>
+<li>
+<p>Verifikasi mounting yang kuat tanpa getaran</p>
+</li>
+<li>
+<p><strong>Periksa Wiring</strong>:</p>
+</li>
+<li>Inspeksi wiring untuk kerusakan atau koneksi yang longgar</li>
+<li>Pastikan semua koneksi aman dan bersih</li>
+<li>
+<p>Gunakan multimeter untuk test kontinuitas</p>
+</li>
+<li>
+<p><strong>Konfirmasi Konfigurasi</strong>:</p>
+</li>
+<li>Verifikasi tipe sensor yang benar (Hall atau VR) di software</li>
+<li>Periksa pengaturan trigger configuration</li>
+<li>
+<p>Pastikan pin assignment sesuai dengan wiring</p>
+</li>
+<li>
+<p><strong>Test Sensor</strong>:</p>
+</li>
+<li>Gunakan oscilloscope untuk melihat sinyal sensor</li>
+<li>Verifikasi bentuk gelombang sesuai dengan tipe sensor</li>
+<li>Ganti sensor jika diperlukan</li>
+</ol>
+<h3 id="2-pembacaan-wideband-o2-sensor-tidak-benar">2. Pembacaan Wideband O2 Sensor Tidak Benar<a class="headerlink" href="#2-pembacaan-wideband-o2-sensor-tidak-benar" title="Permanent link">&para;</a></h3>
+<p><img alt="Wideband O2 Issues" src="images/wideband-o2-issues.png" /></p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Pembacaan AFR tidak akurat atau tidak ditampilkan</li>
+<li>Nilai AFR tidak masuk akal (terlalu rich atau lean)</li>
+<li>Pembacaan AFR tidak stabil</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Scaling sensor salah dikonfigurasi di software</li>
+<li>Wiring atau grounding yang rusak untuk sensor wideband</li>
+<li>Konfigurasi sinyal CAN atau analog salah</li>
+<li>Sensor wideband tidak ter-heat dengan benar</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Verifikasi Konfigurasi Sensor</strong>:</li>
+<li>Periksa tipe sensor dan input scaling di software Mazduino</li>
+<li>Pastikan setting sesuai dengan spesifikasi (AEM, PLX, atau Custom)</li>
+<li>
+<p>Verifikasi kalibrasi voltage-to-AFR</p>
+</li>
+<li>
+<p><strong>Inspeksi Koneksi</strong>:</p>
+</li>
+<li>Periksa power dan ground connection ke wideband controller</li>
+<li>Pastikan wiring tidak terpapar panas berlebihan</li>
+<li>
+<p>Verifikasi koneksi CAN High/Low jika menggunakan CAN</p>
+</li>
+<li>
+<p><strong>Konfirmasi Konfigurasi Komunikasi</strong>:</p>
+</li>
+<li>Pastikan CAN ID atau analog input channel yang benar</li>
+<li>Periksa baud rate CAN jika menggunakan komunikasi digital</li>
+<li>
+<p>Test dengan multimeter untuk analog input</p>
+</li>
+<li>
+<p><strong>Sensor Health Check</strong>:</p>
+</li>
+<li>Verifikasi sensor heating berfungsi dengan baik</li>
+<li>Periksa kondisi sensor element dan housing</li>
+<li>Ganti sensor jika rusak atau terkontaminasi</li>
+</ol>
+<h3 id="3-engine-misfire-atau-berjalan-kasar">3. Engine Misfire atau Berjalan Kasar<a class="headerlink" href="#3-engine-misfire-atau-berjalan-kasar" title="Permanent link">&para;</a></h3>
+<p><img alt="Engine Misfire" src="images/engine-misfire.png" /></p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Idle kasar</li>
+<li>Hesitasi selama akselerasi</li>
+<li>Misfire di bawah load</li>
+<li>RPM tidak stabil</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Setting ignition atau fuel timing salah</li>
+<li>Busi rusak atau gap tidak sesuai</li>
+<li>Kegagalan injector atau coil driver</li>
+<li>Masalah kompresi mekanis</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Verifikasi Timing</strong>:</li>
+<li>Gunakan timing light untuk memverifikasi ignition timing selaras dengan base timing yang dikonfigurasi</li>
+<li>Periksa fuel timing dan injector sequence</li>
+<li>
+<p>Verifikasi trigger timing dan offset</p>
+</li>
+<li>
+<p><strong>Inspeksi Komponen</strong>:</p>
+</li>
+<li>Periksa dan ganti busi jika aus atau gap salah</li>
+<li>Test resistansi coil ignition</li>
+<li>
+<p>Periksa flow dan spray pattern injector</p>
+</li>
+<li>
+<p><strong>Test Output</strong>:</p>
+</li>
+<li>Lakukan bench test untuk memverifikasi output injector dan ignition</li>
+<li>Periksa driver circuit untuk proper operation</li>
+<li>
+<p>Verifikasi ground connection yang baik</p>
+</li>
+<li>
+<p><strong>Mechanical Check</strong>:</p>
+</li>
+<li>Test kompresi untuk masalah mekanis</li>
+<li>Periksa timing belt/chain alignment</li>
+<li>Verifikasi valve clearance jika applicable</li>
+</ol>
+<h3 id="4-sensor-voltage-keluar-dari-range">4. Sensor Voltage Keluar dari Range<a class="headerlink" href="#4-sensor-voltage-keluar-dari-range" title="Permanent link">&para;</a></h3>
+<p><img alt="Sensor Voltage Out of Range" src="images/sensor-voltage-range.png" /></p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Warning error sensor dalam diagnostics</li>
+<li>Pembacaan sensor yang tidak menentu atau tidak ada</li>
+<li>Error code terkait sensor</li>
+<li>Pembacaan sensor yang tidak masuk akal</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Wiring sensor rusak atau grounding buruk</li>
+<li>Ketidaksesuaian kalibrasi antara sensor dan ECU</li>
+<li>Sensor rusak atau tidak berfungsi</li>
+<li>Supply voltage tidak stabil</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Periksa Wiring Sensor</strong>:</li>
+<li>Test kontinuitas wiring untuk semua koneksi sensor</li>
+<li>Verifikasi grounding yang proper dan bersih</li>
+<li>
+<p>Periksa resistensi wiring dalam spesifikasi</p>
+</li>
+<li>
+<p><strong>Verifikasi Supply Voltage</strong>:</p>
+</li>
+<li>Periksa 5V reference voltage stabil</li>
+<li>Test supply voltage pada sensor</li>
+<li>
+<p>Verifikasi tidak ada voltage drop signifikan</p>
+</li>
+<li>
+<p><strong>Gunakan Diagnostics</strong>:</p>
+</li>
+<li>Monitor raw sensor voltage signals di menu diagnostics</li>
+<li>Bandingkan dengan spesifikasi sensor</li>
+<li>
+<p>Verifikasi range voltage sesuai dengan sensor</p>
+</li>
+<li>
+<p><strong>Ganti Sensor</strong>:</p>
+</li>
+<li>Ganti sensor jika terbukti defektif</li>
+<li>Verifikasi spesifikasi sensor sesuai aplikasi</li>
+<li>Kalibrasi ulang setelah penggantian</li>
+</ol>
+<h3 id="5-fuel-pressure-atau-oil-pressure-alert">5. Fuel Pressure atau Oil Pressure Alert<a class="headerlink" href="#5-fuel-pressure-atau-oil-pressure-alert" title="Permanent link">&para;</a></h3>
+<p><img alt="Pressure Alerts" src="images/pressure-alerts.png" /></p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>Warning tekanan rendah</li>
+<li>Engine shutdown di bawah load</li>
+<li>Pressure gauge menunjukkan nilai abnormal</li>
+<li>Alarm tekanan aktif</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Kegagalan mekanis dalam sistem fuel atau oil delivery</li>
+<li>Threshold pressure sensor salah dikonfigurasi</li>
+<li>Sensor pressure yang rusak</li>
+<li>Kebocoran dalam sistem</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Inspeksi Sistem Mekanis</strong>:</li>
+<li>Periksa fuel pump, filter, dan oil pump untuk masalah mekanis</li>
+<li>Verifikasi tidak ada kebocoran dalam sistem</li>
+<li>
+<p>Test mechanical pressure dengan gauge terpisah</p>
+</li>
+<li>
+<p><strong>Sesuaikan Threshold</strong>:</p>
+</li>
+<li>Adjust pressure threshold di software Mazduino sesuai spesifikasi sistem</li>
+<li>Verifikasi setting sesuai dengan karakteristik sistem</li>
+<li>
+<p>Test threshold dengan kondisi operasi normal</p>
+</li>
+<li>
+<p><strong>Test Sensor</strong>:</p>
+</li>
+<li>Verifikasi kalibrasi sensor pressure</li>
+<li>Periksa wiring dan koneksi sensor</li>
+<li>
+<p>Ganti sensor jika tidak berfungsi</p>
+</li>
+<li>
+<p><strong>System Pressure Test</strong>:</p>
+</li>
+<li>Lakukan pressure test komprehensif</li>
+<li>Bandingkan mechanical gauge dengan ECU reading</li>
+<li>Identifikasi dan perbaiki masalah sistem</li>
+</ol>
+<h3 id="6-throttle-calibration-error">6. Throttle Calibration Error<a class="headerlink" href="#6-throttle-calibration-error" title="Permanent link">&para;</a></h3>
+<p><img alt="Throttle Calibration Error" src="images/throttle-calibration.png" /></p>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>ETB (Electronic Throttle Body) gagal kalibrasi</li>
+<li>Response throttle tidak normal</li>
+<li>Error TPS atau PPS</li>
+<li>Engine tidak mau start dengan ETB error</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Kalibrasi TPS dan PPS salah atau tidak lengkap</li>
+<li>Sensor posisi throttle atau pedal rusak</li>
+<li>Masalah wiring atau power supply</li>
+<li>Mechanical binding pada throttle body</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Lakukan Kalibrasi Ulang</strong>:</li>
+<li>Ikuti prosedur kalibrasi TPS dan PPS seperti yang diuraikan dalam bagian setup</li>
+<li>Pastikan throttle body bebas bergerak secara mekanis</li>
+<li>
+<p>Verifikasi tidak ada binding atau hambatan</p>
+</li>
+<li>
+<p><strong>Verifikasi Sensor</strong>:</p>
+</li>
+<li>Test sensor dengan multimeter untuk output yang konsisten</li>
+<li>Periksa redundant sensor functionality</li>
+<li>
+<p>Ganti sensor jika kalibrasi gagal berulang kali</p>
+</li>
+<li>
+<p><strong>Periksa Power dan Wiring</strong>:</p>
+</li>
+<li>Pastikan wiring dan konektor utuh dan terpasang dengan benar</li>
+<li>Verifikasi power supply stabil ke throttle body</li>
+<li>
+<p>Periksa ground connections</p>
+</li>
+<li>
+<p><strong>Mechanical Inspection</strong>:</p>
+</li>
+<li>Bersihkan throttle body dari carbon deposits</li>
+<li>Periksa throttle shaft untuk wear atau binding</li>
+<li>Lubricate moving parts jika diperlukan</li>
+</ol>
+<h3 id="7-signature-firmware-tidak-cocok-dengan-ini">7. Signature Firmware Tidak Cocok dengan INI<a class="headerlink" href="#7-signature-firmware-tidak-cocok-dengan-ini" title="Permanent link">&para;</a></h3>
+<p><strong>Gejala</strong>:</p>
+<ul>
+<li>TunerStudio menampilkan peringatan bahwa signature firmware berbeda dengan project</li>
+<li>TunerStudio menolak tersambung, atau tersambung tetapi nilai setting terlihat aneh</li>
+<li>Setting yang sudah di-burn berubah setelah reconnect</li>
+</ul>
+<p><strong>Penyebab Potensial</strong>:</p>
+<ul>
+<li>Firmware ECU sudah di-update, tetapi project masih memakai INI lama</li>
+<li>File INI diambil dari rilis yang berbeda dengan firmware yang ter-flash</li>
+</ul>
+<p><strong>Solusi</strong>:</p>
+<ol>
+<li><strong>Catat Signature Firmware</strong>:</li>
+<li>
+<p>Lihat signature di peringatan TunerStudio, misalnya <code>rusEFI master.2026.09.08.mazduino-lite.969326114</code></p>
+</li>
+<li>
+<p><strong>Ambil INI yang Cocok</strong>:</p>
+</li>
+<li>Buka <a href="https://mazduino.github.io/mazduino-fw/">mazduino.github.io/mazduino-fw</a> dan pilih board Anda</li>
+<li>Download INI dengan tanggal dan hash yang sama dengan signature firmware</li>
+<li>
+<p>Cara membaca signature dijelaskan di <a href="../downloads/#file-ini-per-versi-firmware">File INI per Versi Firmware</a></p>
+</li>
+<li>
+<p><strong>Ganti INI di Project</strong>:</p>
+</li>
+<li>Buka <strong>File → Project Properties</strong> dan pilih file INI yang baru</li>
+<li>Tutup lalu buka lagi project-nya, kemudian sambungkan ke ECU</li>
+</ol>
+<h2 id="tool-diagnostics-dan-fitur">Tool Diagnostics dan Fitur<a class="headerlink" href="#tool-diagnostics-dan-fitur" title="Permanent link">&para;</a></h2>
+<h3 id="1-raw-sensor-voltage-signals">1. Raw Sensor Voltage Signals<a class="headerlink" href="#1-raw-sensor-voltage-signals" title="Permanent link">&para;</a></h3>
+<p><img alt="Raw Sensor Signals" src="images/raw-sensor-signals.png" /></p>
+<p>Gunakan menu diagnostics software Mazduino untuk monitor sinyal voltase real-time dari sensor. Pembacaan ini membantu memvalidasi fungsionalitas sensor dan mendeteksi masalah wiring atau konfigurasi.</p>
+<p><strong>Cara Menggunakan</strong>:</p>
+<ul>
+<li>Buka menu Diagnostics &gt; Sensor Readings</li>
+<li>Monitor voltage readings untuk setiap sensor</li>
+<li>Bandingkan dengan spesifikasi sensor</li>
+<li>Identifikasi sensor yang memberikan reading abnormal</li>
+</ul>
+<h3 id="2-built-in-hardware-leds">2. Built-In Hardware LEDs<a class="headerlink" href="#2-built-in-hardware-leds" title="Permanent link">&para;</a></h3>
+<p><img alt="Hardware LEDs" src="images/hardware-leds.png" /></p>
+<p>Unit Mazduino tertentu dilengkapi LED onboard yang memberikan feedback visual untuk sistem kritikal seperti power, komunikasi, dan aktivasi output, membantu troubleshooting cepat.</p>
+<p><strong>LED Indicators</strong>:</p>
+<ul>
+<li>
+<p><strong>Power LED</strong>: Menunjukkan ECU mendapat power yang tepat</p>
+</li>
+<li>
+<p><strong>Communication LED</strong>: Mengindikasikan komunikasi dengan TunerStudio</p>
+</li>
+<li>
+<p><strong>Error LED</strong>: Menunjukkan adanya error sistem</p>
+</li>
+<li>
+<p><strong>Activity LED</strong>: Mengindikasikan aktivitas processor</p>
+</li>
+</ul>
+<h3 id="3-remote-assistance">3. Remote Assistance<a class="headerlink" href="#3-remote-assistance" title="Permanent link">&para;</a></h3>
+<p><img alt="Remote Assistance" src="images/remote-assistance.png" /></p>
+<p>Jika usaha troubleshooting tidak berhasil, Mazduino mendukung remote assistance melalui tool seperti <strong>AnyDesk</strong>. Ini memungkinkan teknisi profesional untuk mendiagnosis dan mengatasi masalah kompleks secara remote.</p>
+<p><strong>Prosedur Remote Assistance</strong>:</p>
+<ol>
+<li>Install AnyDesk pada komputer yang terhubung ke Mazduino</li>
+<li>Hubungi support Mazduino untuk appointment</li>
+<li>Share AnyDesk ID dengan teknisi</li>
+<li>Izinkan akses remote untuk diagnosis dan perbaikan</li>
+</ol>
+<h2 id="error-codes-dan-diagnosis">Error Codes dan Diagnosis<a class="headerlink" href="#error-codes-dan-diagnosis" title="Permanent link">&para;</a></h2>
+<h3 id="common-error-codes">Common Error Codes<a class="headerlink" href="#common-error-codes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Error Code</th>
+<th>Deskripsi</th>
+<th>Solusi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E001</td>
+<td>TPS Out of Range</td>
+<td>Kalibrasi ulang TPS atau ganti sensor</td>
+</tr>
+<tr>
+<td>E002</td>
+<td>CLT Sensor Fault</td>
+<td>Periksa wiring CLT atau ganti sensor</td>
+</tr>
+<tr>
+<td>E003</td>
+<td>MAP Sensor Error</td>
+<td>Verifikasi koneksi MAP dan kalibrasi</td>
+</tr>
+<tr>
+<td>E004</td>
+<td>RPM Signal Lost</td>
+<td>Periksa crank/cam sensor dan wiring</td>
+</tr>
+<tr>
+<td>E005</td>
+<td>O2 Sensor Timeout</td>
+<td>Verifikasi wideband communication</td>
+</tr>
+<tr>
+<td>E006</td>
+<td>Fuel Pressure Low</td>
+<td>Periksa sistem fuel dan sensor pressure</td>
+</tr>
+<tr>
+<td>E007</td>
+<td>Oil Pressure Low</td>
+<td>Inspeksi sistem oli dan sensor</td>
+</tr>
+<tr>
+<td>E008</td>
+<td>ETB Calibration Failed</td>
+<td>Lakukan kalibrasi ETB dan periksa mechanical</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-code-reset-procedure">Error Code Reset Procedure<a class="headerlink" href="#error-code-reset-procedure" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Identify Root Cause</strong>: Pastikan masalah yang menyebabkan error sudah diperbaiki</li>
+<li><strong>Clear Errors</strong>: Gunakan menu diagnostics untuk clear error codes</li>
+<li><strong>Verify Fix</strong>: Test sistem untuk memastikan error tidak muncul lagi</li>
+<li><strong>Document</strong>: Catat masalah dan solusi untuk referensi masa depan</li>
+</ol>
+<h2 id="preventive-maintenance">Preventive Maintenance<a class="headerlink" href="#preventive-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="regular-checks">Regular Checks<a class="headerlink" href="#regular-checks" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Monthly</strong>:</li>
+<li>Periksa semua koneksi wiring</li>
+<li>Monitor sensor readings untuk drift</li>
+<li>
+<p>Backup konfigurasi ECU</p>
+</li>
+<li>
+<p><strong>Quarterly</strong>:</p>
+</li>
+<li>Inspeksi detail semua sensor</li>
+<li>Test bench semua outputs</li>
+<li>
+<p>Update firmware jika tersedia</p>
+</li>
+<li>
+<p><strong>Annually</strong>:</p>
+</li>
+<li>Comprehensive system inspection</li>
+<li>Replace preventive maintenance items</li>
+<li>Complete system recalibration</li>
+</ol>
+<h3 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Documentation</strong>: Selalu dokumentasikan perubahan dan masalah</li>
+<li><strong>Backup</strong>: Regular backup konfigurasi dan tune files</li>
+<li><strong>Version Control</strong>: Track perubahan firmware dan configuration</li>
+<li><strong>Environment</strong>: Lindungi ECU dari moisture dan extreme temperature</li>
+</ol>
+<h2 id="tips-umum">Tips Umum<a class="headerlink" href="#tips-umum" title="Permanent link">&para;</a></h2>
+<h3 id="general-guidelines">General Guidelines<a class="headerlink" href="#general-guidelines" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Backup Konfigurasi</strong>: Back up file konfigurasi secara berkala untuk menghindari kehilangan data</li>
+<li><strong>Reset Error Codes</strong>: Gunakan menu diagnostics built-in untuk reset error code setelah mengatasi masalah</li>
+<li><strong>Kontakt Support</strong>: Untuk masalah persistent, hubungi support Mazduino atau gunakan remote assistance untuk bantuan tambahan</li>
+<li><strong>Systematic Approach</strong>: Gunakan pendekatan sistematis untuk troubleshooting dengan available diagnostic tool</li>
+</ol>
+<h3 id="safety-considerations">Safety Considerations<a class="headerlink" href="#safety-considerations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Electrical Safety</strong>: Selalu disconnect power sebelum melakukan perbaikan electrical</li>
+<li><strong>Engine Safety</strong>: Jangan operate engine dengan masalah yang belum terselesaikan</li>
+<li><strong>Data Safety</strong>: Selalu backup data sebelum melakukan perubahan major</li>
+<li><strong>Professional Help</strong>: Jangan ragu untuk mencari bantuan profesional untuk masalah kompleks</li>
+</ol>
+<p>Panduan ini memastikan pendekatan metodis untuk troubleshooting sistem Mazduino, menggunakan tool diagnostics yang tersedia untuk performa yang reliable.</p>
+
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../tunerstudio-controller/" class="btn btn-neutral float-left" title="Controller & Diagnostics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tunerstudio-examples/" class="btn btn-neutral float-right" title="Examples & Map Switching">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../tunerstudio-controller/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../tunerstudio-examples/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../js/external-links.js"></script>
+      <script src="../../js/print-details.js"></script>
+      <script src="../../js/print-source.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
