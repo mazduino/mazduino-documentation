@@ -2,21 +2,14 @@
 
 ## Gambaran Umum
 
-Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, dirancang sebagai Engine Control Unit 6-channel yang lebih optimal. Dibangun di sekitar prosesor **ARM Cortex-M4 180 MHz** 32-bit yang lebih powerful, memberikan manajemen mesin komprehensif dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
+Mazduino Mini 6CH v1.3B adalah perbaikan dari v1.3: Engine Control Unit 6-channel dengan prosesor **ARM Cortex-M4 180 MHz** 32-bit, dalam faktor bentuk kompak yang cocok untuk mesin 6-silinder atau mesin 4-silinder dengan output arus tinggi tambahan.
 
 **Perbaikan v1.3B dari v1.3:**
 
 - **Upgrade MCU**: Menggunakan ARM Cortex-M4 180 MHz, naik dari 168 MHz pada v1.3
-
-- **Penambahan Input Analog**: Menambahkan 1 spare input analog khusus untuk sensor TPS2 yang dibutuhkan untuk ETB
-
-- **Optimisasi Hardware**: Menghapus dan mengoptimalkan komponen yang tidak digunakan untuk efisiensi yang lebih baik
-
+- **Penambahan Input Analog**: Menambahkan 1 spare input analog khusus (pin 40) untuk sensor TPS2 yang dibutuhkan untuk ETB
+- **Optimisasi Hardware**: Menghapus komponen yang tidak digunakan
 - **Layout Komponen**: Menata ulang layout komponen untuk kinerja dan manufaktur yang lebih optimal
-
-- **Dukungan ETB yang Diperbaiki**: Electronic Throttle Body support dengan input analog TPS2 yang dedicated
-
-- **Efisiensi Desain**: Desain yang lebih streamlined dengan fokus pada fungsionalitas yang diperlukan
 
 ![Mazduino Mini 6ch](img/mazduino-mini-6ch-v1.3B.jpeg)
 
@@ -29,14 +22,11 @@ Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, diranc
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
 - 5x driver low-side arus rendah untuk relay utama, pompa bahan bakar, kompresor AC, kipas, dan kontrol tachometer
 - 6x output 12V atau 5V untuk sinyal koil pengapian
-- **Knock Input (v1.3B)**: Input sensor knock yang diperbaiki untuk deteksi ketukan mesin
-
-- **ETB Support (v1.3B)**: Kontrol Electronic Throttle Body yang dioptimalkan dengan TPS1 dan TPS2
-
+- Input sensor knock, diperbaiki di v1.3B
+- Kontrol Electronic Throttle Body (ETB) dengan TPS1 dan TPS2
 - Dukungan untuk Modul VR Conditioner tambahan
 - Dukungan untuk Modul Stepper Idle tambahan
-- **Prosesor 180 MHz ARM Cortex-M4** - **Upgrade dari v1.3**
-
+- Prosesor 180 MHz ARM Cortex-M4
 - Komunikasi data via CANbus
 - Komunikasi data via USB Type-C
 - Komunikasi Serial RX/TX
@@ -47,7 +37,7 @@ Mazduino Mini 6CH v1.3B adalah perbaikan dan peningkatan dari versi v1.3, diranc
 
 ## Konfigurasi Jumper
 
-Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan kustomisasi fungsi sesuai kebutuhan aplikasi Anda. Jumper ini memberikan fleksibilitas konfigurasi tanpa perlu mengubah firmware, memastikan kompatibilitas optimal dengan berbagai setup mesin.
+Mazduino Mini 6CH v1.3B memakai solder jumper untuk mengatur fungsi hardware tanpa mengubah firmware. Solder jumper Tach Pullup, Ignition VDrive dan Knock/PC13 ada di bagian belakang board.
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6232.jpeg)
 
@@ -63,11 +53,11 @@ Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan
 #### Ignition VDrive Jumper
 - **Fungsi**: Mengatur tegangan sinyal pengapian untuk **Smart Coil Only**
 
-- **Pilihan**: Sinyal 12V atau 5V
+- **Pilihan**: Sinyal 12V atau 5V. Gunakan 5V untuk coil dengan sinyal 5V dan 12V untuk coil dengan sinyal 12V
 
-- **Khusus Smart Coil**: Jumper ini hanya untuk smart coil dengan driver internal
+- **Khusus Smart Coil**: Jumper ini hanya untuk smart coil dengan driver internal; smart coil dapat dihubungkan langsung
 
-- **PENTING**: Dump coil memerlukan IGBT eksternal 
+- **PENTING**: Dumb coil memerlukan IGBT eksternal; jumper VDrive **tidak** digunakan untuk dumb coil
 
 #### Knock/PC13 Input Selection
 - **Mode Knock**: Input sensor knock untuk deteksi ketukan mesin (default)
@@ -85,21 +75,17 @@ Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan
 
 - **JP4**: Pullup 5V untuk sinyal CMP (Camshaft Position)
 
-- **Manfaat**: Sinyal trigger yang bersih dan stabil
-
 #### JP2 & JP3 - Sensor Type Selection
 - **JP2**: Mode sinyal CKP (VR atau Hall sensor)
 
 - **JP3**: Mode sinyal CMP (VR atau Hall sensor)
-
-- **Fleksibilitas**: Kompatibel dengan berbagai jenis sensor posisi
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6230.jpeg)
 
 ### Zona Konfigurasi Kiri
 
 #### JP6 - Stepper Motor Enable
-- **Fungsi**: Kontrol aktivasi driver stepper motor
+- **Fungsi**: Kontrol aktivasi driver stepper motor (bypass Idle Stepper)
 
 - **Note**: Konsultasi skematik untuk konfigurasi optimal
 
@@ -118,36 +104,14 @@ Mazduino Mini 6CH v1.3B dilengkapi dengan sistem jumper solder yang memungkinkan
 
 ![Mazduino Mini 6ch](img/mini6ch/mazduino-mini-6ch-v1.3B-jumper2.jpeg)
 
+### Pullup Launch
+Digunakan untuk pullup pada pin spare input 3 jika digunakan untuk tombol aktivasi launch control/input lainnya yang membutuhkan pullup.
+
 ### Tips Konfigurasi Jumper
-
-#### Pengaturan Optimal:
-
-- **Smart Coils**: Gunakan VDrive 5V untuk Coil dengan sinyal 5V dan 12V untuk coil dengan sinyal 12V
-
-- **Dump/Conventional Coils**: Memerlukan IGBT eksternal
 
 - **VR Sensors**: Pilih mode VR (sinyal lewat modul VR Conditioner) dan **lepas** pullup — pullup akan membebani kumparan sensor VR
 
 - **Hall / Optical Sensors**: Pilih mode Hall dan **pasang** pullup (JP5 untuk CKP, JP4 untuk CMP). Sensor hall umumnya open-collector dan tidak bisa menghasilkan level HIGH sendiri; tanpa pullup, pin trigger mengambang dan terkena noise sehingga muncul trigger error saat mesin hidup. Pullup hanya boleh dilepas untuk sensor yang outputnya push-pull 5V
-
-#### Best Practices:
-
-1. **Pre-Installation**: Konfigurasi jumper sebelum instalasi final
-2. **Documentation**: Catat konfigurasi jumper untuk referensi masa depan
-3. **Testing**: Verifikasi sinyal setelah perubahan konfigurasi jumper
-4. **Compatibility**: Pastikan jumper sesuai dengan hardware yang digunakan
-
-#### Perhatian Khusus:
-
-- **Jenis Coil Kritis**: VDrive hanya untuk smart coil - dump coil butuh IGBT eksternal
-
-- **Solder dengan Hati-hati**: Gunakan suhu solder yang tepat
-
-- **Verifikasi Koneksi**: Pastikan sambungan solder yang solid
-
-- **Konsultasi Skematik**: Rujuk diagram untuk konfigurasi lanjutan
-
-- **Power Off**: Selalu matikan power saat mengubah jumper
 
 ## Wiring dan Instalasi
 
@@ -275,71 +239,6 @@ Pin assignment **STM32F427VGT6** yang telah diperbaiki untuk v1.3B:
 | SPI3 MISO | PC11 |
 | SPI3 MOSI | PC12 |
 
-### Fitur Khusus v1.3B
-
-#### Knock Input (Diperbaiki di v1.3B)
-- **Pin 8 (Knock/PC13)**: Input sensor knock dengan solder jumper default untuk deteksi ketukan yang lebih akurat
-
-- **Single Knock Input**: Satu input knock (PC0) di konektor ECU untuk monitoring ketukan mesin
-
-- **Aplikasi**: Deteksi ketukan mesin yang lebih sensitif untuk perlindungan dan optimasi timing pengapian
-
-- **Perbaikan**: Filter dan sensitivitas yang dioptimalkan
-
-#### Electronic Throttle Body (Dioptimalkan di v1.3B)
-- **Pin 33 (ETB-)**: Output negatif untuk kontrol ETB
-
-- **Pin 34 (ETB+)**: Output positif untuk kontrol ETB
-
-- **Pin 40 (TPS2)**: Input analog khusus untuk sensor TPS2 yang dedicated untuk ETB - **Fitur baru v1.3B**
-
-- **Pin 18/35 (PPS1/PPS2)**: Dual Pedal Position Sensor untuk kontrol ETB
-
-- **ETB Control**: PWM (PA8), Direction (PB8), Disable (PB9)
-
-- **Perbaikan v1.3B**: Penambahan input analog dedicated untuk TPS2 dan optimisasi hardware ETB
-
-#### Perbaikan Hardware v1.3B
-- **Input Analog Tambahan**: Penambahan 1 input analog khusus untuk sensor TPS2/ETB pada pin 40
-
-- **Optimisasi Komponen**: Penghapusan komponen yang tidak digunakan untuk efisiensi desain
-
-- **Layout Komponen**: Penataan ulang layout untuk manufaktur dan kinerja yang lebih optimal
-
-- **Pin 43**: Khusus untuk O2 sensor dengan path analog yang dioptimalkan
-
-- **AC Switch**: Clarification bahwa hanya menerima sinyal GROUND untuk ON
-
-#### Dukungan VR Conditioner
-- **VR1- & VR2-**: Pin input untuk modul VR conditioner (DIP 8) - negatif
-
-- **VR1+ & VR2+**: Input sensor VR positif
-
-#### Kontrol Stepper Motor
-- **Stepper A1/A2**: Output fase A untuk stepper motor (DRV8825)
-
-- **Stepper B1/B2**: Output fase B untuk stepper motor
-
-- **Direction/Enable/Step**: Sinyal kontrol untuk driver stepper
-
-#### Konfigurasi Injector Fleksibel
-Untuk mesin 4-silinder:
-
-- **Injector 5 & 6**: Dapat digunakan sebagai output arus tinggi cadangan
-
-- **Aplikasi**: Kontrol boost, kontrol VVT, injeksi air/methanol, dll.
-
-### Panduan Instalasi
-1. **Pemasangan**: Pasang ECU di lokasi yang tepat dengan pendinginan yang memadai
-2. **Koneksi Daya**: Hubungkan daya 12V (pin 1) dan ground (pin 22)
-3. **Ground Sensor**: Gunakan beberapa pin ground sensor (37, 38) untuk sinyal yang bersih
-4. **Sensor Posisi Mesin**: Hubungkan sensor CKP/CMP atau gunakan input VR sesuai kebutuhan
-5. **Knock Sensor**: Hubungkan sensor knock ke pin 8 (default konfigurasi)
-6. **ETB Setup**: Hubungkan ETB ke pin 33/34 dan TPS2 ke pin 40 (diperbaiki dari v1.3) jika menggunakan throttle elektronik
-7. **AC Switch**: Pastikan switch AC hanya memberikan sinyal GROUND untuk kondisi ON
-8. **Instalasi Modul**: Pasang modul VR-Conditioner dan/atau Stepper jika diperlukan
-9. **Verifikasi**: Test semua koneksi sebelum startup awal
-
 ### Catatan Wiring v1.3B
 - **O2 Sensor**: Pin 43 khusus untuk O2 sensor dengan path analog yang dioptimalkan (1-5V dari wideband controller)
 
@@ -347,43 +246,26 @@ Untuk mesin 4-silinder:
 
 - **AC Switch Logic**: Pin 20 hanya menerima GROUND sebagai sinyal ON — jangan hubungkan 12V langsung
 
+- **Knock**: Satu input knock di konektor ECU adalah pin 8 (MCU PC0)
+
 - **Referensi**: Informasi wiring sensor tambahan di [Speeduino Wiki][speeduino-wiring]
 
 ## Informasi Hardware
 
-Mazduino Mini 6CH v1.3B didesain dengan **ARM Cortex-M4 180 MHz** sebagai MCU utama, memberikan performa yang lebih tinggi dibanding v1.3. Mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3B hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).
+Mazduino Mini 6CH v1.3B mendukung beberapa module tambahan seperti VR Conditioner Module dan Idle Stepper Module. Secara bawaan Mazduino Mini 6CH v1.3B hanya mendukung sinyal CKP dan CMP dalam bentuk digital, seperti sensor hall dan optical. Untuk kendaraan yang masih menggunakan VR sensor perlu menambahkan VR Module (atau bisa custom sensor ke hall).
+
+Modul VR conditioner (DIP 8): sensor VR dihubungkan ke VR1+/VR2+ (pin 41, 42) dan VR1-/VR2- (pin 9, 10).
 
 ![VR Module](img/mini6ch/vr-conditioner-module.jpeg)
 
 Kemudian untuk bagian Idle, Mazduino Mini 6CH v1.3B sudah support Idle PWM, terdapat 2 output dari low side mosfet yang dapat digunakan untuk kontrol IDLE PWM.
 
-Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module. Disini bisa menggunakan driver DRV8825.
+Untuk jenis Idle Control yang menggunakan stepper motor diperlukan module tambahan yaitu Idle Stepper Motor Module. Disini bisa menggunakan driver DRV8825. Output fase A1/A2 dan B1/B2 ada di pin 11-14.
 
 ![Stepper Module](img/mini6ch/drv8825-stepper.jpeg)
 
-Selain itu terdapat solder jumper di bagian belakang seperti Tach Pullup, Ignition Vdrive, opsi knock / MCU PC13. Kemudian ada JP4, JP5, JP2, JP3, JP6, JP7 dan JP8 yang sudah dijelaskan di bagian konfigurasi jumper.
-
-**Solder Jumper v1.3B:**
-
-- **Tach Pullup:** Pullup untuk tachometer/RPM Speedometer menggunakan 12V atau 5V
-
-- **Ignition Vdrive:** Tegangan yang digunakan untuk mengirimkan sinyal ke Coil On Plug (12V atau 5V)
-
-- **Knock/MCU PC13:** Opsi input Knock sensor atau langsung ke pin MCU PC13 (default untuk Knock)
-
-- **JP5:** Pullup trigger CKP/Primary
-
-- **JP4:** Pullup trigger CMP/Secondary
-
-- **JP2:** Opsi VR atau Hall untuk CKP/Primary
-
-- **JP3:** Opsi VR atau Hall untuk CMP/Secondary
-
-- **JP6:** Bypass Idle Stepper
-
-- **JP7 & JP8:** Bypass filter knock (diperbaiki di v1.3B)
-
-- **Pullup Launch:** Digunakan untuk pullup pada pin spare input 3 jika digunakan untuk tombol aktivasi launch control/input lainnya yang membutuhkan pullup
+### Konfigurasi Injector Fleksibel
+Pada mesin 4-silinder, Injector 5 dan 6 dapat dipakai sebagai output arus tinggi cadangan untuk kontrol boost, kontrol VVT, injeksi air/methanol, dll.
 
 ## Software Tuning
 
@@ -406,35 +288,18 @@ Download software TunerStudio: [TunerStudio Downloads][tunerstudio-dl]
 
 - **Speeduino**: Kompatibel dengan konfigurasi pin mapping terbaru
 
-- **File Konfigurasi**: Tersedia di [halaman download](downloads.md)
+- **File Konfigurasi**: Firmware dan file konfigurasi tersedia di [halaman download](downloads.md)
 
 ## Wiring Diagram
 
 ### Wiring Sensor
 ![Sensor Wiring](img/sensor-wiring.png)
 
-*Catatan: Pastikan AC Switch hanya menggunakan sinyal GROUND untuk kondisi ON*
-
 ### Injector Wiring
 ![Injector Wiring](img/injector-wiring.png)
 
 ### Ignition Wiring
 ![Ignition Wiring](img/ignition-wiring.png)
-
-## Catatan Penting v1.3B
-
-### Persyaratan Sistem Pengapian
-- **Smart Coils**: Koneksi langsung didukung — pilih VDrive 5V atau 12V sesuai spesifikasi coil
-
-- **Dump Coils**: IGBT eksternal diperlukan; VDrive jumper **tidak** digunakan untuk dump coil
-
-### ETB (v1.3B)
-- TPS2 menggunakan pin 40 (bukan pin 43 seperti v1.3) — pastikan konfigurasi firmware menggunakan pin yang benar
-
-### Knock Detection (v1.3B)
-- Satu input knock di konektor ECU (pin 8, MCU PC0); filter yang diperbaiki dibanding v1.3
-
-**[Download firmware dan file konfigurasi](downloads.md)**
 
 [speeduino-wiring]: https://wiki.speeduino.com/en/wiring/system
 [tunerstudio-dl]: https://www.tunerstudio.com/index.php/downloads
