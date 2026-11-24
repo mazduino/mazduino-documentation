@@ -1,6 +1,6 @@
 # Mazduino Mini 6CH (v1.4)
 
-> **Note**: v1.4 is **not a production version**. The current production version of the Mini 6CH line is **[v1.3E](mazduino-mini-6ch-v1.3e.md)**. This page is kept as reference documentation.
+> **Note**: v1.4 was produced. After it, the Mini 6CH line went back to the v1.3 series, because that series supports the DRV8825 stepper module, and its revisions continued up to **[v1.3E](mazduino-mini-6ch-v1.3e.md)**, the current production version.
 
 ## Overview
 
@@ -11,14 +11,14 @@ The Mazduino Mini 6CH v1.4 is a 6-channel Engine Control Unit for rusEFI firmwar
 - **VVT (Variable Valve Timing)**: Variable valve timing control output
 - **BOOST Control**: Boost pressure control output for forced induction applications
 - **Dual ETB IC**: Dual Electronic Throttle Body support with integrated driver ICs
-- **Enhanced Idle Control**: Dedicated driver for an Electronic Throttle Body or an Idle Stepper Motor
+- **Idle Stepper via Dual H-Bridge**: The idle stepper motor is driven by the two ETB driver ICs, with no add-on stepper module — see [Idle Stepper via Dual H-Bridge](#idle-stepper-via-dual-h-bridge)
 
 ![Mazduino Mini 6ch](img/mazduino-mini-6ch-v1.4.jpeg)
 
 ## Key Features
 - Primary trigger input for VR, hall or optical CKP sensors
 - Secondary trigger input for VR, hall or optical CMP sensors
-- 9 analog inputs (0-5V) for MAP, TPS, IAT, CLT, O2, and 4 spares that can be used for a fuel pressure sensor or other sensors
+- 8 analog inputs (0-5V) on the 48-pin connector for MAP, TPS, IAT, CLT, O2, and 3 spares (pins 18, 35, 13), plus 1 spare analog input (IN4) on the 6-pin header on the board; the spares can be used for a fuel pressure sensor or other sensors
 - 5V sensor power supply with internal fuse protection
 - 4 digital pullup inputs for AC Switch, VSS, Clutch, Launch Control
 - 8x high-current 3A low-side drivers for high-impedance injectors, idle PWM (ISC), Boost, VVT and more
@@ -60,8 +60,6 @@ Board functions are set with solder jumpers, without changing the firmware.
 
 - **PC13 Mode**: Direct access to the MCU pin for custom functions
 
-- **Enhanced v1.4**: Improved knock detection sensitivity
-
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6229.jpeg)
 
 ### Middle Configuration Zone
@@ -81,25 +79,10 @@ Board functions are set with solder jumpers, without changing the firmware.
 ### Left Configuration Zone
 
 #### JP10 - CAN Bus Controller
-- **Function**: Enables the TJA1051T/3 CAN bus IC
-
-- **Application**: High-speed data communication with other devices
-
-- **Protocol**: Supports the automotive CAN 2.0 standard
-
-#### JP6 - ETB/Stepper Motor Mode Selection (New in v1.4)
-- **ETB Mode**: Configuration for an Electronic Throttle Body with the integrated driver IC
-
-- **Stepper Mode**: Configuration for Idle Stepper Motor control
-
-- **Flexibility**: The function can be changed without changing the hardware
-
-- **Default**: ETB mode, for modern throttle control applications
+- **Function**: Enables the CAN bus IC
 
 #### JP7 - Knock Sensor Filter Bypass
 - **Function**: Filter bypass for the knock input on the ECU connector (pin 8)
-
-- **Advanced Feature**: Fine-tuning of knock detection sensitivity
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6231.jpeg)
 
@@ -129,8 +112,8 @@ The Mazduino Mini 6CH v1.4 uses a 48-pin Yamaha ECU connector with the following
 | Pin | Function | Description |
 |-----|----------|-------------|
 | 1 | **12V ECU** | Main ECU power supply |
-| 2 | **IDLE1** | Idle control output 1 or ETB driver 1 |
-| 3 | **IDLE2** | Idle control output 2 or ETB driver 2 |
+| 2 | **IDLE2** | Idle control output 2 |
+| 3 | **IDLE1** | Idle control output 1 |
 | 4 | **VVT** | **[NEW v1.4]** Variable Valve Timing control output |
 | 5 | **5V** | 5V reference output for sensors |
 | 6 | **BOOST** | **[NEW v1.4]** Boost control PWM output |
@@ -204,7 +187,7 @@ For advanced users and firmware development, here is the STM32F407VGT6 pin assig
 | Analog Spare Input 1 | PB0 | Spare analog input 1 |
 | Analog Spare Input 2 | PB1 | Spare analog input 2 |
 | Analog Spare Input 3 | PA1 | Spare analog input 3 |
-| Analog Spare Input 4 | PC1 | Spare analog input 4 |
+| Analog Spare Input 4 | PC1 | Spare analog input 4 (IN4, 6-pin header) |
 | AC Input | PB5 | AC switch input |
 | Launch Control Input | PE13 | Launch control input |
 | Clutch Input | PE12 | Clutch sensor input |
@@ -216,8 +199,8 @@ For advanced users and firmware development, here is the STM32F407VGT6 pin assig
 | FAN Relay | PA15 | Fan relay control |
 | AC Compressor Relay | PC7 | AC compressor relay control |
 | Main Relay | PC5 | Main relay control |
-| Idle 1 | PD10 | Idle control output 1 |
-| Idle 2 | PE9 | Idle control output 2 |
+| Idle 1 | PD10 | Idle control output 1 (pin 3) |
+| Idle 2 | PE9 | Idle control output 2 (pin 2) |
 | High Side | PD15 | 12V switching output |
 | **ETB-DIR** | **PB8** | **[v1.4]** ETB direction control |
 | **ETB-DIS** | **PB9** | **[v1.4]** ETB disable control |
@@ -242,88 +225,26 @@ For advanced users and firmware development, here is the STM32F407VGT6 pin assig
 ### v1.4 Special Features
 
 #### Variable Valve Timing (VVT)
-- Pin 4 (VVT), MCU PB6: PWM output for the VVT solenoid; the duty cycle sets the VVT actuator position
-- Ground the VVT actuator to the chassis
-- VVT position feedback uses a spare analog input; calibrate the sensor range in TunerStudio
-- Incorrect VVT timing can cause valve interference. VVT needs a minimum oil pressure to operate
+- Pin 4 (VVT), MCU PB6: low-side PWM output for the VVT solenoid; connect the other side of the solenoid to 12V
 
 #### Boost Control
-- Pin 6 (BOOST), MCU PB4: PWM output for a wastegate or blow-off valve actuator; the actuator must support PWM control
-- Supports pneumatic and electronic wastegates
-- Boost pressure is read from the MAP sensor or a separate boost sensor
-- Set the boost target, overboost limit and PID parameters in the firmware
+- Pin 6 (BOOST), MCU PB4: low-side PWM output for a boost control solenoid; connect the other side of the solenoid to 12V
 
 #### Dual Electronic Throttle Body (ETB)
 - **ETB1**: Pins 33/34 (ETB-/ETB+) controlled by PB8, PB9, PA8; TPS1 on pin 30 and TPS2 on pin 43
 - **ETB2**: Pins 11/12 (ETB2-/ETB2+) controlled by PD12, PD11, PD14; TPS feedback uses an additional analog input
 - **Pedal**: PPS1 on pin 18 and PPS2 on pin 35
-- **Integrated Driver IC**: H-bridge driver with overcurrent protection
-- **Application**: Redundant throttle, dual throttle for V-configuration engines, or primary and secondary throttle
-- **Safety**: Configure the failsafe values and limp-home mode parameters, then test the emergency shutdown before use
+
+#### Idle Stepper via Dual H-Bridge
+v1.4 does not use the DRV8825 stepper module. The idle stepper motor (bipolar, 4 wires) is driven by the two ETB H-bridge drivers:
+
+- **Coil A**: pins 33/34 (ETB-/ETB+)
+- **Coil B**: pins 11/12 (ETB2-/ETB2+)
+- **Firmware**: enable **Drive stepper with dual H bridges** in the Idle Stepper settings, then fill **H-Bridge Hardware No1** and **No2** with the ETB and ETB2 pins from the [MCU pin table](#mcu-pin-mapping-v14)
+- While both H-bridges drive the stepper, ETB cannot be used
 
 #### Injector 5 & 6 as High-Current Outputs
 Injectors 5 and 6 (pins 15, 16) can be used as spare high-current outputs (3A continuous per channel) for additional VVT or boost, another PWM control output, or water/methanol injection.
 
-## Technical Specifications v1.4
-
-### Hardware Specifications
-- **MCU**: ARM Cortex-M4 @ 168MHz
-
-- **Flash Memory**: 1MB for firmware and configuration
-
-- **RAM**: 192KB for real-time operation
-
-- **ADC**: 12-bit resolution, 1µs sampling time
-
-- **PWM Resolution**: 16-bit for precise control
-
-- **Operating Temperature**: -40°C to +85°C
-
-- **Input Voltage**: 9V - 16V (12V nominal)
-
-- **Current Consumption**: <200mA @ 12V
-
-- **Dimensions**: Compatible with existing mounting brackets
-
-### Performance Specifications
-- **Maximum RPM**: 20,000 RPM (configurable)
-
-- **Injection Timing Resolution**: 0.1ms
-
-- **Ignition Timing Resolution**: 0.1° crank angle
-
-- **VVT Response Time**: <100ms typical
-
-- **ETB Response Time**: <50ms typical
-
-- **Boost Control Response**: <200ms typical
-
-- **Data Logging Rate**: Up to 100Hz per channel
-
-### Output Specifications
-- **High Current Outputs**: 8x @ 3A continuous (injectors, VVT, boost)
-
-- **Low Current Outputs**: 5x @ 500mA (relays, tacho)
-
-- **Ignition Outputs**: 6x @ 12V/5V selectable
-
-- **ETB Outputs**: 2x H-bridge @ 10A peak
-
-- **VVT Output**: PWM @ 1kHz, 3A continuous
-
-- **Boost Output**: PWM @ 100Hz, 3A continuous
-
-### Input Specifications
-- **Analog Inputs**: 7x 0-5V, 12-bit resolution
-
-- **Digital Inputs**: 4x with internal pullup
-
-- **VR Inputs**: 2x with conditioning circuit
-
-- **Knock Inputs**: 1x with integrated amplifier and filter
-
-- **CAN Bus**: ISO 11898 compliant
-
-- **Serial**: 2x UART (USB + dedicated)
-
+## Firmware & Configuration Files
 **[Download firmware and configuration files](downloads.md)**

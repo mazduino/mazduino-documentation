@@ -136,7 +136,7 @@ revisi sebelumnya, beberapa pin perlu diubah — lihat
 - **[v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah untuk channel 1-4 dan 5-6
 - **[v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard; pinout sama dengan v1.3C
 - **[v1.3E](mazduino-mini-6ch-v1.3e.md)** - Pinout sama dengan v1.3D; setelan Analog divider ratio 1.56 dan dukungan driver stepper A4988 atau DRV8825 - **versi produksi terbaru**
-- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi (dokumentasi referensi); versi produksi terbaru adalah v1.3E
+- **[v1.4](mazduino-mini-6ch-v1.4.md)** - Sempat diproduksi; idle stepper lewat dual H-bridge. Lini Mini 6CH kemudian kembali ke seri v1.3; versi produksi terbaru adalah v1.3E
 
 #### Mazduino Core
 
@@ -287,7 +287,7 @@ Modul tambahan yang terhubung ke bus CAN yang sama dengan ECU dan dash.
 - **[Mini 6CH v1.3C](mazduino-mini-6ch-v1.3c.md)** - Optimisasi pin MCU, knock input tunggal, dan VDrive ignition terpisah
 - **[Mini 6CH v1.3D](mazduino-mini-6ch-v1.3d.md)** - Pembacaan sensor analog lebih stabil dan terminasi CAN onboard
 - **[Mini 6CH v1.3E](mazduino-mini-6ch-v1.3e.md)** - Pinout sama dengan v1.3D, setelan Analog divider ratio 1.56 - **versi produksi terbaru**
-- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Bukan versi produksi; versi produksi terbaru adalah v1.3E
+- **[Mini 6CH v1.4](mazduino-mini-6ch-v1.4.md)** - Sempat diproduksi; versi produksi terbaru adalah v1.3E
 - **[Mazduino Core rev0](mazduino-core-rev0.md)** - Konektor 48-pin, dual ETB, dual CAN bus
 - **[Mazduino Core rev1](mazduino-core-rev1.md)** - Revisi terbaru lini Core
 - **[Mazduino Mega100](mazduino-mega100.md)** - Pengganti Arduino Mega berbasis STM32F407 untuk board Speeduino

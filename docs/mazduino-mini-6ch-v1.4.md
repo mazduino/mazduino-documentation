@@ -1,6 +1,6 @@
 # Mazduino Mini 6CH (v1.4)
 
-> **Catatan**: v1.4 **bukan versi produksi**. Versi produksi terbaru dari lini Mini 6CH adalah **[v1.3E](mazduino-mini-6ch-v1.3e.md)**. Halaman ini disimpan sebagai dokumentasi referensi.
+> **Catatan**: v1.4 sempat diproduksi. Setelah itu lini Mini 6CH kembali ke seri v1.3, karena seri tersebut mendukung modul stepper DRV8825, dan revisinya berlanjut hingga **[v1.3E](mazduino-mini-6ch-v1.3e.md)**, versi produksi terbaru.
 
 ## Gambaran Umum
 
@@ -11,14 +11,14 @@ Mazduino Mini 6CH v1.4 adalah Engine Control Unit 6-channel untuk firmware rusEF
 - **VVT (Variable Valve Timing)**: Output kontrol timing katup variabel
 - **BOOST Control**: Output kontrol boost pressure untuk aplikasi forced induction
 - **Dual ETB IC**: Dukungan dual Electronic Throttle Body dengan IC driver terintegrasi
-- **Enhanced Idle Control**: Driver khusus untuk Electronic Throttle Body atau Idle Stepper Motor
+- **Idle Stepper lewat Dual H-Bridge**: Motor stepper idle digerakkan oleh dua IC driver ETB, tanpa modul stepper tambahan — lihat [Idle Stepper lewat Dual H-Bridge](#idle-stepper-lewat-dual-h-bridge)
 
 ![Mazduino Mini 6ch](img/mazduino-mini-6ch-v1.4.jpeg)
 
 ## Fitur Utama
 - Input trigger utama untuk sensor CKP VR, hall atau optical
 - Input trigger kedua untuk sensor CMP VR, hall atau optical
-- 9 input analog (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan 4 cadangan yang dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
+- 8 input analog (0-5V) di konektor 48-pin untuk MAP, TPS, IAT, CLT, O2, dan 3 cadangan (pin 18, 35, 13), ditambah 1 input analog cadangan (IN4) di header 6-pin pada board; input cadangan dapat digunakan untuk sensor tekanan bahan bakar atau sensor lainnya
 - Catu daya 5V untuk sensor dengan perlindungan fuse internal
 - 4 input digital pullup untuk AC Switch, VSS, Clutch, Launch Control
 - 8x driver low-side arus tinggi 3A untuk injektor high-impedance, idle PWM (ISC), Boost, VVT dan lainnya
@@ -60,8 +60,6 @@ Fungsi board disesuaikan dengan jumper solder, tanpa mengubah firmware.
 
 - **Mode PC13**: Akses langsung ke pin MCU untuk fungsi custom
 
-- **Enhanced v1.4**: Sensitivitas knock detection yang ditingkatkan
-
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6229.jpeg)
 
 ### Zona Konfigurasi Tengah
@@ -81,25 +79,10 @@ Fungsi board disesuaikan dengan jumper solder, tanpa mengubah firmware.
 ### Zona Konfigurasi Kiri
 
 #### JP10 - CAN Bus Controller
-- **Fungsi**: Mengaktifkan IC CAN bus TJA1051T/3
-
-- **Aplikasi**: Komunikasi data high-speed dengan perangkat lain
-
-- **Protocol**: Mendukung standar automotive CAN 2.0
-
-#### JP6 - ETB/Stepper Motor Mode Selection (Baru di v1.4)
-- **Mode ETB**: Konfigurasi untuk Electronic Throttle Body dengan IC driver terintegrasi
-
-- **Mode Stepper**: Konfigurasi untuk Idle Stepper Motor control
-
-- **Fleksibilitas**: Dapat mengganti fungsi tanpa mengubah hardware
-
-- **Default**: Mode ETB untuk aplikasi throttle control modern
+- **Fungsi**: Mengaktifkan IC CAN bus
 
 #### JP7 - Knock Sensor Filter Bypass
 - **Fungsi**: Bypass filter untuk input knock di konektor ECU (pin 8)
-
-- **Advanced Feature**: Fine-tuning sensitivitas deteksi knock
 
 ![Mazduino Mini 6ch](img/mini6ch/IMG_6231.jpeg)
 
@@ -129,8 +112,8 @@ Mazduino Mini 6CH v1.4 menggunakan konektor ECU Yamaha 48-pin dengan pin assignm
 | Pin | Fungsi | Deskripsi |
 |-----|----------|-------------|
 | 1 | **12V ECU** | Catu daya utama ECU |
-| 2 | **IDLE1** | Output kontrol idle 1 atau ETB driver 1 |
-| 3 | **IDLE2** | Output kontrol idle 2 atau ETB driver 2 |
+| 2 | **IDLE2** | Output kontrol idle 2 |
+| 3 | **IDLE1** | Output kontrol idle 1 |
 | 4 | **VVT** | **[BARU v1.4]** Variable Valve Timing control output |
 | 5 | **5V** | Output referensi 5V untuk sensor |
 | 6 | **BOOST** | **[BARU v1.4]** Boost control PWM output |
@@ -204,7 +187,7 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 | Analog Spare Input 1 | PB0 | Input analog cadangan 1 |
 | Analog Spare Input 2 | PB1 | Input analog cadangan 2 |
 | Analog Spare Input 3 | PA1 | Input analog cadangan 3 |
-| Analog Spare Input 4 | PC1 | Input analog cadangan 4 |
+| Analog Spare Input 4 | PC1 | Input analog cadangan 4 (IN4, header 6-pin) |
 | AC Input | PB5 | Input switch AC |
 | Launch Control Input | PE13 | Input launch control |
 | Clutch Input | PE12 | Input sensor kopling |
@@ -216,8 +199,8 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 | FAN Relay | PA15 | Kontrol relay kipas |
 | AC Compressor Relay | PC7 | Kontrol relay kompresor AC |
 | Main Relay | PC5 | Kontrol relay utama |
-| Idle 1 | PD10 | Output idle control 1 |
-| Idle 2 | PE9 | Output idle control 2 |
+| Idle 1 | PD10 | Output idle control 1 (pin 3) |
+| Idle 2 | PE9 | Output idle control 2 (pin 2) |
 | High Side | PD15 | Output 12V switching |
 | **ETB-DIR** | **PB8** | **[v1.4]** ETB direction control |
 | **ETB-DIS** | **PB9** | **[v1.4]** ETB disable control |
@@ -242,88 +225,26 @@ Untuk pengguna lanjutan dan pengembangan firmware, berikut adalah pin assignment
 ### Fitur Khusus v1.4
 
 #### Variable Valve Timing (VVT)
-- Pin 4 (VVT), MCU PB6: output PWM untuk solenoid VVT; duty cycle mengatur posisi aktuator VVT
-- Ground aktuator VVT ke chassis
-- Feedback posisi VVT memakai input analog cadangan; kalibrasi range sensor di TunerStudio
-- Timing VVT yang salah dapat menyebabkan valve interference. VVT memerlukan tekanan oli minimal untuk bekerja
+- Pin 4 (VVT), MCU PB6: output PWM low-side untuk solenoid VVT; sisi lain solenoid dihubungkan ke 12V
 
 #### Boost Control
-- Pin 6 (BOOST), MCU PB4: output PWM untuk aktuator wastegate atau blow-off valve; aktuator harus mendukung kontrol PWM
-- Mendukung wastegate pneumatic dan electronic
-- Tekanan boost dibaca dari sensor MAP atau sensor boost terpisah
-- Atur target boost, batas overboost dan parameter PID di firmware
+- Pin 6 (BOOST), MCU PB4: output PWM low-side untuk solenoid boost control; sisi lain solenoid dihubungkan ke 12V
 
 #### Dual Electronic Throttle Body (ETB)
 - **ETB1**: Pin 33/34 (ETB-/ETB+) dengan kontrol PB8, PB9, PA8; TPS1 di pin 30 dan TPS2 di pin 43
 - **ETB2**: Pin 11/12 (ETB2-/ETB2+) dengan kontrol PD12, PD11, PD14; feedback TPS memakai input analog tambahan
 - **Pedal**: PPS1 di pin 18 dan PPS2 di pin 35
-- **IC Driver Terintegrasi**: Driver H-bridge dengan proteksi overcurrent
-- **Aplikasi**: Throttle redundant, dual throttle untuk mesin V-configuration, atau throttle primer dan sekunder
-- **Keamanan**: Konfigurasi nilai failsafe dan parameter mode limp-home, lalu uji emergency shutdown sebelum dipakai
+
+#### Idle Stepper lewat Dual H-Bridge
+v1.4 tidak memakai modul stepper DRV8825. Motor stepper idle (bipolar, 4 kabel) digerakkan oleh dua driver H-bridge ETB:
+
+- **Kumparan A**: pin 33/34 (ETB-/ETB+)
+- **Kumparan B**: pin 11/12 (ETB2-/ETB2+)
+- **Firmware**: aktifkan **Drive stepper with dual H bridges** di pengaturan Idle Stepper, lalu isi **H-Bridge Hardware No1** dan **No2** dengan pin ETB dan ETB2 dari [tabel pin MCU](#pin-mapping-mcu-v14)
+- Saat kedua H-bridge dipakai untuk stepper, ETB tidak dapat dipakai
 
 #### Injector 5 & 6 sebagai Output Arus Tinggi
 Injector 5 dan 6 (pin 15, 16) dapat dipakai sebagai output arus tinggi cadangan (3A kontinu per channel) untuk VVT atau boost tambahan, output kontrol PWM lain, atau injeksi air/methanol.
 
-## Spesifikasi Teknis v1.4
-
-### Hardware Specifications
-- **MCU**: ARM Cortex-M4 @ 168MHz
-
-- **Flash Memory**: 1MB untuk firmware dan konfigurasi
-
-- **RAM**: 192KB untuk operasi real-time
-
-- **ADC**: 12-bit resolution, 1µs sampling time
-
-- **PWM Resolution**: 16-bit untuk kontrol presisi
-
-- **Operating Temperature**: -40°C to +85°C
-
-- **Input Voltage**: 9V - 16V (12V nominal)
-
-- **Current Consumption**: <200mA @ 12V
-
-- **Dimensions**: Compatible dengan mounting bracket existing
-
-### Performance Specifications
-- **Maximum RPM**: 20,000 RPM (configurable)
-
-- **Injection Timing Resolution**: 0.1ms
-
-- **Ignition Timing Resolution**: 0.1° crank angle
-
-- **VVT Response Time**: <100ms typical
-
-- **ETB Response Time**: <50ms typical
-
-- **Boost Control Response**: <200ms typical
-
-- **Data Logging Rate**: Up to 100Hz per channel
-
-### Output Specifications
-- **High Current Outputs**: 8x @ 3A continuous (injectors, VVT, boost)
-
-- **Low Current Outputs**: 5x @ 500mA (relays, tacho)
-
-- **Ignition Outputs**: 6x @ 12V/5V selectable
-
-- **ETB Outputs**: 2x H-bridge @ 10A peak
-
-- **VVT Output**: PWM @ 1kHz, 3A continuous
-
-- **Boost Output**: PWM @ 100Hz, 3A continuous
-
-### Input Specifications
-- **Analog Inputs**: 7x 0-5V, 12-bit resolution
-
-- **Digital Inputs**: 4x with internal pullup
-
-- **VR Inputs**: 2x with conditioning circuit
-
-- **Knock Inputs**: 1x with integrated amplifier and filter
-
-- **CAN Bus**: ISO 11898 compliant
-
-- **Serial**: 2x UART (USB + dedicated)
-
+## File Firmware & Konfigurasi
 **[Download firmware dan file konfigurasi](downloads.md)**
