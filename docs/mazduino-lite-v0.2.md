@@ -38,6 +38,7 @@ Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluar
 
 - **Ignition**: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support
   - **v0.2**: IGBT footprint **D2Pak to 263** yang umum dan mudah ditemukan
+  - IGBT internal opsional, tergantung varian yang dipilih saat pembelian: **COP only** (tanpa IGBT, untuk smart coil/Coil On Plug) atau **IGBT** (IGBT terpasang, untuk dumb coil)
 
 - **Control**: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer
 
@@ -191,6 +192,7 @@ Barometer bersifat opsional dan hanya terpasang jika dipilih saat pembelian. Jik
 
 - **IGN1/IGN2 Mode**: Smart Coil/IGBT selection (JP3/JP4)
   - **v0.2**: IGBT internal dengan footprint **D2Pak to 263** (umum & mudah ditemukan)
+  - Mode IGBT hanya bisa dipakai pada varian **IGBT**; varian **COP only** dipakai dengan smart coil
 
 - **VR1/Hall, VR2/Hall**: Input type selection
 
