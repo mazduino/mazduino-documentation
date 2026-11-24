@@ -301,7 +301,7 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-lite-v0.2/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:57:25 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 08:46:00 UTC">24 November 2026</span></em></p>
   <h1 id="mazduino-lite-v02">Mazduino LITE v0.2<a class="headerlink" href="#mazduino-lite-v02" title="Permanent link">&para;</a></h1>
 <h2 id="pengantar">Pengantar<a class="headerlink" href="#pengantar" title="Permanent link">&para;</a></h2>
 <p>Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluarga ECU Mazduino LITE. Versi ini dirancang untuk aplikasi engine 4-silinder dengan 4 channel injector dan 2 channel ignition, dengan perbaikan signifikan pada IGBT footprint dan penambahan sensor barometer internal.</p>
@@ -325,7 +325,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>Trigger Input</strong>: CKP dan CMP untuk Hall/Optical sensors</p>
 </li>
 <li>
-<p><strong>VR Support</strong>: Variable Reluctance sensors dengan konditioner module</p>
+<p><strong>VR Support</strong>: Variable Reluctance sensors dengan konditioner module (modul VR opsional, tidak terpasang kecuali dipilih saat pembelian; sensor hall/optical tidak memerlukannya)</p>
 </li>
 <li>
 <p><strong>Analog Inputs</strong>: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare</p>
@@ -348,8 +348,9 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <li>
 <p><strong>Ignition</strong>: 2x outputs dengan Smart Coil (5V/12V) dan IGBT support</p>
 </li>
+<li><strong>v0.2</strong>: IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan</li>
 <li>
-<p><strong>v0.2</strong>: IGBT footprint <strong>D2Pak to 263</strong> yang umum dan mudah ditemukan</p>
+<p>IGBT internal opsional, tergantung varian yang dipilih saat pembelian: <strong>COP only</strong> (tanpa IGBT, untuk smart coil/Coil On Plug) atau <strong>IGBT</strong> (IGBT terpasang, untuk dumb coil)</p>
 </li>
 <li>
 <p><strong>Control</strong>: 5x relay outputs untuk fuel pump, fan, AC, main relay, tachometer</p>
@@ -772,6 +773,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>BARO SDA</strong>: PB11 (shared dengan RXD3)</p>
 </li>
 </ul>
+<p>Barometer bersifat opsional dan hanya terpasang jika dipilih saat pembelian. Jika terpasang, PB10/PB11 dipakai bus I2C barometer, sehingga TXD3/RXD3 tidak bisa dipakai sebagai serial pada saat yang sama.</p>
 <h2 id="konfigurasi-hardware">Konfigurasi Hardware<a class="headerlink" href="#konfigurasi-hardware" title="Permanent link">&para;</a></h2>
 <h3 id="pengaturan-jumper-kritis">Pengaturan Jumper Kritis<a class="headerlink" href="#pengaturan-jumper-kritis" title="Permanent link">&para;</a></h3>
 <p><strong>PENTING</strong>: Konfigurasi jumper harus benar sebelum power-up!</p>
@@ -784,7 +786,7 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <p><strong>CAN Terminator</strong>: Enable/disable resistor terminator</p>
 </li>
 <li>
-<p><strong>VR Conditioner</strong>: 8-pin connector untuk VR module</p>
+<p><strong>VR Conditioner</strong>: 8-pin connector untuk VR module (opsional, terpasang hanya jika dipilih saat pembelian)</p>
 </li>
 </ul>
 <h4 id="bottom-side-board">Bottom Side Board<a class="headerlink" href="#bottom-side-board" title="Permanent link">&para;</a></h4>
@@ -795,8 +797,9 @@ tersendiri. Keduanya sudah diuji jalan. Lihat
 <li>
 <p><strong>IGN1/IGN2 Mode</strong>: Smart Coil/IGBT selection (JP3/JP4)</p>
 </li>
+<li><strong>v0.2</strong>: IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</li>
 <li>
-<p><strong>v0.2</strong>: IGBT internal dengan footprint <strong>D2Pak to 263</strong> (umum &amp; mudah ditemukan)</p>
+<p>Mode IGBT hanya bisa dipakai pada varian <strong>IGBT</strong>; varian <strong>COP only</strong> dipakai dengan smart coil</p>
 </li>
 <li>
 <p><strong>VR1/Hall, VR2/Hall</strong>: Input type selection</p>

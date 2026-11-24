@@ -281,7 +281,7 @@
     <span class="lang-current" lang="id">Bahasa Indonesia</span>
     <a href="../en/mazduino-compact-4ch-v2.3/" hreflang="en" lang="en">English</a>
   </div>
-  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="1 September 2026 18:31:36 UTC">1 September 2026</span></em></p>
+  <p><em>Terakhir diperbarui: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="24 November 2026 08:47:21 UTC">24 November 2026</span></em></p>
   <h1 id="ecu-mazduino-compact-v23">ECU Mazduino Compact (v2.3)<a class="headerlink" href="#ecu-mazduino-compact-v23" title="Permanent link">&para;</a></h1>
 <h2 id="gambaran-umum">Gambaran Umum<a class="headerlink" href="#gambaran-umum" title="Permanent link">&para;</a></h2>
 <p>ECU Mazduino Compact v2.3 adalah versi terbaru dari Engine Control Unit standalone 4-channel yang menghadirkan perbaikan penting dan fitur tambahan. Dibuat khusus untuk firmware rusEFI dan Speeduino, memberikan engine control komprehensif dalam paket kompak yang cocok untuk operasi 4-silinder sequential penuh atau 8-silinder paired.</p>
@@ -663,7 +663,7 @@
 <tr>
 <td>Input Analog Spare 2</td>
 <td>PA7</td>
-<td>-</td>
+<td>Hanya di header J4 pada board, tidak tersambung ke konektor 33-pin</td>
 </tr>
 <tr>
 <td>Input AC</td>
@@ -808,11 +808,11 @@
 </tr>
 <tr>
 <td>Analog Inputs</td>
-<td>7 channels (0-5V)</td>
+<td>6 channels di konektor 33-pin (0-5V), ditambah 1 spare di header J4 pada board (PA7) yang tidak tersambung ke konektor</td>
 </tr>
 <tr>
 <td>Digital Inputs</td>
-<td>4 channels</td>
+<td>5 channels: CKP dan CMP (trigger hall/optical), AC Switch, Clutch, VSS</td>
 </tr>
 <tr>
 <td>Ignition Outputs</td>

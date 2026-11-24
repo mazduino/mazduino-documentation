@@ -303,7 +303,7 @@
     <a href="../../mazduino-lite-v0.3/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 08:46:00 UTC">November 24, 2026</span></em></p>
   <h1 id="mazduino-lite-v03">Mazduino LITE v0.3<a class="headerlink" href="#mazduino-lite-v03" title="Permanent link">&para;</a></h1>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Mazduino LITE v0.3 is the latest version of the Mazduino LITE ECU family. It is designed for 4-cylinder engines with 4 injector channels and 2 ignition channels. Compared with v0.2, the board is practically the same; what has been added is an I2C header for add-on devices.</p>
@@ -335,7 +335,7 @@ build. Both have been tested running. See the
 <p><strong>Trigger Input</strong>: CKP and CMP for Hall/Optical sensors</p>
 </li>
 <li>
-<p><strong>VR Support</strong>: Variable Reluctance sensors with a conditioner module</p>
+<p><strong>VR Support</strong>: Variable Reluctance sensors with a conditioner module (the VR module is optional and not fitted unless chosen at purchase; hall and optical sensors do not need it)</p>
 </li>
 <li>
 <p><strong>Analog Inputs</strong>: 6x (0-5V) for MAP, TPS, IAT, CLT, O2, and a spare</p>
@@ -358,8 +358,9 @@ build. Both have been tested running. See the
 <li>
 <p><strong>Ignition</strong>: 2x outputs with Smart Coil (5V/12V) and IGBT support</p>
 </li>
+<li>Common, easy-to-find <strong>D2Pak to 263</strong> IGBT footprint (since v0.2)</li>
 <li>
-<p>Common, easy-to-find <strong>D2Pak to 263</strong> IGBT footprint (since v0.2)</p>
+<p>The internal IGBTs are optional and depend on the variant chosen at purchase: <strong>COP only</strong> (no IGBTs, for smart coils / Coil On Plug) or <strong>IGBT</strong> (IGBTs fitted, for dumb coils)</p>
 </li>
 <li>
 <p><strong>Control</strong>: 5x relay outputs for fuel pump, fan, AC, main relay, tachometer</p>
@@ -785,6 +786,7 @@ build. Both have been tested running. See the
 <p><strong>BARO SDA</strong>: PB11 (shared with RXD3)</p>
 </li>
 </ul>
+<p>The barometer is optional and only fitted when chosen at purchase. When it is fitted, PB10/PB11 carry its I2C bus, so TXD3/RXD3 cannot be used as a serial port at the same time.</p>
 <h2 id="hardware-configuration">Hardware Configuration<a class="headerlink" href="#hardware-configuration" title="Permanent link">&para;</a></h2>
 <h3 id="critical-jumper-settings">Critical Jumper Settings<a class="headerlink" href="#critical-jumper-settings" title="Permanent link">&para;</a></h3>
 <p><strong>IMPORTANT</strong>: The jumper configuration must be correct before power-up!</p>
@@ -797,7 +799,7 @@ build. Both have been tested running. See the
 <p><strong>CAN Terminator</strong>: Enable/disable the terminator resistor</p>
 </li>
 <li>
-<p><strong>VR Conditioner</strong>: 8-pin connector for the VR module</p>
+<p><strong>VR Conditioner</strong>: 8-pin connector for the VR module (optional, fitted only when chosen at purchase)</p>
 </li>
 </ul>
 <h4 id="bottom-side-board">Bottom Side Board<a class="headerlink" href="#bottom-side-board" title="Permanent link">&para;</a></h4>
@@ -808,8 +810,9 @@ build. Both have been tested running. See the
 <li>
 <p><strong>IGN1/IGN2 Mode</strong>: Smart Coil/IGBT selection (JP3/JP4)</p>
 </li>
+<li>Internal IGBT with a <strong>D2Pak to 263</strong> footprint (common &amp; easy to find)</li>
 <li>
-<p>Internal IGBT with a <strong>D2Pak to 263</strong> footprint (common &amp; easy to find)</p>
+<p>IGBT mode only applies to the <strong>IGBT</strong> variant; the <strong>COP only</strong> variant is used with smart coils</p>
 </li>
 <li>
 <p><strong>VR1/Hall, VR2/Hall</strong>: Input type selection</p>

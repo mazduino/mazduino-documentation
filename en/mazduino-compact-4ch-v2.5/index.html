@@ -285,7 +285,7 @@
     <a href="../../mazduino-compact-4ch-v2.5/" hreflang="id" lang="id">Bahasa Indonesia</a>
     <span class="lang-current" lang="en">English</span>
   </div>
-  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 05:55:20 UTC">November 24, 2026</span></em></p>
+  <p><em>Last updated: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 24, 2026 08:47:21 UTC">November 24, 2026</span></em></p>
   <h1 id="ecu-mazduino-compact-v25">ECU Mazduino Compact (v2.5)<a class="headerlink" href="#ecu-mazduino-compact-v25" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>The Mazduino Compact v2.5 ECU is the latest development of the 4-channel Compact platform, focused on more flexible outputs and more stable signal reading. This version is still intended for rusEFI and Speeduino firmware, and suits fully sequential 4-cylinder or paired 8-cylinder setups.</p>
@@ -643,7 +643,7 @@
 <tr>
 <td>Analog Spare Input 2</td>
 <td>PA7</td>
-<td>Input circuit optimized</td>
+<td>Input circuit optimized; only on header J4 on the board, not wired to the 33-pin connector</td>
 </tr>
 <tr>
 <td>AC Input</td>
@@ -798,11 +798,11 @@
 </tr>
 <tr>
 <td>Analog Inputs</td>
-<td>7 channels (0-5V)</td>
+<td>6 channels on the 33-pin connector (0-5V), plus 1 spare on header J4 on the board (PA7) that is not wired to the connector</td>
 </tr>
 <tr>
 <td>Digital Inputs</td>
-<td>4 channels</td>
+<td>5 channels: CKP and CMP (hall/optical trigger), AC Switch, Clutch, VSS</td>
 </tr>
 <tr>
 <td>Ignition Outputs</td>
