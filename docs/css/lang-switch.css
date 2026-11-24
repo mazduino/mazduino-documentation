@@ -1,0 +1,21 @@
+/* Language switcher at the top of every page, added by theme_overrides/main.html. */
+.lang-switch {
+  float: right;
+  font-size: 0.85em;
+  margin: 0 0 0.5em 1em;
+}
+
+.lang-switch a,
+.lang-switch span {
+  margin-left: 0.75em;
+}
+
+.lang-switch .lang-current {
+  font-weight: bold;
+}
+
+@media print {
+  .lang-switch {
+    display: none !important;
+  }
+}

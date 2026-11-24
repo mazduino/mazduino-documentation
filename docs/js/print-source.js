@@ -38,13 +38,15 @@
     var when = document.createElement('span');
     when.className = 'print-source-date';
     // Locale-formatted so the date reads the way the rest of the site does.
-    when.textContent = new Date().toLocaleDateString('id-ID', {
+    // <html lang> is set per language by the theme locale
+    var english = (document.documentElement.lang || '').indexOf('en') === 0;
+    when.textContent = new Date().toLocaleDateString(english ? 'en-GB' : 'id-ID', {
       year: 'numeric', month: 'long', day: 'numeric'
     });
 
-    el.appendChild(document.createTextNode('Sumber: '));
+    el.appendChild(document.createTextNode(english ? 'Source: ' : 'Sumber: '));
     el.appendChild(url);
-    el.appendChild(document.createTextNode(' — dicetak '));
+    el.appendChild(document.createTextNode(english ? ' — printed ' : ' — dicetak '));
     el.appendChild(when);
     host.appendChild(el);
   }

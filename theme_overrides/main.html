@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
+  {#- Language switcher: links to this same page in the other languages. A page that is not
+      translated yet still has an alternate, which shows the Indonesian text. #}
+  {%- if i18n_config and page.file.alternates %}
+  <div class="lang-switch" role="navigation" aria-label="Language">
+    {%- for language in i18n_config.languages if language.build %}
+      {%- set alt = page.file.alternates.get(language.locale) %}
+      {%- if alt %}
+        {%- if language.locale == i18n_page_locale %}
+    <span class="lang-current" lang="{{ language.locale }}">{{ language.name }}</span>
+        {%- else %}
+    <a href="{{ alt.url|url }}" hreflang="{{ language.locale }}" lang="{{ language.locale }}">{{ language.name }}</a>
+        {%- endif %}
+      {%- endif %}
+    {%- endfor %}
+  </div>
+  {%- endif %}
+  {%- if i18n_page_locale == 'en' and page.file.locale != 'en' %}
+  <div class="admonition note">
+    <p class="admonition-title">Note</p>
+    <p>This page is not translated yet and is shown in Indonesian.</p>
+  </div>
+  {%- endif %}
   {%- if page.meta.git_revision_date_localized %}
-  <p><em>Terakhir diperbarui: {{ page.meta.git_revision_date_localized }}</em></p>
+  <p><em>{{ 'Last updated' if i18n_page_locale == 'en' else 'Terakhir diperbarui' }}: {{ page.meta.git_revision_date_localized }}</em></p>
   {%- endif %}
   {{ page.content }}
 {% endblock %}

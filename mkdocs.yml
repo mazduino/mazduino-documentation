@@ -86,13 +86,58 @@ nav:
 theme:
   name: readthedocs
   custom_dir: theme_overrides
+  # Set per language by the i18n plugin; also sets <html lang>, which the print footer reads.
+  locale: id
 plugins:
   # Search is often by short words such as "AC" or "CLT"; the default ignores anything under 3 letters.
   - search:
       min_search_length: 2
+  # Indonesian is the default and keeps the existing URLs. English pages sit next to their
+  # Indonesian source as page.en.md and are served under /en/. A page without an English
+  # version shows the Indonesian one there, so links never break while translation is partial.
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      languages:
+        - locale: id
+          name: Bahasa Indonesia
+          default: true
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Unduhan: Downloads
+            Panduan Cepat: Quick Start
+            Dash R4 (4" bulat): Dash R4 (4" round)
+            Input Tambahan Dash R4: Dash R4 Extra Inputs
+            Konfigurasi ECU: ECU Configuration
+            Aksesori: Accessories
+            Sensor dan Wiring: Sensors and Wiring
+            Persiapan: Preparation
+            Rekomendasi Ukuran Kabel: Wire Size Guide
+            Manual Mazduino Tuner: Mazduino Tuner Manual
+            Ringkasan dan Instalasi: Overview and Installation
+            Koneksi dan Tampilan: Connection and Layout
+            Mengubah Tune: Changing the Tune
+            Proyek dan File Tune: Projects and Tune Files
+            Logger dan Real Time: Logger and Real Time
+            Diagnostik: Diagnostics
+            Manual TunerStudio: TunerStudio Manual
+            Manual Lengkap: Full Manual
+            Instalasi: Installation
+            Konfigurasi Project: Project Configuration
+            Interface Pengguna: User Interface
+            Math Channels (belum tersedia): Math Channels (not available yet)
+            User Tables (belum tersedia): User Tables (not available yet)
+            Logic Outputs (belum tersedia): Logic Outputs (not available yet)
+            TunerStudio lewat Bluetooth: TunerStudio over Bluetooth
+            Varian BIGFUEL: BIGFUEL Variants
+            Konsumsi Bahan Bakar: Fuel Consumption
+            Tentang: About
+  # No fixed locale: it follows the theme locale, so English pages get English dates.
   - git-revision-date-localized:
       type: date
-      locale: id
       fallback_to_build_date: true
 extra_javascript:
   - js/external-links.js
@@ -100,6 +145,7 @@ extra_javascript:
   - js/print-source.js
 extra_css:
   - css/print.css
+  - css/lang-switch.css
 markdown_extensions:
   - admonition
   - attr_list
