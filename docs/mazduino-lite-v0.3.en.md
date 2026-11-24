@@ -30,7 +30,7 @@ Mazduino LITE v0.3 is the latest version of the Mazduino LITE ECU family. It is 
 ### Input System
 - **Trigger Input**: CKP and CMP for Hall/Optical sensors
 
-- **VR Support**: Variable Reluctance sensors with a conditioner module
+- **VR Support**: Variable Reluctance sensors with a conditioner module (the VR module is optional and not fitted unless chosen at purchase; hall and optical sensors do not need it)
 
 - **Analog Inputs**: 6x (0-5V) for MAP, TPS, IAT, CLT, O2, and a spare
 
@@ -180,6 +180,8 @@ For advanced users and firmware development:
 
 - **BARO SDA**: PB11 (shared with RXD3)
 
+The barometer is optional and only fitted when chosen at purchase. When it is fitted, PB10/PB11 carry its I2C bus, so TXD3/RXD3 cannot be used as a serial port at the same time.
+
 ## Hardware Configuration
 
 ### Critical Jumper Settings
@@ -191,7 +193,7 @@ For advanced users and firmware development:
 
 - **CAN Terminator**: Enable/disable the terminator resistor
 
-- **VR Conditioner**: 8-pin connector for the VR module
+- **VR Conditioner**: 8-pin connector for the VR module (optional, fitted only when chosen at purchase)
 
 #### Bottom Side Board
 - **Tacho Signal**: 5V/12V output selection (default 12V)

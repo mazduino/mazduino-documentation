@@ -23,7 +23,7 @@ Mazduino LITE v0.2 adalah versi yang diperbaiki dan direkomendasikan dari keluar
 ### Sistem Input
 - **Trigger Input**: CKP dan CMP untuk Hall/Optical sensors
 
-- **VR Support**: Variable Reluctance sensors dengan konditioner module
+- **VR Support**: Variable Reluctance sensors dengan konditioner module (modul VR opsional, tidak terpasang kecuali dipilih saat pembelian; sensor hall/optical tidak memerlukannya)
 
 - **Analog Inputs**: 6x (0-5V) untuk MAP, TPS, IAT, CLT, O2, dan spare
 
@@ -171,6 +171,8 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 
 - **BARO SDA**: PB11 (shared dengan RXD3)
 
+Barometer bersifat opsional dan hanya terpasang jika dipilih saat pembelian. Jika terpasang, PB10/PB11 dipakai bus I2C barometer, sehingga TXD3/RXD3 tidak bisa dipakai sebagai serial pada saat yang sama.
+
 ## Konfigurasi Hardware
 
 ### Pengaturan Jumper Kritis
@@ -182,7 +184,7 @@ Untuk pengguna lanjutan dan pengembangan firmware:
 
 - **CAN Terminator**: Enable/disable resistor terminator
 
-- **VR Conditioner**: 8-pin connector untuk VR module
+- **VR Conditioner**: 8-pin connector untuk VR module (opsional, terpasang hanya jika dipilih saat pembelian)
 
 #### Bottom Side Board
 - **Tacho Signal**: 5V/12V output selection (default 12V)
